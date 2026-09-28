@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../constants/app_constants.dart';
 import '../models/audit_log_entry.dart';
@@ -144,5 +145,17 @@ class LocalStorageService {
 
   Future<bool> setAutoStripExif(bool value) async {
     return _prefs.setBool(AppConstants.keyAutoStripExif, value);
+  }
+
+  ThemeMode getThemeMode() {
+    final mode = _prefs.getString('theme_mode');
+    if (mode == 'light') return ThemeMode.light;
+    if (mode == 'dark') return ThemeMode.dark;
+    return ThemeMode.system;
+  }
+
+  Future<bool> saveThemeMode(ThemeMode mode) async {
+    final str = mode == ThemeMode.light ? 'light' : (mode == ThemeMode.dark ? 'dark' : 'system');
+    return _prefs.setString('theme_mode', str);
   }
 }
