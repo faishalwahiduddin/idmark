@@ -10,6 +10,7 @@ import '../../core/models/watermark_config.dart';
 import '../../core/providers/app_providers.dart';
 import '../../core/services/pdf_export_service.dart';
 import '../../core/services/watermark_renderer_service.dart';
+import '../../l10n/app_localizations.dart';
 import 'widgets/watermark_canvas_preview.dart';
 import 'widgets/watermark_control_panel.dart';
 
@@ -41,11 +42,12 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
   }
 
   Future<void> _exportWatermarkedImage({bool isShare = false}) async {
+    final l10n = AppLocalizations.of(context);
     final imageBytes = ref.read(selectedImageBytesProvider);
     if (imageBytes == null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Pilih atau ambil foto KTP terlebih dahulu.'),
+        SnackBar(
+          content: Text(l10n?.selectImageFirst ?? 'Pilih atau ambil foto KTP terlebih dahulu.'),
           backgroundColor: AppColors.warning,
         ),
       );
@@ -57,7 +59,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
     if (validationErrors.isNotEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('Periksa konfigurasi: ${validationErrors.first}'),
+          content: Text(l10n?.checkConfigError(validationErrors.first) ?? 'Periksa konfigurasi: ${validationErrors.first}'),
           backgroundColor: AppColors.danger,
         ),
       );
@@ -118,8 +120,8 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
         await SharePlus.instance.share(
           ShareParams(
             files: [xFile],
-            subject: 'Dokumen Identitas Ter-Watermark - ${config.purpose}',
-            text: 'Dokumen identitas ter-watermark aman via IDMark (${config.purpose}) • 100% on-device',
+            subject: l10n?.shareSubject(config.purpose) ?? 'Dokumen Identitas Ter-Watermark - ${config.purpose}',
+            text: l10n?.shareText(config.purpose) ?? 'Dokumen identitas ter-watermark aman via IDMark (${config.purpose}) • 100% on-device',
           ),
         );
       } else {
@@ -129,7 +131,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Gagal mengekspor dokumen: $e'),
+            content: Text(l10n?.failedToExport(e.toString()) ?? 'Gagal mengekspor dokumen: $e'),
             backgroundColor: AppColors.danger,
           ),
         );
@@ -140,24 +142,25 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
   }
 
   void _showExportSuccessDialog(Uint8List bytes, String sha256Hash, WatermarkConfig config) {
+    final l10n = AppLocalizations.of(context);
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
         backgroundColor: AppColors.bgSurface,
-        title: const Row(
+        title: Row(
           children: [
-            Icon(Icons.check_circle_outline, color: AppColors.accent, size: 24),
-            SizedBox(width: 10),
-            Text('Watermark Selesai!', style: TextStyle(color: Colors.white, fontSize: 18)),
+            const Icon(Icons.check_circle_outline, color: AppColors.accent, size: 24),
+            const SizedBox(width: 10),
+            Text(l10n?.watermarkDone ?? 'Watermark Selesai!', style: const TextStyle(color: Colors.white, fontSize: 18)),
           ],
         ),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'Dokumen e-KTP Anda telah berhasil diproteksi dengan watermark resolusi penuh dan sensor permanen secara 100% on-device.',
-              style: TextStyle(color: Color(0xFFCBD5E1), fontSize: 13, height: 1.4),
+            Text(
+              l10n?.watermarkDoneDesc ?? 'Dokumen e-KTP Anda telah berhasil diproteksi dengan watermark resolusi penuh dan sensor permanen secara 100% on-device.',
+              style: const TextStyle(color: Color(0xFFCBD5E1), fontSize: 13, height: 1.4),
             ),
             const SizedBox(height: 16),
             Container(
@@ -200,9 +203,9 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
                         onTap: () {
                           Clipboard.setData(ClipboardData(text: sha256Hash));
                           ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text('Hash integritas disalin ke clipboard!'),
-                              duration: Duration(seconds: 1),
+                            SnackBar(
+                              content: Text(l10n?.hashCopied ?? 'Hash integritas disalin ke clipboard!'),
+                              duration: const Duration(seconds: 1),
                             ),
                           );
                         },
@@ -218,7 +221,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
-            child: const Text('Tutup', style: TextStyle(color: Color(0xFF94A3B8))),
+            child: Text(l10n?.close ?? 'Tutup', style: const TextStyle(color: Color(0xFF94A3B8))),
           ),
           ElevatedButton.icon(
             onPressed: () {
@@ -226,7 +229,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
               _exportWatermarkedImage(isShare: true);
             },
             icon: const Icon(Icons.share, size: 16),
-            label: const Text('Bagikan'),
+            label: Text(l10n?.share ?? 'Bagikan'),
           ),
         ],
       ),
@@ -235,6 +238,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final selectedImage = ref.watch(selectedImageBytesProvider);
     final config = ref.watch(watermarkConfigProvider);
     final notifier = ref.read(watermarkConfigProvider.notifier);
@@ -268,13 +272,13 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
         actions: [
           IconButton(
             icon: const Icon(Icons.restart_alt, size: 20),
-            tooltip: 'Reset Watermark',
+            tooltip: l10n?.resetWatermarkTooltip ?? 'Reset Watermark',
             onPressed: () {
               notifier.resetToDefault();
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('Konfigurasi dikembalikan ke standar rekomendasi Kominfo.'),
-                  duration: Duration(seconds: 2),
+                SnackBar(
+                  content: Text(l10n?.configResetKominfo ?? 'Konfigurasi dikembalikan ke standar rekomendasi Kominfo.'),
+                  duration: const Duration(seconds: 2),
                 ),
               );
             },
@@ -303,7 +307,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
                       const SizedBox(width: 12),
                       Expanded(
                         child: Text(
-                          'Standar UU PDP: Bubuhkan watermark tujuan spesifik, tanggal, dan sensor data sensitif sebelum membagikan foto e-KTP.',
+                          l10n?.bannerUuPdp ?? 'Standar UU PDP: Bubuhkan watermark tujuan spesifik, tanggal, dan sensor data sensitif sebelum membagikan foto e-KTP.',
                           style: const TextStyle(fontSize: 12, color: Color(0xFFE2E8F0), height: 1.4),
                         ),
                       ),
@@ -325,7 +329,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
                     notifier.addRedaction(RedactionBox.fromPreset(target));
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
-                        content: Text('Kotak sensor "${target.label}" ditambahkan.'),
+                        content: Text(l10n?.sensorBoxAdded(target.label) ?? 'Kotak sensor "${target.label}" ditambahkan.'),
                         duration: const Duration(seconds: 1),
                       ),
                     );
@@ -374,8 +378,8 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
                                 : const Icon(Icons.download, size: 20),
                             label: Text(
                               isProcessing
-                                  ? 'Memproses Dokumen On-Device...'
-                                  : 'Simpan Dokumen (${config.exportFormat.name.toUpperCase()})',
+                                  ? (l10n?.processingOnDevice ?? 'Memproses Dokumen On-Device...')
+                                  : (l10n?.saveDocument(config.exportFormat.name.toUpperCase()) ?? 'Simpan Dokumen (${config.exportFormat.name.toUpperCase()})'),
                             ),
                             style: ElevatedButton.styleFrom(
                               padding: const EdgeInsets.symmetric(vertical: 16),
@@ -385,7 +389,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
                           OutlinedButton.icon(
                             onPressed: isProcessing ? null : () => _exportWatermarkedImage(isShare: true),
                             icon: const Icon(Icons.share_outlined, size: 18),
-                            label: const Text('Bagikan Langsung'),
+                            label: Text(l10n?.shareDirect ?? 'Bagikan Langsung'),
                             style: OutlinedButton.styleFrom(
                               padding: const EdgeInsets.symmetric(vertical: 14),
                             ),

@@ -3,6 +3,7 @@ import '../../../../core/constants/app_colors.dart';
 import '../../../../core/models/redaction_item.dart';
 import '../../../../core/models/watermark_config.dart';
 import '../../../../core/utils/validators.dart';
+import '../../../../l10n/app_localizations.dart';
 
 class WatermarkControlPanel extends StatefulWidget {
   final WatermarkConfig config;
@@ -105,20 +106,21 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Card(
       child: DefaultTabController(
         length: 4,
         child: Column(
           children: [
-            const Padding(
-              padding: EdgeInsets.fromLTRB(16, 16, 16, 12),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 16, 16, 12),
               child: Row(
                 children: [
-                  Icon(Icons.tune, size: 20, color: AppColors.primaryLight),
-                  SizedBox(width: 8),
+                  const Icon(Icons.tune, size: 20, color: AppColors.primaryLight),
+                  const SizedBox(width: 8),
                   Text(
-                    'Konfigurasi Watermark',
-                    style: TextStyle(
+                    l10n?.watermarkConfigTitle ?? 'Konfigurasi Watermark',
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w700,
                       color: Colors.white,
@@ -139,17 +141,17 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                 labelColor: AppColors.primaryLight,
                 unselectedLabelColor: const Color(0xFF94A3B8),
                 tabs: [
-                  const Tab(icon: Icon(Icons.shield_outlined, size: 18), text: 'Watermark'),
+                  Tab(icon: const Icon(Icons.shield_outlined, size: 18), text: l10n?.tabWatermark ?? 'Watermark'),
                   Tab(
                     icon: Badge(
                       isLabelVisible: widget.config.redactions.isNotEmpty,
                       label: Text('${widget.config.redactions.length}'),
                       child: const Icon(Icons.visibility_off_outlined, size: 18),
                     ),
-                    text: 'Sensor / Mask',
+                    text: l10n?.sensorMaskTab ?? 'Sensor / Mask',
                   ),
-                  const Tab(icon: Icon(Icons.verified_outlined, size: 18), text: 'Privasi & EXIF'),
-                  const Tab(icon: Icon(Icons.file_download_outlined, size: 18), text: 'Format Ekspor'),
+                  Tab(icon: const Icon(Icons.verified_outlined, size: 18), text: l10n?.privacyExifTab ?? 'Privasi & EXIF'),
+                  Tab(icon: const Icon(Icons.file_download_outlined, size: 18), text: l10n?.exportFormatTab ?? 'Format Ekspor'),
                 ],
               ),
             ),
@@ -177,18 +179,19 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
 
   // --- TAB 1: WATERMARK ---
   Widget _buildWatermarkTab(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return ListView(
       children: [
         // 1. Purpose Input
-        const Text(
-          'Tujuan Watermark (Sesuai Kebutuhan)',
-          style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: Color(0xFFCBD5E1)),
+        Text(
+          l10n?.watermarkPurposeLabel ?? 'Tujuan Watermark (Sesuai Kebutuhan)',
+          style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: Color(0xFFCBD5E1)),
         ),
         const SizedBox(height: 6),
         TextFormField(
           controller: _purposeController,
           decoration: InputDecoration(
-            hintText: 'Misal: VERIFIKASI PINJAMAN BANK ABC',
+            hintText: l10n?.watermarkPurposeHint ?? 'Misal: VERIFIKASI PINJAMAN BANK ABC',
             errorText: _purposeError,
             prefixIcon: const Icon(Icons.shield_outlined, size: 18),
             suffixIcon: _purposeController.text.isNotEmpty
@@ -234,7 +237,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text('Tanggal Transaksi', style: TextStyle(fontSize: 10, color: Color(0xFF94A3B8))),
+                          Text(l10n?.transactionDate ?? 'Tanggal Transaksi', style: const TextStyle(fontSize: 10, color: Color(0xFF94A3B8))),
                           Text(
                             '${widget.config.transactionDate.day.toString().padLeft(2, '0')}-${widget.config.transactionDate.month.toString().padLeft(2, '0')}-${widget.config.transactionDate.year}',
                             style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: Colors.white),
@@ -248,7 +251,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
             ),
             const SizedBox(width: 10),
             FilterChip(
-              label: const Text('Cantumkan Tgl'),
+              label: Text(l10n?.includeDateChip ?? 'Cantumkan Tgl'),
               selected: widget.config.includeDate,
               onSelected: widget.onIncludeDateChanged,
               selectedColor: AppColors.primary.withValues(alpha: 0.3),
@@ -259,16 +262,16 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
         const SizedBox(height: 14),
 
         // 3. Subtext Input (Optional)
-        const Text(
-          'Catatan Tambahan / Subtext (Opsional)',
-          style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Color(0xFF94A3B8)),
+        Text(
+          l10n?.subtextLabel ?? 'Catatan Tambahan / Subtext (Opsional)',
+          style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Color(0xFF94A3B8)),
         ),
         const SizedBox(height: 6),
         TextFormField(
           controller: _subtextController,
-          decoration: const InputDecoration(
-            hintText: 'Misal: HANYA UNTUK KELENGKAPAN BERKAS INTERNAL',
-            prefixIcon: Icon(Icons.notes, size: 18),
+          decoration: InputDecoration(
+            hintText: l10n?.subtextHint ?? 'Misal: HANYA UNTUK KELENGKAPAN BERKAS INTERNAL',
+            prefixIcon: const Icon(Icons.notes, size: 18),
           ),
           onChanged: (val) {
             final err = AppValidators.validateSubtext(val);
@@ -280,9 +283,9 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
         const SizedBox(height: 16),
 
         // 4. Pattern Selector
-        const Text(
-          'Pola Stempel Watermark (7 Gaya)',
-          style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: Color(0xFFCBD5E1)),
+        Text(
+          l10n?.patternLabel ?? 'Pola Stempel Watermark (7 Gaya)',
+          style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: Color(0xFFCBD5E1)),
         ),
         const SizedBox(height: 8),
         Wrap(
@@ -306,9 +309,9 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
         const SizedBox(height: 16),
 
         // 5. Color Selector
-        const Text(
-          'Warna Cap Watermark',
-          style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: Color(0xFFCBD5E1)),
+        Text(
+          l10n?.colorLabel ?? 'Warna Cap Watermark',
+          style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: Color(0xFFCBD5E1)),
         ),
         const SizedBox(height: 8),
         Wrap(
@@ -336,7 +339,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text('Tingkat Opasitas (Transparansi)', style: TextStyle(fontSize: 12, color: Color(0xFFCBD5E1))),
+            Text(l10n?.opacityLevel ?? 'Tingkat Opasitas (Transparansi)', style: const TextStyle(fontSize: 12, color: Color(0xFFCBD5E1))),
             Text('${(widget.config.opacity * 100).toInt()}%',
                 style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: AppColors.primaryLight)),
           ],
@@ -353,7 +356,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text('Ukuran Teks Watermark', style: TextStyle(fontSize: 12, color: Color(0xFFCBD5E1))),
+            Text(l10n?.watermarkFontSize ?? 'Ukuran Teks Watermark', style: const TextStyle(fontSize: 12, color: Color(0xFFCBD5E1))),
             Text('${widget.config.fontSize.toInt()} pt',
                 style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: AppColors.primaryLight)),
           ],
@@ -372,7 +375,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text('Kemiringan Sudut', style: TextStyle(fontSize: 12, color: Color(0xFFCBD5E1))),
+              Text(l10n?.rotationAngle ?? 'Kemiringan Sudut', style: const TextStyle(fontSize: 12, color: Color(0xFFCBD5E1))),
               Text('${widget.config.rotationAngle.toInt()}°',
                   style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: AppColors.primaryLight)),
             ],
@@ -392,6 +395,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
 
   // --- TAB 2: SENSOR / REDAKSI ---
   Widget _buildRedactionTab(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return ListView(
       children: [
         // Intro Notice
@@ -402,14 +406,14 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
             borderRadius: BorderRadius.circular(10),
             border: Border.all(color: AppColors.primary.withValues(alpha: 0.2)),
           ),
-          child: const Row(
+          child: Row(
             children: [
-              Icon(Icons.privacy_tip_outlined, size: 18, color: AppColors.primaryLight),
-              SizedBox(width: 10),
+              const Icon(Icons.privacy_tip_outlined, size: 18, color: AppColors.primaryLight),
+              const SizedBox(width: 10),
               Expanded(
                 child: Text(
-                  'Tutup bagian data vital seperti tanda tangan atau digit NIK yang tidak relevan dengan transaksi untuk meminimalkan risiko pencurian identitas.',
-                  style: TextStyle(fontSize: 11, color: Color(0xFFCBD5E1), height: 1.4),
+                  l10n?.redactionIntro ?? 'Tutup bagian data vital seperti tanda tangan atau digit NIK yang tidak relevan dengan transaksi untuk meminimalkan risiko pencurian identitas.',
+                  style: const TextStyle(fontSize: 11, color: Color(0xFFCBD5E1), height: 1.4),
                 ),
               ),
             ],
@@ -418,9 +422,9 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
         const SizedBox(height: 14),
 
         // Quick Preset Add Buttons
-        const Text(
-          'Tambah Sensor Cepat:',
-          style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: Color(0xFF94A3B8)),
+        Text(
+          l10n?.quickSensorLabel ?? 'Tambah Sensor Cepat:',
+          style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: Color(0xFF94A3B8)),
         ),
         const SizedBox(height: 8),
         Wrap(
@@ -429,27 +433,27 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
           children: [
             ActionChip(
               avatar: const Icon(Icons.add, size: 14, color: AppColors.primaryLight),
-              label: const Text('Sensor NIK'),
+              label: Text(l10n?.sensorNik ?? 'Sensor NIK'),
               onPressed: () => widget.onAddRedaction(RedactionBox.fromPreset(RedactionPresetTarget.nik)),
             ),
             ActionChip(
               avatar: const Icon(Icons.add, size: 14, color: AppColors.primaryLight),
-              label: const Text('Sensor Tanda Tangan'),
+              label: Text(l10n?.sensorSignature ?? 'Sensor Tanda Tangan'),
               onPressed: () => widget.onAddRedaction(RedactionBox.fromPreset(RedactionPresetTarget.signature)),
             ),
             ActionChip(
               avatar: const Icon(Icons.add, size: 14, color: AppColors.primaryLight),
-              label: const Text('Sensor Alamat'),
+              label: Text(l10n?.sensorAddress ?? 'Sensor Alamat'),
               onPressed: () => widget.onAddRedaction(RedactionBox.fromPreset(RedactionPresetTarget.address)),
             ),
             ActionChip(
               avatar: const Icon(Icons.add, size: 14, color: AppColors.primaryLight),
-              label: const Text('Sensor Tgl Lahir'),
+              label: Text(l10n?.sensorBirthDate ?? 'Sensor Tgl Lahir'),
               onPressed: () => widget.onAddRedaction(RedactionBox.fromPreset(RedactionPresetTarget.birthPlace)),
             ),
             ActionChip(
               avatar: const Icon(Icons.crop_square, size: 14, color: AppColors.accent),
-              label: const Text('Area Kustom'),
+              label: Text(l10n?.customArea ?? 'Area Kustom'),
               onPressed: () => widget.onAddRedaction(RedactionBox.fromPreset(RedactionPresetTarget.custom)),
             ),
           ],
@@ -465,9 +469,9 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                 children: [
                   Icon(Icons.visibility_outlined, size: 36, color: Colors.grey.shade600),
                   const SizedBox(height: 10),
-                  const Text(
-                    'Belum ada area yang disensor.',
-                    style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
+                  Text(
+                    l10n?.noRedactionsYet ?? 'Belum ada area yang disensor.',
+                    style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
                   ),
                 ],
               ),
@@ -480,6 +484,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
   }
 
   Widget _buildRedactionItemCard(RedactionBox box) {
+    final l10n = AppLocalizations.of(context);
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(12),
@@ -506,7 +511,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
               ),
               IconButton(
                 icon: const Icon(Icons.delete_outline, size: 18, color: AppColors.danger),
-                tooltip: 'Hapus Sensor',
+                tooltip: l10n?.deleteSensorTooltip ?? 'Hapus Sensor',
                 visualDensity: VisualDensity.compact,
                 onPressed: () => widget.onRemoveRedaction(box.id),
               ),
@@ -517,7 +522,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
           // Tipe Masking Selector
           Row(
             children: [
-              const Text('Tipe Sensor: ', style: TextStyle(fontSize: 11, color: Color(0xFF94A3B8))),
+              Text(l10n?.sensorTypeLabel ?? 'Tipe Sensor: ', style: const TextStyle(fontSize: 11, color: Color(0xFF94A3B8))),
               const SizedBox(width: 8),
               DropdownButton<RedactionType>(
                 value: box.type,
@@ -547,7 +552,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Posisi X (${(box.left * 100).toInt()}%)',
+                    Text(l10n?.positionX((box.left * 100).toInt()) ?? 'Posisi X (${(box.left * 100).toInt()}%)',
                         style: const TextStyle(fontSize: 10, color: Color(0xFF94A3B8))),
                     Slider(
                       value: box.left,
@@ -564,7 +569,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Posisi Y (${(box.top * 100).toInt()}%)',
+                    Text(l10n?.positionY((box.top * 100).toInt()) ?? 'Posisi Y (${(box.top * 100).toInt()}%)',
                         style: const TextStyle(fontSize: 10, color: Color(0xFF94A3B8))),
                     Slider(
                       value: box.top,
@@ -585,6 +590,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
 
   // --- TAB 3: PRIVASI & EXIF ---
   Widget _buildPrivacyTab(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final score = widget.config.privacyScore;
     final grade = widget.config.privacyGrade;
 
@@ -609,9 +615,9 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'Indeks Kepatuhan Privasi Dokumen',
-                        style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: Colors.white),
+                      Text(
+                        l10n?.privacyComplianceIndex ?? 'Indeks Kepatuhan Privasi Dokumen',
+                        style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: Colors.white),
                       ),
                       const SizedBox(height: 4),
                       Text(
@@ -659,30 +665,30 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
         const SizedBox(height: 16),
 
         // Compliance Checklist
-        const Text(
-          'Checklist Kepatuhan UU PDP No. 27/2022:',
-          style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: Color(0xFFCBD5E1)),
+        Text(
+          l10n?.complianceChecklistTitle ?? 'Checklist Kepatuhan UU PDP No. 27/2022:',
+          style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: Color(0xFFCBD5E1)),
         ),
         const SizedBox(height: 10),
         _buildChecklistItem(
-          'Tujuan Penggunaan Spesifik',
+          l10n?.checkPurposeTitle ?? 'Tujuan Penggunaan Spesifik',
           widget.config.purpose.trim().length >= 5,
-          'Membatasi agar salinan tidak bisa dialihkan ke transaksi lain',
+          l10n?.checkPurposeDesc ?? 'Membatasi agar salinan tidak bisa dialihkan ke transaksi lain',
         ),
         _buildChecklistItem(
-          'Tanggal Transaksi Dicantumkan',
+          l10n?.checkDateTitle ?? 'Tanggal Transaksi Dicantumkan',
           widget.config.includeDate,
-          'Membatasi masa kedaluwarsa dokumen agar tidak disalahgunakan di masa depan',
+          l10n?.checkDateDesc ?? 'Membatasi masa kedaluwarsa dokumen agar tidak disalahgunakan di masa depan',
         ),
         _buildChecklistItem(
-          'Sanitasi Metadata EXIF & GPS',
+          l10n?.checkExifTitle ?? 'Sanitasi Metadata EXIF & GPS',
           widget.config.stripMetadata,
-          'Menghilangkan lokasi geografis koordinat rumah dari file foto',
+          l10n?.checkExifDesc ?? 'Menghilangkan lokasi geografis koordinat rumah dari file foto',
         ),
         _buildChecklistItem(
-          'Sensor Bagian Vital (NIK / Tanda Tangan)',
+          l10n?.checkSensorTitle ?? 'Sensor Bagian Vital (NIK / Tanda Tangan)',
           widget.config.redactions.isNotEmpty,
-          'Menyembunyikan informasi yang tidak diwajibkan oleh penerima',
+          l10n?.checkSensorDesc ?? 'Menyembunyikan informasi yang tidak diwajibkan oleh penerima',
         ),
         const SizedBox(height: 16),
 
@@ -696,10 +702,10 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
           ),
           child: SwitchListTile(
             contentPadding: EdgeInsets.zero,
-            title: const Text('Sanitasi Metadata EXIF Otomatis', style: TextStyle(fontSize: 13, color: Colors.white)),
-            subtitle: const Text(
-              'Menghapus tag metadata kamera, model HP, dan koordinat GPS secara otomatis saat ekspor',
-              style: TextStyle(fontSize: 11, color: Color(0xFF94A3B8)),
+            title: Text(l10n?.autoSanitizeExifTitle ?? 'Sanitasi Metadata EXIF Otomatis', style: const TextStyle(fontSize: 13, color: Colors.white)),
+            subtitle: Text(
+              l10n?.autoSanitizeExifDesc ?? 'Menghapus tag metadata kamera, model HP, dan koordinat GPS secara otomatis saat ekspor',
+              style: const TextStyle(fontSize: 11, color: Color(0xFF94A3B8)),
             ),
             value: widget.config.stripMetadata,
             activeThumbColor: AppColors.accent,
@@ -748,11 +754,12 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
 
   // --- TAB 4: FORMAT EKSPOR ---
   Widget _buildExportTab(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return ListView(
       children: [
-        const Text(
-          'Pilih Format Dokumen Keluaran:',
-          style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: Colors.white),
+        Text(
+          l10n?.chooseExportFormat ?? 'Pilih Format Dokumen Keluaran:',
+          style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: Colors.white),
         ),
         const SizedBox(height: 12),
         ...ExportFormat.values.map((format) {
@@ -818,7 +825,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text('Kualitas Kompresi JPEG', style: TextStyle(fontSize: 12, color: Color(0xFFCBD5E1))),
+              Text(l10n?.jpegCompressionQuality ?? 'Kualitas Kompresi JPEG', style: const TextStyle(fontSize: 12, color: Color(0xFFCBD5E1))),
               Text('${widget.config.jpegQuality}%',
                   style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: AppColors.primaryLight)),
             ],

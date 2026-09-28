@@ -77,5 +77,272 @@
       }
     }
   },
-  "@@locale": "id"
+  "@@locale": "id",
+  "selectImageFirst": "Pilih atau ambil foto KTP terlebih dahulu.",
+  "checkConfigError": "Periksa konfigurasi: {error}",
+  "@checkConfigError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "watermarkDone": "Watermark Selesai!",
+  "watermarkDoneDesc": "Dokumen e-KTP Anda telah berhasil diproteksi dengan watermark resolusi penuh dan sensor permanen secara 100% on-device.",
+  "hashCopied": "Hash integritas disalin ke clipboard!",
+  "close": "Tutup",
+  "share": "Bagikan",
+  "resetWatermarkTooltip": "Reset Watermark",
+  "configResetKominfo": "Konfigurasi dikembalikan ke standar rekomendasi Kominfo.",
+  "bannerUuPdp": "Standar UU PDP: Bubuhkan watermark tujuan spesifik, tanggal, dan sensor data sensitif sebelum membagikan foto e-KTP.",
+  "sensorBoxAdded": "Kotak sensor \"{label}\" ditambahkan.",
+  "@sensorBoxAdded": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "processingOnDevice": "Memproses Dokumen On-Device...",
+  "saveDocument": "Simpan Dokumen ({format})",
+  "@saveDocument": {
+    "placeholders": {
+      "format": {
+        "type": "String"
+      }
+    }
+  },
+  "shareDirect": "Bagikan Langsung",
+  "failedToExport": "Gagal mengekspor dokumen: {error}",
+  "@failedToExport": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "shareSubject": "Dokumen Identitas Ter-Watermark - {purpose}",
+  "@shareSubject": {
+    "placeholders": {
+      "purpose": {
+        "type": "String"
+      }
+    }
+  },
+  "shareText": "Dokumen identitas ter-watermark aman via IDMark ({purpose}) • 100% on-device",
+  "@shareText": {
+    "placeholders": {
+      "purpose": {
+        "type": "String"
+      }
+    }
+  },
+  "watermarkConfigTitle": "Konfigurasi Watermark",
+  "sensorMaskTab": "Sensor / Mask",
+  "privacyExifTab": "Privasi & EXIF",
+  "exportFormatTab": "Format Ekspor",
+  "watermarkPurposeLabel": "Tujuan Watermark (Sesuai Kebutuhan)",
+  "watermarkPurposeHint": "Misal: VERIFIKASI PINJAMAN BANK ABC",
+  "transactionDate": "Tanggal Transaksi",
+  "includeDateChip": "Cantumkan Tgl",
+  "subtextLabel": "Catatan Tambahan / Subtext (Opsional)",
+  "subtextHint": "Misal: HANYA UNTUK KELENGKAPAN BERKAS INTERNAL",
+  "patternLabel": "Pola Stempel Watermark (7 Gaya)",
+  "colorLabel": "Warna Cap Watermark",
+  "opacityLevel": "Tingkat Opasitas (Transparansi)",
+  "watermarkFontSize": "Ukuran Teks Watermark",
+  "rotationAngle": "Kemiringan Sudut",
+  "redactionIntro": "Tutup bagian data vital seperti tanda tangan atau digit NIK yang tidak relevan dengan transaksi untuk meminimalkan risiko pencurian identitas.",
+  "quickSensorLabel": "Tambah Sensor Cepat:",
+  "sensorNik": "Sensor NIK",
+  "sensorSignature": "Sensor Tanda Tangan",
+  "sensorAddress": "Sensor Alamat",
+  "sensorBirthDate": "Sensor Tgl Lahir",
+  "customArea": "Area Kustom",
+  "noRedactionsYet": "Belum ada area yang disensor.",
+  "deleteSensorTooltip": "Hapus Sensor",
+  "sensorTypeLabel": "Tipe Sensor:",
+  "positionX": "Posisi X ({percent}%)",
+  "@positionX": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "positionY": "Posisi Y ({percent}%)",
+  "@positionY": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "privacyComplianceIndex": "Indeks Kepatuhan Privasi Dokumen",
+  "complianceChecklistTitle": "Checklist Kepatuhan UU PDP No. 27/2022:",
+  "checkPurposeTitle": "Tujuan Penggunaan Spesifik",
+  "checkPurposeDesc": "Membatasi agar salinan tidak bisa dialihkan ke transaksi lain",
+  "checkDateTitle": "Tanggal Transaksi Dicantumkan",
+  "checkDateDesc": "Membatasi masa kedaluwarsa dokumen agar tidak disalahgunakan di masa depan",
+  "checkExifTitle": "Sanitasi Metadata EXIF & GPS",
+  "checkExifDesc": "Menghilangkan lokasi geografis koordinat rumah dari file foto",
+  "checkSensorTitle": "Sensor Bagian Vital (NIK / Tanda Tangan)",
+  "checkSensorDesc": "Menyembunyikan informasi yang tidak diwajibkan oleh penerima",
+  "autoSanitizeExifTitle": "Sanitasi Metadata EXIF Otomatis",
+  "autoSanitizeExifDesc": "Menghapus tag metadata kamera, model HP, dan koordinat GPS secara otomatis saat ekspor",
+  "chooseExportFormat": "Pilih Format Dokumen Keluaran:",
+  "jpegCompressionQuality": "Kualitas Kompresi JPEG",
+  "protectionGrade": "Proteksi {grade} ({score}%)",
+  "@protectionGrade": {
+    "placeholders": {
+      "grade": {
+        "type": "String"
+      },
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "viewingOriginal": "Melihat Asli",
+  "holdToCompare": "Tahan: Bandingkan",
+  "activeWatermarkWithCount": "Watermark Aktif ({count} sensor)",
+  "@activeWatermarkWithCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "activeWatermarkPreview": "Pratinjau Watermark Aktif",
+  "changePhoto": "Ganti Foto",
+  "deleteImage": "Hapus Gambar",
+  "uploadIdPhoto": "Unggah Foto e-KTP / Identitas",
+  "uploadIdPhotoDesc": "Pilih foto e-KTP, SIM, atau Paspor untuk menambahkan stempel tujuan, tanggal, dan sensor data vital.",
+  "onDeviceBadge": "100% On-Device • Gambar tidak pernah dikirim ke server",
+  "openGallery": "Buka Galeri",
+  "takePhoto": "Ambil Foto",
+  "historyAndAuditLog": "Riwayat & Audit Log",
+  "clearAllHistoryTooltip": "Hapus Semua Riwayat",
+  "localPrivacyAuditLog": "Audit Log Privasi Lokal",
+  "localPrivacyAuditLogDesc": "Total {count} dokumen telah distempel dengan aman secara 100% on-device. Rekaman ini hanya tersimpan di perangkat Anda.",
+  "@localPrivacyAuditLogDesc": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "searchHistoryHint": "Cari riwayat tujuan dokumen...",
+  "noWatermarkedDocsYet": "Belum Ada Dokumen Ter-Watermark",
+  "noWatermarkedDocsDesc": "Dokumen yang berhasil Anda beri watermark dan ekspor akan dicatat audit log-nya di sini.",
+  "noHistoryFound": "Tidak ditemukan riwayat yang sesuai dengan pencarian.",
+  "scoreLabel": "Skor {score}%",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "sensitiveSensorsCount": "{count} Sensor Sensitif",
+  "@sensitiveSensorsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "exifSanitized": "EXIF Sanitized",
+  "sha256Copied": "Hash SHA-256 disalin ke clipboard!",
+  "clearHistoryConfirmTitle": "Hapus Seluruh Riwayat?",
+  "clearHistoryConfirmBody": "Daftar audit log di perangkat Anda akan dibersihkan permanen.",
+  "historyClearedSuccess": "Riwayat berhasil dibersihkan.",
+  "templatePresetHub": "Template & Preset Hub",
+  "createPresetTooltip": "Buat Preset Baru",
+  "officialTemplateCatalog": "Katalog Template Watermark Resmi",
+  "officialTemplateDesc": "Pilih template standar perbankan, lamaran kerja, atau buat preset kustom pribadi yang tersimpan di perangkat Anda.",
+  "searchTemplateHint": "Cari template (bank, pinjol, hrd, kpr, rental)...",
+  "showingTemplatesCount": "Menampilkan {count} template",
+  "@showingTemplatesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "createCustom": "Buat Kustom",
+  "noTemplatesFound": "Tidak ditemukan template yang cocok dengan filter.",
+  "customBadge": "Kustom",
+  "deleteCustomPresetTooltip": "Hapus Preset Kustom",
+  "activeBadge": "Aktif",
+  "patternInfo": "Pola: {pattern}",
+  "@patternInfo": {
+    "placeholders": {
+      "pattern": {
+        "type": "String"
+      }
+    }
+  },
+  "usePreset": "Gunakan Preset",
+  "presetApplied": "Preset \"{title}\" berhasil diterapkan!",
+  "@presetApplied": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewCustomPreset": "Buat Preset Kustom Baru",
+  "presetName": "Nama Preset",
+  "presetNameHint": "Misal: Verifikasi Beasiswa Kemendikbud",
+  "category": "Kategori",
+  "categoryHint": "Misal: Pendidikan / Kustom",
+  "purposeTemplateText": "Teks Template Tujuan",
+  "purposeTemplateHint": "Misal: PENGAJUAN BEASISWA 2026",
+  "additionalSubtext": "Subtext Tambahan",
+  "subtextTemplateHint": "Catatan internal",
+  "stampPattern": "Pola Stempel",
+  "savePreset": "Simpan Preset",
+  "customPresetSaved": "Preset kustom \"{title}\" disimpan!",
+  "@customPresetSaved": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "deletePresetConfirmTitle": "Hapus Preset?",
+  "deletePresetConfirmBody": "Preset \"{title}\" akan dihapus dari daftar template lokal Anda.",
+  "@deletePresetConfirmBody": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "presetDeletedSuccess": "Preset berhasil dihapus.",
+  "protectDigitalId": "Lindungi Identitas Digital Anda",
+  "protectDigitalIdDesc": "Kementerian Kominfo dan UU No. 27/2022 (PDP) mewajibkan masyarakat berhati-hati saat membagikan foto e-KTP agar tidak dijadikan jaminan pinjaman online bodong atau pembukaan rekening fiktif.",
+  "safeSharingChecklist": "Checklist Aman Sebelum Kirim e-KTP",
+  "checklistDoneCount": "{count} / 5 Selesai",
+  "@checklistDoneCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "checkItem1": "Nama instansi/penerima tertulis jelas pada watermark",
+  "checkItem2": "Tanggal transaksi terkini dicantumkan pada cap",
+  "checkItem3": "Watermark melintang di atas data teks agar tidak bisa dicrop",
+  "checkItem4": "Tanda tangan disensor jika verifikator tidak meminta spesimen tanda tangan",
+  "checkItem5": "Metadata EXIF dan koordinat GPS telah dihapus dari gambar",
+  "zeroServerTitle": "Privasi Mutlak (Zero Server Upload)",
+  "zeroServerDesc": "IDMark berjalan 100% di peramban atau perangkat lokal Anda. Foto identitas e-KTP tidak pernah dikirim, disimpan, atau diproses di peladen (server) eksternal manapun.",
+  "dataSecuritySanitation": "Sanitasi & Keamanan Data",
+  "autoExifSubtitle": "Menghapus tag metadata koordinat GPS dan tipe kamera dari foto hasil ekspor",
+  "defaultExportFormat": "Format Ekspor Default",
+  "localDeviceStorage": "Penyimpanan Lokal Perangkat",
+  "resetDefaultsDesc": "Mengembalikan template dan pengaturan teks ke bawaan pabrik",
+  "appLabel": "Aplikasi"
 }

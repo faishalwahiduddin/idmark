@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/models/redaction_item.dart';
 import '../../../../core/models/watermark_config.dart';
+import '../../../../l10n/app_localizations.dart';
 
 class WatermarkCanvasPreview extends StatefulWidget {
   final Uint8List? imageBytes;
@@ -32,6 +33,7 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     if (widget.imageBytes == null) {
       return _buildUploadPrompt(context);
     }
@@ -87,7 +89,8 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
                         ),
                         const SizedBox(width: 6),
                         Text(
-                          'Proteksi ${widget.config.privacyGrade} (${widget.config.privacyScore}%)',
+                          l10n?.protectionGrade(widget.config.privacyGrade, widget.config.privacyScore) ??
+                              'Proteksi ${widget.config.privacyGrade} (${widget.config.privacyScore}%)',
                           style: TextStyle(
                             fontSize: 11,
                             fontWeight: FontWeight.w800,
@@ -126,7 +129,9 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
                           ),
                           const SizedBox(width: 5),
                           Text(
-                            _isComparingOriginal ? 'Melihat Asli' : 'Tahan: Bandingkan',
+                            _isComparingOriginal
+                                ? (l10n?.viewingOriginal ?? 'Melihat Asli')
+                                : (l10n?.holdToCompare ?? 'Tahan: Bandingkan'),
                             style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w600, color: Colors.white),
                           ),
                         ],
@@ -147,9 +152,9 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
                 children: [
                   const Icon(Icons.remove_red_eye_outlined, size: 14, color: AppColors.primaryLight),
                   const SizedBox(width: 8),
-                  const Text(
-                    'Sensor Cepat:',
-                    style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: Color(0xFF94A3B8)),
+                  Text(
+                    l10n?.quickSensorLabel ?? 'Sensor Cepat:',
+                    style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: Color(0xFF94A3B8)),
                   ),
                   const SizedBox(width: 8),
                   Expanded(
@@ -183,8 +188,9 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
                 Expanded(
                   child: Text(
                     widget.config.redactions.isNotEmpty
-                        ? 'Watermark Aktif (${widget.config.redactions.length} sensor)'
-                        : 'Pratinjau Watermark Aktif',
+                        ? (l10n?.activeWatermarkWithCount(widget.config.redactions.length) ??
+                            'Watermark Aktif (${widget.config.redactions.length} sensor)')
+                        : (l10n?.activeWatermarkPreview ?? 'Pratinjau Watermark Aktif'),
                     style: const TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w600,
@@ -195,7 +201,7 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
                 TextButton.icon(
                   onPressed: widget.onPickGallery,
                   icon: const Icon(Icons.sync, size: 16),
-                  label: const Text('Ganti Foto', style: TextStyle(fontSize: 12)),
+                  label: Text(l10n?.changePhoto ?? 'Ganti Foto', style: const TextStyle(fontSize: 12)),
                   style: TextButton.styleFrom(
                     foregroundColor: AppColors.primaryLight,
                     visualDensity: VisualDensity.compact,
@@ -204,7 +210,7 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
                 IconButton(
                   onPressed: widget.onClear,
                   icon: const Icon(Icons.delete_outline, size: 18, color: AppColors.danger),
-                  tooltip: 'Hapus Gambar',
+                  tooltip: l10n?.deleteImage ?? 'Hapus Gambar',
                   visualDensity: VisualDensity.compact,
                 ),
               ],
@@ -255,6 +261,7 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
   }
 
   Widget _buildUploadPrompt(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Card(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 36),
@@ -276,20 +283,20 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
               ),
             ),
             const SizedBox(height: 20),
-            const Text(
-              'Unggah Foto e-KTP / Identitas',
+            Text(
+              l10n?.uploadIdPhoto ?? 'Unggah Foto e-KTP / Identitas',
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w700,
                 color: Colors.white,
               ),
             ),
             const SizedBox(height: 8),
-            const Text(
-              'Pilih foto e-KTP, SIM, atau Paspor untuk menambahkan stempel tujuan, tanggal, dan sensor data vital.',
+            Text(
+              l10n?.uploadIdPhotoDesc ?? 'Pilih foto e-KTP, SIM, atau Paspor untuk menambahkan stempel tujuan, tanggal, dan sensor data vital.',
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 13,
                 color: Color(0xFF94A3B8),
                 height: 1.4,
@@ -303,14 +310,14 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(color: AppColors.accent.withValues(alpha: 0.3)),
               ),
-              child: const Row(
+              child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(Icons.shield_outlined, size: 14, color: AppColors.accent),
-                  SizedBox(width: 6),
+                  const Icon(Icons.shield_outlined, size: 14, color: AppColors.accent),
+                  const SizedBox(width: 6),
                   Text(
-                    '100% On-Device • Gambar tidak pernah dikirim ke server',
-                    style: TextStyle(
+                    l10n?.onDeviceBadge ?? '100% On-Device • Gambar tidak pernah dikirim ke server',
+                    style: const TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w600,
                       color: AppColors.accent,
@@ -328,12 +335,12 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
                 ElevatedButton.icon(
                   onPressed: widget.onPickGallery,
                   icon: const Icon(Icons.photo_library_outlined, size: 18),
-                  label: const Text('Buka Galeri'),
+                  label: Text(l10n?.openGallery ?? 'Buka Galeri'),
                 ),
                 OutlinedButton.icon(
                   onPressed: widget.onPickCamera,
                   icon: const Icon(Icons.camera_alt_outlined, size: 18),
-                  label: const Text('Ambil Foto'),
+                  label: Text(l10n?.takePhoto ?? 'Ambil Foto'),
                 ),
               ],
             ),

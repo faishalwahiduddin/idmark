@@ -212,4 +212,460 @@ class AppLocalizationsEn extends AppLocalizations {
   String presetsSubtitle(int count) {
     return '$count custom templates saved';
   }
+
+  @override
+  String get selectImageFirst =>
+      'Please select or take an ID card photo first.';
+
+  @override
+  String checkConfigError(String error) {
+    return 'Check configuration: $error';
+  }
+
+  @override
+  String get watermarkDone => 'Watermark Completed!';
+
+  @override
+  String get watermarkDoneDesc =>
+      'Your ID document has been successfully protected with full resolution watermark and permanent redaction 100% on-device.';
+
+  @override
+  String get hashCopied => 'Integrity hash copied to clipboard!';
+
+  @override
+  String get close => 'Close';
+
+  @override
+  String get share => 'Share';
+
+  @override
+  String get resetWatermarkTooltip => 'Reset Watermark';
+
+  @override
+  String get configResetKominfo =>
+      'Configuration reset to Kominfo recommended standards.';
+
+  @override
+  String get bannerUuPdp =>
+      'PDP Law Standard: Add specific purpose watermark, date, and redact sensitive data before sharing ID card photos.';
+
+  @override
+  String sensorBoxAdded(String label) {
+    return 'Sensor box \"$label\" added.';
+  }
+
+  @override
+  String get processingOnDevice => 'Processing Document On-Device...';
+
+  @override
+  String saveDocument(String format) {
+    return 'Save Document ($format)';
+  }
+
+  @override
+  String get shareDirect => 'Share Directly';
+
+  @override
+  String failedToExport(String error) {
+    return 'Failed to export document: $error';
+  }
+
+  @override
+  String shareSubject(String purpose) {
+    return 'Watermarked Identity Document - $purpose';
+  }
+
+  @override
+  String shareText(String purpose) {
+    return 'Secure watermarked identity document via IDMark ($purpose) • 100% on-device';
+  }
+
+  @override
+  String get watermarkConfigTitle => 'Watermark Configuration';
+
+  @override
+  String get sensorMaskTab => 'Redact / Mask';
+
+  @override
+  String get privacyExifTab => 'Privacy & EXIF';
+
+  @override
+  String get exportFormatTab => 'Export Format';
+
+  @override
+  String get watermarkPurposeLabel => 'Watermark Purpose (As Needed)';
+
+  @override
+  String get watermarkPurposeHint => 'e.g.: BANK ABC LOAN VERIFICATION';
+
+  @override
+  String get transactionDate => 'Transaction Date';
+
+  @override
+  String get includeDateChip => 'Include Date';
+
+  @override
+  String get subtextLabel => 'Additional Notes / Subtext (Optional)';
+
+  @override
+  String get subtextHint => 'e.g.: FOR INTERNAL FILE COMPLETION ONLY';
+
+  @override
+  String get patternLabel => 'Watermark Stamp Pattern (7 Styles)';
+
+  @override
+  String get colorLabel => 'Watermark Stamp Color';
+
+  @override
+  String get opacityLevel => 'Opacity Level (Transparency)';
+
+  @override
+  String get watermarkFontSize => 'Watermark Font Size';
+
+  @override
+  String get rotationAngle => 'Rotation Angle';
+
+  @override
+  String get redactionIntro =>
+      'Cover vital data such as signatures or ID number digits irrelevant to the transaction to minimize identity theft risks.';
+
+  @override
+  String get quickSensorLabel => 'Quick Redaction Add:';
+
+  @override
+  String get sensorNik => 'Redact ID No.';
+
+  @override
+  String get sensorSignature => 'Redact Signature';
+
+  @override
+  String get sensorAddress => 'Redact Address';
+
+  @override
+  String get sensorBirthDate => 'Redact Birth Date';
+
+  @override
+  String get customArea => 'Custom Area';
+
+  @override
+  String get noRedactionsYet => 'No redacted areas yet.';
+
+  @override
+  String get deleteSensorTooltip => 'Delete Redaction';
+
+  @override
+  String get sensorTypeLabel => 'Redaction Type:';
+
+  @override
+  String positionX(int percent) {
+    return 'Position X ($percent%)';
+  }
+
+  @override
+  String positionY(int percent) {
+    return 'Position Y ($percent%)';
+  }
+
+  @override
+  String get privacyComplianceIndex => 'Document Privacy Compliance Index';
+
+  @override
+  String get complianceChecklistTitle =>
+      'PDP Law No. 27/2022 Compliance Checklist:';
+
+  @override
+  String get checkPurposeTitle => 'Specific Purpose of Use';
+
+  @override
+  String get checkPurposeDesc =>
+      'Limits copy usage so it cannot be diverted to other transactions';
+
+  @override
+  String get checkDateTitle => 'Transaction Date Included';
+
+  @override
+  String get checkDateDesc =>
+      'Limits document expiration so it cannot be misused in the future';
+
+  @override
+  String get checkExifTitle => 'Sanitize EXIF & GPS Metadata';
+
+  @override
+  String get checkExifDesc =>
+      'Removes geographic home coordinate locations from photo files';
+
+  @override
+  String get checkSensorTitle => 'Redact Vital Parts (ID No. / Signature)';
+
+  @override
+  String get checkSensorDesc =>
+      'Hides information not strictly required by the recipient';
+
+  @override
+  String get autoSanitizeExifTitle => 'Automatic EXIF Metadata Sanitization';
+
+  @override
+  String get autoSanitizeExifDesc =>
+      'Automatically strips camera metadata tags, phone model, and GPS coordinates during export';
+
+  @override
+  String get chooseExportFormat => 'Choose Output Document Format:';
+
+  @override
+  String get jpegCompressionQuality => 'JPEG Compression Quality';
+
+  @override
+  String protectionGrade(String grade, int score) {
+    return 'Protection $grade ($score%)';
+  }
+
+  @override
+  String get viewingOriginal => 'Viewing Original';
+
+  @override
+  String get holdToCompare => 'Hold: Compare';
+
+  @override
+  String activeWatermarkWithCount(int count) {
+    return 'Active Watermark ($count redactions)';
+  }
+
+  @override
+  String get activeWatermarkPreview => 'Active Watermark Preview';
+
+  @override
+  String get changePhoto => 'Change Photo';
+
+  @override
+  String get deleteImage => 'Delete Image';
+
+  @override
+  String get uploadIdPhoto => 'Upload ID Card / Identity Photo';
+
+  @override
+  String get uploadIdPhotoDesc =>
+      'Select an ID card, driver\'s license, or passport photo to add purpose stamp, date, and vital data redaction.';
+
+  @override
+  String get onDeviceBadge =>
+      '100% On-Device • Images are never sent to a server';
+
+  @override
+  String get openGallery => 'Open Gallery';
+
+  @override
+  String get takePhoto => 'Take Photo';
+
+  @override
+  String get historyAndAuditLog => 'History & Audit Log';
+
+  @override
+  String get clearAllHistoryTooltip => 'Clear All History';
+
+  @override
+  String get localPrivacyAuditLog => 'Local Privacy Audit Log';
+
+  @override
+  String localPrivacyAuditLogDesc(int count) {
+    return 'Total $count documents have been safely stamped 100% on-device. This log is stored only on your device.';
+  }
+
+  @override
+  String get searchHistoryHint => 'Search document purpose history...';
+
+  @override
+  String get noWatermarkedDocsYet => 'No Watermarked Documents Yet';
+
+  @override
+  String get noWatermarkedDocsDesc =>
+      'Documents that you have watermarked and exported will have their audit logs recorded here.';
+
+  @override
+  String get noHistoryFound => 'No history found matching your search.';
+
+  @override
+  String scoreLabel(int score) {
+    return 'Score $score%';
+  }
+
+  @override
+  String sensitiveSensorsCount(int count) {
+    return '$count Sensitive Redactions';
+  }
+
+  @override
+  String get exifSanitized => 'EXIF Sanitized';
+
+  @override
+  String get sha256Copied => 'SHA-256 hash copied to clipboard!';
+
+  @override
+  String get clearHistoryConfirmTitle => 'Clear All History?';
+
+  @override
+  String get clearHistoryConfirmBody =>
+      'The audit log list on your device will be permanently cleared.';
+
+  @override
+  String get historyClearedSuccess => 'History successfully cleared.';
+
+  @override
+  String get templatePresetHub => 'Templates & Presets Hub';
+
+  @override
+  String get createPresetTooltip => 'Create New Preset';
+
+  @override
+  String get officialTemplateCatalog => 'Official Watermark Template Catalog';
+
+  @override
+  String get officialTemplateDesc =>
+      'Choose banking or job application templates, or create personal custom presets saved on your device.';
+
+  @override
+  String get searchTemplateHint =>
+      'Search templates (bank, loan, hr, mortgage, rental)...';
+
+  @override
+  String showingTemplatesCount(int count) {
+    return 'Showing $count templates';
+  }
+
+  @override
+  String get createCustom => 'Create Custom';
+
+  @override
+  String get noTemplatesFound => 'No templates found matching the filter.';
+
+  @override
+  String get customBadge => 'Custom';
+
+  @override
+  String get deleteCustomPresetTooltip => 'Delete Custom Preset';
+
+  @override
+  String get activeBadge => 'Active';
+
+  @override
+  String patternInfo(String pattern) {
+    return 'Pattern: $pattern';
+  }
+
+  @override
+  String get usePreset => 'Use Preset';
+
+  @override
+  String presetApplied(String title) {
+    return 'Preset \"$title\" successfully applied!';
+  }
+
+  @override
+  String get createNewCustomPreset => 'Create New Custom Preset';
+
+  @override
+  String get presetName => 'Preset Name';
+
+  @override
+  String get presetNameHint => 'e.g.: Scholarship Verification';
+
+  @override
+  String get category => 'Category';
+
+  @override
+  String get categoryHint => 'e.g.: Education / Custom';
+
+  @override
+  String get purposeTemplateText => 'Purpose Template Text';
+
+  @override
+  String get purposeTemplateHint => 'e.g.: SCHOLARSHIP APPLICATION 2026';
+
+  @override
+  String get additionalSubtext => 'Additional Subtext';
+
+  @override
+  String get subtextTemplateHint => 'Internal notes';
+
+  @override
+  String get stampPattern => 'Stamp Pattern';
+
+  @override
+  String get savePreset => 'Save Preset';
+
+  @override
+  String customPresetSaved(String title) {
+    return 'Custom preset \"$title\" saved!';
+  }
+
+  @override
+  String get deletePresetConfirmTitle => 'Delete Preset?';
+
+  @override
+  String deletePresetConfirmBody(String title) {
+    return 'Preset \"$title\" will be removed from your local template list.';
+  }
+
+  @override
+  String get presetDeletedSuccess => 'Preset successfully deleted.';
+
+  @override
+  String get protectDigitalId => 'Protect Your Digital Identity';
+
+  @override
+  String get protectDigitalIdDesc =>
+      'Ministry of Communication and PDP Law No. 27/2022 require caution when sharing ID card photos to avoid unauthorized loan collaterals or fictitious account openings.';
+
+  @override
+  String get safeSharingChecklist => 'Safe Checklist Before Sending ID Card';
+
+  @override
+  String checklistDoneCount(int count) {
+    return '$count / 5 Completed';
+  }
+
+  @override
+  String get checkItem1 =>
+      'Institution/recipient name clearly written on watermark';
+
+  @override
+  String get checkItem2 => 'Latest transaction date included on the stamp';
+
+  @override
+  String get checkItem3 =>
+      'Watermark crosses over text data so it cannot be cropped';
+
+  @override
+  String get checkItem4 =>
+      'Signature redacted if verifier does not request a signature specimen';
+
+  @override
+  String get checkItem5 =>
+      'EXIF metadata and GPS coordinates removed from image';
+
+  @override
+  String get zeroServerTitle => 'Absolute Privacy (Zero Server Upload)';
+
+  @override
+  String get zeroServerDesc =>
+      'IDMark runs 100% in your browser or local device. ID card photos are never sent, stored, or processed on any external server.';
+
+  @override
+  String get dataSecuritySanitation => 'Data Sanitation & Security';
+
+  @override
+  String get autoExifSubtitle =>
+      'Removes GPS coordinate metadata tags and camera model from exported photos';
+
+  @override
+  String get defaultExportFormat => 'Default Export Format';
+
+  @override
+  String get localDeviceStorage => 'Local Device Storage';
+
+  @override
+  String get resetDefaultsDesc =>
+      'Reset templates and text settings to factory defaults';
+
+  @override
+  String get appLabel => 'Application';
 }
