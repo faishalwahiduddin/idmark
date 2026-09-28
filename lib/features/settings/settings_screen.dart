@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_constants.dart';
+import '../../core/models/watermark_config.dart';
 import '../../core/providers/app_providers.dart';
 
 class SettingsScreen extends ConsumerWidget {
@@ -9,12 +10,18 @@ class SettingsScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final storage = ref.watch(localStorageServiceProvider);
+    final autoStrip = storage.getAutoStripExif();
+    final config = ref.watch(watermarkConfigProvider);
+    final auditLogs = ref.watch(auditLogsProvider);
+    final customPresets = ref.watch(customPresetsProvider);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Privasi & Pengaturan'),
       ),
       body: ListView(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         children: [
           // Security Architecture Card
           Container(
@@ -55,9 +62,9 @@ class SettingsScreen extends ConsumerWidget {
           ),
           const SizedBox(height: 20),
 
-          // Pengaturan Bagian
+          // Sanitasi & Keamanan Data
           const Text(
-            'Preferensi Lokal',
+            'Sanitasi & Keamanan Data',
             style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w700,
@@ -66,46 +73,138 @@ class SettingsScreen extends ConsumerWidget {
           ),
           const SizedBox(height: 10),
           Card(
-            child: ListTile(
-              leading: const Icon(Icons.delete_sweep_outlined, color: AppColors.danger),
-              title: const Text('Hapus Preferensi Tersimpan', style: TextStyle(fontSize: 14, color: Colors.white)),
-              subtitle: const Text('Mengembalikan template dan pengaturan teks ke bawaan pabrik', style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
-              trailing: const Icon(Icons.chevron_right, color: Color(0xFF64748B)),
-              onTap: () async {
-                final confirm = await showDialog<bool>(
-                  context: context,
-                  builder: (ctx) => AlertDialog(
-                    backgroundColor: AppColors.bgSurface,
-                    title: const Text('Reset Preferensi?', style: TextStyle(color: Colors.white)),
-                    content: const Text(
-                      'Pengaturan watermark terakhir akan dikembalikan ke standar awal.',
-                      style: TextStyle(color: Color(0xFF94A3B8)),
-                    ),
-                    actions: [
-                      TextButton(
-                        onPressed: () => Navigator.pop(ctx, false),
-                        child: const Text('Batal'),
-                      ),
-                      ElevatedButton(
-                        onPressed: () => Navigator.pop(ctx, true),
-                        style: ElevatedButton.styleFrom(backgroundColor: AppColors.danger),
-                        child: const Text('Reset'),
-                      ),
-                    ],
+            child: Column(
+              children: [
+                SwitchListTile(
+                  secondary: const Icon(Icons.cleaning_services_outlined, color: AppColors.primaryLight),
+                  title: const Text('Sanitasi EXIF Otomatis', style: TextStyle(fontSize: 14, color: Colors.white)),
+                  subtitle: const Text(
+                    'Menghapus tag metadata koordinat GPS dan tipe kamera dari foto hasil ekspor',
+                    style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
                   ),
-                );
+                  value: autoStrip,
+                  activeThumbColor: AppColors.accent,
+                  onChanged: (val) async {
+                    await storage.setAutoStripExif(val);
+                    ref.read(watermarkConfigProvider.notifier).updateStripMetadata(val);
+                  },
+                ),
+                const Divider(color: AppColors.border, height: 1),
+                ListTile(
+                  leading: const Icon(Icons.file_present_outlined, color: AppColors.primaryLight),
+                  title: const Text('Format Ekspor Default', style: TextStyle(fontSize: 14, color: Colors.white)),
+                  subtitle: Text(
+                    config.exportFormat.label,
+                    style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
+                  ),
+                  trailing: DropdownButton<ExportFormat>(
+                    value: config.exportFormat,
+                    dropdownColor: AppColors.bgSurface,
+                    underline: const SizedBox(),
+                    items: ExportFormat.values.map((f) {
+                      return DropdownMenuItem(
+                        value: f,
+                        child: Text(f.name.toUpperCase(), style: const TextStyle(fontSize: 12, color: Colors.white)),
+                      );
+                    }).toList(),
+                    onChanged: (val) {
+                      if (val != null) {
+                        ref.read(watermarkConfigProvider.notifier).updateExportFormat(val);
+                      }
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 20),
 
-                if (confirm == true) {
-                  final storage = ref.read(localStorageServiceProvider);
-                  await storage.clearConfig();
-                  ref.read(watermarkConfigProvider.notifier).resetToDefault();
-                  if (context.mounted) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Preferensi berhasil direset.')),
+          // Penyimpanan Lokal
+          const Text(
+            'Penyimpanan Lokal Perangkat',
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w700,
+              color: Color(0xFF94A3B8),
+            ),
+          ),
+          const SizedBox(height: 10),
+          Card(
+            child: Column(
+              children: [
+                ListTile(
+                  leading: const Icon(Icons.history_edu, color: AppColors.primaryLight),
+                  title: const Text('Riwayat Audit Log', style: TextStyle(fontSize: 14, color: Colors.white)),
+                  subtitle: Text(
+                    'Tersimpan ${auditLogs.length} catatan ekspor on-device',
+                    style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
+                  ),
+                  trailing: TextButton(
+                    onPressed: auditLogs.isEmpty
+                        ? null
+                        : () async {
+                            await ref.read(auditLogsProvider.notifier).clearHistory();
+                            if (context.mounted) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(content: Text('Riwayat audit log dibersihkan.')),
+                              );
+                            }
+                          },
+                    child: const Text('Bersihkan', style: TextStyle(color: AppColors.danger, fontSize: 12)),
+                  ),
+                ),
+                const Divider(color: AppColors.border, height: 1),
+                ListTile(
+                  leading: const Icon(Icons.bookmark_border, color: AppColors.primaryLight),
+                  title: const Text('Preset Kustom Pengguna', style: TextStyle(fontSize: 14, color: Colors.white)),
+                  subtitle: Text(
+                    '${customPresets.length} template kustom tersimpan',
+                    style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
+                  ),
+                ),
+                const Divider(color: AppColors.border, height: 1),
+                ListTile(
+                  leading: const Icon(Icons.delete_sweep_outlined, color: AppColors.danger),
+                  title: const Text('Reset Pengaturan Bawaan', style: TextStyle(fontSize: 14, color: Colors.white)),
+                  subtitle: const Text('Mengembalikan template dan pengaturan teks ke bawaan pabrik',
+                      style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+                  trailing: const Icon(Icons.chevron_right, color: Color(0xFF64748B)),
+                  onTap: () async {
+                    final confirm = await showDialog<bool>(
+                      context: context,
+                      builder: (ctx) => AlertDialog(
+                        backgroundColor: AppColors.bgSurface,
+                        title: const Text('Reset Preferensi?', style: TextStyle(color: Colors.white)),
+                        content: const Text(
+                          'Pengaturan watermark terakhir akan dikembalikan ke standar awal Kominfo.',
+                          style: TextStyle(color: Color(0xFF94A3B8)),
+                        ),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(ctx, false),
+                            child: const Text('Batal'),
+                          ),
+                          ElevatedButton(
+                            onPressed: () => Navigator.pop(ctx, true),
+                            style: ElevatedButton.styleFrom(backgroundColor: AppColors.danger),
+                            child: const Text('Reset'),
+                          ),
+                        ],
+                      ),
                     );
-                  }
-                }
-              },
+
+                    if (confirm == true) {
+                      await storage.clearConfig();
+                      ref.read(watermarkConfigProvider.notifier).resetToDefault();
+                      if (context.mounted) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Preferensi berhasil direset ke rekomendasi Kominfo.')),
+                        );
+                      }
+                    }
+                  },
+                ),
+              ],
             ),
           ),
           const SizedBox(height: 24),
@@ -130,6 +229,8 @@ class SettingsScreen extends ConsumerWidget {
                   _buildAboutRow('Versi', '${AppConstants.appVersion}+1'),
                   const Divider(color: AppColors.border, height: 24),
                   _buildAboutRow('Domain', 'idmark.faishal.id'),
+                  const Divider(color: AppColors.border, height: 24),
+                  _buildAboutRow('Standar Kepatuhan', 'UU No. 27/2022 (PDP) & Kominfo'),
                   const Divider(color: AppColors.border, height: 24),
                   _buildAboutRow('Penyedia', 'Armada faishal.id'),
                 ],

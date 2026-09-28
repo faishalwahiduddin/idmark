@@ -1,10 +1,14 @@
-import 'dart:typed_data';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:share_plus/share_plus.dart';
 import '../../core/constants/app_colors.dart';
+import '../../core/models/audit_log_entry.dart';
+import '../../core/models/redaction_item.dart';
+import '../../core/models/watermark_config.dart';
 import '../../core/providers/app_providers.dart';
+import '../../core/services/pdf_export_service.dart';
 import '../../core/services/watermark_renderer_service.dart';
 import 'widgets/watermark_canvas_preview.dart';
 import 'widgets/watermark_control_panel.dart';
@@ -68,30 +72,64 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
         config: config,
       );
 
+      final sha256Hash = WatermarkRendererService.computeSha256(renderedBytes);
+
+      Uint8List finalOutputBytes;
+      String filename;
+      String mimeType;
+
+      if (config.exportFormat == ExportFormat.pdf) {
+        finalOutputBytes = await PdfExportService.generatePdfDocument(
+          imageBytes: renderedBytes,
+          config: config,
+          sha256Checksum: sha256Hash,
+        );
+        filename = 'idmark_${DateTime.now().millisecondsSinceEpoch}.pdf';
+        mimeType = 'application/pdf';
+      } else {
+        finalOutputBytes = renderedBytes;
+        filename = 'idmark_${DateTime.now().millisecondsSinceEpoch}.png';
+        mimeType = 'image/png';
+      }
+
+      // Record to local-only audit log
+      final auditEntry = AuditLogEntry(
+        id: 'audit_${DateTime.now().millisecondsSinceEpoch}',
+        timestamp: DateTime.now(),
+        purpose: config.purpose,
+        pattern: config.pattern.label,
+        exportFormat: config.exportFormat == ExportFormat.pdf ? 'PDF' : 'PNG',
+        fileSizeBytes: finalOutputBytes.lengthInBytes,
+        sha256Hash: sha256Hash,
+        redactionsCount: config.redactions.length,
+        metadataStripped: config.stripMetadata,
+        privacyScore: config.privacyScore,
+      );
+      await ref.read(auditLogsProvider.notifier).recordExport(auditEntry);
+
       if (!mounted) return;
 
       if (isShare) {
         final xFile = XFile.fromData(
-          renderedBytes,
-          name: 'idmark_${DateTime.now().millisecondsSinceEpoch}.png',
-          mimeType: 'image/png',
+          finalOutputBytes,
+          name: filename,
+          mimeType: mimeType,
         );
         await SharePlus.instance.share(
           ShareParams(
             files: [xFile],
-            subject: 'Dokumen Identitas Ber-Watermark',
-            text: 'Dokumen identitas ter-watermark aman via IDMark (${config.purpose})',
+            subject: 'Dokumen Identitas Ter-Watermark - ${config.purpose}',
+            text: 'Dokumen identitas ter-watermark aman via IDMark (${config.purpose}) • 100% on-device',
           ),
         );
       } else {
-        // Download / Save flow
-        _showExportSuccessDialog(renderedBytes);
+        _showExportSuccessDialog(finalOutputBytes, sha256Hash, config);
       }
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Gagal mengekspor gambar: $e'),
+            content: Text('Gagal mengekspor dokumen: $e'),
             backgroundColor: AppColors.danger,
           ),
         );
@@ -101,7 +139,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
     }
   }
 
-  void _showExportSuccessDialog(Uint8List bytes) {
+  void _showExportSuccessDialog(Uint8List bytes, String sha256Hash, WatermarkConfig config) {
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
@@ -118,7 +156,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Dokumen e-KTP Anda telah berhasil dibubuhi watermark resolusi penuh secara 100% on-device.',
+              'Dokumen e-KTP Anda telah berhasil diproteksi dengan watermark resolusi penuh dan sensor permanen secara 100% on-device.',
               style: TextStyle(color: Color(0xFFCBD5E1), fontSize: 13, height: 1.4),
             ),
             const SizedBox(height: 16),
@@ -129,15 +167,48 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(color: AppColors.border),
               ),
-              child: Row(
+              child: Column(
                 children: [
-                  const Icon(Icons.file_download_done, color: AppColors.primaryLight, size: 20),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: Text(
-                      'Ukuran output: ${(bytes.lengthInBytes / (1024 * 1024)).toStringAsFixed(2)} MB (PNG)',
-                      style: const TextStyle(fontSize: 12, color: Colors.white, fontWeight: FontWeight.w600),
-                    ),
+                  Row(
+                    children: [
+                      const Icon(Icons.file_download_done, color: AppColors.primaryLight, size: 18),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Text(
+                          'Format: ${config.exportFormat.name.toUpperCase()} • ${(bytes.lengthInBytes / 1024).toStringAsFixed(1)} KB',
+                          style: const TextStyle(fontSize: 12, color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const Divider(color: AppColors.border, height: 16),
+                  Row(
+                    children: [
+                      const Text(
+                        'SHA-256: ',
+                        style: TextStyle(fontSize: 10, color: Color(0xFF64748B), fontWeight: FontWeight.bold),
+                      ),
+                      Expanded(
+                        child: Text(
+                          sha256Hash.length > 20
+                              ? '${sha256Hash.substring(0, 12)}...${sha256Hash.substring(sha256Hash.length - 8)}'
+                              : sha256Hash,
+                          style: const TextStyle(fontSize: 10, fontFamily: 'monospace', color: Color(0xFF94A3B8)),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Clipboard.setData(ClipboardData(text: sha256Hash));
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Hash integritas disalin ke clipboard!'),
+                              duration: Duration(seconds: 1),
+                            ),
+                          );
+                        },
+                        child: const Icon(Icons.copy, size: 14, color: AppColors.primaryLight),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -187,7 +258,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
               children: [
                 Text('IDMark', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700)),
                 Text(
-                  'Secure ID & Document Watermark',
+                  'Secure ID Card & Privacy Shield',
                   style: TextStyle(fontSize: 11, color: Color(0xFF94A3B8), fontWeight: FontWeight.normal),
                 ),
               ],
@@ -211,29 +282,29 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
         ],
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         child: Center(
           child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 800),
+            constraints: const BoxConstraints(maxWidth: 820),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                // Top Kominfo Security Tip
+                // Top Kominfo & UU PDP Banner
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                   decoration: BoxDecoration(
                     color: AppColors.primary.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: AppColors.primary.withValues(alpha: 0.3)),
+                    border: Border.all(color: AppColors.primary.withValues(alpha: 0.25)),
                   ),
-                  child: const Row(
+                  child: Row(
                     children: [
-                      Icon(Icons.info_outline, size: 18, color: AppColors.primaryLight),
-                      SizedBox(width: 12),
+                      const Icon(Icons.security, size: 18, color: AppColors.primaryLight),
+                      const SizedBox(width: 12),
                       Expanded(
                         child: Text(
-                          'Saran Kominfo: Selalu beri watermark tujuan spesifik dan tanggal pada foto KTP agar tidak disalahgunakan untuk pinjol ilegal.',
-                          style: TextStyle(fontSize: 12, color: Color(0xFFE2E8F0), height: 1.4),
+                          'Standar UU PDP: Bubuhkan watermark tujuan spesifik, tanggal, dan sensor data sensitif sebelum membagikan foto e-KTP.',
+                          style: const TextStyle(fontSize: 12, color: Color(0xFFE2E8F0), height: 1.4),
                         ),
                       ),
                     ],
@@ -250,6 +321,15 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
                   onClear: () {
                     ref.read(selectedImageBytesProvider.notifier).setImage(null);
                   },
+                  onAddQuickRedaction: (target) {
+                    notifier.addRedaction(RedactionBox.fromPreset(target));
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text('Kotak sensor "${target.label}" ditambahkan.'),
+                        duration: const Duration(seconds: 1),
+                      ),
+                    );
+                  },
                 ),
                 const SizedBox(height: 20),
 
@@ -265,8 +345,14 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
                   onFontSizeChanged: notifier.updateFontSize,
                   onRotationChanged: notifier.updateRotation,
                   onIncludeDateChanged: notifier.updateIncludeDate,
+                  onAddRedaction: notifier.addRedaction,
+                  onRemoveRedaction: notifier.removeRedaction,
+                  onUpdateRedaction: notifier.updateRedaction,
+                  onStripMetadataChanged: notifier.updateStripMetadata,
+                  onExportFormatChanged: notifier.updateExportFormat,
+                  onJpegQualityChanged: notifier.updateJpegQuality,
                 ),
-                const SizedBox(height: 24),
+                const SizedBox(height: 20),
 
                 // Export & Share Actions
                 if (selectedImage != null)
@@ -286,7 +372,11 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
                                     child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
                                   )
                                 : const Icon(Icons.download, size: 20),
-                            label: Text(isProcessing ? 'Memproses Watermark...' : 'Simpan Dokumen Watermark'),
+                            label: Text(
+                              isProcessing
+                                  ? 'Memproses Dokumen On-Device...'
+                                  : 'Simpan Dokumen (${config.exportFormat.name.toUpperCase()})',
+                            ),
                             style: ElevatedButton.styleFrom(
                               padding: const EdgeInsets.symmetric(vertical: 16),
                             ),

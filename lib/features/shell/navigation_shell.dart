@@ -42,6 +42,11 @@ class NavigationShell extends StatelessWidget {
               label: 'Preset',
             ),
             NavigationDestination(
+              icon: Icon(Icons.history_outlined),
+              selectedIcon: Icon(Icons.history, color: AppColors.primaryLight),
+              label: 'Riwayat',
+            ),
+            NavigationDestination(
               icon: Icon(Icons.shield_outlined),
               selectedIcon: Icon(Icons.shield, color: AppColors.primaryLight),
               label: 'Panduan',

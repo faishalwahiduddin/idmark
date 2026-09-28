@@ -30,4 +30,7 @@ class AppColors {
   static const Color watermarkBlue = Color(0xFF2563EB);
   static const Color watermarkDark = Color(0xFF1E293B);
   static const Color watermarkWhite = Color(0xFFF8FAFC);
+  static const Color watermarkEmerald = Color(0xFF059669);
+  static const Color watermarkAmber = Color(0xFFD97706);
+  static const Color watermarkPurple = Color(0xFF7C3AED);
 }

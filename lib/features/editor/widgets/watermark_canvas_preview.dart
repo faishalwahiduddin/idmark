@@ -2,14 +2,16 @@ import 'dart:math' as math;
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
+import '../../../../core/models/redaction_item.dart';
 import '../../../../core/models/watermark_config.dart';
 
-class WatermarkCanvasPreview extends StatelessWidget {
+class WatermarkCanvasPreview extends StatefulWidget {
   final Uint8List? imageBytes;
   final WatermarkConfig config;
   final VoidCallback onPickGallery;
   final VoidCallback onPickCamera;
   final VoidCallback onClear;
+  final Function(RedactionPresetTarget)? onAddQuickRedaction;
 
   const WatermarkCanvasPreview({
     super.key,
@@ -18,11 +20,19 @@ class WatermarkCanvasPreview extends StatelessWidget {
     required this.onPickGallery,
     required this.onPickCamera,
     required this.onClear,
+    this.onAddQuickRedaction,
   });
 
   @override
+  State<WatermarkCanvasPreview> createState() => _WatermarkCanvasPreviewState();
+}
+
+class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
+  bool _isComparingOriginal = false;
+
+  @override
   Widget build(BuildContext context) {
-    if (imageBytes == null) {
+    if (widget.imageBytes == null) {
       return _buildUploadPrompt(context);
     }
 
@@ -33,44 +43,157 @@ class WatermarkCanvasPreview extends StatelessWidget {
         children: [
           // Live Preview Container with Watermark Overlay Painter
           Container(
-            constraints: const BoxConstraints(maxHeight: 400),
+            constraints: const BoxConstraints(maxHeight: 420),
             color: Colors.black,
             child: Stack(
               alignment: Alignment.center,
               children: [
                 Image.memory(
-                  imageBytes!,
+                  widget.imageBytes!,
                   fit: BoxFit.contain,
                   width: double.infinity,
                 ),
-                Positioned.fill(
-                  child: CustomPaint(
-                    painter: _WatermarkOverlayPainter(config: config),
+                if (!_isComparingOriginal)
+                  Positioned.fill(
+                    child: CustomPaint(
+                      painter: _WatermarkOverlayPainter(config: widget.config),
+                    ),
+                  ),
+
+                // Top Floating Privacy Meter Badge
+                Positioned(
+                  top: 12,
+                  right: 12,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    decoration: BoxDecoration(
+                      color: AppColors.bgSurface.withValues(alpha: 0.9),
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(
+                        color: widget.config.privacyScore >= 80 ? AppColors.accent : AppColors.warning,
+                        width: 1.5,
+                      ),
+                      boxShadow: const [
+                        BoxShadow(color: Colors.black38, blurRadius: 6, offset: Offset(0, 2)),
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          widget.config.privacyScore >= 80 ? Icons.security : Icons.shield_outlined,
+                          size: 14,
+                          color: widget.config.privacyScore >= 80 ? AppColors.accent : AppColors.warning,
+                        ),
+                        const SizedBox(width: 6),
+                        Text(
+                          'Proteksi ${widget.config.privacyGrade} (${widget.config.privacyScore}%)',
+                          style: TextStyle(
+                            fontSize: 11,
+                            fontWeight: FontWeight.w800,
+                            color: widget.config.privacyScore >= 80 ? AppColors.accent : AppColors.warning,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+
+                // Top Left Hold-To-Compare Button
+                Positioned(
+                  top: 12,
+                  left: 12,
+                  child: GestureDetector(
+                    onTapDown: (_) => setState(() => _isComparingOriginal = true),
+                    onTapUp: (_) => setState(() => _isComparingOriginal = false),
+                    onTapCancel: () => setState(() => _isComparingOriginal = false),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                      decoration: BoxDecoration(
+                        color: _isComparingOriginal
+                            ? AppColors.primary
+                            : AppColors.bgSurface.withValues(alpha: 0.85),
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(color: AppColors.border),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            _isComparingOriginal ? Icons.visibility : Icons.visibility_outlined,
+                            size: 13,
+                            color: Colors.white,
+                          ),
+                          const SizedBox(width: 5),
+                          Text(
+                            _isComparingOriginal ? 'Melihat Asli' : 'Tahan: Bandingkan',
+                            style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w600, color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               ],
             ),
           ),
+
+          // Quick Redaction Bar (If callback provided)
+          if (widget.onAddQuickRedaction != null)
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+              color: AppColors.bgDark,
+              child: Row(
+                children: [
+                  const Icon(Icons.remove_red_eye_outlined, size: 14, color: AppColors.primaryLight),
+                  const SizedBox(width: 8),
+                  const Text(
+                    'Sensor Cepat:',
+                    style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: Color(0xFF94A3B8)),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          _buildQuickSensorChip('NIK', RedactionPresetTarget.nik),
+                          const SizedBox(width: 6),
+                          _buildQuickSensorChip('Tanda Tangan', RedactionPresetTarget.signature),
+                          const SizedBox(width: 6),
+                          _buildQuickSensorChip('Alamat', RedactionPresetTarget.address),
+                          const SizedBox(width: 6),
+                          _buildQuickSensorChip('Tgl Lahir', RedactionPresetTarget.birthPlace),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
           // Action Bar
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
             color: AppColors.bgCard,
             child: Row(
               children: [
                 const Icon(Icons.verified_user_outlined, size: 16, color: AppColors.accent),
                 const SizedBox(width: 8),
-                const Expanded(
+                Expanded(
                   child: Text(
-                    'Pratinjau Watermark Aktif',
-                    style: TextStyle(
-                      fontSize: 13,
+                    widget.config.redactions.isNotEmpty
+                        ? 'Watermark Aktif (${widget.config.redactions.length} sensor)'
+                        : 'Pratinjau Watermark Aktif',
+                    style: const TextStyle(
+                      fontSize: 12,
                       fontWeight: FontWeight.w600,
                       color: Color(0xFFE2E8F0),
                     ),
                   ),
                 ),
                 TextButton.icon(
-                  onPressed: onPickGallery,
+                  onPressed: widget.onPickGallery,
                   icon: const Icon(Icons.sync, size: 16),
                   label: const Text('Ganti Foto', style: TextStyle(fontSize: 12)),
                   style: TextButton.styleFrom(
@@ -79,7 +202,7 @@ class WatermarkCanvasPreview extends StatelessWidget {
                   ),
                 ),
                 IconButton(
-                  onPressed: onClear,
+                  onPressed: widget.onClear,
                   icon: const Icon(Icons.delete_outline, size: 18, color: AppColors.danger),
                   tooltip: 'Hapus Gambar',
                   visualDensity: VisualDensity.compact,
@@ -88,6 +211,45 @@ class WatermarkCanvasPreview extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildQuickSensorChip(String label, RedactionPresetTarget target) {
+    final isAlreadyAdded = widget.config.redactions.any((r) => r.label.contains(label));
+    return InkWell(
+      onTap: () => widget.onAddQuickRedaction?.call(target),
+      borderRadius: BorderRadius.circular(12),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+        decoration: BoxDecoration(
+          color: isAlreadyAdded
+              ? AppColors.primary.withValues(alpha: 0.25)
+              : AppColors.bgSurface,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            color: isAlreadyAdded ? AppColors.primaryLight : AppColors.border,
+          ),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(
+              isAlreadyAdded ? Icons.check : Icons.add,
+              size: 11,
+              color: isAlreadyAdded ? AppColors.primaryLight : const Color(0xFFCBD5E1),
+            ),
+            const SizedBox(width: 4),
+            Text(
+              label,
+              style: TextStyle(
+                fontSize: 11,
+                color: isAlreadyAdded ? AppColors.primaryLight : const Color(0xFFCBD5E1),
+                fontWeight: isAlreadyAdded ? FontWeight.bold : FontWeight.normal,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -116,6 +278,7 @@ class WatermarkCanvasPreview extends StatelessWidget {
             const SizedBox(height: 20),
             const Text(
               'Unggah Foto e-KTP / Identitas',
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w700,
@@ -124,7 +287,7 @@ class WatermarkCanvasPreview extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             const Text(
-              'Pilih foto e-KTP, SIM, atau Paspor yang akan diberi watermark tujuan dan tanggal.',
+              'Pilih foto e-KTP, SIM, atau Paspor untuk menambahkan stempel tujuan, tanggal, dan sensor data vital.',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 13,
@@ -146,7 +309,7 @@ class WatermarkCanvasPreview extends StatelessWidget {
                   Icon(Icons.shield_outlined, size: 14, color: AppColors.accent),
                   SizedBox(width: 6),
                   Text(
-                    '100% On-Device • Gambar tidak dikirim ke server',
+                    '100% On-Device • Gambar tidak pernah dikirim ke server',
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w600,
@@ -163,12 +326,12 @@ class WatermarkCanvasPreview extends StatelessWidget {
               alignment: WrapAlignment.center,
               children: [
                 ElevatedButton.icon(
-                  onPressed: onPickGallery,
+                  onPressed: widget.onPickGallery,
                   icon: const Icon(Icons.photo_library_outlined, size: 18),
                   label: const Text('Buka Galeri'),
                 ),
                 OutlinedButton.icon(
-                  onPressed: onPickCamera,
+                  onPressed: widget.onPickCamera,
                   icon: const Icon(Icons.camera_alt_outlined, size: 18),
                   label: const Text('Ambil Foto'),
                 ),
@@ -192,6 +355,86 @@ class _WatermarkOverlayPainter extends CustomPainter {
 
     final width = size.width;
     final height = size.height;
+
+    // 1. Draw Redaction Overlays
+    for (final box in config.redactions) {
+      final rect = Rect.fromLTWH(
+        box.left * width,
+        box.top * height,
+        box.width * width,
+        box.height * height,
+      );
+
+      switch (box.type) {
+        case RedactionType.blackout:
+          final paint = Paint()
+            ..color = Colors.black
+            ..style = PaintingStyle.fill;
+          canvas.drawRect(rect, paint);
+          final borderPaint = Paint()
+            ..color = Colors.white70
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 1.0;
+          canvas.drawRect(rect, borderPaint);
+
+          final textPainter = TextPainter(
+            text: TextSpan(
+              text: '[DISENSOR: ${box.label.toUpperCase()}]',
+              style: const TextStyle(
+                color: Colors.white70,
+                fontSize: 9,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            textDirection: TextDirection.ltr,
+          );
+          textPainter.layout(maxWidth: rect.width - 4);
+          textPainter.paint(
+            canvas,
+            Offset(
+              rect.left + (rect.width - textPainter.width) / 2,
+              rect.top + (rect.height - textPainter.height) / 2,
+            ),
+          );
+          break;
+
+        case RedactionType.mosaic:
+          final blockSize = math.max(4.0, rect.height / 4.0);
+          final p1 = Paint()..color = const Color(0xFF1E293B);
+          final p2 = Paint()..color = const Color(0xFF0F172A);
+          int row = 0;
+          for (double y = rect.top; y < rect.bottom; y += blockSize) {
+            int col = 0;
+            final bh = math.min(blockSize, rect.bottom - y);
+            for (double x = rect.left; x < rect.right; x += blockSize) {
+              final bw = math.min(blockSize, rect.right - x);
+              canvas.drawRect(Rect.fromLTWH(x, y, bw, bh), (row + col) % 2 == 0 ? p1 : p2);
+              col++;
+            }
+            row++;
+          }
+          final borderPaint = Paint()
+            ..color = const Color(0xFF64748B)
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 1.0;
+          canvas.drawRect(rect, borderPaint);
+          break;
+
+        case RedactionType.blur:
+          final paint = Paint()
+            ..color = const Color(0xEE1E293B)
+            ..style = PaintingStyle.fill;
+          canvas.drawRect(rect, paint);
+          final borderPaint = Paint()
+            ..color = const Color(0xFFEF4444)
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 1.5;
+          canvas.drawRect(rect, borderPaint);
+          break;
+      }
+    }
+
+    // 2. Draw Watermark Pattern
     final scale = math.max(width, height) / 450.0;
     final fontSize = (config.fontSize * 0.55) * scale;
     final text = config.renderedText;
@@ -209,6 +452,15 @@ class _WatermarkOverlayPainter extends CustomPainter {
         break;
       case WatermarkPattern.cornerStamp:
         _drawCornerStamp(canvas, width, height, text, color, fontSize);
+        break;
+      case WatermarkPattern.securitySeal:
+        _drawSecuritySeal(canvas, width, height, color, fontSize);
+        break;
+      case WatermarkPattern.crossStamp:
+        _drawCrossStamp(canvas, width, height, text, color, fontSize);
+        break;
+      case WatermarkPattern.qrBadge:
+        _drawQrBadge(canvas, width, height, color, fontSize);
         break;
     }
   }
@@ -359,7 +611,7 @@ class _WatermarkOverlayPainter extends CustomPainter {
   ) {
     final stampWidth = fontSize * 9;
     final stampHeight = fontSize * 3.2;
-    final margin = 12.0;
+    const margin = 12.0;
 
     final stampRect = Rect.fromLTWH(
       width - stampWidth - margin,
@@ -371,13 +623,13 @@ class _WatermarkOverlayPainter extends CustomPainter {
     final bgPaint = Paint()
       ..color = Colors.white.withValues(alpha: 0.9)
       ..style = PaintingStyle.fill;
-    canvas.drawRRect(RRect.fromRectAndRadius(stampRect, Radius.circular(6)), bgPaint);
+    canvas.drawRRect(RRect.fromRectAndRadius(stampRect, const Radius.circular(6)), bgPaint);
 
     final borderPaint = Paint()
       ..color = color
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2.0;
-    canvas.drawRRect(RRect.fromRectAndRadius(stampRect, Radius.circular(6)), borderPaint);
+    canvas.drawRRect(RRect.fromRectAndRadius(stampRect, const Radius.circular(6)), borderPaint);
 
     final painter = TextPainter(
       text: TextSpan(
@@ -398,6 +650,206 @@ class _WatermarkOverlayPainter extends CustomPainter {
         stampRect.top + (stampHeight - painter.height) / 2,
       ),
     );
+  }
+
+  void _drawSecuritySeal(
+    Canvas canvas,
+    double width,
+    double height,
+    Color color,
+    double fontSize,
+  ) {
+    canvas.save();
+    canvas.translate(width / 2, height / 2);
+
+    final radius = fontSize * 4.0;
+    final outerPaint = Paint()
+      ..color = color
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 2.5;
+    canvas.drawCircle(Offset.zero, radius, outerPaint);
+
+    final innerPaint = Paint()
+      ..color = color
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 1.0;
+    canvas.drawCircle(Offset.zero, radius * 0.85, innerPaint);
+
+    final bgPaint = Paint()
+      ..color = Colors.white.withValues(alpha: (config.opacity * 0.35).clamp(0.05, 0.35))
+      ..style = PaintingStyle.fill;
+    canvas.drawCircle(Offset.zero, radius, bgPaint);
+
+    final headerPainter = TextPainter(
+      text: TextSpan(
+        text: '★ RESMI DIVERIFIKASI ★',
+        style: TextStyle(color: color, fontSize: fontSize * 0.45, fontWeight: FontWeight.bold),
+      ),
+      textDirection: TextDirection.ltr,
+    );
+    headerPainter.layout();
+    headerPainter.paint(canvas, Offset(-headerPainter.width / 2, -radius * 0.55));
+
+    final textPainter = TextPainter(
+      text: TextSpan(
+        text: config.purpose.toUpperCase(),
+        style: TextStyle(color: color, fontSize: fontSize * 0.55, fontWeight: FontWeight.w900),
+      ),
+      textDirection: TextDirection.ltr,
+      textAlign: TextAlign.center,
+    );
+    textPainter.layout(maxWidth: radius * 1.5);
+    textPainter.paint(canvas, Offset(-textPainter.width / 2, -textPainter.height / 2));
+
+    if (config.includeDate) {
+      final day = config.transactionDate.day.toString().padLeft(2, '0');
+      final month = config.transactionDate.month.toString().padLeft(2, '0');
+      final year = config.transactionDate.year.toString();
+      final datePainter = TextPainter(
+        text: TextSpan(
+          text: 'TGL: $day-$month-$year',
+          style: TextStyle(color: color, fontSize: fontSize * 0.45, fontWeight: FontWeight.w700),
+        ),
+        textDirection: TextDirection.ltr,
+      );
+      datePainter.layout();
+      datePainter.paint(canvas, Offset(-datePainter.width / 2, radius * 0.45));
+    }
+
+    canvas.restore();
+  }
+
+  void _drawCrossStamp(
+    Canvas canvas,
+    double width,
+    double height,
+    String text,
+    Color color,
+    double fontSize,
+  ) {
+    // 1st diagonal band (-25 deg)
+    canvas.save();
+    canvas.translate(width / 2, height / 2);
+    canvas.rotate((-25.0 * math.pi) / 180.0);
+
+    final painter1 = TextPainter(
+      text: TextSpan(
+        text: text,
+        style: TextStyle(color: color, fontSize: fontSize * 0.8, fontWeight: FontWeight.w800),
+      ),
+      textDirection: TextDirection.ltr,
+    );
+    painter1.layout();
+
+    final rect1 = Rect.fromCenter(
+      center: Offset.zero,
+      width: painter1.width + 30,
+      height: painter1.height + 14,
+    );
+    final bg1 = Paint()
+      ..color = Colors.white.withValues(alpha: (config.opacity * 0.35).clamp(0.05, 0.35))
+      ..style = PaintingStyle.fill;
+    final stroke1 = Paint()
+      ..color = color
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 1.5;
+    canvas.drawRRect(RRect.fromRectAndRadius(rect1, const Radius.circular(4)), bg1);
+    canvas.drawRRect(RRect.fromRectAndRadius(rect1, const Radius.circular(4)), stroke1);
+    painter1.paint(canvas, Offset(-painter1.width / 2, -painter1.height / 2));
+    canvas.restore();
+
+    // 2nd diagonal band (+25 deg)
+    canvas.save();
+    canvas.translate(width / 2, height / 2);
+    canvas.rotate((25.0 * math.pi) / 180.0);
+
+    final subtext = config.customSubtext.trim().isNotEmpty
+        ? config.customSubtext.trim()
+        : 'VERIFIKASI IDENTITAS';
+    final painter2 = TextPainter(
+      text: TextSpan(
+        text: subtext.toUpperCase(),
+        style: TextStyle(color: color, fontSize: fontSize * 0.7, fontWeight: FontWeight.w800),
+      ),
+      textDirection: TextDirection.ltr,
+    );
+    painter2.layout();
+
+    final rect2 = Rect.fromCenter(
+      center: Offset.zero,
+      width: painter2.width + 30,
+      height: painter2.height + 14,
+    );
+    canvas.drawRRect(RRect.fromRectAndRadius(rect2, const Radius.circular(4)), bg1);
+    canvas.drawRRect(RRect.fromRectAndRadius(rect2, const Radius.circular(4)), stroke1);
+    painter2.paint(canvas, Offset(-painter2.width / 2, -painter2.height / 2));
+    canvas.restore();
+  }
+
+  void _drawQrBadge(
+    Canvas canvas,
+    double width,
+    double height,
+    Color color,
+    double fontSize,
+  ) {
+    final badgeWidth = fontSize * 9.5;
+    final badgeHeight = fontSize * 3.4;
+    const margin = 12.0;
+    final badgeRect = Rect.fromLTWH(
+      width - badgeWidth - margin,
+      height - badgeHeight - margin,
+      badgeWidth,
+      badgeHeight,
+    );
+
+    final bgPaint = Paint()
+      ..color = Colors.white.withValues(alpha: 0.95)
+      ..style = PaintingStyle.fill;
+    canvas.drawRRect(RRect.fromRectAndRadius(badgeRect, const Radius.circular(6)), bgPaint);
+
+    final borderPaint = Paint()
+      ..color = color
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 2.0;
+    canvas.drawRRect(RRect.fromRectAndRadius(badgeRect, const Radius.circular(6)), borderPaint);
+
+    // QR Box
+    final qrBoxSize = badgeHeight - 12;
+    final qrBoxRect = Rect.fromLTWH(badgeRect.left + 6, badgeRect.top + 6, qrBoxSize, qrBoxSize);
+    canvas.drawRect(qrBoxRect, Paint()..color = const Color(0xFF0F172A));
+
+    // Simulated QR dots
+    final step = qrBoxSize / 4;
+    final pWhite = Paint()..color = Colors.white;
+    for (int i = 0; i < 4; i++) {
+      for (int j = 0; j < 4; j++) {
+        if ((i + j) % 2 == 1) {
+          canvas.drawRect(Rect.fromLTWH(qrBoxRect.left + (i * step), qrBoxRect.top + (j * step), step * 0.8, step * 0.8), pWhite);
+        }
+      }
+    }
+
+    final rightX = qrBoxRect.right + 8;
+    final titlePainter = TextPainter(
+      text: const TextSpan(
+        text: 'IDMARK VERIFIED',
+        style: TextStyle(color: Color(0xFF0284C7), fontSize: 9, fontWeight: FontWeight.bold),
+      ),
+      textDirection: TextDirection.ltr,
+    );
+    titlePainter.layout();
+    titlePainter.paint(canvas, Offset(rightX, badgeRect.top + 6));
+
+    final purposePainter = TextPainter(
+      text: TextSpan(
+        text: config.purpose.toUpperCase(),
+        style: TextStyle(color: color, fontSize: fontSize * 0.45, fontWeight: FontWeight.w800),
+      ),
+      textDirection: TextDirection.ltr,
+    );
+    purposePainter.layout(maxWidth: badgeRect.right - rightX - 6);
+    purposePainter.paint(canvas, Offset(rightX, badgeRect.top + 18));
   }
 
   @override

@@ -64,4 +64,37 @@ class AppValidators {
     }
     return null;
   }
+
+  /// Validates export JPEG quality factor (10 to 100).
+  static String? validateQuality(int quality) {
+    if (quality < 10 || quality > 100) {
+      return 'Kualitas gambar harus antara 10% dan 100%';
+    }
+    return null;
+  }
+
+  /// Validates custom preset title.
+  static String? validatePresetTitle(String? value) {
+    if (value == null || value.trim().isEmpty) {
+      return 'Nama preset tidak boleh kosong';
+    }
+    if (value.trim().length < 3) {
+      return 'Nama preset minimal 3 karakter';
+    }
+    if (value.trim().length > 50) {
+      return 'Nama preset maksimal 50 karakter';
+    }
+    return null;
+  }
+
+  /// Validates custom preset category.
+  static String? validatePresetCategory(String? value) {
+    if (value == null || value.trim().isEmpty) {
+      return 'Kategori preset tidak boleh kosong';
+    }
+    if (value.trim().length > 30) {
+      return 'Kategori maksimal 30 karakter';
+    }
+    return null;
+  }
 }

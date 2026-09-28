@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 import '../utils/validators.dart';
+import 'redaction_item.dart';
 
 enum WatermarkPattern {
   diagonalBand('Pita Melintang', 'Satu garis diagonal tebal melintang di tengah dokumen (Rekomendasi Kominfo)'),
   repeatedGrid('Pola Berulang (Grid)', 'Pola teks berulang di seluruh permukaan foto untuk proteksi maksimal'),
   bottomBar('Pita Bawah', 'Pita teks solid di bagian bawah dokumen'),
-  cornerStamp('Cap Sudut', 'Cap verifikasi di sudut kanan bawah');
+  cornerStamp('Cap Sudut', 'Cap verifikasi di sudut kanan bawah'),
+  securitySeal('Segel Resmi Melingkar', 'Stempel segel melingkar ganda dengan border verifikasi'),
+  crossStamp('Silang Ganda (X-Band)', 'Dua garis diagonal menyilang melindungi seluruh isi dokumen'),
+  qrBadge('Lencana QR Verifikasi', 'Lencana verifikasi ber-QR code keabsahan tujuan dan tanggal');
 
   final String label;
   final String description;
@@ -17,11 +21,24 @@ enum WatermarkColorOption {
   white('Putih Bersih', AppColors.watermarkWhite),
   dark('Hitam Pekat', AppColors.watermarkDark),
   red('Merah Resmi', AppColors.watermarkRed),
-  blue('Biru Verifikasi', AppColors.watermarkBlue);
+  blue('Biru Verifikasi', AppColors.watermarkBlue),
+  emerald('Hijau Aman', AppColors.watermarkEmerald),
+  amber('Kuning Peringatan', AppColors.watermarkAmber),
+  purple('Ungu Segel', AppColors.watermarkPurple);
 
   final String label;
   final Color color;
   const WatermarkColorOption(this.label, this.color);
+}
+
+enum ExportFormat {
+  png('PNG (Resolusi Penuh)', 'Format lossless kualitas asli tanpa penurunan ketajaman'),
+  jpeg('JPEG (Ukuran Ringan)', 'Format terkompresi hemat kuota untuk upload portal cepat'),
+  pdf('Dokumen PDF (Siap Cetak)', 'Format berkas dokumen resmi standar kantor & perbankan');
+
+  final String label;
+  final String description;
+  const ExportFormat(this.label, this.description);
 }
 
 class WatermarkConfig {
@@ -35,6 +52,10 @@ class WatermarkConfig {
   final double rotationAngle;
   final bool includeDate;
   final bool isUppercase;
+  final List<RedactionBox> redactions;
+  final bool stripMetadata;
+  final ExportFormat exportFormat;
+  final int jpegQuality;
 
   const WatermarkConfig({
     required this.purpose,
@@ -47,6 +68,10 @@ class WatermarkConfig {
     this.rotationAngle = -22.0,
     this.includeDate = true,
     this.isUppercase = true,
+    this.redactions = const [],
+    this.stripMetadata = true,
+    this.exportFormat = ExportFormat.png,
+    this.jpegQuality = 90,
   });
 
   /// Factory default with standard Kominfo recommendation
@@ -62,7 +87,45 @@ class WatermarkConfig {
       rotationAngle: -22.0,
       includeDate: true,
       isUppercase: true,
+      redactions: const [],
+      stripMetadata: true,
+      exportFormat: ExportFormat.png,
+      jpegQuality: 90,
     );
+  }
+
+  /// Calculates privacy compliance score (0-100) based on UU PDP standards
+  int get privacyScore {
+    int score = 0;
+    if (purpose.trim().length >= 5) score += 30;
+    if (includeDate) score += 20;
+    if (stripMetadata) score += 20;
+    if (redactions.isNotEmpty) score += 15;
+    if (pattern == WatermarkPattern.repeatedGrid ||
+        pattern == WatermarkPattern.crossStamp ||
+        pattern == WatermarkPattern.securitySeal) {
+      score += 15;
+    } else {
+      score += 10;
+    }
+    return score.clamp(0, 100);
+  }
+
+  String get privacyGrade {
+    final s = privacyScore;
+    if (s >= 90) return 'A+';
+    if (s >= 80) return 'A';
+    if (s >= 65) return 'B';
+    if (s >= 50) return 'C';
+    return 'D';
+  }
+
+  String get privacyGradeDescription {
+    final s = privacyScore;
+    if (s >= 90) return 'Proteksi Maksimal • Memenuhi rekomendasi Kominfo & UU PDP';
+    if (s >= 80) return 'Proteksi Sangat Baik • Dokumen aman dibagikan';
+    if (s >= 65) return 'Proteksi Cukup • Disarankan menambah tanggal dan sensor NIK';
+    return 'Proteksi Lemah • Tambahkan tujuan spesifik dan tanggal';
   }
 
   /// Validates state consistency before any mutation/saving (§VAL)
@@ -82,6 +145,13 @@ class WatermarkConfig {
 
     final rErr = AppValidators.validateRotation(rotationAngle);
     if (rErr != null) errors.add(rErr);
+
+    final qErr = AppValidators.validateQuality(jpegQuality);
+    if (qErr != null) errors.add(qErr);
+
+    for (final r in redactions) {
+      errors.addAll(r.validate());
+    }
 
     return errors;
   }
@@ -108,6 +178,10 @@ class WatermarkConfig {
     double? rotationAngle,
     bool? includeDate,
     bool? isUppercase,
+    List<RedactionBox>? redactions,
+    bool? stripMetadata,
+    ExportFormat? exportFormat,
+    int? jpegQuality,
   }) {
     final updated = WatermarkConfig(
       purpose: purpose ?? this.purpose,
@@ -120,6 +194,10 @@ class WatermarkConfig {
       rotationAngle: rotationAngle ?? this.rotationAngle,
       includeDate: includeDate ?? this.includeDate,
       isUppercase: isUppercase ?? this.isUppercase,
+      redactions: redactions ?? this.redactions,
+      stripMetadata: stripMetadata ?? this.stripMetadata,
+      exportFormat: exportFormat ?? this.exportFormat,
+      jpegQuality: jpegQuality ?? this.jpegQuality,
     );
 
     // Validate on mutation (§VAL)
@@ -142,10 +220,23 @@ class WatermarkConfig {
       'rotationAngle': rotationAngle,
       'includeDate': includeDate,
       'isUppercase': isUppercase,
+      'redactions': redactions.map((r) => r.toJson()).toList(),
+      'stripMetadata': stripMetadata,
+      'exportFormat': exportFormat.name,
+      'jpegQuality': jpegQuality,
     };
   }
 
   factory WatermarkConfig.fromJson(Map<String, dynamic> json) {
+    final redactionsList = <RedactionBox>[];
+    if (json['redactions'] is List) {
+      for (final item in (json['redactions'] as List)) {
+        if (item is Map<String, dynamic>) {
+          redactionsList.add(RedactionBox.fromJson(item));
+        }
+      }
+    }
+
     return WatermarkConfig(
       purpose: json['purpose'] as String? ?? 'VERIFIKASI',
       transactionDate: json['transactionDate'] != null
@@ -165,6 +256,13 @@ class WatermarkConfig {
       rotationAngle: (json['rotationAngle'] as num?)?.toDouble() ?? -22.0,
       includeDate: json['includeDate'] as bool? ?? true,
       isUppercase: json['isUppercase'] as bool? ?? true,
+      redactions: redactionsList,
+      stripMetadata: json['stripMetadata'] as bool? ?? true,
+      exportFormat: ExportFormat.values.firstWhere(
+        (f) => f.name == json['exportFormat'],
+        orElse: () => ExportFormat.png,
+      ),
+      jpegQuality: (json['jpegQuality'] as num?)?.toInt() ?? 90,
     );
   }
 }

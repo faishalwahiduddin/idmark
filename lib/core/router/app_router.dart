@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../features/editor/editor_screen.dart';
 import '../../features/guide/kominfo_guide_screen.dart';
+import '../../features/history/history_screen.dart';
 import '../../features/presets/presets_screen.dart';
 import '../../features/settings/settings_screen.dart';
 import '../../features/shell/navigation_shell.dart';
@@ -30,6 +31,14 @@ final appRouter = GoRouter(
             GoRoute(
               path: '/presets',
               builder: (context, state) => const PresetsScreen(),
+            ),
+          ],
+        ),
+        StatefulShellBranch(
+          routes: [
+            GoRoute(
+              path: '/history',
+              builder: (context, state) => const HistoryScreen(),
             ),
           ],
         ),

@@ -1,0 +1,81 @@
+{
+  "appName": "IDMark",
+  "appDescription": "Secure ID & Document Watermark",
+  "tabWatermark": "Watermark",
+  "tabPreset": "Preset",
+  "tabHistory": "Riwayat",
+  "tabGuide": "Panduan",
+  "tabSettings": "Pengaturan",
+  "settings": "Pengaturan",
+  "appearance": "Tampilan",
+  "theme": "Tema",
+  "themeLight": "Terang",
+  "themeDark": "Gelap",
+  "themeSystem": "Sistem",
+  "selectTheme": "Pilih Tema",
+  "language": "Bahasa",
+  "selectLanguage": "Pilih Bahasa",
+  "localeIndonesian": "Bahasa Indonesia",
+  "localeEnglish": "English",
+  "localeArabic": "العربية",
+  "localeJavanese": "Basa Jawa",
+  "localeSundanese": "Basa Sunda",
+  "localeChinese": "中文",
+  "localeJapanese": "日本語",
+  "localeSpanish": "Español",
+  "about": "Tentang",
+  "cancel": "Batal",
+  "save": "Simpan",
+  "delete": "Hapus",
+  "edit": "Edit",
+  "reset": "Reset",
+  "kominfoGuide": "Panduan Kominfo",
+  "history": "Riwayat Audit Log",
+  "presets": "Preset Kustom Pengguna",
+  "resetDefaults": "Reset Pengaturan Bawaan",
+  "resetWarningTitle": "Reset Preferensi?",
+  "resetWarningBody": "Pengaturan watermark terakhir akan dikembalikan ke standar awal Kominfo.",
+  "aboutApp": "Tentang Aplikasi",
+  "appVersion": "Versi",
+  "appDomain": "Domain",
+  "appCompliance": "Standar Kepatuhan",
+  "appProvider": "Penyedia",
+  "clearHistory": "Bersihkan",
+  "historyCleared": "Riwayat audit log dibersihkan.",
+  "preferencesReset": "Preferensi berhasil direset ke rekomendasi Kominfo.",
+  "guideRules": "4 Aturan Pokok Watermark Kominfo",
+  "guideRule1Title": "Tuliskan Nama Lembaga & Tujuan Spesifik",
+  "guideRule1Desc": "Jangan hanya menulis \"VERIFIKASI\". Tuliskan lengkap seperti \"VERIFIKASI PINJAMAN PT BANK ABC\". Dengan begitu, pihak lain tidak dapat menggunakan foto tersebut di tempat lain.",
+  "guideRule2Title": "Cantumkan Tanggal Transaksi Lengkap",
+  "guideRule2Desc": "Tambahkan tanggal saat Anda mengirimkan dokumen (misal: 28-09-2026). Ini membatasi masa berlaku dokumen salinan sehingga tidak dapat didaur ulang di masa mendatang.",
+  "guideRule3Title": "Posisikan Melintang di Atas Dokumen",
+  "guideRule3Desc": "Letakkan watermark melintang di atas teks KTP secara semi-transparan. Jangan meletakkannya di area kosong di pinggir foto karena pelaku kejahatan bisa memotongnya (crop) dengan mudah.",
+  "guideRule4Title": "Sensor Tanda Tangan & Digit Sensitif",
+  "guideRule4Desc": "Tanda tangan basah adalah aset biometrik terpenting Anda. Jika verifikator hanya membutuhkan NIK dan nama, tutupi tanda tangan Anda untuk mencegah pemalsuan dokumen.",
+  "warningRejectTitle": "Waspada: Pihak yang Menolak Foto Ber-Watermark",
+  "warningRejectDesc": "Jika ada pihak atau aplikasi yang bersikeras meminta foto e-KTP polosan tanpa watermark padahal tujuan transaksi sudah jelas, Anda patut mencurigai niat pihak tersebut dan mempertimbangkan membatalkan transaksi.",
+  "verifiedOfficial": "★ RESMI DIVERIFIKASI ★",
+  "dateLabel": "TGL",
+  "verifyIdentity": "VERIFIKASI IDENTITAS",
+  "idmarkVerified": "IDMARK VERIFIED",
+  "privacySettings": "Pengaturan Privasi",
+  "autoStripExif": "Otomatis hapus EXIF",
+  "autoStripExifDesc": "Hapus metadata lokasi GPS dan kamera dari foto sebelum diekspor",
+  "historySubtitle": "Tersimpan {count} catatan ekspor on-device",
+  "@historySubtitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "presetsSubtitle": "{count} template kustom tersimpan",
+  "@presetsSubtitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@@locale": "id"
+}
