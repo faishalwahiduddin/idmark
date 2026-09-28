@@ -4,12 +4,14 @@ import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_constants.dart';
 import '../../core/models/watermark_config.dart';
 import '../../core/providers/app_providers.dart';
+import '../../l10n/app_localizations.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     final storage = ref.watch(localStorageServiceProvider);
     final autoStrip = storage.getAutoStripExif();
     final config = ref.watch(watermarkConfigProvider);
@@ -18,7 +20,7 @@ class SettingsScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Privasi & Pengaturan'),
+        title: Text(l10n.privacyAndSettings),
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
@@ -31,16 +33,16 @@ class SettingsScreen extends ConsumerWidget {
               borderRadius: BorderRadius.circular(16),
               border: Border.all(color: AppColors.accent.withValues(alpha: 0.3)),
             ),
-            child: const Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
-                    Icon(Icons.shield_outlined, color: AppColors.accent, size: 22),
-                    SizedBox(width: 10),
+                    const Icon(Icons.shield_outlined, color: AppColors.accent, size: 22),
+                    const SizedBox(width: 10),
                     Text(
-                      'Privasi Mutlak (Zero Server Upload)',
-                      style: TextStyle(
+                      l10n.zeroServerTitle,
+                      style: const TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w700,
                         color: Colors.white,
@@ -48,10 +50,10 @@ class SettingsScreen extends ConsumerWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Text(
-                  'IDMark berjalan 100% di peramban atau perangkat lokal Anda. Foto identitas e-KTP tidak pernah dikirim, disimpan, atau diproses di peladen (server) eksternal manapun.',
-                  style: TextStyle(
+                  l10n.zeroServerDesc,
+                  style: const TextStyle(
                     fontSize: 12,
                     color: Color(0xFFE2E8F0),
                     height: 1.5,
@@ -63,9 +65,9 @@ class SettingsScreen extends ConsumerWidget {
           const SizedBox(height: 20),
 
           // Sanitasi & Keamanan Data
-          const Text(
-            'Sanitasi & Keamanan Data',
-            style: TextStyle(
+          Text(
+            l10n.dataSecuritySanitation,
+            style: const TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w700,
               color: Color(0xFF94A3B8),
@@ -77,10 +79,10 @@ class SettingsScreen extends ConsumerWidget {
               children: [
                 SwitchListTile(
                   secondary: const Icon(Icons.cleaning_services_outlined, color: AppColors.primaryLight),
-                  title: const Text('Sanitasi EXIF Otomatis', style: TextStyle(fontSize: 14, color: Colors.white)),
-                  subtitle: const Text(
-                    'Menghapus tag metadata koordinat GPS dan tipe kamera dari foto hasil ekspor',
-                    style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
+                  title: Text(l10n.autoSanitizeExifTitle, style: const TextStyle(fontSize: 14, color: Colors.white)),
+                  subtitle: Text(
+                    l10n.autoExifSubtitle,
+                    style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
                   ),
                   value: autoStrip,
                   activeThumbColor: AppColors.accent,
@@ -92,7 +94,7 @@ class SettingsScreen extends ConsumerWidget {
                 const Divider(color: AppColors.border, height: 1),
                 ListTile(
                   leading: const Icon(Icons.file_present_outlined, color: AppColors.primaryLight),
-                  title: const Text('Format Ekspor Default', style: TextStyle(fontSize: 14, color: Colors.white)),
+                  title: Text(l10n.defaultExportFormat, style: const TextStyle(fontSize: 14, color: Colors.white)),
                   subtitle: Text(
                     config.exportFormat.label,
                     style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
@@ -120,9 +122,9 @@ class SettingsScreen extends ConsumerWidget {
           const SizedBox(height: 20),
 
           // Penyimpanan Lokal
-          const Text(
-            'Penyimpanan Lokal Perangkat',
-            style: TextStyle(
+          Text(
+            l10n.localDeviceStorage,
+            style: const TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w700,
               color: Color(0xFF94A3B8),
@@ -134,9 +136,9 @@ class SettingsScreen extends ConsumerWidget {
               children: [
                 ListTile(
                   leading: const Icon(Icons.history_edu, color: AppColors.primaryLight),
-                  title: const Text('Riwayat Audit Log', style: TextStyle(fontSize: 14, color: Colors.white)),
+                  title: Text(l10n.history, style: const TextStyle(fontSize: 14, color: Colors.white)),
                   subtitle: Text(
-                    'Tersimpan ${auditLogs.length} catatan ekspor on-device',
+                    l10n.historySubtitle(auditLogs.length),
                     style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
                   ),
                   trailing: TextButton(
@@ -146,48 +148,48 @@ class SettingsScreen extends ConsumerWidget {
                             await ref.read(auditLogsProvider.notifier).clearHistory();
                             if (context.mounted) {
                               ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(content: Text('Riwayat audit log dibersihkan.')),
+                                SnackBar(content: Text(l10n.historyCleared)),
                               );
                             }
                           },
-                    child: const Text('Bersihkan', style: TextStyle(color: AppColors.danger, fontSize: 12)),
+                    child: Text(l10n.clearHistory, style: const TextStyle(color: AppColors.danger, fontSize: 12)),
                   ),
                 ),
                 const Divider(color: AppColors.border, height: 1),
                 ListTile(
                   leading: const Icon(Icons.bookmark_border, color: AppColors.primaryLight),
-                  title: const Text('Preset Kustom Pengguna', style: TextStyle(fontSize: 14, color: Colors.white)),
+                  title: Text(l10n.presets, style: const TextStyle(fontSize: 14, color: Colors.white)),
                   subtitle: Text(
-                    '${customPresets.length} template kustom tersimpan',
+                    l10n.presetsSubtitle(customPresets.length),
                     style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
                   ),
                 ),
                 const Divider(color: AppColors.border, height: 1),
                 ListTile(
                   leading: const Icon(Icons.delete_sweep_outlined, color: AppColors.danger),
-                  title: const Text('Reset Pengaturan Bawaan', style: TextStyle(fontSize: 14, color: Colors.white)),
-                  subtitle: const Text('Mengembalikan template dan pengaturan teks ke bawaan pabrik',
-                      style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+                  title: Text(l10n.resetDefaults, style: const TextStyle(fontSize: 14, color: Colors.white)),
+                  subtitle: Text(l10n.resetDefaultsDesc,
+                      style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
                   trailing: const Icon(Icons.chevron_right, color: Color(0xFF64748B)),
                   onTap: () async {
                     final confirm = await showDialog<bool>(
                       context: context,
                       builder: (ctx) => AlertDialog(
                         backgroundColor: AppColors.bgSurface,
-                        title: const Text('Reset Preferensi?', style: TextStyle(color: Colors.white)),
-                        content: const Text(
-                          'Pengaturan watermark terakhir akan dikembalikan ke standar awal Kominfo.',
-                          style: TextStyle(color: Color(0xFF94A3B8)),
+                        title: Text(l10n.resetWarningTitle, style: const TextStyle(color: Colors.white)),
+                        content: Text(
+                          l10n.resetWarningBody,
+                          style: const TextStyle(color: Color(0xFF94A3B8)),
                         ),
                         actions: [
                           TextButton(
                             onPressed: () => Navigator.pop(ctx, false),
-                            child: const Text('Batal'),
+                            child: Text(l10n.cancel),
                           ),
                           ElevatedButton(
                             onPressed: () => Navigator.pop(ctx, true),
                             style: ElevatedButton.styleFrom(backgroundColor: AppColors.danger),
-                            child: const Text('Reset'),
+                            child: Text(l10n.reset),
                           ),
                         ],
                       ),
@@ -198,7 +200,7 @@ class SettingsScreen extends ConsumerWidget {
                       ref.read(watermarkConfigProvider.notifier).resetToDefault();
                       if (context.mounted) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Preferensi berhasil direset ke rekomendasi Kominfo.')),
+                          SnackBar(content: Text(l10n.preferencesReset)),
                         );
                       }
                     }
@@ -210,9 +212,9 @@ class SettingsScreen extends ConsumerWidget {
           const SizedBox(height: 24),
 
           // Tentang Aplikasi
-          const Text(
-            'Tentang Aplikasi',
-            style: TextStyle(
+          Text(
+            l10n.aboutApp,
+            style: const TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w700,
               color: Color(0xFF94A3B8),
@@ -224,15 +226,15 @@ class SettingsScreen extends ConsumerWidget {
               padding: const EdgeInsets.all(16),
               child: Column(
                 children: [
-                  _buildAboutRow('Aplikasi', AppConstants.appName),
+                  _buildAboutRow(l10n.appLabel, AppConstants.appName),
                   const Divider(color: AppColors.border, height: 24),
-                  _buildAboutRow('Versi', '${AppConstants.appVersion}+1'),
+                  _buildAboutRow(l10n.appVersion, '${AppConstants.appVersion}+1'),
                   const Divider(color: AppColors.border, height: 24),
-                  _buildAboutRow('Domain', 'idmark.faishal.id'),
+                  _buildAboutRow(l10n.appDomain, 'idmark.faishal.id'),
                   const Divider(color: AppColors.border, height: 24),
-                  _buildAboutRow('Standar Kepatuhan', 'UU No. 27/2022 (PDP) & Kominfo'),
+                  _buildAboutRow(l10n.appCompliance, 'UU No. 27/2022 (PDP) & Kominfo'),
                   const Divider(color: AppColors.border, height: 24),
-                  _buildAboutRow('Penyedia', 'Armada faishal.id'),
+                  _buildAboutRow(l10n.appProvider, 'Armada faishal.id'),
                 ],
               ),
             ),

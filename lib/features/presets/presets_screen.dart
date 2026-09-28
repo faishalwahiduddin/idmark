@@ -6,6 +6,7 @@ import '../../core/models/watermark_config.dart';
 import '../../core/models/watermark_preset.dart';
 import '../../core/providers/app_providers.dart';
 import '../../core/utils/validators.dart';
+import '../../l10n/app_localizations.dart';
 
 class PresetsScreen extends ConsumerStatefulWidget {
   const PresetsScreen({super.key});
@@ -34,6 +35,7 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final allPresets = ref.watch(allPresetsProvider);
     final activeConfig = ref.watch(watermarkConfigProvider);
 
@@ -52,11 +54,11 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Template & Preset Hub'),
+        title: Text(l10n.templatePresetHub),
         actions: [
           IconButton(
             icon: const Icon(Icons.add_circle_outline, size: 22, color: AppColors.primaryLight),
-            tooltip: 'Buat Preset Baru',
+            tooltip: l10n.createPresetTooltip,
             onPressed: () => _showCreatePresetDialog(context),
           ),
         ],
@@ -80,13 +82,13 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'Katalog Template Watermark Resmi',
-                        style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Colors.white),
+                      Text(
+                        l10n.officialTemplateCatalog,
+                        style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Colors.white),
                       ),
                       const SizedBox(height: 3),
                       Text(
-                        'Pilih template standar perbankan, lamaran kerja, atau buat preset kustom pribadi yang tersimpan di perangkat Anda.',
+                        l10n.officialTemplateDesc,
                         style: const TextStyle(fontSize: 12, color: Color(0xFFE2E8F0), height: 1.35),
                       ),
                     ],
@@ -100,7 +102,7 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
           // Search Bar
           TextField(
             decoration: InputDecoration(
-              hintText: 'Cari template (bank, pinjol, hrd, kpr, rental)...',
+              hintText: l10n.searchTemplateHint,
               prefixIcon: const Icon(Icons.search, size: 18),
               suffixIcon: _searchQuery.isNotEmpty
                   ? IconButton(
@@ -150,13 +152,13 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Menampilkan ${filteredPresets.length} template',
+                l10n.showingTemplatesCount(filteredPresets.length),
                 style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
               ),
               TextButton.icon(
                 onPressed: () => _showCreatePresetDialog(context),
                 icon: const Icon(Icons.add, size: 16),
-                label: const Text('Buat Kustom', style: TextStyle(fontSize: 12)),
+                label: Text(l10n.createCustom, style: const TextStyle(fontSize: 12)),
               ),
             ],
           ),
@@ -168,7 +170,7 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 40),
                 child: Text(
-                  'Tidak ditemukan template yang cocok dengan filter.',
+                  l10n.noTemplatesFound,
                   style: const TextStyle(color: Color(0xFF94A3B8), fontSize: 13),
                 ),
               ),
@@ -181,6 +183,7 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
   }
 
   Widget _buildPresetCard(BuildContext context, WatermarkPreset preset, WatermarkConfig activeConfig) {
+    final l10n = AppLocalizations.of(context)!;
     final isCurrent = activeConfig.purpose == preset.samplePurpose;
 
     return Padding(
@@ -234,9 +237,9 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                                   color: AppColors.primary.withValues(alpha: 0.2),
                                   borderRadius: BorderRadius.circular(4),
                                 ),
-                                child: const Text(
-                                  'Kustom',
-                                  style: TextStyle(fontSize: 10, color: AppColors.primaryLight, fontWeight: FontWeight.bold),
+                                child: Text(
+                                  l10n.customBadge,
+                                  style: const TextStyle(fontSize: 10, color: AppColors.primaryLight, fontWeight: FontWeight.bold),
                                 ),
                               ),
                             ],
@@ -255,7 +258,7 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                   if (preset.isCustom)
                     IconButton(
                       icon: const Icon(Icons.delete_outline, size: 18, color: AppColors.danger),
-                      tooltip: 'Hapus Preset Kustom',
+                      tooltip: l10n.deleteCustomPresetTooltip,
                       visualDensity: VisualDensity.compact,
                       onPressed: () => _confirmDeletePreset(context, preset),
                     ),
@@ -266,9 +269,9 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                         color: AppColors.accent.withValues(alpha: 0.2),
                         borderRadius: BorderRadius.circular(6),
                       ),
-                      child: const Text(
-                        'Aktif',
-                        style: TextStyle(
+                      child: Text(
+                        l10n.activeBadge,
+                        style: const TextStyle(
                           fontSize: 11,
                           fontWeight: FontWeight.w700,
                           color: AppColors.accent,
@@ -301,7 +304,7 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Pola: ${preset.defaultPattern.label}',
+                    l10n.patternInfo(preset.defaultPattern.label),
                     style: const TextStyle(fontSize: 11, color: Color(0xFF94A3B8)),
                   ),
                   ElevatedButton.icon(
@@ -310,13 +313,13 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                       context.go('/');
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                          content: Text('Preset "${preset.title}" berhasil diterapkan!'),
+                          content: Text(l10n.presetApplied(preset.title)),
                           duration: const Duration(seconds: 2),
                         ),
                       );
                     },
                     icon: const Icon(Icons.check, size: 14),
-                    label: const Text('Gunakan Preset'),
+                    label: Text(l10n.usePreset),
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                       textStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
@@ -332,6 +335,7 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
   }
 
   void _showCreatePresetDialog(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final titleCtrl = TextEditingController();
     final catCtrl = TextEditingController(text: 'Kustom');
     final purposeCtrl = TextEditingController();
@@ -347,11 +351,11 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
       builder: (ctx) => StatefulBuilder(
         builder: (ctx, setDialogState) => AlertDialog(
           backgroundColor: AppColors.bgSurface,
-          title: const Row(
+          title: Row(
             children: [
-              Icon(Icons.add_box_outlined, color: AppColors.primaryLight, size: 22),
-              SizedBox(width: 8),
-              Text('Buat Preset Kustom Baru', style: TextStyle(color: Colors.white, fontSize: 17)),
+              const Icon(Icons.add_box_outlined, color: AppColors.primaryLight, size: 22),
+              const SizedBox(width: 8),
+              Text(l10n.createNewCustomPreset, style: const TextStyle(color: Colors.white, fontSize: 17)),
             ],
           ),
           content: SingleChildScrollView(
@@ -359,45 +363,45 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('Nama Preset', style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+                Text(l10n.presetName, style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
                 const SizedBox(height: 4),
                 TextField(
                   controller: titleCtrl,
                   decoration: InputDecoration(
-                    hintText: 'Misal: Verifikasi Beasiswa Kemendikbud',
+                    hintText: l10n.presetNameHint,
                     errorText: titleErr,
                   ),
                 ),
                 const SizedBox(height: 12),
 
-                const Text('Kategori', style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+                Text(l10n.category, style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
                 const SizedBox(height: 4),
                 TextField(
                   controller: catCtrl,
-                  decoration: const InputDecoration(hintText: 'Misal: Pendidikan / Kustom'),
+                  decoration: InputDecoration(hintText: l10n.categoryHint),
                 ),
                 const SizedBox(height: 12),
 
-                const Text('Teks Template Tujuan', style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+                Text(l10n.purposeTemplateText, style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
                 const SizedBox(height: 4),
                 TextField(
                   controller: purposeCtrl,
                   decoration: InputDecoration(
-                    hintText: 'Misal: PENGAJUAN BEASISWA 2026',
+                    hintText: l10n.purposeTemplateHint,
                     errorText: purposeErr,
                   ),
                 ),
                 const SizedBox(height: 12),
 
-                const Text('Subtext Tambahan', style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+                Text(l10n.additionalSubtext, style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
                 const SizedBox(height: 4),
                 TextField(
                   controller: subtextCtrl,
-                  decoration: const InputDecoration(hintText: 'Catatan internal'),
+                  decoration: InputDecoration(hintText: l10n.subtextTemplateHint),
                 ),
                 const SizedBox(height: 12),
 
-                const Text('Pola Stempel', style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+                Text(l10n.stampPattern, style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
                 const SizedBox(height: 4),
                 DropdownButton<WatermarkPattern>(
                   value: selectedPattern,
@@ -417,7 +421,7 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(ctx),
-              child: const Text('Batal', style: TextStyle(color: Color(0xFF94A3B8))),
+              child: Text(l10n.cancel, style: const TextStyle(color: Color(0xFF94A3B8))),
             ),
             ElevatedButton(
               onPressed: () {
@@ -445,11 +449,11 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                   ref.read(customPresetsProvider.notifier).addPreset(newPreset);
                   Navigator.pop(ctx);
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Preset kustom "${newPreset.title}" disimpan!')),
+                    SnackBar(content: Text(l10n.customPresetSaved(newPreset.title))),
                   );
                 }
               },
-              child: const Text('Simpan Preset'),
+              child: Text(l10n.savePreset),
             ),
           ],
         ),
@@ -458,30 +462,31 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
   }
 
   void _confirmDeletePreset(BuildContext context, WatermarkPreset preset) {
+    final l10n = AppLocalizations.of(context)!;
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
         backgroundColor: AppColors.bgSurface,
-        title: const Text('Hapus Preset?', style: TextStyle(color: Colors.white)),
+        title: Text(l10n.deletePresetConfirmTitle, style: const TextStyle(color: Colors.white)),
         content: Text(
-          'Preset "${preset.title}" akan dihapus dari daftar template lokal Anda.',
+          l10n.deletePresetConfirmBody(preset.title),
           style: const TextStyle(color: Color(0xFF94A3B8)),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
-            child: const Text('Batal'),
+            child: Text(l10n.cancel),
           ),
           ElevatedButton(
             onPressed: () {
               ref.read(customPresetsProvider.notifier).deletePreset(preset.id);
               Navigator.pop(ctx);
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Preset berhasil dihapus.')),
+                SnackBar(content: Text(l10n.presetDeletedSuccess)),
               );
             },
             style: ElevatedButton.styleFrom(backgroundColor: AppColors.danger),
-            child: const Text('Hapus'),
+            child: Text(l10n.delete),
           ),
         ],
       ),

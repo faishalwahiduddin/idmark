@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/models/audit_log_entry.dart';
 import '../../core/providers/app_providers.dart';
+import '../../l10n/app_localizations.dart';
 
 class HistoryScreen extends ConsumerStatefulWidget {
   const HistoryScreen({super.key});
@@ -17,6 +18,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final logs = ref.watch(auditLogsProvider);
 
     final filteredLogs = _searchQuery.isEmpty
@@ -25,12 +27,12 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Riwayat & Audit Log'),
+        title: Text(l10n.historyAndAuditLog),
         actions: [
           if (logs.isNotEmpty)
             IconButton(
               icon: const Icon(Icons.delete_outline, size: 20),
-              tooltip: 'Hapus Semua Riwayat',
+              tooltip: l10n.clearAllHistoryTooltip,
               onPressed: () => _confirmClearHistory(context),
             ),
         ],
@@ -61,9 +63,9 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'Audit Log Privasi Lokal',
-                        style: TextStyle(
+                      Text(
+                        l10n.localPrivacyAuditLog,
+                        style: const TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w700,
                           color: Colors.white,
@@ -71,7 +73,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
                       ),
                       const SizedBox(height: 3),
                       Text(
-                        'Total ${logs.length} dokumen telah distempel dengan aman secara 100% on-device. Rekaman ini hanya tersimpan di perangkat Anda.',
+                        l10n.localPrivacyAuditLogDesc(logs.length),
                         style: const TextStyle(fontSize: 12, color: Color(0xFFCBD5E1), height: 1.35),
                       ),
                     ],
@@ -86,7 +88,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
           if (logs.isNotEmpty) ...[
             TextField(
               decoration: InputDecoration(
-                hintText: 'Cari riwayat tujuan dokumen...',
+                hintText: l10n.searchHistoryHint,
                 prefixIcon: const Icon(Icons.search, size: 18),
                 suffixIcon: _searchQuery.isNotEmpty
                     ? IconButton(
@@ -108,17 +110,17 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
 
           // History list or Empty State
           if (logs.isEmpty)
-            _buildEmptyState()
+            _buildEmptyState(l10n)
           else if (filteredLogs.isEmpty)
-            _buildNoSearchResultState()
+            _buildNoSearchResultState(l10n)
           else
-            ...filteredLogs.map((entry) => _buildAuditCard(context, entry)),
+            ...filteredLogs.map((entry) => _buildAuditCard(context, entry, l10n)),
         ],
       ),
     );
   }
 
-  Widget _buildEmptyState() {
+  Widget _buildEmptyState(AppLocalizations l10n) {
     return Center(
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 60),
@@ -133,15 +135,15 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
               child: const Icon(Icons.history_edu_outlined, size: 48, color: AppColors.primaryLight),
             ),
             const SizedBox(height: 20),
-            const Text(
-              'Belum Ada Dokumen Ter-Watermark',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: Colors.white),
+            Text(
+              l10n.noWatermarkedDocsYet,
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: Colors.white),
             ),
             const SizedBox(height: 8),
-            const Text(
-              'Dokumen yang berhasil Anda beri watermark dan ekspor akan dicatat audit log-nya di sini.',
+            Text(
+              l10n.noWatermarkedDocsDesc,
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 13, color: Color(0xFF94A3B8), height: 1.4),
+              style: const TextStyle(fontSize: 13, color: Color(0xFF94A3B8), height: 1.4),
             ),
           ],
         ),
@@ -149,19 +151,19 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
     );
   }
 
-  Widget _buildNoSearchResultState() {
-    return const Center(
+  Widget _buildNoSearchResultState(AppLocalizations l10n) {
+    return Center(
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 40),
+        padding: const EdgeInsets.symmetric(vertical: 40),
         child: Text(
-          'Tidak ditemukan riwayat yang sesuai dengan pencarian.',
-          style: TextStyle(color: Color(0xFF94A3B8), fontSize: 13),
+          l10n.noHistoryFound,
+          style: const TextStyle(color: Color(0xFF94A3B8), fontSize: 13),
         ),
       ),
     );
   }
 
-  Widget _buildAuditCard(BuildContext context, AuditLogEntry entry) {
+  Widget _buildAuditCard(BuildContext context, AuditLogEntry entry, AppLocalizations l10n) {
     final d = entry.timestamp;
     final day = d.day.toString().padLeft(2, '0');
     final month = d.month.toString().padLeft(2, '0');
@@ -214,7 +216,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
                         ),
                         const SizedBox(width: 4),
                         Text(
-                          'Skor ${entry.privacyScore}%',
+                          l10n.scoreLabel(entry.privacyScore),
                           style: TextStyle(
                             fontSize: 11,
                             fontWeight: FontWeight.w700,
@@ -257,10 +259,10 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
                   _buildTag(Icons.image_outlined, '${entry.exportFormat} ($sizeKb KB)'),
                   _buildTag(Icons.grid_goldenratio, entry.pattern),
                   if (entry.redactionsCount > 0)
-                    _buildTag(Icons.visibility_off_outlined, '${entry.redactionsCount} Sensor Sensitif',
+                    _buildTag(Icons.visibility_off_outlined, l10n.sensitiveSensorsCount(entry.redactionsCount),
                         color: AppColors.primaryLight),
                   if (entry.metadataStripped)
-                    _buildTag(Icons.cleaning_services_outlined, 'EXIF Sanitized', color: AppColors.accent),
+                    _buildTag(Icons.cleaning_services_outlined, l10n.exifSanitized, color: AppColors.accent),
                 ],
               ),
               const SizedBox(height: 12),
@@ -294,9 +296,9 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
                       onTap: () {
                         Clipboard.setData(ClipboardData(text: entry.sha256Hash));
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text('Hash SHA-256 disalin ke clipboard!'),
-                            duration: Duration(seconds: 2),
+                          SnackBar(
+                            content: Text(l10n.sha256Copied),
+                            duration: const Duration(seconds: 2),
                           ),
                         );
                       },
@@ -338,30 +340,31 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
   }
 
   void _confirmClearHistory(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
         backgroundColor: AppColors.bgSurface,
-        title: const Text('Hapus Seluruh Riwayat?', style: TextStyle(color: Colors.white)),
-        content: const Text(
-          'Daftar audit log di perangkat Anda akan dibersihkan permanen.',
-          style: TextStyle(color: Color(0xFF94A3B8)),
+        title: Text(l10n.clearHistoryConfirmTitle, style: const TextStyle(color: Colors.white)),
+        content: Text(
+          l10n.clearHistoryConfirmBody,
+          style: const TextStyle(color: Color(0xFF94A3B8)),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
-            child: const Text('Batal'),
+            child: Text(l10n.cancel),
           ),
           ElevatedButton(
             onPressed: () {
               ref.read(auditLogsProvider.notifier).clearHistory();
               Navigator.pop(ctx);
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Riwayat berhasil dibersihkan.')),
+                SnackBar(content: Text(l10n.historyClearedSuccess)),
               );
             },
             style: ElevatedButton.styleFrom(backgroundColor: AppColors.danger),
-            child: const Text('Hapus'),
+            child: Text(l10n.delete),
           ),
         ],
       ),

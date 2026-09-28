@@ -640,4 +640,10 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get appLabel => 'アプリ';
+
+  @override
+  String get officialKominfoGuide => 'Panduan Resmi Kominfo & UU PDP';
+
+  @override
+  String get privacyAndSettings => 'Privasi & Pengaturan';
 }

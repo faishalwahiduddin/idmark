@@ -344,5 +344,7 @@
   "defaultExportFormat": "Format Ekspor Default",
   "localDeviceStorage": "Penyimpanan Lokal Perangkat",
   "resetDefaultsDesc": "Mengembalikan template dan pengaturan teks ke bawaan pabrik",
-  "appLabel": "Aplikasi"
+  "appLabel": "Aplikasi",
+  "officialKominfoGuide": "Panduan Resmi Kominfo & UU PDP",
+  "privacyAndSettings": "Privasi & Pengaturan"
 }

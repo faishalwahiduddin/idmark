@@ -660,4 +660,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get appLabel => 'التطبيق';
+
+  @override
+  String get officialKominfoGuide => 'Panduan Resmi Kominfo & UU PDP';
+
+  @override
+  String get privacyAndSettings => 'Privasi & Pengaturan';
 }

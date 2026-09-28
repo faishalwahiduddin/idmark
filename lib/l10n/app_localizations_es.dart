@@ -674,4 +674,10 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get appLabel => 'Aplicación';
+
+  @override
+  String get officialKominfoGuide => 'Panduan Resmi Kominfo & UU PDP';
+
+  @override
+  String get privacyAndSettings => 'Privasi & Pengaturan';
 }

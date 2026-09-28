@@ -1279,6 +1279,18 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Aplikasi'**
   String get appLabel;
+
+  /// No description provided for @officialKominfoGuide.
+  ///
+  /// In id, this message translates to:
+  /// **'Panduan Resmi Kominfo & UU PDP'**
+  String get officialKominfoGuide;
+
+  /// No description provided for @privacyAndSettings.
+  ///
+  /// In id, this message translates to:
+  /// **'Privasi & Pengaturan'**
+  String get privacyAndSettings;
 }
 
 class _AppLocalizationsDelegate

@@ -663,4 +663,10 @@ class AppLocalizationsJv extends AppLocalizations {
 
   @override
   String get appLabel => 'Aplikasi';
+
+  @override
+  String get officialKominfoGuide => 'Panduan Resmi Kominfo & UU PDP';
+
+  @override
+  String get privacyAndSettings => 'Privasi & Pengaturan';
 }

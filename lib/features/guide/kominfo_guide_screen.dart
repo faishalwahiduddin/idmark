@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../core/constants/app_colors.dart';
+import '../../l10n/app_localizations.dart';
 
 class KominfoGuideScreen extends StatefulWidget {
   const KominfoGuideScreen({super.key});
@@ -19,11 +20,12 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final checkedCount = _checklistStates.values.where((v) => v).length;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Panduan Resmi Kominfo & UU PDP'),
+        title: Text(l10n.officialKominfoGuide),
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
@@ -39,16 +41,16 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
               ),
               borderRadius: BorderRadius.circular(16),
             ),
-            child: const Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
-                    Icon(Icons.verified_outlined, color: Colors.white, size: 24),
-                    SizedBox(width: 10),
+                    const Icon(Icons.verified_outlined, color: Colors.white, size: 24),
+                    const SizedBox(width: 10),
                     Text(
-                      'Lindungi Identitas Digital Anda',
-                      style: TextStyle(
+                      l10n.protectDigitalId,
+                      style: const TextStyle(
                         fontSize: 17,
                         fontWeight: FontWeight.w700,
                         color: Colors.white,
@@ -56,10 +58,10 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
                     ),
                   ],
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Text(
-                  'Kementerian Kominfo dan UU No. 27/2022 (PDP) mewajibkan masyarakat berhati-hati saat membagikan foto e-KTP agar tidak dijadikan jaminan pinjaman online bodong atau pembukaan rekening fiktif.',
-                  style: TextStyle(
+                  l10n.protectDigitalIdDesc,
+                  style: const TextStyle(
                     fontSize: 12,
                     color: Color(0xFFE0F2FE),
                     height: 1.5,
@@ -84,9 +86,9 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
-                      'Checklist Aman Sebelum Kirim e-KTP',
-                      style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),
+                    Text(
+                      l10n.safeSharingChecklist,
+                      style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),
                     ),
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
@@ -97,7 +99,7 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
                         borderRadius: BorderRadius.circular(6),
                       ),
                       child: Text(
-                        '$checkedCount / 5 Selesai',
+                        l10n.checklistDoneCount(checkedCount),
                         style: TextStyle(
                           fontSize: 11,
                           fontWeight: FontWeight.bold,
@@ -108,20 +110,20 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
                   ],
                 ),
                 const SizedBox(height: 12),
-                _buildChecklistItem(0, 'Nama instansi/penerima tertulis jelas pada watermark'),
-                _buildChecklistItem(1, 'Tanggal transaksi terkini dicantumkan pada cap'),
-                _buildChecklistItem(2, 'Watermark melintang di atas data teks agar tidak bisa dicrop'),
-                _buildChecklistItem(3, 'Tanda tangan disensor jika verifikator tidak meminta spesimen tanda tangan'),
-                _buildChecklistItem(4, 'Metadata EXIF dan koordinat GPS telah dihapus dari gambar'),
+                _buildChecklistItem(0, l10n.checkItem1),
+                _buildChecklistItem(1, l10n.checkItem2),
+                _buildChecklistItem(2, l10n.checkItem3),
+                _buildChecklistItem(3, l10n.checkItem4),
+                _buildChecklistItem(4, l10n.checkItem5),
               ],
             ),
           ),
           const SizedBox(height: 20),
 
           // 4 Aturan Pokok Kominfo
-          const Text(
-            '4 Aturan Pokok Watermark Kominfo',
-            style: TextStyle(
+          Text(
+            l10n.guideRules,
+            style: const TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.w700,
               color: Colors.white,
@@ -131,30 +133,26 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
 
           _buildGuideRule(
             number: '1',
-            title: 'Tuliskan Nama Lembaga & Tujuan Spesifik',
-            description:
-                'Jangan hanya menulis "VERIFIKASI". Tuliskan lengkap seperti "VERIFIKASI PINJAMAN PT BANK ABC". Dengan begitu, pihak lain tidak dapat menggunakan foto tersebut di tempat lain.',
+            title: l10n.guideRule1Title,
+            description: l10n.guideRule1Desc,
             icon: Icons.edit_note,
           ),
           _buildGuideRule(
             number: '2',
-            title: 'Cantumkan Tanggal Transaksi Lengkap',
-            description:
-                'Tambahkan tanggal saat Anda mengirimkan dokumen (misal: 28-09-2026). Ini membatasi masa berlaku dokumen salinan sehingga tidak dapat didaur ulang di masa mendatang.',
+            title: l10n.guideRule2Title,
+            description: l10n.guideRule2Desc,
             icon: Icons.calendar_today,
           ),
           _buildGuideRule(
             number: '3',
-            title: 'Posisikan Melintang di Atas Dokumen',
-            description:
-                'Letakkan watermark melintang di atas teks KTP secara semi-transparan. Jangan meletakkannya di area kosong di pinggir foto karena pelaku kejahatan bisa memotongnya (crop) dengan mudah.',
+            title: l10n.guideRule3Title,
+            description: l10n.guideRule3Desc,
             icon: Icons.crop_free,
           ),
           _buildGuideRule(
             number: '4',
-            title: 'Sensor Tanda Tangan & Digit Sensitif',
-            description:
-                'Tanda tangan basah adalah aset biometrik terpenting Anda. Jika verifikator hanya membutuhkan NIK dan nama, tutupi tanda tangan Anda untuk mencegah pemalsuan dokumen.',
+            title: l10n.guideRule4Title,
+            description: l10n.guideRule4Desc,
             icon: Icons.draw_outlined,
           ),
           const SizedBox(height: 16),
@@ -167,27 +165,27 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
               borderRadius: BorderRadius.circular(14),
               border: Border.all(color: AppColors.danger.withValues(alpha: 0.3)),
             ),
-            child: const Row(
+            child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Icon(Icons.warning_amber_rounded, color: AppColors.danger, size: 24),
-                SizedBox(width: 12),
+                const Icon(Icons.warning_amber_rounded, color: AppColors.danger, size: 24),
+                const SizedBox(width: 12),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Waspada: Pihak yang Menolak Foto Ber-Watermark',
-                        style: TextStyle(
+                        l10n.warningRejectTitle,
+                        style: const TextStyle(
                           fontSize: 13,
                           fontWeight: FontWeight.w700,
                           color: Colors.white,
                         ),
                       ),
-                      SizedBox(height: 4),
+                      const SizedBox(height: 4),
                       Text(
-                        'Jika ada pihak atau aplikasi yang bersikeras meminta foto e-KTP polosan tanpa watermark padahal tujuan transaksi sudah jelas, Anda patut mencurigai niat pihak tersebut dan mempertimbangkan membatalkan transaksi.',
-                        style: TextStyle(fontSize: 11, color: Color(0xFFFCA5A5), height: 1.4),
+                        l10n.warningRejectDesc,
+                        style: const TextStyle(fontSize: 11, color: Color(0xFFFCA5A5), height: 1.4),
                       ),
                     ],
                   ),
