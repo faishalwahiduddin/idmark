@@ -1,11 +1,11 @@
-# CLAUDE.md — KtpMark
+# CLAUDE.md — IDMark
 
 ## Overview
-KtpMark — Watermark e-KTP & Identitas Aman: bubuhkan cap tujuan verifikasi dan tanggal pada foto/scan e-KTP dan dokumen identitas on-device untuk mencegah penyalahgunaan data pinjol dan penipuan digital. **100% on-device, tanpa backend, tanpa akun, tanpa kirim data.**
-Bahasa Indonesia sebagai default.
+IDMark — Secure ID Card & Document Watermark: Stamp custom verification purpose & date onto national IDs (e-KTP, Aadhaar, MyKad), passports, and driver's licenses on-device to prevent fraud, identity theft, and unauthorized re-use. **100% on-device, zero server upload, no account needed.**
+Bahasa Indonesia & English support.
 
-**Subdomain:** ktpmark.faishal.id · **CF Project:** `ktpmark-faishal` · **appId:** `id.faishal.ktpmark`
-**Git remote:** `git@github.com:faishalwahiduddin/ktpmark.git`
+**Subdomain:** idmark.faishal.id · **CF Project:** `idmark-faishal` · **appId:** `id.faishal.idmark`
+**Git remote:** `git@github.com:faishalwahiduddin/idmark.git`
 
 ## Tech Stack
 **Flutter 3.44.8 · Dart 3.12.2 · Riverpod 3.x · GoRouter · Cloudflare**

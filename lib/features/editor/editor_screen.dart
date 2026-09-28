@@ -73,14 +73,14 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
       if (isShare) {
         final xFile = XFile.fromData(
           renderedBytes,
-          name: 'ktp_watermark_${DateTime.now().millisecondsSinceEpoch}.png',
+          name: 'idmark_${DateTime.now().millisecondsSinceEpoch}.png',
           mimeType: 'image/png',
         );
         await SharePlus.instance.share(
           ShareParams(
             files: [xFile],
-            subject: 'Dokumen KTP Ber-Watermark',
-            text: 'Dokumen e-KTP ter-watermark aman via KtpMark (${config.purpose})',
+            subject: 'Dokumen Identitas Ber-Watermark',
+            text: 'Dokumen identitas ter-watermark aman via IDMark (${config.purpose})',
           ),
         );
       } else {
@@ -185,9 +185,9 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
             const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('KtpMark', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700)),
+                Text('IDMark', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700)),
                 Text(
-                  'Watermark e-KTP On-Device',
+                  'Secure ID & Document Watermark',
                   style: TextStyle(fontSize: 11, color: Color(0xFF94A3B8), fontWeight: FontWeight.normal),
                 ),
               ],

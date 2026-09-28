@@ -43,7 +43,7 @@ class SettingsScreen extends ConsumerWidget {
                 ),
                 SizedBox(height: 10),
                 Text(
-                  'KtpMark berjalan 100% di peramban atau perangkat lokal Anda. Foto identitas e-KTP tidak pernah dikirim, disimpan, atau diproses di peladen (server) eksternal manapun.',
+                  'IDMark berjalan 100% di peramban atau perangkat lokal Anda. Foto identitas e-KTP tidak pernah dikirim, disimpan, atau diproses di peladen (server) eksternal manapun.',
                   style: TextStyle(
                     fontSize: 12,
                     color: Color(0xFFE2E8F0),
@@ -129,7 +129,7 @@ class SettingsScreen extends ConsumerWidget {
                   const Divider(color: AppColors.border, height: 24),
                   _buildAboutRow('Versi', '${AppConstants.appVersion}+1'),
                   const Divider(color: AppColors.border, height: 24),
-                  _buildAboutRow('Domain', 'ktpmark.faishal.id'),
+                  _buildAboutRow('Domain', 'idmark.faishal.id'),
                   const Divider(color: AppColors.border, height: 24),
                   _buildAboutRow('Penyedia', 'Armada faishal.id'),
                 ],

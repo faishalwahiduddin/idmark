@@ -1,11 +1,11 @@
 {
-    "name": "KtpMark — Watermark e-KTP",
-    "short_name": "KtpMark",
+    "name": "IDMark — Secure ID & Document Watermark",
+    "short_name": "IDMark",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0B132B",
     "theme_color": "#0EA5E9",
-    "description": "KtpMark — Watermark e-KTP & Identitas Aman on-device",
+    "description": "IDMark — Secure ID & Document Watermark on-device",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

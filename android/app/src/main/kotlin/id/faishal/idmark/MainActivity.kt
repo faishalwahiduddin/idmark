@@ -1,4 +1,4 @@
-package id.faishal.ktpmark
+package id.faishal.idmark
 
 import io.flutter.embedding.android.FlutterActivity
 

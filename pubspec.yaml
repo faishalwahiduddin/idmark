@@ -1,5 +1,5 @@
-name: ktpmark
-description: "KtpMark — Watermark eKTP & Identitas Aman: bubuhkan cap tujuan & tanggal pada foto eKTP on-device untuk cegah penyalahgunaan data pinjol & verifikasi"
+name: idmark
+description: "IDMark — Secure ID Card & Document Watermark: Stamp custom purpose & date onto national IDs, e-KTP, passports, and driver's licenses 100% on-device."
 publish_to: 'none'
 
 version: 1.0.0+1
@@ -29,4 +29,3 @@ flutter:
   uses-material-design: true
   assets:
     - assets/icon/
-

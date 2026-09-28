@@ -16,18 +16,18 @@ void main() async {
       overrides: [
         localStorageServiceProvider.overrideWithValue(storageService),
       ],
-      child: const KtpMarkApp(),
+      child: const IdMarkApp(),
     ),
   );
 }
 
-class KtpMarkApp extends StatelessWidget {
-  const KtpMarkApp({super.key});
+class IdMarkApp extends StatelessWidget {
+  const IdMarkApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'KtpMark — Watermark e-KTP & Identitas Aman',
+      title: 'IDMark — Secure ID & Document Watermark',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.darkTheme,
       routerConfig: appRouter,

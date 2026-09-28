@@ -1,16 +1,16 @@
 class AppConstants {
-  static const String appName = 'KtpMark';
+  static const String appName = 'IDMark';
   static const String appVersion = '1.0.0';
-  static const String appTagline = 'Watermark e-KTP & Identitas Aman';
-  static const String appDomain = 'https://ktpmark.faishal.id';
+  static const String appTagline = 'Secure ID Card & Document Watermark';
+  static const String appDomain = 'https://idmark.faishal.id';
   static const String fleetHome = 'https://faishal.id';
   
   // Storage Keys
-  static const String keyRecentPurpose = 'ktpmark_recent_purpose';
-  static const String keyDefaultOpacity = 'ktpmark_default_opacity';
-  static const String keyDefaultPattern = 'ktpmark_default_pattern';
-  static const String keyDefaultColor = 'ktpmark_default_color';
-  static const String keySavedPresetId = 'ktpmark_saved_preset_id';
+  static const String keyRecentPurpose = 'idmark_recent_purpose';
+  static const String keyDefaultOpacity = 'idmark_default_opacity';
+  static const String keyDefaultPattern = 'idmark_default_pattern';
+  static const String keyDefaultColor = 'idmark_default_color';
+  static const String keySavedPresetId = 'idmark_saved_preset_id';
 
   // Limits & Validations
   static const int minPurposeLength = 3;

@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ktpmark/core/models/watermark_config.dart';
-import 'package:ktpmark/core/utils/validators.dart';
+import 'package:idmark/core/models/watermark_config.dart';
+import 'package:idmark/core/utils/validators.dart';
 
 void main() {
   group('AppValidators §VAL Unit Tests', () {

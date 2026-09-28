@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ktpmark/core/models/watermark_config.dart';
-import 'package:ktpmark/core/models/watermark_preset.dart';
+import 'package:idmark/core/models/watermark_config.dart';
+import 'package:idmark/core/models/watermark_preset.dart';
 
 void main() {
   group('WatermarkPreset Catalog Tests', () {

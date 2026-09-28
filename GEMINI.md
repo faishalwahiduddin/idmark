@@ -13,9 +13,9 @@ flutter build appbundle --release                           # Android App Bundle
 ```
 
 ## Key Notes
-- **KtpMark** — Watermark e-KTP & Identitas Aman: bubuhkan cap tujuan dan tanggal pada foto eKTP secara instan dan 100% on-device.
-- Subdomain: https://ktpmark.faishal.id
-- Application ID: `id.faishal.ktpmark`
+- **IDMark** — Secure ID Card & Document Watermark: Stamp custom purpose & date onto national IDs (e-KTP, Aadhaar, MyKad), passports, and driver's licenses on-device.
+- Subdomain: https://idmark.faishal.id
+- Application ID: `id.faishal.idmark`
 - Clean architecture: MVVM + Riverpod + GoRouter (feature-first).
 - Always run `flutter test` and `flutter analyze` before committing.
 - Respect fleet conventions from `../AGENTS.md`.

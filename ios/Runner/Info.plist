@@ -7,11 +7,11 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>KtpMark</string>
+	<string>IDMark</string>
 	<key>NSCameraUsageDescription</key>
-	<string>KtpMark membutuhkan akses kamera untuk memotret dokumen e-KTP.</string>
+	<string>IDMark requires camera access to capture identity documents for local watermarking.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>KtpMark membutuhkan akses galeri foto untuk memilih gambar e-KTP.</string>
+	<string>IDMark requires photo library access to select identity document images for local watermarking.</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -19,7 +19,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>ktpmark</string>
+	<string>idmark</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>

@@ -1,12 +1,12 @@
-# KtpMark
+# IDMark
 
-> KtpMark — Watermark e-KTP & Identitas Aman: bubuhkan cap tujuan verifikasi dan tanggal pada foto eKTP secara instan dan 100% on-device untuk melindungi privasi Anda.
+> IDMark — Secure ID Card & Document Watermark: Stamp custom purpose & date onto national IDs (e-KTP, Aadhaar, MyKad), passports, and driver's licenses 100% on-device to protect your identity privacy and prevent fraud.
 
 Part of the **faishal.id** fleet (Privacy & Utility Series).
 
-- **Production / Web**: https://ktpmark.faishal.id
-- **Application ID**: `id.faishal.ktpmark`
-- **Repository**: private `faishalwahiduddin/ktpmark`
+- **Production / Web**: https://idmark.faishal.id
+- **Application ID**: `id.faishal.idmark`
+- **Repository**: private `faishalwahiduddin/idmark`
 
 ## Tech Stack
 - **Framework**: [Flutter](https://flutter.dev) (Web, Android, iOS)
@@ -14,17 +14,17 @@ Part of the **faishal.id** fleet (Privacy & Utility Series).
 - **State Management**: [Riverpod](https://riverpod.dev)
 - **Navigation**: [GoRouter](https://pub.dev/packages/go_router)
 - **Rendering**: Client-side canvas rendering (zero server upload)
-- **Platform Deploy**: Cloudflare Pages (`ktpmark-faishal`)
+- **Platform Deploy**: Cloudflare Pages (`idmark-faishal`)
 
-## Fitur Utama
-1. **100% On-Device & Privat**: Foto e-KTP tidak pernah diunggah ke internet atau server manapun. Seluruh proses pembubuhan cap terjadi di perangkat Anda.
-2. **Standar Kominfo**: Watermark menyertakan tujuan spesifik ("VERIFIKASI REKENING BANK", "LAMARAN KERJA", dll.) dan tanggal transaksi.
-3. **Preset Siap Pakai**: Pilihan cepat untuk pinjol legal, perbankan, lamaran kerja, rental, provider seluler, dan kustom bebas.
-4. **Kustomisasi Lengkap**:
-   - Gaya cap: Garis Diagonal, Pita Melintang, Grid Berulang, atau Sudut Resmi.
-   - Opasitas / Transparansi yang dapat disesuaikan.
-   - Pilihan warna kontras (putih, hitam, merah, biru).
-5. **Ekspor Mudah**: Unduh gambar beresolusi penuh dalam format PNG/JPEG atau bagikan langsung.
+## Fitur Utama / Key Features
+1. **100% On-Device & Private**: Identity documents are never uploaded to any server or cloud. All pixel composition happens directly inside your browser or device.
+2. **Official Security Standard**: Stamps verification purpose and date stamp directly over key document regions to make reuse impossible.
+3. **Quick Presets**: Instant templates for banking KYC, legal lending/fintech, employment applications, vehicle rental, telco SIM registration, and general verification.
+4. **Rich Customization**:
+   - 4 patterns: Diagonal Band, Repeated Grid, Bottom Bar, Official Corner Stamp.
+   - Opacity slider (15% - 90%).
+   - Color contrasts: Warning Red, Official Blue, Dark Charcoal, Clean White.
+5. **High-Res Export**: Save watermarked image at full original camera resolution (PNG) or share immediately.
 
 ## Getting Started
 
