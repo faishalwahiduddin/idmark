@@ -7,7 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   testWidgets('IdMarkApp smoke test', (WidgetTester tester) async {
-    SharedPreferences.setMockInitialValues({});
+    SharedPreferences.setMockInitialValues({'locale': 'id'});
     final storageService = await LocalStorageService.init();
 
     await tester.pumpWidget(
