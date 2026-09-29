@@ -1291,6 +1291,12 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Privasi & Pengaturan'**
   String get privacyAndSettings;
+
+  /// No description provided for @appLanguage.
+  ///
+  /// In id, this message translates to:
+  /// **'Bahasa Aplikasi'**
+  String get appLanguage;
 }
 
 class _AppLocalizationsDelegate

@@ -176,7 +176,7 @@ class SettingsScreen extends ConsumerWidget {
                   ListTile(
                     contentPadding: EdgeInsets.zero,
                     leading: const Icon(Icons.translate, color: AppColors.primaryLight, size: 20),
-                    title: const Text('Bahasa Aplikasi', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white)),
+                    title: Text(l10n.appLanguage, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white)),
                     subtitle: Text(
                       '${_languages[langCode]?.nativeName ?? langCode} (${_languages[langCode]?.name ?? langCode})',
                       style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),

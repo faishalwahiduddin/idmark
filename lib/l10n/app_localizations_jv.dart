@@ -669,4 +669,7 @@ class AppLocalizationsJv extends AppLocalizations {
 
   @override
   String get privacyAndSettings => 'Privasi & Pengaturan';
+
+  @override
+  String get appLanguage => 'Basa Aplikasi';
 }

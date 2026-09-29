@@ -642,4 +642,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get privacyAndSettings => 'Privasi & Pengaturan';
+
+  @override
+  String get appLanguage => '应用语言';
 }

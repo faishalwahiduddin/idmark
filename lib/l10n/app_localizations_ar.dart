@@ -666,4 +666,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get privacyAndSettings => 'Privasi & Pengaturan';
+
+  @override
+  String get appLanguage => 'لغة التطبيق';
 }

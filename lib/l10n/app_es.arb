@@ -346,5 +346,6 @@
         "type": "int"
       }
     }
-  }
+  },
+  "appLanguage": "Idioma de la aplicación"
 }

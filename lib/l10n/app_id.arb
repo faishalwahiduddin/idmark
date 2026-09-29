@@ -346,5 +346,6 @@
   "resetDefaultsDesc": "Mengembalikan template dan pengaturan teks ke bawaan pabrik",
   "appLabel": "Aplikasi",
   "officialKominfoGuide": "Panduan Resmi Kominfo & UU PDP",
-  "privacyAndSettings": "Privasi & Pengaturan"
+  "privacyAndSettings": "Privasi & Pengaturan",
+  "appLanguage": "Bahasa Aplikasi"
 }

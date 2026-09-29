@@ -675,4 +675,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get privacyAndSettings => 'Privasi & Pengaturan';
+
+  @override
+  String get appLanguage => 'Bahasa Aplikasi';
 }
