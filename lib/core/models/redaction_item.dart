@@ -1,3 +1,5 @@
+import '../utils/app_timezone.dart';
+
 enum RedactionType {
   blackout('Sensor Hitam (Blackout)', 'Kotak hitam pekat permanen menutup data'),
   mosaic('Sensor Mosaik (Pixelate)', 'Efek pikselasi mengaburkan teks sensitif'),
@@ -8,8 +10,7 @@ enum RedactionType {
   const RedactionType(this.label, this.description);
 }
 
-enum RedactionPresetTarget {
-  nik('Nomor NIK / ID', 0.25, 0.12, 0.45, 0.08),
+enum RedactionPresetTarget {  nik('Nomor NIK / ID', 0.25, 0.12, 0.45, 0.08),
   signature('Tanda Tangan', 0.65, 0.68, 0.28, 0.22),
   address('Alamat Lengkap', 0.25, 0.32, 0.48, 0.18),
   birthPlace('Tempat / Tgl Lahir', 0.25, 0.20, 0.40, 0.08),
@@ -52,7 +53,7 @@ class RedactionBox {
 
   /// Factory helper from preset target
   factory RedactionBox.fromPreset(RedactionPresetTarget target) {
-    final uid = '${target.name}_${DateTime.now().millisecondsSinceEpoch}';
+    final uid = '${target.name}_${AppTimeZone.nowUtc().millisecondsSinceEpoch}';
     return RedactionBox(
       id: uid,
       label: target.label,
@@ -124,7 +125,7 @@ class RedactionBox {
 
   factory RedactionBox.fromJson(Map<String, dynamic> json) {
     return RedactionBox(
-      id: json['id'] as String? ?? 'box_${DateTime.now().millisecondsSinceEpoch}',
+      id: json['id'] as String? ?? 'box_${AppTimeZone.nowUtc().millisecondsSinceEpoch}',
       label: json['label'] as String? ?? 'Sensor',
       type: RedactionType.values.firstWhere(
         (t) => t.name == json['type'],

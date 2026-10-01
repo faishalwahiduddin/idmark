@@ -4,6 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/models/audit_log_entry.dart';
 import '../../core/providers/app_providers.dart';
+import '../../core/providers/timezone_provider.dart';
+import '../../core/utils/app_timezone.dart';
 import '../../l10n/app_localizations.dart';
 
 class HistoryScreen extends ConsumerStatefulWidget {
@@ -164,12 +166,15 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
   }
 
   Widget _buildAuditCard(BuildContext context, AuditLogEntry entry, AppLocalizations l10n) {
-    final d = entry.timestamp;
-    final day = d.day.toString().padLeft(2, '0');
-    final month = d.month.toString().padLeft(2, '0');
-    final hour = d.hour.toString().padLeft(2, '0');
-    final minute = d.minute.toString().padLeft(2, '0');
-    final dateFormat = '$day-$month-${d.year}, $hour:$minute';
+    // Storage contract (§TZ): timestamp is a UTC instant; display projects it
+    // into the selected zone (manual zone, or device zone while on Auto).
+    final loc = ref.watch(timezoneLocationProvider);
+    final z = AppTimeZone.toZoned(entry.timestamp, loc);
+    final day = z.day.toString().padLeft(2, '0');
+    final month = z.month.toString().padLeft(2, '0');
+    final hour = z.hour.toString().padLeft(2, '0');
+    final minute = z.minute.toString().padLeft(2, '0');
+    final dateFormat = '$day-$month-${z.year}, $hour:$minute';
     final sizeKb = (entry.fileSizeBytes / 1024).toStringAsFixed(1);
 
     return Padding(

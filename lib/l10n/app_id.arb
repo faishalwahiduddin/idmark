@@ -347,5 +347,13 @@
   "appLabel": "Aplikasi",
   "officialKominfoGuide": "Panduan Resmi Kominfo & UU PDP",
   "privacyAndSettings": "Privasi & Pengaturan",
-  "appLanguage": "Bahasa Aplikasi"
+  "appLanguage": "Bahasa Aplikasi",
+  "timezone": "Zona Waktu",
+  "@timezone": {
+    "description": "Judul seksi pengaturan zona waktu"
+  },
+  "timezoneAuto": "Otomatis (ikut perangkat)",
+  "@timezoneAuto": {
+    "description": "Opsi zona waktu otomatis yang mengikuti zona perangkat"
+  }
 }

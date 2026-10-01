@@ -645,4 +645,10 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get appLanguage => '应用语言';
+
+  @override
+  String get timezone => 'Zona Waktu';
+
+  @override
+  String get timezoneAuto => 'Otomatis (ikut perangkat)';
 }

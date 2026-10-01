@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../utils/app_timezone.dart';
 import '../utils/validators.dart';
 import 'watermark_config.dart';
 
@@ -56,7 +57,7 @@ class WatermarkPreset {
 
   factory WatermarkPreset.fromJson(Map<String, dynamic> json) {
     return WatermarkPreset(
-      id: json['id'] as String? ?? 'preset_${DateTime.now().millisecondsSinceEpoch}',
+      id: json['id'] as String? ?? 'preset_${AppTimeZone.nowUtc().millisecondsSinceEpoch}',
       title: json['title'] as String? ?? 'Preset Kustom',
       category: json['category'] as String? ?? 'Kustom',
       samplePurpose: json['samplePurpose'] as String? ?? 'VERIFIKASI DOKUMEN',

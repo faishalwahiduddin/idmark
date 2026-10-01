@@ -1,14 +1,20 @@
 import 'dart:typed_data';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
+import 'package:timezone/timezone.dart' as tz;
 import '../models/watermark_config.dart';
+import '../utils/app_timezone.dart';
 
 class PdfExportService {
-  /// Generates a formal single-page PDF document embedding the watermarked ID image
+  /// Generates a formal single-page PDF document embedding the watermarked ID image.
+  ///
+  /// Dates use [zone] (the selected display zone); when null the Jakarta
+  /// fallback applies. The print timestamp is a UTC instant, shown zoned.
   static Future<Uint8List> generatePdfDocument({
     required Uint8List imageBytes,
     required WatermarkConfig config,
     required String sha256Checksum,
+    tz.Location? zone,
   }) async {
     final pdf = pw.Document(
       title: 'Dokumen Identitas Ter-Watermark - ${config.purpose}',
@@ -17,8 +23,14 @@ class PdfExportService {
     );
 
     final image = pw.MemoryImage(imageBytes);
-    final now = DateTime.now();
-    final formattedDate = '${now.day.toString().padLeft(2, '0')}-${now.month.toString().padLeft(2, '0')}-${now.year}, ${now.hour.toString().padLeft(2, '0')}:${now.minute.toString().padLeft(2, '0')}';
+    final loc = zone ?? AppTimeZone.locationOrFallback(kFallbackZoneName);
+    final now = AppTimeZone.nowUtc();
+    final printed = AppTimeZone.toZoned(now, loc);
+    final ianaName = loc.name;
+    final formattedDate =
+        '${printed.day.toString().padLeft(2, '0')}-${printed.month.toString().padLeft(2, '0')}-${printed.year}, '
+        '${printed.hour.toString().padLeft(2, '0')}:${printed.minute.toString().padLeft(2, '0')} '
+        '${AppTimeZone.zoneShortLabel(ianaName, now)}';
 
     pdf.addPage(
       pw.Page(
@@ -110,11 +122,11 @@ class PdfExportService {
                       mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                       children: [
                         pw.Text(
-                          'Tanggal Transaksi: ${config.transactionDate.day.toString().padLeft(2, '0')}-${config.transactionDate.month.toString().padLeft(2, '0')}-${config.transactionDate.year}',
+                          'Tanggal Transaksi: ${config.dateLabelIn(loc)}',
                           style: const pw.TextStyle(fontSize: 9, color: PdfColors.grey800),
                         ),
                         pw.Text(
-                          'Waktu Cetak: $formattedDate WIB',
+                          'Waktu Cetak: $formattedDate',
                           style: const pw.TextStyle(fontSize: 9, color: PdfColors.grey700),
                         ),
                       ],

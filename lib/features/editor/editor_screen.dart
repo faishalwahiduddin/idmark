@@ -8,8 +8,10 @@ import '../../core/models/audit_log_entry.dart';
 import '../../core/models/redaction_item.dart';
 import '../../core/models/watermark_config.dart';
 import '../../core/providers/app_providers.dart';
+import '../../core/providers/timezone_provider.dart';
 import '../../core/services/pdf_export_service.dart';
 import '../../core/services/watermark_renderer_service.dart';
+import '../../core/utils/app_timezone.dart';
 import '../../l10n/app_localizations.dart';
 import 'widgets/watermark_canvas_preview.dart';
 import 'widgets/watermark_control_panel.dart';
@@ -69,9 +71,11 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
     ref.read(isProcessingProvider.notifier).setProcessing(true);
     try {
       final decoded = await WatermarkRendererService.decodeImage(imageBytes);
+      final loc = ref.read(timezoneLocationProvider);
       final renderedBytes = await WatermarkRendererService.renderWatermark(
         sourceImage: decoded,
         config: config,
+        zone: loc,
       );
 
       final sha256Hash = WatermarkRendererService.computeSha256(renderedBytes);
@@ -79,25 +83,27 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
       Uint8List finalOutputBytes;
       String filename;
       String mimeType;
+      final exportStamp = AppTimeZone.nowUtc().millisecondsSinceEpoch;
 
       if (config.exportFormat == ExportFormat.pdf) {
         finalOutputBytes = await PdfExportService.generatePdfDocument(
           imageBytes: renderedBytes,
           config: config,
           sha256Checksum: sha256Hash,
+          zone: loc,
         );
-        filename = 'idmark_${DateTime.now().millisecondsSinceEpoch}.pdf';
+        filename = 'idmark_$exportStamp.pdf';
         mimeType = 'application/pdf';
       } else {
         finalOutputBytes = renderedBytes;
-        filename = 'idmark_${DateTime.now().millisecondsSinceEpoch}.png';
+        filename = 'idmark_$exportStamp.png';
         mimeType = 'image/png';
       }
 
-      // Record to local-only audit log
+      // Record to local-only audit log (storage contract §TZ: UTC instant).
       final auditEntry = AuditLogEntry(
-        id: 'audit_${DateTime.now().millisecondsSinceEpoch}',
-        timestamp: DateTime.now(),
+        id: 'audit_$exportStamp',
+        timestamp: AppTimeZone.nowUtc(),
         purpose: config.purpose,
         pattern: config.pattern.label,
         exportFormat: config.exportFormat == ExportFormat.pdf ? 'PDF' : 'PNG',
@@ -243,6 +249,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
     final config = ref.watch(watermarkConfigProvider);
     final notifier = ref.read(watermarkConfigProvider.notifier);
     final isProcessing = ref.watch(isProcessingProvider);
+    final loc = ref.watch(timezoneLocationProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -320,6 +327,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
                 WatermarkCanvasPreview(
                   imageBytes: selectedImage,
                   config: config,
+                  zone: loc,
                   onPickGallery: () => _pickImage(ImageSource.gallery),
                   onPickCamera: () => _pickImage(ImageSource.camera),
                   onClear: () {
@@ -340,6 +348,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
                 // Control Configuration Panel
                 WatermarkControlPanel(
                   config: config,
+                  zone: loc,
                   onPurposeChanged: notifier.updatePurpose,
                   onDateChanged: notifier.updateDate,
                   onSubtextChanged: notifier.updateSubtext,

@@ -678,4 +678,10 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get appLanguage => 'Bahasa Aplikasi';
+
+  @override
+  String get timezone => 'Zona Waktu';
+
+  @override
+  String get timezoneAuto => 'Otomatis (ikut perangkat)';
 }

@@ -1297,6 +1297,18 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Bahasa Aplikasi'**
   String get appLanguage;
+
+  /// Judul seksi pengaturan zona waktu
+  ///
+  /// In id, this message translates to:
+  /// **'Zona Waktu'**
+  String get timezone;
+
+  /// Opsi zona waktu otomatis yang mengikuti zona perangkat
+  ///
+  /// In id, this message translates to:
+  /// **'Otomatis (ikut perangkat)'**
+  String get timezoneAuto;
 }
 
 class _AppLocalizationsDelegate

@@ -649,4 +649,10 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get appLanguage => 'アプリの言語';
+
+  @override
+  String get timezone => 'Zona Waktu';
+
+  @override
+  String get timezoneAuto => 'Otomatis (ikut perangkat)';
 }

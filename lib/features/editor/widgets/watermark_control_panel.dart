@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:timezone/timezone.dart' as tz;
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/models/redaction_item.dart';
 import '../../../../core/models/watermark_config.dart';
+import '../../../../core/utils/app_timezone.dart';
 import '../../../../core/utils/validators.dart';
 import '../../../../l10n/app_localizations.dart';
 
 class WatermarkControlPanel extends StatefulWidget {
   final WatermarkConfig config;
+  final tz.Location? zone;
   final Function(String) onPurposeChanged;
   final Function(DateTime) onDateChanged;
   final Function(String) onSubtextChanged;
@@ -26,6 +29,7 @@ class WatermarkControlPanel extends StatefulWidget {
   const WatermarkControlPanel({
     super.key,
     required this.config,
+    this.zone,
     required this.onPurposeChanged,
     required this.onDateChanged,
     required this.onSubtextChanged,
@@ -51,6 +55,10 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
   late TextEditingController _purposeController;
   late TextEditingController _subtextController;
   String? _purposeError;
+
+  /// Effective display zone: explicit zone, else Jakarta fallback.
+  tz.Location get _loc =>
+      widget.zone ?? AppTimeZone.locationOrFallback(kFallbackZoneName);
 
   @override
   void initState() {
@@ -80,9 +88,12 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
   }
 
   Future<void> _selectDate(BuildContext context) async {
+    // Show the picker on the zone wall-clock day: the stored instant is UTC,
+    // so project it first — otherwise the picker opens a day off east of UTC.
+    final z = AppTimeZone.toZoned(widget.config.transactionDate, _loc);
     final picked = await showDatePicker(
       context: context,
-      initialDate: widget.config.transactionDate,
+      initialDate: DateTime(z.year, z.month, z.day),
       firstDate: DateTime(2020),
       lastDate: DateTime(2035),
       builder: (context, child) {
@@ -239,7 +250,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                         children: [
                           Text(l10n?.transactionDate ?? 'Tanggal Transaksi', style: const TextStyle(fontSize: 10, color: Color(0xFF94A3B8))),
                           Text(
-                            '${widget.config.transactionDate.day.toString().padLeft(2, '0')}-${widget.config.transactionDate.month.toString().padLeft(2, '0')}-${widget.config.transactionDate.year}',
+                            widget.config.dateLabelIn(_loc),
                             style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: Colors.white),
                           ),
                         ],

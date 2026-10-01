@@ -677,4 +677,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get appLanguage => 'App Language';
+
+  @override
+  String get timezone => 'Time Zone';
+
+  @override
+  String get timezoneAuto => 'Automatic (follow device)';
 }

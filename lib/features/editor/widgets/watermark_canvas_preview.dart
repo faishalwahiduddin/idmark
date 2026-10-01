@@ -1,14 +1,17 @@
 import 'dart:math' as math;
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
+import 'package:timezone/timezone.dart' as tz;
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/models/redaction_item.dart';
 import '../../../../core/models/watermark_config.dart';
+import '../../../../core/utils/app_timezone.dart';
 import '../../../../l10n/app_localizations.dart';
 
 class WatermarkCanvasPreview extends StatefulWidget {
   final Uint8List? imageBytes;
   final WatermarkConfig config;
+  final tz.Location? zone;
   final VoidCallback onPickGallery;
   final VoidCallback onPickCamera;
   final VoidCallback onClear;
@@ -18,6 +21,7 @@ class WatermarkCanvasPreview extends StatefulWidget {
     super.key,
     required this.imageBytes,
     required this.config,
+    this.zone,
     required this.onPickGallery,
     required this.onPickCamera,
     required this.onClear,
@@ -58,7 +62,10 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
                 if (!_isComparingOriginal)
                   Positioned.fill(
                     child: CustomPaint(
-                      painter: _WatermarkOverlayPainter(config: widget.config),
+                      painter: _WatermarkOverlayPainter(
+                        config: widget.config,
+                        zone: widget.zone,
+                      ),
                     ),
                   ),
 
@@ -353,8 +360,13 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
 
 class _WatermarkOverlayPainter extends CustomPainter {
   final WatermarkConfig config;
+  final tz.Location? zone;
 
-  _WatermarkOverlayPainter({required this.config});
+  _WatermarkOverlayPainter({required this.config, this.zone});
+
+  /// Effective display zone: explicit zone, else Jakarta fallback.
+  tz.Location get _loc =>
+      zone ?? AppTimeZone.locationOrFallback(kFallbackZoneName);
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -444,7 +456,7 @@ class _WatermarkOverlayPainter extends CustomPainter {
     // 2. Draw Watermark Pattern
     final scale = math.max(width, height) / 450.0;
     final fontSize = (config.fontSize * 0.55) * scale;
-    final text = config.renderedText;
+    final text = config.renderedTextIn(_loc);
     final color = config.colorOption.color.withValues(alpha: config.opacity);
 
     switch (config.pattern) {
@@ -709,12 +721,9 @@ class _WatermarkOverlayPainter extends CustomPainter {
     textPainter.paint(canvas, Offset(-textPainter.width / 2, -textPainter.height / 2));
 
     if (config.includeDate) {
-      final day = config.transactionDate.day.toString().padLeft(2, '0');
-      final month = config.transactionDate.month.toString().padLeft(2, '0');
-      final year = config.transactionDate.year.toString();
       final datePainter = TextPainter(
         text: TextSpan(
-          text: 'TGL: $day-$month-$year',
+          text: 'TGL: ${config.dateLabelIn(_loc)}',
           style: TextStyle(color: color, fontSize: fontSize * 0.45, fontWeight: FontWeight.w700),
         ),
         textDirection: TextDirection.ltr,
@@ -861,6 +870,6 @@ class _WatermarkOverlayPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant _WatermarkOverlayPainter oldDelegate) {
-    return oldDelegate.config != config;
+    return oldDelegate.config != config || oldDelegate.zone != zone;
   }
 }

@@ -347,5 +347,13 @@
       }
     }
   },
-  "appLanguage": "App Language"
+  "appLanguage": "App Language",
+  "timezone": "Time Zone",
+  "@timezone": {
+    "description": "Time zone settings section title"
+  },
+  "timezoneAuto": "Automatic (follow device)",
+  "@timezoneAuto": {
+    "description": "Automatic time zone option that follows the device zone"
+  }
 }

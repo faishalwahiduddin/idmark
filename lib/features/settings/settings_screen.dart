@@ -6,6 +6,8 @@ import '../../core/models/watermark_config.dart';
 import '../../core/providers/app_providers.dart';
 import '../../core/providers/locale_provider.dart';
 import '../../core/providers/theme_provider.dart';
+import '../../core/providers/timezone_provider.dart';
+import '../../core/utils/app_timezone.dart';
 import '../../l10n/app_localizations.dart';
 
 class SettingsScreen extends ConsumerWidget {
@@ -183,6 +185,24 @@ class SettingsScreen extends ConsumerWidget {
                     ),
                     trailing: const Icon(Icons.chevron_right, color: Color(0xFF94A3B8)),
                     onTap: () => _showLanguageModal(context, ref, currentLocale),
+                  ),
+                  const Divider(color: AppColors.border, height: 24),
+                  Semantics(
+                    button: true,
+                    label: l10n.timezone,
+                    child: ListTile(
+                      key: const ValueKey('timezone_picker'),
+                      contentPadding: EdgeInsets.zero,
+                      leading: const Icon(Icons.schedule, color: AppColors.primaryLight, size: 20),
+                      title: Text(l10n.timezone,
+                          style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white)),
+                      subtitle: Text(
+                        _currentTimezoneLabel(ref, l10n),
+                        style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
+                      ),
+                      trailing: const Icon(Icons.chevron_right, color: Color(0xFF94A3B8)),
+                      onTap: () => _showTimezoneModal(context, ref),
+                    ),
                   ),
                 ],
               ),
@@ -402,6 +422,87 @@ class SettingsScreen extends ConsumerWidget {
           const SizedBox(height: 32),
         ],
       ),
+    );
+  }
+
+  String _currentTimezoneLabel(WidgetRef ref, AppLocalizations l10n) {
+    final now = AppTimeZone.nowUtc();
+    final manual = ref.watch(timezoneProvider);
+    if (manual != null) {
+      return '$manual (${AppTimeZone.zoneShortLabel(manual, now)})';
+    }
+    final device = ref.watch(timezoneNameProvider);
+    return '${l10n.timezoneAuto} · $device '
+        '(${AppTimeZone.offsetLabel(device, now)})';
+  }
+
+  void _showTimezoneModal(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
+    final now = AppTimeZone.nowUtc();
+    final current = ref.read(timezoneProvider);
+    final device = ref.read(timezoneNameProvider);
+    showModalBottomSheet(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (ctx) {
+        return SafeArea(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: Text(
+                  l10n.timezone,
+                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+              ),
+              const Divider(height: 1),
+              Expanded(
+                child: ListView(
+                  children: [
+                    ListTile(
+                      key: const ValueKey('timezone_option_auto'),
+                      title: Text(l10n.timezoneAuto),
+                      subtitle: Text(
+                        '$device (${AppTimeZone.offsetLabel(device, now)})',
+                      ),
+                      trailing: current == null
+                          ? const Icon(Icons.check, color: AppColors.accent)
+                          : null,
+                      onTap: () {
+                        ref.read(timezoneProvider.notifier).resetToAuto();
+                        Navigator.pop(ctx);
+                      },
+                    ),
+                    for (final zone in kCuratedZones)
+                      ListTile(
+                        key: ValueKey('timezone_option_${zone.iana}'),
+                        title: Text(
+                          zone.shortLabel == null
+                              ? '${zone.iana} (${AppTimeZone.offsetLabel(zone.iana, now)})'
+                              : '${zone.iana} (${zone.shortLabel}, '
+                                  '${AppTimeZone.offsetLabel(zone.iana, now)})',
+                        ),
+                        trailing: zone.iana == current
+                            ? const Icon(Icons.check, color: AppColors.accent)
+                            : null,
+                        onTap: () {
+                          // §VAL: setZone validates via tz.getLocation and
+                          // throws ArgumentError on unknown names — the picker
+                          // only offers curated zones, so this never throws.
+                          ref.read(timezoneProvider.notifier).setZone(zone.iana);
+                          Navigator.pop(ctx);
+                        },
+                      ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 

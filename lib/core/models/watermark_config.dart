@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:timezone/timezone.dart' as tz;
 import '../constants/app_colors.dart';
+import '../utils/app_timezone.dart';
 import '../utils/validators.dart';
 import 'redaction_item.dart';
 
@@ -78,7 +80,7 @@ class WatermarkConfig {
   factory WatermarkConfig.defaultConfig() {
     return WatermarkConfig(
       purpose: 'VERIFIKASI PINJAMAN BANK ABC',
-      transactionDate: DateTime.now(),
+      transactionDate: AppTimeZone.nowUtc(),
       customSubtext: '',
       pattern: WatermarkPattern.diagonalBand,
       colorOption: WatermarkColorOption.red,
@@ -156,15 +158,31 @@ class WatermarkConfig {
     return errors;
   }
 
-  /// Generates the combined text line for rendering
-  String get renderedText {
+  /// Generates the combined text line for rendering.
+  ///
+  /// Contract (§TZ): [transactionDate] is stored as a UTC instant; display
+  /// projects it into a zone. This getter keeps the legacy Jakarta
+  /// projection so pure-model callers (tests, offline paths) stay stable —
+  /// UI and export paths must use [renderedTextIn] with the selected zone.
+  String get renderedText => renderedTextIn(
+        AppTimeZone.locationOrFallback(kFallbackZoneName),
+      );
+
+  /// Zone-aware variant of [renderedText]: the date stamp is the wall-clock
+  /// date of the stored instant in [loc] (DST-aware).
+  String renderedTextIn(tz.Location loc) {
     final cleanPurpose = isUppercase ? purpose.toUpperCase() : purpose;
     if (!includeDate) return cleanPurpose;
-    final day = transactionDate.day.toString().padLeft(2, '0');
-    final month = transactionDate.month.toString().padLeft(2, '0');
-    final year = transactionDate.year.toString();
-    final dateStr = '$day-$month-$year';
-    return '$cleanPurpose (TGL: $dateStr)';
+    return '$cleanPurpose (TGL: ${dateLabelIn(loc)})';
+  }
+
+  /// `dd-MM-yyyy` wall-clock date of [transactionDate] in [loc].
+  String dateLabelIn(tz.Location loc) {
+    final z = AppTimeZone.toZoned(transactionDate, loc);
+    final day = z.day.toString().padLeft(2, '0');
+    final month = z.month.toString().padLeft(2, '0');
+    final year = z.year.toString();
+    return '$day-$month-$year';
   }
 
   WatermarkConfig copyWith({
@@ -211,7 +229,8 @@ class WatermarkConfig {
   Map<String, dynamic> toJson() {
     return {
       'purpose': purpose,
-      'transactionDate': transactionDate.toIso8601String(),
+      // Storage contract (§TZ): always a UTC `Z` instant, never device-local.
+      'transactionDate': transactionDate.toUtc().toIso8601String(),
       'customSubtext': customSubtext,
       'pattern': pattern.name,
       'colorOption': colorOption.name,
@@ -240,8 +259,9 @@ class WatermarkConfig {
     return WatermarkConfig(
       purpose: json['purpose'] as String? ?? 'VERIFIKASI',
       transactionDate: json['transactionDate'] != null
-          ? DateTime.tryParse(json['transactionDate'] as String) ?? DateTime.now()
-          : DateTime.now(),
+          ? AppTimeZone.parseUtc(json['transactionDate']) ??
+              AppTimeZone.nowUtc()
+          : AppTimeZone.nowUtc(),
       customSubtext: json['customSubtext'] as String? ?? '',
       pattern: WatermarkPattern.values.firstWhere(
         (p) => p.name == json['pattern'],

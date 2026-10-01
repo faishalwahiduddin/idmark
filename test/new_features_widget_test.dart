@@ -7,7 +7,25 @@ import 'package:idmark/core/storage/local_storage_service.dart';
 import 'package:idmark/features/guide/kominfo_guide_screen.dart';
 import 'package:idmark/features/history/history_screen.dart';
 import 'package:idmark/features/presets/presets_screen.dart';
+import 'package:idmark/l10n/app_localizations.dart';
+import 'package:idmark/l10n/fallback_framework_delegates.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+/// Test-only MaterialApp wrapper: screens read `AppLocalizations.of(context)!`,
+/// so the harness must provide the delegates `main.dart` installs in prod.
+MaterialApp _testApp(Widget home) {
+  return MaterialApp(
+    localizationsDelegates: const [
+      AppLocalizations.delegate,
+      FallbackMaterialLocalizationsDelegate(),
+      FallbackWidgetsLocalizationsDelegate(),
+      FallbackCupertinoLocalizationsDelegate(),
+    ],
+    supportedLocales: AppLocalizations.supportedLocales,
+    locale: const Locale('id'),
+    home: home,
+  );
+}
 
 void main() {
   testWidgets('HistoryScreen renders empty state and populated logs correctly', (tester) async {
@@ -23,7 +41,7 @@ void main() {
     await tester.pumpWidget(
       UncontrolledProviderScope(
         container: container,
-        child: const MaterialApp(home: HistoryScreen()),
+        child: _testApp(const HistoryScreen()),
       ),
     );
 
@@ -63,7 +81,7 @@ void main() {
         overrides: [
           localStorageServiceProvider.overrideWithValue(storage),
         ],
-        child: const MaterialApp(home: PresetsScreen()),
+        child: _testApp(const PresetsScreen()),
       ),
     );
 
@@ -77,7 +95,7 @@ void main() {
 
   testWidgets('KominfoGuideScreen renders interactive checklist and rules', (tester) async {
     await tester.pumpWidget(
-      const MaterialApp(home: KominfoGuideScreen()),
+      _testApp(const KominfoGuideScreen()),
     );
 
     await tester.pumpAndSettle();

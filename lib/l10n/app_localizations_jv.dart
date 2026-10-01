@@ -672,4 +672,10 @@ class AppLocalizationsJv extends AppLocalizations {
 
   @override
   String get appLanguage => 'Basa Aplikasi';
+
+  @override
+  String get timezone => 'Zona Waktu';
+
+  @override
+  String get timezoneAuto => 'Otomatis (ikut perangkat)';
 }

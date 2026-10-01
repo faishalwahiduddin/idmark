@@ -5,6 +5,7 @@ import '../../core/constants/app_colors.dart';
 import '../../core/models/watermark_config.dart';
 import '../../core/models/watermark_preset.dart';
 import '../../core/providers/app_providers.dart';
+import '../../core/utils/app_timezone.dart';
 import '../../core/utils/validators.dart';
 import '../../l10n/app_localizations.dart';
 
@@ -435,7 +436,7 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
 
                 if (tErr == null && pErr == null) {
                   final newPreset = WatermarkPreset(
-                    id: 'custom_${DateTime.now().millisecondsSinceEpoch}',
+                    id: 'custom_${AppTimeZone.nowUtc().millisecondsSinceEpoch}',
                     title: titleCtrl.text.trim(),
                     category: catCtrl.text.trim().isEmpty ? 'Kustom' : catCtrl.text.trim(),
                     samplePurpose: purposeCtrl.text.trim().toUpperCase(),

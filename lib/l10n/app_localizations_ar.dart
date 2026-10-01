@@ -669,4 +669,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get appLanguage => 'لغة التطبيق';
+
+  @override
+  String get timezone => 'Zona Waktu';
+
+  @override
+  String get timezoneAuto => 'Otomatis (ikut perangkat)';
 }

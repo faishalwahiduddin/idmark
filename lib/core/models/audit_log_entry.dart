@@ -1,3 +1,5 @@
+import '../utils/app_timezone.dart';
+
 class AuditLogEntry {
   final String id;
   final DateTime timestamp;
@@ -38,7 +40,8 @@ class AuditLogEntry {
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'timestamp': timestamp.toIso8601String(),
+      // Storage contract (§TZ): always a UTC `Z` instant, never device-local.
+      'timestamp': timestamp.toUtc().toIso8601String(),
       'purpose': purpose,
       'pattern': pattern,
       'exportFormat': exportFormat,
@@ -52,10 +55,11 @@ class AuditLogEntry {
 
   factory AuditLogEntry.fromJson(Map<String, dynamic> json) {
     return AuditLogEntry(
-      id: json['id'] as String? ?? 'audit_${DateTime.now().millisecondsSinceEpoch}',
+      id: json['id'] as String? ??
+          'audit_${AppTimeZone.nowUtc().millisecondsSinceEpoch}',
       timestamp: json['timestamp'] != null
-          ? DateTime.tryParse(json['timestamp'] as String) ?? DateTime.now()
-          : DateTime.now(),
+          ? AppTimeZone.parseUtc(json['timestamp']) ?? AppTimeZone.nowUtc()
+          : AppTimeZone.nowUtc(),
       purpose: json['purpose'] as String? ?? 'VERIFIKASI',
       pattern: json['pattern'] as String? ?? 'diagonalBand',
       exportFormat: json['exportFormat'] as String? ?? 'PNG',

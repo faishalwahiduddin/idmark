@@ -3,8 +3,10 @@ import 'dart:typed_data';
 import 'dart:ui' as ui;
 import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
+import 'package:timezone/timezone.dart' as tz;
 import '../models/redaction_item.dart';
 import '../models/watermark_config.dart';
+import '../utils/app_timezone.dart';
 
 class WatermarkRendererService {
   /// Decodes raw bytes to a [ui.Image]
@@ -19,11 +21,17 @@ class WatermarkRendererService {
     return sha256.convert(bytes).toString();
   }
 
-  /// Renders both redactions (sensor) and watermark onto the source [ui.Image]
+  /// Renders both redactions (sensor) and watermark onto the source [ui.Image].
+  ///
+  /// Dates burned into pixels use [zone] (the selected display zone); when
+  /// null the Jakarta fallback applies. Callers pass
+  /// `ref.read(timezoneLocationProvider)`.
   static Future<Uint8List> renderWatermark({
     required ui.Image sourceImage,
     required WatermarkConfig config,
+    tz.Location? zone,
   }) async {
+    final loc = zone ?? AppTimeZone.locationOrFallback(kFallbackZoneName);
     final recorder = ui.PictureRecorder();
     final canvas = Canvas(recorder);
     final width = sourceImage.width.toDouble();
@@ -42,25 +50,25 @@ class WatermarkRendererService {
     // 4. Render selected watermark pattern
     switch (config.pattern) {
       case WatermarkPattern.diagonalBand:
-        _renderDiagonalBand(canvas, width, height, config, baseFontSize);
+        _renderDiagonalBand(canvas, width, height, config, baseFontSize, loc);
         break;
       case WatermarkPattern.repeatedGrid:
-        _renderRepeatedGrid(canvas, width, height, config, baseFontSize);
+        _renderRepeatedGrid(canvas, width, height, config, baseFontSize, loc);
         break;
       case WatermarkPattern.bottomBar:
-        _renderBottomBar(canvas, width, height, config, baseFontSize);
+        _renderBottomBar(canvas, width, height, config, baseFontSize, loc);
         break;
       case WatermarkPattern.cornerStamp:
-        _renderCornerStamp(canvas, width, height, config, baseFontSize);
+        _renderCornerStamp(canvas, width, height, config, baseFontSize, loc);
         break;
       case WatermarkPattern.securitySeal:
-        _renderSecuritySeal(canvas, width, height, config, baseFontSize);
+        _renderSecuritySeal(canvas, width, height, config, baseFontSize, loc);
         break;
       case WatermarkPattern.crossStamp:
-        _renderCrossStamp(canvas, width, height, config, baseFontSize);
+        _renderCrossStamp(canvas, width, height, config, baseFontSize, loc);
         break;
       case WatermarkPattern.qrBadge:
-        _renderQrBadge(canvas, width, height, config, baseFontSize);
+        _renderQrBadge(canvas, width, height, config, baseFontSize, loc);
         break;
     }
 
@@ -172,12 +180,13 @@ class WatermarkRendererService {
     double height,
     WatermarkConfig config,
     double fontSize,
+    tz.Location zone,
   ) {
     canvas.save();
     canvas.translate(width / 2, height / 2);
     canvas.rotate((config.rotationAngle * math.pi) / 180.0);
 
-    final text = config.renderedText;
+    final text = config.renderedTextIn(zone);
     final color = config.colorOption.color.withValues(alpha: config.opacity);
 
     final textPainter = TextPainter(
@@ -249,9 +258,10 @@ class WatermarkRendererService {
     double height,
     WatermarkConfig config,
     double fontSize,
+    tz.Location zone,
   ) {
     canvas.save();
-    final text = config.renderedText;
+    final text = config.renderedTextIn(zone);
     final color = config.colorOption.color.withValues(alpha: (config.opacity * 0.75).clamp(0.1, 0.9));
 
     final textPainter = TextPainter(
@@ -290,6 +300,7 @@ class WatermarkRendererService {
     double height,
     WatermarkConfig config,
     double fontSize,
+    tz.Location zone,
   ) {
     final barHeight = fontSize * 3.0;
     final barRect = Rect.fromLTWH(0, height - barHeight, width, barHeight);
@@ -300,7 +311,7 @@ class WatermarkRendererService {
     canvas.drawRect(barRect, barPaint);
 
     final color = config.colorOption.color;
-    final text = config.renderedText;
+    final text = config.renderedTextIn(zone);
 
     final textPainter = TextPainter(
       text: TextSpan(
@@ -327,6 +338,7 @@ class WatermarkRendererService {
     double height,
     WatermarkConfig config,
     double fontSize,
+    tz.Location zone,
   ) {
     final stampWidth = fontSize * 10;
     final stampHeight = fontSize * 3.5;
@@ -352,7 +364,7 @@ class WatermarkRendererService {
       ..strokeWidth = fontSize * 0.1;
     canvas.drawRRect(RRect.fromRectAndRadius(stampRect, Radius.circular(fontSize * 0.4)), borderPaint);
 
-    final text = config.renderedText;
+    final text = config.renderedTextIn(zone);
     final textPainter = TextPainter(
       text: TextSpan(
         text: text,
@@ -380,6 +392,7 @@ class WatermarkRendererService {
     double height,
     WatermarkConfig config,
     double fontSize,
+    tz.Location zone,
   ) {
     canvas.save();
     canvas.translate(width / 2, height / 2);
@@ -446,12 +459,9 @@ class WatermarkRendererService {
 
     // Bottom Date text
     if (config.includeDate) {
-      final day = config.transactionDate.day.toString().padLeft(2, '0');
-      final month = config.transactionDate.month.toString().padLeft(2, '0');
-      final year = config.transactionDate.year.toString();
       final datePainter = TextPainter(
         text: TextSpan(
-          text: 'TGL: $day-$month-$year',
+          text: 'TGL: ${config.dateLabelIn(zone)}',
           style: TextStyle(
             color: color,
             fontSize: fontSize * 0.45,
@@ -473,13 +483,14 @@ class WatermarkRendererService {
     double height,
     WatermarkConfig config,
     double fontSize,
+    tz.Location zone,
   ) {
     // Render first diagonal ribbon (-25 deg)
     canvas.save();
     canvas.translate(width / 2, height / 2);
     canvas.rotate((-25.0 * math.pi) / 180.0);
 
-    final text = config.renderedText;
+    final text = config.renderedTextIn(zone);
     final color = config.colorOption.color.withValues(alpha: config.opacity);
 
     final textPainter = TextPainter(
@@ -554,6 +565,7 @@ class WatermarkRendererService {
     double height,
     WatermarkConfig config,
     double fontSize,
+    tz.Location zone,
   ) {
     final badgeWidth = fontSize * 11;
     final badgeHeight = fontSize * 3.8;
@@ -633,12 +645,9 @@ class WatermarkRendererService {
     purposePainter.paint(canvas, Offset(rightLeft, badgeRect.top + (fontSize * 0.9)));
 
     if (config.includeDate) {
-      final day = config.transactionDate.day.toString().padLeft(2, '0');
-      final month = config.transactionDate.month.toString().padLeft(2, '0');
-      final year = config.transactionDate.year.toString();
       final datePainter = TextPainter(
         text: TextSpan(
-          text: 'TGL: $day-$month-$year',
+          text: 'TGL: ${config.dateLabelIn(zone)}',
           style: const TextStyle(
             color: Color(0xFF64748B),
             fontSize: 9,
