@@ -42,13 +42,13 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         children: [
-          // Security Overview Banner
+          // Security Overview Banner (solid surface: readable either theme)
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: AppColors.accent.withValues(alpha: 0.1),
+              color: AppColors.bannerSurface,
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: AppColors.accent.withValues(alpha: 0.25)),
+              border: Border.all(color: AppColors.accent.withValues(alpha: 0.4)),
             ),
             child: Row(
               children: [
@@ -89,6 +89,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
           // Search Box if logs exist
           if (logs.isNotEmpty) ...[
             TextField(
+              style: const TextStyle(color: Colors.white, fontSize: 14),
               decoration: InputDecoration(
                 hintText: l10n.searchHistoryHint,
                 prefixIcon: const Icon(Icons.search, size: 18),
@@ -139,13 +140,13 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
             const SizedBox(height: 20),
             Text(
               l10n.noWatermarkedDocsYet,
-              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: Colors.white),
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: AppColors.title(context)),
             ),
             const SizedBox(height: 8),
             Text(
               l10n.noWatermarkedDocsDesc,
               textAlign: TextAlign.center,
-              style: const TextStyle(fontSize: 13, color: Color(0xFF94A3B8), height: 1.4),
+              style: TextStyle(fontSize: 13, color: AppColors.muted(context), height: 1.4),
             ),
           ],
         ),

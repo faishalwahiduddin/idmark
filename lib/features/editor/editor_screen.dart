@@ -300,13 +300,13 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                // Top Kominfo & UU PDP Banner
+                // Top Kominfo & UU PDP Banner (solid surface: readable either theme)
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                   decoration: BoxDecoration(
-                    color: AppColors.primary.withValues(alpha: 0.1),
+                    color: AppColors.bannerSurface,
                     borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: AppColors.primary.withValues(alpha: 0.25)),
+                    border: Border.all(color: AppColors.primary.withValues(alpha: 0.35)),
                   ),
                   child: Row(
                     children: [

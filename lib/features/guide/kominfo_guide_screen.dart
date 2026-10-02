@@ -30,15 +30,11 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         children: [
-          // Header Card
+          // Header Card (flat brand surface, no gradient wash)
           Container(
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                colors: [Color(0xFF0369A1), Color(0xFF0C4A6E)],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
+              color: AppColors.primaryDark,
               borderRadius: BorderRadius.circular(16),
             ),
             child: Column(
@@ -123,10 +119,10 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
           // 4 Aturan Pokok Kominfo
           Text(
             l10n.guideRules,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.w700,
-              color: Colors.white,
+              color: AppColors.title(context),
             ),
           ),
           const SizedBox(height: 12),
@@ -157,13 +153,13 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
           ),
           const SizedBox(height: 16),
 
-          // Peringatan jika Penerima Menolak Watermark
+          // Peringatan jika Penerima Menolak Watermark (solid: readable either theme)
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: AppColors.danger.withValues(alpha: 0.1),
+              color: AppColors.bannerSurface,
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: AppColors.danger.withValues(alpha: 0.3)),
+              border: Border.all(color: AppColors.danger.withValues(alpha: 0.45)),
             ),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -223,7 +219,7 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
                 text,
                 style: TextStyle(
                   fontSize: 12,
-                  color: isChecked ? Colors.white : const Color(0xFF94A3B8),
+                  color: isChecked ? Colors.white : const Color(0xFFCBD5E1),
                   decoration: isChecked ? TextDecoration.lineThrough : null,
                 ),
               ),
@@ -242,7 +238,10 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
   }) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
+      // Explicit brand-dark surface: rule styling is authored for dark and
+      // stays identical in either app theme.
       child: Card(
+        color: AppColors.bgCard,
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Row(
@@ -283,7 +282,7 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
                       description,
                       style: const TextStyle(
                         fontSize: 12,
-                        color: Color(0xFF94A3B8),
+                        color: Color(0xFFCBD5E1),
                         height: 1.4,
                       ),
                     ),

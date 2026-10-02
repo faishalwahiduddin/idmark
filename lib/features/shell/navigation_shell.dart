@@ -25,14 +25,14 @@ class NavigationShell extends StatelessWidget {
     return Scaffold(
       body: navigationShell,
       bottomNavigationBar: Container(
-        decoration: const BoxDecoration(
-          border: Border(top: BorderSide(color: AppColors.border, width: 1)),
+        decoration: BoxDecoration(
+          border: Border(
+              top: BorderSide(
+                  color: Theme.of(context).dividerColor, width: 1)),
         ),
         child: NavigationBar(
           selectedIndex: navigationShell.currentIndex,
           onDestinationSelected: _onTap,
-          backgroundColor: AppColors.bgSurface,
-          indicatorColor: AppColors.primary.withValues(alpha: 0.25),
           destinations: [
             NavigationDestination(
               icon: const Icon(Icons.document_scanner_outlined),

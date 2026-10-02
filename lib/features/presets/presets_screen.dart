@@ -67,13 +67,13 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         children: [
-          // Banner
+          // Banner (solid surface: readable either theme)
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: AppColors.primary.withValues(alpha: 0.1),
+              color: AppColors.bannerSurface,
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: AppColors.primary.withValues(alpha: 0.25)),
+              border: Border.all(color: AppColors.primary.withValues(alpha: 0.35)),
             ),
             child: Row(
               children: [
@@ -100,8 +100,9 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
           ),
           const SizedBox(height: 16),
 
-          // Search Bar
+          // Search Bar (fill is always brand-dark → pin light text)
           TextField(
+            style: const TextStyle(color: Colors.white, fontSize: 14),
             decoration: InputDecoration(
               hintText: l10n.searchTemplateHint,
               prefixIcon: const Icon(Icons.search, size: 18),

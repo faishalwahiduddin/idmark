@@ -147,11 +147,14 @@ class LocalStorageService {
     return _prefs.setBool(AppConstants.keyAutoStripExif, value);
   }
 
+  /// Brand world is dark: every screen is authored for the dark shield
+  /// theme, so fresh installs default to dark instead of following the
+  /// OS. Users can still pick Light/System in Settings.
   ThemeMode getThemeMode() {
     final mode = _prefs.getString('theme_mode');
     if (mode == 'light') return ThemeMode.light;
-    if (mode == 'dark') return ThemeMode.dark;
-    return ThemeMode.system;
+    if (mode == 'system') return ThemeMode.system;
+    return ThemeMode.dark;
   }
 
   Future<bool> saveThemeMode(ThemeMode mode) async {

@@ -87,13 +87,13 @@ class SettingsScreen extends ConsumerWidget {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         children: [
-          // Security Architecture Card
+          // Security Architecture Card (solid surface: readable either theme)
           Container(
             padding: const EdgeInsets.all(18),
             decoration: BoxDecoration(
-              color: AppColors.accent.withValues(alpha: 0.1),
+              color: AppColors.bannerSurface,
               borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: AppColors.accent.withValues(alpha: 0.3)),
+              border: Border.all(color: AppColors.accent.withValues(alpha: 0.4)),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -127,12 +127,12 @@ class SettingsScreen extends ConsumerWidget {
           const SizedBox(height: 20),
 
           // Tampilan & Bahasa
-          const Text(
+          Text(
             'Tampilan & Bahasa',
             style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w700,
-              color: Color(0xFF94A3B8),
+              color: AppColors.muted(context),
             ),
           ),
           const SizedBox(height: 10),
@@ -142,14 +142,14 @@ class SettingsScreen extends ConsumerWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
+                    Row(
                     children: [
                       const Icon(Icons.palette_outlined, color: AppColors.primaryLight, size: 20),
                       const SizedBox(width: 10),
-                      const Expanded(
+                      Expanded(
                         child: Text(
                           'Mode Tema',
-                          style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white),
+                          style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: AppColors.title(context)),
                         ),
                       ),
                       SegmentedButton<ThemeMode>(
@@ -174,19 +174,19 @@ class SettingsScreen extends ConsumerWidget {
                       ),
                     ],
                   ),
-                  const Divider(color: AppColors.border, height: 24),
+                  const Divider(height: 24),
                   ListTile(
                     contentPadding: EdgeInsets.zero,
                     leading: const Icon(Icons.translate, color: AppColors.primaryLight, size: 20),
-                    title: Text(l10n.appLanguage, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white)),
+                    title: Text(l10n.appLanguage, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: AppColors.title(context))),
                     subtitle: Text(
                       '${_languages[langCode]?.nativeName ?? langCode} (${_languages[langCode]?.name ?? langCode})',
-                      style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
+                      style: TextStyle(fontSize: 12, color: AppColors.muted(context)),
                     ),
-                    trailing: const Icon(Icons.chevron_right, color: Color(0xFF94A3B8)),
+                    trailing: Icon(Icons.chevron_right, color: AppColors.muted(context)),
                     onTap: () => _showLanguageModal(context, ref, currentLocale),
                   ),
-                  const Divider(color: AppColors.border, height: 24),
+                  const Divider(height: 24),
                   Semantics(
                     button: true,
                     label: l10n.timezone,
@@ -195,12 +195,12 @@ class SettingsScreen extends ConsumerWidget {
                       contentPadding: EdgeInsets.zero,
                       leading: const Icon(Icons.schedule, color: AppColors.primaryLight, size: 20),
                       title: Text(l10n.timezone,
-                          style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white)),
+                          style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: AppColors.title(context))),
                       subtitle: Text(
                         _currentTimezoneLabel(ref, l10n),
-                        style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
+                        style: TextStyle(fontSize: 12, color: AppColors.muted(context)),
                       ),
-                      trailing: const Icon(Icons.chevron_right, color: Color(0xFF94A3B8)),
+                      trailing: Icon(Icons.chevron_right, color: AppColors.muted(context)),
                       onTap: () => _showTimezoneModal(context, ref),
                     ),
                   ),
@@ -213,10 +213,10 @@ class SettingsScreen extends ConsumerWidget {
           // Sanitasi & Keamanan Data
           Text(
             l10n.dataSecuritySanitation,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w700,
-              color: Color(0xFF94A3B8),
+              color: AppColors.muted(context),
             ),
           ),
           const SizedBox(height: 10),
@@ -225,10 +225,10 @@ class SettingsScreen extends ConsumerWidget {
               children: [
                 SwitchListTile(
                   secondary: const Icon(Icons.cleaning_services_outlined, color: AppColors.primaryLight),
-                  title: Text(l10n.autoSanitizeExifTitle, style: const TextStyle(fontSize: 14, color: Colors.white)),
+                  title: Text(l10n.autoSanitizeExifTitle, style: TextStyle(fontSize: 14, color: AppColors.title(context))),
                   subtitle: Text(
                     l10n.autoExifSubtitle,
-                    style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
+                    style: TextStyle(fontSize: 12, color: AppColors.muted(context)),
                   ),
                   value: autoStrip,
                   activeThumbColor: AppColors.accent,
@@ -237,13 +237,13 @@ class SettingsScreen extends ConsumerWidget {
                     ref.read(watermarkConfigProvider.notifier).updateStripMetadata(val);
                   },
                 ),
-                const Divider(color: AppColors.border, height: 1),
+                const Divider(height: 1),
                 ListTile(
                   leading: const Icon(Icons.file_present_outlined, color: AppColors.primaryLight),
-                  title: Text(l10n.defaultExportFormat, style: const TextStyle(fontSize: 14, color: Colors.white)),
+                  title: Text(l10n.defaultExportFormat, style: TextStyle(fontSize: 14, color: AppColors.title(context))),
                   subtitle: Text(
                     config.exportFormat.label,
-                    style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
+                    style: TextStyle(fontSize: 12, color: AppColors.muted(context)),
                   ),
                   trailing: DropdownButton<ExportFormat>(
                     value: config.exportFormat,
@@ -270,10 +270,10 @@ class SettingsScreen extends ConsumerWidget {
           // Penyimpanan Lokal
           Text(
             l10n.localDeviceStorage,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w700,
-              color: Color(0xFF94A3B8),
+              color: AppColors.muted(context),
             ),
           ),
           const SizedBox(height: 10),
@@ -282,10 +282,10 @@ class SettingsScreen extends ConsumerWidget {
               children: [
                 ListTile(
                   leading: const Icon(Icons.history_edu, color: AppColors.primaryLight),
-                  title: Text(l10n.history, style: const TextStyle(fontSize: 14, color: Colors.white)),
+                  title: Text(l10n.history, style: TextStyle(fontSize: 14, color: AppColors.title(context))),
                   subtitle: Text(
                     l10n.historySubtitle(auditLogs.length),
-                    style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
+                    style: TextStyle(fontSize: 12, color: AppColors.muted(context)),
                   ),
                   trailing: TextButton(
                     onPressed: auditLogs.isEmpty
@@ -301,31 +301,30 @@ class SettingsScreen extends ConsumerWidget {
                     child: Text(l10n.clearHistory, style: const TextStyle(color: AppColors.danger, fontSize: 12)),
                   ),
                 ),
-                const Divider(color: AppColors.border, height: 1),
+                const Divider(height: 1),
                 ListTile(
                   leading: const Icon(Icons.bookmark_border, color: AppColors.primaryLight),
-                  title: Text(l10n.presets, style: const TextStyle(fontSize: 14, color: Colors.white)),
+                  title: Text(l10n.presets, style: TextStyle(fontSize: 14, color: AppColors.title(context))),
                   subtitle: Text(
                     l10n.presetsSubtitle(customPresets.length),
-                    style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
+                    style: TextStyle(fontSize: 12, color: AppColors.muted(context)),
                   ),
                 ),
-                const Divider(color: AppColors.border, height: 1),
+                const Divider(height: 1),
                 ListTile(
                   leading: const Icon(Icons.delete_sweep_outlined, color: AppColors.danger),
-                  title: Text(l10n.resetDefaults, style: const TextStyle(fontSize: 14, color: Colors.white)),
+                  title: Text(l10n.resetDefaults, style: TextStyle(fontSize: 14, color: AppColors.title(context))),
                   subtitle: Text(l10n.resetDefaultsDesc,
-                      style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
-                  trailing: const Icon(Icons.chevron_right, color: Color(0xFF64748B)),
+                      style: TextStyle(fontSize: 12, color: AppColors.muted(context))),
+                  trailing: Icon(Icons.chevron_right, color: AppColors.muted(context)),
                   onTap: () async {
                     final confirm = await showDialog<bool>(
                       context: context,
                       builder: (ctx) => AlertDialog(
-                        backgroundColor: AppColors.bgSurface,
-                        title: Text(l10n.resetWarningTitle, style: const TextStyle(color: Colors.white)),
+                        title: Text(l10n.resetWarningTitle, style: TextStyle(color: AppColors.title(context))),
                         content: Text(
                           l10n.resetWarningBody,
-                          style: const TextStyle(color: Color(0xFF94A3B8)),
+                          style: TextStyle(color: AppColors.body(context)),
                         ),
                         actions: [
                           TextButton(
@@ -360,10 +359,10 @@ class SettingsScreen extends ConsumerWidget {
           // Tentang Aplikasi & Lisensi
           Text(
             l10n.aboutApp,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w700,
-              color: Color(0xFF94A3B8),
+              color: AppColors.muted(context),
             ),
           ),
           const SizedBox(height: 10),
@@ -373,24 +372,24 @@ class SettingsScreen extends ConsumerWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _buildAboutRow(l10n.appLabel, AppConstants.appName),
-                  const Divider(color: AppColors.border, height: 24),
-                  _buildAboutRow(l10n.appVersion, '${AppConstants.appVersion}+1'),
-                  const Divider(color: AppColors.border, height: 24),
-                  _buildAboutRow(l10n.appDomain, 'idmark.faishal.id'),
-                  const Divider(color: AppColors.border, height: 24),
-                  _buildAboutRow('Identitas', 'id.faishal.idmark'),
-                  const Divider(color: AppColors.border, height: 24),
-                  _buildAboutRow(l10n.appCompliance, 'UU No. 27/2022 (PDP) & Kominfo'),
-                  const Divider(color: AppColors.border, height: 24),
-                  _buildAboutRow('Ekosistem', 'Security & Privacy Fleet'),
-                  const Divider(color: AppColors.border, height: 24),
+                  _buildAboutRow(context, l10n.appLabel, AppConstants.appName),
+                  const Divider(height: 24),
+                  _buildAboutRow(context, l10n.appVersion, '${AppConstants.appVersion}+1'),
+                  const Divider(height: 24),
+                  _buildAboutRow(context, l10n.appDomain, 'idmark.faishal.id'),
+                  const Divider(height: 24),
+                  _buildAboutRow(context, 'Identitas', 'id.faishal.idmark'),
+                  const Divider(height: 24),
+                  _buildAboutRow(context, l10n.appCompliance, 'UU No. 27/2022 (PDP) & Kominfo'),
+                  const Divider(height: 24),
+                  _buildAboutRow(context, 'Ekosistem', 'Security & Privacy Fleet'),
+                  const Divider(height: 24),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         license.title,
-                        style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: Colors.white),
+                        style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: AppColors.title(context)),
                       ),
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
@@ -413,7 +412,7 @@ class SettingsScreen extends ConsumerWidget {
                   const SizedBox(height: 6),
                   Text(
                     license.desc,
-                    style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8), height: 1.4),
+                    style: TextStyle(fontSize: 12, color: AppColors.muted(context), height: 1.4),
                   ),
                 ],
               ),
@@ -548,12 +547,16 @@ class SettingsScreen extends ConsumerWidget {
     );
   }
 
-  Widget _buildAboutRow(String label, String value) {
+  Widget _buildAboutRow(BuildContext context, String label, String value) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(label, style: const TextStyle(fontSize: 13, color: Color(0xFF94A3B8))),
-        Text(value, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: Colors.white)),
+        Text(label, style: TextStyle(fontSize: 13, color: AppColors.muted(context))),
+        Flexible(
+          child: Text(value,
+              textAlign: TextAlign.end,
+              style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: AppColors.title(context))),
+        ),
       ],
     );
   }

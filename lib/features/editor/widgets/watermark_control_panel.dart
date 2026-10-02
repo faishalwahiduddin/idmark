@@ -118,7 +118,10 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    // Explicit brand-dark surface: panel styling is authored for dark and
+    // stays identical in either app theme (same as preset/history cards).
     return Card(
+      color: AppColors.bgCard,
       child: DefaultTabController(
         length: 4,
         child: Column(
@@ -140,7 +143,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                 ],
               ),
             ),
-            // Top Tab Navigation
+            // Top Tab Navigation (panel surface is always brand-dark)
             Container(
               decoration: const BoxDecoration(
                 border: Border(bottom: BorderSide(color: AppColors.border, width: 1)),

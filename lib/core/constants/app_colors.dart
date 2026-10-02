@@ -25,6 +25,28 @@ class AppColors {
   static const Color lightTextPrimary = Color(0xFF0F172A);
   static const Color lightTextSecondary = Color(0xFF64748B);
 
+  // --- Brightness-aware text (reads on both brand-dark and light) ---
+  static bool _isDark(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark;
+
+  /// Headings: white on dark, slate-900 on light.
+  static Color title(BuildContext context) =>
+      _isDark(context) ? Colors.white : lightTextPrimary;
+
+  /// Body copy on cards and banners.
+  static Color body(BuildContext context) => _isDark(context)
+      ? const Color(0xFFE2E8F0)
+      : const Color(0xFF334155);
+
+  /// Secondary / muted labels and section headers.
+  static Color muted(BuildContext context) => _isDark(context)
+      ? const Color(0xFF94A3B8)
+      : const Color(0xFF64748B);
+
+  /// Solid dark banner surface: keeps pale brand text readable in
+  /// EITHER theme (used for all info banners instead of alpha washes).
+  static const Color bannerSurface = bgSurface;
+
   // Watermark Color Palette Presets
   static const Color watermarkRed = Color(0xFFDC2626);
   static const Color watermarkBlue = Color(0xFF2563EB);

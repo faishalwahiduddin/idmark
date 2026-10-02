@@ -269,7 +269,10 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
 
   Widget _buildUploadPrompt(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    // Explicit brand-dark surface: prompt styling is authored for dark and
+    // stays identical in either app theme.
     return Card(
+      color: AppColors.bgCard,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 36),
         child: Column(
