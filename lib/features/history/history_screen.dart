@@ -7,6 +7,7 @@ import '../../core/providers/app_providers.dart';
 import '../../core/providers/timezone_provider.dart';
 import '../../core/utils/app_timezone.dart';
 import '../../l10n/app_localizations.dart';
+import 'widgets/discipline_badge.dart';
 
 class HistoryScreen extends ConsumerStatefulWidget {
   const HistoryScreen({super.key});
@@ -42,6 +43,9 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         children: [
+          // Gamifikasi: N file watermark + tier disiplin.
+          const DisciplineBadge(),
+          const SizedBox(height: 12),
           // Security Overview Banner (solid surface: readable either theme)
           Container(
             padding: const EdgeInsets.all(16),

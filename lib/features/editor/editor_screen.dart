@@ -13,6 +13,9 @@ import '../../core/services/pdf_export_service.dart';
 import '../../core/services/watermark_renderer_service.dart';
 import '../../core/utils/app_timezone.dart';
 import '../../l10n/app_localizations.dart';
+import 'package:flutter/foundation.dart';
+import '../../core/utils/web_download_helper.dart';
+import 'widgets/idmark_share_dialog.dart';
 import 'widgets/watermark_canvas_preview.dart';
 import 'widgets/watermark_control_panel.dart';
 
@@ -118,18 +121,28 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
       if (!mounted) return;
 
       if (isShare) {
-        final xFile = XFile.fromData(
-          finalOutputBytes,
-          name: filename,
-          mimeType: mimeType,
-        );
-        await SharePlus.instance.share(
-          ShareParams(
-            files: [xFile],
-            subject: l10n?.shareSubject(config.purpose) ?? 'Dokumen Identitas Ter-Watermark - ${config.purpose}',
-            text: l10n?.shareText(config.purpose) ?? 'Dokumen identitas ter-watermark aman via IDMark (${config.purpose}) • 100% on-device',
-          ),
-        );
+        if (kIsWeb) {
+          downloadFileWeb(finalOutputBytes, filename, mimeType: mimeType);
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Dokumen ter-watermark berhasil diunduh ($filename)! 🛡️✨'),
+              backgroundColor: AppColors.accent,
+            ),
+          );
+        } else {
+          final xFile = XFile.fromData(
+            finalOutputBytes,
+            name: filename,
+            mimeType: mimeType,
+          );
+          await SharePlus.instance.share(
+            ShareParams(
+              files: [xFile],
+              subject: l10n?.shareSubject(config.purpose) ?? 'Dokumen Identitas Ter-Watermark - ${config.purpose}',
+              text: l10n?.shareText(config.purpose) ?? 'Dokumen identitas ter-watermark aman via IDMark (${config.purpose}) • 100% on-device',
+            ),
+          );
+        }
       } else {
         _showExportSuccessDialog(finalOutputBytes, sha256Hash, config);
       }
@@ -229,13 +242,31 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
             onPressed: () => Navigator.pop(ctx),
             child: Text(l10n?.close ?? 'Tutup', style: const TextStyle(color: Color(0xFF94A3B8))),
           ),
+          OutlinedButton.icon(
+            onPressed: () {
+              Navigator.pop(ctx);
+              final dateStr = AppTimeZone.formatCalendarDay(
+                AppTimeZone.nowUtc(),
+                locale: 'id',
+              );
+              IdmarkShareDialog.show(
+                context: context,
+                config: config,
+                sha256Hash: sha256Hash,
+                dateLabel: dateStr,
+                fileSizeBytes: bytes.lengthInBytes,
+              );
+            },
+            icon: const Icon(Icons.verified_user_outlined, size: 16),
+            label: const Text('Bukti Proteksi'),
+          ),
           ElevatedButton.icon(
             onPressed: () {
               Navigator.pop(ctx);
               _exportWatermarkedImage(isShare: true);
             },
-            icon: const Icon(Icons.share, size: 16),
-            label: Text(l10n?.share ?? 'Bagikan'),
+            icon: Icon(kIsWeb ? Icons.download : Icons.share, size: 16),
+            label: Text(kIsWeb ? 'Unduh' : (l10n?.share ?? 'Bagikan')),
           ),
         ],
       ),
