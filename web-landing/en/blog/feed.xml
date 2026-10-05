@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Blog — IDMark</title>
+    <link>https://idmark.faishal.id/en/blog/</link>
+    <description>IDMark blog: guides to e-KTP watermarks, purpose-date stamps, and safe KTP-copy sharing habits — 100% offline, on-device, private.</description>
+    <language>en</language>
+    <lastBuildDate>Sun, 04 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Secure e-KTP Watermark: Offline Purpose and Date Stamp — IDMark</title>
+      <link>https://idmark.faishal.id/en/blog/watermark-ektp-aman-offline/</link>
+      <guid isPermaLink="true">https://idmark.faishal.id/en/blog/watermark-ektp-aman-offline/</guid>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Add a purpose and date watermark to e-KTP photos before sharing. Stamp ID documents 100% offline on-device, never uploading them anywhere.</description>
+    </item>
+    <item>
+      <title>Purpose and Date Stamp: Safe Limits for Sharing — IDMark</title>
+      <link>https://idmark.faishal.id/en/blog/stamp-tujuan-tanggal-dokumen/</link>
+      <guid isPermaLink="true">https://idmark.faishal.id/en/blog/stamp-tujuan-tanggal-dokumen/</guid>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Write the purpose and date on every shared document photo. The IDMark stamp marks usage limits so KTP copies resist misuse.</description>
+    </item>
+    <item>
+      <title>Protect KTP Copies: Safe Habits Before Sharing — IDMark</title>
+      <link>https://idmark.faishal.id/en/blog/lindungi-fotokopi-ktp/</link>
+      <guid isPermaLink="true">https://idmark.faishal.id/en/blog/lindungi-fotokopi-ktp/</guid>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Build safe habits before sharing KTP copies: stamp purpose, verify recipients, keep archives. IDMark helps with offline watermarks.</description>
+    </item>
+  </channel>
+</rss>

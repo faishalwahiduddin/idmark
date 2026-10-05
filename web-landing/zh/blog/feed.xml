@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Blog — IDMark</title>
+    <link>https://idmark.faishal.id/zh/blog/</link>
+    <description>IDMark 博客：e-KTP 水印、用途日期戳与身份证复印件安全分享习惯指南——100% 离线、本机处理、保护隐私。</description>
+    <language>zh</language>
+    <lastBuildDate>Sun, 04 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>安全的 e-KTP 水印：离线盖用途与日期 — IDMark</title>
+      <link>https://idmark.faishal.id/zh/blog/watermark-ektp-aman-offline/</link>
+      <guid isPermaLink="true">https://idmark.faishal.id/zh/blog/watermark-ektp-aman-offline/</guid>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      <description>分享前给 e-KTP 照片加盖用途与日期水印。在本机 100% 离线加盖，绝不上传证件到任何地方。本文分五步讲解选图、用途、日期、位置与保存，并附步骤对照表、检查清单与五组常见问答，本机离线处理，新手三分钟即可掌握，欢迎收藏。</description>
+    </item>
+    <item>
+      <title>用途与日期戳：分享证件的安全边界 — IDMark</title>
+      <link>https://idmark.faishal.id/zh/blog/stamp-tujuan-tanggal-dokumen/</link>
+      <guid isPermaLink="true">https://idmark.faishal.id/zh/blog/stamp-tujuan-tanggal-dokumen/</guid>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      <description>在每张分享的证件照上写明用途与日期。IDMark 戳记标出使用边界，让身份证复印件难以被冒用。本文讲解写用途、自动日期与安全分享三步，附示例对照表、检查清单与五组常见问答，离线可用，新手也能快速上手，欢迎收藏分享。三分钟掌握。</description>
+    </item>
+    <item>
+      <title>保护身份证复印件：分享前的安全习惯 — IDMark</title>
+      <link>https://idmark.faishal.id/zh/blog/lindungi-fotokopi-ktp/</link>
+      <guid isPermaLink="true">https://idmark.faishal.id/zh/blog/lindungi-fotokopi-ktp/</guid>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      <description>分享身份证复印件前先养成安全习惯：盖用途、核对接收方、留存档。IDMark 用离线水印帮你做到。本文讲解盖戳、核对与归档三步，附检查单对照表、操作清单与五组常见问答，离线可用，轻松三分钟掌握，欢迎收藏分享，三分钟养成好习惯。</description>
+    </item>
+  </channel>
+</rss>

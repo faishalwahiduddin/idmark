@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDMark — Watermark e-KTP & Dokumen Aman</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="IDMark menambahkan watermark tujuan dan tanggal ke foto e-KTP, paspor, dan SIM sebelum dibagikan. 100% offline di perangkat, tanpa unggah dokumen ke mana pun.">
+    <meta name="keywords" content="idmark, watermark ktp, watermark e-ktp, stamp ktp, lindungi fotokopi ktp, aplikasi offline">
+    <meta name="author" content="Faishal">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://idmark.faishal.id/">
+    <link rel="alternate" hreflang="id" href="https://idmark.faishal.id/">
+    <link rel="alternate" hreflang="en" href="https://idmark.faishal.id/en/">
+    <link rel="alternate" hreflang="ar" href="https://idmark.faishal.id/ar/">
+    <link rel="alternate" hreflang="jv" href="https://idmark.faishal.id/jv/">
+    <link rel="alternate" hreflang="su" href="https://idmark.faishal.id/su/">
+    <link rel="alternate" hreflang="zh" href="https://idmark.faishal.id/zh/">
+    <link rel="alternate" hreflang="ja" href="https://idmark.faishal.id/ja/">
+    <link rel="alternate" hreflang="x-default" href="https://idmark.faishal.id/">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://idmark.faishal.id/">
+    <meta property="og:title" content="IDMark — Watermark e-KTP & Dokumen Aman">
+    <meta property="og:description" content="IDMark menambahkan watermark tujuan dan tanggal ke foto e-KTP, paspor, dan SIM sebelum dibagikan. 100% offline di perangkat, tanpa unggah dokumen ke mana pun.">
+    <meta property="og:image" content="https://idmark.faishal.id/app/icons/Icon-512.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://idmark.faishal.id/">
+    <meta property="twitter:title" content="IDMark — Watermark e-KTP & Dokumen Aman">
+    <meta property="twitter:description" content="IDMark menambahkan watermark tujuan dan tanggal ke foto e-KTP, paspor, dan SIM sebelum dibagikan. 100% offline di perangkat, tanpa unggah dokumen ke mana pun.">
+    <meta property="twitter:image" content="https://idmark.faishal.id/app/icons/Icon-512.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "IDMark",
+        "url": "https://idmark.faishal.id/",
+        "description": "IDMark menambahkan watermark tujuan dan tanggal ke foto e-KTP, paspor, dan SIM sebelum dibagikan. 100% offline di perangkat, tanpa unggah dokumen ke mana pun.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Android, iOS, Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "IDR"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Apa itu IDMark?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "IDMark adalah aplikasi gratis yang menambahkan watermark tujuan dan tanggal ke foto e-KTP, paspor, dan SIM sebelum dibagikan."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Apakah dokumen saya diunggah ke mana pun?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Tidak pernah. IDMark memproses 100% di perangkat; atur posisi, ukuran, dan opasitas, pratinjau sebelum menyimpan, plus riwayat setiap cap."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Apakah IDMark terafiliasi dengan pemerintah?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Tidak. IDMark adalah alat privasi independen; selalu cek syarat penerima dokumen sebelum membagikan."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="brand">
+                <div class="logo-wrapper">
+                    <svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background: Cybersecurity Cyan-Cobalt -->
+    <linearGradient id="idBg" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="50%" stop-color="#0369A1"/>
+      <stop offset="100%" stop-color="#075985"/>
+    </linearGradient>
+
+    <!-- Electric Cyan Ambient Glow -->
+    <radialGradient id="idGlow" cx="512" cy="400" r="640" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.45"/>
+      <stop offset="45%" stop-color="#0EA5E9" stop-opacity="0.18"/>
+      <stop offset="85%" stop-color="#0369A1" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Soft Edge Vignette -->
+    <radialGradient id="idVignette" cx="512" cy="512" r="720" gradientUnits="userSpaceOnUse">
+      <stop offset="65%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0C4A6E" stop-opacity="0.25"/>
+    </radialGradient>
+
+    <!-- Clean Card Surface -->
+    <linearGradient id="cardGrad" x1="200" y1="260" x2="824" y2="760" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+
+    <!-- Card Header Strip -->
+    <linearGradient id="cardHeader" x1="200" y1="260" x2="824" y2="260" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0369A1"/>
+    </linearGradient>
+
+    <!-- Golden Smart Chip -->
+    <linearGradient id="chipGold" x1="390" y1="420" x2="490" y2="520" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+
+    <!-- Crimson Watermark Stamp Ribbon -->
+    <linearGradient id="stampGrad" x1="100" y1="512" x2="924" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F43F5E"/>
+      <stop offset="40%" stop-color="#E11D48"/>
+      <stop offset="80%" stop-color="#BE123C"/>
+      <stop offset="100%" stop-color="#9F1239"/>
+    </linearGradient>
+
+    <!-- Drop Shadows -->
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="32" stdDeviation="34" flood-color="#0C4A6E" flood-opacity="0.65"/>
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+
+    <filter id="stampShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+
+    <!-- Top Gloss Sheen -->
+    <linearGradient id="topSheen" x1="0" y1="0" x2="0" y2="340" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1024" height="1024" fill="url(#idBg)"/>
+  <rect width="1024" height="1024" fill="url(#idGlow)"/>
+  <rect width="1024" height="1024" fill="url(#idVignette)"/>
+
+  <!-- ==================== CLEAN FLOATING ID CARD ==================== -->
+  <g filter="url(#cardShadow)">
+    <!-- Base Card Body -->
+    <rect x="192" y="270" width="640" height="484" rx="36" fill="url(#cardGrad)" stroke="#FFFFFF" stroke-width="4"/>
+
+    <!-- Header Strip -->
+    <rect x="192" y="270" width="640" height="74" rx="36" fill="url(#cardHeader)"/>
+    <rect x="192" y="308" width="640" height="36" fill="url(#cardHeader)"/>
+    <rect x="360" y="292" width="300" height="12" rx="6" fill="#FFFFFF" opacity="0.95"/>
+    <rect x="420" y="314" width="180" height="8" rx="4" fill="#BAE6FD" opacity="0.85"/>
+
+    <!-- Left Avatar Photo Frame -->
+    <rect x="236" y="378" width="128" height="156" rx="14" fill="#0284C7" stroke="#BAE6FD" stroke-width="3"/>
+    <circle cx="300" cy="432" r="28" fill="#FFFFFF"/>
+    <path d="M 258 524 C 258 480, 276 472, 300 472 C 324 472, 342 480, 342 524 Z" fill="#FFFFFF"/>
+
+    <!-- Golden Smart Chip -->
+    <rect x="396" y="378" width="94" height="76" rx="10" fill="url(#chipGold)" stroke="#FEF3C7" stroke-width="2.5"/>
+    <line x1="396" y1="404" x2="490" y2="404" stroke="#92400E" stroke-width="2"/>
+    <line x1="396" y1="428" x2="490" y2="428" stroke="#92400E" stroke-width="2"/>
+    <line x1="428" y1="378" x2="428" y2="454" stroke="#92400E" stroke-width="2"/>
+    <line x1="458" y1="378" x2="458" y2="454" stroke="#92400E" stroke-width="2"/>
+
+    <!-- Minimal Identity Lines -->
+    <rect x="520" y="386" width="230" height="14" rx="7" fill="#0284C7"/>
+    <rect x="520" y="414" width="180" height="10" rx="5" fill="#94A3B8"/>
+    <rect x="520" y="434" width="220" height="10" rx="5" fill="#CBD5E1"/>
+
+    <rect x="396" y="480" width="354" height="10" rx="5" fill="#94A3B8"/>
+    <rect x="396" y="504" width="290" height="10" rx="5" fill="#CBD5E1"/>
+    <rect x="396" y="528" width="230" height="10" rx="5" fill="#CBD5E1"/>
+
+    <!-- Signature Strip -->
+    <rect x="236" y="556" width="128" height="42" rx="8" fill="#E2E8F0"/>
+    <path d="M 252 578 Q 274 560, 296 584 T 342 572" fill="none" stroke="#0284C7" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- ==================== CLEAN WATERMARK STAMP & SHIELD SEAL ==================== -->
+  <g filter="url(#stampShadow)" transform="rotate(-12 512 512)">
+    <!-- Watermark Banner -->
+    <rect x="96" y="458" width="832" height="108" rx="20" fill="url(#stampGrad)" opacity="0.94"/>
+    <line x1="116" y1="470" x2="908" y2="470" stroke="#FFFFFF" stroke-width="4" stroke-dasharray="14 10" opacity="0.9"/>
+    <line x1="116" y1="554" x2="908" y2="554" stroke="#FFFFFF" stroke-width="4" stroke-dasharray="14 10" opacity="0.9"/>
+
+    <!-- Single Bold Center Shield Seal -->
+    <g transform="translate(512, 512)">
+      <circle cx="0" cy="0" r="82" fill="#881337" stroke="#FFFFFF" stroke-width="6"/>
+      <circle cx="0" cy="0" r="70" fill="url(#stampGrad)"/>
+
+      <!-- Security Shield -->
+      <path d="M 0 -44 L 36 -26 C 36 18, 20 44, 0 58 C -20 44, -36 18, -36 -26 Z" 
+            fill="#FFFFFF" stroke="#FEF08A" stroke-width="3.5"/>
+
+      <!-- Bold Checkmark Inside Shield -->
+      <path d="M -16 2 L -4 14 L 17 -8" fill="none" stroke="#BE123C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- Top Sheen Gloss -->
+  <rect width="1024" height="340" fill="url(#topSheen)"/>
+</svg>
+
+                </div>
+                <span class="brand-name">IDMark</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#features" class="nav-link" id="nav-features-link" data-i18n="features_title">Keunggulan IDMark</a>
+                <a href="#download" class="nav-link" id="nav-download-link" data-i18n="cta_mobile">Unduh Gratis Sekarang</a>
+                <a href="#blog" class="nav-link" data-i18n="nav_blog">Blog</a>
+                
+                <!-- Premium Custom Language Switcher -->
+                <div class="lang-selector">
+                    <button class="dropdown-trigger" id="lang-btn" aria-haspopup="listbox" aria-expanded="false">
+                        <span id="current-flag">🇮🇩</span> <span id="current-lang-code">ID</span>
+                        <span class="dropdown-arrow">▾</span>
+                    </button>
+                    <ul class="dropdown-menu" id="lang-dropdown" role="listbox">
+                        <li role="option" data-value="id"><a href="https://idmark.faishal.id/">🇮🇩 Indonesia</a></li>
+                        <li role="option" data-value="en"><a href="https://idmark.faishal.id/en/">🇺🇸 English</a></li>
+                        <li role="option" data-value="ar"><a href="https://idmark.faishal.id/ar/">🇸🇦 العربية</a></li>
+                        <li role="option" data-value="jv"><a href="https://idmark.faishal.id/jv/">🇮🇩 Jawa</a></li>
+                        <li role="option" data-value="su"><a href="https://idmark.faishal.id/su/">🇮🇩 Sunda</a></li>
+                        <li role="option" data-value="zh"><a href="https://idmark.faishal.id/zh/">🇨🇳 中文</a></li>
+                        <li role="option" data-value="ja"><a href="https://idmark.faishal.id/ja/">🇯🇵 日本語</a></li>
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="badge-accent" data-i18n="badge">🛡️ WATERMARK DOKUMEN 100% OFFLINE</div>
+                    <h1 class="hero-title" data-i18n="headline">Takut Foto e-KTP Disalahgunakan Setelah Dibagikan?</h1>
+                    
+                    <!-- PAS Copywriting Framework: Problem & Agitate & Solve -->
+                    <div class="pas-container">
+                        <p class="pas-problem" data-i18n="problem">Foto e-KTP, paspor, dan SIM yang dibagikan tanpa watermark rawan dipakai untuk pengajuan lain yang tidak kita ketahui.</p>
+                        <p class="pas-agitate" data-i18n="agitate">Sekali foto identitas tersebar, kita tidak bisa menariknya kembali. Tanpa stamp tujuan dan tanggal, fotokopi digital itu bisa dipakai siapa saja untuk verifikasi palsu, dan aplikasi editor online justru mengunggah dokumen sensitifmu ke server mereka.</p>
+                        <p class="pas-solve" data-i18n="solve">IDMark solusinya. Aplikasi perkakas independen (bukan aplikasi pemerintah dan tidak berafiliasi dengan instansi mana pun): tambahkan watermark teks tujuan dan stamp tanggal otomatis ke foto e-KTP, paspor, SIM, dan KK, atur posisi, ukuran, dan transparansi, pratinjau hasilnya, dan simpan riwayat stamp. 100% diproses di perangkat, tanpa akun, tanpa server.</p>
+                    </div>
+
+                    <div class="hero-ctas">
+                        <a href="#download" class="btn btn-primary" id="hero-cta-download-btn" data-i18n="cta_mobile">Unduh Gratis Sekarang</a>
+                    </div>
+                    <p class="section-subtitle" data-i18n="trust_bar">✓ Data tersimpan di perangkat  •  ✓ Bisa dipakai offline  •  ✓ Gratis</p>
+                </div>
+                <div class="hero-visual">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="phone-app-preview">
+                                
+        <div class="mock-card arabic-card">
+            <p class="arabic-text" data-i18n="mock_subuh">e-KTP • Tujuan</p>
+            <p class="translit-text" data-i18n="mock_dhuha">Verifikasi Bank 04-10-2026</p>
+            <p class="translation-text" data-i18n="mock_tilawah">Opasitas 40%</p>
+        </div>
+        <div class="mock-card counter-card">
+            <div class="counter-display">
+                <span class="counter-num" data-i18n="mock_charity">Pratinjau OK</span>
+            </div>
+            <button class="counter-btn" data-i18n="mock_chart_title">Riwayat: 12 stamp</button>
+        </div>
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scripture and Hadith References Section (Quranic Proof & Authenticity) -->
+        <section class="scripture-section">
+            <div class="container">
+                <div class="scripture-grid">
+                    <!-- Al-Quran Column -->
+                    <div class="scripture-card quran-card">
+                        <span class="card-tag" data-i18n="scripture_title">Menunaikan Amanah</span>
+                        <div class="arabic-quote font-amiri" data-i18n="scripture_arabic">إِنَّ اللَّهَ يَأْمُرُكُمْ أَن تُؤَدُّوا الْأَمَانَاتِ إِلَىٰ أَهْلِهَا</div>
+                        <p class="translation-quote" data-i18n="scripture_translation">"Sesungguhnya Allah memerintahkanmu menunaikan amanah kepada yang berhak menerimanya..." — QS. An-Nisa: 58</p>
+                    </div>
+                    <!-- Hadith Column -->
+                    <div class="scripture-card hadith-card">
+                        <span class="card-tag">As-Sunnah / Hadits</span>
+                        <div class="arabic-quote font-amiri" data-i18n="hadith_arabic">مَنْ غَشَّنَا فَلَيْسَ مِنَّا</div>
+                        <p class="translation-quote" data-i18n="hadith_translation">"Barangsiapa menipu kami, maka ia bukan golongan kami." — HR. Muslim</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="features_title">Keunggulan IDMark</h2>
+                    <p class="section-subtitle" data-i18n="features_sub">Bagikan identitas dengan jejak tujuan yang jelas.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3 class="feature-title" data-i18n="f1_title">Watermark Bebas</h3>
+                        <p class="feature-text" data-i18n="f1_text">Tulis tujuan apa pun: verifikasi bank, pendaftaran, atau lamaran kerja.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📈</div>
+                        <h3 class="feature-title" data-i18n="f2_title">Stamp Tanggal Otomatis</h3>
+                        <p class="feature-text" data-i18n="f2_text">Setiap watermark dibubuhi tanggal pembuatan secara otomatis.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3 class="feature-title" data-i18n="f3_title">Atur Tampilan</h3>
+                        <p class="feature-text" data-i18n="f3_text">Sesuaikan posisi, ukuran, dan transparansi watermark sesukamu.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3 class="feature-title" data-i18n="f4_title">Pratinjau & Riwayat</h3>
+                        <p class="feature-text" data-i18n="f4_text">Lihat hasil sebelum menyimpan, plus riwayat kapan tiap stamp dibuat.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="blog_title">Artikel &amp; Panduan Terbaru</h2>
+                    <p class="section-subtitle" data-i18n="blog_sub">Dalami IDMark lewat tiga panduan singkat ini.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card article-card">
+                        <a href="https://idmark.faishal.id/blog/watermark-ektp-aman-offline/" class="article-card-thumb-link" aria-label="Watermark e-KTP Aman: Stamp Tujuan dan Tanggal Offline">
+                            <img src="/blog/watermark-ektp-aman-offline/banner.jpg?v=2" alt="Watermark e-KTP Aman: Stamp Tujuan dan Tanggal Offline" class="article-card-thumb" width="600" height="338" loading="lazy">
+                        </a>
+                        <h3 class="feature-title"><a href="https://idmark.faishal.id/blog/watermark-ektp-aman-offline/" data-i18n="b1_title">Watermark e-KTP Aman: Stamp Tujuan dan Tanggal Offline</a></h3>
+                        <p class="feature-text" data-i18n="b1_text">Stamp tujuan dan tanggal ke foto e-KTP, 100% offline tanpa unggah dokumen.</p>
+                    </div>
+                    <div class="feature-card article-card">
+                        <a href="https://idmark.faishal.id/blog/stamp-tujuan-tanggal-dokumen/" class="article-card-thumb-link" aria-label="Stamp Tujuan dan Tanggal: Batas Aman Berbagi Dokumen">
+                            <img src="/blog/stamp-tujuan-tanggal-dokumen/banner.jpg?v=2" alt="Stamp Tujuan dan Tanggal: Batas Aman Berbagi Dokumen" class="article-card-thumb" width="600" height="338" loading="lazy">
+                        </a>
+                        <h3 class="feature-title"><a href="https://idmark.faishal.id/blog/stamp-tujuan-tanggal-dokumen/" data-i18n="b2_title">Stamp Tujuan dan Tanggal: Batas Aman Berbagi Dokumen</a></h3>
+                        <p class="feature-text" data-i18n="b2_text">Tujuan spesifik plus tanggal otomatis: batas pakai yang terbaca di foto.</p>
+                    </div>
+                    <div class="feature-card article-card">
+                        <a href="https://idmark.faishal.id/blog/lindungi-fotokopi-ktp/" class="article-card-thumb-link" aria-label="Lindungi Fotokopi KTP: Kebiasaan Aman Sebelum Berbagi">
+                            <img src="/blog/lindungi-fotokopi-ktp/banner.jpg?v=2" alt="Lindungi Fotokopi KTP: Kebiasaan Aman Sebelum Berbagi" class="article-card-thumb" width="600" height="338" loading="lazy">
+                        </a>
+                        <h3 class="feature-title"><a href="https://idmark.faishal.id/blog/lindungi-fotokopi-ktp/" data-i18n="b3_title">Lindungi Fotokopi KTP: Kebiasaan Aman Sebelum Berbagi</a></h3>
+                        <p class="feature-text" data-i18n="b3_text">Stamp, cek penerima, arsip: tiga kebiasaan aman berbagi fotokopi KTP.</p>
+                    </div>
+                </div>
+                <div class="hero-ctas">
+                    <a href="https://idmark.faishal.id/blog/" class="btn btn-secondary" data-i18n="blog_view_all">Lihat Semua Artikel</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section id="download" class="download-section">
+            <div class="container">
+                <div class="download-box">
+                    <h2 class="download-title" data-i18n="down_title">Lindungi Dokumenmu Sekarang</h2>
+                    <p class="download-text" data-i18n="down_text">Beri watermark setiap foto identitas sebelum dibagikan ke pihak lain. Gratis, tanpa perlu akun.</p>
+                    
+                    <div class="store-buttons">
+                        <!-- Play Store Button (live link when published, upcoming badge otherwise) -->
+                        <div class="store-btn disabled" id="play-store-upcoming-btn"><svg viewBox="0 0 512 512" class="store-icon" width="24" height="24"><path fill="#f57c00" d="M12 28.5L248 264.5L12 500.5C9.5 498 8 493 8 485.5V54.5C8 47 9.5 42 12 28.5Z"/><path fill="#ffb74d" d="M374 138.5L248 264.5L12 28.5C16.5 24 23 23 30.5 27.5L374 138.5Z"/><path fill="#f57c00" d="M374 390.5L30.5 497.5C23 502 16.5 501 12 496.5L248 264.5L374 390.5Z"/><path fill="#ffa726" d="M500 221.5L403.5 166.5L374 138.5L248 264.5L374 390.5L403.5 362.5L500 307.5C508 303 512 293 512 285.5C512 278 508 268 500 221.5Z"/></svg><div class="store-btn-text"><span data-i18n="coming_soon">Segera Hadir di</span><strong>Google Play</strong></div></div>
+
+                        <!-- App Store (Upcoming) Button -->
+                        <div class="store-btn disabled" id="app-store-upcoming-btn">
+                            <svg viewBox="0 0 512 512" class="store-icon" width="24" height="24" fill="currentColor">
+                                <path d="M383.5 227.5c-.5-52.6 42.7-78 44.7-79.3-24.4-35.7-62.4-40.6-75.9-41.2-32.5-3.3-63.4 19.1-79.9 19.1-16.5 0-42.1-19-69.4-18.5-35.9.5-69 20.9-87.5 53-37.4 65-9.6 161.4 26.8 213.9 17.8 25.7 39 54.4 66.8 53.4 26.8-1.1 37-17.3 69.4-17.3s41.6 17.3 69.4 16.7c28.3-.5 47-26 64.6-51.7 20.4-29.8 28.8-58.7 29.3-60.2-.6-.3-56.3-21.6-56.8-85.1zM324.7 82.5c14.6-17.7 24.4-42.3 21.7-66.8-21 1-46.5 14.1-61.6 31.8-13.6 15.7-25.5 40.7-22.3 64.7 23.4 1.8 47.6-12 62.2-29.7z"/>
+                            </svg>
+                            <div class="store-btn-text">
+                                <span data-i18n="coming_soon">Segera Hadir di</span>
+                                <strong>App Store</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="download-text" data-i18n="risk_line">Gratis • Tanpa perlu akun • Data Anda tetap di perangkat Anda</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; 2026 faishal.id. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://faishal.id" class="footer-link">Utama</a>
+                <a href="privacy.html" class="footer-link" data-i18n="privacy_policy">Kebijakan Privasi</a>
+                <a href="terms.html" class="footer-link" data-i18n="terms_of_service">Syarat & Ketentuan</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Translation Core Script -->
+    <script>
+        const i18nData = {"id": {"meta_title": "IDMark — Watermark e-KTP & Dokumen Aman", "meta_description": "IDMark menambahkan watermark tujuan dan tanggal ke foto e-KTP, paspor, dan SIM sebelum dibagikan. 100% offline di perangkat, tanpa unggah dokumen ke mana pun.", "meta_keywords": "idmark, watermark ktp, watermark e-ktp, stamp ktp, lindungi fotokopi ktp, aplikasi offline", "badge": "🛡️ WATERMARK DOKUMEN 100% OFFLINE", "headline": "Takut Foto e-KTP Disalahgunakan Setelah Dibagikan?", "problem": "Foto e-KTP, paspor, dan SIM yang dibagikan tanpa watermark rawan dipakai untuk pengajuan lain yang tidak kita ketahui.", "agitate": "Sekali foto identitas tersebar, kita tidak bisa menariknya kembali. Tanpa stamp tujuan dan tanggal, fotokopi digital itu bisa dipakai siapa saja untuk verifikasi palsu, dan aplikasi editor online justru mengunggah dokumen sensitifmu ke server mereka.", "solve": "IDMark solusinya. Aplikasi perkakas independen (bukan aplikasi pemerintah dan tidak berafiliasi dengan instansi mana pun): tambahkan watermark teks tujuan dan stamp tanggal otomatis ke foto e-KTP, paspor, SIM, dan KK, atur posisi, ukuran, dan transparansi, pratinjau hasilnya, dan simpan riwayat stamp. 100% diproses di perangkat, tanpa akun, tanpa server.", "cta_mobile": "Unduh Gratis Sekarang", "features_title": "Keunggulan IDMark", "features_sub": "Bagikan identitas dengan jejak tujuan yang jelas.", "f1_title": "Watermark Bebas", "f1_text": "Tulis tujuan apa pun: verifikasi bank, pendaftaran, atau lamaran kerja.", "f2_title": "Stamp Tanggal Otomatis", "f2_text": "Setiap watermark dibubuhi tanggal pembuatan secara otomatis.", "f3_title": "Atur Tampilan", "f3_text": "Sesuaikan posisi, ukuran, dan transparansi watermark sesukamu.", "f4_title": "Pratinjau & Riwayat", "f4_text": "Lihat hasil sebelum menyimpan, plus riwayat kapan tiap stamp dibuat.", "down_title": "Lindungi Dokumenmu Sekarang", "down_text": "Beri watermark setiap foto identitas sebelum dibagikan ke pihak lain. Gratis, tanpa perlu akun.", "coming_soon": "Segera Hadir di", "mock_title": "Editor Watermark", "mock_subuh": "e-KTP • Tujuan", "mock_dhuha": "Verifikasi Bank 04-10-2026", "mock_tilawah": "Opasitas 40%", "mock_charity": "Pratinjau OK", "mock_chart_title": "Riwayat: 12 stamp", "scripture_title": "Menunaikan Amanah", "scripture_arabic": "إِنَّ اللَّهَ يَأْمُرُكُمْ أَن تُؤَدُّوا الْأَمَانَاتِ إِلَىٰ أَهْلِهَا", "scripture_translation": "\"Sesungguhnya Allah memerintahkanmu menunaikan amanah kepada yang berhak menerimanya...\" — QS. An-Nisa: 58", "hadith_arabic": "مَنْ غَشَّنَا فَلَيْسَ مِنَّا", "hadith_translation": "\"Barangsiapa menipu kami, maka ia bukan golongan kami.\" — HR. Muslim", "privacy_policy": "Kebijakan Privasi", "terms_of_service": "Syarat & Ketentuan", "nav_blog": "Blog", "blog_title": "Artikel & Panduan Terbaru", "blog_sub": "Dalami IDMark lewat tiga panduan singkat ini.", "blog_view_all": "Lihat Semua Artikel", "trust_bar": "✓ Data tersimpan di perangkat  •  ✓ Bisa dipakai offline  •  ✓ Gratis", "risk_line": "Gratis • Tanpa perlu akun • Data Anda tetap di perangkat Anda", "b1_title": "Watermark e-KTP Aman: Stamp Tujuan dan Tanggal Offline", "b1_text": "Stamp tujuan dan tanggal ke foto e-KTP, 100% offline tanpa unggah dokumen.", "b2_title": "Stamp Tujuan dan Tanggal: Batas Aman Berbagi Dokumen", "b2_text": "Tujuan spesifik plus tanggal otomatis: batas pakai yang terbaca di foto.", "b3_title": "Lindungi Fotokopi KTP: Kebiasaan Aman Sebelum Berbagi", "b3_text": "Stamp, cek penerima, arsip: tiga kebiasaan aman berbagi fotokopi KTP."}, "en": {"meta_title": "IDMark — Secure ID Watermark, On-Device", "meta_description": "IDMark stamps purpose and date watermarks onto ID cards, passports, and licenses before sharing. 100% on-device processing, never uploads your documents.", "meta_keywords": "idmark, id watermark, protect id photo, stamp id card, on-device watermark, offline tools", "badge": "🛡️ 100% ON-DEVICE ID WATERMARK", "headline": "Afraid Your Shared ID Photo Will Be Misused?", "problem": "ID cards, passports, and licenses shared without a watermark can be reused for applications you never approved.", "agitate": "Once an identity photo spreads, you cannot take it back. Without a purpose-and-date stamp, the digital copy can serve fake verifications, while online editors upload your sensitive documents to their servers.", "solve": "IDMark is the answer. An independent utility app (not a government app, affiliated with no agency): stamp free-text purpose and automatic date onto ID, passport, license, and family-card photos, adjust position, size, and opacity, preview results, and keep a stamp history. 100% on-device, no account, no server.", "cta_mobile": "Download Free Now", "features_title": "Why IDMark", "features_sub": "Share identity with a clear purpose trail.", "f1_title": "Free-Text Watermark", "f1_text": "Write any purpose: bank verification, registration, job application.", "f2_title": "Automatic Date Stamp", "f2_text": "Every watermark carries its creation date automatically.", "f3_title": "Adjust Appearance", "f3_text": "Tune watermark position, size, and opacity freely.", "f4_title": "Preview & History", "f4_text": "Preview before saving, plus history of every stamp made.", "down_title": "Protect Your Documents Now", "down_text": "Watermark every identity photo before sharing it onward. Free, no account needed.", "coming_soon": "Coming Soon on", "mock_title": "Watermark Editor", "mock_subuh": "ID Card • Purpose", "mock_dhuha": "Bank Verification 04-10-2026", "mock_tilawah": "Opacity 40%", "mock_charity": "Preview OK", "mock_chart_title": "History: 12 stamps", "scripture_title": "Fulfilling Trusts", "scripture_arabic": "إِنَّ اللَّهَ يَأْمُرُكُمْ أَن تُؤَدُّوا الْأَمَانَاتِ إِلَىٰ أَهْلِهَا", "scripture_translation": "\"Indeed, Allah commands you to render trusts to whom they are due...\" — Surah An-Nisa: 58", "hadith_arabic": "مَنْ غَشَّنَا فَلَيْسَ مِنَّا", "hadith_translation": "\"Whoever deceives us is not of us.\" — Sahih Muslim", "privacy_policy": "Privacy Policy", "terms_of_service": "Terms of Service", "nav_blog": "Blog", "blog_title": "Latest Articles & Guides", "blog_sub": "Get more from IDMark with these three quick guides.", "blog_view_all": "View All Articles", "trust_bar": "✓ On-device data  •  ✓ Works offline  •  ✓ Free", "risk_line": "Free • No account needed • Your data stays on your device", "b1_title": "Secure e-KTP Watermark: Offline Purpose and Date Stamp", "b1_text": "Purpose and date stamp on e-KTP photos, 100% offline with no uploads.", "b2_title": "Purpose and Date Stamp: Safe Limits for Sharing", "b2_text": "Specific purpose plus automatic date: a readable usage boundary on the photo.", "b3_title": "Protect KTP Copies: Safe Habits Before Sharing", "b3_text": "Stamp, verify recipients, archive: three safe KTP-copy habits."}, "ar": {"meta_title": "آي دي مارك — علامة مائية آمنة للهوية", "meta_description": "آي دي مارك يضيف علامة الغرض والتاريخ على صور الهوية والجواز والرخصة قبل مشاركتها. معالجة كاملة على الجهاز دون رفع المستندات لأي مكان.", "meta_keywords": "آي دي مارك، علامة الهوية المائية، حماية صورة الهوية، ختم البطاقة، معالجة على الجهاز، أدوات دون إنترنت", "badge": "🛡️ علامة الهوية المائية على الجهاز", "headline": "هل تخشى إساءة استخدام صورة هويتك بعد مشاركتها؟", "problem": "صور الهوية والجواز والرخصة المشاركة دون علامة مائية قد تُستخدم في معاملات لم توافق عليها.", "agitate": "متى انتشرت صورة الهوية لا يمكن استرجاعها. وبدون ختم الغرض والتاريخ، يمكن استغلال النسخة الرقمية في تحققات مزيفة، بينما ترفع محررات الإنترنت مستنداتك الحساسة لخوادمها.", "solve": "آي دي مارك هو الحل. تطبيق مستقل (ليس حكوميًا ولا تابعًا لأي جهة): أضف علامة الغرض وختم التاريخ التلقائي على صور الهوية والجواز والرخصة، واضبط الموضع والحجم والشفافية، وعاين النتيجة، واحتفظ بسجل الأختام. معالجة كاملة على الجهاز، دون حساب ودون خادم.", "cta_mobile": "حمّل مجانًا الآن", "features_title": "لماذا آي دي مارك", "features_sub": "شارك هويتك بأثر غرض واضح.", "f1_title": "علامة بنص حر", "f1_text": "اكتب أي غرض: تحقق بنكي، تسجيل، أو طلب وظيفة.", "f2_title": "ختم التاريخ تلقائيًا", "f2_text": "كل علامة تحمل تاريخ إنشائها تلقائيًا.", "f3_title": "ضبط المظهر", "f3_text": "اضبط موضع العلامة وحجمها وشفافيتها بحرية.", "f4_title": "معاينة وسجل", "f4_text": "عاين قبل الحفظ مع سجل لكل ختم تم إنشاؤه.", "down_title": "احمِ مستنداتك الآن", "down_text": "ضع علامة مائية على كل صورة هوية قبل مشاركتها. مجاني ولا حاجة لحساب.", "coming_soon": "قريبًا على", "mock_title": "محرر العلامات", "mock_subuh": "بطاقة الهوية • الغرض", "mock_dhuha": "تحقق بنكي 04-10-2026", "mock_tilawah": "الشفافية 40%", "mock_charity": "المعاينة جيدة", "mock_chart_title": "السجل: 12 ختمًا", "scripture_title": "أداء الأمانات", "scripture_arabic": "إِنَّ اللَّهَ يَأْمُرُكُمْ أَن تُؤَدُّوا الْأَمَانَاتِ إِلَىٰ أَهْلِهَا", "scripture_translation": "\"إِنَّ اللَّهَ يَأْمُرُكُمْ أَن تُؤَدُّوا الْأَمَانَاتِ إِلَىٰ أَهْلِهَا\" — سورة النساء: 58", "hadith_arabic": "مَنْ غَشَّنَا فَلَيْسَ مِنَّا", "hadith_translation": "\"مَنْ غَشَّنَا فَلَيْسَ مِنَّا\" — صحيح مسلم", "privacy_policy": "سياسة الخصوصية", "terms_of_service": "شروط الخدمة", "nav_blog": "المدونة", "blog_title": "أحدث المقالات والأدلة", "blog_sub": "استفد أكثر من IDMark مع هذه الأدلة الثلاثة المختصرة.", "blog_view_all": "عرض كل المقالات", "trust_bar": "✓ البيانات على جهازك  •  ✓ يعمل دون إنترنت  •  ✓ مجاني", "risk_line": "مجاني • لا حاجة لحساب • بياناتك تبقى على جهازك", "b1_title": "علامة e-KTP آمنة: ختم الغرض والتاريخ دون إنترنت", "b1_text": "ختم الغرض والتاريخ على صور e-KTP دون إنترنت ودون رفع.", "b2_title": "ختم الغرض والتاريخ: حد آمن لمشاركة الوثائق", "b2_text": "غرض محدد مع تاريخ تلقائي: حد استخدام مقروء على الصورة.", "b3_title": "احمِ نسخ الهوية: عادات آمنة قبل المشاركة", "b3_text": "اختم وتحقق من المستلم وأرشف: ثلاث عادات آمنة لمشاركة نسخ الهوية."}, "jv": {"meta_title": "IDMark — Watermark e-KTP Aman Offline", "meta_description": "IDMark nambahi watermark tujuan lan tanggal ing foto e-KTP, paspor, lan SIM sadurunge dibagekake. 100% diproses ing HP, tanpa ngunggah dokumen.", "meta_keywords": "idmark, watermark ktp, watermark e-ktp, stamp ktp, nglindhungi fotokopi ktp, aplikasi offline", "badge": "🛡️ WATERMARK DOKUMEN 100% OFFLINE", "headline": "Wedi Foto e-KTP Disalahgunakake Sawise Dibagekake?", "problem": "Foto e-KTP, paspor, lan SIM sing dibagekake tanpa watermark gampang dienggo kanggo pengajuan liya sing ora kita setujui.", "agitate": "Sawise foto identitas sumebar, kita ora bisa njupuk bali. Tanpa stamp tujuan lan tanggal, fotokopi digital kuwi bisa dienggo sapa wae kanggo verifikasi palsu, lan aplikasi editor online malah ngunggah dokumen sensitifmu menyang server.", "solve": "IDMark solusine. Aplikasi perkakas independen (dudu aplikasi pemerintah lan ora afiliasi karo instansi apa wae): nambahi watermark teks tujuan lan stamp tanggal otomatis ing foto e-KTP, paspor, SIM, lan KK, ngatur posisi, ukuran, lan transparansi, pratinjau hasile, lan nyimpen riwayat stamp. 100% diproses ing HP, tanpa akun, tanpa server.", "cta_mobile": "Undhuh Gratis Saiki", "features_title": "Kaluwihan IDMark", "features_sub": "Bagekake identitas kanthi jejak tujuan cetha.", "f1_title": "Watermark Bebas", "f1_text": "Tulis tujuan apa wae: verifikasi bank, pendaftaran, utawa lamaran kerja.", "f2_title": "Stamp Tanggal Otomatis", "f2_text": "Saben watermark dibubuhi tanggal digawe kanthi otomatis.", "f3_title": "Ngatur Tampilan", "f3_text": "Setel posisi, ukuran, lan transparansi watermark sakarepmu.", "f4_title": "Pratinjau & Riwayat", "f4_text": "Deleng hasil sadurunge nyimpen, plus riwayat saben stamp.", "down_title": "Lindhungi Dokumenmu Saiki", "down_text": "Wenehi watermark saben foto identitas sadurunge dibagekake. Gratis, tanpa perlu akun.", "coming_soon": "Bakal Teka ing", "mock_title": "Editor Watermark", "mock_subuh": "e-KTP • Tujuan", "mock_dhuha": "Verifikasi Bank 04-10-2026", "mock_tilawah": "Opasitas 40%", "mock_charity": "Pratinjau OK", "mock_chart_title": "Riwayat: 12 stamp", "scripture_title": "Nunaekake Amanah", "scripture_arabic": "إِنَّ اللَّهَ يَأْمُرُكُمْ أَن تُؤَدُّوا الْأَمَانَاتِ إِلَىٰ أَهْلِهَا", "scripture_translation": "\"Satemene Allah mrentah sira supaya nunaekake amanah marang sing berhak...\" — QS. An-Nisa: 58", "hadith_arabic": "مَنْ غَشَّنَا فَلَيْسَ مِنَّا", "hadith_translation": "\"Sapa wae sing ngapusi kita, dudu golongane kita.\" — HR. Muslim", "privacy_policy": "Kabijakan Privasi", "terms_of_service": "Katentuan Layanan", "nav_blog": "Blog", "blog_title": "Artikel & Pandhuan Paling Anyar", "blog_sub": "Dalami IDMark lewat telung pandhuan cekak iki.", "blog_view_all": "Deleng Kabeh Artikel", "trust_bar": "✓ Data kasimpen ing piranti  •  ✓ Bisa dienggo offline  •  ✓ Gratis", "risk_line": "Gratis • Tanpa perlu akun • Data Panjenengan tetep ing piranti", "b1_title": "Watermark e-KTP Aman: Stamp Tujuan lan Tanggal Offline", "b1_text": "Stamp tujuan lan tanggal menyang foto e-KTP, 100% offline tanpa ngunggah.", "b2_title": "Stamp Tujuan lan Tanggal: Wates Aman Berbagi Dokumen", "b2_text": "Tujuan spesifik plus tanggal otomatis: wates panggo sing kewaca ing foto.", "b3_title": "Lindungi Fotokopi KTP: Kebiasaan Aman Sadurunge Berbagi", "b3_text": "Stamp, cek panampa, arsip: telung kebiasaan aman berbagi fotokopi KTP."}, "su": {"meta_title": "IDMark — Watermark e-KTP Aman 100% Offline", "meta_description": "IDMark nambahkeun watermark tujuan sareng tanggal kana foto e-KTP, paspor, sareng SIM sateuacan dibagikeun. 100% diolah dina HP, tanpa ngunggah dokumen.", "meta_keywords": "idmark, watermark ktp, watermark e-ktp, stamp ktp, ngajaga fotokopi ktp, aplikasi offline", "badge": "🛡️ WATERMARK DOKUMEN 100% OFFLINE", "headline": "Sieun Foto e-KTP Disalahgunakeun Sabada Dibagikeun?", "problem": "Foto e-KTP, paspor, sareng SIM anu dibagikeun tanpa watermark gampang dipake pikeun pengajuan sejen anu teu disatujuan.", "agitate": "Sakali foto identitas sumebar, urang teu bisa nyokot deui. Tanpa stamp tujuan sareng tanggal, fotokopi digital eta bisa dipake saha wae pikeun verifikasi palsu, sareng aplikasi editor online malah ngunggah dokumen sensitif ka serverna.", "solve": "IDMark solusina. Aplikasi perkakas independen (lain aplikasi pamarentah sareng teu afiliasi ka instansi mana wae): nambahkeun watermark teks tujuan sareng stamp tanggal otomatis kana foto e-KTP, paspor, SIM, sareng KK, ngatur posisi, ukuran, sareng transparansi, pratinjau hasilna, sareng nyimpen riwayat stamp. 100% diolah dina HP, tanpa akun, tanpa server.", "cta_mobile": "Unduh Gratis Ayeuna", "features_title": "Kaunggulan IDMark", "features_sub": "Bagikeun identitas ku jejak tujuan anu jelas.", "f1_title": "Watermark Bebas", "f1_text": "Tulis tujuan naon wae: verifikasi bank, pendaptaran, atanapi lamaran gawe.", "f2_title": "Stamp Tanggal Otomatis", "f2_text": "Unggal watermark dibubuhan tanggal dijieunna sacara otomatis.", "f3_title": "Ngatur Tampilan", "f3_text": "Saluyukeun posisi, ukuran, sareng transparansi watermark sakahayang.", "f4_title": "Pratinjau & Riwayat", "f4_text": "Tingali hasil sateuacan nyimpen, sareng riwayat saban stamp.", "down_title": "Jaga Dokumen Anjeun Ayeuna", "down_text": "Pasihan watermark unggal foto identitas sateuacan dibagikeun. Gratis, teu perlu akun.", "coming_soon": "Bakal Hadir dina", "mock_title": "Editor Watermark", "mock_subuh": "e-KTP • Tujuan", "mock_dhuha": "Verifikasi Bank 04-10-2026", "mock_tilawah": "Opasitas 40%", "mock_charity": "Pratinjau OK", "mock_chart_title": "Riwayat: 12 stamp", "scripture_title": "Nunaikeun Amanah", "scripture_arabic": "إِنَّ اللَّهَ يَأْمُرُكُمْ أَن تُؤَدُّوا الْأَمَانَاتِ إِلَىٰ أَهْلِهَا", "scripture_translation": "\"Saestuna Allah marentahkeun aranjeun nunaikeun amanah ka anu berhak...\" — QS. An-Nisa: 58", "hadith_arabic": "مَنْ غَشَّنَا فَلَيْسَ مِنَّا", "hadith_translation": "\"Saha wae anu nipu ka urang, lain golongan urang.\" — HR. Muslim", "privacy_policy": "Kabijakan Privasi", "terms_of_service": "Katangtuan Ladenan", "nav_blog": "Blog", "blog_title": "Artikel & Panduan Panganyarna", "blog_sub": "Dalami IDMark ngaliwatan tilu panduan singket ieu.", "blog_view_all": "Tingali Sadaya Artikel", "trust_bar": "✓ Data disimpen di alat  •  ✓ Bisa dipaké offline  •  ✓ Gratis", "risk_line": "Gratis • Teu perlu akun • Data anjeun tetep di alat anjeun", "b1_title": "Watermark e-KTP Aman: Stamp Tujuan jeung Tanggal Offline", "b1_text": "Stamp tujuan jeung tanggal kana foto e-KTP, 100% offline tanpa ngunggah.", "b2_title": "Stamp Tujuan jeung Tanggal: Wates Aman Bagikeun Dokumen", "b2_text": "Tujuan spesifik tambah tanggal otomatis: wates pake nu kabaca dina foto.", "b3_title": "Lindungan Fotokopi KTP: Kabiasaan Aman Samemeh Bagikeun", "b3_text": "Stamp, cek panarima, arsip: tilu kabiasaan aman babagi fotokopi KTP."}, "zh": {"meta_title": "IDMark — 安全证件水印，本机处理", "meta_description": "IDMark 在分享前为身份证、护照与驾照照片加上用途与日期水印。100% 本机处理，绝不上传你的证件到任何地方。", "meta_keywords": "idmark, 证件水印, 保护身份证照片, 证件盖章, 本机处理, 离线工具", "badge": "🛡️ 100% 本机证件水印", "headline": "担心分享出去的身份证照片被冒用？", "problem": "没有水印就分享出去的身份证、护照与驾照照片，可能被拿去做你从未同意过的申请。", "agitate": "身份照片一旦流传就收不回来。没有用途与日期戳，电子复印件可被任何人拿去做虚假验证，而在线编辑应用反而把你的敏感证件上传到他们的服务器。", "solve": "IDMark 就是答案。独立工具应用（非政府应用，不隶属任何机构）：为身份证、护照、驾照照片加用途文字与自动日期水印，调节位置、大小与透明度，预览效果并保存盖章历史。100% 本机处理，无账号，无服务器。", "cta_mobile": "立即免费下载", "features_title": "为什么选择 IDMark", "features_sub": "带着清晰用途去分享身份。", "f1_title": "自定义水印文字", "f1_text": "写任意用途：银行验证、注册报名或求职申请。", "f2_title": "自动日期戳", "f2_text": "每枚水印自动带有制作日期。", "f3_title": "调节外观", "f3_text": "自由调节水印位置、大小与透明度。", "f4_title": "预览与历史", "f4_text": "保存前先预览，外加每次盖章的历史记录。", "down_title": "现在就保护你的证件", "down_text": "分享前，给每张身份照片都打上水印。 免费，无需注册。", "coming_soon": "即将登陆", "mock_title": "水印编辑器", "mock_subuh": "身份证 • 用途", "mock_dhuha": "银行验证 04-10-2026", "mock_tilawah": "不透明度 40%", "mock_charity": "预览通过", "mock_chart_title": "历史：12 枚印章", "scripture_title": "履行信托", "scripture_arabic": "إِنَّ اللَّهَ يَأْمُرُكُمْ أَن تُؤَدُّوا الْأَمَانَاتِ إِلَىٰ أَهْلِهَا", "scripture_translation": "\"真主确命令你们把信托交托给应受者……” —— 妇女章：58", "hadith_arabic": "مَنْ غَشَّنَا فَلَيْسَ مِنَّا", "hadith_translation": "\"欺骗我们的人，不属于我们。\" —— 穆斯林圣训", "privacy_policy": "隐私政策", "terms_of_service": "服务条款", "nav_blog": "博客", "blog_title": "最新文章与指南", "blog_sub": "通过这三篇简短指南，深入了解IDMark。", "blog_view_all": "查看全部文章", "trust_bar": "✓ 数据保存在本机  •  ✓ 支持离线使用  •  ✓ 免费", "risk_line": "免费 • 无需注册 • 您的数据保留在设备上", "b1_title": "安全的 e-KTP 水印：离线盖用途与日期", "b1_text": "给 e-KTP 照片盖用途日期戳，本机离线、绝不上传。", "b2_title": "用途与日期戳：分享证件的安全边界", "b2_text": "具体用途加自动日期：照片上看得见的使用边界。", "b3_title": "保护身份证复印件：分享前的安全习惯", "b3_text": "盖戳、核对接收方、归档：分享身份证复印件的三个安全习惯。"}, "ja": {"meta_title": "IDMark — 安全な身分証ウォーターマーク", "meta_description": "IDMark は共有前に身分証・パスポート・免許証の写真へ用途と日付の透かしを追加。100%端末内処理で、書類を外部に送信しません。", "meta_keywords": "idmark, 身分証透かし, 身分証写真の保護, スタンプ, 端末内処理, オフラインアプリ", "badge": "🛡️ 100%端末内処理の透かし", "headline": "共有した身分証の写真が悪用されないか不安ですか？", "problem": "透かしなしで共有された身分証・パスポート・免許証の写真は、身に覚えのない申請に流用される恐れがあります。", "agitate": "一度広まった身分証の写真は取り戻せません。用途と日付のスタンプがなければ、デジタルコピーは不正な本人確認に使われかねず、オンライン編集アプリはあなたの機密書類を自社サーバーに送信します。", "solve": "その答えが「IDMark」です。独立系のユーティリティアプリ（政府アプリではなく、いかなる機関にも属しません）：身分証・パスポート・免許証の写真に用途テキストと自動日付の透かしを追加し、位置・サイズ・透明度を調整、結果をプレビュー、スタンプ履歴を保存。100%端末内処理、アカウント不要、サーバー不要。", "cta_mobile": "今すぐ無料ダウンロード", "features_title": "IDMark の強み", "features_sub": "用途の足跡つきで身分証を共有。", "f1_title": "自由な透かし文字", "f1_text": "銀行確認・登録・就職応募など用途を自由に記入。", "f2_title": "自動日付スタンプ", "f2_text": "すべての透かしに作成日が自動で入ります。", "f3_title": "見た目を調整", "f3_text": "透かしの位置・サイズ・透明度を自在に調整。", "f4_title": "プレビューと履歴", "f4_text": "保存前にプレビュー、スタンプ履歴つき。", "down_title": "今すぐ書類を守ろう", "down_text": "共有する前に、身分証の写真へ透かしを入れましょう。 無料、アカウント不要。", "coming_soon": "近日公開", "mock_title": "透かしエディタ", "mock_subuh": "身分証 • 用途", "mock_dhuha": "銀行確認 04-10-2026", "mock_tilawah": "不透明度 40%", "mock_charity": "プレビュー OK", "mock_chart_title": "履歴：12 スタンプ", "scripture_title": "信託を果たすこと", "scripture_arabic": "إِنَّ اللَّهَ يَأْمُرُكُمْ أَن تُؤَدُّوا الْأَمَانَاتِ إِلَىٰ أَهْلِهَا", "scripture_translation": "\"本当にアッラーは、信託をしかるべき相手に返すようあなたがたに命じられる……\" — 婦人章：58", "hadith_arabic": "مَنْ غَشَّنَا فَلَيْسَ مِنَّا", "hadith_translation": "\"我々を欺く者は、我々の仲間ではない。\" — サヒーフ・ムスリム", "privacy_policy": "プライバシーポリシー", "terms_of_service": "利用規約", "nav_blog": "ブログ", "blog_title": "最新の記事とガイド", "blog_sub": "この3つのクイックガイドでIDMarkを使いこなそう。", "blog_view_all": "すべての記事を見る", "trust_bar": "✓ データは端末に保存  •  ✓ オフライン対応  •  ✓ 無料", "risk_line": "無料 • アカウント不要 • データはあなたの端末に残ります", "b1_title": "安全な e-KTP 透かし：オフライン目的・日付印", "b1_text": "e-KTP 写真に目的・日付印を押印。オフラインで外部送信なし。", "b2_title": "目的・日付印：書類共有の安全な境界", "b2_text": "具体的な目的と自動日付：写真に読める利用境界を。", "b3_title": "身分証コピーを守る：共有前の安全な習慣", "b3_text": "押印・相手確認・記録保存：身分証コピー共有の3つの安全習慣。"}};
+        const flagMap = {
+            id: "🇮🇩",
+            en: "🇺🇸",
+            ar: "🇸🇦",
+            jv: "🇮🇩",
+            su: "🇮🇩",
+            zh: "🇨🇳",
+            ja: "🇯🇵"
+        };
+        
+        const codeMap = {
+            id: "ID",
+            en: "EN",
+            ar: "AR",
+            jv: "JV",
+            su: "SU",
+            zh: "ZH",
+            ja: "JA"
+        };
+
+        function changeLanguage(lang) {
+            if (!i18nData[lang]) return;
+            localStorage.setItem('landing_lang', lang);
+            
+            // Update Active Dropdown UI values
+            document.getElementById('current-flag').textContent = flagMap[lang];
+            document.getElementById('current-lang-code').textContent = codeMap[lang];
+            
+            // Update RTL if Arabic
+            if (lang === 'ar') {
+                document.documentElement.setAttribute('dir', 'rtl');
+                document.documentElement.setAttribute('lang', 'ar');
+            } else {
+                document.documentElement.removeAttribute('dir');
+                document.documentElement.setAttribute('lang', lang);
+            }
+            
+            // Translate all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18nData[lang][key]) {
+                    el.textContent = i18nData[lang][key];
+                }
+            });
+        }
+        
+        // Interactive Dropdown JS
+        const dropdownBtn = document.getElementById('lang-btn');
+        const dropdownMenu = document.getElementById('lang-dropdown');
+        
+        dropdownBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = dropdownMenu.classList.toggle('open');
+            dropdownBtn.setAttribute('aria-expanded', isOpen);
+        });
+        
+        dropdownMenu.querySelectorAll('li').forEach(item => {
+            item.addEventListener('click', (e) => {
+                const selectedVal = e.currentTarget.getAttribute('data-value');
+                changeLanguage(selectedVal);
+                dropdownMenu.classList.remove('open');
+                dropdownBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+        
+        document.addEventListener('click', () => {
+            dropdownMenu.classList.remove('open');
+            dropdownBtn.setAttribute('aria-expanded', 'false');
+        });
+        
+        // Initialize preferred or browser language
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('landing_lang');
+            const browserLang = navigator.language.split('-')[0];
+            const defaultLang = savedLang || (i18nData[browserLang] ? browserLang : 'id');
+            changeLanguage(defaultLang);
+        });
+    </script>
+
+</body>
+</html>
