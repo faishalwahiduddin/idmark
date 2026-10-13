@@ -4,7 +4,7 @@
 > files are the split, tool-ready copies of this content.
 > ⚠️ **Non-English drafts (ar, ja-JP, zh-CN, es-ES) need a native-speaker review before publishing.**
 
-- **Package:** `id.faishal.idmark` · **Version:** 1.0.0+1 · **Category:** Productivity
+- **Package:** `id.faishal.idmark` · **Version:** 1.0.2+3 · **Category:** Productivity
 
 ---
 
@@ -26,7 +26,7 @@ IDMark menstempel tujuan dan tanggal pada kartu identitas & dokumen — 100% on-
 
 </details>
 
-**Release notes** — versionCode 1 (50/500)
+**Release notes** — versionCode 3 (50/500)
 
 > Rilis store screenshots multi-bahasa untuk IDMark.
 
@@ -61,7 +61,7 @@ IDMark stamps purpose and date onto ID cards & documents — 100% on-device, not
 
 </details>
 
-**Release notes** — versionCode 1 (50/500)
+**Release notes** — versionCode 3 (50/500)
 
 > Multi-locale store screenshots release for IDMark.
 
@@ -98,7 +98,7 @@ IDMark stamps purpose and date onto ID cards & documents — 100% on-device, not
 
 </details>
 
-**Release notes** — versionCode 1 (39/500)
+**Release notes** — versionCode 3 (39/500)
 
 > إصدار أولي مع لقطات متجر متعددة اللغات.
 
@@ -135,7 +135,7 @@ faishal.idアプリファミリーの一員です。オフライン中心、広�
 
 </details>
 
-**Release notes** — versionCode 1 (27/500)
+**Release notes** — versionCode 3 (27/500)
 
 > 多言語ストア向けスクリーンショット対応の初回リリース。
 
@@ -172,7 +172,7 @@ faishal.id 应用家族成员。偏离线、无广告。
 
 </details>
 
-**Release notes** — versionCode 1 (15/500)
+**Release notes** — versionCode 3 (15/500)
 
 > 首次发布，支持多语言商店截图。
 
@@ -209,7 +209,7 @@ Parte de la familia de apps faishal.id. Enfoque offline, sin anuncios.
 
 </details>
 
-**Release notes** — versionCode 1 (51/500)
+**Release notes** — versionCode 3 (51/500)
 
 > Primera versión con capturas de tienda multiidioma.
 
