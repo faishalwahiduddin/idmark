@@ -674,8 +674,89 @@ class AppLocalizationsSu extends AppLocalizations {
   String get appLanguage => 'Basa Aplikasi';
 
   @override
-  String get timezone => 'Zona Waktu';
+  String get timezone => 'Zona Waktos';
 
   @override
-  String get timezoneAuto => 'Otomatis (ikut perangkat)';
+  String get timezoneAuto => 'Otomatis (nurutkeun parangkat)';
+
+  @override
+  String get licenseUsageTitle => 'Lisensi Pamakean';
+
+  @override
+  String get licenseUsageNotice =>
+      'Bebas dianggo pikeun kaperluan pribadi jeung non-profit.';
+
+  @override
+  String get licenseUsageBadgeText => 'Pribadi & Non-Profit';
+
+  @override
+  String get validationPurposeRequired => 'Tujuan watermark teu kenging kosong';
+
+  @override
+  String get validationPurposeMinLength => 'Tujuan sahenteuna 3 karakter';
+
+  @override
+  String get validationPurposeMaxLength => 'Tujuan maksimal 60 karakter';
+
+  @override
+  String get validationSubtextMaxLength =>
+      'Catetan tambahan maksimal 80 karakter';
+
+  @override
+  String get validationOpacityRange =>
+      'Katingalina kedah aya di antara 10% sareng 100%';
+
+  @override
+  String get validationFontSizeRange =>
+      'Ukuran teks kedah antara 10 sareng 60 pt';
+
+  @override
+  String get validationRotationRange =>
+      'Sudut puteran kedah antara -90° sareng +90°';
+
+  @override
+  String get validationImageBytesEmpty => 'Berkas gambar kosong atanapi ruksak';
+
+  @override
+  String get validationImageBytesTooLarge =>
+      'Ukuran gambar ngaleuwihan wates maksimal';
+
+  @override
+  String get validationQualityRange =>
+      'Kualitas gambar kedah antara 10% sareng 100%';
+
+  @override
+  String get validationPresetTitleRequired => 'Nami preset teu kenging kosong';
+
+  @override
+  String get validationPresetTitleMinLength =>
+      'Nami preset sahenteuna 3 karakter';
+
+  @override
+  String get validationPresetTitleMaxLength =>
+      'Nami preset maksimal 50 karakter';
+
+  @override
+  String get validationPresetCategoryRequired =>
+      'Kategori preset teu kenging kosong';
+
+  @override
+  String get validationPresetCategoryMaxLength =>
+      'Kategori maksimal 30 karakter';
+
+  @override
+  String get privacyGradeDescMax =>
+      'Panangtayungan Maksimal • Nyumponan standar panangtayungan data';
+
+  @override
+  String get privacyGradeDescVeryGood =>
+      'Panangtayungan Sae Pisan • Dokumén aman dibagikeun';
+
+  @override
+  String get privacyGradeDescFair =>
+      'Panangtayungan Cukup • Disarankeun nambihan tanggal sareng sensor NIK';
+
+  @override
+  String get privacyGradeDescWeak =>
+      'Panangtayungan Lemah • Tambihkeun tujuan spésifik sareng tanggal';
 }

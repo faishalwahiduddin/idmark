@@ -685,8 +685,94 @@ class AppLocalizationsEs extends AppLocalizations {
   String get appLanguage => 'Idioma de la aplicación';
 
   @override
-  String get timezone => 'Zona Waktu';
+  String get timezone => 'Zona Horaria';
 
   @override
-  String get timezoneAuto => 'Otomatis (ikut perangkat)';
+  String get timezoneAuto => 'Automático (según dispositivo)';
+
+  @override
+  String get licenseUsageTitle => 'Licencia de Uso';
+
+  @override
+  String get licenseUsageNotice =>
+      'Gratis para uso personal y sin fines de lucro.';
+
+  @override
+  String get licenseUsageBadgeText => 'Personal y Sin Fines de Lucro';
+
+  @override
+  String get validationPurposeRequired =>
+      'El propósito de la marca de agua no puede estar vacío';
+
+  @override
+  String get validationPurposeMinLength =>
+      'El propósito debe tener al menos 3 caracteres';
+
+  @override
+  String get validationPurposeMaxLength =>
+      'El propósito no puede superar los 60 caracteres';
+
+  @override
+  String get validationSubtextMaxLength =>
+      'Las notas adicionales no pueden superar los 80 caracteres';
+
+  @override
+  String get validationOpacityRange =>
+      'La opacidad debe estar entre 10% y 100%';
+
+  @override
+  String get validationFontSizeRange =>
+      'El tamaño de fuente debe estar entre 10 y 60 pt';
+
+  @override
+  String get validationRotationRange =>
+      'El ángulo de rotación debe estar entre -90° y +90°';
+
+  @override
+  String get validationImageBytesEmpty =>
+      'El archivo de imagen está vacío o corrupto';
+
+  @override
+  String get validationImageBytesTooLarge =>
+      'El tamaño de la imagen supera el límite permitido';
+
+  @override
+  String get validationQualityRange =>
+      'La calidad de imagen debe estar entre 10% y 100%';
+
+  @override
+  String get validationPresetTitleRequired =>
+      'El nombre del preset no puede estar vacío';
+
+  @override
+  String get validationPresetTitleMinLength =>
+      'El nombre del preset debe tener al menos 3 caracteres';
+
+  @override
+  String get validationPresetTitleMaxLength =>
+      'El nombre del preset no puede superar los 50 caracteres';
+
+  @override
+  String get validationPresetCategoryRequired =>
+      'La categoría del preset no puede estar vacía';
+
+  @override
+  String get validationPresetCategoryMaxLength =>
+      'La categoría no puede superar los 30 caracteres';
+
+  @override
+  String get privacyGradeDescMax =>
+      'Protección máxima • Cumple con los estándares de privacidad de datos';
+
+  @override
+  String get privacyGradeDescVeryGood =>
+      'Protección muy buena • El documento es seguro para compartir';
+
+  @override
+  String get privacyGradeDescFair =>
+      'Protección moderada • Se recomienda agregar fecha y censurar la identificación';
+
+  @override
+  String get privacyGradeDescWeak =>
+      'Protección débil • Agregue propósito específico y fecha';
 }

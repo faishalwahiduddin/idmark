@@ -347,5 +347,29 @@
       }
     }
   },
-  "appLanguage": "Basa Aplikasi"
+  "appLanguage": "Basa Aplikasi",
+  "timezone": "Zona Wektu",
+  "timezoneAuto": "Otomatis (miturut piranti)",
+  "licenseUsageTitle": "Lisensi Panganggo",
+  "licenseUsageNotice": "Bebas dienggo kanggo kaperluan pribadi lan non-profit.",
+  "licenseUsageBadgeText": "Pribadi & Non-Profit",
+  "validationPurposeRequired": "Tujuan watermark ora kena kothong",
+  "validationPurposeMinLength": "Tujuan minimal 3 karakter",
+  "validationPurposeMaxLength": "Tujuan maksimal 60 karakter",
+  "validationSubtextMaxLength": "Cathetan tambahan maksimal 80 karakter",
+  "validationOpacityRange": "Opasitas kudu ana ing antarane 10% lan 100%",
+  "validationFontSizeRange": "Ukuran teks kudu antara 10 lan 60 pt",
+  "validationRotationRange": "Sudut rotasi kudu antara -90° lan +90°",
+  "validationImageBytesEmpty": "Berkas gambar kothong utawa rusak",
+  "validationImageBytesTooLarge": "Ukuran gambar ngluwihi wates maksimal",
+  "validationQualityRange": "Kualitas gambar kudu antara 10% lan 100%",
+  "validationPresetTitleRequired": "Jeneng preset ora kena kothong",
+  "validationPresetTitleMinLength": "Jeneng preset minimal 3 karakter",
+  "validationPresetTitleMaxLength": "Jeneng preset maksimal 50 karakter",
+  "validationPresetCategoryRequired": "Kategori preset ora kena kothong",
+  "validationPresetCategoryMaxLength": "Kategori maksimal 30 karakter",
+  "privacyGradeDescMax": "Proteksi Maksimal • Trep karo rekomendasi UU PDP",
+  "privacyGradeDescVeryGood": "Proteksi Apik Banget • Dokumen aman dienggo bareng",
+  "privacyGradeDescFair": "Proteksi Cukup • Disaranake nambah tanggal lan sensor NIK",
+  "privacyGradeDescWeak": "Proteksi Lemah • Tambahna tujuan spesifik lan tanggal"
 }

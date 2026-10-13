@@ -2,18 +2,19 @@ import '../constants/app_constants.dart';
 
 /// Centralized validator for UI form fields and data mutations.
 /// Enforces §VAL rule across frontend and storage boundaries.
+/// Returns stable error codes that are mapped to localized strings via l10n_helpers.
 class AppValidators {
   /// Validates watermark purpose text.
   static String? validatePurpose(String? value) {
     if (value == null || value.trim().isEmpty) {
-      return 'Tujuan watermark tidak boleh kosong';
+      return 'validationPurposeRequired';
     }
     final trimmed = value.trim();
     if (trimmed.length < AppConstants.minPurposeLength) {
-      return 'Tujuan minimal ${AppConstants.minPurposeLength} karakter';
+      return 'validationPurposeMinLength';
     }
     if (trimmed.length > AppConstants.maxPurposeLength) {
-      return 'Tujuan maksimal ${AppConstants.maxPurposeLength} karakter';
+      return 'validationPurposeMaxLength';
     }
     return null;
   }
@@ -24,7 +25,7 @@ class AppValidators {
       return null; // Subtext is optional
     }
     if (value.trim().length > AppConstants.maxSubtextLength) {
-      return 'Catatan tambahan maksimal ${AppConstants.maxSubtextLength} karakter';
+      return 'validationSubtextMaxLength';
     }
     return null;
   }
@@ -32,7 +33,7 @@ class AppValidators {
   /// Validates opacity value (must be between 0.1 and 1.0).
   static String? validateOpacity(double opacity) {
     if (opacity < 0.1 || opacity > 1.0) {
-      return 'Opasitas harus berada di antara 10% dan 100%';
+      return 'validationOpacityRange';
     }
     return null;
   }
@@ -40,7 +41,7 @@ class AppValidators {
   /// Validates font size scaling factor (10.0 to 60.0).
   static String? validateFontSize(double fontSize) {
     if (fontSize < 10.0 || fontSize > 60.0) {
-      return 'Ukuran teks harus antara 10 dan 60 pt';
+      return 'validationFontSizeRange';
     }
     return null;
   }
@@ -48,7 +49,7 @@ class AppValidators {
   /// Validates rotation angle (-90 to +90 degrees).
   static String? validateRotation(double angle) {
     if (angle < -90.0 || angle > 90.0) {
-      return 'Sudut rotasi harus antara -90° dan +90°';
+      return 'validationRotationRange';
     }
     return null;
   }
@@ -56,11 +57,10 @@ class AppValidators {
   /// Validates uploaded image byte size.
   static String? validateImageBytes(int sizeInBytes) {
     if (sizeInBytes <= 0) {
-      return 'File gambar kosong atau korup';
+      return 'validationImageBytesEmpty';
     }
     if (sizeInBytes > AppConstants.maxImageSizeBytes) {
-      final mb = (AppConstants.maxImageSizeBytes / (1024 * 1024)).toStringAsFixed(0);
-      return 'Ukuran gambar melebihi batas maksimal ($mb MB)';
+      return 'validationImageBytesTooLarge';
     }
     return null;
   }
@@ -68,7 +68,7 @@ class AppValidators {
   /// Validates export JPEG quality factor (10 to 100).
   static String? validateQuality(int quality) {
     if (quality < 10 || quality > 100) {
-      return 'Kualitas gambar harus antara 10% dan 100%';
+      return 'validationQualityRange';
     }
     return null;
   }
@@ -76,13 +76,13 @@ class AppValidators {
   /// Validates custom preset title.
   static String? validatePresetTitle(String? value) {
     if (value == null || value.trim().isEmpty) {
-      return 'Nama preset tidak boleh kosong';
+      return 'validationPresetTitleRequired';
     }
     if (value.trim().length < 3) {
-      return 'Nama preset minimal 3 karakter';
+      return 'validationPresetTitleMinLength';
     }
     if (value.trim().length > 50) {
-      return 'Nama preset maksimal 50 karakter';
+      return 'validationPresetTitleMaxLength';
     }
     return null;
   }
@@ -90,10 +90,10 @@ class AppValidators {
   /// Validates custom preset category.
   static String? validatePresetCategory(String? value) {
     if (value == null || value.trim().isEmpty) {
-      return 'Kategori preset tidak boleh kosong';
+      return 'validationPresetCategoryRequired';
     }
     if (value.trim().length > 30) {
-      return 'Kategori maksimal 30 karakter';
+      return 'validationPresetCategoryMaxLength';
     }
     return null;
   }

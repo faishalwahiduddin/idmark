@@ -683,4 +683,85 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get timezoneAuto => 'Automatic (follow device)';
+
+  @override
+  String get licenseUsageTitle => 'Usage License';
+
+  @override
+  String get licenseUsageNotice =>
+      'Free to use for personal and non-profit use.';
+
+  @override
+  String get licenseUsageBadgeText => 'Personal & Non-Profit';
+
+  @override
+  String get validationPurposeRequired => 'Watermark purpose cannot be empty';
+
+  @override
+  String get validationPurposeMinLength =>
+      'Purpose must be at least 3 characters';
+
+  @override
+  String get validationPurposeMaxLength =>
+      'Purpose cannot exceed 60 characters';
+
+  @override
+  String get validationSubtextMaxLength =>
+      'Additional notes cannot exceed 80 characters';
+
+  @override
+  String get validationOpacityRange => 'Opacity must be between 10% and 100%';
+
+  @override
+  String get validationFontSizeRange =>
+      'Font size must be between 10 and 60 pt';
+
+  @override
+  String get validationRotationRange =>
+      'Rotation angle must be between -90° and +90°';
+
+  @override
+  String get validationImageBytesEmpty => 'Image file is empty or corrupted';
+
+  @override
+  String get validationImageBytesTooLarge => 'Image size exceeds maximum limit';
+
+  @override
+  String get validationQualityRange =>
+      'Image quality must be between 10% and 100%';
+
+  @override
+  String get validationPresetTitleRequired => 'Preset name cannot be empty';
+
+  @override
+  String get validationPresetTitleMinLength =>
+      'Preset name must be at least 3 characters';
+
+  @override
+  String get validationPresetTitleMaxLength =>
+      'Preset name cannot exceed 50 characters';
+
+  @override
+  String get validationPresetCategoryRequired =>
+      'Preset category cannot be empty';
+
+  @override
+  String get validationPresetCategoryMaxLength =>
+      'Category cannot exceed 30 characters';
+
+  @override
+  String get privacyGradeDescMax =>
+      'Maximum Protection • Meets data privacy standards';
+
+  @override
+  String get privacyGradeDescVeryGood =>
+      'Strong Protection • Document is safe to share';
+
+  @override
+  String get privacyGradeDescFair =>
+      'Moderate Protection • Consider adding date and redacting ID';
+
+  @override
+  String get privacyGradeDescWeak =>
+      'Basic Protection • Add a specific purpose and date';
 }

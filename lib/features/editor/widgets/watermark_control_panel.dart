@@ -4,6 +4,7 @@ import '../../../../core/constants/app_colors.dart';
 import '../../../../core/models/redaction_item.dart';
 import '../../../../core/models/watermark_config.dart';
 import '../../../../core/utils/app_timezone.dart';
+import '../../../../core/utils/l10n_helpers.dart';
 import '../../../../core/utils/validators.dart';
 import '../../../../l10n/app_localizations.dart';
 
@@ -214,16 +215,19 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                     onPressed: () {
                       _purposeController.clear();
                       setState(() {
-                        _purposeError = AppValidators.validatePurpose('');
+                        _purposeError = l10n != null
+                            ? mapValidationError(AppValidators.validatePurpose(''), l10n)
+                            : AppValidators.validatePurpose('');
                       });
                     },
                   )
                 : null,
           ),
           onChanged: (val) {
-            final err = AppValidators.validatePurpose(val);
+            final rawErr = AppValidators.validatePurpose(val);
+            final err = l10n != null ? mapValidationError(rawErr, l10n) : rawErr;
             setState(() => _purposeError = err);
-            if (err == null) {
+            if (rawErr == null) {
               widget.onPurposeChanged(val);
             }
           },
@@ -635,7 +639,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        widget.config.privacyGradeDescription,
+                        widget.config.localizedPrivacyGradeDescription(l10n),
                         style: const TextStyle(fontSize: 11, color: Color(0xFF94A3B8)),
                       ),
                     ],

@@ -347,5 +347,29 @@
       }
     }
   },
-  "appLanguage": "Basa Aplikasi"
+  "appLanguage": "Basa Aplikasi",
+  "timezone": "Zona Waktos",
+  "timezoneAuto": "Otomatis (nurutkeun parangkat)",
+  "licenseUsageTitle": "Lisensi Pamakean",
+  "licenseUsageNotice": "Bebas dianggo pikeun kaperluan pribadi jeung non-profit.",
+  "licenseUsageBadgeText": "Pribadi & Non-Profit",
+  "validationPurposeRequired": "Tujuan watermark teu kenging kosong",
+  "validationPurposeMinLength": "Tujuan sahenteuna 3 karakter",
+  "validationPurposeMaxLength": "Tujuan maksimal 60 karakter",
+  "validationSubtextMaxLength": "Catetan tambahan maksimal 80 karakter",
+  "validationOpacityRange": "Katingalina kedah aya di antara 10% sareng 100%",
+  "validationFontSizeRange": "Ukuran teks kedah antara 10 sareng 60 pt",
+  "validationRotationRange": "Sudut puteran kedah antara -90° sareng +90°",
+  "validationImageBytesEmpty": "Berkas gambar kosong atanapi ruksak",
+  "validationImageBytesTooLarge": "Ukuran gambar ngaleuwihan wates maksimal",
+  "validationQualityRange": "Kualitas gambar kedah antara 10% sareng 100%",
+  "validationPresetTitleRequired": "Nami preset teu kenging kosong",
+  "validationPresetTitleMinLength": "Nami preset sahenteuna 3 karakter",
+  "validationPresetTitleMaxLength": "Nami preset maksimal 50 karakter",
+  "validationPresetCategoryRequired": "Kategori preset teu kenging kosong",
+  "validationPresetCategoryMaxLength": "Kategori maksimal 30 karakter",
+  "privacyGradeDescMax": "Panangtayungan Maksimal • Nyumponan standar panangtayungan data",
+  "privacyGradeDescVeryGood": "Panangtayungan Sae Pisan • Dokumén aman dibagikeun",
+  "privacyGradeDescFair": "Panangtayungan Cukup • Disarankeun nambihan tanggal sareng sensor NIK",
+  "privacyGradeDescWeak": "Panangtayungan Lemah • Tambihkeun tujuan spésifik sareng tanggal"
 }

@@ -671,8 +671,86 @@ class AppLocalizationsAr extends AppLocalizations {
   String get appLanguage => 'لغة التطبيق';
 
   @override
-  String get timezone => 'Zona Waktu';
+  String get timezone => 'المنطقة الزمنية';
 
   @override
-  String get timezoneAuto => 'Otomatis (ikut perangkat)';
+  String get timezoneAuto => 'تلقائي (حسب الجهاز)';
+
+  @override
+  String get licenseUsageTitle => 'ترخيص الاستخدام';
+
+  @override
+  String get licenseUsageNotice => 'مجاني للاستخدام الشخصي وغير الربحي.';
+
+  @override
+  String get licenseUsageBadgeText => 'شخصي وغير ربحي';
+
+  @override
+  String get validationPurposeRequired =>
+      'لا يمكن أن يكون غرض العلامة المائية فارغاً';
+
+  @override
+  String get validationPurposeMinLength =>
+      'يجب أن يتكون الغرض من 3 أحرف على الأقل';
+
+  @override
+  String get validationPurposeMaxLength => 'لا يمكن أن يتجاوز الغرض 60 حرفاً';
+
+  @override
+  String get validationSubtextMaxLength =>
+      'لا يمكن أن تتجاوز الملاحظات الإضافية 80 حرفاً';
+
+  @override
+  String get validationOpacityRange => 'يجب أن تكون الشفافية بين 10% و 100%';
+
+  @override
+  String get validationFontSizeRange => 'يجب أن يكون حجم الخط بين 10 و 60 نقطة';
+
+  @override
+  String get validationRotationRange =>
+      'يجب أن تكون زاوية الدوران بين -90° و +90°';
+
+  @override
+  String get validationImageBytesEmpty => 'ملف الصورة فارغ أو تالف';
+
+  @override
+  String get validationImageBytesTooLarge =>
+      'حجم الصورة يتجاوز الحد الأقصى المسموح به';
+
+  @override
+  String get validationQualityRange => 'يجب أن تكون جودة الصورة بين 10% و 100%';
+
+  @override
+  String get validationPresetTitleRequired =>
+      'اسم القالب مطلوب ولا يمكن تركه فارغاً';
+
+  @override
+  String get validationPresetTitleMinLength =>
+      'يجب أن يتكون اسم القالب من 3 أحرف على الأقل';
+
+  @override
+  String get validationPresetTitleMaxLength =>
+      'لا يمكن أن يتجاوز اسم القالب 50 حرفاً';
+
+  @override
+  String get validationPresetCategoryRequired =>
+      'تصنيف القالب مطلوب ولا يمكن تركه فارغاً';
+
+  @override
+  String get validationPresetCategoryMaxLength =>
+      'لا يمكن أن يتجاوز التصنيف 30 حرفاً';
+
+  @override
+  String get privacyGradeDescMax => 'حماية قصوى • يفي بمعايير حماية البيانات';
+
+  @override
+  String get privacyGradeDescVeryGood =>
+      'حماية قوية جداً • المستند آمن للمشاركة';
+
+  @override
+  String get privacyGradeDescFair =>
+      'حماية مقبولة • يُنصح بإضافة التاريخ وحجب رقم الهوية';
+
+  @override
+  String get privacyGradeDescWeak => 'حماية ضعيفة • أضف الغرض والتاريخ';
 }

@@ -14,6 +14,7 @@ import '../../core/services/watermark_renderer_service.dart';
 import '../../core/utils/app_timezone.dart';
 import '../../l10n/app_localizations.dart';
 import 'package:flutter/foundation.dart';
+import '../../core/utils/l10n_helpers.dart';
 import '../../core/utils/web_download_helper.dart';
 import 'widgets/idmark_share_dialog.dart';
 import 'widgets/watermark_canvas_preview.dart';
@@ -62,9 +63,10 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
     final config = ref.read(watermarkConfigProvider);
     final validationErrors = config.validate();
     if (validationErrors.isNotEmpty) {
+      final firstErr = l10n != null ? mapValidationError(validationErrors.first, l10n) : validationErrors.first;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(l10n?.checkConfigError(validationErrors.first) ?? 'Periksa konfigurasi: ${validationErrors.first}'),
+          content: Text(l10n?.checkConfigError(firstErr ?? validationErrors.first) ?? 'Periksa konfigurasi: $firstErr'),
           backgroundColor: AppColors.danger,
         ),
       );

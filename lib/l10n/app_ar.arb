@@ -347,5 +347,29 @@
       }
     }
   },
-  "appLanguage": "لغة التطبيق"
+  "appLanguage": "لغة التطبيق",
+  "timezone": "المنطقة الزمنية",
+  "timezoneAuto": "تلقائي (حسب الجهاز)",
+  "licenseUsageTitle": "ترخيص الاستخدام",
+  "licenseUsageNotice": "مجاني للاستخدام الشخصي وغير الربحي.",
+  "licenseUsageBadgeText": "شخصي وغير ربحي",
+  "validationPurposeRequired": "لا يمكن أن يكون غرض العلامة المائية فارغاً",
+  "validationPurposeMinLength": "يجب أن يتكون الغرض من 3 أحرف على الأقل",
+  "validationPurposeMaxLength": "لا يمكن أن يتجاوز الغرض 60 حرفاً",
+  "validationSubtextMaxLength": "لا يمكن أن تتجاوز الملاحظات الإضافية 80 حرفاً",
+  "validationOpacityRange": "يجب أن تكون الشفافية بين 10% و 100%",
+  "validationFontSizeRange": "يجب أن يكون حجم الخط بين 10 و 60 نقطة",
+  "validationRotationRange": "يجب أن تكون زاوية الدوران بين -90° و +90°",
+  "validationImageBytesEmpty": "ملف الصورة فارغ أو تالف",
+  "validationImageBytesTooLarge": "حجم الصورة يتجاوز الحد الأقصى المسموح به",
+  "validationQualityRange": "يجب أن تكون جودة الصورة بين 10% و 100%",
+  "validationPresetTitleRequired": "اسم القالب مطلوب ولا يمكن تركه فارغاً",
+  "validationPresetTitleMinLength": "يجب أن يتكون اسم القالب من 3 أحرف على الأقل",
+  "validationPresetTitleMaxLength": "لا يمكن أن يتجاوز اسم القالب 50 حرفاً",
+  "validationPresetCategoryRequired": "تصنيف القالب مطلوب ولا يمكن تركه فارغاً",
+  "validationPresetCategoryMaxLength": "لا يمكن أن يتجاوز التصنيف 30 حرفاً",
+  "privacyGradeDescMax": "حماية قصوى • يفي بمعايير حماية البيانات",
+  "privacyGradeDescVeryGood": "حماية قوية جداً • المستند آمن للمشاركة",
+  "privacyGradeDescFair": "حماية مقبولة • يُنصح بإضافة التاريخ وحجب رقم الهوية",
+  "privacyGradeDescWeak": "حماية ضعيفة • أضف الغرض والتاريخ"
 }

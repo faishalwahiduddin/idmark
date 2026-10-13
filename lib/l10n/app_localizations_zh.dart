@@ -647,8 +647,74 @@ class AppLocalizationsZh extends AppLocalizations {
   String get appLanguage => '应用语言';
 
   @override
-  String get timezone => 'Zona Waktu';
+  String get timezone => '时区';
 
   @override
-  String get timezoneAuto => 'Otomatis (ikut perangkat)';
+  String get timezoneAuto => '自动（根据设备）';
+
+  @override
+  String get licenseUsageTitle => '使用许可';
+
+  @override
+  String get licenseUsageNotice => '个人及非营利性用途免费使用。';
+
+  @override
+  String get licenseUsageBadgeText => '个人与非营利';
+
+  @override
+  String get validationPurposeRequired => '水印用途不能为空';
+
+  @override
+  String get validationPurposeMinLength => '用途至少需要 3 个字符';
+
+  @override
+  String get validationPurposeMaxLength => '用途不能超过 60 个字符';
+
+  @override
+  String get validationSubtextMaxLength => '附加说明不能超过 80 个字符';
+
+  @override
+  String get validationOpacityRange => '不透明度必须在 10% 到 100% 之间';
+
+  @override
+  String get validationFontSizeRange => '字体大小必须在 10 到 60 pt 之间';
+
+  @override
+  String get validationRotationRange => '旋转角度必须在 -90° 到 +90° 之间';
+
+  @override
+  String get validationImageBytesEmpty => '图片文件为空或已损坏';
+
+  @override
+  String get validationImageBytesTooLarge => '图片大小超过最大限制';
+
+  @override
+  String get validationQualityRange => '图片质量必须在 10% 到 100% 之间';
+
+  @override
+  String get validationPresetTitleRequired => '预设名称不能为空';
+
+  @override
+  String get validationPresetTitleMinLength => '预设名称至少需要 3 个字符';
+
+  @override
+  String get validationPresetTitleMaxLength => '预设名称不能超过 50 个字符';
+
+  @override
+  String get validationPresetCategoryRequired => '预设分类不能为空';
+
+  @override
+  String get validationPresetCategoryMaxLength => '分类不能超过 30 个字符';
+
+  @override
+  String get privacyGradeDescMax => '最高防护 • 符合数据安全与合规标准';
+
+  @override
+  String get privacyGradeDescVeryGood => '防护良好 • 文件可安全共享';
+
+  @override
+  String get privacyGradeDescFair => '防护适中 • 建议添加日期并遮盖证件号码';
+
+  @override
+  String get privacyGradeDescWeak => '防护较弱 • 请添加特定用途和日期';
 }

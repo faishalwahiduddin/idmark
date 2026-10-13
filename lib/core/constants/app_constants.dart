@@ -1,6 +1,5 @@
 class AppConstants {
   static const String appName = 'IDMark';
-  static const String appVersion = '1.0.0';
   static const String appTagline = 'Secure ID Card & Document Watermark';
   static const String appDomain = 'https://idmark.faishal.id';
   static const String fleetHome = 'https://faishal.id';

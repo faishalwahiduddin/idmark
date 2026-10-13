@@ -6,6 +6,7 @@ import '../../core/models/watermark_config.dart';
 import '../../core/models/watermark_preset.dart';
 import '../../core/providers/app_providers.dart';
 import '../../core/utils/app_timezone.dart';
+import '../../core/utils/l10n_helpers.dart';
 import '../../core/utils/validators.dart';
 import '../../l10n/app_localizations.dart';
 
@@ -427,8 +428,8 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
             ),
             ElevatedButton(
               onPressed: () {
-                final tErr = AppValidators.validatePresetTitle(titleCtrl.text);
-                final pErr = AppValidators.validatePurpose(purposeCtrl.text);
+                final tErr = mapValidationError(AppValidators.validatePresetTitle(titleCtrl.text), l10n);
+                final pErr = mapValidationError(AppValidators.validatePurpose(purposeCtrl.text), l10n);
 
                 setDialogState(() {
                   titleErr = tErr;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:timezone/timezone.dart' as tz;
+import '../../l10n/app_localizations.dart';
 import '../constants/app_colors.dart';
 import '../utils/app_timezone.dart';
 import '../utils/validators.dart';
@@ -122,13 +123,27 @@ class WatermarkConfig {
     return 'D';
   }
 
-  String get privacyGradeDescription {
+  /// Returns localized privacy grade description.
+  /// Falls back to default Indonesian string when [l10n] is null.
+  String localizedPrivacyGradeDescription([AppLocalizations? l10n]) {
     final s = privacyScore;
-    if (s >= 90) return 'Proteksi Maksimal • Memenuhi rekomendasi Kominfo & UU PDP';
-    if (s >= 80) return 'Proteksi Sangat Baik • Dokumen aman dibagikan';
-    if (s >= 65) return 'Proteksi Cukup • Disarankan menambah tanggal dan sensor NIK';
-    return 'Proteksi Lemah • Tambahkan tujuan spesifik dan tanggal';
+    if (s >= 90) {
+      return l10n?.privacyGradeDescMax ??
+          'Proteksi Maksimal • Memenuhi rekomendasi Kominfo & UU PDP';
+    }
+    if (s >= 80) {
+      return l10n?.privacyGradeDescVeryGood ??
+          'Proteksi Sangat Baik • Dokumen aman dibagikan';
+    }
+    if (s >= 65) {
+      return l10n?.privacyGradeDescFair ??
+          'Proteksi Cukup • Disarankan menambah tanggal dan sensor NIK';
+    }
+    return l10n?.privacyGradeDescWeak ??
+        'Proteksi Lemah • Tambahkan tujuan spesifik dan tanggal';
   }
+
+  String get privacyGradeDescription => localizedPrivacyGradeDescription(null);
 
   /// Validates state consistency before any mutation/saving (§VAL)
   List<String> validate() {

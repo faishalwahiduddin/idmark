@@ -1309,6 +1309,138 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Otomatis (ikut perangkat)'**
   String get timezoneAuto;
+
+  /// No description provided for @licenseUsageTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Lisensi Penggunaan'**
+  String get licenseUsageTitle;
+
+  /// No description provided for @licenseUsageNotice.
+  ///
+  /// In id, this message translates to:
+  /// **'Bebas digunakan untuk keperluan personal dan non-profit.'**
+  String get licenseUsageNotice;
+
+  /// No description provided for @licenseUsageBadgeText.
+  ///
+  /// In id, this message translates to:
+  /// **'Pribadi & Nirlaba'**
+  String get licenseUsageBadgeText;
+
+  /// No description provided for @validationPurposeRequired.
+  ///
+  /// In id, this message translates to:
+  /// **'Tujuan watermark tidak boleh kosong'**
+  String get validationPurposeRequired;
+
+  /// No description provided for @validationPurposeMinLength.
+  ///
+  /// In id, this message translates to:
+  /// **'Tujuan minimal 3 karakter'**
+  String get validationPurposeMinLength;
+
+  /// No description provided for @validationPurposeMaxLength.
+  ///
+  /// In id, this message translates to:
+  /// **'Tujuan maksimal 60 karakter'**
+  String get validationPurposeMaxLength;
+
+  /// No description provided for @validationSubtextMaxLength.
+  ///
+  /// In id, this message translates to:
+  /// **'Catatan tambahan maksimal 80 karakter'**
+  String get validationSubtextMaxLength;
+
+  /// No description provided for @validationOpacityRange.
+  ///
+  /// In id, this message translates to:
+  /// **'Opasitas harus berada di antara 10% dan 100%'**
+  String get validationOpacityRange;
+
+  /// No description provided for @validationFontSizeRange.
+  ///
+  /// In id, this message translates to:
+  /// **'Ukuran teks harus antara 10 dan 60 pt'**
+  String get validationFontSizeRange;
+
+  /// No description provided for @validationRotationRange.
+  ///
+  /// In id, this message translates to:
+  /// **'Sudut rotasi harus antara -90° dan +90°'**
+  String get validationRotationRange;
+
+  /// No description provided for @validationImageBytesEmpty.
+  ///
+  /// In id, this message translates to:
+  /// **'File gambar kosong atau korup'**
+  String get validationImageBytesEmpty;
+
+  /// No description provided for @validationImageBytesTooLarge.
+  ///
+  /// In id, this message translates to:
+  /// **'Ukuran gambar melebihi batas maksimal'**
+  String get validationImageBytesTooLarge;
+
+  /// No description provided for @validationQualityRange.
+  ///
+  /// In id, this message translates to:
+  /// **'Kualitas gambar harus antara 10% dan 100%'**
+  String get validationQualityRange;
+
+  /// No description provided for @validationPresetTitleRequired.
+  ///
+  /// In id, this message translates to:
+  /// **'Nama preset tidak boleh kosong'**
+  String get validationPresetTitleRequired;
+
+  /// No description provided for @validationPresetTitleMinLength.
+  ///
+  /// In id, this message translates to:
+  /// **'Nama preset minimal 3 karakter'**
+  String get validationPresetTitleMinLength;
+
+  /// No description provided for @validationPresetTitleMaxLength.
+  ///
+  /// In id, this message translates to:
+  /// **'Nama preset maksimal 50 karakter'**
+  String get validationPresetTitleMaxLength;
+
+  /// No description provided for @validationPresetCategoryRequired.
+  ///
+  /// In id, this message translates to:
+  /// **'Kategori preset tidak boleh kosong'**
+  String get validationPresetCategoryRequired;
+
+  /// No description provided for @validationPresetCategoryMaxLength.
+  ///
+  /// In id, this message translates to:
+  /// **'Kategori maksimal 30 karakter'**
+  String get validationPresetCategoryMaxLength;
+
+  /// No description provided for @privacyGradeDescMax.
+  ///
+  /// In id, this message translates to:
+  /// **'Proteksi Maksimal • Memenuhi rekomendasi Kominfo & UU PDP'**
+  String get privacyGradeDescMax;
+
+  /// No description provided for @privacyGradeDescVeryGood.
+  ///
+  /// In id, this message translates to:
+  /// **'Proteksi Sangat Baik • Dokumen aman dibagikan'**
+  String get privacyGradeDescVeryGood;
+
+  /// No description provided for @privacyGradeDescFair.
+  ///
+  /// In id, this message translates to:
+  /// **'Proteksi Cukup • Disarankan menambah tanggal dan sensor NIK'**
+  String get privacyGradeDescFair;
+
+  /// No description provided for @privacyGradeDescWeak.
+  ///
+  /// In id, this message translates to:
+  /// **'Proteksi Lemah • Tambahkan tujuan spesifik dan tanggal'**
+  String get privacyGradeDescWeak;
 }
 
 class _AppLocalizationsDelegate

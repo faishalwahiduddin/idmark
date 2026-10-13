@@ -674,8 +674,88 @@ class AppLocalizationsJv extends AppLocalizations {
   String get appLanguage => 'Basa Aplikasi';
 
   @override
-  String get timezone => 'Zona Waktu';
+  String get timezone => 'Zona Wektu';
 
   @override
-  String get timezoneAuto => 'Otomatis (ikut perangkat)';
+  String get timezoneAuto => 'Otomatis (miturut piranti)';
+
+  @override
+  String get licenseUsageTitle => 'Lisensi Panganggo';
+
+  @override
+  String get licenseUsageNotice =>
+      'Bebas dienggo kanggo kaperluan pribadi lan non-profit.';
+
+  @override
+  String get licenseUsageBadgeText => 'Pribadi & Non-Profit';
+
+  @override
+  String get validationPurposeRequired => 'Tujuan watermark ora kena kothong';
+
+  @override
+  String get validationPurposeMinLength => 'Tujuan minimal 3 karakter';
+
+  @override
+  String get validationPurposeMaxLength => 'Tujuan maksimal 60 karakter';
+
+  @override
+  String get validationSubtextMaxLength =>
+      'Cathetan tambahan maksimal 80 karakter';
+
+  @override
+  String get validationOpacityRange =>
+      'Opasitas kudu ana ing antarane 10% lan 100%';
+
+  @override
+  String get validationFontSizeRange => 'Ukuran teks kudu antara 10 lan 60 pt';
+
+  @override
+  String get validationRotationRange =>
+      'Sudut rotasi kudu antara -90° lan +90°';
+
+  @override
+  String get validationImageBytesEmpty => 'Berkas gambar kothong utawa rusak';
+
+  @override
+  String get validationImageBytesTooLarge =>
+      'Ukuran gambar ngluwihi wates maksimal';
+
+  @override
+  String get validationQualityRange =>
+      'Kualitas gambar kudu antara 10% lan 100%';
+
+  @override
+  String get validationPresetTitleRequired => 'Jeneng preset ora kena kothong';
+
+  @override
+  String get validationPresetTitleMinLength =>
+      'Jeneng preset minimal 3 karakter';
+
+  @override
+  String get validationPresetTitleMaxLength =>
+      'Jeneng preset maksimal 50 karakter';
+
+  @override
+  String get validationPresetCategoryRequired =>
+      'Kategori preset ora kena kothong';
+
+  @override
+  String get validationPresetCategoryMaxLength =>
+      'Kategori maksimal 30 karakter';
+
+  @override
+  String get privacyGradeDescMax =>
+      'Proteksi Maksimal • Trep karo rekomendasi UU PDP';
+
+  @override
+  String get privacyGradeDescVeryGood =>
+      'Proteksi Apik Banget • Dokumen aman dienggo bareng';
+
+  @override
+  String get privacyGradeDescFair =>
+      'Proteksi Cukup • Disaranake nambah tanggal lan sensor NIK';
+
+  @override
+  String get privacyGradeDescWeak =>
+      'Proteksi Lemah • Tambahna tujuan spesifik lan tanggal';
 }

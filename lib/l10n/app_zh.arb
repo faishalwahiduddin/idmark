@@ -347,5 +347,29 @@
       }
     }
   },
-  "appLanguage": "应用语言"
+  "appLanguage": "应用语言",
+  "timezone": "时区",
+  "timezoneAuto": "自动（根据设备）",
+  "licenseUsageTitle": "使用许可",
+  "licenseUsageNotice": "个人及非营利性用途免费使用。",
+  "licenseUsageBadgeText": "个人与非营利",
+  "validationPurposeRequired": "水印用途不能为空",
+  "validationPurposeMinLength": "用途至少需要 3 个字符",
+  "validationPurposeMaxLength": "用途不能超过 60 个字符",
+  "validationSubtextMaxLength": "附加说明不能超过 80 个字符",
+  "validationOpacityRange": "不透明度必须在 10% 到 100% 之间",
+  "validationFontSizeRange": "字体大小必须在 10 到 60 pt 之间",
+  "validationRotationRange": "旋转角度必须在 -90° 到 +90° 之间",
+  "validationImageBytesEmpty": "图片文件为空或已损坏",
+  "validationImageBytesTooLarge": "图片大小超过最大限制",
+  "validationQualityRange": "图片质量必须在 10% 到 100% 之间",
+  "validationPresetTitleRequired": "预设名称不能为空",
+  "validationPresetTitleMinLength": "预设名称至少需要 3 个字符",
+  "validationPresetTitleMaxLength": "预设名称不能超过 50 个字符",
+  "validationPresetCategoryRequired": "预设分类不能为空",
+  "validationPresetCategoryMaxLength": "分类不能超过 30 个字符",
+  "privacyGradeDescMax": "最高防护 • 符合数据安全与合规标准",
+  "privacyGradeDescVeryGood": "防护良好 • 文件可安全共享",
+  "privacyGradeDescFair": "防护适中 • 建议添加日期并遮盖证件号码",
+  "privacyGradeDescWeak": "防护较弱 • 请添加特定用途和日期"
 }

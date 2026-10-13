@@ -347,5 +347,29 @@
       }
     }
   },
-  "appLanguage": "アプリの言語"
+  "appLanguage": "アプリの言語",
+  "timezone": "タイムゾーン",
+  "timezoneAuto": "自動（デバイスに準拠）",
+  "licenseUsageTitle": "利用規約・ライセンス",
+  "licenseUsageNotice": "個人および非営利目的での利用は無料です。",
+  "licenseUsageBadgeText": "個人・非営利",
+  "validationPurposeRequired": "透かしの目的を入力してください",
+  "validationPurposeMinLength": "目的は3文字以上で入力してください",
+  "validationPurposeMaxLength": "目的は60文字以内で入力してください",
+  "validationSubtextMaxLength": "補足テキストは80文字以内で入力してください",
+  "validationOpacityRange": "不透明度は10%から100%の間で設定してください",
+  "validationFontSizeRange": "フォントサイズは10〜60ptの間で設定してください",
+  "validationRotationRange": "回転角度は-90°から+90°の間で設定してください",
+  "validationImageBytesEmpty": "画像ファイルが空か破損しています",
+  "validationImageBytesTooLarge": "画像サイズが上限を超えています",
+  "validationQualityRange": "画質は10%から100%の間で設定してください",
+  "validationPresetTitleRequired": "プリセット名を入力してください",
+  "validationPresetTitleMinLength": "プリセット名は3文字以上で入力してください",
+  "validationPresetTitleMaxLength": "プリセット名は50文字以内で入力してください",
+  "validationPresetCategoryRequired": "プリセットのカテゴリーを入力してください",
+  "validationPresetCategoryMaxLength": "カテゴリーは30文字以内で入力してください",
+  "privacyGradeDescMax": "最大保護 • データ保護基準に準拠",
+  "privacyGradeDescVeryGood": "強固な保護 • 共有しても安全です",
+  "privacyGradeDescFair": "適度な保護 • 日付の追加と個人情報のマスキングを推奨",
+  "privacyGradeDescWeak": "弱い保護 • 目的と日付を追加してください"
 }

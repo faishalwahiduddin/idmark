@@ -651,8 +651,74 @@ class AppLocalizationsJa extends AppLocalizations {
   String get appLanguage => 'アプリの言語';
 
   @override
-  String get timezone => 'Zona Waktu';
+  String get timezone => 'タイムゾーン';
 
   @override
-  String get timezoneAuto => 'Otomatis (ikut perangkat)';
+  String get timezoneAuto => '自動（デバイスに準拠）';
+
+  @override
+  String get licenseUsageTitle => '利用規約・ライセンス';
+
+  @override
+  String get licenseUsageNotice => '個人および非営利目的での利用は無料です。';
+
+  @override
+  String get licenseUsageBadgeText => '個人・非営利';
+
+  @override
+  String get validationPurposeRequired => '透かしの目的を入力してください';
+
+  @override
+  String get validationPurposeMinLength => '目的は3文字以上で入力してください';
+
+  @override
+  String get validationPurposeMaxLength => '目的は60文字以内で入力してください';
+
+  @override
+  String get validationSubtextMaxLength => '補足テキストは80文字以内で入力してください';
+
+  @override
+  String get validationOpacityRange => '不透明度は10%から100%の間で設定してください';
+
+  @override
+  String get validationFontSizeRange => 'フォントサイズは10〜60ptの間で設定してください';
+
+  @override
+  String get validationRotationRange => '回転角度は-90°から+90°の間で設定してください';
+
+  @override
+  String get validationImageBytesEmpty => '画像ファイルが空か破損しています';
+
+  @override
+  String get validationImageBytesTooLarge => '画像サイズが上限を超えています';
+
+  @override
+  String get validationQualityRange => '画質は10%から100%の間で設定してください';
+
+  @override
+  String get validationPresetTitleRequired => 'プリセット名を入力してください';
+
+  @override
+  String get validationPresetTitleMinLength => 'プリセット名は3文字以上で入力してください';
+
+  @override
+  String get validationPresetTitleMaxLength => 'プリセット名は50文字以内で入力してください';
+
+  @override
+  String get validationPresetCategoryRequired => 'プリセットのカテゴリーを入力してください';
+
+  @override
+  String get validationPresetCategoryMaxLength => 'カテゴリーは30文字以内で入力してください';
+
+  @override
+  String get privacyGradeDescMax => '最大保護 • データ保護基準に準拠';
+
+  @override
+  String get privacyGradeDescVeryGood => '強固な保護 • 共有しても安全です';
+
+  @override
+  String get privacyGradeDescFair => '適度な保護 • 日付の追加と個人情報のマスキングを推奨';
+
+  @override
+  String get privacyGradeDescWeak => '弱い保護 • 目的と日付を追加してください';
 }

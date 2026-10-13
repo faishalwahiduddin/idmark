@@ -684,4 +684,83 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get timezoneAuto => 'Otomatis (ikut perangkat)';
+
+  @override
+  String get licenseUsageTitle => 'Lisensi Penggunaan';
+
+  @override
+  String get licenseUsageNotice =>
+      'Bebas digunakan untuk keperluan personal dan non-profit.';
+
+  @override
+  String get licenseUsageBadgeText => 'Pribadi & Nirlaba';
+
+  @override
+  String get validationPurposeRequired => 'Tujuan watermark tidak boleh kosong';
+
+  @override
+  String get validationPurposeMinLength => 'Tujuan minimal 3 karakter';
+
+  @override
+  String get validationPurposeMaxLength => 'Tujuan maksimal 60 karakter';
+
+  @override
+  String get validationSubtextMaxLength =>
+      'Catatan tambahan maksimal 80 karakter';
+
+  @override
+  String get validationOpacityRange =>
+      'Opasitas harus berada di antara 10% dan 100%';
+
+  @override
+  String get validationFontSizeRange => 'Ukuran teks harus antara 10 dan 60 pt';
+
+  @override
+  String get validationRotationRange =>
+      'Sudut rotasi harus antara -90° dan +90°';
+
+  @override
+  String get validationImageBytesEmpty => 'File gambar kosong atau korup';
+
+  @override
+  String get validationImageBytesTooLarge =>
+      'Ukuran gambar melebihi batas maksimal';
+
+  @override
+  String get validationQualityRange =>
+      'Kualitas gambar harus antara 10% dan 100%';
+
+  @override
+  String get validationPresetTitleRequired => 'Nama preset tidak boleh kosong';
+
+  @override
+  String get validationPresetTitleMinLength => 'Nama preset minimal 3 karakter';
+
+  @override
+  String get validationPresetTitleMaxLength =>
+      'Nama preset maksimal 50 karakter';
+
+  @override
+  String get validationPresetCategoryRequired =>
+      'Kategori preset tidak boleh kosong';
+
+  @override
+  String get validationPresetCategoryMaxLength =>
+      'Kategori maksimal 30 karakter';
+
+  @override
+  String get privacyGradeDescMax =>
+      'Proteksi Maksimal • Memenuhi rekomendasi Kominfo & UU PDP';
+
+  @override
+  String get privacyGradeDescVeryGood =>
+      'Proteksi Sangat Baik • Dokumen aman dibagikan';
+
+  @override
+  String get privacyGradeDescFair =>
+      'Proteksi Cukup • Disarankan menambah tanggal dan sensor NIK';
+
+  @override
+  String get privacyGradeDescWeak =>
+      'Proteksi Lemah • Tambahkan tujuan spesifik dan tanggal';
 }

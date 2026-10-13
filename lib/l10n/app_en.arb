@@ -355,5 +355,27 @@
   "timezoneAuto": "Automatic (follow device)",
   "@timezoneAuto": {
     "description": "Automatic time zone option that follows the device zone"
-  }
+  },
+  "licenseUsageTitle": "Usage License",
+  "licenseUsageNotice": "Free to use for personal and non-profit use.",
+  "licenseUsageBadgeText": "Personal & Non-Profit",
+  "validationPurposeRequired": "Watermark purpose cannot be empty",
+  "validationPurposeMinLength": "Purpose must be at least 3 characters",
+  "validationPurposeMaxLength": "Purpose cannot exceed 60 characters",
+  "validationSubtextMaxLength": "Additional notes cannot exceed 80 characters",
+  "validationOpacityRange": "Opacity must be between 10% and 100%",
+  "validationFontSizeRange": "Font size must be between 10 and 60 pt",
+  "validationRotationRange": "Rotation angle must be between -90° and +90°",
+  "validationImageBytesEmpty": "Image file is empty or corrupted",
+  "validationImageBytesTooLarge": "Image size exceeds maximum limit",
+  "validationQualityRange": "Image quality must be between 10% and 100%",
+  "validationPresetTitleRequired": "Preset name cannot be empty",
+  "validationPresetTitleMinLength": "Preset name must be at least 3 characters",
+  "validationPresetTitleMaxLength": "Preset name cannot exceed 50 characters",
+  "validationPresetCategoryRequired": "Preset category cannot be empty",
+  "validationPresetCategoryMaxLength": "Category cannot exceed 30 characters",
+  "privacyGradeDescMax": "Maximum Protection • Meets data privacy standards",
+  "privacyGradeDescVeryGood": "Strong Protection • Document is safe to share",
+  "privacyGradeDescFair": "Moderate Protection • Consider adding date and redacting ID",
+  "privacyGradeDescWeak": "Basic Protection • Add a specific purpose and date"
 }

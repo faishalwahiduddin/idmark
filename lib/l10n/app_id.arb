@@ -355,5 +355,27 @@
   "timezoneAuto": "Otomatis (ikut perangkat)",
   "@timezoneAuto": {
     "description": "Opsi zona waktu otomatis yang mengikuti zona perangkat"
-  }
+  },
+  "licenseUsageTitle": "Lisensi Penggunaan",
+  "licenseUsageNotice": "Bebas digunakan untuk keperluan personal dan non-profit.",
+  "licenseUsageBadgeText": "Pribadi & Nirlaba",
+  "validationPurposeRequired": "Tujuan watermark tidak boleh kosong",
+  "validationPurposeMinLength": "Tujuan minimal 3 karakter",
+  "validationPurposeMaxLength": "Tujuan maksimal 60 karakter",
+  "validationSubtextMaxLength": "Catatan tambahan maksimal 80 karakter",
+  "validationOpacityRange": "Opasitas harus berada di antara 10% dan 100%",
+  "validationFontSizeRange": "Ukuran teks harus antara 10 dan 60 pt",
+  "validationRotationRange": "Sudut rotasi harus antara -90° dan +90°",
+  "validationImageBytesEmpty": "File gambar kosong atau korup",
+  "validationImageBytesTooLarge": "Ukuran gambar melebihi batas maksimal",
+  "validationQualityRange": "Kualitas gambar harus antara 10% dan 100%",
+  "validationPresetTitleRequired": "Nama preset tidak boleh kosong",
+  "validationPresetTitleMinLength": "Nama preset minimal 3 karakter",
+  "validationPresetTitleMaxLength": "Nama preset maksimal 50 karakter",
+  "validationPresetCategoryRequired": "Kategori preset tidak boleh kosong",
+  "validationPresetCategoryMaxLength": "Kategori maksimal 30 karakter",
+  "privacyGradeDescMax": "Proteksi Maksimal • Memenuhi rekomendasi Kominfo & UU PDP",
+  "privacyGradeDescVeryGood": "Proteksi Sangat Baik • Dokumen aman dibagikan",
+  "privacyGradeDescFair": "Proteksi Cukup • Disarankan menambah tanggal dan sensor NIK",
+  "privacyGradeDescWeak": "Proteksi Lemah • Tambahkan tujuan spesifik dan tanggal"
 }
