@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-47-kualitas-data-watermark-e-ktp-vs-kuantit",
+  "app": "idmark",
+  "publish_date": "2026-12-01",
+  "primary_keyword": "watermark e-KTP",
+  "idea_type": "quality",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "kualitas-data-watermark-e-ktp-vs-kuantitas-offline",
+    "en": "watermark-e-ktp-data-quality-vs-quantity",
+    "ar": "watermark-e-ktp-6",
+    "jv": "pandhuan-watermark-e-ktp-idmark-6",
+    "su": "pituduh-watermark-e-ktp-idmark-6",
+    "zh": "idmark-watermark-e-ktp-实用指南-6",
+    "ja": "idmarkwatermark-e-ktp-ガイド-6"
+  },
+  "titles": {
+    "id": "Kualitas Data watermark e-KTP vs Kuantitas",
+    "en": "watermark e-KTP Data Quality vs Quantity",
+    "ar": "watermark e-KTP — دليل IDMark",
+    "jv": "Pandhuan: Kualitas Data watermark e-KTP vs Kuantitas",
+    "su": "Pituduh: Kualitas Data watermark e-KTP vs Kuantitas",
+    "zh": "IDMark · watermark e-KTP 实用指南",
+    "ja": "IDMark｜watermark e-KTP ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

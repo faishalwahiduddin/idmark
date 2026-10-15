@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-34-idmark-di-chat-group-vs-tracker-khusus-m",
+  "app": "idmark",
+  "publish_date": "2026-11-18",
+  "primary_keyword": "watermark KTP",
+  "idea_type": "vs-chat",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "idmark-di-chat-group-vs-tracker-khusus-mingguan",
+    "en": "idmark-in-chat-groups-vs-dedicated-tracker",
+    "ar": "idmark-4",
+    "jv": "pandhuan-idmark-idmark-4",
+    "su": "pituduh-idmark-idmark-4",
+    "zh": "idmark-idmark-实用指南-4",
+    "ja": "idmarkidmark-ガイド-4"
+  },
+  "titles": {
+    "id": "IDMark di Chat Group vs Tracker Khusus",
+    "en": "IDMark in Chat Groups vs Dedicated Tracker — Offline First",
+    "ar": "IDMark — دليل IDMark",
+    "jv": "Pandhuan: IDMark di Chat Group vs Tracker Khusus",
+    "su": "Pituduh: IDMark di Chat Group vs Tracker Khusus",
+    "zh": "IDMark · IDMark 实用指南",
+    "ja": "IDMark｜IDMark ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

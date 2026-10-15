@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../core/constants/app_colors.dart';
+import '../../core/ui/app_scroll.dart';
+import '../../core/ui/press_scale.dart';
 import '../../l10n/app_localizations.dart';
 
 class KominfoGuideScreen extends StatefulWidget {
@@ -28,14 +30,16 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
         title: Text(l10n.officialKominfoGuide),
       ),
       body: ListView(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        physics: AppScroll.physics,
+        padding: AppScroll.pagePadding(context),
         children: [
           // Header Card (flat brand surface, no gradient wash)
           Container(
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
               color: AppColors.primaryDark,
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(18),
+              border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,6 +54,7 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
                         fontSize: 17,
                         fontWeight: FontWeight.w700,
                         color: Colors.white,
+                        letterSpacing: -0.4,
                       ),
                     ),
                   ],
@@ -73,8 +78,8 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
               color: AppColors.bgSurface,
-              borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: AppColors.border),
+              borderRadius: BorderRadius.circular(18),
+              border: Border.all(color: AppColors.subtleBorder(context, alpha: 0.1)),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -123,6 +128,7 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
               fontSize: 15,
               fontWeight: FontWeight.w700,
               color: AppColors.title(context),
+              letterSpacing: -0.35,
             ),
           ),
           const SizedBox(height: 12),
@@ -197,13 +203,12 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
 
   Widget _buildChecklistItem(int index, String text) {
     final isChecked = _checklistStates[index] ?? false;
-    return InkWell(
+    return PressScale(
       onTap: () {
         setState(() {
           _checklistStates[index] = !isChecked;
         });
       },
-      borderRadius: BorderRadius.circular(8),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 6),
         child: Row(
@@ -242,6 +247,10 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
       // stays identical in either app theme.
       child: Card(
         color: AppColors.bgCard,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(18),
+          side: BorderSide(color: AppColors.subtleBorder(context, alpha: 0.1)),
+        ),
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Row(
@@ -275,6 +284,7 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
                         fontSize: 14,
                         fontWeight: FontWeight.w700,
                         color: Colors.white,
+                        letterSpacing: -0.3,
                       ),
                     ),
                     const SizedBox(height: 4),

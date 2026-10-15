@@ -47,6 +47,12 @@ class AppColors {
   /// EITHER theme (used for all info banners instead of alpha washes).
   static const Color bannerSurface = bgSurface;
 
+  /// Hairline border tuned for fluid surfaces (0.08–0.12 alpha on foreground).
+  static Color subtleBorder(BuildContext context, {double alpha = 0.1}) {
+    final fg = _isDark(context) ? Colors.white : lightTextPrimary;
+    return fg.withValues(alpha: alpha);
+  }
+
   // Watermark Color Palette Presets
   static const Color watermarkRed = Color(0xFFDC2626);
   static const Color watermarkBlue = Color(0xFF2563EB);

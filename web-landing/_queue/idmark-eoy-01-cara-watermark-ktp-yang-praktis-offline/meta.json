@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-01-cara-watermark-ktp-yang-praktis-offline",
+  "app": "idmark",
+  "publish_date": "2026-10-16",
+  "primary_keyword": "watermark KTP",
+  "idea_type": "how-to",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "cara-watermark-ktp-yang-praktis-offline",
+    "en": "how-to-watermark-ktp-offline",
+    "ar": "watermark-ktp",
+    "jv": "pandhuan-watermark-ktp-idmark",
+    "su": "pituduh-watermark-ktp-idmark",
+    "zh": "idmark-watermark-ktp-实用指南",
+    "ja": "idmarkwatermark-ktp-ガイド"
+  },
+  "titles": {
+    "id": "Cara watermark KTP yang Praktis (Offline)",
+    "en": "How to watermark KTP Offline — Practical Steps",
+    "ar": "watermark KTP — دليل IDMark",
+    "jv": "Pandhuan: Cara watermark KTP yang Praktis (Offline)",
+    "su": "Pituduh: Cara watermark KTP yang Praktis (Offline)",
+    "zh": "IDMark · watermark KTP 实用指南",
+    "ja": "IDMark｜watermark KTP ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

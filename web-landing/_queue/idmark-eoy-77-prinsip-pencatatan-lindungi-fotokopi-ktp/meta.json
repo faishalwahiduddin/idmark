@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-77-prinsip-pencatatan-lindungi-fotokopi-ktp",
+  "app": "idmark",
+  "publish_date": "2026-12-31",
+  "primary_keyword": "lindungi fotokopi KTP",
+  "idea_type": "evergreen",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "prinsip-pencatatan-lindungi-fotokopi-ktp-jangka-panjang-offline",
+    "en": "long-term-lindungi-fotokopi-ktp-logging-principles",
+    "ar": "lindungi-fotokopi-ktp-9",
+    "jv": "pandhuan-lindungi-fotokopi-ktp-idmark-9",
+    "su": "pituduh-lindungi-fotokopi-ktp-idmark-9",
+    "zh": "idmark-lindungi-fotokopi-ktp-实用指南-9",
+    "ja": "idmarklindungi-fotokopi-ktp-ガイド-9"
+  },
+  "titles": {
+    "id": "Prinsip Pencatatan lindungi fotokopi KTP Jangka Panjang",
+    "en": "Long-Term lindungi fotokopi KTP Logging Principles",
+    "ar": "lindungi fotokopi KTP — دليل IDMark",
+    "jv": "Pandhuan: Prinsip Pencatatan lindungi fotokopi KTP Jangka Panjang",
+    "su": "Pituduh: Prinsip Pencatatan lindungi fotokopi KTP Jangka Panjang",
+    "zh": "IDMark · lindungi fotokopi KTP 实用指南",
+    "ja": "IDMark｜lindungi fotokopi KTP ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

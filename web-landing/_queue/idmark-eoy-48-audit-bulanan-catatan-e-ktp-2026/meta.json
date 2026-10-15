@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-48-audit-bulanan-catatan-e-ktp-2026",
+  "app": "idmark",
+  "publish_date": "2026-12-02",
+  "primary_keyword": "e-KTP",
+  "idea_type": "quality",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "audit-bulanan-catatan-e-ktp-2026",
+    "en": "monthly-audit-of-e-ktp-logs",
+    "ar": "e-ktp-6",
+    "jv": "pandhuan-e-ktp-idmark-6",
+    "su": "pituduh-e-ktp-idmark-6",
+    "zh": "idmark-e-ktp-实用指南-6",
+    "ja": "idmarke-ktp-ガイド-6"
+  },
+  "titles": {
+    "id": "Audit Bulanan Catatan e-KTP",
+    "en": "Monthly Audit of e-KTP Logs",
+    "ar": "e-KTP — دليل IDMark",
+    "jv": "Pandhuan: Audit Bulanan Catatan e-KTP",
+    "su": "Pituduh: Audit Bulanan Catatan e-KTP",
+    "zh": "IDMark · e-KTP 实用指南",
+    "ja": "IDMark｜e-KTP ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

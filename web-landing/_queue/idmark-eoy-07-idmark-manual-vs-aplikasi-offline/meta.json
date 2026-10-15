@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-07-idmark-manual-vs-aplikasi-offline",
+  "app": "idmark",
+  "publish_date": "2026-10-22",
+  "primary_keyword": "watermark KTP",
+  "idea_type": "comparison",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "idmark-manual-vs-aplikasi-offline",
+    "en": "idmark-manual-notes-vs-offline-app",
+    "ar": "idmark",
+    "jv": "pandhuan-idmark-idmark",
+    "su": "pituduh-idmark-idmark",
+    "zh": "idmark-idmark-实用指南",
+    "ja": "idmarkidmark-ガイド"
+  },
+  "titles": {
+    "id": "IDMark Manual vs Aplikasi",
+    "en": "IDMark: Manual Notes vs Offline App",
+    "ar": "IDMark — دليل IDMark",
+    "jv": "Pandhuan: IDMark Manual vs Aplikasi",
+    "su": "Pituduh: IDMark Manual vs Aplikasi",
+    "zh": "IDMark · IDMark 实用指南",
+    "ja": "IDMark｜IDMark ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

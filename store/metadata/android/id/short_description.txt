@@ -1,1 +1,1 @@
-Stempel tujuan & tanggal pada e-KTP/paspor. On-device.
+Beri cap watermark teks pada foto KTP, SIM & dokumen penting.

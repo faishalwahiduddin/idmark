@@ -1,1 +1,1 @@
-Stamp purpose & date on
+Add watermark text & dates to

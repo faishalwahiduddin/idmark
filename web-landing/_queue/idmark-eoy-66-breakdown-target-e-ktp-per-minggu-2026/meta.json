@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-66-breakdown-target-e-ktp-per-minggu-2026",
+  "app": "idmark",
+  "publish_date": "2026-12-20",
+  "primary_keyword": "e-KTP",
+  "idea_type": "plan",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "breakdown-target-e-ktp-per-minggu-2026",
+    "en": "weekly-breakdown-of-e-ktp-targets",
+    "ar": "e-ktp-8",
+    "jv": "pandhuan-e-ktp-idmark-8",
+    "su": "pituduh-e-ktp-idmark-8",
+    "zh": "idmark-e-ktp-实用指南-8",
+    "ja": "idmarke-ktp-ガイド-8"
+  },
+  "titles": {
+    "id": "Breakdown Target e-KTP per Minggu",
+    "en": "Weekly Breakdown of e-KTP Targets",
+    "ar": "e-KTP — دليل IDMark",
+    "jv": "Pandhuan: Breakdown Target e-KTP per Minggu",
+    "su": "Pituduh: Breakdown Target e-KTP per Minggu",
+    "zh": "IDMark · e-KTP 实用指南",
+    "ja": "IDMark｜e-KTP ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

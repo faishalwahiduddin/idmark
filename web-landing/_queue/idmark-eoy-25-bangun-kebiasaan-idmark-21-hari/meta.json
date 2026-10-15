@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-25-bangun-kebiasaan-idmark-21-hari",
+  "app": "idmark",
+  "publish_date": "2026-11-09",
+  "primary_keyword": "watermark KTP",
+  "idea_type": "habit",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "bangun-kebiasaan-idmark-21-hari",
+    "en": "build-a-21-day-idmark-habit",
+    "ar": "idmark-3",
+    "jv": "pandhuan-idmark-idmark-3",
+    "su": "pituduh-idmark-idmark-3",
+    "zh": "idmark-idmark-实用指南-3",
+    "ja": "idmarkidmark-ガイド-3"
+  },
+  "titles": {
+    "id": "Bangun Kebiasaan IDMark 21 Hari",
+    "en": "Build a 21-Day IDMark Habit",
+    "ar": "IDMark — دليل IDMark",
+    "jv": "Pandhuan: Bangun Kebiasaan IDMark 21 Hari",
+    "su": "Pituduh: Bangun Kebiasaan IDMark 21 Hari",
+    "zh": "IDMark · IDMark 实用指南",
+    "ja": "IDMark｜IDMark ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

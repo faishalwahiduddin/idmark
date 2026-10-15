@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-12-kenapa-e-ktp-sulit-konsisten-2026",
+  "app": "idmark",
+  "publish_date": "2026-10-27",
+  "primary_keyword": "e-KTP",
+  "idea_type": "mistakes",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "kenapa-e-ktp-sulit-konsisten-2026",
+    "en": "why-e-ktp-habits-break",
+    "ar": "e-ktp-2",
+    "jv": "pandhuan-e-ktp-idmark-2",
+    "su": "pituduh-e-ktp-idmark-2",
+    "zh": "idmark-e-ktp-实用指南-2",
+    "ja": "idmarke-ktp-ガイド-2"
+  },
+  "titles": {
+    "id": "Kenapa e-KTP Sulit Konsisten",
+    "en": "Why e-KTP Habits Break",
+    "ar": "e-KTP — دليل IDMark",
+    "jv": "Pandhuan: Kenapa e-KTP Sulit Konsisten",
+    "su": "Pituduh: Kenapa e-KTP Sulit Konsisten",
+    "zh": "IDMark · e-KTP 实用指南",
+    "ja": "IDMark｜e-KTP ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

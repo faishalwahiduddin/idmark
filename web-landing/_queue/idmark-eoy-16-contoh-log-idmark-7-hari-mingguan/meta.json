@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-16-contoh-log-idmark-7-hari-mingguan",
+  "app": "idmark",
+  "publish_date": "2026-10-31",
+  "primary_keyword": "watermark KTP",
+  "idea_type": "template",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "contoh-log-idmark-7-hari-mingguan",
+    "en": "sample-7-day-idmark-log",
+    "ar": "idmark-2",
+    "jv": "pandhuan-idmark-idmark-2",
+    "su": "pituduh-idmark-idmark-2",
+    "zh": "idmark-idmark-实用指南-2",
+    "ja": "idmarkidmark-ガイド-2"
+  },
+  "titles": {
+    "id": "Contoh Log IDMark 7 Hari",
+    "en": "Sample 7-Day IDMark Log — Offline First",
+    "ar": "IDMark — دليل IDMark",
+    "jv": "Pandhuan: Contoh Log IDMark 7 Hari",
+    "su": "Pituduh: Contoh Log IDMark 7 Hari",
+    "zh": "IDMark · IDMark 实用指南",
+    "ja": "IDMark｜IDMark ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-61-kpi-pribadi-untuk-idmark",
+  "app": "idmark",
+  "publish_date": "2026-12-15",
+  "primary_keyword": "watermark KTP",
+  "idea_type": "measure",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "kpi-pribadi-untuk-idmark",
+    "en": "personal-kpis-for-idmark",
+    "ar": "idmark-7",
+    "jv": "pandhuan-idmark-idmark-7",
+    "su": "pituduh-idmark-idmark-7",
+    "zh": "idmark-idmark-实用指南-7",
+    "ja": "idmarkidmark-ガイド-7"
+  },
+  "titles": {
+    "id": "KPI Pribadi untuk IDMark",
+    "en": "Personal KPIs for IDMark",
+    "ar": "IDMark — دليل IDMark",
+    "jv": "Pandhuan: KPI Pribadi untuk IDMark",
+    "su": "Pituduh: KPI Pribadi untuk IDMark",
+    "zh": "IDMark · IDMark 实用指南",
+    "ja": "IDMark｜IDMark ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

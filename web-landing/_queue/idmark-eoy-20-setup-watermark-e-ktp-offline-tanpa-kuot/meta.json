@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-20-setup-watermark-e-ktp-offline-tanpa-kuot",
+  "app": "idmark",
+  "publish_date": "2026-11-04",
+  "primary_keyword": "watermark e-KTP",
+  "idea_type": "local",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "setup-watermark-e-ktp-offline-tanpa-kuota-praktis",
+    "en": "set-up-offline-watermark-e-ktp-without-data-practical",
+    "ar": "watermark-e-ktp-3",
+    "jv": "pandhuan-watermark-e-ktp-idmark-3",
+    "su": "pituduh-watermark-e-ktp-idmark-3",
+    "zh": "idmark-watermark-e-ktp-实用指南-3",
+    "ja": "idmarkwatermark-e-ktp-ガイド-3"
+  },
+  "titles": {
+    "id": "Setup watermark e-KTP Offline tanpa Kuota",
+    "en": "Set Up Offline watermark e-KTP Without Data (Practical)",
+    "ar": "watermark e-KTP — دليل IDMark",
+    "jv": "Pandhuan: Setup watermark e-KTP Offline tanpa Kuota",
+    "su": "Pituduh: Setup watermark e-KTP Offline tanpa Kuota",
+    "zh": "IDMark · watermark e-KTP 实用指南",
+    "ja": "IDMark｜watermark e-KTP ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

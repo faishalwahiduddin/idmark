@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-03-checklist-e-ktp-harian-yang-bisa-ditiru-",
+  "app": "idmark",
+  "publish_date": "2026-10-18",
+  "primary_keyword": "e-KTP",
+  "idea_type": "checklist",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "checklist-e-ktp-harian-yang-bisa-ditiru-harian",
+    "en": "daily-e-ktp-checklist-you-can-copy",
+    "ar": "e-ktp",
+    "jv": "pandhuan-e-ktp-idmark",
+    "su": "pituduh-e-ktp-idmark",
+    "zh": "idmark-e-ktp-实用指南",
+    "ja": "idmarke-ktp-ガイド"
+  },
+  "titles": {
+    "id": "Checklist e-KTP Harian yang Bisa Ditiru",
+    "en": "Daily e-KTP Checklist You Can Copy",
+    "ar": "e-KTP — دليل IDMark",
+    "jv": "Pandhuan: Checklist e-KTP Harian yang Bisa Ditiru",
+    "su": "Pituduh: Checklist e-KTP Harian yang Bisa Ditiru",
+    "zh": "IDMark · e-KTP 实用指南",
+    "ja": "IDMark｜e-KTP ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

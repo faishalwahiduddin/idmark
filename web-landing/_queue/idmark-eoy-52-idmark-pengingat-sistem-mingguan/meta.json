@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-52-idmark-pengingat-sistem-mingguan",
+  "app": "idmark",
+  "publish_date": "2026-12-06",
+  "primary_keyword": "watermark KTP",
+  "idea_type": "integration",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "idmark-pengingat-sistem-mingguan",
+    "en": "idmark-system-reminders",
+    "ar": "idmark-6",
+    "jv": "pandhuan-idmark-idmark-6",
+    "su": "pituduh-idmark-idmark-6",
+    "zh": "idmark-idmark-实用指南-6",
+    "ja": "idmarkidmark-ガイド-6"
+  },
+  "titles": {
+    "id": "IDMark + Pengingat Sistem",
+    "en": "IDMark + System Reminders — Offline First",
+    "ar": "IDMark — دليل IDMark",
+    "jv": "Pandhuan: IDMark + Pengingat Sistem",
+    "su": "Pituduh: IDMark + Pengingat Sistem",
+    "zh": "IDMark · IDMark 实用指南",
+    "ja": "IDMark｜IDMark ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

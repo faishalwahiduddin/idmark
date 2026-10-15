@@ -3,6 +3,8 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:timezone/timezone.dart' as tz;
 import '../../../../core/constants/app_colors.dart';
+import '../../../../core/ui/app_scroll.dart';
+import '../../../../core/ui/press_scale.dart';
 import '../../../../core/models/redaction_item.dart';
 import '../../../../core/models/watermark_config.dart';
 import '../../../../core/utils/app_timezone.dart';
@@ -167,6 +169,7 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
                   Expanded(
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
+                      physics: AppScroll.physics,
                       child: Row(
                         children: [
                           _buildQuickSensorChip('NIK', RedactionPresetTarget.nik),
@@ -230,18 +233,19 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
 
   Widget _buildQuickSensorChip(String label, RedactionPresetTarget target) {
     final isAlreadyAdded = widget.config.redactions.any((r) => r.label.contains(label));
-    return InkWell(
+    return PressScale(
       onTap: () => widget.onAddQuickRedaction?.call(target),
-      borderRadius: BorderRadius.circular(12),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
         decoration: BoxDecoration(
           color: isAlreadyAdded
               ? AppColors.primary.withValues(alpha: 0.25)
               : AppColors.bgSurface,
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: isAlreadyAdded ? AppColors.primaryLight : AppColors.border,
+            color: isAlreadyAdded
+                ? AppColors.primaryLight.withValues(alpha: 0.35)
+                : AppColors.subtleBorder(context, alpha: 0.1),
           ),
         ),
         child: Row(
@@ -273,6 +277,10 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
     // stays identical in either app theme.
     return Card(
       color: AppColors.bgCard,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(18),
+        side: BorderSide(color: AppColors.subtleBorder(context, alpha: 0.1)),
+      ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 36),
         child: Column(
@@ -300,6 +308,7 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
                 fontSize: 18,
                 fontWeight: FontWeight.w700,
                 color: Colors.white,
+                letterSpacing: -0.4,
               ),
             ),
             const SizedBox(height: 8),
@@ -342,15 +351,21 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
               runSpacing: 12,
               alignment: WrapAlignment.center,
               children: [
-                ElevatedButton.icon(
-                  onPressed: widget.onPickGallery,
-                  icon: const Icon(Icons.photo_library_outlined, size: 18),
-                  label: Text(l10n?.openGallery ?? 'Buka Galeri'),
+                PressScale(
+                  scale: 0.97,
+                  child: ElevatedButton.icon(
+                    onPressed: widget.onPickGallery,
+                    icon: const Icon(Icons.photo_library_outlined, size: 18),
+                    label: Text(l10n?.openGallery ?? 'Buka Galeri'),
+                  ),
                 ),
-                OutlinedButton.icon(
-                  onPressed: widget.onPickCamera,
-                  icon: const Icon(Icons.camera_alt_outlined, size: 18),
-                  label: Text(l10n?.takePhoto ?? 'Ambil Foto'),
+                PressScale(
+                  scale: 0.97,
+                  child: OutlinedButton.icon(
+                    onPressed: widget.onPickCamera,
+                    icon: const Icon(Icons.camera_alt_outlined, size: 18),
+                    label: Text(l10n?.takePhoto ?? 'Ambil Foto'),
+                  ),
                 ),
               ],
             ),

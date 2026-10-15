@@ -4,6 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:share_plus/share_plus.dart';
 import '../../core/constants/app_colors.dart';
+import '../../core/ui/app_scroll.dart';
+import '../../core/ui/press_scale.dart';
 import '../../core/models/audit_log_entry.dart';
 import '../../core/models/redaction_item.dart';
 import '../../core/models/watermark_config.dart';
@@ -300,7 +302,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
             const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('IDMark', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700)),
+                Text('IDMark', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700, letterSpacing: -0.4)),
                 Text(
                   'Secure ID Card & Privacy Shield',
                   style: TextStyle(fontSize: 11, color: Color(0xFF94A3B8), fontWeight: FontWeight.normal),
@@ -326,7 +328,8 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
         ],
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        physics: AppScroll.physics,
+        padding: AppScroll.pagePadding(context),
         child: Center(
           child: ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 820),
@@ -338,8 +341,8 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                   decoration: BoxDecoration(
                     color: AppColors.bannerSurface,
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: AppColors.primary.withValues(alpha: 0.35)),
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(color: AppColors.primary.withValues(alpha: 0.12)),
                   ),
                   child: Row(
                     children: [
@@ -409,38 +412,44 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          ElevatedButton.icon(
-                            onPressed: isProcessing ? null : () => _exportWatermarkedImage(isShare: false),
-                            icon: isProcessing
-                                ? const SizedBox(
-                                    width: 18,
-                                    height: 18,
-                                    child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
-                                  )
-                                : const Icon(Icons.download, size: 20),
-                            label: Text(
-                              isProcessing
-                                  ? (l10n?.processingOnDevice ?? 'Memproses Dokumen On-Device...')
-                                  : (l10n?.saveDocument(config.exportFormat.name.toUpperCase()) ?? 'Simpan Dokumen (${config.exportFormat.name.toUpperCase()})'),
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              padding: const EdgeInsets.symmetric(vertical: 16),
+                          PressScale(
+                            scale: 0.97,
+                            child: ElevatedButton.icon(
+                              onPressed: isProcessing ? null : () => _exportWatermarkedImage(isShare: false),
+                              icon: isProcessing
+                                  ? const SizedBox(
+                                      width: 18,
+                                      height: 18,
+                                      child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
+                                    )
+                                  : const Icon(Icons.download, size: 20),
+                              label: Text(
+                                isProcessing
+                                    ? (l10n?.processingOnDevice ?? 'Memproses Dokumen On-Device...')
+                                    : (l10n?.saveDocument(config.exportFormat.name.toUpperCase()) ?? 'Simpan Dokumen (${config.exportFormat.name.toUpperCase()})'),
+                              ),
+                              style: ElevatedButton.styleFrom(
+                                padding: const EdgeInsets.symmetric(vertical: 16),
+                              ),
                             ),
                           ),
                           const SizedBox(height: 10),
-                          OutlinedButton.icon(
-                            onPressed: isProcessing ? null : () => _exportWatermarkedImage(isShare: true),
-                            icon: const Icon(Icons.share_outlined, size: 18),
-                            label: Text(l10n?.shareDirect ?? 'Bagikan Langsung'),
-                            style: OutlinedButton.styleFrom(
-                              padding: const EdgeInsets.symmetric(vertical: 14),
+                          PressScale(
+                            scale: 0.97,
+                            child: OutlinedButton.icon(
+                              onPressed: isProcessing ? null : () => _exportWatermarkedImage(isShare: true),
+                              icon: const Icon(Icons.share_outlined, size: 18),
+                              label: Text(l10n?.shareDirect ?? 'Bagikan Langsung'),
+                              style: OutlinedButton.styleFrom(
+                                padding: const EdgeInsets.symmetric(vertical: 14),
+                              ),
                             ),
                           ),
                         ],
                       ),
                     ),
                   ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 8),
               ],
             ),
           ),

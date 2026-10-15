@@ -21,8 +21,8 @@ window.STORE_CONFIG = {
     "es-ES": "ES"
   },
   "tagline": {
-    "id": "Stempel tujuan & tanggal pada e-KTP/paspor. On-device.",
-    "en-US": "Stamp purpose & date on IDs/passports. On-device.",
+    "id": "Beri cap watermark teks pada foto KTP, SIM & dokumen penting.",
+    "en-US": "Add watermark text & dates to ID cards and documents on-device.",
     "ar": "Stamp purpose & date on IDs/passports. On-device.",
     "ja-JP": "Stamp purpose & date on IDs/passports. On-device.",
     "zh-CN": "Stamp purpose & date on IDs/passports. On-device.",

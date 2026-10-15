@@ -6,6 +6,7 @@ import 'core/providers/theme_provider.dart';
 import 'core/providers/timezone_provider.dart';
 import 'core/router/app_router.dart';
 import 'core/storage/local_storage_service.dart';
+import 'core/a11y/text_scale.dart';
 import 'core/theme/app_theme.dart';
 import 'core/utils/app_timezone.dart';
 import 'l10n/app_localizations.dart';
@@ -71,6 +72,7 @@ class _IdMarkAppState extends ConsumerState<IdMarkApp>
     final themeMode = ref.watch(themeModeProvider);
 
     return MaterialApp.router(
+      builder: (context, child) => AppTextScale(child: child!),
       title: 'IDMark — Secure ID & Document Watermark',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,

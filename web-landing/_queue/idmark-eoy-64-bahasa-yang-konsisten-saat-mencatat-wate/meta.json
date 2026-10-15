@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-64-bahasa-yang-konsisten-saat-mencatat-wate",
+  "app": "idmark",
+  "publish_date": "2026-12-18",
+  "primary_keyword": "watermark KTP",
+  "idea_type": "content",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "bahasa-yang-konsisten-saat-mencatat-watermark-ktp-mingguan",
+    "en": "consistent-language-when-logging-watermark-ktp",
+    "ar": "watermark-ktp-8",
+    "jv": "pandhuan-watermark-ktp-idmark-8",
+    "su": "pituduh-watermark-ktp-idmark-8",
+    "zh": "idmark-watermark-ktp-实用指南-8",
+    "ja": "idmarkwatermark-ktp-ガイド-8"
+  },
+  "titles": {
+    "id": "Bahasa yang Konsisten saat Mencatat watermark KTP",
+    "en": "Consistent Language When Logging watermark KTP — Offline First",
+    "ar": "watermark KTP — دليل IDMark",
+    "jv": "Pandhuan: Bahasa yang Konsisten saat Mencatat watermark KTP",
+    "su": "Pituduh: Bahasa yang Konsisten saat Mencatat watermark KTP",
+    "zh": "IDMark · watermark KTP 实用指南",
+    "ja": "IDMark｜watermark KTP ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

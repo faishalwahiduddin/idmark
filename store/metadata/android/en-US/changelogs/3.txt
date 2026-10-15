@@ -1,1 +1,1 @@
-Multi-locale store screenshots release for IDMark.
+Official store metadata and presentation update release for IDMark.

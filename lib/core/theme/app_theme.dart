@@ -24,7 +24,7 @@ class AppTheme {
           fontSize: 18,
           fontWeight: FontWeight.w700,
           color: Color(0xFF0F172A),
-          letterSpacing: -0.3,
+          letterSpacing: -0.4,
         ),
       ),
       cardTheme: CardThemeData(
@@ -32,12 +32,12 @@ class AppTheme {
         elevation: 0,
         margin: EdgeInsets.zero,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-          side: const BorderSide(color: Color(0xFFE2E8F0), width: 1),
+          borderRadius: BorderRadius.circular(18),
+          side: BorderSide(color: const Color(0xFF0F172A).withValues(alpha: 0.1), width: 1),
         ),
       ),
       textTheme: const TextTheme(
-        titleLarge: TextStyle(color: AppColors.lightTextPrimary),
+        titleLarge: TextStyle(color: AppColors.lightTextPrimary, letterSpacing: -0.4),
         titleMedium: TextStyle(color: AppColors.lightTextPrimary),
         bodyLarge: TextStyle(color: AppColors.lightTextPrimary),
         bodyMedium: TextStyle(color: Color(0xFF334155)),
@@ -196,7 +196,7 @@ class AppTheme {
           fontSize: 18,
           fontWeight: FontWeight.w700,
           color: Colors.white,
-          letterSpacing: -0.3,
+          letterSpacing: -0.4,
         ),
       ),
       cardTheme: CardThemeData(
@@ -204,12 +204,12 @@ class AppTheme {
         elevation: 0,
         margin: EdgeInsets.zero,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-          side: const BorderSide(color: AppColors.border, width: 1),
+          borderRadius: BorderRadius.circular(18),
+          side: BorderSide(color: Colors.white.withValues(alpha: 0.1), width: 1),
         ),
       ),
       textTheme: const TextTheme(
-        titleLarge: TextStyle(color: Colors.white),
+        titleLarge: TextStyle(color: Colors.white, letterSpacing: -0.4),
         titleMedium: TextStyle(color: Colors.white),
         bodyLarge: TextStyle(color: Color(0xFFE2E8F0)),
         bodyMedium: TextStyle(color: Color(0xFFCBD5E1)),

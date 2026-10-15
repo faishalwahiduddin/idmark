@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-17-faq-stamp-tujuan-tanggal-dokumen-pertany",
+  "app": "idmark",
+  "publish_date": "2026-11-01",
+  "primary_keyword": "stamp tujuan tanggal dokumen",
+  "idea_type": "faq",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "faq-stamp-tujuan-tanggal-dokumen-pertanyaan-yang-sering-muncul-offline",
+    "en": "stamp-tujuan-tanggal-dokumen-faq-frequent-questions",
+    "ar": "stamp-tujuan-tanggal-dokumen-2",
+    "jv": "pandhuan-stamp-tujuan-tanggal-dokumen-idmark-2",
+    "su": "pituduh-stamp-tujuan-tanggal-dokumen-idmark-2",
+    "zh": "idmark-stamp-tujuan-tanggal-dokumen-实用指南-2",
+    "ja": "idmarkstamp-tujuan-tanggal-dokumen-ガイド-2"
+  },
+  "titles": {
+    "id": "FAQ stamp tujuan tanggal dokumen: Pertanyaan yang Sering Muncul offlin",
+    "en": "stamp tujuan tanggal dokumen FAQ: Frequent Questions",
+    "ar": "stamp tujuan tanggal dokumen — دليل IDMark",
+    "jv": "Pandhuan: FAQ stamp tujuan tanggal dokumen: Pertanyaan yang Sering Mun",
+    "su": "Pituduh: FAQ stamp tujuan tanggal dokumen: Pertanyaan yang Sering Munc",
+    "zh": "IDMark · stamp tujuan tanggal dokumen 实用指南",
+    "ja": "IDMark｜stamp tujuan tanggal dokumen ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-22-stamp-ktp-tanpa-akun-plus-dan-minus-ming",
+  "app": "idmark",
+  "publish_date": "2026-11-06",
+  "primary_keyword": "stamp KTP",
+  "idea_type": "privacy",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "stamp-ktp-tanpa-akun-plus-dan-minus-mingguan",
+    "en": "stamp-ktp-without-an-account-pros-cons",
+    "ar": "stamp-ktp-3",
+    "jv": "pandhuan-stamp-ktp-idmark-3",
+    "su": "pituduh-stamp-ktp-idmark-3",
+    "zh": "idmark-stamp-ktp-实用指南-3",
+    "ja": "idmarkstamp-ktp-ガイド-3"
+  },
+  "titles": {
+    "id": "Privasi data saat mencatat stamp KTP",
+    "en": "stamp KTP Without an Account: Pros &amp; Cons — Offline First",
+    "ar": "stamp KTP — دليل IDMark",
+    "jv": "Pandhuan: Privasi data saat mencatat stamp KTP",
+    "su": "Pituduh: Privasi data saat mencatat stamp KTP",
+    "zh": "IDMark · stamp KTP 实用指南",
+    "ja": "IDMark｜stamp KTP ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

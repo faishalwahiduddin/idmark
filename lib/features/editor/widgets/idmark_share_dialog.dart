@@ -1,4 +1,5 @@
 import 'dart:ui' as ui;
+import '../../../core/ui/spring_sheet.dart';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../../../core/constants/app_colors.dart';
+import '../../../core/ui/app_scroll.dart';
 import '../../../core/models/watermark_config.dart';
 import '../../../core/utils/web_download_helper.dart';
 
@@ -55,10 +57,8 @@ class IdmarkShareDialog extends StatefulWidget {
     required String dateLabel,
     required int fileSizeBytes,
   }) {
-    return showModalBottomSheet<void>(
+    return showSpringSheet<void>(
       context: context,
-      isScrollControlled: true,
-      backgroundColor: Colors.transparent,
       builder: (_) => IdmarkShareDialog(
         config: config,
         sha256Hash: sha256Hash,
@@ -212,18 +212,8 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // Handle bar
-            Center(
-              child: Container(
-                width: 44,
-                height: 4,
-                margin: const EdgeInsets.only(bottom: 16),
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade700,
-                  borderRadius: BorderRadius.circular(2),
-                ),
-              ),
-            ),
+            const SpringSheetHandle(),
+            const SizedBox(height: 8),
 
             // Header title
             Row(
@@ -298,6 +288,7 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
             // Theme selector chips
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
+              physics: AppScroll.physics,
               child: Row(
                 children: List.generate(_themes.length, (index) {
                   final t = _themes[index];

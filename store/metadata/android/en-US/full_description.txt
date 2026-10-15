@@ -1,1 +1,18 @@
-IDMark stamps purpose and date onto ID cards & documents — 100% on-device, nothing uploaded.
+IDMark protects your personal identity documents from digital fraud and unauthorized reuse. Stamp custom watermark text, dates, and verification purposes directly across photos of national IDs, driver licenses, and passports before sharing them.
+
+Core Features:
+✓ Instant watermarking for ID cards, passports, and official documents
+✓ Customizable text presets (e.g., "For KYC Verification Only Oct 2026")
+✓ Adjustable font size, opacity, rotation angle, and repetition grid
+✓ 100% on-device image processing inside your phone memory
+✓ Photos are never uploaded to any cloud server or third party
+✓ Quick share export to messaging apps and local files
+✓ Zero advertisements, no account creation, completely free
+
+Why IDMark?
+Sharing unprotected ID photos exposes you to identity theft and fraudulent registrations. IDMark ensures that every copy you send has a visible, tamper-evident declaration of its single intended purpose.
+
+Absolute Privacy:
+Your sensitive documents never leave your phone. All pixel manipulations run entirely offline on-device.
+
+Part of the faishal.id privacy-first utility family.

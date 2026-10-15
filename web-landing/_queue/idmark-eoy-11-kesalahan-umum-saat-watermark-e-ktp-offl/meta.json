@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-11-kesalahan-umum-saat-watermark-e-ktp-offl",
+  "app": "idmark",
+  "publish_date": "2026-10-26",
+  "primary_keyword": "watermark e-KTP",
+  "idea_type": "mistakes",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "kesalahan-umum-saat-watermark-e-ktp-offline",
+    "en": "common-mistakes-when-doing-watermark-e-ktp",
+    "ar": "watermark-e-ktp-2",
+    "jv": "pandhuan-watermark-e-ktp-idmark-2",
+    "su": "pituduh-watermark-e-ktp-idmark-2",
+    "zh": "idmark-watermark-e-ktp-实用指南-2",
+    "ja": "idmarkwatermark-e-ktp-ガイド-2"
+  },
+  "titles": {
+    "id": "Kesalahan Umum saat watermark e-KTP",
+    "en": "Common Mistakes When Doing watermark e-KTP",
+    "ar": "watermark e-KTP — دليل IDMark",
+    "jv": "Pandhuan: Kesalahan Umum saat watermark e-KTP",
+    "su": "Pituduh: Kesalahan Umum saat watermark e-KTP",
+    "zh": "IDMark · watermark e-KTP 实用指南",
+    "ja": "IDMark｜watermark e-KTP ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

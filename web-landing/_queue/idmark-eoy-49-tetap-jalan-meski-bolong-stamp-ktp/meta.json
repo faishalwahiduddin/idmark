@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-49-tetap-jalan-meski-bolong-stamp-ktp",
+  "app": "idmark",
+  "publish_date": "2026-12-03",
+  "primary_keyword": "stamp KTP",
+  "idea_type": "motivation",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "tetap-jalan-meski-bolong-stamp-ktp",
+    "en": "keep-going-after-missing-stamp-ktp",
+    "ar": "stamp-ktp-6",
+    "jv": "pandhuan-stamp-ktp-idmark-6",
+    "su": "pituduh-stamp-ktp-idmark-6",
+    "zh": "idmark-stamp-ktp-实用指南-6",
+    "ja": "idmarkstamp-ktp-ガイド-6"
+  },
+  "titles": {
+    "id": "Tetap Jalan meski Bolong stamp KTP",
+    "en": "Keep Going After Missing stamp KTP",
+    "ar": "stamp KTP — دليل IDMark",
+    "jv": "Pandhuan: Tetap Jalan meski Bolong stamp KTP",
+    "su": "Pituduh: Tetap Jalan meski Bolong stamp KTP",
+    "zh": "IDMark · stamp KTP 实用指南",
+    "ja": "IDMark｜stamp KTP ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

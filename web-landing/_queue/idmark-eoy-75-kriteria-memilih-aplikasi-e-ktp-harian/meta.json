@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-75-kriteria-memilih-aplikasi-e-ktp-harian",
+  "app": "idmark",
+  "publish_date": "2026-12-29",
+  "primary_keyword": "e-KTP",
+  "idea_type": "intent-buy",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "kriteria-memilih-aplikasi-e-ktp-harian",
+    "en": "criteria-for-choosing-a-e-ktp-app",
+    "ar": "e-ktp-9",
+    "jv": "pandhuan-e-ktp-idmark-9",
+    "su": "pituduh-e-ktp-idmark-9",
+    "zh": "idmark-e-ktp-实用指南-9",
+    "ja": "idmarke-ktp-ガイド-9"
+  },
+  "titles": {
+    "id": "Kriteria Memilih Aplikasi e-KTP",
+    "en": "Criteria for Choosing a e-KTP App",
+    "ar": "e-KTP — دليل IDMark",
+    "jv": "Pandhuan: Kriteria Memilih Aplikasi e-KTP",
+    "su": "Pituduh: Kriteria Memilih Aplikasi e-KTP",
+    "zh": "IDMark · e-KTP 实用指南",
+    "ja": "IDMark｜e-KTP ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

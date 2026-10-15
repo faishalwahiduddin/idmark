@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-76-dasar-dasar-stamp-ktp-yang-tidak-kedaluw",
+  "app": "idmark",
+  "publish_date": "2026-12-30",
+  "primary_keyword": "stamp KTP",
+  "idea_type": "evergreen",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "dasar-dasar-stamp-ktp-yang-tidak-kedaluwarsa-mingguan",
+    "en": "evergreen-basics-of-stamp-ktp",
+    "ar": "stamp-ktp-9",
+    "jv": "pandhuan-stamp-ktp-idmark-9",
+    "su": "pituduh-stamp-ktp-idmark-9",
+    "zh": "idmark-stamp-ktp-实用指南-9",
+    "ja": "idmarkstamp-ktp-ガイド-9"
+  },
+  "titles": {
+    "id": "Dasar-Dasar stamp KTP yang Tidak Kedaluwarsa",
+    "en": "Evergreen Basics of stamp KTP — Offline First",
+    "ar": "stamp KTP — دليل IDMark",
+    "jv": "Pandhuan: Dasar-Dasar stamp KTP yang Tidak Kedaluwarsa",
+    "su": "Pituduh: Dasar-Dasar stamp KTP yang Tidak Kedaluwarsa",
+    "zh": "IDMark · stamp KTP 实用指南",
+    "ja": "IDMark｜stamp KTP ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

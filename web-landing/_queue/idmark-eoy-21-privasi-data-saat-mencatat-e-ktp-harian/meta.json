@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-21-privasi-data-saat-mencatat-e-ktp-harian",
+  "app": "idmark",
+  "publish_date": "2026-11-05",
+  "primary_keyword": "e-KTP",
+  "idea_type": "privacy",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "privasi-data-saat-mencatat-e-ktp-harian",
+    "en": "data-privacy-when-logging-e-ktp",
+    "ar": "e-ktp-3",
+    "jv": "pandhuan-e-ktp-idmark-3",
+    "su": "pituduh-e-ktp-idmark-3",
+    "zh": "idmark-e-ktp-实用指南-3",
+    "ja": "idmarke-ktp-ガイド-3"
+  },
+  "titles": {
+    "id": "Privasi Data saat Mencatat e-KTP",
+    "en": "Data Privacy When Logging e-KTP",
+    "ar": "e-KTP — دليل IDMark",
+    "jv": "Pandhuan: Privasi Data saat Mencatat e-KTP",
+    "su": "Pituduh: Privasi Data saat Mencatat e-KTP",
+    "zh": "IDMark · e-KTP 实用指南",
+    "ja": "IDMark｜e-KTP ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

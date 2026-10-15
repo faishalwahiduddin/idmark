@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-30-optimasi-catatan-e-ktp-bulanan-2026",
+  "app": "idmark",
+  "publish_date": "2026-11-14",
+  "primary_keyword": "e-KTP",
+  "idea_type": "advanced",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "optimasi-catatan-e-ktp-bulanan-2026",
+    "en": "optimize-monthly-e-ktp-logs",
+    "ar": "e-ktp-4",
+    "jv": "pandhuan-e-ktp-idmark-4",
+    "su": "pituduh-e-ktp-idmark-4",
+    "zh": "idmark-e-ktp-实用指南-4",
+    "ja": "idmarke-ktp-ガイド-4"
+  },
+  "titles": {
+    "id": "Optimasi Catatan e-KTP Bulanan",
+    "en": "Optimize Monthly e-KTP Logs",
+    "ar": "e-KTP — دليل IDMark",
+    "jv": "Pandhuan: Optimasi Catatan e-KTP Bulanan",
+    "su": "Pituduh: Optimasi Catatan e-KTP Bulanan",
+    "zh": "IDMark · e-KTP 实用指南",
+    "ja": "IDMark｜e-KTP ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

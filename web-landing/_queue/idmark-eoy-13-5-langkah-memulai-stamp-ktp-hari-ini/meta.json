@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-13-5-langkah-memulai-stamp-ktp-hari-ini",
+  "app": "idmark",
+  "publish_date": "2026-10-28",
+  "primary_keyword": "stamp KTP",
+  "idea_type": "steps",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "5-langkah-memulai-stamp-ktp-hari-ini",
+    "en": "5-steps-to-start-stamp-ktp-today",
+    "ar": "stamp-ktp-2",
+    "jv": "pandhuan-stamp-ktp-idmark-2",
+    "su": "pituduh-stamp-ktp-idmark-2",
+    "zh": "idmark-stamp-ktp-实用指南-2",
+    "ja": "idmarkstamp-ktp-ガイド-2"
+  },
+  "titles": {
+    "id": "5 Langkah Memulai stamp KTP Hari Ini",
+    "en": "5 Steps to Start stamp KTP Today",
+    "ar": "stamp KTP — دليل IDMark",
+    "jv": "Pandhuan: 5 Langkah Memulai stamp KTP Hari Ini",
+    "su": "Pituduh: 5 Langkah Memulai stamp KTP Hari Ini",
+    "zh": "IDMark · stamp KTP 实用指南",
+    "ja": "IDMark｜stamp KTP ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

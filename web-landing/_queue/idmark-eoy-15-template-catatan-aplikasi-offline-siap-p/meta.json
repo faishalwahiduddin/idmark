@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-15-template-catatan-aplikasi-offline-siap-p",
+  "app": "idmark",
+  "publish_date": "2026-10-30",
+  "primary_keyword": "aplikasi offline",
+  "idea_type": "template",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "template-catatan-aplikasi-offline-siap-pakai-harian",
+    "en": "ready-to-use-aplikasi-offline-log-template",
+    "ar": "aplikasi-offline-2",
+    "jv": "pandhuan-aplikasi-offline-idmark-2",
+    "su": "pituduh-aplikasi-offline-idmark-2",
+    "zh": "idmark-aplikasi-offline-实用指南-2",
+    "ja": "idmarkaplikasi-offline-ガイド-2"
+  },
+  "titles": {
+    "id": "Template Catatan aplikasi offline Siap Pakai",
+    "en": "Ready-to-Use aplikasi offline Log Template",
+    "ar": "aplikasi offline — دليل IDMark",
+    "jv": "Pandhuan: Template Catatan aplikasi offline Siap Pakai",
+    "su": "Pituduh: Template Catatan aplikasi offline Siap Pakai",
+    "zh": "IDMark · aplikasi offline 实用指南",
+    "ja": "IDMark｜aplikasi offline ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

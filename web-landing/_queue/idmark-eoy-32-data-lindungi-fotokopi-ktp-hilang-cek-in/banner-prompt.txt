@@ -1,0 +1,16 @@
+Editorial blog hero image, exactly 1200x675, 16:9, ultra-clean product marketing still.
+
+Brand: IDMark (idmark.faishal.id).
+Color script: background #0A0F1A, primary #334155, secondary #64748B, accent #E2E8F0. Soft radial glows and a faint technical grid. Glassmorphism card on the right with accent border.
+
+Mood: sharp operator clarity, grid + progress, restrained accent color.
+Motifs: kanban columns, milestones, seals/stamps, portfolio frames, habit rings.
+Style lock: dark premium editorial, offline-first privacy apps by faishal.id, no stock-photo people faces, no real phone UI screenshot, no watermark, no busy typography, no purple SaaS gradient cliché.
+
+Composition: left negative space for title overlay OR minimal elegant title; right a single frosted glass info card suggesting the article topic with progress bars / checklist / compass / journal fields as abstract UI (illustrated).
+
+ARTICLE TOPIC: Data lindungi fotokopi KTP Hilang? Cek Ini Dulu praktis
+ARTICLE ANGLE: troubleshoot — keyword lindungi fotokopi KTP
+ONE-LINE SCENE: troubleshoot visual for Data lindungi fotokopi KTP Hilang? Cek Ini Dulu praktis
+
+Output: single image, sharp, high contrast, ready as og:image / blog banner.

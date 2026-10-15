@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-29-watermark-e-ktp-level-lanjut-pola-insigh",
+  "app": "idmark",
+  "publish_date": "2026-11-13",
+  "primary_keyword": "watermark e-KTP",
+  "idea_type": "advanced",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "watermark-e-ktp-level-lanjut-pola-insight-offline",
+    "en": "advanced-watermark-e-ktp-patterns-insights",
+    "ar": "watermark-e-ktp-4",
+    "jv": "pandhuan-watermark-e-ktp-idmark-4",
+    "su": "pituduh-watermark-e-ktp-idmark-4",
+    "zh": "idmark-watermark-e-ktp-实用指南-4",
+    "ja": "idmarkwatermark-e-ktp-ガイド-4"
+  },
+  "titles": {
+    "id": "Watermark e-KTP Level Lanjut: Pola &amp; Insight",
+    "en": "Advanced watermark e-KTP: Patterns &amp; Insights",
+    "ar": "watermark e-KTP — دليل IDMark",
+    "jv": "Pandhuan: Watermark e-KTP Level Lanjut: Pola &amp; Insight",
+    "su": "Pituduh: Watermark e-KTP Level Lanjut: Pola &amp; Insight",
+    "zh": "IDMark · watermark e-KTP 实用指南",
+    "ja": "IDMark｜watermark e-KTP ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

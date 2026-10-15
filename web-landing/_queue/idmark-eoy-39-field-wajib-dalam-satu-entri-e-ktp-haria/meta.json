@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-39-field-wajib-dalam-satu-entri-e-ktp-haria",
+  "app": "idmark",
+  "publish_date": "2026-11-23",
+  "primary_keyword": "e-KTP",
+  "idea_type": "deep",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "field-wajib-dalam-satu-entri-e-ktp-harian",
+    "en": "required-fields-in-one-e-ktp-entry",
+    "ar": "e-ktp-5",
+    "jv": "pandhuan-e-ktp-idmark-5",
+    "su": "pituduh-e-ktp-idmark-5",
+    "zh": "idmark-e-ktp-实用指南-5",
+    "ja": "idmarke-ktp-ガイド-5"
+  },
+  "titles": {
+    "id": "Field Wajib dalam Satu Entri e-KTP",
+    "en": "Required Fields in One e-KTP Entry",
+    "ar": "e-KTP — دليل IDMark",
+    "jv": "Pandhuan: Field Wajib dalam Satu Entri e-KTP",
+    "su": "Pituduh: Field Wajib dalam Satu Entri e-KTP",
+    "zh": "IDMark · e-KTP 实用指南",
+    "ja": "IDMark｜e-KTP ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

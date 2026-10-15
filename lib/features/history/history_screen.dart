@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/constants/app_colors.dart';
+import '../../core/ui/app_scroll.dart';
 import '../../core/models/audit_log_entry.dart';
 import '../../core/providers/app_providers.dart';
 import '../../core/providers/timezone_provider.dart';
@@ -41,7 +42,8 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
         ],
       ),
       body: ListView(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        physics: AppScroll.physics,
+        padding: AppScroll.pagePadding(context),
         children: [
           // Gamifikasi: N file watermark + tier disiplin.
           const DisciplineBadge(),
@@ -51,8 +53,8 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
               color: AppColors.bannerSurface,
-              borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: AppColors.accent.withValues(alpha: 0.4)),
+              borderRadius: BorderRadius.circular(18),
+              border: Border.all(color: AppColors.accent.withValues(alpha: 0.12)),
             ),
             child: Row(
               children: [
@@ -187,8 +189,8 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
       child: Card(
         color: AppColors.bgCard,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(14),
-          side: const BorderSide(color: AppColors.border),
+          borderRadius: BorderRadius.circular(18),
+          side: BorderSide(color: AppColors.subtleBorder(context, alpha: 0.1)),
         ),
         child: Padding(
           padding: const EdgeInsets.all(16),

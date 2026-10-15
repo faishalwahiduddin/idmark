@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-42-pindah-perangkat-tanpa-hilang-aplikasi-o",
+  "app": "idmark",
+  "publish_date": "2026-11-26",
+  "primary_keyword": "aplikasi offline",
+  "idea_type": "export",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "pindah-perangkat-tanpa-hilang-aplikasi-offline-2026",
+    "en": "move-devices-without-losing-aplikasi-offline",
+    "ar": "aplikasi-offline-5",
+    "jv": "pandhuan-aplikasi-offline-idmark-5",
+    "su": "pituduh-aplikasi-offline-idmark-5",
+    "zh": "idmark-aplikasi-offline-实用指南-5",
+    "ja": "idmarkaplikasi-offline-ガイド-5"
+  },
+  "titles": {
+    "id": "Pindah Perangkat tanpa Hilang aplikasi offline",
+    "en": "Move Devices Without Losing aplikasi offline",
+    "ar": "aplikasi offline — دليل IDMark",
+    "jv": "Pandhuan: Pindah Perangkat tanpa Hilang aplikasi offline",
+    "su": "Pituduh: Pindah Perangkat tanpa Hilang aplikasi offline",
+    "zh": "IDMark · aplikasi offline 实用指南",
+    "ja": "IDMark｜aplikasi offline ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

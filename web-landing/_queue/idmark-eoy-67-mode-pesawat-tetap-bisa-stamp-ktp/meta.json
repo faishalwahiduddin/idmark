@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-67-mode-pesawat-tetap-bisa-stamp-ktp",
+  "app": "idmark",
+  "publish_date": "2026-12-21",
+  "primary_keyword": "stamp KTP",
+  "idea_type": "offline",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "mode-pesawat-tetap-bisa-stamp-ktp",
+    "en": "airplane-mode-still-do-stamp-ktp",
+    "ar": "stamp-ktp-8",
+    "jv": "pandhuan-stamp-ktp-idmark-8",
+    "su": "pituduh-stamp-ktp-idmark-8",
+    "zh": "idmark-stamp-ktp-实用指南-8",
+    "ja": "idmarkstamp-ktp-ガイド-8"
+  },
+  "titles": {
+    "id": "Mode Pesawat: Tetap Bisa stamp KTP",
+    "en": "Airplane Mode: Still Do stamp KTP",
+    "ar": "stamp KTP — دليل IDMark",
+    "jv": "Pandhuan: Mode Pesawat: Tetap Bisa stamp KTP",
+    "su": "Pituduh: Mode Pesawat: Tetap Bisa stamp KTP",
+    "zh": "IDMark · stamp KTP 实用指南",
+    "ja": "IDMark｜stamp KTP ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

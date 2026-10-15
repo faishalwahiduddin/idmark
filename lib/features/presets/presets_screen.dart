@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../core/constants/app_colors.dart';
+import '../../core/ui/app_scroll.dart';
+import '../../core/ui/press_scale.dart';
+import '../../core/ui/stagger_fade_in.dart';
 import '../../core/models/watermark_config.dart';
 import '../../core/models/watermark_preset.dart';
 import '../../core/providers/app_providers.dart';
@@ -58,23 +61,27 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
       appBar: AppBar(
         title: Text(l10n.templatePresetHub),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.add_circle_outline, size: 22, color: AppColors.primaryLight),
-            tooltip: l10n.createPresetTooltip,
-            onPressed: () => _showCreatePresetDialog(context),
+          PressScale(
+            scale: 0.92,
+            child: IconButton(
+              icon: const Icon(Icons.add_circle_outline, size: 22, color: AppColors.primaryLight),
+              tooltip: l10n.createPresetTooltip,
+              onPressed: () => _showCreatePresetDialog(context),
+            ),
           ),
         ],
       ),
       body: ListView(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        physics: AppScroll.physics,
+        padding: AppScroll.pagePadding(context),
         children: [
           // Banner (solid surface: readable either theme)
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
               color: AppColors.bannerSurface,
-              borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: AppColors.primary.withValues(alpha: 0.35)),
+              borderRadius: BorderRadius.circular(18),
+              border: Border.all(color: AppColors.primary.withValues(alpha: 0.12)),
             ),
             child: Row(
               children: [
@@ -127,22 +134,28 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
           // Category Chips
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
+            physics: AppScroll.physics,
             child: Row(
               children: _categories.map((cat) {
                 final isSelected = _selectedCategory == cat;
                 return Padding(
                   padding: const EdgeInsets.only(right: 8),
-                  child: FilterChip(
-                    label: Text(cat),
-                    selected: isSelected,
-                    selectedColor: AppColors.primary.withValues(alpha: 0.25),
-                    checkmarkColor: AppColors.primaryLight,
-                    labelStyle: TextStyle(
-                      fontSize: 12,
-                      fontWeight: isSelected ? FontWeight.w700 : FontWeight.normal,
-                      color: isSelected ? AppColors.primaryLight : const Color(0xFF94A3B8),
+                  child: PressScale(
+                    onTap: () => setState(() => _selectedCategory = cat),
+                    child: IgnorePointer(
+                      child: FilterChip(
+                        label: Text(cat),
+                        selected: isSelected,
+                        selectedColor: AppColors.primary.withValues(alpha: 0.25),
+                        checkmarkColor: AppColors.primaryLight,
+                        labelStyle: TextStyle(
+                          fontSize: 12,
+                          fontWeight: isSelected ? FontWeight.w700 : FontWeight.normal,
+                          color: isSelected ? AppColors.primaryLight : const Color(0xFF94A3B8),
+                        ),
+                        onSelected: (_) {},
+                      ),
                     ),
-                    onSelected: (_) => setState(() => _selectedCategory = cat),
                   ),
                 );
               }).toList(),
@@ -179,7 +192,12 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
               ),
             )
           else
-            ...filteredPresets.map((preset) => _buildPresetCard(context, preset, activeConfig)),
+            ...filteredPresets.asMap().entries.map(
+                  (e) => StaggerFadeIn(
+                    index: e.key,
+                    child: _buildPresetCard(context, e.value, activeConfig),
+                  ),
+                ),
         ],
       ),
     );
@@ -194,9 +212,11 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
       child: Card(
         color: isCurrent ? AppColors.primary.withValues(alpha: 0.15) : AppColors.bgCard,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(14),
+          borderRadius: BorderRadius.circular(18),
           side: BorderSide(
-            color: isCurrent ? AppColors.primaryLight : AppColors.border,
+            color: isCurrent
+                ? AppColors.primaryLight.withValues(alpha: 0.35)
+                : AppColors.subtleBorder(context, alpha: 0.1),
             width: isCurrent ? 1.5 : 1.0,
           ),
         ),
@@ -310,22 +330,25 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                     l10n.patternInfo(preset.defaultPattern.label),
                     style: const TextStyle(fontSize: 11, color: Color(0xFF94A3B8)),
                   ),
-                  ElevatedButton.icon(
-                    onPressed: () {
-                      ref.read(watermarkConfigProvider.notifier).applyPreset(preset);
-                      context.go('/');
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text(l10n.presetApplied(preset.title)),
-                          duration: const Duration(seconds: 2),
-                        ),
-                      );
-                    },
-                    icon: const Icon(Icons.check, size: 14),
-                    label: Text(l10n.usePreset),
-                    style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-                      textStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                  PressScale(
+                    scale: 0.97,
+                    child: ElevatedButton.icon(
+                      onPressed: () {
+                        ref.read(watermarkConfigProvider.notifier).applyPreset(preset);
+                        context.go('/');
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(l10n.presetApplied(preset.title)),
+                            duration: const Duration(seconds: 2),
+                          ),
+                        );
+                      },
+                      icon: const Icon(Icons.check, size: 14),
+                      label: Text(l10n.usePreset),
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                        textStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ),
                 ],
@@ -362,6 +385,7 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
             ],
           ),
           content: SingleChildScrollView(
+            physics: AppScroll.physics,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,

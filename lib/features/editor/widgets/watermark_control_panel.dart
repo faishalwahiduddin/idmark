@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:timezone/timezone.dart' as tz;
 import '../../../../core/constants/app_colors.dart';
+import '../../../../core/ui/app_scroll.dart';
+import '../../../../core/ui/press_scale.dart';
 import '../../../../core/models/redaction_item.dart';
 import '../../../../core/models/watermark_config.dart';
 import '../../../../core/utils/app_timezone.dart';
@@ -196,6 +198,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
   Widget _buildWatermarkTab(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     return ListView(
+      physics: AppScroll.physics,
       children: [
         // 1. Purpose Input
         Text(
@@ -268,12 +271,17 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
               ),
             ),
             const SizedBox(width: 10),
-            FilterChip(
-              label: Text(l10n?.includeDateChip ?? 'Cantumkan Tgl'),
-              selected: widget.config.includeDate,
-              onSelected: widget.onIncludeDateChanged,
-              selectedColor: AppColors.primary.withValues(alpha: 0.3),
-              checkmarkColor: AppColors.primaryLight,
+            PressScale(
+              onTap: () => widget.onIncludeDateChanged(!widget.config.includeDate),
+              child: IgnorePointer(
+                child: FilterChip(
+                  label: Text(l10n?.includeDateChip ?? 'Cantumkan Tgl'),
+                  selected: widget.config.includeDate,
+                  onSelected: (_) {},
+                  selectedColor: AppColors.primary.withValues(alpha: 0.3),
+                  checkmarkColor: AppColors.primaryLight,
+                ),
+              ),
             ),
           ],
         ),
@@ -415,6 +423,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
   Widget _buildRedactionTab(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     return ListView(
+      physics: AppScroll.physics,
       children: [
         // Intro Notice
         Container(
@@ -613,6 +622,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
     final grade = widget.config.privacyGrade;
 
     return ListView(
+      physics: AppScroll.physics,
       children: [
         // Privacy Scorecard Gauge
         Container(
@@ -774,6 +784,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
   Widget _buildExportTab(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     return ListView(
+      physics: AppScroll.physics,
       children: [
         Text(
           l10n?.chooseExportFormat ?? 'Pilih Format Dokumen Keluaran:',

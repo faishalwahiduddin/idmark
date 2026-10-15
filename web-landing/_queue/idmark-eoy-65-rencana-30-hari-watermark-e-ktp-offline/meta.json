@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-65-rencana-30-hari-watermark-e-ktp-offline",
+  "app": "idmark",
+  "publish_date": "2026-12-19",
+  "primary_keyword": "watermark e-KTP",
+  "idea_type": "plan",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "rencana-30-hari-watermark-e-ktp-offline",
+    "en": "30-day-watermark-e-ktp-plan",
+    "ar": "watermark-e-ktp-8",
+    "jv": "pandhuan-watermark-e-ktp-idmark-8",
+    "su": "pituduh-watermark-e-ktp-idmark-8",
+    "zh": "idmark-watermark-e-ktp-实用指南-8",
+    "ja": "idmarkwatermark-e-ktp-ガイド-8"
+  },
+  "titles": {
+    "id": "Rencana 30 Hari watermark e-KTP",
+    "en": "30-Day watermark e-KTP Plan",
+    "ar": "watermark e-KTP — دليل IDMark",
+    "jv": "Pandhuan: Rencana 30 Hari watermark e-KTP",
+    "su": "Pituduh: Rencana 30 Hari watermark e-KTP",
+    "zh": "IDMark · watermark e-KTP 实用指南",
+    "ja": "IDMark｜watermark e-KTP ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

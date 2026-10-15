@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-43-idmark-untuk-dipakai-bergantian",
+  "app": "idmark",
+  "publish_date": "2026-11-27",
+  "primary_keyword": "watermark KTP",
+  "idea_type": "family",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "idmark-untuk-dipakai-bergantian",
+    "en": "sharing-a-device-for-idmark",
+    "ar": "idmark-5",
+    "jv": "pandhuan-idmark-idmark-5",
+    "su": "pituduh-idmark-idmark-5",
+    "zh": "idmark-idmark-实用指南-5",
+    "ja": "idmarkidmark-ガイド-5"
+  },
+  "titles": {
+    "id": "IDMark untuk Dipakai Bergantian",
+    "en": "Sharing a Device for IDMark",
+    "ar": "IDMark — دليل IDMark",
+    "jv": "Pandhuan: IDMark untuk Dipakai Bergantian",
+    "su": "Pituduh: IDMark untuk Dipakai Bergantian",
+    "zh": "IDMark · IDMark 实用指南",
+    "ja": "IDMark｜IDMark ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

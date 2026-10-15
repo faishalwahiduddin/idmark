@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-51-gabungkan-aplikasi-offline-dengan-kebias",
+  "app": "idmark",
+  "publish_date": "2026-12-05",
+  "primary_keyword": "aplikasi offline",
+  "idea_type": "integration",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "gabungkan-aplikasi-offline-dengan-kebiasaan-lain-harian",
+    "en": "stack-aplikasi-offline-with-other-habits",
+    "ar": "aplikasi-offline-6",
+    "jv": "pandhuan-aplikasi-offline-idmark-6",
+    "su": "pituduh-aplikasi-offline-idmark-6",
+    "zh": "idmark-aplikasi-offline-实用指南-6",
+    "ja": "idmarkaplikasi-offline-ガイド-6"
+  },
+  "titles": {
+    "id": "Gabungkan aplikasi offline dengan Kebiasaan Lain",
+    "en": "Stack aplikasi offline with Other Habits",
+    "ar": "aplikasi offline — دليل IDMark",
+    "jv": "Pandhuan: Gabungkan aplikasi offline dengan Kebiasaan Lain",
+    "su": "Pituduh: Gabungkan aplikasi offline dengan Kebiasaan Lain",
+    "zh": "IDMark · aplikasi offline 实用指南",
+    "ja": "IDMark｜aplikasi offline ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

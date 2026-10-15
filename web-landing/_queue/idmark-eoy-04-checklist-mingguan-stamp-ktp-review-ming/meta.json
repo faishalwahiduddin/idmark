@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-04-checklist-mingguan-stamp-ktp-review-ming",
+  "app": "idmark",
+  "publish_date": "2026-10-19",
+  "primary_keyword": "stamp KTP",
+  "idea_type": "checklist",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "checklist-mingguan-stamp-ktp-review-mingguan",
+    "en": "weekly-stamp-ktp-checklist-review",
+    "ar": "stamp-ktp",
+    "jv": "pandhuan-stamp-ktp-idmark",
+    "su": "pituduh-stamp-ktp-idmark",
+    "zh": "idmark-stamp-ktp-实用指南",
+    "ja": "idmarkstamp-ktp-ガイド"
+  },
+  "titles": {
+    "id": "Checklist Mingguan stamp KTP + Review",
+    "en": "Weekly stamp KTP Checklist + Review — Offline First",
+    "ar": "stamp KTP — دليل IDMark",
+    "jv": "Pandhuan: Checklist Mingguan stamp KTP + Review",
+    "su": "Pituduh: Checklist Mingguan stamp KTP + Review",
+    "zh": "IDMark · stamp KTP 实用指南",
+    "ja": "IDMark｜stamp KTP ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

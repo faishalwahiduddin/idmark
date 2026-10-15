@@ -10,29 +10,46 @@
 
 ## Bahasa Indonesia (`id`)
 
-**Title** (19/30)
+**Title** (29/30)
 
-> IDMark — Stempel ID
+> IDMark: Watermark KTP Dokumen
 
-**Short description** (54/80)
+**Short description** (61/80)
 
-> Stempel tujuan & tanggal pada e-KTP/paspor. On-device.
+> Beri cap watermark teks pada foto KTP, SIM & dokumen penting.
 
-**Full description** (99/4000)
+**Full description** (1151/4000)
 
 <details><summary>show</summary>
 
-IDMark menstempel tujuan dan tanggal pada kartu identitas & dokumen — 100% on-device, tanpa unggah.
+IDMark melindungi dokumen identitas pribadi Anda dari potensi penyalahgunaan digital. Bubuhkan cap watermark teks, tanggal, dan tujuan verifikasi langsung di atas foto KTP, SIM, paspor, atau kartu keluarga sebelum dikirimkan ke pihak lain.
+
+Fitur Utama:
+✓ Pembuat watermark instan untuk KTP, SIM, NPWP, dan berkas penting
+✓ Kustomisasi teks watermark: tujuan penggunaan (contoh: "Verifikasi Pinjaman 14 Okt 2026")
+✓ Pengaturan ukuran font, transparansi, rotasi sudut, dan kerapatan pola
+✓ Pemrosesan gambar 100% lokal di dalam memori ponsel Anda
+✓ Foto dokumen tidak pernah diunggah ke internet atau server luar
+✓ Ekspor cepat langsung ke aplikasi pesan atau penyimpanan
+✓ Tanpa iklan, tanpa login, dan sepenuhnya gratis
+
+Kenapa IDMark?
+Mengirimkan foto KTP polos tanpa watermark membuka risiko pencurian identitas dan penipuan pinjaman online. IDMark memastikan setiap dokumen yang Anda bagikan memiliki cap peruntukan yang jelas dan sulit dihapus.
+
+Jaminan Keamanan Mutlak:
+Foto sensitif Anda tidak pernah meninggalkan ponsel. IDMark berjalan secara luring tanpa koneksi server pihak ketiga.
+
+Bagian dari armada aplikasi utilitas privasi faishal.id.
 
 </details>
 
-**Release notes** — versionCode 3 (50/500)
+**Release notes** — versionCode 3 (58/500)
 
-> Rilis store screenshots multi-bahasa untuk IDMark.
+> Rilis pembaruan metadata dan aset toko resmi untuk IDMark.
 
 **Tagline** (feature graphic)
 
-> Stempel tujuan & tanggal pada e-KTP/paspor. On-device.
+> Beri cap watermark teks pada foto KTP, SIM & dokumen penting.
 
 **Screenshot captions**
 
@@ -45,29 +62,46 @@ IDMark menstempel tujuan dan tanggal pada kartu identitas & dokumen — 100% on-
 
 ## English (US) (`en-US`)
 
-**Title** (17/30)
+**Title** (28/30)
 
-> IDMark — ID Stamp
+> IDMark: Watermark ID & Photo
 
-**Short description** (49/80)
+**Short description** (63/80)
 
-> Stamp purpose & date on IDs/passports. On-device.
+> Add watermark text & dates to ID cards and documents on-device.
 
-**Full description** (92/4000)
+**Full description** (1106/4000)
 
 <details><summary>show</summary>
 
-IDMark stamps purpose and date onto ID cards & documents — 100% on-device, nothing uploaded.
+IDMark protects your personal identity documents from digital fraud and unauthorized reuse. Stamp custom watermark text, dates, and verification purposes directly across photos of national IDs, driver licenses, and passports before sharing them.
+
+Core Features:
+✓ Instant watermarking for ID cards, passports, and official documents
+✓ Customizable text presets (e.g., "For KYC Verification Only Oct 2026")
+✓ Adjustable font size, opacity, rotation angle, and repetition grid
+✓ 100% on-device image processing inside your phone memory
+✓ Photos are never uploaded to any cloud server or third party
+✓ Quick share export to messaging apps and local files
+✓ Zero advertisements, no account creation, completely free
+
+Why IDMark?
+Sharing unprotected ID photos exposes you to identity theft and fraudulent registrations. IDMark ensures that every copy you send has a visible, tamper-evident declaration of its single intended purpose.
+
+Absolute Privacy:
+Your sensitive documents never leave your phone. All pixel manipulations run entirely offline on-device.
+
+Part of the faishal.id privacy-first utility family.
 
 </details>
 
-**Release notes** — versionCode 3 (50/500)
+**Release notes** — versionCode 3 (67/500)
 
-> Multi-locale store screenshots release for IDMark.
+> Official store metadata and presentation update release for IDMark.
 
 **Tagline** (feature graphic)
 
-> Stamp purpose & date on IDs/passports. On-device.
+> Add watermark text & dates to ID cards and documents on-device.
 
 **Screenshot captions**
 

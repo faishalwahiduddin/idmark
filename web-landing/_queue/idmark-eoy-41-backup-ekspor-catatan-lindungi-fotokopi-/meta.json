@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-41-backup-ekspor-catatan-lindungi-fotokopi-",
+  "app": "idmark",
+  "publish_date": "2026-11-25",
+  "primary_keyword": "lindungi fotokopi KTP",
+  "idea_type": "export",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "backup-ekspor-catatan-lindungi-fotokopi-ktp-offline",
+    "en": "backup-export-lindungi-fotokopi-ktp-notes",
+    "ar": "lindungi-fotokopi-ktp-5",
+    "jv": "pandhuan-lindungi-fotokopi-ktp-idmark-5",
+    "su": "pituduh-lindungi-fotokopi-ktp-idmark-5",
+    "zh": "idmark-lindungi-fotokopi-ktp-实用指南-5",
+    "ja": "idmarklindungi-fotokopi-ktp-ガイド-5"
+  },
+  "titles": {
+    "id": "Backup &amp; Ekspor Catatan lindungi fotokopi KTP",
+    "en": "Backup &amp; Export lindungi fotokopi KTP Notes",
+    "ar": "lindungi fotokopi KTP — دليل IDMark",
+    "jv": "Pandhuan: Backup &amp; Ekspor Catatan lindungi fotokopi KTP",
+    "su": "Pituduh: Backup &amp; Ekspor Catatan lindungi fotokopi KTP",
+    "zh": "IDMark · lindungi fotokopi KTP 实用指南",
+    "ja": "IDMark｜lindungi fotokopi KTP ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

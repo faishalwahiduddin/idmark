@@ -1,1 +1,1 @@
-Stamp purpose & date on IDs/passports. On-device.
+Add watermark text & dates to ID cards and documents on-device.

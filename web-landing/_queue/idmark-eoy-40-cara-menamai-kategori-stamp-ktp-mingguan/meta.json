@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-40-cara-menamai-kategori-stamp-ktp-mingguan",
+  "app": "idmark",
+  "publish_date": "2026-11-24",
+  "primary_keyword": "stamp KTP",
+  "idea_type": "deep",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "cara-menamai-kategori-stamp-ktp-mingguan",
+    "en": "how-to-name-stamp-ktp-categories",
+    "ar": "stamp-ktp-5",
+    "jv": "pandhuan-stamp-ktp-idmark-5",
+    "su": "pituduh-stamp-ktp-idmark-5",
+    "zh": "idmark-stamp-ktp-实用指南-5",
+    "ja": "idmarkstamp-ktp-ガイド-5"
+  },
+  "titles": {
+    "id": "Cara Menamai Kategori stamp KTP",
+    "en": "How to Name stamp KTP Categories — Offline First",
+    "ar": "stamp KTP — دليل IDMark",
+    "jv": "Pandhuan: Cara Menamai Kategori stamp KTP",
+    "su": "Pituduh: Cara Menamai Kategori stamp KTP",
+    "zh": "IDMark · stamp KTP 实用指南",
+    "ja": "IDMark｜stamp KTP ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

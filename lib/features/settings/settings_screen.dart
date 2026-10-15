@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import '../../core/constants/app_colors.dart';
+import '../../core/ui/app_scroll.dart';
+import '../../core/ui/press_scale.dart';
 import '../../core/constants/app_constants.dart';
 import '../../core/models/watermark_config.dart';
 import '../../core/providers/app_providers.dart';
@@ -11,6 +13,7 @@ import '../../core/providers/timezone_provider.dart';
 import '../../core/utils/app_timezone.dart';
 import '../../core/utils/l10n_helpers.dart';
 import '../../l10n/app_localizations.dart';
+import '../../../core/ui/spring_sheet.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -43,15 +46,16 @@ class SettingsScreen extends ConsumerWidget {
         title: Text(l10n.privacyAndSettings),
       ),
       body: ListView(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        physics: AppScroll.physics,
+        padding: AppScroll.pagePadding(context),
         children: [
           // Security Architecture Card (solid surface: readable either theme)
           Container(
             padding: const EdgeInsets.all(18),
             decoration: BoxDecoration(
               color: AppColors.bannerSurface,
-              borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: AppColors.accent.withValues(alpha: 0.4)),
+              borderRadius: BorderRadius.circular(18),
+              border: Border.all(color: AppColors.accent.withValues(alpha: 0.12)),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -91,6 +95,7 @@ class SettingsScreen extends ConsumerWidget {
               fontSize: 14,
               fontWeight: FontWeight.w700,
               color: AppColors.muted(context),
+              letterSpacing: -0.3,
             ),
           ),
           const SizedBox(height: 10),
@@ -133,33 +138,43 @@ class SettingsScreen extends ConsumerWidget {
                     ],
                   ),
                   const Divider(height: 24),
-                  ListTile(
-                    contentPadding: EdgeInsets.zero,
-                    leading: const Icon(Icons.translate, color: AppColors.primaryLight, size: 20),
-                    title: Text(l10n.appLanguage, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: AppColors.title(context))),
-                    subtitle: Text(
-                      languageName(langCode, l10n),
-                      style: TextStyle(fontSize: 12, color: AppColors.muted(context)),
-                    ),
-                    trailing: Icon(Icons.chevron_right, color: AppColors.muted(context)),
+                  PressScale(
+                    scale: 0.98,
                     onTap: () => _showLanguageModal(context, ref, currentLocale, l10n),
+                    child: IgnorePointer(
+                      child: ListTile(
+                        contentPadding: EdgeInsets.zero,
+                        leading: const Icon(Icons.translate, color: AppColors.primaryLight, size: 20),
+                        title: Text(l10n.appLanguage, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: AppColors.title(context))),
+                        subtitle: Text(
+                          languageName(langCode, l10n),
+                          style: TextStyle(fontSize: 12, color: AppColors.muted(context)),
+                        ),
+                        trailing: Icon(Icons.chevron_right, color: AppColors.muted(context)),
+                      ),
+                    ),
                   ),
                   const Divider(height: 24),
                   Semantics(
                     button: true,
                     label: l10n.timezone,
-                    child: ListTile(
-                      key: const ValueKey('timezone_picker'),
-                      contentPadding: EdgeInsets.zero,
-                      leading: const Icon(Icons.schedule, color: AppColors.primaryLight, size: 20),
-                      title: Text(l10n.timezone,
-                          style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: AppColors.title(context))),
-                      subtitle: Text(
-                        _currentTimezoneLabel(ref, l10n),
-                        style: TextStyle(fontSize: 12, color: AppColors.muted(context)),
-                      ),
-                      trailing: Icon(Icons.chevron_right, color: AppColors.muted(context)),
+                    child: PressScale(
+                      scale: 0.98,
                       onTap: () => _showTimezoneModal(context, ref),
+                      child: IgnorePointer(
+                        child: ListTile(
+                          key: const ValueKey('timezone_picker'),
+                          contentPadding: EdgeInsets.zero,
+                          leading: const Icon(Icons.schedule, color: AppColors.primaryLight, size: 20),
+                          title: Text(l10n.timezone,
+                              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: AppColors.title(context))),
+                          subtitle: Text(
+                            _currentTimezoneLabel(ref, l10n),
+                            style: TextStyle(fontSize: 12, color: AppColors.muted(context)),
+                          ),
+                          trailing: Icon(Icons.chevron_right, color: AppColors.muted(context)),
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -269,12 +284,8 @@ class SettingsScreen extends ConsumerWidget {
                   ),
                 ),
                 const Divider(height: 1),
-                ListTile(
-                  leading: const Icon(Icons.delete_sweep_outlined, color: AppColors.danger),
-                  title: Text(l10n.resetDefaults, style: TextStyle(fontSize: 14, color: AppColors.title(context))),
-                  subtitle: Text(l10n.resetDefaultsDesc,
-                      style: TextStyle(fontSize: 12, color: AppColors.muted(context))),
-                  trailing: Icon(Icons.chevron_right, color: AppColors.muted(context)),
+                PressScale(
+                  scale: 0.98,
                   onTap: () async {
                     final confirm = await showDialog<bool>(
                       context: context,
@@ -308,6 +319,15 @@ class SettingsScreen extends ConsumerWidget {
                       }
                     }
                   },
+                  child: IgnorePointer(
+                    child: ListTile(
+                      leading: const Icon(Icons.delete_sweep_outlined, color: AppColors.danger),
+                      title: Text(l10n.resetDefaults, style: TextStyle(fontSize: 14, color: AppColors.title(context))),
+                      subtitle: Text(l10n.resetDefaultsDesc,
+                          style: TextStyle(fontSize: 12, color: AppColors.muted(context))),
+                      trailing: Icon(Icons.chevron_right, color: AppColors.muted(context)),
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -382,7 +402,7 @@ class SettingsScreen extends ConsumerWidget {
               ),
             ),
           ),
-          const SizedBox(height: 32),
+          const SizedBox(height: 8),
         ],
       ),
     );
@@ -404,11 +424,8 @@ class SettingsScreen extends ConsumerWidget {
     final now = AppTimeZone.nowUtc();
     final current = ref.read(timezoneProvider);
     final device = ref.read(timezoneNameProvider);
-    showModalBottomSheet(
+    showSpringSheet(
       context: context,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-      ),
       builder: (ctx) {
         return SafeArea(
           child: Column(
@@ -424,6 +441,7 @@ class SettingsScreen extends ConsumerWidget {
               const Divider(height: 1),
               Expanded(
                 child: ListView(
+                  physics: AppScroll.physics,
                   children: [
                     ListTile(
                       key: const ValueKey('timezone_option_auto'),
@@ -470,11 +488,8 @@ class SettingsScreen extends ConsumerWidget {
   }
 
   void _showLanguageModal(BuildContext context, WidgetRef ref, Locale currentLocale, AppLocalizations l10n) {
-    showModalBottomSheet(
+    showSpringSheet(
       context: context,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-      ),
       builder: (ctx) {
         return SafeArea(
           child: Column(
@@ -490,15 +505,21 @@ class SettingsScreen extends ConsumerWidget {
               const Divider(height: 1),
               Expanded(
                 child: ListView(
+                  physics: AppScroll.physics,
                   children: _supportedLocales.map((code) {
                     final isSelected = code == currentLocale.languageCode;
-                    return ListTile(
-                      title: Text(languageName(code, l10n)),
-                      trailing: isSelected ? const Icon(Icons.check, color: AppColors.accent) : null,
+                    return PressScale(
+                      scale: 0.98,
                       onTap: () {
                         ref.read(localeProvider.notifier).setLocale(Locale(code));
                         Navigator.pop(ctx);
                       },
+                      child: IgnorePointer(
+                        child: ListTile(
+                          title: Text(languageName(code, l10n)),
+                          trailing: isSelected ? const Icon(Icons.check, color: AppColors.accent) : null,
+                        ),
+                      ),
                     );
                   }).toList(),
                 ),

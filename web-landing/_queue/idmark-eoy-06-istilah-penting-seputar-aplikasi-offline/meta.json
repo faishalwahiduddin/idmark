@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-06-istilah-penting-seputar-aplikasi-offline",
+  "app": "idmark",
+  "publish_date": "2026-10-21",
+  "primary_keyword": "aplikasi offline",
+  "idea_type": "glossary",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "istilah-penting-seputar-aplikasi-offline-2026",
+    "en": "key-terms-around-aplikasi-offline",
+    "ar": "aplikasi-offline",
+    "jv": "pandhuan-aplikasi-offline-idmark",
+    "su": "pituduh-aplikasi-offline-idmark",
+    "zh": "idmark-aplikasi-offline-实用指南",
+    "ja": "idmarkaplikasi-offline-ガイド"
+  },
+  "titles": {
+    "id": "Istilah Penting seputar aplikasi offline",
+    "en": "Key Terms Around aplikasi offline",
+    "ar": "aplikasi offline — دليل IDMark",
+    "jv": "Pandhuan: Istilah Penting seputar aplikasi offline",
+    "su": "Pituduh: Istilah Penting seputar aplikasi offline",
+    "zh": "IDMark · aplikasi offline 实用指南",
+    "ja": "IDMark｜aplikasi offline ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

@@ -1,1 +1,18 @@
-IDMark menstempel tujuan dan tanggal pada kartu identitas & dokumen — 100% on-device, tanpa unggah.
+IDMark melindungi dokumen identitas pribadi Anda dari potensi penyalahgunaan digital. Bubuhkan cap watermark teks, tanggal, dan tujuan verifikasi langsung di atas foto KTP, SIM, paspor, atau kartu keluarga sebelum dikirimkan ke pihak lain.
+
+Fitur Utama:
+✓ Pembuat watermark instan untuk KTP, SIM, NPWP, dan berkas penting
+✓ Kustomisasi teks watermark: tujuan penggunaan (contoh: "Verifikasi Pinjaman 14 Okt 2026")
+✓ Pengaturan ukuran font, transparansi, rotasi sudut, dan kerapatan pola
+✓ Pemrosesan gambar 100% lokal di dalam memori ponsel Anda
+✓ Foto dokumen tidak pernah diunggah ke internet atau server luar
+✓ Ekspor cepat langsung ke aplikasi pesan atau penyimpanan
+✓ Tanpa iklan, tanpa login, dan sepenuhnya gratis
+
+Kenapa IDMark?
+Mengirimkan foto KTP polos tanpa watermark membuka risiko pencurian identitas dan penipuan pinjaman online. IDMark memastikan setiap dokumen yang Anda bagikan memiliki cap peruntukan yang jelas dan sulit dihapus.
+
+Jaminan Keamanan Mutlak:
+Foto sensitif Anda tidak pernah meninggalkan ponsel. IDMark berjalan secara luring tanpa koneksi server pihak ketiga.
+
+Bagian dari armada aplikasi utilitas privasi faishal.id.

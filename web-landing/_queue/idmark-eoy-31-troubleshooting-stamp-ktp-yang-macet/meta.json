@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-31-troubleshooting-stamp-ktp-yang-macet",
+  "app": "idmark",
+  "publish_date": "2026-11-15",
+  "primary_keyword": "stamp KTP",
+  "idea_type": "troubleshoot",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "troubleshooting-stamp-ktp-yang-macet",
+    "en": "troubleshooting-stuck-stamp-ktp-habits",
+    "ar": "stamp-ktp-4",
+    "jv": "pandhuan-stamp-ktp-idmark-4",
+    "su": "pituduh-stamp-ktp-idmark-4",
+    "zh": "idmark-stamp-ktp-实用指南-4",
+    "ja": "idmarkstamp-ktp-ガイド-4"
+  },
+  "titles": {
+    "id": "Troubleshooting stamp KTP yang Macet",
+    "en": "Troubleshooting Stuck stamp KTP Habits",
+    "ar": "stamp KTP — دليل IDMark",
+    "jv": "Pandhuan: Troubleshooting stamp KTP yang Macet",
+    "su": "Pituduh: Troubleshooting stamp KTP yang Macet",
+    "zh": "IDMark · stamp KTP 实用指南",
+    "ja": "IDMark｜stamp KTP ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

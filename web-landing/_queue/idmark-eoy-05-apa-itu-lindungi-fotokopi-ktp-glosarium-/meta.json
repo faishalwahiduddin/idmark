@@ -1,0 +1,29 @@
+{
+  "package_id": "idmark-eoy-05-apa-itu-lindungi-fotokopi-ktp-glosarium-",
+  "app": "idmark",
+  "publish_date": "2026-10-20",
+  "primary_keyword": "lindungi fotokopi KTP",
+  "idea_type": "glossary",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "apa-itu-lindungi-fotokopi-ktp-glosarium-singkat-offline",
+    "en": "what-is-lindungi-fotokopi-ktp-a-short-glossary",
+    "ar": "lindungi-fotokopi-ktp",
+    "jv": "pandhuan-lindungi-fotokopi-ktp-idmark",
+    "su": "pituduh-lindungi-fotokopi-ktp-idmark",
+    "zh": "idmark-lindungi-fotokopi-ktp-实用指南",
+    "ja": "idmarklindungi-fotokopi-ktp-ガイド"
+  },
+  "titles": {
+    "id": "Apa Itu lindungi fotokopi KTP? Glosarium Singkat",
+    "en": "What Is lindungi fotokopi KTP? A Short Glossary",
+    "ar": "lindungi fotokopi KTP — دليل IDMark",
+    "jv": "Pandhuan: Apa Itu lindungi fotokopi KTP? Glosarium Singkat",
+    "su": "Pituduh: Apa Itu lindungi fotokopi KTP? Glosarium Singkat",
+    "zh": "IDMark · lindungi fotokopi KTP 实用指南",
+    "ja": "IDMark｜lindungi fotokopi KTP ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}
