@@ -1,0 +1,324 @@
+{
+  "schema": 1,
+  "app": "idmark",
+  "roles": {
+    "USR": "ROL-001"
+  },
+  "modules": {
+    "WMK": "MOD-001",
+    "RED": "MOD-002",
+    "PRS": "MOD-003",
+    "HIS": "MOD-004",
+    "GDE": "MOD-005",
+    "SET": "MOD-006"
+  },
+  "epics": [
+    {
+      "id": "EP-001",
+      "title": "Proteksi dokumen",
+      "module": [
+        "MOD-001",
+        "MOD-002"
+      ]
+    },
+    {
+      "id": "EP-002",
+      "title": "Template, jejak, dan kepatuhan",
+      "module": [
+        "MOD-003",
+        "MOD-004",
+        "MOD-005"
+      ]
+    },
+    {
+      "id": "EP-003",
+      "title": "Pengaturan dan privasi",
+      "module": [
+        "MOD-006"
+      ]
+    }
+  ],
+  "flows": [
+    {
+      "id": "FLOW-WMK-01",
+      "story": [
+        "US-001",
+        "US-002",
+        "US-007"
+      ],
+      "epic": "EP-001",
+      "role": "ROL-001",
+      "module": "MOD-001",
+      "title": "Membubuhkan cap tujuan dan tanggal lalu menyimpan dokumen",
+      "status": "as-built"
+    },
+    {
+      "id": "FLOW-WMK-02",
+      "story": [
+        "US-004",
+        "US-005"
+      ],
+      "epic": "EP-001",
+      "role": "ROL-001",
+      "module": "MOD-001",
+      "title": "Mengatur pola, warna, dan opasitas cap",
+      "status": "as-built"
+    },
+    {
+      "id": "FLOW-RED-01",
+      "story": "US-006",
+      "epic": "EP-001",
+      "role": "ROL-001",
+      "module": "MOD-002",
+      "title": "Menyensor data sensitif sebelum dicap",
+      "status": "as-built"
+    },
+    {
+      "id": "FLOW-PRS-01",
+      "story": "US-003",
+      "epic": "EP-002",
+      "role": "ROL-001",
+      "module": "MOD-003",
+      "title": "Memakai dan membuat preset tujuan",
+      "status": "as-built"
+    },
+    {
+      "id": "FLOW-HIS-01",
+      "story": "US-009",
+      "epic": "EP-002",
+      "role": "ROL-001",
+      "module": "MOD-004",
+      "title": "Melihat riwayat audit ekspor",
+      "status": "as-built"
+    },
+    {
+      "id": "FLOW-GDE-01",
+      "story": "US-010",
+      "epic": "EP-002",
+      "role": "ROL-001",
+      "module": "MOD-005",
+      "title": "Memeriksa kepatuhan dengan panduan Kominfo",
+      "status": "as-built"
+    },
+    {
+      "id": "FLOW-SET-01",
+      "story": "US-008",
+      "epic": "EP-003",
+      "role": "ROL-001",
+      "module": "MOD-006",
+      "title": "Mengatur tampilan, bahasa, dan privasi",
+      "status": "as-built"
+    }
+  ],
+  "pages": [
+    {
+      "id": "USR-WMK-001",
+      "route": "/splash",
+      "role": "ROL-001",
+      "module": "MOD-001",
+      "flows": [
+        "FLOW-WMK-01"
+      ]
+    },
+    {
+      "id": "USR-WMK-002",
+      "route": "/onboarding",
+      "role": "ROL-001",
+      "module": "MOD-001",
+      "flows": [
+        "FLOW-WMK-01"
+      ]
+    },
+    {
+      "id": "USR-WMK-003",
+      "route": "/",
+      "role": "ROL-001",
+      "module": "MOD-001",
+      "flows": [
+        "FLOW-WMK-01",
+        "FLOW-WMK-02",
+        "FLOW-RED-01",
+        "FLOW-HIS-01"
+      ]
+    },
+    {
+      "id": "USR-PRS-001",
+      "route": "/presets",
+      "role": "ROL-001",
+      "module": "MOD-003",
+      "flows": [
+        "FLOW-PRS-01"
+      ]
+    },
+    {
+      "id": "USR-HIS-001",
+      "route": "/history",
+      "role": "ROL-001",
+      "module": "MOD-004",
+      "flows": [
+        "FLOW-HIS-01"
+      ]
+    },
+    {
+      "id": "USR-GDE-001",
+      "route": "/guide",
+      "role": "ROL-001",
+      "module": "MOD-005",
+      "flows": [
+        "FLOW-GDE-01"
+      ]
+    },
+    {
+      "id": "USR-SET-001",
+      "route": "/settings",
+      "role": "ROL-001",
+      "module": "MOD-006",
+      "flows": [
+        "FLOW-SET-01"
+      ]
+    }
+  ],
+  "apis": [],
+  "emails": [],
+  "functions": [
+    {
+      "id": "USR-WMK-101",
+      "name": "WatermarkRendererService",
+      "file": "lib/core/services/watermark_renderer_service.dart",
+      "module": "MOD-001",
+      "flows": [
+        "FLOW-WMK-01",
+        "FLOW-WMK-02",
+        "FLOW-RED-01"
+      ]
+    },
+    {
+      "id": "USR-WMK-102",
+      "name": "WatermarkConfigNotifier",
+      "file": "lib/core/providers/app_providers.dart",
+      "module": "MOD-001",
+      "flows": [
+        "FLOW-WMK-01",
+        "FLOW-WMK-02",
+        "FLOW-RED-01",
+        "FLOW-PRS-01"
+      ]
+    },
+    {
+      "id": "USR-WMK-103",
+      "name": "WatermarkConfig",
+      "file": "lib/core/models/watermark_config.dart",
+      "module": "MOD-001",
+      "flows": [
+        "FLOW-WMK-01",
+        "FLOW-WMK-02",
+        "FLOW-GDE-01"
+      ]
+    },
+    {
+      "id": "USR-WMK-104",
+      "name": "AppValidators",
+      "file": "lib/core/utils/validators.dart",
+      "module": "MOD-001",
+      "flows": [
+        "FLOW-WMK-01",
+        "FLOW-WMK-02",
+        "FLOW-PRS-01"
+      ]
+    },
+    {
+      "id": "USR-WMK-105",
+      "name": "PdfExportService",
+      "file": "lib/core/services/pdf_export_service.dart",
+      "module": "MOD-001",
+      "flows": [
+        "FLOW-WMK-01"
+      ]
+    },
+    {
+      "id": "USR-WMK-106",
+      "name": "ImagePickerService",
+      "file": "lib/core/services/image_picker_service.dart",
+      "module": "MOD-001",
+      "flows": [
+        "FLOW-WMK-01"
+      ]
+    },
+    {
+      "id": "USR-RED-101",
+      "name": "RedactionBox",
+      "file": "lib/core/models/redaction_item.dart",
+      "module": "MOD-002",
+      "flows": [
+        "FLOW-RED-01"
+      ]
+    },
+    {
+      "id": "USR-PRS-101",
+      "name": "CustomPresetsNotifier",
+      "file": "lib/core/providers/app_providers.dart",
+      "module": "MOD-003",
+      "flows": [
+        "FLOW-PRS-01"
+      ]
+    },
+    {
+      "id": "USR-PRS-102",
+      "name": "WatermarkPreset",
+      "file": "lib/core/models/watermark_preset.dart",
+      "module": "MOD-003",
+      "flows": [
+        "FLOW-PRS-01"
+      ]
+    },
+    {
+      "id": "USR-HIS-101",
+      "name": "AuditLogsNotifier",
+      "file": "lib/core/providers/app_providers.dart",
+      "module": "MOD-004",
+      "flows": [
+        "FLOW-HIS-01"
+      ]
+    },
+    {
+      "id": "USR-HIS-102",
+      "name": "AuditLogEntry",
+      "file": "lib/core/models/audit_log_entry.dart",
+      "module": "MOD-004",
+      "flows": [
+        "FLOW-HIS-01"
+      ]
+    },
+    {
+      "id": "USR-SET-101",
+      "name": "LocalStorageService",
+      "file": "lib/core/storage/local_storage_service.dart",
+      "module": "MOD-006",
+      "flows": [
+        "FLOW-SET-01",
+        "FLOW-PRS-01",
+        "FLOW-HIS-01",
+        "FLOW-WMK-02"
+      ]
+    },
+    {
+      "id": "USR-SET-102",
+      "name": "LocaleNotifier",
+      "file": "lib/core/providers/locale_provider.dart",
+      "module": "MOD-006",
+      "flows": [
+        "FLOW-SET-01"
+      ]
+    },
+    {
+      "id": "USR-SET-103",
+      "name": "AppTimeZone",
+      "file": "lib/core/utils/app_timezone.dart",
+      "module": "MOD-006",
+      "flows": [
+        "FLOW-SET-01",
+        "FLOW-WMK-01"
+      ]
+    }
+  ]
+}

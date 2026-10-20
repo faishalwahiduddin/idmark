@@ -4,7 +4,7 @@ import 'package:idmark/core/utils/validators.dart';
 
 void main() {
   group('AppValidators §VAL Unit Tests', () {
-    test('validatePurpose rejects empty and invalid length', () {
+    test('FLOW-WMK-01-T02 validatePurpose rejects empty and invalid length', () {
       expect(AppValidators.validatePurpose(null), isNotNull);
       expect(AppValidators.validatePurpose(''), isNotNull);
       expect(AppValidators.validatePurpose('  '), isNotNull);
@@ -12,7 +12,7 @@ void main() {
       expect(AppValidators.validatePurpose('VERIFIKASI REKENING BANK BCA'), isNull);
     });
 
-    test('validateOpacity enforces 0.1 to 1.0 range', () {
+    test('FLOW-WMK-02-T03 validateOpacity enforces 0.1 to 1.0 range', () {
       expect(AppValidators.validateOpacity(0.05), isNotNull);
       expect(AppValidators.validateOpacity(1.05), isNotNull);
       expect(AppValidators.validateOpacity(0.50), isNull);
@@ -44,7 +44,7 @@ void main() {
       expect(config.validate(), isEmpty);
     });
 
-    test('Invalid mutation throws ArgumentError', () {
+    test('FLOW-WMK-02-T05 Invalid mutation throws ArgumentError', () {
       final config = WatermarkConfig.defaultConfig();
       expect(
         () => config.copyWith(purpose: ''),

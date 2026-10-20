@@ -1,0 +1,181 @@
+# docs/trace/flows.yaml — SSOT test case per flow (§TRACE). Bukti: test/**/*_test.dart prefix judul.
+version: 1
+app: idmark
+
+flows:
+  - id: FLOW-WMK-01
+    priority: P0
+    requirement: [FR-001, FR-002, FR-005, NFR-001, NFR-003]
+    touches:
+      - "lib/features/editor/**"
+      - "lib/core/services/**"
+      - "lib/core/models/watermark_config.dart"
+    cases:
+      - id: FLOW-WMK-01-T01
+        kind: positive
+        layer: unit
+        title: "cap tujuan + tanggal dirender di perangkat dengan resolusi asli tetap utuh"
+      - id: FLOW-WMK-01-T02
+        kind: negative
+        layer: unit
+        title: "validatePurpose rejects empty and invalid length"
+      - id: FLOW-WMK-01-T03
+        kind: edge
+        layer: unit
+        title: "tujuan tepat 3 dan 80 karakter diterima, 81 karakter ditolak"
+      - id: FLOW-WMK-01-T04
+        kind: corner
+        layer: unit
+        title: "tanggal cap mengikuti zona pilihan: instan yang sama bisa beda tanggal di Jakarta dan New York"
+  - id: FLOW-WMK-02
+    priority: P0
+    requirement: [FR-004, NFR-002]
+    touches:
+      - "lib/features/editor/widgets/**"
+      - "lib/core/providers/app_providers.dart"
+      - "lib/core/utils/validators.dart"
+    cases:
+      - id: FLOW-WMK-02-T01
+        kind: positive
+        layer: unit
+        title: "pola, warna, dan opasitas tersimpan dan dipakai lagi saat app dibuka ulang"
+      - id: FLOW-WMK-02-T02
+        kind: negative
+        layer: unit
+        title: "opasitas di luar 10–100% ditolak dan konfigurasi tersimpan tidak berubah"
+      - id: FLOW-WMK-02-T03
+        kind: edge
+        layer: unit
+        title: "validateOpacity enforces 0.1 to 1.0 range"
+      - id: FLOW-WMK-02-T04
+        kind: corner
+        layer: unit
+        title: "ketujuh pola cap dirender tanpa galat dan mempertahankan ukuran gambar"
+      - id: FLOW-WMK-02-T05
+        kind: negative
+        layer: unit
+        title: "Invalid mutation throws ArgumentError"
+  - id: FLOW-RED-01
+    priority: P0
+    requirement: [FR-006]
+    touches:
+      - "lib/core/models/redaction_item.dart"
+      - "lib/features/editor/widgets/watermark_control_panel.dart"
+    cases:
+      - id: FLOW-RED-01-T01
+        kind: positive
+        layer: unit
+        title: "Valid RedactionBox fromPreset passes validation"
+      - id: FLOW-RED-01-T02
+        kind: negative
+        layer: unit
+        title: "kotak sensor di luar gambar atau berukuran nol ditolak validasi"
+      - id: FLOW-RED-01-T03
+        kind: edge
+        layer: unit
+        title: "menggeser sensor ke tepi kanan dijepit agar tetap di dalam gambar"
+      - id: FLOW-RED-01-T04
+        kind: corner
+        layer: unit
+        title: "tambah dua sensor, hapus satu, lalu bersihkan; konfigurasi rusak di storage kembali ke bawaan"
+  - id: FLOW-PRS-01
+    priority: P1
+    requirement: [FR-003]
+    touches:
+      - "lib/features/presets/**"
+      - "lib/core/models/watermark_preset.dart"
+    cases:
+      - id: FLOW-PRS-01-T01
+        kind: positive
+        layer: unit
+        title: "LocalStorageService manages custom presets and audit logs"
+      - id: FLOW-PRS-01-T02
+        kind: negative
+        layer: unit
+        title: "AppValidators validates quality and preset titles (§VAL)"
+      - id: FLOW-PRS-01-T03
+        kind: edge
+        layer: unit
+        title: "preset bawaan ber-id unik, mencakup kebutuhan lokal dan internasional, dan semuanya valid"
+      - id: FLOW-PRS-01-T04
+        kind: corner
+        layer: unit
+        title: "preset kustom ber-id sama menggantikan yang lama di urutan teratas; menerapkannya mengubah cap"
+  - id: FLOW-HIS-01
+    priority: P1
+    requirement: [FR-007]
+    touches:
+      - "lib/features/history/**"
+      - "lib/core/models/audit_log_entry.dart"
+    cases:
+      - id: FLOW-HIS-01-T01
+        kind: positive
+        layer: unit
+        title: "HistoryScreen renders empty state and populated logs correctly"
+      - id: FLOW-HIS-01-T02
+        kind: negative
+        layer: unit
+        title: "AuditLogEntry rejects invalid privacy score (§VAL)"
+      - id: FLOW-HIS-01-T03
+        kind: edge
+        layer: unit
+        title: "riwayat dibatasi 50 ekspor terbaru, urutan terbaru di atas"
+      - id: FLOW-HIS-01-T04
+        kind: corner
+        layer: unit
+        title: "riwayat rusak di storage dibaca kosong; bersihkan riwayat mengosongkan daftar"
+  - id: FLOW-GDE-01
+    priority: P2
+    requirement: [FR-008]
+    touches:
+      - "lib/features/guide/**"
+      - "lib/core/models/watermark_config.dart"
+    cases:
+      - id: FLOW-GDE-01-T01
+        kind: positive
+        layer: unit
+        title: "KominfoGuideScreen renders interactive checklist and rules"
+      - id: FLOW-GDE-01-T02
+        kind: negative
+        layer: unit
+        title: "cap tanpa tanggal, tanpa sanitasi EXIF, dengan tujuan pendek mendapat nilai privasi D"
+      - id: FLOW-GDE-01-T03
+        kind: edge
+        layer: unit
+        title: "batas nilai: 80 poin = A, 90 poin = A+"
+      - id: FLOW-GDE-01-T04
+        kind: corner
+        layer: unit
+        title: "semua perlindungan aktif sekaligus tetap dijepit maksimum 100"
+      - id: FLOW-GDE-01-T05
+        kind: positive
+        layer: unit
+        title: "High protection configuration yields Grade A+"
+  - id: FLOW-SET-01
+    priority: P1
+    requirement: [FR-009, NFR-002]
+    touches:
+      - "lib/features/settings/**"
+      - "lib/core/providers/**"
+      - "lib/core/storage/**"
+    cases:
+      - id: FLOW-SET-01-T01
+        kind: positive
+        layer: unit
+        title: "bahasa dan tema pilihan tersimpan lalu dipakai lagi saat app dibuka ulang"
+      - id: FLOW-SET-01-T02
+        kind: negative
+        layer: unit
+        title: "konfigurasi tersimpan yang melanggar §VAL (tujuan kosong) diabaikan, kembali ke bawaan"
+      - id: FLOW-SET-01-T03
+        kind: edge
+        layer: unit
+        title: "instalasi baru: tema gelap, sanitasi EXIF aktif, ekspor PNG"
+      - id: FLOW-SET-01-T04
+        kind: corner
+        layer: unit
+        title: "unknown zone falls back to Jakarta, never throws"
+      - id: FLOW-SET-01-T05
+        kind: negative
+        layer: unit
+        title: "lembar Pilih Bahasa dan Zona Waktu terbuka tanpa galat render dan bisa memilih bahasa"

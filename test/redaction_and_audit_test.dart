@@ -11,7 +11,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   group('RedactionBox Model & §VAL Tests', () {
-    test('Valid RedactionBox fromPreset passes validation', () {
+    test('FLOW-RED-01-T01 Valid RedactionBox fromPreset passes validation', () {
       final box = RedactionBox.fromPreset(RedactionPresetTarget.nik);
       expect(box.validate(), isEmpty);
       expect(box.type, equals(RedactionType.blackout));
@@ -67,7 +67,7 @@ void main() {
       expect(entry.validate(), isEmpty);
     });
 
-    test('AuditLogEntry rejects invalid privacy score (§VAL)', () {
+    test('FLOW-HIS-01-T02 AuditLogEntry rejects invalid privacy score (§VAL)', () {
       final entry = AuditLogEntry(
         id: 'audit_invalid',
         timestamp: DateTime.now(),
@@ -109,7 +109,7 @@ void main() {
   });
 
   group('Privacy Scoring & WatermarkConfig Enhancements', () {
-    test('High protection configuration yields Grade A+', () {
+    test('FLOW-GDE-01-T05 High protection configuration yields Grade A+', () {
       final config = WatermarkConfig(
         purpose: 'VERIFIKASI REKENING BANK BCA',
         transactionDate: DateTime.now(),
@@ -133,7 +133,7 @@ void main() {
   });
 
   group('Custom Presets & LocalStorageService Tests', () {
-    test('LocalStorageService manages custom presets and audit logs', () async {
+    test('FLOW-PRS-01-T01 LocalStorageService manages custom presets and audit logs', () async {
       SharedPreferences.setMockInitialValues({});
       final storage = await LocalStorageService.init();
 
@@ -182,7 +182,7 @@ void main() {
       expect(storage.loadAuditLogs(), isEmpty);
     });
 
-    test('AppValidators validates quality and preset titles (§VAL)', () {
+    test('FLOW-PRS-01-T02 AppValidators validates quality and preset titles (§VAL)', () {
       expect(AppValidators.validateQuality(90), isNull);
       expect(AppValidators.validateQuality(5), isNotNull);
       expect(AppValidators.validateQuality(105), isNotNull);

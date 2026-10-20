@@ -1,0 +1,1972 @@
+{
+  "generatedBy": "trace-graph",
+  "app": "idmark",
+  "stats": {
+    "BR": 8,
+    "FR": 9,
+    "NFR": 3,
+    "ROL": 1,
+    "MOD": 6,
+    "EP": 3,
+    "FLOW": 7,
+    "US": 10,
+    "PG": 7,
+    "FN": 14,
+    "TC": 31,
+    "TC_by_kind": {
+      "positive": 8,
+      "negative": 9,
+      "edge": 7,
+      "corner": 7
+    },
+    "TC_with_evidence": 31,
+    "BAST": 7
+  },
+  "nodes": [
+    {
+      "id": "BR-001",
+      "type": "BR",
+      "title": "Foto dokumen identitas tidak boleh dikirim ke server atau cloud mana pun dalam keadaan apa pun. FR-001, NFR-001",
+      "source": "docs/BRD.md"
+    },
+    {
+      "id": "BR-002",
+      "type": "BR",
+      "title": "Hasil render wajib mempertahankan resolusi asli gambar input dan terbaca verifikator. FR-005",
+      "source": "docs/BRD.md"
+    },
+    {
+      "id": "BR-003",
+      "type": "BR",
+      "title": "Setiap ekspor wajib memuat tujuan dan tanggal yang terbaca manusia. FR-002, NFR-003",
+      "source": "docs/BRD.md"
+    },
+    {
+      "id": "BR-004",
+      "type": "BR",
+      "title": "Tanpa backend, tanpa akun, tanpa tracking data sensitif; jejak ekspor hanya tersimpan lokal. FR-007, FR-009",
+      "source": "docs/BRD.md"
+    },
+    {
+      "id": "BR-005",
+      "type": "BR",
+      "title": "Preset wajib mencakup kebutuhan lokal Indonesia dan kebutuhan global. FR-003",
+      "source": "docs/BRD.md"
+    },
+    {
+      "id": "BR-006",
+      "type": "BR",
+      "title": "Cap cukup jelas dan menyeluruh sehingga pemotongan bagian ber-cap merusak kegunaan salinan bagi oknum. FR-004, FR-008",
+      "source": "docs/BRD.md"
+    },
+    {
+      "id": "BR-007",
+      "type": "BR",
+      "title": "Elemen sensitif yang tidak diminta penerima (tanda tangan, NIK) bisa ditutup permanen. FR-006",
+      "source": "docs/BRD.md"
+    },
+    {
+      "id": "BR-008",
+      "type": "BR",
+      "title": "Semua input pengguna divalidasi sebelum dipakai atau disimpan (§VAL). NFR-002",
+      "source": "docs/BRD.md"
+    },
+    {
+      "id": "FR-001",
+      "type": "FR",
+      "title": "Ambil foto dokumen dari galeri/kamera dan proses seluruhnya di memori perangkat. BR-001 US-001, FLOW-WMK-01",
+      "source": "docs/PRD.md"
+    },
+    {
+      "id": "FR-002",
+      "type": "FR",
+      "title": "Teks tujuan (3–80 karakter) + tanggal transaksi + subtext opsional (≤100) dibakar ke piksel. BR-003 US-002, FLOW-WMK-01",
+      "source": "docs/PRD.md"
+    },
+    {
+      "id": "FR-003",
+      "type": "FR",
+      "title": "Katalog preset lokal & internasional, pencarian, dan preset kustom (nama 3–50, kategori ≤30). BR-005 US-003, FLOW-PRS-01",
+      "source": "docs/PRD.md"
+    },
+    {
+      "id": "FR-004",
+      "type": "FR",
+      "title": "7 pola cap, 7 warna, opasitas 10–100%, ukuran 10–60 pt, kemiringan −90°…+90°. BR-006 US-004, US-005, FLOW-WMK-02",
+      "source": "docs/PRD.md"
+    },
+    {
+      "id": "FR-005",
+      "type": "FR",
+      "title": "Ekspor PNG/PDF pada resolusi asli; bagikan/unduh. BR-002 US-007, FLOW-WMK-01",
+      "source": "docs/PRD.md"
+    },
+    {
+      "id": "FR-006",
+      "type": "FR",
+      "title": "Sensor permanen (blackout/mosaik/blur) dengan kotak yang selalu di dalam gambar. BR-007 US-006, FLOW-RED-01",
+      "source": "docs/PRD.md"
+    },
+    {
+      "id": "FR-007",
+      "type": "FR",
+      "title": "Riwayat audit lokal maksimal 50 ekspor terbaru, bisa dibersihkan. BR-004 US-009, FLOW-HIS-01",
+      "source": "docs/PRD.md"
+    },
+    {
+      "id": "FR-008",
+      "type": "FR",
+      "title": "Panduan Kominfo/UU PDP dengan checklist dan nilai privasi A+…D. BR-006 US-010, FLOW-GDE-01",
+      "source": "docs/PRD.md"
+    },
+    {
+      "id": "FR-009",
+      "type": "FR",
+      "title": "Pengaturan tema, 8 bahasa, zona waktu, sanitasi EXIF, format ekspor bawaan, reset. BR-004 US-008, FLOW-SET-01",
+      "source": "docs/PRD.md"
+    },
+    {
+      "id": "NFR-001",
+      "type": "NFR",
+      "title": "Nol request jaringan selama alur watermark; berjalan di peramban/perangkat. BR-001 FLOW-WMK-01",
+      "source": "docs/PRD.md"
+    },
+    {
+      "id": "NFR-002",
+      "type": "NFR",
+      "title": "Validasi §VAL di setiap mutasi konfigurasi; data tersimpan yang tidak valid kembali ke bawaan. BR-008 FLOW-WMK-02, FLOW-SET-01",
+      "source": "docs/PRD.md"
+    },
+    {
+      "id": "NFR-003",
+      "type": "NFR",
+      "title": "Tanggal disimpan UTC ( Z ) dan dicap sesuai zona pilihan (§TZ). BR-003 FLOW-WMK-01",
+      "source": "docs/PRD.md"
+    },
+    {
+      "id": "ROL-001",
+      "type": "ROL",
+      "title": "USR",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "MOD-001",
+      "type": "MOD",
+      "title": "WMK",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "MOD-002",
+      "type": "MOD",
+      "title": "RED",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "MOD-003",
+      "type": "MOD",
+      "title": "PRS",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "MOD-004",
+      "type": "MOD",
+      "title": "HIS",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "MOD-005",
+      "type": "MOD",
+      "title": "GDE",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "MOD-006",
+      "type": "MOD",
+      "title": "SET",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "EP-001",
+      "type": "EP",
+      "title": "Proteksi dokumen",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "EP-002",
+      "type": "EP",
+      "title": "Template, jejak, dan kepatuhan",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "EP-003",
+      "type": "EP",
+      "title": "Pengaturan dan privasi",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "FLOW-WMK-01",
+      "type": "FLOW",
+      "title": "Membubuhkan cap tujuan dan tanggal lalu menyimpan dokumen",
+      "status": "as-built",
+      "source": "docs/reference/system/traceability.json",
+      "bast": null,
+      "bastReason": null
+    },
+    {
+      "id": "FLOW-WMK-02",
+      "type": "FLOW",
+      "title": "Mengatur pola, warna, dan opasitas cap",
+      "status": "as-built",
+      "source": "docs/reference/system/traceability.json",
+      "bast": null,
+      "bastReason": null
+    },
+    {
+      "id": "FLOW-RED-01",
+      "type": "FLOW",
+      "title": "Menyensor data sensitif sebelum dicap",
+      "status": "as-built",
+      "source": "docs/reference/system/traceability.json",
+      "bast": null,
+      "bastReason": null
+    },
+    {
+      "id": "FLOW-PRS-01",
+      "type": "FLOW",
+      "title": "Memakai dan membuat preset tujuan",
+      "status": "as-built",
+      "source": "docs/reference/system/traceability.json",
+      "bast": null,
+      "bastReason": null
+    },
+    {
+      "id": "FLOW-HIS-01",
+      "type": "FLOW",
+      "title": "Melihat riwayat audit ekspor",
+      "status": "as-built",
+      "source": "docs/reference/system/traceability.json",
+      "bast": null,
+      "bastReason": null
+    },
+    {
+      "id": "FLOW-GDE-01",
+      "type": "FLOW",
+      "title": "Memeriksa kepatuhan dengan panduan Kominfo",
+      "status": "as-built",
+      "source": "docs/reference/system/traceability.json",
+      "bast": null,
+      "bastReason": null
+    },
+    {
+      "id": "FLOW-SET-01",
+      "type": "FLOW",
+      "title": "Mengatur tampilan, bahasa, dan privasi",
+      "status": "as-built",
+      "source": "docs/reference/system/traceability.json",
+      "bast": null,
+      "bastReason": null
+    },
+    {
+      "id": "US-001",
+      "type": "US",
+      "title": "Membubuhkan cap tujuan dan tanggal lalu menyimpan dokumen",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "US-002",
+      "type": "US",
+      "title": "Membubuhkan cap tujuan dan tanggal lalu menyimpan dokumen",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "US-007",
+      "type": "US",
+      "title": "Membubuhkan cap tujuan dan tanggal lalu menyimpan dokumen",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "US-004",
+      "type": "US",
+      "title": "Mengatur pola, warna, dan opasitas cap",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "US-005",
+      "type": "US",
+      "title": "Mengatur pola, warna, dan opasitas cap",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "US-006",
+      "type": "US",
+      "title": "Menyensor data sensitif sebelum dicap",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "US-003",
+      "type": "US",
+      "title": "Memakai dan membuat preset tujuan",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "US-009",
+      "type": "US",
+      "title": "Melihat riwayat audit ekspor",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "US-010",
+      "type": "US",
+      "title": "Memeriksa kepatuhan dengan panduan Kominfo",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "US-008",
+      "type": "US",
+      "title": "Mengatur tampilan, bahasa, dan privasi",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-WMK-001",
+      "type": "PG",
+      "title": "/splash",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-WMK-002",
+      "type": "PG",
+      "title": "/onboarding",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-WMK-003",
+      "type": "PG",
+      "title": "/",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-PRS-001",
+      "type": "PG",
+      "title": "/presets",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-HIS-001",
+      "type": "PG",
+      "title": "/history",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-GDE-001",
+      "type": "PG",
+      "title": "/guide",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-SET-001",
+      "type": "PG",
+      "title": "/settings",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-WMK-101",
+      "type": "FN",
+      "title": "WatermarkRendererService",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-WMK-102",
+      "type": "FN",
+      "title": "WatermarkConfigNotifier",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-WMK-103",
+      "type": "FN",
+      "title": "WatermarkConfig",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-WMK-104",
+      "type": "FN",
+      "title": "AppValidators",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-WMK-105",
+      "type": "FN",
+      "title": "PdfExportService",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-WMK-106",
+      "type": "FN",
+      "title": "ImagePickerService",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-RED-101",
+      "type": "FN",
+      "title": "RedactionBox",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-PRS-101",
+      "type": "FN",
+      "title": "CustomPresetsNotifier",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-PRS-102",
+      "type": "FN",
+      "title": "WatermarkPreset",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-HIS-101",
+      "type": "FN",
+      "title": "AuditLogsNotifier",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-HIS-102",
+      "type": "FN",
+      "title": "AuditLogEntry",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-SET-101",
+      "type": "FN",
+      "title": "LocalStorageService",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-SET-102",
+      "type": "FN",
+      "title": "LocaleNotifier",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-SET-103",
+      "type": "FN",
+      "title": "AppTimeZone",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "FLOW-WMK-01-T01",
+      "type": "TC",
+      "title": "cap tujuan + tanggal dirender di perangkat dengan resolusi asli tetap utuh",
+      "layer": "unit",
+      "kind": "positive",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-WMK-01-T02",
+      "type": "TC",
+      "title": "validatePurpose rejects empty and invalid length",
+      "layer": "unit",
+      "kind": "negative",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-WMK-01-T03",
+      "type": "TC",
+      "title": "tujuan tepat 3 dan 80 karakter diterima, 81 karakter ditolak",
+      "layer": "unit",
+      "kind": "edge",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-WMK-01-T04",
+      "type": "TC",
+      "title": "tanggal cap mengikuti zona pilihan: instan yang sama bisa beda tanggal di Jakarta dan New York",
+      "layer": "unit",
+      "kind": "corner",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-WMK-02-T01",
+      "type": "TC",
+      "title": "pola, warna, dan opasitas tersimpan dan dipakai lagi saat app dibuka ulang",
+      "layer": "unit",
+      "kind": "positive",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-WMK-02-T02",
+      "type": "TC",
+      "title": "opasitas di luar 10–100% ditolak dan konfigurasi tersimpan tidak berubah",
+      "layer": "unit",
+      "kind": "negative",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-WMK-02-T03",
+      "type": "TC",
+      "title": "validateOpacity enforces 0.1 to 1.0 range",
+      "layer": "unit",
+      "kind": "edge",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-WMK-02-T04",
+      "type": "TC",
+      "title": "ketujuh pola cap dirender tanpa galat dan mempertahankan ukuran gambar",
+      "layer": "unit",
+      "kind": "corner",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-WMK-02-T05",
+      "type": "TC",
+      "title": "Invalid mutation throws ArgumentError",
+      "layer": "unit",
+      "kind": "negative",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-RED-01-T01",
+      "type": "TC",
+      "title": "Valid RedactionBox fromPreset passes validation",
+      "layer": "unit",
+      "kind": "positive",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-RED-01-T02",
+      "type": "TC",
+      "title": "kotak sensor di luar gambar atau berukuran nol ditolak validasi",
+      "layer": "unit",
+      "kind": "negative",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-RED-01-T03",
+      "type": "TC",
+      "title": "menggeser sensor ke tepi kanan dijepit agar tetap di dalam gambar",
+      "layer": "unit",
+      "kind": "edge",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-RED-01-T04",
+      "type": "TC",
+      "title": "tambah dua sensor, hapus satu, lalu bersihkan; konfigurasi rusak di storage kembali ke bawaan",
+      "layer": "unit",
+      "kind": "corner",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-PRS-01-T01",
+      "type": "TC",
+      "title": "LocalStorageService manages custom presets and audit logs",
+      "layer": "unit",
+      "kind": "positive",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-PRS-01-T02",
+      "type": "TC",
+      "title": "AppValidators validates quality and preset titles (§VAL)",
+      "layer": "unit",
+      "kind": "negative",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-PRS-01-T03",
+      "type": "TC",
+      "title": "preset bawaan ber-id unik, mencakup kebutuhan lokal dan internasional, dan semuanya valid",
+      "layer": "unit",
+      "kind": "edge",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-PRS-01-T04",
+      "type": "TC",
+      "title": "preset kustom ber-id sama menggantikan yang lama di urutan teratas; menerapkannya mengubah cap",
+      "layer": "unit",
+      "kind": "corner",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-HIS-01-T01",
+      "type": "TC",
+      "title": "HistoryScreen renders empty state and populated logs correctly",
+      "layer": "unit",
+      "kind": "positive",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-HIS-01-T02",
+      "type": "TC",
+      "title": "AuditLogEntry rejects invalid privacy score (§VAL)",
+      "layer": "unit",
+      "kind": "negative",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-HIS-01-T03",
+      "type": "TC",
+      "title": "riwayat dibatasi 50 ekspor terbaru, urutan terbaru di atas",
+      "layer": "unit",
+      "kind": "edge",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-HIS-01-T04",
+      "type": "TC",
+      "title": "riwayat rusak di storage dibaca kosong; bersihkan riwayat mengosongkan daftar",
+      "layer": "unit",
+      "kind": "corner",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-GDE-01-T01",
+      "type": "TC",
+      "title": "KominfoGuideScreen renders interactive checklist and rules",
+      "layer": "unit",
+      "kind": "positive",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-GDE-01-T02",
+      "type": "TC",
+      "title": "cap tanpa tanggal, tanpa sanitasi EXIF, dengan tujuan pendek mendapat nilai privasi D",
+      "layer": "unit",
+      "kind": "negative",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-GDE-01-T03",
+      "type": "TC",
+      "title": "batas nilai: 80 poin = A, 90 poin = A+",
+      "layer": "unit",
+      "kind": "edge",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-GDE-01-T04",
+      "type": "TC",
+      "title": "semua perlindungan aktif sekaligus tetap dijepit maksimum 100",
+      "layer": "unit",
+      "kind": "corner",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-GDE-01-T05",
+      "type": "TC",
+      "title": "High protection configuration yields Grade A+",
+      "layer": "unit",
+      "kind": "positive",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-SET-01-T01",
+      "type": "TC",
+      "title": "bahasa dan tema pilihan tersimpan lalu dipakai lagi saat app dibuka ulang",
+      "layer": "unit",
+      "kind": "positive",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-SET-01-T02",
+      "type": "TC",
+      "title": "konfigurasi tersimpan yang melanggar §VAL (tujuan kosong) diabaikan, kembali ke bawaan",
+      "layer": "unit",
+      "kind": "negative",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-SET-01-T03",
+      "type": "TC",
+      "title": "instalasi baru: tema gelap, sanitasi EXIF aktif, ekspor PNG",
+      "layer": "unit",
+      "kind": "edge",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-SET-01-T04",
+      "type": "TC",
+      "title": "unknown zone falls back to Jakarta, never throws",
+      "layer": "unit",
+      "kind": "corner",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-SET-01-T05",
+      "type": "TC",
+      "title": "lembar Pilih Bahasa dan Zona Waktu terbuka tanpa galat render dan bisa memilih bahasa",
+      "layer": "unit",
+      "kind": "negative",
+      "source": "docs/trace/flows.yaml"
+    }
+  ],
+  "edges": [
+    {
+      "from": "BR-001",
+      "to": "FR-001",
+      "via": "docs/BRD.md"
+    },
+    {
+      "from": "BR-001",
+      "to": "NFR-001",
+      "via": "docs/BRD.md"
+    },
+    {
+      "from": "BR-002",
+      "to": "FR-005",
+      "via": "docs/BRD.md"
+    },
+    {
+      "from": "BR-003",
+      "to": "FR-002",
+      "via": "docs/BRD.md"
+    },
+    {
+      "from": "BR-003",
+      "to": "NFR-003",
+      "via": "docs/BRD.md"
+    },
+    {
+      "from": "BR-004",
+      "to": "FR-007",
+      "via": "docs/BRD.md"
+    },
+    {
+      "from": "BR-004",
+      "to": "FR-009",
+      "via": "docs/BRD.md"
+    },
+    {
+      "from": "BR-005",
+      "to": "FR-003",
+      "via": "docs/BRD.md"
+    },
+    {
+      "from": "BR-006",
+      "to": "FR-004",
+      "via": "docs/BRD.md"
+    },
+    {
+      "from": "BR-006",
+      "to": "FR-008",
+      "via": "docs/BRD.md"
+    },
+    {
+      "from": "BR-007",
+      "to": "FR-006",
+      "via": "docs/BRD.md"
+    },
+    {
+      "from": "BR-008",
+      "to": "NFR-002",
+      "via": "docs/BRD.md"
+    },
+    {
+      "from": "FR-001",
+      "to": "BR-001",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-001",
+      "to": "US-001",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-001",
+      "to": "FLOW-WMK-01",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-002",
+      "to": "BR-003",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-002",
+      "to": "US-002",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-002",
+      "to": "FLOW-WMK-01",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-003",
+      "to": "BR-005",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-003",
+      "to": "US-003",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-003",
+      "to": "FLOW-PRS-01",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-004",
+      "to": "BR-006",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-004",
+      "to": "US-004",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-004",
+      "to": "US-005",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-004",
+      "to": "FLOW-WMK-02",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-005",
+      "to": "BR-002",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-005",
+      "to": "US-007",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-005",
+      "to": "FLOW-WMK-01",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-006",
+      "to": "BR-007",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-006",
+      "to": "US-006",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-006",
+      "to": "FLOW-RED-01",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-007",
+      "to": "BR-004",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-007",
+      "to": "US-009",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-007",
+      "to": "FLOW-HIS-01",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-008",
+      "to": "BR-006",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-008",
+      "to": "US-010",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-008",
+      "to": "FLOW-GDE-01",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-009",
+      "to": "BR-004",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-009",
+      "to": "US-008",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-009",
+      "to": "FLOW-SET-01",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "NFR-001",
+      "to": "BR-001",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "NFR-001",
+      "to": "FLOW-WMK-01",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "NFR-002",
+      "to": "BR-008",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "NFR-002",
+      "to": "FLOW-WMK-02",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "NFR-002",
+      "to": "FLOW-SET-01",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "NFR-003",
+      "to": "BR-003",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "NFR-003",
+      "to": "FLOW-WMK-01",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "EP-001",
+      "to": "MOD-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "EP-001",
+      "to": "MOD-002",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "EP-002",
+      "to": "MOD-003",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "EP-002",
+      "to": "MOD-004",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "EP-002",
+      "to": "MOD-005",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "EP-003",
+      "to": "MOD-006",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-WMK-01",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-WMK-01",
+      "to": "MOD-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-WMK-01",
+      "to": "EP-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-WMK-01",
+      "to": "US-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-WMK-01",
+      "to": "US-002",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-WMK-01",
+      "to": "US-007",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-WMK-02",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-WMK-02",
+      "to": "MOD-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-WMK-02",
+      "to": "EP-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-WMK-02",
+      "to": "US-004",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-WMK-02",
+      "to": "US-005",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-RED-01",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-RED-01",
+      "to": "MOD-002",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-RED-01",
+      "to": "EP-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-RED-01",
+      "to": "US-006",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-PRS-01",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-PRS-01",
+      "to": "MOD-003",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-PRS-01",
+      "to": "EP-002",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-PRS-01",
+      "to": "US-003",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-HIS-01",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-HIS-01",
+      "to": "MOD-004",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-HIS-01",
+      "to": "EP-002",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-HIS-01",
+      "to": "US-009",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-GDE-01",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-GDE-01",
+      "to": "MOD-005",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-GDE-01",
+      "to": "EP-002",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-GDE-01",
+      "to": "US-010",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-SET-01",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-SET-01",
+      "to": "MOD-006",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-SET-01",
+      "to": "EP-003",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-SET-01",
+      "to": "US-008",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "US-001",
+      "to": "EP-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "US-002",
+      "to": "EP-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "US-007",
+      "to": "EP-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "US-004",
+      "to": "EP-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "US-005",
+      "to": "EP-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "US-006",
+      "to": "EP-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "US-003",
+      "to": "EP-002",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "US-009",
+      "to": "EP-002",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "US-010",
+      "to": "EP-002",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "US-008",
+      "to": "EP-003",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-001",
+      "to": "FLOW-WMK-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-001",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-001",
+      "to": "MOD-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-002",
+      "to": "FLOW-WMK-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-002",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-002",
+      "to": "MOD-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-003",
+      "to": "FLOW-WMK-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-003",
+      "to": "FLOW-WMK-02",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-003",
+      "to": "FLOW-RED-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-003",
+      "to": "FLOW-HIS-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-003",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-003",
+      "to": "MOD-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-PRS-001",
+      "to": "FLOW-PRS-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-PRS-001",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-PRS-001",
+      "to": "MOD-003",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-HIS-001",
+      "to": "FLOW-HIS-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-HIS-001",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-HIS-001",
+      "to": "MOD-004",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-GDE-001",
+      "to": "FLOW-GDE-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-GDE-001",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-GDE-001",
+      "to": "MOD-005",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-SET-001",
+      "to": "FLOW-SET-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-SET-001",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-SET-001",
+      "to": "MOD-006",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-101",
+      "to": "FLOW-WMK-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-101",
+      "to": "FLOW-WMK-02",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-101",
+      "to": "FLOW-RED-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-101",
+      "to": "MOD-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-102",
+      "to": "FLOW-WMK-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-102",
+      "to": "FLOW-WMK-02",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-102",
+      "to": "FLOW-RED-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-102",
+      "to": "FLOW-PRS-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-102",
+      "to": "MOD-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-103",
+      "to": "FLOW-WMK-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-103",
+      "to": "FLOW-WMK-02",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-103",
+      "to": "FLOW-GDE-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-103",
+      "to": "MOD-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-104",
+      "to": "FLOW-WMK-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-104",
+      "to": "FLOW-WMK-02",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-104",
+      "to": "FLOW-PRS-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-104",
+      "to": "MOD-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-105",
+      "to": "FLOW-WMK-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-105",
+      "to": "MOD-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-106",
+      "to": "FLOW-WMK-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-WMK-106",
+      "to": "MOD-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-RED-101",
+      "to": "FLOW-RED-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-RED-101",
+      "to": "MOD-002",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-PRS-101",
+      "to": "FLOW-PRS-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-PRS-101",
+      "to": "MOD-003",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-PRS-102",
+      "to": "FLOW-PRS-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-PRS-102",
+      "to": "MOD-003",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-HIS-101",
+      "to": "FLOW-HIS-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-HIS-101",
+      "to": "MOD-004",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-HIS-102",
+      "to": "FLOW-HIS-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-HIS-102",
+      "to": "MOD-004",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-SET-101",
+      "to": "FLOW-SET-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-SET-101",
+      "to": "FLOW-PRS-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-SET-101",
+      "to": "FLOW-HIS-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-SET-101",
+      "to": "FLOW-WMK-02",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-SET-101",
+      "to": "MOD-006",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-SET-102",
+      "to": "FLOW-SET-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-SET-102",
+      "to": "MOD-006",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-SET-103",
+      "to": "FLOW-SET-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-SET-103",
+      "to": "FLOW-WMK-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-SET-103",
+      "to": "MOD-006",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-WMK-01",
+      "to": "FR-001",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-WMK-01",
+      "to": "FR-002",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-WMK-01",
+      "to": "FR-005",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-WMK-01",
+      "to": "NFR-001",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-WMK-01",
+      "to": "NFR-003",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-WMK-01-T01",
+      "to": "FLOW-WMK-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-WMK-01-T02",
+      "to": "FLOW-WMK-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-WMK-01-T03",
+      "to": "FLOW-WMK-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-WMK-01-T04",
+      "to": "FLOW-WMK-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-WMK-02",
+      "to": "FR-004",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-WMK-02",
+      "to": "NFR-002",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-WMK-02-T01",
+      "to": "FLOW-WMK-02",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-WMK-02-T02",
+      "to": "FLOW-WMK-02",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-WMK-02-T03",
+      "to": "FLOW-WMK-02",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-WMK-02-T04",
+      "to": "FLOW-WMK-02",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-WMK-02-T05",
+      "to": "FLOW-WMK-02",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-RED-01",
+      "to": "FR-006",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-RED-01-T01",
+      "to": "FLOW-RED-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-RED-01-T02",
+      "to": "FLOW-RED-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-RED-01-T03",
+      "to": "FLOW-RED-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-RED-01-T04",
+      "to": "FLOW-RED-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-PRS-01",
+      "to": "FR-003",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-PRS-01-T01",
+      "to": "FLOW-PRS-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-PRS-01-T02",
+      "to": "FLOW-PRS-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-PRS-01-T03",
+      "to": "FLOW-PRS-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-PRS-01-T04",
+      "to": "FLOW-PRS-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-HIS-01",
+      "to": "FR-007",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-HIS-01-T01",
+      "to": "FLOW-HIS-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-HIS-01-T02",
+      "to": "FLOW-HIS-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-HIS-01-T03",
+      "to": "FLOW-HIS-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-HIS-01-T04",
+      "to": "FLOW-HIS-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-GDE-01",
+      "to": "FR-008",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-GDE-01-T01",
+      "to": "FLOW-GDE-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-GDE-01-T02",
+      "to": "FLOW-GDE-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-GDE-01-T03",
+      "to": "FLOW-GDE-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-GDE-01-T04",
+      "to": "FLOW-GDE-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-GDE-01-T05",
+      "to": "FLOW-GDE-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-SET-01",
+      "to": "FR-009",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-SET-01",
+      "to": "NFR-002",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-SET-01-T01",
+      "to": "FLOW-SET-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-SET-01-T02",
+      "to": "FLOW-SET-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-SET-01-T03",
+      "to": "FLOW-SET-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-SET-01-T04",
+      "to": "FLOW-SET-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-SET-01-T05",
+      "to": "FLOW-SET-01",
+      "via": "docs/trace/flows.yaml"
+    }
+  ],
+  "cases": [
+    {
+      "id": "FLOW-WMK-01-T01",
+      "flow": "FLOW-WMK-01",
+      "title": "cap tujuan + tanggal dirender di perangkat dengan resolusi asli tetap utuh",
+      "layer": "unit",
+      "kind": "positive",
+      "walk": false
+    },
+    {
+      "id": "FLOW-WMK-01-T02",
+      "flow": "FLOW-WMK-01",
+      "title": "validatePurpose rejects empty and invalid length",
+      "layer": "unit",
+      "kind": "negative",
+      "walk": false
+    },
+    {
+      "id": "FLOW-WMK-01-T03",
+      "flow": "FLOW-WMK-01",
+      "title": "tujuan tepat 3 dan 80 karakter diterima, 81 karakter ditolak",
+      "layer": "unit",
+      "kind": "edge",
+      "walk": false
+    },
+    {
+      "id": "FLOW-WMK-01-T04",
+      "flow": "FLOW-WMK-01",
+      "title": "tanggal cap mengikuti zona pilihan: instan yang sama bisa beda tanggal di Jakarta dan New York",
+      "layer": "unit",
+      "kind": "corner",
+      "walk": false
+    },
+    {
+      "id": "FLOW-WMK-02-T01",
+      "flow": "FLOW-WMK-02",
+      "title": "pola, warna, dan opasitas tersimpan dan dipakai lagi saat app dibuka ulang",
+      "layer": "unit",
+      "kind": "positive",
+      "walk": false
+    },
+    {
+      "id": "FLOW-WMK-02-T02",
+      "flow": "FLOW-WMK-02",
+      "title": "opasitas di luar 10–100% ditolak dan konfigurasi tersimpan tidak berubah",
+      "layer": "unit",
+      "kind": "negative",
+      "walk": false
+    },
+    {
+      "id": "FLOW-WMK-02-T03",
+      "flow": "FLOW-WMK-02",
+      "title": "validateOpacity enforces 0.1 to 1.0 range",
+      "layer": "unit",
+      "kind": "edge",
+      "walk": false
+    },
+    {
+      "id": "FLOW-WMK-02-T04",
+      "flow": "FLOW-WMK-02",
+      "title": "ketujuh pola cap dirender tanpa galat dan mempertahankan ukuran gambar",
+      "layer": "unit",
+      "kind": "corner",
+      "walk": false
+    },
+    {
+      "id": "FLOW-WMK-02-T05",
+      "flow": "FLOW-WMK-02",
+      "title": "Invalid mutation throws ArgumentError",
+      "layer": "unit",
+      "kind": "negative",
+      "walk": false
+    },
+    {
+      "id": "FLOW-RED-01-T01",
+      "flow": "FLOW-RED-01",
+      "title": "Valid RedactionBox fromPreset passes validation",
+      "layer": "unit",
+      "kind": "positive",
+      "walk": false
+    },
+    {
+      "id": "FLOW-RED-01-T02",
+      "flow": "FLOW-RED-01",
+      "title": "kotak sensor di luar gambar atau berukuran nol ditolak validasi",
+      "layer": "unit",
+      "kind": "negative",
+      "walk": false
+    },
+    {
+      "id": "FLOW-RED-01-T03",
+      "flow": "FLOW-RED-01",
+      "title": "menggeser sensor ke tepi kanan dijepit agar tetap di dalam gambar",
+      "layer": "unit",
+      "kind": "edge",
+      "walk": false
+    },
+    {
+      "id": "FLOW-RED-01-T04",
+      "flow": "FLOW-RED-01",
+      "title": "tambah dua sensor, hapus satu, lalu bersihkan; konfigurasi rusak di storage kembali ke bawaan",
+      "layer": "unit",
+      "kind": "corner",
+      "walk": false
+    },
+    {
+      "id": "FLOW-PRS-01-T01",
+      "flow": "FLOW-PRS-01",
+      "title": "LocalStorageService manages custom presets and audit logs",
+      "layer": "unit",
+      "kind": "positive",
+      "walk": false
+    },
+    {
+      "id": "FLOW-PRS-01-T02",
+      "flow": "FLOW-PRS-01",
+      "title": "AppValidators validates quality and preset titles (§VAL)",
+      "layer": "unit",
+      "kind": "negative",
+      "walk": false
+    },
+    {
+      "id": "FLOW-PRS-01-T03",
+      "flow": "FLOW-PRS-01",
+      "title": "preset bawaan ber-id unik, mencakup kebutuhan lokal dan internasional, dan semuanya valid",
+      "layer": "unit",
+      "kind": "edge",
+      "walk": false
+    },
+    {
+      "id": "FLOW-PRS-01-T04",
+      "flow": "FLOW-PRS-01",
+      "title": "preset kustom ber-id sama menggantikan yang lama di urutan teratas; menerapkannya mengubah cap",
+      "layer": "unit",
+      "kind": "corner",
+      "walk": false
+    },
+    {
+      "id": "FLOW-HIS-01-T01",
+      "flow": "FLOW-HIS-01",
+      "title": "HistoryScreen renders empty state and populated logs correctly",
+      "layer": "unit",
+      "kind": "positive",
+      "walk": false
+    },
+    {
+      "id": "FLOW-HIS-01-T02",
+      "flow": "FLOW-HIS-01",
+      "title": "AuditLogEntry rejects invalid privacy score (§VAL)",
+      "layer": "unit",
+      "kind": "negative",
+      "walk": false
+    },
+    {
+      "id": "FLOW-HIS-01-T03",
+      "flow": "FLOW-HIS-01",
+      "title": "riwayat dibatasi 50 ekspor terbaru, urutan terbaru di atas",
+      "layer": "unit",
+      "kind": "edge",
+      "walk": false
+    },
+    {
+      "id": "FLOW-HIS-01-T04",
+      "flow": "FLOW-HIS-01",
+      "title": "riwayat rusak di storage dibaca kosong; bersihkan riwayat mengosongkan daftar",
+      "layer": "unit",
+      "kind": "corner",
+      "walk": false
+    },
+    {
+      "id": "FLOW-GDE-01-T01",
+      "flow": "FLOW-GDE-01",
+      "title": "KominfoGuideScreen renders interactive checklist and rules",
+      "layer": "unit",
+      "kind": "positive",
+      "walk": false
+    },
+    {
+      "id": "FLOW-GDE-01-T02",
+      "flow": "FLOW-GDE-01",
+      "title": "cap tanpa tanggal, tanpa sanitasi EXIF, dengan tujuan pendek mendapat nilai privasi D",
+      "layer": "unit",
+      "kind": "negative",
+      "walk": false
+    },
+    {
+      "id": "FLOW-GDE-01-T03",
+      "flow": "FLOW-GDE-01",
+      "title": "batas nilai: 80 poin = A, 90 poin = A+",
+      "layer": "unit",
+      "kind": "edge",
+      "walk": false
+    },
+    {
+      "id": "FLOW-GDE-01-T04",
+      "flow": "FLOW-GDE-01",
+      "title": "semua perlindungan aktif sekaligus tetap dijepit maksimum 100",
+      "layer": "unit",
+      "kind": "corner",
+      "walk": false
+    },
+    {
+      "id": "FLOW-GDE-01-T05",
+      "flow": "FLOW-GDE-01",
+      "title": "High protection configuration yields Grade A+",
+      "layer": "unit",
+      "kind": "positive",
+      "walk": false
+    },
+    {
+      "id": "FLOW-SET-01-T01",
+      "flow": "FLOW-SET-01",
+      "title": "bahasa dan tema pilihan tersimpan lalu dipakai lagi saat app dibuka ulang",
+      "layer": "unit",
+      "kind": "positive",
+      "walk": false
+    },
+    {
+      "id": "FLOW-SET-01-T02",
+      "flow": "FLOW-SET-01",
+      "title": "konfigurasi tersimpan yang melanggar §VAL (tujuan kosong) diabaikan, kembali ke bawaan",
+      "layer": "unit",
+      "kind": "negative",
+      "walk": false
+    },
+    {
+      "id": "FLOW-SET-01-T03",
+      "flow": "FLOW-SET-01",
+      "title": "instalasi baru: tema gelap, sanitasi EXIF aktif, ekspor PNG",
+      "layer": "unit",
+      "kind": "edge",
+      "walk": false
+    },
+    {
+      "id": "FLOW-SET-01-T04",
+      "flow": "FLOW-SET-01",
+      "title": "unknown zone falls back to Jakarta, never throws",
+      "layer": "unit",
+      "kind": "corner",
+      "walk": false
+    },
+    {
+      "id": "FLOW-SET-01-T05",
+      "flow": "FLOW-SET-01",
+      "title": "lembar Pilih Bahasa dan Zona Waktu terbuka tanpa galat render dan bisa memilih bahasa",
+      "layer": "unit",
+      "kind": "negative",
+      "walk": false
+    }
+  ],
+  "problems": []
+}

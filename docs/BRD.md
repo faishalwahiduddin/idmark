@@ -49,16 +49,21 @@ Satu aktor saja; tidak ada peran berbasis server.
 - **Sensor/redaksi.** Penutupan elemen sensitif seperti tanda tangan.
 - **Render lokal.** Seluruh pengolahan gambar di perangkat tanpa jaringan.
 
-## 4. Aturan bisnis
+## 4. Kebutuhan bisnis dan aturan
 
-1. Foto dokumen identitas tidak boleh dikirim ke server atau cloud mana
-   pun dalam keadaan apa pun.
-2. Hasil render wajib mempertahankan resolusi asli gambar input.
-3. Setiap ekspor wajib memuat tujuan dan tanggal yang terbaca manusia.
-4. Tanpa backend, tanpa akun, tanpa tracking data sensitif pengguna.
-5. Preset wajib mencakup kebutuhan lokal Indonesia dan kebutuhan global.
-6. Cap harus cukup jelas hingga pemotongan bagian ber-cap merusak
-   kegunaan salinan bagi oknum.
+ID `BR-NNN` dideklarasikan di sini; kolom terakhir menunjuk kebutuhan produk
+di [PRD](./PRD.md) yang merealisasikannya (§TRACE).
+
+| ID | Kebutuhan / aturan bisnis | Direalisasi oleh |
+|---|---|---|
+| BR-001 | Foto dokumen identitas tidak boleh dikirim ke server atau cloud mana pun dalam keadaan apa pun. | FR-001, NFR-001 |
+| BR-002 | Hasil render wajib mempertahankan resolusi asli gambar input dan terbaca verifikator. | FR-005 |
+| BR-003 | Setiap ekspor wajib memuat tujuan dan tanggal yang terbaca manusia. | FR-002, NFR-003 |
+| BR-004 | Tanpa backend, tanpa akun, tanpa tracking data sensitif; jejak ekspor hanya tersimpan lokal. | FR-007, FR-009 |
+| BR-005 | Preset wajib mencakup kebutuhan lokal Indonesia dan kebutuhan global. | FR-003 |
+| BR-006 | Cap cukup jelas dan menyeluruh sehingga pemotongan bagian ber-cap merusak kegunaan salinan bagi oknum. | FR-004, FR-008 |
+| BR-007 | Elemen sensitif yang tidak diminta penerima (tanda tangan, NIK) bisa ditutup permanen. | FR-006 |
+| BR-008 | Semua input pengguna divalidasi sebelum dipakai atau disimpan (§VAL). | NFR-002 |
 
 ## 5. Risiko dan batasan
 

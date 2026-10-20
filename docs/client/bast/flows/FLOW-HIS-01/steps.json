@@ -1,0 +1,25 @@
+{
+  "flow": "FLOW-HIS-01",
+  "title": "Melihat riwayat audit ekspor",
+  "summary": "Setelah menyimpan dokumen, pengguna melihat jejak audit lokal: tujuan, pola, ukuran berkas, dan sidik SHA-256 tiap ekspor.",
+  "role": "ROL-001",
+  "tc": "FLOW-HIS-01-T01",
+  "baseURL": "flutter build web (lokal)",
+  "video": "video.mp4",
+  "steps": [
+    {
+      "n": 1,
+      "title": "Simpan satu dokumen",
+      "instruction": "Pilih foto di tab **Watermark** lalu ketuk **Simpan Dokumen (PNG)**. Setiap ekspor otomatis tercatat di riwayat lokal.",
+      "image": "step-01.png",
+      "t": 23.5
+    },
+    {
+      "n": 2,
+      "title": "Buka tab Riwayat",
+      "instruction": "Ketuk tab **Riwayat**. **Audit Log Privasi Lokal** menampilkan dokumen yang distempel beserta tujuan, format, dan nilai privasinya.",
+      "image": "step-02.png",
+      "t": 27.2
+    }
+  ]
+}

@@ -30,7 +30,7 @@ void main() {
       expect(AppTimeZone.isValidZoneName('GMT+7'), isFalse);
     });
 
-    test('unknown zone falls back to Jakarta, never throws', () {
+    test('FLOW-SET-01-T04 unknown zone falls back to Jakarta, never throws', () {
       expect(
         AppTimeZone.locationOrFallback('Mars/Olympus').name,
         'Asia/Jakarta',

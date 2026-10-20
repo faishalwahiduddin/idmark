@@ -1,0 +1,46 @@
+{
+  "flow": "FLOW-WMK-01",
+  "title": "Membubuhkan cap tujuan dan tanggal lalu menyimpan dokumen",
+  "summary": "Pengguna membuka IDMark pertama kali, memilih foto kartu identitas, menulis tujuan verifikasi, lalu menyimpan dokumen ber-watermark resolusi penuh. Semua diproses di perangkat; foto tidak pernah diunggah.",
+  "role": "ROL-001",
+  "tc": "FLOW-WMK-01-T01",
+  "baseURL": "flutter build web (lokal)",
+  "video": "video.mp4",
+  "steps": [
+    {
+      "n": 1,
+      "title": "Buka IDMark",
+      "instruction": "Saat pertama dibuka, IDMark menampilkan layar perkenalan. Ketuk **Lewati** untuk langsung ke editor.",
+      "image": "step-01.png",
+      "t": 6.9
+    },
+    {
+      "n": 2,
+      "title": "Masuk ke editor Watermark",
+      "instruction": "Tab **Watermark** menampilkan kotak **Unggah Foto e-KTP / Identitas** dan panel konfigurasi cap.",
+      "image": "step-02.png",
+      "t": 9.5
+    },
+    {
+      "n": 3,
+      "title": "Pilih foto identitas",
+      "instruction": "Ketuk **Buka Galeri** lalu pilih foto kartu identitas. Pratinjau langsung menampilkan cap merah melintang.",
+      "image": "step-03.png",
+      "t": 13.4
+    },
+    {
+      "n": 4,
+      "title": "Tulis tujuan verifikasi",
+      "instruction": "Isi **Tujuan Watermark** dengan instansi dan keperluan spesifik, misalnya **VERIFIKASI REKENING BANK CONTOH**. Tanggal transaksi otomatis tercantum.",
+      "image": "step-04.png",
+      "t": 28.4
+    },
+    {
+      "n": 5,
+      "title": "Simpan dokumen",
+      "instruction": "Ketuk **Simpan Dokumen (PNG)**. Dokumen dirender di perangkat dengan resolusi asli dan dialog **Watermark Selesai!** muncul.",
+      "image": "step-05.png",
+      "t": 40.8
+    }
+  ]
+}

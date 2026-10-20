@@ -28,7 +28,7 @@ MaterialApp _testApp(Widget home) {
 }
 
 void main() {
-  testWidgets('HistoryScreen renders empty state and populated logs correctly', (tester) async {
+  testWidgets('FLOW-HIS-01-T01 HistoryScreen renders empty state and populated logs correctly', (tester) async {
     SharedPreferences.setMockInitialValues({});
     final storage = await LocalStorageService.init();
 
@@ -93,7 +93,7 @@ void main() {
     expect(find.text('Pembukaan Rekening Bank'), findsOneWidget);
   });
 
-  testWidgets('KominfoGuideScreen renders interactive checklist and rules', (tester) async {
+  testWidgets('FLOW-GDE-01-T01 KominfoGuideScreen renders interactive checklist and rules', (tester) async {
     await tester.pumpWidget(
       _testApp(const KominfoGuideScreen()),
     );

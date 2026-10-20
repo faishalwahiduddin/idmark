@@ -28,20 +28,41 @@ langsung pada piksel gambar, tanpa satu byte pun dikirim ke server.
 
 ## 4. Features
 
-### 4.1 MVP
+### 4.1 MVP (story)
 
 | Kode | Fitur | SP | Deskripsi | Lokasi kode |
 |---|---|:---:|---|---|
-| `US-001` | **Shell + ambil gambar** | 2 | image_picker kamera/galeri | `lib/features/` |
-| `US-002` | **Watermark teks** | 5 | Teks tujuan + tanggal, atur posisi | `lib/features/` |
-| `US-003` | **Preset tujuan** | 3 | e-KTP Kominfo, KYC bank, lamaran, rental, SIM | `lib/features/` |
-| `US-004` | **Pola cap** | 3 | Diagonal, grid berulang, bottom bar, corner | `lib/features/` |
-| `US-005` | **Opasitas dan warna** | 2 | Kontras, transparansi, warna cap | `lib/features/` |
-| `US-006` | **Redaksi/sensor** | 3 | Tutup elemen sensitif (tanda tangan, digit) | `lib/features/` |
-| `US-007` | **Ekspor resolusi penuh** | 2 | Render resolusi asli + share_plus | `lib/features/` |
-| `US-008` | **i18n** | 3 | Indonesia + Inggris | `lib/l10n/` |
+| `US-001` | **Shell + ambil gambar** | 2 | image_picker kamera/galeri, 5 tab | `lib/features/editor/`, `lib/features/shell/` |
+| `US-002` | **Watermark teks** | 5 | Teks tujuan + tanggal + subtext | `lib/features/editor/` |
+| `US-003` | **Preset tujuan** | 3 | 18 template lokal & internasional + preset kustom | `lib/features/presets/` |
+| `US-004` | **Pola cap** | 3 | 7 pola: pita melintang, grid, pita bawah, cap sudut, segel, silang, lencana QR | `lib/core/services/watermark_renderer_service.dart` |
+| `US-005` | **Opasitas dan warna** | 2 | 7 warna, opasitas, ukuran, kemiringan | `lib/features/editor/widgets/` |
+| `US-006` | **Redaksi/sensor** | 3 | Sensor NIK, tanda tangan, alamat, tgl lahir, area kustom | `lib/core/models/redaction_item.dart` |
+| `US-007` | **Ekspor resolusi penuh** | 2 | Render resolusi asli PNG/PDF + bagikan | `lib/features/editor/` |
+| `US-008` | **i18n & pengaturan** | 3 | 8 bahasa, tema, zona waktu, EXIF, format bawaan | `lib/features/settings/`, `lib/l10n/` |
+| `US-009` | **Riwayat audit** | 2 | Log ekspor lokal (tujuan, SHA-256, nilai privasi) | `lib/features/history/` |
+| `US-010` | **Panduan Kominfo** | 2 | Checklist aman + aturan pokok + nilai privasi | `lib/features/guide/` |
 
-### 4.2 Di luar cakupan
+### 4.2 Kebutuhan produk (FR / NFR)
+
+Setiap baris: asal `BR` dan story/flow yang merealisasikannya (§TRACE).
+
+| ID | Kebutuhan | Asal | Realisasi |
+|---|---|---|---|
+| FR-001 | Ambil foto dokumen dari galeri/kamera dan proses seluruhnya di memori perangkat. | BR-001 | US-001, FLOW-WMK-01 |
+| FR-002 | Teks tujuan (3–80 karakter) + tanggal transaksi + subtext opsional (≤100) dibakar ke piksel. | BR-003 | US-002, FLOW-WMK-01 |
+| FR-003 | Katalog preset lokal & internasional, pencarian, dan preset kustom (nama 3–50, kategori ≤30). | BR-005 | US-003, FLOW-PRS-01 |
+| FR-004 | 7 pola cap, 7 warna, opasitas 10–100%, ukuran 10–60 pt, kemiringan −90°…+90°. | BR-006 | US-004, US-005, FLOW-WMK-02 |
+| FR-005 | Ekspor PNG/PDF pada resolusi asli; bagikan/unduh. | BR-002 | US-007, FLOW-WMK-01 |
+| FR-006 | Sensor permanen (blackout/mosaik/blur) dengan kotak yang selalu di dalam gambar. | BR-007 | US-006, FLOW-RED-01 |
+| FR-007 | Riwayat audit lokal maksimal 50 ekspor terbaru, bisa dibersihkan. | BR-004 | US-009, FLOW-HIS-01 |
+| FR-008 | Panduan Kominfo/UU PDP dengan checklist dan nilai privasi A+…D. | BR-006 | US-010, FLOW-GDE-01 |
+| FR-009 | Pengaturan tema, 8 bahasa, zona waktu, sanitasi EXIF, format ekspor bawaan, reset. | BR-004 | US-008, FLOW-SET-01 |
+| NFR-001 | Nol request jaringan selama alur watermark; berjalan di peramban/perangkat. | BR-001 | FLOW-WMK-01 |
+| NFR-002 | Validasi §VAL di setiap mutasi konfigurasi; data tersimpan yang tidak valid kembali ke bawaan. | BR-008 | FLOW-WMK-02, FLOW-SET-01 |
+| NFR-003 | Tanggal disimpan UTC (`Z`) dan dicap sesuai zona pilihan (§TZ). | BR-003 | FLOW-WMK-01 |
+
+### 4.3 Di luar cakupan
 
 - Verifikasi keaslian dokumen (bukan pemeriksa KTP palsu)
 - Tanda tangan digital kriptografis
@@ -60,12 +81,9 @@ bila pengguna mengekspor. Tanpa database server.
 
 ## 6. User Flows
 
-1. **Cap cepat.** Pilih foto KTP → pilih preset (misal "KYC Bank +
-   tanggal hari ini") → atur posisi → ekspor dan kirim.
-2. **Cap custom.** Ketik tujuan sendiri → pilih pola grid → atur opasitas
-   → pratinjau → ekspor resolusi penuh.
-3. **Sensor.** Tutup tanda tangan atau digit sensitif → timpa cap tanggal
-   → ekspor.
+Narasi alur ada di [`reference/specs/user-flows.md`](reference/specs/user-flows.md);
+ID flow, layar, dan test case di `reference/system/traceability.json` dan
+`trace/flows.yaml` (§TRACE). Panduan BAST: `client/bast/guide/index.html`.
 
 ## 7. Validasi (§VAL)
 

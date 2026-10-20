@@ -1,0 +1,39 @@
+{
+  "flow": "FLOW-SET-01",
+  "title": "Mengatur tampilan, bahasa, dan privasi",
+  "summary": "Pengguna membuka Pengaturan untuk memilih tema, bahasa, zona waktu, sanitasi EXIF, dan format ekspor bawaan.",
+  "role": "ROL-001",
+  "tc": "FLOW-SET-01-T01",
+  "baseURL": "flutter build web (lokal)",
+  "video": "video.mp4",
+  "steps": [
+    {
+      "n": 1,
+      "title": "Buka Pengaturan",
+      "instruction": "Ketuk tab **Pengaturan**. Bagian atas menegaskan **Privasi Mutlak (Zero Server Upload)**.",
+      "image": "step-01.png",
+      "t": 9
+    },
+    {
+      "n": 2,
+      "title": "Pilih bahasa",
+      "instruction": "Ketuk **Bahasa Aplikasi**. Lembar **Pilih Bahasa** menampilkan 8 bahasa; ketuk **Bahasa Indonesia** untuk tetap memakai bahasa ini.",
+      "image": "step-02.png",
+      "t": 10.9
+    },
+    {
+      "n": 3,
+      "title": "Sanitasi EXIF",
+      "instruction": "Pastikan **Sanitasi Metadata EXIF Otomatis** aktif agar koordinat GPS dan tipe kamera terhapus dari hasil ekspor.",
+      "image": "step-03.png",
+      "t": 12.9
+    },
+    {
+      "n": 4,
+      "title": "Penyimpanan lokal",
+      "instruction": "Di **Penyimpanan Lokal Perangkat** tersedia **Bersihkan** riwayat audit dan **Reset Pengaturan Bawaan**.",
+      "image": "step-04.png",
+      "t": 14.2
+    }
+  ]
+}

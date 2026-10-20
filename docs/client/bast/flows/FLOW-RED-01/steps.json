@@ -1,0 +1,46 @@
+{
+  "flow": "FLOW-RED-01",
+  "title": "Menyensor data sensitif sebelum dicap",
+  "summary": "Pengguna menutup NIK dan tanda tangan dengan sensor permanen sebelum dokumen disimpan.",
+  "role": "ROL-001",
+  "tc": "FLOW-RED-01-T01",
+  "baseURL": "flutter build web (lokal)",
+  "video": "video.mp4",
+  "steps": [
+    {
+      "n": 1,
+      "title": "Pilih foto",
+      "instruction": "Di tab **Watermark**, ketuk **Buka Galeri** dan pilih foto identitas.",
+      "image": "step-01.png",
+      "t": 10.2
+    },
+    {
+      "n": 2,
+      "title": "Buka tab Sensor / Mask",
+      "instruction": "Ketuk tab **Sensor / Mask**. Tersedia tombol **Tambah Sensor Cepat**.",
+      "image": "step-02.png",
+      "t": 11.8
+    },
+    {
+      "n": 3,
+      "title": "Sensor NIK",
+      "instruction": "Ketuk **Sensor NIK**. Kotak hitam menutup baris NIK pada pratinjau.",
+      "image": "step-03.png",
+      "t": 15
+    },
+    {
+      "n": 4,
+      "title": "Sensor tanda tangan",
+      "instruction": "Ketuk **Sensor Tanda Tangan** bila penerima tidak meminta spesimen tanda tangan. Daftar area tersensor bertambah.",
+      "image": "step-04.png",
+      "t": 16.1
+    },
+    {
+      "n": 5,
+      "title": "Periksa pratinjau",
+      "instruction": "Gulir ke atas: area NIK dan tanda tangan tertutup permanen, cap tujuan tetap melintang.",
+      "image": "step-05.png",
+      "t": 18.8
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "flow": "FLOW-PRS-01",
+  "title": "Memakai dan membuat preset tujuan",
+  "summary": "Pengguna memakai template resmi dari katalog, lalu membuat preset kustom untuk keperluan yang sering dipakai.",
+  "role": "ROL-001",
+  "tc": "FLOW-PRS-01-T01",
+  "baseURL": "flutter build web (lokal)",
+  "video": "video.mp4",
+  "steps": [
+    {
+      "n": 1,
+      "title": "Buka tab Preset",
+      "instruction": "Ketuk tab **Preset**. **Katalog Template Watermark Resmi** berisi 18 template perbankan, karir, rental, hingga internasional.",
+      "image": "step-01.png",
+      "t": 10.8
+    },
+    {
+      "n": 2,
+      "title": "Saring kategori",
+      "instruction": "Ketuk kategori **Perbankan** untuk menampilkan template rekening dan data nasabah bank.",
+      "image": "step-02.png",
+      "t": 12.7
+    },
+    {
+      "n": 3,
+      "title": "Gunakan preset",
+      "instruction": "Pada **Pembukaan Rekening Bank**, ketuk **Gunakan Preset**. Editor terbuka dengan tujuan, pola, dan warna cap terisi sesuai template; ganti **[NAMA BANK]** dengan nama bank tujuan.",
+      "image": "step-03.png",
+      "t": 15.1
+    },
+    {
+      "n": 4,
+      "title": "Buat preset kustom",
+      "instruction": "Kembali ke **Preset** lalu ketuk **Buat Preset Baru**. Isi **Nama Preset**, **Kategori**, dan **Teks Template Tujuan**.",
+      "image": "step-04.png",
+      "t": 17.9
+    }
+  ]
+}
