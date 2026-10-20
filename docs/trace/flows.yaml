@@ -179,3 +179,7 @@ flows:
         kind: negative
         layer: unit
         title: "lembar Pilih Bahasa dan Zona Waktu terbuka tanpa galat render dan bisa memilih bahasa"
+      - id: FLOW-SET-01-T06
+        kind: corner
+        layer: unit
+        title: "tombol bersarang TapTarget + PressScale tetap memicu aksi saat diketuk"

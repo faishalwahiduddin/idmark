@@ -12,14 +12,14 @@
     "US": 10,
     "PG": 7,
     "FN": 14,
-    "TC": 31,
+    "TC": 32,
     "TC_by_kind": {
       "positive": 8,
       "negative": 9,
       "edge": 7,
-      "corner": 7
+      "corner": 8
     },
-    "TC_with_evidence": 31,
+    "TC_with_evidence": 32,
     "BAST": 7
   },
   "nodes": [
@@ -698,6 +698,14 @@
       "title": "lembar Pilih Bahasa dan Zona Waktu terbuka tanpa galat render dan bisa memilih bahasa",
       "layer": "unit",
       "kind": "negative",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-SET-01-T06",
+      "type": "TC",
+      "title": "tombol bersarang TapTarget + PressScale tetap memicu aksi saat diketuk",
+      "layer": "unit",
+      "kind": "corner",
       "source": "docs/trace/flows.yaml"
     }
   ],
@@ -1716,6 +1724,11 @@
       "from": "FLOW-SET-01-T05",
       "to": "FLOW-SET-01",
       "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-SET-01-T06",
+      "to": "FLOW-SET-01",
+      "via": "docs/trace/flows.yaml"
     }
   ],
   "cases": [
@@ -1965,6 +1978,14 @@
       "title": "lembar Pilih Bahasa dan Zona Waktu terbuka tanpa galat render dan bisa memilih bahasa",
       "layer": "unit",
       "kind": "negative",
+      "walk": false
+    },
+    {
+      "id": "FLOW-SET-01-T06",
+      "flow": "FLOW-SET-01",
+      "title": "tombol bersarang TapTarget + PressScale tetap memicu aksi saat diketuk",
+      "layer": "unit",
+      "kind": "corner",
       "walk": false
     }
   ],
