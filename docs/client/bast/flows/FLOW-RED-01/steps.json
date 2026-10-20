@@ -12,28 +12,28 @@
       "title": "Pilih foto",
       "instruction": "Di tab **Watermark**, ketuk **Buka Galeri** dan pilih foto identitas.",
       "image": "step-01.png",
-      "t": 13.8
+      "t": 15.3
     },
     {
       "n": 2,
       "title": "Buka tab Sensor / Mask",
       "instruction": "Ketuk tab **Sensor / Mask**. Tersedia tombol **Tambah Sensor Cepat**.",
       "image": "step-02.png",
-      "t": 15.9
+      "t": 16.6
     },
     {
       "n": 3,
       "title": "Sensor NIK",
       "instruction": "Ketuk **Sensor NIK**. Kotak hitam menutup baris NIK pada pratinjau.",
       "image": "step-03.png",
-      "t": 20.2
+      "t": 20.4
     },
     {
       "n": 4,
       "title": "Sensor tanda tangan",
       "instruction": "Ketuk **Sensor Tanda Tangan** bila penerima tidak meminta spesimen tanda tangan. Daftar area tersensor bertambah.",
       "image": "step-04.png",
-      "t": 21.6
+      "t": 21.5
     },
     {
       "n": 5,

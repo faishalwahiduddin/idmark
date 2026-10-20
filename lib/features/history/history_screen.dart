@@ -232,7 +232,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
                           style: TextStyle(
                             fontSize: 11,
                             fontWeight: FontWeight.w700,
-                            color: entry.privacyScore >= 80 ? AppColors.accent : AppColors.warning,
+                            color: entry.privacyScore >= 80 ? AppColors.accentText : AppColors.warningText,
                           ),
                         ),
                       ],
@@ -290,7 +290,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
                   children: [
                     const Text(
                       'SHA-256: ',
-                      style: TextStyle(fontSize: 10, color: Color(0xFF64748B), fontWeight: FontWeight.bold),
+                      style: TextStyle(fontSize: 10, color: Color(0xFF94A3B8), fontWeight: FontWeight.bold),
                     ),
                     Expanded(
                       child: Text(

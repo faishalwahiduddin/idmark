@@ -336,10 +336,10 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
                   const SizedBox(width: 6),
                   Text(
                     l10n?.onDeviceBadge ?? '100% On-Device • Gambar tidak pernah dikirim ke server',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w600,
-                      color: AppColors.accent,
+                      color: AppColors.accentOnTint(context),
                     ),
                   ),
                 ],

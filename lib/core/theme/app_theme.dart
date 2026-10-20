@@ -305,11 +305,12 @@ class AppTheme {
           borderSide: const BorderSide(color: AppColors.danger),
         ),
         labelStyle: const TextStyle(color: Color(0xFF94A3B8), fontSize: 14),
-        hintStyle: const TextStyle(color: Color(0xFF64748B), fontSize: 14),
+        hintStyle: const TextStyle(color: Color(0xFF94A3B8), fontSize: 14),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.primary,
+          // Sky 700: white label keeps >= 4.5 contrast (Sky 600 was 4.1).
+          backgroundColor: AppColors.primaryDark,
           foregroundColor: Colors.white,
           elevation: 0,
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),

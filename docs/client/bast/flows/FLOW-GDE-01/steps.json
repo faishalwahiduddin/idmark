@@ -12,21 +12,21 @@
       "title": "Buka tab Panduan",
       "instruction": "Ketuk tab **Panduan**. Tampil **Checklist Aman Sebelum Kirim e-KTP** dan aturan Kominfo / UU PDP.",
       "image": "step-01.png",
-      "t": 7.6
+      "t": 7.8
     },
     {
       "n": 2,
       "title": "Centang checklist",
       "instruction": "Ketuk butir checklist yang sudah dipenuhi, misalnya **Nama instansi/penerima tertulis jelas** dan **Tanggal transaksi terkini**. Hitungan selesai bertambah.",
       "image": "step-02.png",
-      "t": 9.9
+      "t": 10.1
     },
     {
       "n": 3,
       "title": "Baca 4 aturan pokok",
       "instruction": "Gulir ke **4 Aturan Pokok Watermark Kominfo**: tujuan spesifik, tanggal, posisi melintang, dan sensor tanda tangan.",
       "image": "step-03.png",
-      "t": 10.4
+      "t": 10.7
     }
   ]
 }

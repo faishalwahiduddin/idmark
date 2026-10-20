@@ -36,6 +36,10 @@ flows:
         kind: edge
         layer: unit
         title: "kolom Tujuan Watermark punya label aksesibilitas sebagai kolom teks"
+      - id: FLOW-WMK-01-T07
+        kind: edge
+        layer: unit
+        title: "tema gelap: semua teks di layar Watermark (editor) kontras >= 4.5"
   - id: FLOW-WMK-02
     priority: P0
     requirement: [FR-004, NFR-002]
@@ -114,6 +118,10 @@ flows:
         kind: corner
         layer: unit
         title: "tombol hapus pencarian mengosongkan kolom dan menampilkan lagi semua template"
+      - id: FLOW-PRS-01-T06
+        kind: edge
+        layer: unit
+        title: "tema gelap: semua teks di layar Preset kontras >= 4.5"
   - id: FLOW-HIS-01
     priority: P1
     requirement: [FR-007]
@@ -137,6 +145,10 @@ flows:
         kind: corner
         layer: unit
         title: "riwayat rusak di storage dibaca kosong; bersihkan riwayat mengosongkan daftar"
+      - id: FLOW-HIS-01-T05
+        kind: edge
+        layer: unit
+        title: "tema gelap: semua teks di layar Riwayat kontras >= 4.5"
   - id: FLOW-GDE-01
     priority: P2
     requirement: [FR-008]
@@ -164,6 +176,10 @@ flows:
         kind: positive
         layer: unit
         title: "High protection configuration yields Grade A+"
+      - id: FLOW-GDE-01-T06
+        kind: edge
+        layer: unit
+        title: "tema gelap: semua teks di layar Panduan kontras >= 4.5"
   - id: FLOW-SET-01
     priority: P1
     requirement: [FR-009, NFR-002]
@@ -200,3 +216,7 @@ flows:
         kind: edge
         layer: unit
         title: "di tema gelap dan terang pilihan di lembar Bahasa dan Zona Waktu terbaca (kontras >= 4.5)"
+      - id: FLOW-SET-01-T08
+        kind: edge
+        layer: unit
+        title: "tema gelap: semua teks di layar Pengaturan kontras >= 4.5"

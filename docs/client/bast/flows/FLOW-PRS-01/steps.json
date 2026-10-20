@@ -12,28 +12,28 @@
       "title": "Buka tab Preset",
       "instruction": "Ketuk tab **Preset**. **Katalog Template Watermark Resmi** berisi 18 template perbankan, karir, rental, hingga internasional.",
       "image": "step-01.png",
-      "t": 8.6
+      "t": 10.2
     },
     {
       "n": 2,
       "title": "Cari template",
       "instruction": "Ketik kata kunci di **Cari template**, misalnya **rekening**. Daftar menyaring template yang cocok.",
       "image": "step-02.png",
-      "t": 10.8
+      "t": 12.4
     },
     {
       "n": 3,
       "title": "Gunakan preset",
       "instruction": "Pada **Pembukaan Rekening Bank**, ketuk **Gunakan Preset**. Editor terbuka dengan tujuan, pola, dan warna cap terisi sesuai template; ganti **[NAMA BANK]** dengan nama bank tujuan.",
       "image": "step-03.png",
-      "t": 13.5
+      "t": 14.8
     },
     {
       "n": 4,
       "title": "Buat preset kustom",
       "instruction": "Kembali ke **Preset** lalu ketuk **Buat Preset Baru**. Isi **Nama Preset**, **Kategori**, dan **Teks Template Tujuan**.",
       "image": "step-04.png",
-      "t": 16.5
+      "t": 17.8
     }
   ]
 }

@@ -12,6 +12,10 @@ class AppColors {
   static const Color warning = Color(0xFFF59E0B); // Amber 500
   static const Color danger = Color(0xFFEF4444); // Red 500
 
+  // Text on accent/warning-tinted badges over the dark brand surfaces (>= 4.5 contrast).
+  static const Color accentText = Color(0xFF6EE7B7); // Emerald 300
+  static const Color warningText = Color(0xFFFCD34D); // Amber 300
+
   // Background & Surfaces
   static const Color bgDark = Color(0xFF090D16);
   static const Color bgSurface = Color(0xFF111827);
@@ -42,6 +46,10 @@ class AppColors {
   static Color muted(BuildContext context) => _isDark(context)
       ? const Color(0xFF94A3B8)
       : const Color(0xFF64748B);
+
+  /// Emerald label on an accent-tinted chip over the theme card.
+  static Color accentOnTint(BuildContext context) =>
+      _isDark(context) ? accentText : const Color(0xFF047857);
 
   /// Solid dark banner surface: keeps pale brand text readable in
   /// EITHER theme (used for all info banners instead of alpha washes).

@@ -12,14 +12,14 @@
       "title": "Pilih foto",
       "instruction": "Di tab **Watermark**, ketuk **Buka Galeri** dan pilih foto identitas. Cap bawaan **Pita Melintang** merah tampil di pratinjau.",
       "image": "step-01.png",
-      "t": 13.7
+      "t": 13.4
     },
     {
       "n": 2,
       "title": "Pilih pola Grid",
       "instruction": "Pada **Pola Stempel Watermark (7 Gaya)**, ketuk **Pola Berulang (Grid)** untuk perlindungan menyeluruh.",
       "image": "step-02.png",
-      "t": 17.7
+      "t": 17.6
     },
     {
       "n": 3,
@@ -40,7 +40,7 @@
       "title": "Periksa pratinjau",
       "instruction": "Gulir ke atas: pratinjau memperlihatkan pola grid biru berulang di seluruh foto.",
       "image": "step-05.png",
-      "t": 27.1
+      "t": 27.2
     }
   ]
 }

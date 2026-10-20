@@ -269,7 +269,7 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
                   style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w800,
-                    color: AppColors.primaryLight,
+                    color: Color(0xFF7DD3FC), // Sky 300: readable on the primary tint
                   ),
                 ),
               ),
