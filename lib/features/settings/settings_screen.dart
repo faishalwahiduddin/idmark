@@ -427,7 +427,7 @@ class SettingsScreen extends ConsumerWidget {
     showSpringSheet(
       context: context,
       builder: (ctx) {
-        return SafeArea(
+        return _sheetSurface(ctx, SafeArea(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -482,7 +482,7 @@ class SettingsScreen extends ConsumerWidget {
               ),
             ],
           ),
-        );
+        ));
       },
     );
   }
@@ -491,7 +491,7 @@ class SettingsScreen extends ConsumerWidget {
     showSpringSheet(
       context: context,
       builder: (ctx) {
-        return SafeArea(
+        return _sheetSurface(ctx, SafeArea(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -526,8 +526,25 @@ class SettingsScreen extends ConsumerWidget {
               ),
             ],
           ),
-        );
+        ));
       },
+    );
+  }
+
+  /// Body for the language/timezone spring sheets: ListTiles need a Material
+  /// ancestor and the column's Expanded list needs a bounded height.
+  Widget _sheetSurface(BuildContext ctx, Widget child) {
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child: SizedBox(
+        height: MediaQuery.sizeOf(ctx).height * 0.6,
+        child: Material(
+          color: Theme.of(ctx).colorScheme.surface,
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
+          clipBehavior: Clip.antiAlias,
+          child: child,
+        ),
+      ),
     );
   }
 
