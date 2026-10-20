@@ -46,10 +46,11 @@ async function replaceText(page, g, loc, text) {
   await g.tap(await reveal(page, loc));
   await page.waitForTimeout(400);
   await page.keyboard.press("ControlOrMeta+A");
-  await page.keyboard.type(text, { delay: 35 });
+  // insertText: Flutter rebuilds its hidden <input> after the first change and drops later keystrokes.
+  await page.keyboard.insertText(text);
   await page.waitForTimeout(500);
 }
-const purposeField = (page) => page.locator('input[data-semantics-role="text-field"]').first();
+const purposeField = (page) => page.getByLabel("Tujuan Watermark (Sesuai Kebutuhan)").first();
 
 const FLOWS = [
   {
@@ -115,9 +116,9 @@ const FLOWS = [
       await boot(page);
       await g.tap(tab(page, /^Preset$/));
       await g.step("Buka tab Preset", "Ketuk tab **Preset**. **Katalog Template Watermark Resmi** berisi 18 template perbankan, karir, rental, hingga internasional.");
-      await g.tap(chip(page, /^Perbankan$/));
+      await g.type("Cari template (bank, pinjol, hrd, kpr, rental)...", "rekening");
       await page.waitForTimeout(800);
-      await g.step("Saring kategori", "Ketuk kategori **Perbankan** untuk menampilkan template rekening dan data nasabah bank.");
+      await g.step("Cari template", "Ketik kata kunci di **Cari template**, misalnya **rekening**. Daftar menyaring template yang cocok.");
       await g.tap(await reveal(page, btn(page, /^Gunakan Preset/)));
       await page.waitForTimeout(1200);
       await g.step("Gunakan preset", "Pada **Pembukaan Rekening Bank**, ketuk **Gunakan Preset**. Editor terbuka dengan tujuan, pola, dan warna cap terisi sesuai template; ganti **[NAMA BANK]** dengan nama bank tujuan.");

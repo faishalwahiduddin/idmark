@@ -6,8 +6,8 @@ import 'package:idmark/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
-  testWidgets('IdMarkApp smoke test', (WidgetTester tester) async {
-    SharedPreferences.setMockInitialValues({'locale': 'id'});
+  testWidgets('FLOW-WMK-01-T05 IdMarkApp smoke test: setelah onboarding, splash langsung ke editor tanpa galat', (WidgetTester tester) async {
+    SharedPreferences.setMockInitialValues({'locale': 'id', 'onboarding_completed': true});
     final storageService = await LocalStorageService.init();
 
     await tester.pumpWidget(

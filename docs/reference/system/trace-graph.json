@@ -12,14 +12,14 @@
     "US": 10,
     "PG": 7,
     "FN": 14,
-    "TC": 32,
+    "TC": 35,
     "TC_by_kind": {
       "positive": 8,
       "negative": 9,
-      "edge": 7,
-      "corner": 8
+      "edge": 8,
+      "corner": 10
     },
-    "TC_with_evidence": 32,
+    "TC_with_evidence": 35,
     "BAST": 7
   },
   "nodes": [
@@ -485,6 +485,22 @@
       "source": "docs/trace/flows.yaml"
     },
     {
+      "id": "FLOW-WMK-01-T05",
+      "type": "TC",
+      "title": "IdMarkApp smoke test: setelah onboarding, splash langsung ke editor tanpa galat",
+      "layer": "unit",
+      "kind": "corner",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-WMK-01-T06",
+      "type": "TC",
+      "title": "kolom Tujuan Watermark punya label aksesibilitas sebagai kolom teks",
+      "layer": "unit",
+      "kind": "edge",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
       "id": "FLOW-WMK-02-T01",
       "type": "TC",
       "title": "pola, warna, dan opasitas tersimpan dan dipakai lagi saat app dibuka ulang",
@@ -584,6 +600,14 @@
       "id": "FLOW-PRS-01-T04",
       "type": "TC",
       "title": "preset kustom ber-id sama menggantikan yang lama di urutan teratas; menerapkannya mengubah cap",
+      "layer": "unit",
+      "kind": "corner",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-PRS-01-T05",
+      "type": "TC",
+      "title": "tombol hapus pencarian mengosongkan kolom dan menampilkan lagi semua template",
       "layer": "unit",
       "kind": "corner",
       "source": "docs/trace/flows.yaml"
@@ -1551,6 +1575,16 @@
       "via": "docs/trace/flows.yaml"
     },
     {
+      "from": "FLOW-WMK-01-T05",
+      "to": "FLOW-WMK-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-WMK-01-T06",
+      "to": "FLOW-WMK-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
       "from": "FLOW-WMK-02",
       "to": "FR-004",
       "via": "docs/trace/flows.yaml"
@@ -1632,6 +1666,11 @@
     },
     {
       "from": "FLOW-PRS-01-T04",
+      "to": "FLOW-PRS-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-PRS-01-T05",
       "to": "FLOW-PRS-01",
       "via": "docs/trace/flows.yaml"
     },
@@ -1765,6 +1804,22 @@
       "walk": false
     },
     {
+      "id": "FLOW-WMK-01-T05",
+      "flow": "FLOW-WMK-01",
+      "title": "IdMarkApp smoke test: setelah onboarding, splash langsung ke editor tanpa galat",
+      "layer": "unit",
+      "kind": "corner",
+      "walk": false
+    },
+    {
+      "id": "FLOW-WMK-01-T06",
+      "flow": "FLOW-WMK-01",
+      "title": "kolom Tujuan Watermark punya label aksesibilitas sebagai kolom teks",
+      "layer": "unit",
+      "kind": "edge",
+      "walk": false
+    },
+    {
       "id": "FLOW-WMK-02-T01",
       "flow": "FLOW-WMK-02",
       "title": "pola, warna, dan opasitas tersimpan dan dipakai lagi saat app dibuka ulang",
@@ -1864,6 +1919,14 @@
       "id": "FLOW-PRS-01-T04",
       "flow": "FLOW-PRS-01",
       "title": "preset kustom ber-id sama menggantikan yang lama di urutan teratas; menerapkannya mengubah cap",
+      "layer": "unit",
+      "kind": "corner",
+      "walk": false
+    },
+    {
+      "id": "FLOW-PRS-01-T05",
+      "flow": "FLOW-PRS-01",
+      "title": "tombol hapus pencarian mengosongkan kolom dan menampilkan lagi semua template",
       "layer": "unit",
       "kind": "corner",
       "walk": false

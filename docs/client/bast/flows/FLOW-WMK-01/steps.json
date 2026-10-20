@@ -12,35 +12,35 @@
       "title": "Buka IDMark",
       "instruction": "Saat pertama dibuka, IDMark menampilkan layar perkenalan. Ketuk **Lewati** untuk langsung ke editor.",
       "image": "step-01.png",
-      "t": 6.9
+      "t": 8.7
     },
     {
       "n": 2,
       "title": "Masuk ke editor Watermark",
       "instruction": "Tab **Watermark** menampilkan kotak **Unggah Foto e-KTP / Identitas** dan panel konfigurasi cap.",
       "image": "step-02.png",
-      "t": 9.5
+      "t": 11.5
     },
     {
       "n": 3,
       "title": "Pilih foto identitas",
       "instruction": "Ketuk **Buka Galeri** lalu pilih foto kartu identitas. Pratinjau langsung menampilkan cap merah melintang.",
       "image": "step-03.png",
-      "t": 13.4
+      "t": 15.6
     },
     {
       "n": 4,
       "title": "Tulis tujuan verifikasi",
       "instruction": "Isi **Tujuan Watermark** dengan instansi dan keperluan spesifik, misalnya **VERIFIKASI REKENING BANK CONTOH**. Tanggal transaksi otomatis tercantum.",
       "image": "step-04.png",
-      "t": 28.4
+      "t": 18.1
     },
     {
       "n": 5,
       "title": "Simpan dokumen",
       "instruction": "Ketuk **Simpan Dokumen (PNG)**. Dokumen dirender di perangkat dengan resolusi asli dan dialog **Watermark Selesai!** muncul.",
       "image": "step-05.png",
-      "t": 40.8
+      "t": 32.7
     }
   ]
 }

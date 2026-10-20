@@ -12,28 +12,28 @@
       "title": "Buka Pengaturan",
       "instruction": "Ketuk tab **Pengaturan**. Bagian atas menegaskan **Privasi Mutlak (Zero Server Upload)**.",
       "image": "step-01.png",
-      "t": 9
+      "t": 9.9
     },
     {
       "n": 2,
       "title": "Pilih bahasa",
       "instruction": "Ketuk **Bahasa Aplikasi**. Lembar **Pilih Bahasa** menampilkan 8 bahasa; ketuk **Bahasa Indonesia** untuk tetap memakai bahasa ini.",
       "image": "step-02.png",
-      "t": 10.9
+      "t": 11.8
     },
     {
       "n": 3,
       "title": "Sanitasi EXIF",
       "instruction": "Pastikan **Sanitasi Metadata EXIF Otomatis** aktif agar koordinat GPS dan tipe kamera terhapus dari hasil ekspor.",
       "image": "step-03.png",
-      "t": 12.9
+      "t": 13.8
     },
     {
       "n": 4,
       "title": "Penyimpanan lokal",
       "instruction": "Di **Penyimpanan Lokal Perangkat** tersedia **Bersihkan** riwayat audit dan **Reset Pengaturan Bawaan**.",
       "image": "step-04.png",
-      "t": 14.2
+      "t": 15.4
     }
   ]
 }

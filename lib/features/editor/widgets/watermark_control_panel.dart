@@ -206,7 +206,11 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
           style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: Color(0xFFCBD5E1)),
         ),
         const SizedBox(height: 6),
-        TextFormField(
+        // Accessible name for screen readers and getByLabel; the heading above is a separate node.
+        MergeSemantics(
+          child: Semantics(
+          label: l10n?.watermarkPurposeLabel ?? 'Tujuan Watermark (Sesuai Kebutuhan)',
+          child: TextFormField(
           controller: _purposeController,
           decoration: InputDecoration(
             hintText: l10n?.watermarkPurposeHint ?? 'Misal: VERIFIKASI PINJAMAN BANK ABC',
@@ -234,6 +238,8 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
               widget.onPurposeChanged(val);
             }
           },
+          ),
+          ),
         ),
         const SizedBox(height: 14),
 

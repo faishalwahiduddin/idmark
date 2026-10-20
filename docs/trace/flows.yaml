@@ -10,6 +10,7 @@ flows:
       - "lib/features/editor/**"
       - "lib/core/services/**"
       - "lib/core/models/watermark_config.dart"
+      - "lib/core/ui/fleet_splash_screen.dart"
     cases:
       - id: FLOW-WMK-01-T01
         kind: positive
@@ -27,6 +28,14 @@ flows:
         kind: corner
         layer: unit
         title: "tanggal cap mengikuti zona pilihan: instan yang sama bisa beda tanggal di Jakarta dan New York"
+      - id: FLOW-WMK-01-T05
+        kind: corner
+        layer: unit
+        title: "IdMarkApp smoke test: setelah onboarding, splash langsung ke editor tanpa galat"
+      - id: FLOW-WMK-01-T06
+        kind: edge
+        layer: unit
+        title: "kolom Tujuan Watermark punya label aksesibilitas sebagai kolom teks"
   - id: FLOW-WMK-02
     priority: P0
     requirement: [FR-004, NFR-002]
@@ -101,6 +110,10 @@ flows:
         kind: corner
         layer: unit
         title: "preset kustom ber-id sama menggantikan yang lama di urutan teratas; menerapkannya mengubah cap"
+      - id: FLOW-PRS-01-T05
+        kind: corner
+        layer: unit
+        title: "tombol hapus pencarian mengosongkan kolom dan menampilkan lagi semua template"
   - id: FLOW-HIS-01
     priority: P1
     requirement: [FR-007]

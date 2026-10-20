@@ -25,10 +25,10 @@ Satu graph untuk seluruh artefak (standar: `~/projects/docs/standards.md` §TRAC
 | US | 10 |
 | PG | 7 |
 | FN | 14 |
-| TC | 32 |
-| TC_with_evidence | 32 |
+| TC | 35 |
+| TC_with_evidence | 35 |
 | BAST | 7 |
-| TC per kind | positive 8 · negative 9 · edge 7 · corner 8 |
+| TC per kind | positive 8 · negative 9 · edge 8 · corner 10 |
 
 > ✅ Graph utuh: 0 orphan, 0 referensi menggantung, 0 duplikat, setiap flow punya 4 jenis case.
 
@@ -66,10 +66,10 @@ Satu graph untuk seluruh artefak (standar: `~/projects/docs/standards.md` §TRAC
 
 | Flow | Judul | Role | Modul | Epic · Story | Kebutuhan | Case (+ − edge corner) | Bukti otomatis | BAST |
 |---|---|---|---|---|---|---|---|---|
-| FLOW-WMK-01 | Membubuhkan cap tujuan dan tanggal lalu menyimpan dokumen | ROL-001 | MOD-001 | EP-001, US-001, US-002, US-007, USR-SET-103, USR-WMK-001, USR-WMK-002, USR-WMK-003, USR-WMK-101, USR-WMK-102, USR-WMK-103, USR-WMK-104, USR-WMK-105, USR-WMK-106 | FR-001, FR-002, FR-005, NFR-001, NFR-003 | 4 (1 · 1 · 1 · 1) | 4/4 | [BAST-FLOW-WMK-01](../../client/bast/guide/FLOW-WMK-01.html) |
+| FLOW-WMK-01 | Membubuhkan cap tujuan dan tanggal lalu menyimpan dokumen | ROL-001 | MOD-001 | EP-001, US-001, US-002, US-007, USR-SET-103, USR-WMK-001, USR-WMK-002, USR-WMK-003, USR-WMK-101, USR-WMK-102, USR-WMK-103, USR-WMK-104, USR-WMK-105, USR-WMK-106 | FR-001, FR-002, FR-005, NFR-001, NFR-003 | 6 (1 · 1 · 2 · 2) | 6/6 | [BAST-FLOW-WMK-01](../../client/bast/guide/FLOW-WMK-01.html) |
 | FLOW-WMK-02 | Mengatur pola, warna, dan opasitas cap | ROL-001 | MOD-001 | EP-001, US-004, US-005, USR-SET-101, USR-WMK-003, USR-WMK-101, USR-WMK-102, USR-WMK-103, USR-WMK-104 | FR-004, NFR-002 | 5 (1 · 2 · 1 · 1) | 5/5 | [BAST-FLOW-WMK-02](../../client/bast/guide/FLOW-WMK-02.html) |
 | FLOW-RED-01 | Menyensor data sensitif sebelum dicap | ROL-001 | MOD-002 | EP-001, US-006, USR-RED-101, USR-WMK-003, USR-WMK-101, USR-WMK-102 | FR-006 | 4 (1 · 1 · 1 · 1) | 4/4 | [BAST-FLOW-RED-01](../../client/bast/guide/FLOW-RED-01.html) |
-| FLOW-PRS-01 | Memakai dan membuat preset tujuan | ROL-001 | MOD-003 | EP-002, US-003, USR-PRS-001, USR-PRS-101, USR-PRS-102, USR-SET-101, USR-WMK-102, USR-WMK-104 | FR-003 | 4 (1 · 1 · 1 · 1) | 4/4 | [BAST-FLOW-PRS-01](../../client/bast/guide/FLOW-PRS-01.html) |
+| FLOW-PRS-01 | Memakai dan membuat preset tujuan | ROL-001 | MOD-003 | EP-002, US-003, USR-PRS-001, USR-PRS-101, USR-PRS-102, USR-SET-101, USR-WMK-102, USR-WMK-104 | FR-003 | 5 (1 · 1 · 1 · 2) | 5/5 | [BAST-FLOW-PRS-01](../../client/bast/guide/FLOW-PRS-01.html) |
 | FLOW-HIS-01 | Melihat riwayat audit ekspor | ROL-001 | MOD-004 | EP-002, US-009, USR-HIS-001, USR-HIS-101, USR-HIS-102, USR-SET-101, USR-WMK-003 | FR-007 | 4 (1 · 1 · 1 · 1) | 4/4 | [BAST-FLOW-HIS-01](../../client/bast/guide/FLOW-HIS-01.html) |
 | FLOW-GDE-01 | Memeriksa kepatuhan dengan panduan Kominfo | ROL-001 | MOD-005 | EP-002, US-010, USR-GDE-001, USR-WMK-103 | FR-008 | 5 (2 · 1 · 1 · 1) | 5/5 | [BAST-FLOW-GDE-01](../../client/bast/guide/FLOW-GDE-01.html) |
 | FLOW-SET-01 | Mengatur tampilan, bahasa, dan privasi | ROL-001 | MOD-006 | EP-003, US-008, USR-SET-001, USR-SET-101, USR-SET-102, USR-SET-103 | FR-009, NFR-002 | 6 (1 · 2 · 1 · 2) | 6/6 | [BAST-FLOW-SET-01](../../client/bast/guide/FLOW-SET-01.html) |
@@ -82,6 +82,8 @@ Satu graph untuk seluruh artefak (standar: `~/projects/docs/standards.md` §TRAC
 | FLOW-WMK-01-T02 | FLOW-WMK-01 | negative | unit | validatePurpose rejects empty and invalid length | `test/validation_test.dart` | pass |
 | FLOW-WMK-01-T03 | FLOW-WMK-01 | edge | unit | tujuan tepat 3 dan 80 karakter diterima, 81 karakter ditolak | `test/flows/watermark_flow_test.dart` | pass |
 | FLOW-WMK-01-T04 | FLOW-WMK-01 | corner | unit | tanggal cap mengikuti zona pilihan: instan yang sama bisa beda tanggal di Jakarta dan New York | `test/flows/watermark_flow_test.dart` | pass |
+| FLOW-WMK-01-T05 | FLOW-WMK-01 | corner | unit | IdMarkApp smoke test: setelah onboarding, splash langsung ke editor tanpa galat | `test/widget_test.dart` | pass |
+| FLOW-WMK-01-T06 | FLOW-WMK-01 | edge | unit | kolom Tujuan Watermark punya label aksesibilitas sebagai kolom teks | `test/flows/regression_flow_test.dart` | pass |
 | FLOW-WMK-02-T01 | FLOW-WMK-02 | positive | unit | pola, warna, dan opasitas tersimpan dan dipakai lagi saat app dibuka ulang | `test/flows/watermark_flow_test.dart` | pass |
 | FLOW-WMK-02-T02 | FLOW-WMK-02 | negative | unit | opasitas di luar 10–100% ditolak dan konfigurasi tersimpan tidak berubah | `test/flows/watermark_flow_test.dart` | pass |
 | FLOW-WMK-02-T03 | FLOW-WMK-02 | edge | unit | validateOpacity enforces 0.1 to 1.0 range | `test/validation_test.dart` | pass |
@@ -95,6 +97,7 @@ Satu graph untuk seluruh artefak (standar: `~/projects/docs/standards.md` §TRAC
 | FLOW-PRS-01-T02 | FLOW-PRS-01 | negative | unit | AppValidators validates quality and preset titles (§VAL) | `test/redaction_and_audit_test.dart` | pass |
 | FLOW-PRS-01-T03 | FLOW-PRS-01 | edge | unit | preset bawaan ber-id unik, mencakup kebutuhan lokal dan internasional, dan semuanya valid | `test/flows/redaction_preset_flow_test.dart` | pass |
 | FLOW-PRS-01-T04 | FLOW-PRS-01 | corner | unit | preset kustom ber-id sama menggantikan yang lama di urutan teratas; menerapkannya mengubah cap | `test/flows/redaction_preset_flow_test.dart` | pass |
+| FLOW-PRS-01-T05 | FLOW-PRS-01 | corner | unit | tombol hapus pencarian mengosongkan kolom dan menampilkan lagi semua template | `test/flows/regression_flow_test.dart` | pass |
 | FLOW-HIS-01-T01 | FLOW-HIS-01 | positive | unit | HistoryScreen renders empty state and populated logs correctly | `test/new_features_widget_test.dart` | pass |
 | FLOW-HIS-01-T02 | FLOW-HIS-01 | negative | unit | AuditLogEntry rejects invalid privacy score (§VAL) | `test/redaction_and_audit_test.dart` | pass |
 | FLOW-HIS-01-T03 | FLOW-HIS-01 | edge | unit | riwayat dibatasi 50 ekspor terbaru, urutan terbaru di atas | `test/flows/history_guide_settings_flow_test.dart` | pass |

@@ -77,7 +77,6 @@ class _FleetSplashScreenState extends State<FleetSplashScreen>
     );
 
     _controller.forward();
-    _startHandoff();
   }
 
   @override
@@ -88,6 +87,8 @@ class _FleetSplashScreenState extends State<FleetSplashScreen>
     if (disableMotion && _controller.value < 1.0) {
       _controller.value = 1.0;
     }
+    // MediaQuery is not readable in initState; start the handoff once here.
+    if (_handoffTimer == null) _startHandoff();
   }
 
   void _startHandoff() {

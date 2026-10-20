@@ -19,14 +19,14 @@
       "title": "Centang checklist",
       "instruction": "Ketuk butir checklist yang sudah dipenuhi, misalnya **Nama instansi/penerima tertulis jelas** dan **Tanggal transaksi terkini**. Hitungan selesai bertambah.",
       "image": "step-02.png",
-      "t": 9.7
+      "t": 9.9
     },
     {
       "n": 3,
       "title": "Baca 4 aturan pokok",
       "instruction": "Gulir ke **4 Aturan Pokok Watermark Kominfo**: tujuan spesifik, tanggal, posisi melintang, dan sensor tanda tangan.",
       "image": "step-03.png",
-      "t": 10.3
+      "t": 10.4
     }
   ]
 }

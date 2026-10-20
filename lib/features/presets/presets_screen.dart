@@ -23,6 +23,7 @@ class PresetsScreen extends ConsumerStatefulWidget {
 class _PresetsScreenState extends ConsumerState<PresetsScreen> {
   String _selectedCategory = 'Semua';
   String _searchQuery = '';
+  final TextEditingController _searchController = TextEditingController();
 
   final List<String> _categories = [
     'Semua',
@@ -37,6 +38,12 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
     'Layanan Publik',
     'Internasional',
   ];
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -110,6 +117,7 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
 
           // Search Bar (fill is always brand-dark → pin light text)
           TextField(
+            controller: _searchController,
             style: const TextStyle(color: Colors.white, fontSize: 14),
             decoration: InputDecoration(
               hintText: l10n.searchTemplateHint,
@@ -117,7 +125,10 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
               suffixIcon: _searchQuery.isNotEmpty
                   ? IconButton(
                       icon: const Icon(Icons.clear, size: 16),
-                      onPressed: () => setState(() => _searchQuery = ''),
+                      onPressed: () {
+                        _searchController.clear();
+                        setState(() => _searchQuery = '');
+                      },
                     )
                   : null,
               filled: true,
