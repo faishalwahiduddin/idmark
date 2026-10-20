@@ -25,10 +25,10 @@ Satu graph untuk seluruh artefak (standar: `~/projects/docs/standards.md` §TRAC
 | US | 10 |
 | PG | 7 |
 | FN | 14 |
-| TC | 35 |
-| TC_with_evidence | 35 |
+| TC | 36 |
+| TC_with_evidence | 36 |
 | BAST | 7 |
-| TC per kind | positive 8 · negative 9 · edge 8 · corner 10 |
+| TC per kind | positive 8 · negative 9 · edge 9 · corner 10 |
 
 > ✅ Graph utuh: 0 orphan, 0 referensi menggantung, 0 duplikat, setiap flow punya 4 jenis case.
 
@@ -72,7 +72,7 @@ Satu graph untuk seluruh artefak (standar: `~/projects/docs/standards.md` §TRAC
 | FLOW-PRS-01 | Memakai dan membuat preset tujuan | ROL-001 | MOD-003 | EP-002, US-003, USR-PRS-001, USR-PRS-101, USR-PRS-102, USR-SET-101, USR-WMK-102, USR-WMK-104 | FR-003 | 5 (1 · 1 · 1 · 2) | 5/5 | [BAST-FLOW-PRS-01](../../client/bast/guide/FLOW-PRS-01.html) |
 | FLOW-HIS-01 | Melihat riwayat audit ekspor | ROL-001 | MOD-004 | EP-002, US-009, USR-HIS-001, USR-HIS-101, USR-HIS-102, USR-SET-101, USR-WMK-003 | FR-007 | 4 (1 · 1 · 1 · 1) | 4/4 | [BAST-FLOW-HIS-01](../../client/bast/guide/FLOW-HIS-01.html) |
 | FLOW-GDE-01 | Memeriksa kepatuhan dengan panduan Kominfo | ROL-001 | MOD-005 | EP-002, US-010, USR-GDE-001, USR-WMK-103 | FR-008 | 5 (2 · 1 · 1 · 1) | 5/5 | [BAST-FLOW-GDE-01](../../client/bast/guide/FLOW-GDE-01.html) |
-| FLOW-SET-01 | Mengatur tampilan, bahasa, dan privasi | ROL-001 | MOD-006 | EP-003, US-008, USR-SET-001, USR-SET-101, USR-SET-102, USR-SET-103 | FR-009, NFR-002 | 6 (1 · 2 · 1 · 2) | 6/6 | [BAST-FLOW-SET-01](../../client/bast/guide/FLOW-SET-01.html) |
+| FLOW-SET-01 | Mengatur tampilan, bahasa, dan privasi | ROL-001 | MOD-006 | EP-003, US-008, USR-SET-001, USR-SET-101, USR-SET-102, USR-SET-103 | FR-009, NFR-002 | 7 (1 · 2 · 2 · 2) | 7/7 | [BAST-FLOW-SET-01](../../client/bast/guide/FLOW-SET-01.html) |
 
 ## 4. Test case
 
@@ -113,6 +113,7 @@ Satu graph untuk seluruh artefak (standar: `~/projects/docs/standards.md` §TRAC
 | FLOW-SET-01-T04 | FLOW-SET-01 | corner | unit | unknown zone falls back to Jakarta, never throws | `test/timezone_test.dart` | pass |
 | FLOW-SET-01-T05 | FLOW-SET-01 | negative | unit | lembar Pilih Bahasa dan Zona Waktu terbuka tanpa galat render dan bisa memilih bahasa | `test/flows/settings_sheet_flow_test.dart` | pass |
 | FLOW-SET-01-T06 | FLOW-SET-01 | corner | unit | tombol bersarang TapTarget + PressScale tetap memicu aksi saat diketuk | `test/flows/press_scale_tap_test.dart` | pass |
+| FLOW-SET-01-T07 | FLOW-SET-01 | edge | unit | di tema gelap dan terang pilihan di lembar Bahasa dan Zona Waktu terbaca (kontras >= 4.5) | `test/flows/settings_sheet_contrast_test.dart` | pass |
 
 ## Halaman
 

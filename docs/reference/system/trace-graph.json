@@ -12,14 +12,14 @@
     "US": 10,
     "PG": 7,
     "FN": 14,
-    "TC": 35,
+    "TC": 36,
     "TC_by_kind": {
       "positive": 8,
       "negative": 9,
-      "edge": 8,
+      "edge": 9,
       "corner": 10
     },
-    "TC_with_evidence": 35,
+    "TC_with_evidence": 36,
     "BAST": 7
   },
   "nodes": [
@@ -730,6 +730,14 @@
       "title": "tombol bersarang TapTarget + PressScale tetap memicu aksi saat diketuk",
       "layer": "unit",
       "kind": "corner",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-SET-01-T07",
+      "type": "TC",
+      "title": "di tema gelap dan terang pilihan di lembar Bahasa dan Zona Waktu terbaca (kontras >= 4.5)",
+      "layer": "unit",
+      "kind": "edge",
       "source": "docs/trace/flows.yaml"
     }
   ],
@@ -1768,6 +1776,11 @@
       "from": "FLOW-SET-01-T06",
       "to": "FLOW-SET-01",
       "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-SET-01-T07",
+      "to": "FLOW-SET-01",
+      "via": "docs/trace/flows.yaml"
     }
   ],
   "cases": [
@@ -2049,6 +2062,14 @@
       "title": "tombol bersarang TapTarget + PressScale tetap memicu aksi saat diketuk",
       "layer": "unit",
       "kind": "corner",
+      "walk": false
+    },
+    {
+      "id": "FLOW-SET-01-T07",
+      "flow": "FLOW-SET-01",
+      "title": "di tema gelap dan terang pilihan di lembar Bahasa dan Zona Waktu terbaca (kontras >= 4.5)",
+      "layer": "unit",
+      "kind": "edge",
       "walk": false
     }
   ],

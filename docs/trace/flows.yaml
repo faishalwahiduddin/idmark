@@ -196,3 +196,7 @@ flows:
         kind: corner
         layer: unit
         title: "tombol bersarang TapTarget + PressScale tetap memicu aksi saat diketuk"
+      - id: FLOW-SET-01-T07
+        kind: edge
+        layer: unit
+        title: "di tema gelap dan terang pilihan di lembar Bahasa dan Zona Waktu terbaca (kontras >= 4.5)"
