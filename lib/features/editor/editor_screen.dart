@@ -299,13 +299,13 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
               child: const Icon(Icons.shield_outlined, color: AppColors.primaryLight, size: 20),
             ),
             const SizedBox(width: 10),
-            const Column(
+            Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('IDMark', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700, letterSpacing: -0.4)),
+                const Text('IDMark', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700, letterSpacing: -0.4)),
                 Text(
                   'Secure ID Card & Privacy Shield',
-                  style: TextStyle(fontSize: 11, color: Color(0xFF94A3B8), fontWeight: FontWeight.normal),
+                  style: TextStyle(fontSize: 11, color: AppColors.muted(context), fontWeight: FontWeight.normal),
                 ),
               ],
             ),

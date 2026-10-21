@@ -98,6 +98,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
               style: const TextStyle(color: Colors.white, fontSize: 14),
               decoration: InputDecoration(
                 hintText: l10n.searchHistoryHint,
+                hintStyle: const TextStyle(color: Color(0xFF94A3B8), fontSize: 14),
                 prefixIcon: const Icon(Icons.search, size: 18),
                 suffixIcon: _searchQuery.isNotEmpty
                     ? IconButton(
@@ -166,7 +167,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
         padding: const EdgeInsets.symmetric(vertical: 40),
         child: Text(
           l10n.noHistoryFound,
-          style: const TextStyle(color: Color(0xFF94A3B8), fontSize: 13),
+          style: TextStyle(color: AppColors.muted(context), fontSize: 13),
         ),
       ),
     );

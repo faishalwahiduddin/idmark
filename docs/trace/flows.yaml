@@ -40,6 +40,10 @@ flows:
         kind: edge
         layer: unit
         title: "tema gelap: semua teks di layar Watermark (editor) kontras >= 4.5"
+      - id: FLOW-WMK-01-T08
+        kind: edge
+        layer: unit
+        title: "tema terang: semua teks di layar Watermark (editor) kontras >= 4.5"
   - id: FLOW-WMK-02
     priority: P0
     requirement: [FR-004, NFR-002]
@@ -122,6 +126,10 @@ flows:
         kind: edge
         layer: unit
         title: "tema gelap: semua teks di layar Preset kontras >= 4.5"
+      - id: FLOW-PRS-01-T07
+        kind: edge
+        layer: unit
+        title: "tema terang: semua teks di layar Preset kontras >= 4.5"
   - id: FLOW-HIS-01
     priority: P1
     requirement: [FR-007]
@@ -149,6 +157,10 @@ flows:
         kind: edge
         layer: unit
         title: "tema gelap: semua teks di layar Riwayat kontras >= 4.5"
+      - id: FLOW-HIS-01-T06
+        kind: edge
+        layer: unit
+        title: "tema terang: semua teks di layar Riwayat kontras >= 4.5"
   - id: FLOW-GDE-01
     priority: P2
     requirement: [FR-008]
@@ -180,6 +192,10 @@ flows:
         kind: edge
         layer: unit
         title: "tema gelap: semua teks di layar Panduan kontras >= 4.5"
+      - id: FLOW-GDE-01-T07
+        kind: edge
+        layer: unit
+        title: "tema terang: semua teks di layar Panduan kontras >= 4.5"
   - id: FLOW-SET-01
     priority: P1
     requirement: [FR-009, NFR-002]
@@ -220,3 +236,11 @@ flows:
         kind: edge
         layer: unit
         title: "tema gelap: semua teks di layar Pengaturan kontras >= 4.5"
+      - id: FLOW-SET-01-T09
+        kind: corner
+        layer: unit
+        title: "PressScale nonaktif dibongkar tanpa galat (controller tidak dibuat saat dispose)"
+      - id: FLOW-SET-01-T10
+        kind: edge
+        layer: unit
+        title: "tema terang: semua teks di layar Pengaturan kontras >= 4.5"

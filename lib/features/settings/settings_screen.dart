@@ -220,12 +220,12 @@ class SettingsScreen extends ConsumerWidget {
                   ),
                   trailing: DropdownButton<ExportFormat>(
                     value: config.exportFormat,
-                    dropdownColor: AppColors.bgSurface,
+                    dropdownColor: Theme.of(context).colorScheme.surface,
                     underline: const SizedBox(),
                     items: ExportFormat.values.map((f) {
                       return DropdownMenuItem(
                         value: f,
-                        child: Text(f.name.toUpperCase(), style: const TextStyle(fontSize: 12, color: Colors.white)),
+                        child: Text(f.name.toUpperCase(), style: TextStyle(fontSize: 12, color: AppColors.title(context))),
                       );
                     }).toList(),
                     onChanged: (val) {

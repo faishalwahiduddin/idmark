@@ -45,7 +45,11 @@ class AppColors {
   /// Secondary / muted labels and section headers.
   static Color muted(BuildContext context) => _isDark(context)
       ? const Color(0xFF94A3B8)
-      : const Color(0xFF64748B);
+      : const Color(0xFF475569);
+
+  /// Selected-state label / link accent: Sky 400 on dark, Sky 800 on light (>= 4.5 on the selected-chip tint).
+  static Color accentLabel(BuildContext context) =>
+      _isDark(context) ? primaryLight : const Color(0xFF075985);
 
   /// Emerald label on an accent-tinted chip over the theme card.
   static Color accentOnTint(BuildContext context) =>

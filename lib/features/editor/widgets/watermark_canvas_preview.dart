@@ -339,7 +339,7 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w600,
-                      color: AppColors.accentOnTint(context),
+                      color: AppColors.accentText, // prompt card is brand-dark in both themes
                     ),
                   ),
                 ],
@@ -363,6 +363,7 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
                   scale: 0.97,
                   child: OutlinedButton.icon(
                     onPressed: widget.onPickCamera,
+                    style: OutlinedButton.styleFrom(foregroundColor: AppColors.primaryLight),
                     icon: const Icon(Icons.camera_alt_outlined, size: 18),
                     label: Text(l10n?.takePhoto ?? 'Ambil Foto'),
                   ),

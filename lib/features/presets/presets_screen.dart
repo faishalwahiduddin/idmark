@@ -121,6 +121,7 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
             style: const TextStyle(color: Colors.white, fontSize: 14),
             decoration: InputDecoration(
               hintText: l10n.searchTemplateHint,
+              hintStyle: const TextStyle(color: Color(0xFF94A3B8), fontSize: 14),
               prefixIcon: const Icon(Icons.search, size: 18),
               suffixIcon: _searchQuery.isNotEmpty
                   ? IconButton(
@@ -158,11 +159,11 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                         label: Text(cat),
                         selected: isSelected,
                         selectedColor: AppColors.primary.withValues(alpha: 0.25),
-                        checkmarkColor: AppColors.primaryLight,
+                        checkmarkColor: AppColors.accentLabel(context),
                         labelStyle: TextStyle(
                           fontSize: 12,
                           fontWeight: isSelected ? FontWeight.w700 : FontWeight.normal,
-                          color: isSelected ? AppColors.primaryLight : const Color(0xFF94A3B8),
+                          color: isSelected ? AppColors.accentLabel(context) : AppColors.muted(context),
                         ),
                         onSelected: (_) {},
                       ),
@@ -180,7 +181,7 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
             children: [
               Text(
                 l10n.showingTemplatesCount(filteredPresets.length),
-                style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
+                style: TextStyle(fontSize: 12, color: AppColors.muted(context)),
               ),
               TextButton.icon(
                 onPressed: () => _showCreatePresetDialog(context),
@@ -198,7 +199,7 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                 padding: const EdgeInsets.symmetric(vertical: 40),
                 child: Text(
                   l10n.noTemplatesFound,
-                  style: const TextStyle(color: Color(0xFF94A3B8), fontSize: 13),
+                  style: TextStyle(color: AppColors.muted(context), fontSize: 13),
                 ),
               ),
             )

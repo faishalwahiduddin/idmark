@@ -24,4 +24,12 @@ void main() {
     await tester.pumpAndSettle();
     expect(taps, 1);
   });
+
+  testWidgets('FLOW-SET-01-T09 PressScale nonaktif dibongkar tanpa galat (controller tidak dibuat saat dispose)', (tester) async {
+    await tester.pumpWidget(const MaterialApp(
+      home: PressScale(enabled: false, child: Icon(Icons.share_outlined)),
+    ));
+    await tester.pumpWidget(const SizedBox());
+    expect(tester.takeException(), isNull);
+  });
 }

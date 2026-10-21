@@ -51,12 +51,13 @@ class DisciplineBadge extends ConsumerWidget {
                   style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w800,
+                    color: Colors.white,
                   ),
                 ),
                 const SizedBox(height: 2),
                 const Text(
                   'Setiap ekspor aman menambah disiplin proteksi dokumen.',
-                  style: TextStyle(fontSize: 11),
+                  style: TextStyle(fontSize: 11, color: Color(0xFFCBD5E1)),
                 ),
               ],
             ),
