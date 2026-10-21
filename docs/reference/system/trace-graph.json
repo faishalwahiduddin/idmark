@@ -12,14 +12,14 @@
     "US": 10,
     "PG": 7,
     "FN": 14,
-    "TC": 41,
+    "TC": 47,
     "TC_by_kind": {
       "positive": 8,
       "negative": 9,
-      "edge": 14,
-      "corner": 10
+      "edge": 19,
+      "corner": 11
     },
-    "TC_with_evidence": 41,
+    "TC_with_evidence": 47,
     "BAST": 7
   },
   "nodes": [
@@ -509,6 +509,14 @@
       "source": "docs/trace/flows.yaml"
     },
     {
+      "id": "FLOW-WMK-01-T08",
+      "type": "TC",
+      "title": "tema terang: semua teks di layar Watermark (editor) kontras >= 4.5",
+      "layer": "unit",
+      "kind": "edge",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
       "id": "FLOW-WMK-02-T01",
       "type": "TC",
       "title": "pola, warna, dan opasitas tersimpan dan dipakai lagi saat app dibuka ulang",
@@ -629,6 +637,14 @@
       "source": "docs/trace/flows.yaml"
     },
     {
+      "id": "FLOW-PRS-01-T07",
+      "type": "TC",
+      "title": "tema terang: semua teks di layar Preset kontras >= 4.5",
+      "layer": "unit",
+      "kind": "edge",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
       "id": "FLOW-HIS-01-T01",
       "type": "TC",
       "title": "HistoryScreen renders empty state and populated logs correctly",
@@ -664,6 +680,14 @@
       "id": "FLOW-HIS-01-T05",
       "type": "TC",
       "title": "tema gelap: semua teks di layar Riwayat kontras >= 4.5",
+      "layer": "unit",
+      "kind": "edge",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-HIS-01-T06",
+      "type": "TC",
+      "title": "tema terang: semua teks di layar Riwayat kontras >= 4.5",
       "layer": "unit",
       "kind": "edge",
       "source": "docs/trace/flows.yaml"
@@ -712,6 +736,14 @@
       "id": "FLOW-GDE-01-T06",
       "type": "TC",
       "title": "tema gelap: semua teks di layar Panduan kontras >= 4.5",
+      "layer": "unit",
+      "kind": "edge",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-GDE-01-T07",
+      "type": "TC",
+      "title": "tema terang: semua teks di layar Panduan kontras >= 4.5",
       "layer": "unit",
       "kind": "edge",
       "source": "docs/trace/flows.yaml"
@@ -776,6 +808,22 @@
       "id": "FLOW-SET-01-T08",
       "type": "TC",
       "title": "tema gelap: semua teks di layar Pengaturan kontras >= 4.5",
+      "layer": "unit",
+      "kind": "edge",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-SET-01-T09",
+      "type": "TC",
+      "title": "PressScale nonaktif dibongkar tanpa galat (controller tidak dibuat saat dispose)",
+      "layer": "unit",
+      "kind": "corner",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-SET-01-T10",
+      "type": "TC",
+      "title": "tema terang: semua teks di layar Pengaturan kontras >= 4.5",
       "layer": "unit",
       "kind": "edge",
       "source": "docs/trace/flows.yaml"
@@ -1638,6 +1686,11 @@
       "via": "docs/trace/flows.yaml"
     },
     {
+      "from": "FLOW-WMK-01-T08",
+      "to": "FLOW-WMK-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
       "from": "FLOW-WMK-02",
       "to": "FR-004",
       "via": "docs/trace/flows.yaml"
@@ -1733,6 +1786,11 @@
       "via": "docs/trace/flows.yaml"
     },
     {
+      "from": "FLOW-PRS-01-T07",
+      "to": "FLOW-PRS-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
       "from": "FLOW-HIS-01",
       "to": "FR-007",
       "via": "docs/trace/flows.yaml"
@@ -1759,6 +1817,11 @@
     },
     {
       "from": "FLOW-HIS-01-T05",
+      "to": "FLOW-HIS-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-HIS-01-T06",
       "to": "FLOW-HIS-01",
       "via": "docs/trace/flows.yaml"
     },
@@ -1794,6 +1857,11 @@
     },
     {
       "from": "FLOW-GDE-01-T06",
+      "to": "FLOW-GDE-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-GDE-01-T07",
       "to": "FLOW-GDE-01",
       "via": "docs/trace/flows.yaml"
     },
@@ -1844,6 +1912,16 @@
     },
     {
       "from": "FLOW-SET-01-T08",
+      "to": "FLOW-SET-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-SET-01-T09",
+      "to": "FLOW-SET-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-SET-01-T10",
       "to": "FLOW-SET-01",
       "via": "docs/trace/flows.yaml"
     }
@@ -1901,6 +1979,14 @@
       "id": "FLOW-WMK-01-T07",
       "flow": "FLOW-WMK-01",
       "title": "tema gelap: semua teks di layar Watermark (editor) kontras >= 4.5",
+      "layer": "unit",
+      "kind": "edge",
+      "walk": false
+    },
+    {
+      "id": "FLOW-WMK-01-T08",
+      "flow": "FLOW-WMK-01",
+      "title": "tema terang: semua teks di layar Watermark (editor) kontras >= 4.5",
       "layer": "unit",
       "kind": "edge",
       "walk": false
@@ -2026,6 +2112,14 @@
       "walk": false
     },
     {
+      "id": "FLOW-PRS-01-T07",
+      "flow": "FLOW-PRS-01",
+      "title": "tema terang: semua teks di layar Preset kontras >= 4.5",
+      "layer": "unit",
+      "kind": "edge",
+      "walk": false
+    },
+    {
       "id": "FLOW-HIS-01-T01",
       "flow": "FLOW-HIS-01",
       "title": "HistoryScreen renders empty state and populated logs correctly",
@@ -2061,6 +2155,14 @@
       "id": "FLOW-HIS-01-T05",
       "flow": "FLOW-HIS-01",
       "title": "tema gelap: semua teks di layar Riwayat kontras >= 4.5",
+      "layer": "unit",
+      "kind": "edge",
+      "walk": false
+    },
+    {
+      "id": "FLOW-HIS-01-T06",
+      "flow": "FLOW-HIS-01",
+      "title": "tema terang: semua teks di layar Riwayat kontras >= 4.5",
       "layer": "unit",
       "kind": "edge",
       "walk": false
@@ -2109,6 +2211,14 @@
       "id": "FLOW-GDE-01-T06",
       "flow": "FLOW-GDE-01",
       "title": "tema gelap: semua teks di layar Panduan kontras >= 4.5",
+      "layer": "unit",
+      "kind": "edge",
+      "walk": false
+    },
+    {
+      "id": "FLOW-GDE-01-T07",
+      "flow": "FLOW-GDE-01",
+      "title": "tema terang: semua teks di layar Panduan kontras >= 4.5",
       "layer": "unit",
       "kind": "edge",
       "walk": false
@@ -2173,6 +2283,22 @@
       "id": "FLOW-SET-01-T08",
       "flow": "FLOW-SET-01",
       "title": "tema gelap: semua teks di layar Pengaturan kontras >= 4.5",
+      "layer": "unit",
+      "kind": "edge",
+      "walk": false
+    },
+    {
+      "id": "FLOW-SET-01-T09",
+      "flow": "FLOW-SET-01",
+      "title": "PressScale nonaktif dibongkar tanpa galat (controller tidak dibuat saat dispose)",
+      "layer": "unit",
+      "kind": "corner",
+      "walk": false
+    },
+    {
+      "id": "FLOW-SET-01-T10",
+      "flow": "FLOW-SET-01",
+      "title": "tema terang: semua teks di layar Pengaturan kontras >= 4.5",
       "layer": "unit",
       "kind": "edge",
       "walk": false

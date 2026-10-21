@@ -12,7 +12,7 @@ generated: { by: process:trace-graph }
 
 | Total case | pass | fail | belum dijalankan | positive | negative | edge | corner |
 |---|---|---|---|---|---|---|---|
-| 41 | 41 | 0 | 0 | 8 | 9 | 14 | 10 |
+| 47 | 47 | 0 | 0 | 8 | 9 | 19 | 11 |
 
 Sumber hasil: `docs/trace/ledger.json`. Rantai lengkap: [traceability-matrix.md](../../reference/system/traceability-matrix.md).
 
@@ -20,74 +20,80 @@ Sumber hasil: `docs/trace/ledger.json`. Rantai lengkap: [traceability-matrix.md]
 
 | TC | Jenis | Lapis | Skenario | Hasil | Commit |
 |---|---|---|---|---|---|
-| FLOW-WMK-01-T01 | positive | unit | cap tujuan + tanggal dirender di perangkat dengan resolusi asli tetap utuh | pass | 17b5655 |
-| FLOW-WMK-01-T02 | negative | unit | validatePurpose rejects empty and invalid length | pass | 17b5655 |
-| FLOW-WMK-01-T03 | edge | unit | tujuan tepat 3 dan 80 karakter diterima, 81 karakter ditolak | pass | 17b5655 |
-| FLOW-WMK-01-T04 | corner | unit | tanggal cap mengikuti zona pilihan: instan yang sama bisa beda tanggal di Jakarta dan New York | pass | 17b5655 |
-| FLOW-WMK-01-T05 | corner | unit | IdMarkApp smoke test: setelah onboarding, splash langsung ke editor tanpa galat | pass | 17b5655 |
-| FLOW-WMK-01-T06 | edge | unit | kolom Tujuan Watermark punya label aksesibilitas sebagai kolom teks | pass | 17b5655 |
-| FLOW-WMK-01-T07 | edge | unit | tema gelap: semua teks di layar Watermark (editor) kontras >= 4.5 | pass | 17b5655 |
+| FLOW-WMK-01-T01 | positive | unit | cap tujuan + tanggal dirender di perangkat dengan resolusi asli tetap utuh | pass | 5ec32d8 |
+| FLOW-WMK-01-T02 | negative | unit | validatePurpose rejects empty and invalid length | pass | 5ec32d8 |
+| FLOW-WMK-01-T03 | edge | unit | tujuan tepat 3 dan 80 karakter diterima, 81 karakter ditolak | pass | 5ec32d8 |
+| FLOW-WMK-01-T04 | corner | unit | tanggal cap mengikuti zona pilihan: instan yang sama bisa beda tanggal di Jakarta dan New York | pass | 5ec32d8 |
+| FLOW-WMK-01-T05 | corner | unit | IdMarkApp smoke test: setelah onboarding, splash langsung ke editor tanpa galat | pass | 5ec32d8 |
+| FLOW-WMK-01-T06 | edge | unit | kolom Tujuan Watermark punya label aksesibilitas sebagai kolom teks | pass | 5ec32d8 |
+| FLOW-WMK-01-T07 | edge | unit | tema gelap: semua teks di layar Watermark (editor) kontras >= 4.5 | pass | 5ec32d8 |
+| FLOW-WMK-01-T08 | edge | unit | tema terang: semua teks di layar Watermark (editor) kontras >= 4.5 | pass | 5ec32d8 |
 
 ## FLOW-WMK-02 — Mengatur pola, warna, dan opasitas cap · [panduan & video BAST](../bast/guide/FLOW-WMK-02.html)
 
 | TC | Jenis | Lapis | Skenario | Hasil | Commit |
 |---|---|---|---|---|---|
-| FLOW-WMK-02-T01 | positive | unit | pola, warna, dan opasitas tersimpan dan dipakai lagi saat app dibuka ulang | pass | 17b5655 |
-| FLOW-WMK-02-T02 | negative | unit | opasitas di luar 10–100% ditolak dan konfigurasi tersimpan tidak berubah | pass | 17b5655 |
-| FLOW-WMK-02-T03 | edge | unit | validateOpacity enforces 0.1 to 1.0 range | pass | 17b5655 |
-| FLOW-WMK-02-T04 | corner | unit | ketujuh pola cap dirender tanpa galat dan mempertahankan ukuran gambar | pass | 17b5655 |
-| FLOW-WMK-02-T05 | negative | unit | Invalid mutation throws ArgumentError | pass | 17b5655 |
+| FLOW-WMK-02-T01 | positive | unit | pola, warna, dan opasitas tersimpan dan dipakai lagi saat app dibuka ulang | pass | 5ec32d8 |
+| FLOW-WMK-02-T02 | negative | unit | opasitas di luar 10–100% ditolak dan konfigurasi tersimpan tidak berubah | pass | 5ec32d8 |
+| FLOW-WMK-02-T03 | edge | unit | validateOpacity enforces 0.1 to 1.0 range | pass | 5ec32d8 |
+| FLOW-WMK-02-T04 | corner | unit | ketujuh pola cap dirender tanpa galat dan mempertahankan ukuran gambar | pass | 5ec32d8 |
+| FLOW-WMK-02-T05 | negative | unit | Invalid mutation throws ArgumentError | pass | 5ec32d8 |
 
 ## FLOW-RED-01 — Menyensor data sensitif sebelum dicap · [panduan & video BAST](../bast/guide/FLOW-RED-01.html)
 
 | TC | Jenis | Lapis | Skenario | Hasil | Commit |
 |---|---|---|---|---|---|
-| FLOW-RED-01-T01 | positive | unit | Valid RedactionBox fromPreset passes validation | pass | 17b5655 |
-| FLOW-RED-01-T02 | negative | unit | kotak sensor di luar gambar atau berukuran nol ditolak validasi | pass | 17b5655 |
-| FLOW-RED-01-T03 | edge | unit | menggeser sensor ke tepi kanan dijepit agar tetap di dalam gambar | pass | 17b5655 |
-| FLOW-RED-01-T04 | corner | unit | tambah dua sensor, hapus satu, lalu bersihkan; konfigurasi rusak di storage kembali ke bawaan | pass | 17b5655 |
+| FLOW-RED-01-T01 | positive | unit | Valid RedactionBox fromPreset passes validation | pass | 5ec32d8 |
+| FLOW-RED-01-T02 | negative | unit | kotak sensor di luar gambar atau berukuran nol ditolak validasi | pass | 5ec32d8 |
+| FLOW-RED-01-T03 | edge | unit | menggeser sensor ke tepi kanan dijepit agar tetap di dalam gambar | pass | 5ec32d8 |
+| FLOW-RED-01-T04 | corner | unit | tambah dua sensor, hapus satu, lalu bersihkan; konfigurasi rusak di storage kembali ke bawaan | pass | 5ec32d8 |
 
 ## FLOW-PRS-01 — Memakai dan membuat preset tujuan · [panduan & video BAST](../bast/guide/FLOW-PRS-01.html)
 
 | TC | Jenis | Lapis | Skenario | Hasil | Commit |
 |---|---|---|---|---|---|
-| FLOW-PRS-01-T01 | positive | unit | LocalStorageService manages custom presets and audit logs | pass | 17b5655 |
-| FLOW-PRS-01-T02 | negative | unit | AppValidators validates quality and preset titles (§VAL) | pass | 17b5655 |
-| FLOW-PRS-01-T03 | edge | unit | preset bawaan ber-id unik, mencakup kebutuhan lokal dan internasional, dan semuanya valid | pass | 17b5655 |
-| FLOW-PRS-01-T04 | corner | unit | preset kustom ber-id sama menggantikan yang lama di urutan teratas; menerapkannya mengubah cap | pass | 17b5655 |
-| FLOW-PRS-01-T05 | corner | unit | tombol hapus pencarian mengosongkan kolom dan menampilkan lagi semua template | pass | 17b5655 |
-| FLOW-PRS-01-T06 | edge | unit | tema gelap: semua teks di layar Preset kontras >= 4.5 | pass | 17b5655 |
+| FLOW-PRS-01-T01 | positive | unit | LocalStorageService manages custom presets and audit logs | pass | 5ec32d8 |
+| FLOW-PRS-01-T02 | negative | unit | AppValidators validates quality and preset titles (§VAL) | pass | 5ec32d8 |
+| FLOW-PRS-01-T03 | edge | unit | preset bawaan ber-id unik, mencakup kebutuhan lokal dan internasional, dan semuanya valid | pass | 5ec32d8 |
+| FLOW-PRS-01-T04 | corner | unit | preset kustom ber-id sama menggantikan yang lama di urutan teratas; menerapkannya mengubah cap | pass | 5ec32d8 |
+| FLOW-PRS-01-T05 | corner | unit | tombol hapus pencarian mengosongkan kolom dan menampilkan lagi semua template | pass | 5ec32d8 |
+| FLOW-PRS-01-T06 | edge | unit | tema gelap: semua teks di layar Preset kontras >= 4.5 | pass | 5ec32d8 |
+| FLOW-PRS-01-T07 | edge | unit | tema terang: semua teks di layar Preset kontras >= 4.5 | pass | 5ec32d8 |
 
 ## FLOW-HIS-01 — Melihat riwayat audit ekspor · [panduan & video BAST](../bast/guide/FLOW-HIS-01.html)
 
 | TC | Jenis | Lapis | Skenario | Hasil | Commit |
 |---|---|---|---|---|---|
-| FLOW-HIS-01-T01 | positive | unit | HistoryScreen renders empty state and populated logs correctly | pass | 17b5655 |
-| FLOW-HIS-01-T02 | negative | unit | AuditLogEntry rejects invalid privacy score (§VAL) | pass | 17b5655 |
-| FLOW-HIS-01-T03 | edge | unit | riwayat dibatasi 50 ekspor terbaru, urutan terbaru di atas | pass | 17b5655 |
-| FLOW-HIS-01-T04 | corner | unit | riwayat rusak di storage dibaca kosong; bersihkan riwayat mengosongkan daftar | pass | 17b5655 |
-| FLOW-HIS-01-T05 | edge | unit | tema gelap: semua teks di layar Riwayat kontras >= 4.5 | pass | 17b5655 |
+| FLOW-HIS-01-T01 | positive | unit | HistoryScreen renders empty state and populated logs correctly | pass | 5ec32d8 |
+| FLOW-HIS-01-T02 | negative | unit | AuditLogEntry rejects invalid privacy score (§VAL) | pass | 5ec32d8 |
+| FLOW-HIS-01-T03 | edge | unit | riwayat dibatasi 50 ekspor terbaru, urutan terbaru di atas | pass | 5ec32d8 |
+| FLOW-HIS-01-T04 | corner | unit | riwayat rusak di storage dibaca kosong; bersihkan riwayat mengosongkan daftar | pass | 5ec32d8 |
+| FLOW-HIS-01-T05 | edge | unit | tema gelap: semua teks di layar Riwayat kontras >= 4.5 | pass | 5ec32d8 |
+| FLOW-HIS-01-T06 | edge | unit | tema terang: semua teks di layar Riwayat kontras >= 4.5 | pass | 5ec32d8 |
 
 ## FLOW-GDE-01 — Memeriksa kepatuhan dengan panduan Kominfo · [panduan & video BAST](../bast/guide/FLOW-GDE-01.html)
 
 | TC | Jenis | Lapis | Skenario | Hasil | Commit |
 |---|---|---|---|---|---|
-| FLOW-GDE-01-T01 | positive | unit | KominfoGuideScreen renders interactive checklist and rules | pass | 17b5655 |
-| FLOW-GDE-01-T02 | negative | unit | cap tanpa tanggal, tanpa sanitasi EXIF, dengan tujuan pendek mendapat nilai privasi D | pass | 17b5655 |
-| FLOW-GDE-01-T03 | edge | unit | batas nilai: 80 poin = A, 90 poin = A+ | pass | 17b5655 |
-| FLOW-GDE-01-T04 | corner | unit | semua perlindungan aktif sekaligus tetap dijepit maksimum 100 | pass | 17b5655 |
-| FLOW-GDE-01-T05 | positive | unit | High protection configuration yields Grade A+ | pass | 17b5655 |
-| FLOW-GDE-01-T06 | edge | unit | tema gelap: semua teks di layar Panduan kontras >= 4.5 | pass | 17b5655 |
+| FLOW-GDE-01-T01 | positive | unit | KominfoGuideScreen renders interactive checklist and rules | pass | 5ec32d8 |
+| FLOW-GDE-01-T02 | negative | unit | cap tanpa tanggal, tanpa sanitasi EXIF, dengan tujuan pendek mendapat nilai privasi D | pass | 5ec32d8 |
+| FLOW-GDE-01-T03 | edge | unit | batas nilai: 80 poin = A, 90 poin = A+ | pass | 5ec32d8 |
+| FLOW-GDE-01-T04 | corner | unit | semua perlindungan aktif sekaligus tetap dijepit maksimum 100 | pass | 5ec32d8 |
+| FLOW-GDE-01-T05 | positive | unit | High protection configuration yields Grade A+ | pass | 5ec32d8 |
+| FLOW-GDE-01-T06 | edge | unit | tema gelap: semua teks di layar Panduan kontras >= 4.5 | pass | 5ec32d8 |
+| FLOW-GDE-01-T07 | edge | unit | tema terang: semua teks di layar Panduan kontras >= 4.5 | pass | 5ec32d8 |
 
 ## FLOW-SET-01 — Mengatur tampilan, bahasa, dan privasi · [panduan & video BAST](../bast/guide/FLOW-SET-01.html)
 
 | TC | Jenis | Lapis | Skenario | Hasil | Commit |
 |---|---|---|---|---|---|
-| FLOW-SET-01-T01 | positive | unit | bahasa dan tema pilihan tersimpan lalu dipakai lagi saat app dibuka ulang | pass | 17b5655 |
-| FLOW-SET-01-T02 | negative | unit | konfigurasi tersimpan yang melanggar §VAL (tujuan kosong) diabaikan, kembali ke bawaan | pass | 17b5655 |
-| FLOW-SET-01-T03 | edge | unit | instalasi baru: tema gelap, sanitasi EXIF aktif, ekspor PNG | pass | 17b5655 |
-| FLOW-SET-01-T04 | corner | unit | unknown zone falls back to Jakarta, never throws | pass | 17b5655 |
-| FLOW-SET-01-T05 | negative | unit | lembar Pilih Bahasa dan Zona Waktu terbuka tanpa galat render dan bisa memilih bahasa | pass | 17b5655 |
-| FLOW-SET-01-T06 | corner | unit | tombol bersarang TapTarget + PressScale tetap memicu aksi saat diketuk | pass | 17b5655 |
-| FLOW-SET-01-T07 | edge | unit | di tema gelap dan terang pilihan di lembar Bahasa dan Zona Waktu terbaca (kontras >= 4.5) | pass | 17b5655 |
-| FLOW-SET-01-T08 | edge | unit | tema gelap: semua teks di layar Pengaturan kontras >= 4.5 | pass | 17b5655 |
+| FLOW-SET-01-T01 | positive | unit | bahasa dan tema pilihan tersimpan lalu dipakai lagi saat app dibuka ulang | pass | 5ec32d8 |
+| FLOW-SET-01-T02 | negative | unit | konfigurasi tersimpan yang melanggar §VAL (tujuan kosong) diabaikan, kembali ke bawaan | pass | 5ec32d8 |
+| FLOW-SET-01-T03 | edge | unit | instalasi baru: tema gelap, sanitasi EXIF aktif, ekspor PNG | pass | 5ec32d8 |
+| FLOW-SET-01-T04 | corner | unit | unknown zone falls back to Jakarta, never throws | pass | 5ec32d8 |
+| FLOW-SET-01-T05 | negative | unit | lembar Pilih Bahasa dan Zona Waktu terbuka tanpa galat render dan bisa memilih bahasa | pass | 5ec32d8 |
+| FLOW-SET-01-T06 | corner | unit | tombol bersarang TapTarget + PressScale tetap memicu aksi saat diketuk | pass | 5ec32d8 |
+| FLOW-SET-01-T07 | edge | unit | di tema gelap dan terang pilihan di lembar Bahasa dan Zona Waktu terbaca (kontras >= 4.5) | pass | 5ec32d8 |
+| FLOW-SET-01-T08 | edge | unit | tema gelap: semua teks di layar Pengaturan kontras >= 4.5 | pass | 5ec32d8 |
+| FLOW-SET-01-T09 | corner | unit | PressScale nonaktif dibongkar tanpa galat (controller tidak dibuat saat dispose) | pass | 5ec32d8 |
+| FLOW-SET-01-T10 | edge | unit | tema terang: semua teks di layar Pengaturan kontras >= 4.5 | pass | 5ec32d8 |
