@@ -8,6 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../../../core/constants/app_colors.dart';
+import '../../../core/theme/app_theme.dart';
 import '../../../core/ui/app_scroll.dart';
 import '../../../core/models/watermark_config.dart';
 import '../../../core/utils/web_download_helper.dart';
@@ -134,15 +135,21 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
     buffer.writeln('🔒 Skor Privasi: ${c.privacyScore}/100');
     buffer.writeln('✂️ Sensor Permanen: ${c.redactions.length} Area Tertutup');
     buffer.writeln('🔑 SHA-256: ${widget.sha256Hash}');
-    buffer.writeln('✅ Diproses 100% on-device tanpa server (Sesuai Panduan Kominfo RI)');
-    buffer.writeln('\nLindungi identitas Anda dengan IDMark: https://idmark.faishal.id');
+    buffer.writeln(
+      '✅ Diproses 100% on-device tanpa server (Sesuai Panduan Kominfo RI)',
+    );
+    buffer.writeln(
+      '\nLindungi identitas Anda dengan IDMark: https://idmark.faishal.id',
+    );
     return buffer.toString();
   }
 
   Future<void> _shareImage() async {
     setState(() => _isGenerating = true);
     try {
-      final boundary = _repaintBoundaryKey.currentContext?.findRenderObject() as RenderRepaintBoundary?;
+      final boundary =
+          _repaintBoundaryKey.currentContext?.findRenderObject()
+              as RenderRepaintBoundary?;
       if (boundary == null) return;
 
       final image = await boundary.toImage(pixelRatio: 3.0);
@@ -150,25 +157,27 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
       if (byteData == null) return;
       final bytes = byteData.buffer.asUint8List();
 
-      final filename = 'idmark_proof_${widget.config.purpose.replaceAll(' ', '_')}.png'
-          .toLowerCase();
+      final filename =
+          'idmark_proof_${widget.config.purpose.replaceAll(' ', '_')}.png'
+              .toLowerCase();
 
       if (kIsWeb) {
         downloadFileWeb(bytes, filename);
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
-              content: Text('Sertifikat proteksi dokumen berhasil diunduh! 🛡️✨'),
+              content: Text(
+                'Sertifikat proteksi dokumen berhasil diunduh! 🛡️✨',
+              ),
               behavior: SnackBarBehavior.floating,
             ),
           );
         }
       } else {
         // ignore: deprecated_member_use
-        await Share.shareXFiles(
-          [XFile.fromData(bytes, mimeType: 'image/png', name: filename)],
-          text: _buildShareText(),
-        );
+        await Share.shareXFiles([
+          XFile.fromData(bytes, mimeType: 'image/png', name: filename),
+        ], text: _buildShareText());
       }
     } catch (e) {
       if (mounted) {
@@ -200,178 +209,230 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
     final screenHeight = MediaQuery.of(context).size.height;
     final maxPreviewHeight = screenHeight * 0.48;
 
-    return Container(
-      decoration: const BoxDecoration(
-        color: AppColors.bgSurface,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
-      ),
-      padding: const EdgeInsets.fromLTRB(20, 16, 20, 24),
-      child: SafeArea(
-        top: false,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const SpringSheetHandle(),
-            const SizedBox(height: 8),
+    // Brand-dark sheet in either app theme: pin the dark theme for its chips and buttons.
+    return Theme(
+      data: AppTheme.darkTheme,
+      child: Container(
+        decoration: const BoxDecoration(
+          color: AppColors.bgSurface,
+          borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
+        ),
+        padding: const EdgeInsets.fromLTRB(20, 16, 20, 24),
+        child: SafeArea(
+          top: false,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              const SpringSheetHandle(),
+              const SizedBox(height: 8),
 
-            // Header title
-            Row(
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    color: AppColors.primaryLight.withValues(alpha: 0.2),
-                    borderRadius: BorderRadius.circular(10),
+              // Header title
+              Row(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      color: AppColors.primaryLight.withValues(alpha: 0.2),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Icon(
+                      Icons.verified_user,
+                      color: AppColors.primaryLight,
+                      size: 20,
+                    ),
                   ),
-                  child: const Icon(Icons.verified_user, color: AppColors.primaryLight, size: 20),
+                  const SizedBox(width: 12),
+                  const Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Bukti Proteksi Dokumen',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Text(
+                          'Sertifikat integritas watermark & sensor sesuai Kominfo',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Color(0xFF94A3B8),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  IconButton(
+                    icon: const Icon(
+                      Icons.close,
+                      size: 20,
+                      color: Colors.white70,
+                    ),
+                    onPressed: () => Navigator.of(context).pop(),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
+
+              // Format & Theme Selectors
+              Row(
+                children: [
+                  Expanded(
+                    child: SegmentedButton<bool>(
+                      segments: const [
+                        ButtonSegment(
+                          value: false,
+                          label: Text(
+                            'Feed (4:5)',
+                            style: TextStyle(fontSize: 12),
+                          ),
+                          icon: Icon(Icons.crop_portrait, size: 16),
+                        ),
+                        ButtonSegment(
+                          value: true,
+                          label: Text(
+                            'Story (9:16)',
+                            style: TextStyle(fontSize: 12),
+                          ),
+                          icon: Icon(Icons.stay_current_portrait, size: 16),
+                        ),
+                      ],
+                      selected: {_isStoryFormat},
+                      onSelectionChanged: (set) {
+                        setState(() => _isStoryFormat = set.first);
+                      },
+                      style: ButtonStyle(
+                        visualDensity: VisualDensity.compact,
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+
+              // Theme selector chips
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                physics: AppScroll.physics,
+                child: Row(
+                  children: List.generate(_themes.length, (index) {
+                    final t = _themes[index];
+                    final isSelected = _selectedThemeIndex == index;
+                    return Padding(
+                      padding: const EdgeInsets.only(right: 8),
+                      child: ChoiceChip(
+                        selected: isSelected,
+                        label: Text(
+                          t.name,
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: isSelected
+                                ? FontWeight.bold
+                                : FontWeight.normal,
+                          ),
+                        ),
+                        avatar: CircleAvatar(
+                          radius: 7,
+                          backgroundColor: t.cardBg,
+                        ),
+                        onSelected: (_) {
+                          setState(() => _selectedThemeIndex = index);
+                        },
+                      ),
+                    );
+                  }),
                 ),
-                const SizedBox(width: 12),
-                const Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Bukti Proteksi Dokumen',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+              ),
+              const SizedBox(height: 14),
+
+              // Card Preview Area
+              ConstrainedBox(
+                constraints: BoxConstraints(maxHeight: maxPreviewHeight),
+                child: Center(
+                  child: AspectRatio(
+                    aspectRatio: _isStoryFormat ? (9 / 16) : (4 / 5),
+                    child: FittedBox(
+                      fit: BoxFit.contain,
+                      child: RepaintBoundary(
+                        key: _repaintBoundaryKey,
+                        child: _buildShareCard(theme),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+
+              // Actions
+              Row(
+                children: [
+                  Expanded(
+                    child: OutlinedButton.icon(
+                      onPressed: _copyText,
+                      icon: const Icon(
+                        Icons.copy,
+                        size: 18,
+                        color: Colors.white,
+                      ),
+                      label: const Text(
+                        'Salin Teks',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      style: OutlinedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(vertical: 14),
+                        side: const BorderSide(color: Color(0xFF334155)),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(14),
                         ),
                       ),
-                      Text(
-                        'Sertifikat integritas watermark & sensor sesuai Kominfo',
-                        style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
-                      ),
-                    ],
-                  ),
-                ),
-                IconButton(
-                  icon: const Icon(Icons.close, size: 20, color: Colors.white70),
-                  onPressed: () => Navigator.of(context).pop(),
-                ),
-              ],
-            ),
-            const SizedBox(height: 16),
-
-            // Format & Theme Selectors
-            Row(
-              children: [
-                Expanded(
-                  child: SegmentedButton<bool>(
-                    segments: const [
-                      ButtonSegment(
-                        value: false,
-                        label: Text('Feed (4:5)', style: TextStyle(fontSize: 12)),
-                        icon: Icon(Icons.crop_portrait, size: 16),
-                      ),
-                      ButtonSegment(
-                        value: true,
-                        label: Text('Story (9:16)', style: TextStyle(fontSize: 12)),
-                        icon: Icon(Icons.stay_current_portrait, size: 16),
-                      ),
-                    ],
-                    selected: {_isStoryFormat},
-                    onSelectionChanged: (set) {
-                      setState(() => _isStoryFormat = set.first);
-                    },
-                    style: ButtonStyle(
-                      visualDensity: VisualDensity.compact,
-                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     ),
                   ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 10),
-
-            // Theme selector chips
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              physics: AppScroll.physics,
-              child: Row(
-                children: List.generate(_themes.length, (index) {
-                  final t = _themes[index];
-                  final isSelected = _selectedThemeIndex == index;
-                  return Padding(
-                    padding: const EdgeInsets.only(right: 8),
-                    child: ChoiceChip(
-                      selected: isSelected,
-                      label: Text(t.name, style: TextStyle(fontSize: 12, fontWeight: isSelected ? FontWeight.bold : FontWeight.normal)),
-                      avatar: CircleAvatar(
-                        radius: 7,
-                        backgroundColor: t.cardBg,
+                  const SizedBox(width: 12),
+                  Expanded(
+                    flex: 2,
+                    child: ElevatedButton.icon(
+                      onPressed: _isGenerating ? null : _shareImage,
+                      icon: _isGenerating
+                          ? const SizedBox(
+                              width: 18,
+                              height: 18,
+                              child: CircularProgressIndicator(
+                                strokeWidth: 2,
+                                color: Colors.white,
+                              ),
+                            )
+                          : Icon(
+                              kIsWeb ? Icons.download : Icons.share,
+                              size: 18,
+                            ),
+                      label: Text(
+                        _isGenerating
+                            ? 'Memproses...'
+                            : (kIsWeb ? 'Unduh Bukti PNG' : 'Bagikan Bukti'),
                       ),
-                      onSelected: (_) {
-                        setState(() => _selectedThemeIndex = index);
-                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: theme.accentColor,
+                        // Pale accents (sky 400) need a dark label to reach 4.5.
+                        foregroundColor:
+                            theme.accentColor.computeLuminance() > 0.18
+                            ? const Color(0xFF0F172A)
+                            : Colors.white,
+                        padding: const EdgeInsets.symmetric(vertical: 14),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                        elevation: 0,
+                      ),
                     ),
-                  );
-                }),
+                  ),
+                ],
               ),
-            ),
-            const SizedBox(height: 14),
-
-            // Card Preview Area
-            ConstrainedBox(
-              constraints: BoxConstraints(maxHeight: maxPreviewHeight),
-              child: Center(
-                child: AspectRatio(
-                  aspectRatio: _isStoryFormat ? (9 / 16) : (4 / 5),
-                  child: FittedBox(
-                    fit: BoxFit.contain,
-                    child: RepaintBoundary(
-                      key: _repaintBoundaryKey,
-                      child: _buildShareCard(theme),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(height: 16),
-
-            // Actions
-            Row(
-              children: [
-                Expanded(
-                  child: OutlinedButton.icon(
-                    onPressed: _copyText,
-                    icon: const Icon(Icons.copy, size: 18, color: Colors.white),
-                    label: const Text('Salin Teks', style: TextStyle(color: Colors.white)),
-                    style: OutlinedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(vertical: 14),
-                      side: const BorderSide(color: Color(0xFF334155)),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  flex: 2,
-                  child: ElevatedButton.icon(
-                    onPressed: _isGenerating ? null : _shareImage,
-                    icon: _isGenerating
-                        ? const SizedBox(
-                            width: 18,
-                            height: 18,
-                            child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
-                          )
-                        : Icon(kIsWeb ? Icons.download : Icons.share, size: 18),
-                    label: Text(_isGenerating
-                        ? 'Memproses...'
-                        : (kIsWeb ? 'Unduh Bukti PNG' : 'Bagikan Bukti')),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: theme.accentColor,
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(vertical: 14),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-                      elevation: 0,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -404,16 +465,25 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 5,
+                ),
                 decoration: BoxDecoration(
                   color: Colors.white.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: Colors.white.withValues(alpha: 0.2)),
+                  border: Border.all(
+                    color: Colors.white.withValues(alpha: 0.2),
+                  ),
                 ),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Icon(Icons.shield_outlined, size: 14, color: Colors.white),
+                    const Icon(
+                      Icons.shield_outlined,
+                      size: 14,
+                      color: Colors.white,
+                    ),
                     const SizedBox(width: 6),
                     Text(
                       'IDMARK • SECURE ID',
@@ -428,7 +498,10 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
                 ),
               ),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 5,
+                ),
                 decoration: BoxDecoration(
                   color: theme.badgeBg,
                   borderRadius: BorderRadius.circular(20),
@@ -520,25 +593,75 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
                     children: [
                       Column(
                         children: [
-                          Text('SKOR PRIVASI', style: TextStyle(fontSize: 8.5, fontWeight: FontWeight.bold, color: theme.badgeText)),
+                          Text(
+                            'SKOR PRIVASI',
+                            style: TextStyle(
+                              fontSize: 8.5,
+                              fontWeight: FontWeight.bold,
+                              color: theme.badgeText,
+                            ),
+                          ),
                           const SizedBox(height: 2),
-                          Text('${c.privacyScore}/100', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w900, color: theme.textPrimary)),
+                          Text(
+                            '${c.privacyScore}/100',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w900,
+                              color: theme.textPrimary,
+                            ),
+                          ),
                         ],
                       ),
-                      Container(width: 1, height: 30, color: theme.borderColor.withValues(alpha: 0.5)),
+                      Container(
+                        width: 1,
+                        height: 30,
+                        color: theme.borderColor.withValues(alpha: 0.5),
+                      ),
                       Column(
                         children: [
-                          Text('SENSOR', style: TextStyle(fontSize: 8.5, fontWeight: FontWeight.bold, color: theme.badgeText)),
+                          Text(
+                            'SENSOR',
+                            style: TextStyle(
+                              fontSize: 8.5,
+                              fontWeight: FontWeight.bold,
+                              color: theme.badgeText,
+                            ),
+                          ),
                           const SizedBox(height: 2),
-                          Text('${c.redactions.length} Area', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w900, color: theme.textPrimary)),
+                          Text(
+                            '${c.redactions.length} Area',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w900,
+                              color: theme.textPrimary,
+                            ),
+                          ),
                         ],
                       ),
-                      Container(width: 1, height: 30, color: theme.borderColor.withValues(alpha: 0.5)),
+                      Container(
+                        width: 1,
+                        height: 30,
+                        color: theme.borderColor.withValues(alpha: 0.5),
+                      ),
                       Column(
                         children: [
-                          Text('FORMAT', style: TextStyle(fontSize: 8.5, fontWeight: FontWeight.bold, color: theme.badgeText)),
+                          Text(
+                            'FORMAT',
+                            style: TextStyle(
+                              fontSize: 8.5,
+                              fontWeight: FontWeight.bold,
+                              color: theme.badgeText,
+                            ),
+                          ),
                           const SizedBox(height: 2),
-                          Text(c.exportFormat.name.toUpperCase(), style: TextStyle(fontSize: 18, fontWeight: FontWeight.w900, color: theme.textPrimary)),
+                          Text(
+                            c.exportFormat.name.toUpperCase(),
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w900,
+                              color: theme.textPrimary,
+                            ),
+                          ),
                         ],
                       ),
                     ],
@@ -550,18 +673,39 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Tanggal: ${widget.dateLabel}', style: TextStyle(fontSize: 11, color: theme.textSecondary)),
-                    Text('Pola: ${c.pattern.label}', style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: theme.accentColor)),
+                    Text(
+                      'Tanggal: ${widget.dateLabel}',
+                      style: TextStyle(
+                        fontSize: 11,
+                        color: theme.textSecondary,
+                      ),
+                    ),
+                    Text(
+                      'Pola: ${c.pattern.label}',
+                      style: TextStyle(
+                        fontSize: 11,
+                        fontWeight: FontWeight.bold,
+                        color: theme.accentColor,
+                      ),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 8),
-                Divider(color: theme.borderColor.withValues(alpha: 0.5), height: 1),
+                Divider(
+                  color: theme.borderColor.withValues(alpha: 0.5),
+                  height: 1,
+                ),
                 const SizedBox(height: 8),
 
                 // SHA-256 integrity hash
                 Text(
                   'INTEGRITY HASH (SHA-256):',
-                  style: TextStyle(fontSize: 8.5, fontWeight: FontWeight.bold, letterSpacing: 0.6, color: theme.textSecondary),
+                  style: TextStyle(
+                    fontSize: 8.5,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 0.6,
+                    color: theme.textSecondary,
+                  ),
                 ),
                 const SizedBox(height: 2),
                 Text(
@@ -586,7 +730,11 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(Icons.lock_rounded, size: 12, color: Colors.white.withValues(alpha: 0.7)),
+                Icon(
+                  Icons.lock_rounded,
+                  size: 12,
+                  color: Colors.white.withValues(alpha: 0.7),
+                ),
                 const SizedBox(width: 5),
                 Text(
                   'idmark.faishal.id • Standar Watermark KTP Kominfo RI',

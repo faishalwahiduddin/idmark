@@ -44,6 +44,14 @@ flows:
         kind: edge
         layer: unit
         title: "tema terang: semua teks di layar Watermark (editor) kontras >= 4.5"
+      - id: FLOW-WMK-01-T09
+        kind: edge
+        layer: unit
+        title: "tema gelap: dialog bagikan hasil kontras >= 4.5"
+      - id: FLOW-WMK-01-T10
+        kind: edge
+        layer: unit
+        title: "tema terang: dialog bagikan hasil kontras >= 4.5"
   - id: FLOW-WMK-02
     priority: P0
     requirement: [FR-004, NFR-002]
@@ -130,6 +138,18 @@ flows:
         kind: edge
         layer: unit
         title: "tema terang: semua teks di layar Preset kontras >= 4.5"
+      - id: FLOW-PRS-01-T08
+        kind: corner
+        layer: unit
+        title: "menghapus preset yang sedang dipakai lewat dialog konfirmasi: cap tetap, daftar berkurang, tanpa galat"
+      - id: FLOW-PRS-01-T09
+        kind: edge
+        layer: unit
+        title: "tema gelap: dialog buat dan hapus preset kontras >= 4.5"
+      - id: FLOW-PRS-01-T10
+        kind: edge
+        layer: unit
+        title: "tema terang: dialog buat dan hapus preset kontras >= 4.5"
   - id: FLOW-HIS-01
     priority: P1
     requirement: [FR-007]

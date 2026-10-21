@@ -52,12 +52,14 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
     final activeConfig = ref.watch(watermarkConfigProvider);
 
     final filteredPresets = allPresets.where((p) {
-      final matchesSearch = _searchQuery.isEmpty ||
+      final matchesSearch =
+          _searchQuery.isEmpty ||
           p.title.toLowerCase().contains(_searchQuery.toLowerCase()) ||
           p.samplePurpose.toLowerCase().contains(_searchQuery.toLowerCase()) ||
           p.category.toLowerCase().contains(_searchQuery.toLowerCase());
 
-      final matchesCategory = _selectedCategory == 'Semua' ||
+      final matchesCategory =
+          _selectedCategory == 'Semua' ||
           (_selectedCategory == 'Preset Saya' && p.isCustom) ||
           p.category == _selectedCategory;
 
@@ -71,7 +73,11 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
           PressScale(
             scale: 0.92,
             child: IconButton(
-              icon: const Icon(Icons.add_circle_outline, size: 22, color: AppColors.primaryLight),
+              icon: const Icon(
+                Icons.add_circle_outline,
+                size: 22,
+                color: AppColors.primaryLight,
+              ),
               tooltip: l10n.createPresetTooltip,
               onPressed: () => _showCreatePresetDialog(context),
             ),
@@ -88,11 +94,17 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
             decoration: BoxDecoration(
               color: AppColors.bannerSurface,
               borderRadius: BorderRadius.circular(18),
-              border: Border.all(color: AppColors.primary.withValues(alpha: 0.12)),
+              border: Border.all(
+                color: AppColors.primary.withValues(alpha: 0.12),
+              ),
             ),
             child: Row(
               children: [
-                const Icon(Icons.bookmarks_outlined, color: AppColors.primaryLight, size: 24),
+                const Icon(
+                  Icons.bookmarks_outlined,
+                  color: AppColors.primaryLight,
+                  size: 24,
+                ),
                 const SizedBox(width: 12),
                 Expanded(
                   child: Column(
@@ -100,12 +112,20 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                     children: [
                       Text(
                         l10n.officialTemplateCatalog,
-                        style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Colors.white),
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white,
+                        ),
                       ),
                       const SizedBox(height: 3),
                       Text(
                         l10n.officialTemplateDesc,
-                        style: const TextStyle(fontSize: 12, color: Color(0xFFE2E8F0), height: 1.35),
+                        style: const TextStyle(
+                          fontSize: 12,
+                          color: Color(0xFFE2E8F0),
+                          height: 1.35,
+                        ),
                       ),
                     ],
                   ),
@@ -121,7 +141,10 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
             style: const TextStyle(color: Colors.white, fontSize: 14),
             decoration: InputDecoration(
               hintText: l10n.searchTemplateHint,
-              hintStyle: const TextStyle(color: Color(0xFF94A3B8), fontSize: 14),
+              hintStyle: const TextStyle(
+                color: Color(0xFF94A3B8),
+                fontSize: 14,
+              ),
               prefixIcon: const Icon(Icons.search, size: 18),
               suffixIcon: _searchQuery.isNotEmpty
                   ? IconButton(
@@ -158,12 +181,18 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                       child: FilterChip(
                         label: Text(cat),
                         selected: isSelected,
-                        selectedColor: AppColors.primary.withValues(alpha: 0.25),
+                        selectedColor: AppColors.primary.withValues(
+                          alpha: 0.25,
+                        ),
                         checkmarkColor: AppColors.accentLabel(context),
                         labelStyle: TextStyle(
                           fontSize: 12,
-                          fontWeight: isSelected ? FontWeight.w700 : FontWeight.normal,
-                          color: isSelected ? AppColors.accentLabel(context) : AppColors.muted(context),
+                          fontWeight: isSelected
+                              ? FontWeight.w700
+                              : FontWeight.normal,
+                          color: isSelected
+                              ? AppColors.accentLabel(context)
+                              : AppColors.muted(context),
                         ),
                         onSelected: (_) {},
                       ),
@@ -186,7 +215,10 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
               TextButton.icon(
                 onPressed: () => _showCreatePresetDialog(context),
                 icon: const Icon(Icons.add, size: 16),
-                label: Text(l10n.createCustom, style: const TextStyle(fontSize: 12)),
+                label: Text(
+                  l10n.createCustom,
+                  style: const TextStyle(fontSize: 12),
+                ),
               ),
             ],
           ),
@@ -199,30 +231,39 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                 padding: const EdgeInsets.symmetric(vertical: 40),
                 child: Text(
                   l10n.noTemplatesFound,
-                  style: TextStyle(color: AppColors.muted(context), fontSize: 13),
+                  style: TextStyle(
+                    color: AppColors.muted(context),
+                    fontSize: 13,
+                  ),
                 ),
               ),
             )
           else
             ...filteredPresets.asMap().entries.map(
-                  (e) => StaggerFadeIn(
-                    index: e.key,
-                    child: _buildPresetCard(context, e.value, activeConfig),
-                  ),
-                ),
+              (e) => StaggerFadeIn(
+                index: e.key,
+                child: _buildPresetCard(context, e.value, activeConfig),
+              ),
+            ),
         ],
       ),
     );
   }
 
-  Widget _buildPresetCard(BuildContext context, WatermarkPreset preset, WatermarkConfig activeConfig) {
+  Widget _buildPresetCard(
+    BuildContext context,
+    WatermarkPreset preset,
+    WatermarkConfig activeConfig,
+  ) {
     final l10n = AppLocalizations.of(context)!;
     final isCurrent = activeConfig.purpose == preset.samplePurpose;
 
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
       child: Card(
-        color: isCurrent ? AppColors.primary.withValues(alpha: 0.15) : AppColors.bgCard,
+        color: isCurrent
+            ? AppColors.primary.withValues(alpha: 0.15)
+            : AppColors.bgCard,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(18),
           side: BorderSide(
@@ -245,7 +286,11 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                       color: AppColors.bgSurface,
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Icon(preset.icon, size: 20, color: AppColors.primaryLight),
+                    child: Icon(
+                      preset.icon,
+                      size: 20,
+                      color: AppColors.primaryLight,
+                    ),
                   ),
                   const SizedBox(width: 12),
                   Expanded(
@@ -267,14 +312,23 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                             if (preset.isCustom) ...[
                               const SizedBox(width: 6),
                               Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 6,
+                                  vertical: 2,
+                                ),
                                 decoration: BoxDecoration(
-                                  color: AppColors.primary.withValues(alpha: 0.2),
+                                  color: AppColors.primary.withValues(
+                                    alpha: 0.2,
+                                  ),
                                   borderRadius: BorderRadius.circular(4),
                                 ),
                                 child: Text(
                                   l10n.customBadge,
-                                  style: const TextStyle(fontSize: 10, color: AppColors.primaryLight, fontWeight: FontWeight.bold),
+                                  style: const TextStyle(
+                                    fontSize: 10,
+                                    color: AppColors.primaryLight,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ],
@@ -292,14 +346,21 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                   ),
                   if (preset.isCustom)
                     IconButton(
-                      icon: const Icon(Icons.delete_outline, size: 18, color: AppColors.danger),
+                      icon: const Icon(
+                        Icons.delete_outline,
+                        size: 18,
+                        color: AppColors.danger,
+                      ),
                       tooltip: l10n.deleteCustomPresetTooltip,
                       visualDensity: VisualDensity.compact,
                       onPressed: () => _confirmDeletePreset(context, preset),
                     ),
                   if (isCurrent)
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 8,
+                        vertical: 4,
+                      ),
                       decoration: BoxDecoration(
                         color: AppColors.accent.withValues(alpha: 0.2),
                         borderRadius: BorderRadius.circular(6),
@@ -318,7 +379,10 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
               const SizedBox(height: 12),
               Container(
                 width: double.infinity,
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 8,
+                ),
                 decoration: BoxDecoration(
                   color: AppColors.bgSurface,
                   borderRadius: BorderRadius.circular(8),
@@ -340,13 +404,18 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                 children: [
                   Text(
                     l10n.patternInfo(preset.defaultPattern.label),
-                    style: const TextStyle(fontSize: 11, color: Color(0xFF94A3B8)),
+                    style: const TextStyle(
+                      fontSize: 11,
+                      color: Color(0xFF94A3B8),
+                    ),
                   ),
                   PressScale(
                     scale: 0.97,
                     child: ElevatedButton.icon(
                       onPressed: () {
-                        ref.read(watermarkConfigProvider.notifier).applyPreset(preset);
+                        ref
+                            .read(watermarkConfigProvider.notifier)
+                            .applyPreset(preset);
                         context.go('/');
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
@@ -358,8 +427,14 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                       icon: const Icon(Icons.check, size: 14),
                       label: Text(l10n.usePreset),
                       style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-                        textStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 14,
+                          vertical: 8,
+                        ),
+                        textStyle: const TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
@@ -377,7 +452,9 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
     final titleCtrl = TextEditingController();
     final catCtrl = TextEditingController(text: 'Kustom');
     final purposeCtrl = TextEditingController();
-    final subtextCtrl = TextEditingController(text: 'HANYA UNTUK DOKUMEN INTERNAL');
+    final subtextCtrl = TextEditingController(
+      text: 'HANYA UNTUK DOKUMEN INTERNAL',
+    );
     WatermarkPattern selectedPattern = WatermarkPattern.diagonalBand;
     WatermarkColorOption selectedColor = WatermarkColorOption.red;
 
@@ -391,9 +468,16 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
           backgroundColor: AppColors.bgSurface,
           title: Row(
             children: [
-              const Icon(Icons.add_box_outlined, color: AppColors.primaryLight, size: 22),
+              const Icon(
+                Icons.add_box_outlined,
+                color: AppColors.primaryLight,
+                size: 22,
+              ),
               const SizedBox(width: 8),
-              Text(l10n.createNewCustomPreset, style: const TextStyle(color: Colors.white, fontSize: 17)),
+              Text(
+                l10n.createNewCustomPreset,
+                style: const TextStyle(color: Colors.white, fontSize: 17),
+              ),
             ],
           ),
           content: SingleChildScrollView(
@@ -402,7 +486,13 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(l10n.presetName, style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+                Text(
+                  l10n.presetName,
+                  style: const TextStyle(
+                    fontSize: 12,
+                    color: Color(0xFF94A3B8),
+                  ),
+                ),
                 const SizedBox(height: 4),
                 TextField(
                   controller: titleCtrl,
@@ -413,7 +503,13 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                 ),
                 const SizedBox(height: 12),
 
-                Text(l10n.category, style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+                Text(
+                  l10n.category,
+                  style: const TextStyle(
+                    fontSize: 12,
+                    color: Color(0xFF94A3B8),
+                  ),
+                ),
                 const SizedBox(height: 4),
                 TextField(
                   controller: catCtrl,
@@ -421,7 +517,13 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                 ),
                 const SizedBox(height: 12),
 
-                Text(l10n.purposeTemplateText, style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+                Text(
+                  l10n.purposeTemplateText,
+                  style: const TextStyle(
+                    fontSize: 12,
+                    color: Color(0xFF94A3B8),
+                  ),
+                ),
                 const SizedBox(height: 4),
                 TextField(
                   controller: purposeCtrl,
@@ -432,15 +534,29 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                 ),
                 const SizedBox(height: 12),
 
-                Text(l10n.additionalSubtext, style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+                Text(
+                  l10n.additionalSubtext,
+                  style: const TextStyle(
+                    fontSize: 12,
+                    color: Color(0xFF94A3B8),
+                  ),
+                ),
                 const SizedBox(height: 4),
                 TextField(
                   controller: subtextCtrl,
-                  decoration: InputDecoration(hintText: l10n.subtextTemplateHint),
+                  decoration: InputDecoration(
+                    hintText: l10n.subtextTemplateHint,
+                  ),
                 ),
                 const SizedBox(height: 12),
 
-                Text(l10n.stampPattern, style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+                Text(
+                  l10n.stampPattern,
+                  style: const TextStyle(
+                    fontSize: 12,
+                    color: Color(0xFF94A3B8),
+                  ),
+                ),
                 const SizedBox(height: 4),
                 DropdownButton<WatermarkPattern>(
                   value: selectedPattern,
@@ -451,7 +567,9 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                     return DropdownMenuItem(value: p, child: Text(p.label));
                   }).toList(),
                   onChanged: (val) {
-                    if (val != null) setDialogState(() => selectedPattern = val);
+                    if (val != null) {
+                      setDialogState(() => selectedPattern = val);
+                    }
                   },
                 ),
               ],
@@ -460,12 +578,21 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(ctx),
-              child: Text(l10n.cancel, style: const TextStyle(color: Color(0xFF94A3B8))),
+              child: Text(
+                l10n.cancel,
+                style: const TextStyle(color: Color(0xFF94A3B8)),
+              ),
             ),
             ElevatedButton(
               onPressed: () {
-                final tErr = mapValidationError(AppValidators.validatePresetTitle(titleCtrl.text), l10n);
-                final pErr = mapValidationError(AppValidators.validatePurpose(purposeCtrl.text), l10n);
+                final tErr = mapValidationError(
+                  AppValidators.validatePresetTitle(titleCtrl.text),
+                  l10n,
+                );
+                final pErr = mapValidationError(
+                  AppValidators.validatePurpose(purposeCtrl.text),
+                  l10n,
+                );
 
                 setDialogState(() {
                   titleErr = tErr;
@@ -476,7 +603,9 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                   final newPreset = WatermarkPreset(
                     id: 'custom_${AppTimeZone.nowUtc().millisecondsSinceEpoch}',
                     title: titleCtrl.text.trim(),
-                    category: catCtrl.text.trim().isEmpty ? 'Kustom' : catCtrl.text.trim(),
+                    category: catCtrl.text.trim().isEmpty
+                        ? 'Kustom'
+                        : catCtrl.text.trim(),
                     samplePurpose: purposeCtrl.text.trim().toUpperCase(),
                     subtext: subtextCtrl.text.trim(),
                     icon: Icons.bookmark_border,
@@ -488,7 +617,9 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                   ref.read(customPresetsProvider.notifier).addPreset(newPreset);
                   Navigator.pop(ctx);
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text(l10n.customPresetSaved(newPreset.title))),
+                    SnackBar(
+                      content: Text(l10n.customPresetSaved(newPreset.title)),
+                    ),
                   );
                 }
               },
@@ -506,7 +637,10 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
       context: context,
       builder: (ctx) => AlertDialog(
         backgroundColor: AppColors.bgSurface,
-        title: Text(l10n.deletePresetConfirmTitle, style: const TextStyle(color: Colors.white)),
+        title: Text(
+          l10n.deletePresetConfirmTitle,
+          style: const TextStyle(color: Colors.white),
+        ),
         content: Text(
           l10n.deletePresetConfirmBody(preset.title),
           style: const TextStyle(color: Color(0xFF94A3B8)),
@@ -514,6 +648,9 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
+            style: TextButton.styleFrom(
+              foregroundColor: const Color(0xFF94A3B8),
+            ),
             child: Text(l10n.cancel),
           ),
           ElevatedButton(
@@ -524,7 +661,10 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                 SnackBar(content: Text(l10n.presetDeletedSuccess)),
               );
             },
-            style: ElevatedButton.styleFrom(backgroundColor: AppColors.danger),
+            // Red 700: white label keeps >= 4.5 (Red 500 was 3.8).
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFFB91C1C),
+            ),
             child: Text(l10n.delete),
           ),
         ],
