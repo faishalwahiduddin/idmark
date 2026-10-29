@@ -1,1 +1,1 @@
-watermark,ktp,document,privacy
+水印,身份证,证件,隐私,护照,驾照,文件

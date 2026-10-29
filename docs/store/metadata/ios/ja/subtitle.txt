@@ -1,1 +1,1 @@
-Stamp purpose & date on
+身分証に透かし文字と日付を追加

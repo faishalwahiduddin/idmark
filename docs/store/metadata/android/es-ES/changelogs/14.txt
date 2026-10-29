@@ -1,0 +1,1 @@
+Correcciones: ya no se puede eliminar el ajuste activo, el campo de finalidad tiene etiqueta para lectores de pantalla, se añadió un botón de borrar en la búsqueda y se corrigió un cierre con botones deshabilitados. Mejor contraste de texto en editor, ajustes, historial, guía y diálogos en tema claro y oscuro. Las hojas de idioma y zona horaria ya no muestran un cuadro de error.

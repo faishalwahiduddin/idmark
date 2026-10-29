@@ -1,1 +1,1 @@
-watermark,ktp,document,privacy
+透かし,身分証,書類,プライバシー,マイナンバー,免許証,パスポート

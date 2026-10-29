@@ -1,1 +1,1 @@
-Stamp purpose & date on IDs/passports. On-device.
+أضف نصًا مائيًا وتاريخًا إلى بطاقات الهوية والمستندات على جهازك.

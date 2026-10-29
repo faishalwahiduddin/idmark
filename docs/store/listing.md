@@ -22,7 +22,7 @@
 
 <details><summary>show</summary>
 
-IDMark melindungi dokumen identitas pribadi Anda dari potensi penyalahgunaan digital. Bubuhkan cap watermark teks, tanggal, dan tujuan verifikasi langsung di atas foto KTP, SIM, paspor, atau kartu keluarga sebelum dikirimkan ke pihak lain.
+IDMark membantu mencegah penyalahgunaan dokumen identitas pribadi Anda secara digital. Bubuhkan cap watermark teks, tanggal, dan tujuan verifikasi langsung di atas foto KTP, SIM, paspor, atau kartu keluarga sebelum dikirimkan ke pihak lain.
 
 Fitur Utama:
 ✓ Pembuat watermark instan untuk KTP, SIM, NPWP, dan berkas penting
@@ -34,7 +34,7 @@ Fitur Utama:
 ✓ Tanpa iklan, tanpa login, dan sepenuhnya gratis
 
 Kenapa IDMark?
-Mengirimkan foto KTP polos tanpa watermark membuka risiko pencurian identitas dan penipuan pinjaman online. IDMark memastikan setiap dokumen yang Anda bagikan memiliki cap peruntukan yang jelas dan sulit dihapus.
+Mengirimkan foto KTP polos tanpa watermark membuka risiko pencurian identitas dan penipuan pinjaman online. IDMark membantu setiap dokumen yang Anda bagikan memiliki cap peruntukan yang jelas.
 
 Jaminan Keamanan Mutlak:
 Foto sensitif Anda tidak pernah meninggalkan ponsel. IDMark berjalan secara luring tanpa koneksi server pihak ketiga.
@@ -74,7 +74,7 @@ Bagian dari armada aplikasi utilitas privasi faishal.id.
 
 <details><summary>show</summary>
 
-IDMark protects your personal identity documents from digital fraud and unauthorized reuse. Stamp custom watermark text, dates, and verification purposes directly across photos of national IDs, driver licenses, and passports before sharing them.
+IDMark helps discourage digital fraud and unauthorized reuse of your personal identity documents. Stamp custom watermark text, dates, and verification purposes directly across photos of national IDs, driver licenses, and passports before sharing them.
 
 Core Features:
 ✓ Instant watermarking for ID cards, passports, and official documents
@@ -86,7 +86,7 @@ Core Features:
 ✓ Zero advertisements, no account creation, completely free
 
 Why IDMark?
-Sharing unprotected ID photos exposes you to identity theft and fraudulent registrations. IDMark ensures that every copy you send has a visible, tamper-evident declaration of its single intended purpose.
+Sharing unprotected ID photos exposes you to identity theft and fraudulent registrations. IDMark helps every copy you send carry a visible declaration of its single intended purpose.
 
 Absolute Privacy:
 Your sensitive documents never leave your phone. All pixel manipulations run entirely offline on-device.

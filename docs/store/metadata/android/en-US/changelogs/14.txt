@@ -1,0 +1,1 @@
+Fixes: the active preset can no longer be deleted, the purpose field now has a screen reader label, a clear button was added to search, and a crash on disabled buttons was fixed. Better text contrast in the editor, presets, history, guide and dialogs in light and dark themes. Language and timezone sheets no longer show an error box.

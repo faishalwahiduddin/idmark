@@ -1,1 +1,1 @@
-Stamp purpose & date on
+为证件添加水印文字与日期

@@ -1,1 +1,1 @@
-Beri cap watermark teks pada
+Watermark kartu ID & dokumen

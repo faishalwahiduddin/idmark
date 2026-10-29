@@ -1,1 +1,1 @@
-Stamp purpose & date on IDs/passports. On-device.
+在设备本地为身份证件和文件添加水印文字与日期,照片不会上传。

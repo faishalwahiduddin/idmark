@@ -1,1 +1,1 @@
-Rilis pembaruan metadata dan aset toko resmi untuk IDMark.
+Perbaikan: preset yang sedang aktif kini tidak bisa dihapus, kolom tujuan penggunaan kini berlabel untuk pembaca layar, tombol hapus pada pencarian ditambahkan, dan crash tombol nonaktif diperbaiki. Kontras teks di editor, preset, riwayat, panduan, dan dialog ditingkatkan di tema terang dan gelap. Lembar bahasa dan zona waktu tidak lagi menampilkan kotak error.

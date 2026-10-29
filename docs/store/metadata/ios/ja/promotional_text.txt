@@ -1,1 +1,1 @@
-Stamp purpose & date on IDs/passports. On-device.
+身分証や書類に透かし文字と日付を端末内で追加。写真は外部に送信されません。
