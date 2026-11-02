@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "desain-ritual-buka-aplikasi-untuk-aplikasi-offline-2026",
-    "en": "app-open-ritual-design-for-aplikasi-offline",
-    "ar": "aplikasi-offline-7",
-    "jv": "pandhuan-aplikasi-offline-idmark-7",
-    "su": "pituduh-aplikasi-offline-idmark-7",
-    "zh": "idmark-aplikasi-offline-实用指南-7",
-    "ja": "idmarkaplikasi-offline-ガイド-7"
+    "id": "mode-offline-yang-tidak-bikin-malas-membuka-app",
+    "en": "aplikasi-offline-that-does-not-feel-like-a-chore-to-open",
+    "ar": "almalwmat-almhma-la-ythql-fthh-aljz-3",
+    "jv": "mode-offline-sing-ora-males-dibukak",
+    "su": "mode-offline-anu-teu-hoream-dibuka",
+    "zh": "da-kai-bu-fei-jin-de-zhong-yao-xin-xi-di-3-pian",
+    "ja": "hiraku-noga-okkuu-ninaranai-taisetsu-na-jouhou-dai-3-kai"
   },
   "titles": {
-    "id": "Desain Ritual Buka Aplikasi untuk aplikasi offline",
-    "en": "App-Open Ritual Design for aplikasi offline",
-    "ar": "aplikasi offline — دليل IDMark",
-    "jv": "Pandhuan: Desain Ritual Buka Aplikasi untuk aplikasi offline",
-    "su": "Pituduh: Desain Ritual Buka Aplikasi untuk aplikasi offline",
-    "zh": "IDMark · aplikasi offline 实用指南",
-    "ja": "IDMark｜aplikasi offline ガイド"
+    "id": "mode offline yang tidak bikin malas membuka app",
+    "en": "aplikasi offline that does not feel like a chore to open",
+    "ar": "المعلومات المهمة لا يثقل فتحه · الجزء 3",
+    "jv": "mode offline sing ora males dibukak",
+    "su": "mode offline anu teu hoream dibuka",
+    "zh": "打开不费劲的重要信息 · 第3篇",
+    "ja": "開くのが億劫にならない大切な情報 · 第3回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Rutinitas aplikasi offline yang tidak terasa merepotkan saat dibuka: ritual pembuka yang mudah, versi paling kecil, dan langkah setelah satu hari terlewat.",
+    "en": "An aplikasi offline routine that does not feel like a chore to open: an easy opening ritual, the smallest version and what to do after a missed day.",
+    "ar": "روتين تطبيق offline لا يبدو عبئاً عند فتحه: طقس افتتاح سهل، والنسخة الأصغر، وما الذي تفعله بعد يوم فائت.",
+    "ja": "開くのが面倒にならない aplikasi offline のルーティン。手軽な開始の習慣、最小バージョン、一日抜けた後にすべきことを解説します。",
+    "zh": "打开不觉得麻烦的 aplikasi offline 流程：简单的开启习惯、最小版本，以及漏掉一天后的做法。",
+    "jv": "Rutinitas aplikasi offline sing ora kerasa ngrepotaké nalika dibukak: ritual mbukak sing gampang, versi paling cilik, lan langkah sawisé sedina kelewat.",
+    "su": "Rutinitas aplikasi offline anu teu karasa ribet lamun dibuka: ritual buka anu gampang, versi pangleutikna, jeung naon anu dilakukeun sanggeus sapoé kaliwat."
+  }
 }

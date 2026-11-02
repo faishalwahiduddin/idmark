@@ -6,6 +6,7 @@ import 'package:share_plus/share_plus.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/ui/app_scroll.dart';
 import '../../core/ui/press_scale.dart';
+import '../../core/ui/tap_target.dart';
 import '../../core/models/audit_log_entry.dart';
 import '../../core/models/redaction_item.dart';
 import '../../core/models/watermark_config.dart';
@@ -98,6 +99,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
           config: config,
           sha256Checksum: sha256Hash,
           zone: loc,
+          l10n: l10n,
         );
         filename = 'idmark_$exportStamp.pdf';
         mimeType = 'application/pdf';
@@ -112,7 +114,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
         id: 'audit_$exportStamp',
         timestamp: AppTimeZone.nowUtc(),
         purpose: config.purpose,
-        pattern: config.pattern.label,
+        pattern: l10n == null ? config.pattern.label : config.pattern.labelOf(l10n),
         exportFormat: config.exportFormat == ExportFormat.pdf ? 'PDF' : 'PNG',
         fileSizeBytes: finalOutputBytes.lengthInBytes,
         sha256Hash: sha256Hash,
@@ -129,7 +131,10 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
           downloadFileWeb(finalOutputBytes, filename, mimeType: mimeType);
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text('Dokumen ter-watermark berhasil diunduh ($filename)! 🛡️✨'),
+              content: Text(
+                l10n?.downloadSuccess(filename) ??
+                    'Dokumen ter-watermark berhasil diunduh ($filename)! 🛡️✨',
+              ),
               backgroundColor: AppColors.accent,
             ),
           );
@@ -201,7 +206,9 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
                       const SizedBox(width: 8),
                       Expanded(
                         child: Text(
-                          'Format: ${config.exportFormat.name.toUpperCase()} • ${(bytes.lengthInBytes / 1024).toStringAsFixed(1)} KB',
+                          '${l10n?.exportFormatTab ?? 'Format Ekspor'}: '
+                          '${config.exportFormat.name.toUpperCase()} • '
+                          '${(bytes.lengthInBytes / 1024).toStringAsFixed(1)} KB',
                           style: const TextStyle(fontSize: 12, color: Colors.white, fontWeight: FontWeight.bold),
                         ),
                       ),
@@ -222,7 +229,10 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
                           style: const TextStyle(fontSize: 10, fontFamily: 'monospace', color: Color(0xFF94A3B8)),
                         ),
                       ),
-                      InkWell(
+                      // §A11Y: 14dp glyph needs an explicit 44dp hit area.
+                      TapTarget(
+                        minSize: 44,
+                        semanticLabel: l10n?.hashCopied ?? 'Hash integritas disalin ke clipboard!',
                         onTap: () {
                           Clipboard.setData(ClipboardData(text: sha256Hash));
                           ScaffoldMessenger.of(context).showSnackBar(
@@ -262,7 +272,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
               );
             },
             icon: const Icon(Icons.verified_user_outlined, size: 16),
-            label: const Text('Bukti Proteksi'),
+            label: Text(l10n?.protectionProof ?? 'Bukti Proteksi'),
           ),
           ElevatedButton.icon(
             onPressed: () {
@@ -270,7 +280,11 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
               _exportWatermarkedImage(isShare: true);
             },
             icon: Icon(kIsWeb ? Icons.download : Icons.share, size: 16),
-            label: Text(kIsWeb ? 'Unduh' : (l10n?.share ?? 'Bagikan')),
+            label: Text(
+              kIsWeb
+                  ? (l10n?.download ?? 'Unduh')
+                  : (l10n?.share ?? 'Bagikan'),
+            ),
           ),
         ],
       ),
@@ -296,15 +310,28 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
                 color: AppColors.primary.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: const Icon(Icons.shield_outlined, color: AppColors.primaryLight, size: 20),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(4),
+                child: Image.asset(
+                  'assets/icon/icon.png',
+                  width: 20,
+                  height: 20,
+                  fit: BoxFit.contain,
+                  errorBuilder: (context, error, stackTrace) =>
+                      const Icon(Icons.shield_outlined, color: AppColors.primaryLight, size: 20),
+                ),
+              ),
             ),
             const SizedBox(width: 10),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('IDMark', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700, letterSpacing: -0.4)),
                 Text(
-                  'Secure ID Card & Privacy Shield',
+                  l10n?.appTitle ?? 'IDMark',
+                  style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w700, letterSpacing: -0.4),
+                ),
+                Text(
+                  l10n?.appSubtitle ?? 'Secure ID Card & Privacy Shield',
                   style: TextStyle(fontSize: 11, color: AppColors.muted(context), fontWeight: FontWeight.normal),
                 ),
               ],
@@ -373,7 +400,11 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
                     notifier.addRedaction(RedactionBox.fromPreset(target));
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
-                        content: Text(l10n?.sensorBoxAdded(target.label) ?? 'Kotak sensor "${target.label}" ditambahkan.'),
+                        content: Text(
+                          l10n == null
+                              ? 'Kotak sensor "${target.label}" ditambahkan.'
+                              : l10n.sensorBoxAdded(target.labelOf(l10n)),
+                        ),
                         duration: const Duration(seconds: 1),
                       ),
                     );

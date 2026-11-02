@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "istilah-penting-seputar-aplikasi-offline-2026",
-    "en": "key-terms-around-aplikasi-offline",
-    "ar": "aplikasi-offline",
-    "jv": "pandhuan-aplikasi-offline-idmark",
-    "su": "pituduh-aplikasi-offline-idmark",
-    "zh": "idmark-aplikasi-offline-实用指南",
-    "ja": "idmarkaplikasi-offline-ガイド"
+    "id": "apa-itu-mode-offline-penjelasan-singkat",
+    "en": "what-is-aplikasi-offline-a-short-explanation",
+    "ar": "almalwmat-almhma-fy-2026-ma-aldhy-tghyr",
+    "jv": "apa-iku-mode-offline-katrangan-cekak",
+    "su": "naon-eta-mode-offline-katerangan-pondok",
+    "zh": "2026-nian-de-zhong-yao-xin-xi-you-shen-me-bian-hua",
+    "ja": "2026-nen-no-taisetsu-na-jouhou-nani-ga-kawa-ttaka"
   },
   "titles": {
-    "id": "Istilah Penting seputar aplikasi offline",
-    "en": "Key Terms Around aplikasi offline",
-    "ar": "aplikasi offline — دليل IDMark",
-    "jv": "Pandhuan: Istilah Penting seputar aplikasi offline",
-    "su": "Pituduh: Istilah Penting seputar aplikasi offline",
-    "zh": "IDMark · aplikasi offline 实用指南",
-    "ja": "IDMark｜aplikasi offline ガイド"
+    "id": "Apa itu mode offline? Penjelasan singkat",
+    "en": "What is aplikasi offline? A short explanation",
+    "ar": "المعلومات المهمة في 2026: ما الذي تغيّر",
+    "jv": "Apa iku mode offline? Katrangan cekak",
+    "su": "Naon éta mode offline? Katerangan pondok",
+    "zh": "2026 年的重要信息：有什么变化",
+    "ja": "2026年の大切な情報：何が変わったか"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Apa itu mode offline dalam praktik: pekerjaan berjalan di perangkat Anda, sehingga teks dan tanggal watermark tetap tersimpan di tangan Anda.",
+    "en": "A short explanation of what an offline app means in practice: the work runs on your device, so the watermark text and dates stay with you.",
+    "ar": "شرح موجز لمعنى تطبيق بلا اتصال عملياً: يعمل العمل على جهازك، فيبقى نص العلامة المائية والتاريخ معك دائماً.",
+    "ja": "オフラインアプリとは何かを、短く分かりやすく説明します。作業は端末の中で行われるため、ウォーターマークの文字と日付も手元に残ります。",
+    "zh": "离线应用是什么：简要说明其实际含义，工作在设备上完成，水印文字和日期留在你手中。",
+    "jv": "Katrangan cekak apa iku mode offline ing praktik: pakaryan mlaku ing piranti sampéyan, dadi teks lan tanggal watermark tetep ana ing tangan sampéyan.",
+    "su": "Katerangan singkat naon waé mode offline dina prakték: pagawéan jalan di alat anjeun, jadi téks jeung tanggal watermark tetep aya dina leungeun anjeun."
+  }
 }

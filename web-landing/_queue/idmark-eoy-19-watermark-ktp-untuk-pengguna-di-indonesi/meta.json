@@ -9,21 +9,30 @@
   "seo": true,
   "slugs": {
     "id": "watermark-ktp-untuk-pengguna-di-indonesia",
-    "en": "watermark-ktp-for-users-in-indonesia",
-    "ar": "watermark-ktp-3",
-    "jv": "pandhuan-watermark-ktp-idmark-3",
-    "su": "pituduh-watermark-ktp-idmark-3",
-    "zh": "idmark-watermark-ktp-实用指南-3",
-    "ja": "idmarkwatermark-ktp-ガイド-3"
+    "en": "id-watermark-for-readers-in-indonesia",
+    "ar": "alama-maiya-ala-alhwya-lqra-indwnysya",
+    "jv": "watermark-ktp-kanggo-pangguna-ing-indonesia",
+    "su": "watermark-ktp-pikeun-pamake-di-indonesia",
+    "zh": "gei-yin-du-ni-xi-ya-du-zhe-de-shen-fen-zheng-shui-yin",
+    "ja": "indoneshia-no-dokusha-notameno-mibun-shou-no-uootaamaaku"
   },
   "titles": {
-    "id": "watermark KTP: panduan praktis di IDMark",
-    "en": "watermark KTP for Users in Indonesia",
-    "ar": "watermark KTP — دليل IDMark",
-    "jv": "Pandhuan: watermark KTP: panduan praktis di IDMark",
-    "su": "Pituduh: watermark KTP: panduan praktis di IDMark",
-    "zh": "IDMark · watermark KTP 实用指南",
-    "ja": "IDMark｜watermark KTP ガイド"
+    "id": "watermark KTP untuk pengguna di Indonesia",
+    "en": "ID watermark for readers in Indonesia",
+    "ar": "علامة مائية على الهوية لقرّاء إندونيسيا",
+    "jv": "watermark KTP kanggo pangguna ing Indonesia",
+    "su": "watermark KTP pikeun pamaké di Indonésia",
+    "zh": "给印度尼西亚读者的身份证水印",
+    "ja": "インドネシアの読者のための身分証のウォーターマーク"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Watermark KTP untuk pengguna di Indonesia: rutinitas praktis untuk salinan KTP dengan versi paling kecil, waktu yang tepat, dan tinjauan mingguan.",
+    "en": "ID watermark for readers in Indonesia: a practical routine for KTP copies, with the smallest version, the right timing and a weekly check.",
+    "ar": "لقرّاء إندونيسيا: علامة مائية على KTP بروتين عملي لنسخ بطاقة الهوية، مع النسخة الأصغر والتوقيت المناسب ومراجعة أسبوعية.",
+    "ja": "インドネシアの読者のための身分証ウォーターマーク。KTP のコピーに使える実践的な習慣として、最小バージョン、適切なタイミング、週次確認を紹介します。",
+    "zh": "面向印尼读者的身份证水印：适用于 KTP 复印件的实用流程，含最小版本与每周回顾。",
+    "jv": "Kanggo pangguna ing Indonesia, watermark KTP bisa dimulai kanthi rutinitas praktis: versi paling cilik, wektu sing pas, lan tinjauan mingguan.",
+    "su": "Pikeun pamaké di Indonesia, watermark KTP bisa dimimitian ku rutinitas praktis: versi pangleutikna, waktu anu pas, jeung tinjauan mingguan."
+  }
 }

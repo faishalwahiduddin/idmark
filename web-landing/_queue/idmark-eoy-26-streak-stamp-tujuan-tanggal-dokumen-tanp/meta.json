@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "streak-stamp-tujuan-tanggal-dokumen-tanpa-burnout-praktis",
-    "en": "stamp-tujuan-tanggal-dokumen-streaks-without-burnout-practical",
-    "ar": "stamp-tujuan-tanggal-dokumen-3",
-    "jv": "pandhuan-stamp-tujuan-tanggal-dokumen-idmark-3",
-    "su": "pituduh-stamp-tujuan-tanggal-dokumen-idmark-3",
-    "zh": "idmark-stamp-tujuan-tanggal-dokumen-实用指南-3",
-    "ja": "idmarkstamp-tujuan-tanggal-dokumen-ガイド-3"
+    "id": "membangun-kebiasaan-stamp-tujuan-tanggal-dokumen-tanpa-burnout",
+    "en": "build-a-stamp-tujuan-tanggal-dokumen-habit-without-burnout",
+    "ar": "bna-aada-almalwmat-almhma-dwn-inhak",
+    "jv": "mbangun-kebiasan-stamp-tujuan-tanggal-dokumen-tanpa-kesel",
+    "su": "ngawangun-kabiasaan-stamp-tujuan-tanggal-dokumen-tanpa-kacape",
+    "zh": "jian-li-zhong-yao-xin-xi-xi-guan-you-bu-zhi-yu-pi-bei",
+    "ja": "tsukare-zuni-taisetsu-na-jouhou-wo-shuukan-nisuru"
   },
   "titles": {
-    "id": "Streak stamp tujuan tanggal dokumen tanpa Burnout",
-    "en": "stamp tujuan tanggal dokumen Streaks Without Burnout (Practical)",
-    "ar": "stamp tujuan tanggal dokumen — دليل IDMark",
-    "jv": "Pandhuan: Streak stamp tujuan tanggal dokumen tanpa Burnout",
-    "su": "Pituduh: Streak stamp tujuan tanggal dokumen tanpa Burnout",
-    "zh": "IDMark · stamp tujuan tanggal dokumen 实用指南",
-    "ja": "IDMark｜stamp tujuan tanggal dokumen ガイド"
+    "id": "Membangun kebiasaan stamp tujuan tanggal dokumen tanpa burnout",
+    "en": "Build a stamp tujuan tanggal dokumen habit without burnout",
+    "ar": "بناء عادة المعلومات المهمة دون إنهاك",
+    "jv": "Mbangun kebiasan stamp tujuan tanggal dokumen tanpa kesel",
+    "su": "Ngawangun kabiasaan stamp tujuan tanggal dokumen tanpa kacapé",
+    "zh": "建立重要信息习惯又不至于疲惫",
+    "ja": "疲れずに大切な情報を習慣にする"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Bangun kebiasaan stamp tujuan tanggal dokumen tanpa burnout dengan mulai kecil, menjaga tiap langkah tetap singkat, dan merencanakan minggu yang sibuk.",
+    "en": "Build a stamp tujuan tanggal dokumen habit without burnout by starting small, keeping each step short and planning for busy weeks.",
+    "ar": "ابنِ عادة stamp tujuan tanggal dokumen دون إرهاق: ابدأ صغيراً، وأبقِ كل خطوة قصيرة، وخطط للأسابيع المزدحمة.",
+    "ja": "燃え尽きずに stamp tujuan tanggal dokumen の習慣を身につける方法。小さく始め、各ステップを短く保ち、忙しい週の計画も立てます。",
+    "zh": "不倦怠地养成 stamp tujuan tanggal dokumen 习惯：从小做起，步骤简短，为忙碌周做计划。",
+    "jv": "Bangun kebiasaan stamp tujuan tanggal dokumen tanpa burnout kanthi wiwit cilik, njaga saben langkah cekak, lan nyiapaké rencana kanggo minggu sing sibuk.",
+    "su": "Ngawangun kabiasaan stamp tujuan tanggal dokumen tanpa burnout ku mimitian leutik, ngajaga unggal lankah tetep pondok, jeung ngarencanakeun minggu anu sibuk."
+  }
 }

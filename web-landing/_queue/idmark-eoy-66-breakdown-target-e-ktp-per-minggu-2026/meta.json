@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "breakdown-target-e-ktp-per-minggu-2026",
-    "en": "weekly-breakdown-of-e-ktp-targets",
-    "ar": "e-ktp-8",
-    "jv": "pandhuan-e-ktp-idmark-8",
-    "su": "pituduh-e-ktp-idmark-8",
-    "zh": "idmark-e-ktp-实用指南-8",
-    "ja": "idmarke-ktp-ガイド-8"
+    "id": "rencana-30-hari-untuk-e-ktp",
+    "en": "a-30-day-plan-for-e-ktp",
+    "ar": "khta-thlathyn-ywma-lalmalwmat-almhma-aljz-3",
+    "jv": "rencana-30-dina-kanggo-e-ktp",
+    "su": "rencana-30-poe-pikeun-e-ktp",
+    "zh": "zhong-yao-xin-xi-de-30-tian-ji-hua-di-3-pian",
+    "ja": "taisetsu-na-jouhou-no-30-nichi-puran-dai-3-kai"
   },
   "titles": {
-    "id": "Breakdown Target e-KTP per Minggu",
-    "en": "Weekly Breakdown of e-KTP Targets",
-    "ar": "e-KTP — دليل IDMark",
-    "jv": "Pandhuan: Breakdown Target e-KTP per Minggu",
-    "su": "Pituduh: Breakdown Target e-KTP per Minggu",
-    "zh": "IDMark · e-KTP 实用指南",
-    "ja": "IDMark｜e-KTP ガイド"
+    "id": "Rencana 30 hari untuk e-KTP",
+    "en": "A 30-day plan for e-KTP",
+    "ar": "خطة ثلاثين يوماً لـالمعلومات المهمة · الجزء 3",
+    "jv": "Rencana 30 dina kanggo e-KTP",
+    "su": "Rencana 30 poé pikeun e-KTP",
+    "zh": "重要信息的30天计划 · 第3篇",
+    "ja": "大切な情報の30日プラン · 第3回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Rencana 30 hari untuk e-KTP dengan rincian mingguan: versi paling kecil dulu, jam tetap untuk menjalankannya, dan tinjauan mingguan di akhir setiap blok.",
+    "en": "A 30-day e-KTP plan with a weekly breakdown: the smallest version first, a fixed run time and a weekly check to close each block.",
+    "ar": "خطة 30 يوماً لـ e-KTP مع تفصيل أسبوعي: النسخة الأصغر أولاً، ووقت تشغيل ثابت، ومراجعة أسبوعية تغلق كل كتلة.",
+    "ja": "30日プランを週ごとに分けて、e-KTP を解説。まず最小バージョン、決まった実行時間、各ブロックを締める週次の確認を紹介します。",
+    "zh": "e-KTP 的 30 天计划（含每周分解）：先做最小版本，固定运行时间，每个阶段结束做每周检查。",
+    "jv": "Rencana 30 dina kanggo e-KTP kanthi rincian mingguan: versi paling cilik dhisik, jam tetep kanggo nglakokaké, lan tinjauan mingguan ing pungkasan saben blok.",
+    "su": "Rencana 30 poé pikeun e-KTP kalayan rinci mingguan: versi pangleutikna heula, jam tetep pikeun ngajalankeunana, jeung tinjauan mingguan dina ahir unggal blok."
+  }
 }

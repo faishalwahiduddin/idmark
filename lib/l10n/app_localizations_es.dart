@@ -57,28 +57,28 @@ class AppLocalizationsEs extends AppLocalizations {
   String get selectLanguage => 'Seleccionar idioma';
 
   @override
-  String get localeIndonesian => 'Bahasa Indonesia';
+  String get localeIndonesian => 'Indonesio';
 
   @override
-  String get localeEnglish => 'English';
+  String get localeEnglish => 'Inglés';
 
   @override
-  String get localeArabic => 'العربية';
+  String get localeArabic => 'Árabe';
 
   @override
-  String get localeJavanese => 'Basa Jawa';
+  String get localeJavanese => 'Javanés';
 
   @override
-  String get localeSundanese => 'Basa Sunda';
+  String get localeSundanese => 'Sundanés';
 
   @override
-  String get localeChinese => '中文';
+  String get localeChinese => 'Chino';
 
   @override
-  String get localeJapanese => '日本語';
+  String get localeJapanese => 'Japonés';
 
   @override
-  String get localeSpanish => 'Español';
+  String get localeSpanish => 'Castellano';
 
   @override
   String get about => 'Acerca de';
@@ -676,10 +676,11 @@ class AppLocalizationsEs extends AppLocalizations {
   String get appLabel => 'Aplicación';
 
   @override
-  String get officialKominfoGuide => 'Panduan Resmi Kominfo & UU PDP';
+  String get officialKominfoGuide =>
+      'Guía oficial de Kominfo y la ley de protección de datos';
 
   @override
-  String get privacyAndSettings => 'Privasi & Pengaturan';
+  String get privacyAndSettings => 'Privacidad y ajustes';
 
   @override
   String get appLanguage => 'Idioma de la aplicación';
@@ -775,4 +776,537 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get privacyGradeDescWeak =>
       'Protección débil • Agregue propósito específico y fecha';
+
+  @override
+  String get appTitle => 'IDMark';
+
+  @override
+  String get appTagline =>
+      'Estampa una marca de agua de texto en fotos de identidad, licencias y documentos importantes.';
+
+  @override
+  String get appSubtitle => 'Protección de identidad y privacidad';
+
+  @override
+  String get onbSkip => 'Omitir';
+
+  @override
+  String get onbNext => 'Siguiente';
+
+  @override
+  String get onbGetStarted => 'Empezar ahora';
+
+  @override
+  String get onbPrivacyHeadline => 'Privacidad y modo offline garantizados';
+
+  @override
+  String get onbPrivacyDetail =>
+      'Todos los datos permanecen seguros en tu dispositivo, sin rastreadores.';
+
+  @override
+  String get onbSlide1Title => 'Sello de identidad';
+
+  @override
+  String get onbSlide1Sub => 'Propósito y fecha en el documento';
+
+  @override
+  String get onbSlide1Badge => '100% offline y privado';
+
+  @override
+  String get onbSlide2Title => 'Plantillas';
+
+  @override
+  String get onbSlide2Sub => 'Plantillas listas para usar';
+
+  @override
+  String get onbSlide2Badge => 'Ligero y ágil';
+
+  @override
+  String get onbSlide3Title => 'Historial';
+
+  @override
+  String get onbSlide3Sub => 'Resultados guardados';
+
+  @override
+  String get onbSlide3Badge => 'Sin anuncios ni cuenta';
+
+  @override
+  String get onbSlide4Title => 'En el dispositivo';
+
+  @override
+  String get onbSlide4Sub => 'Sin subir a la nube';
+
+  @override
+  String get onbSlide4Badge => 'Datos guardados en el dispositivo';
+
+  @override
+  String get loadingLabel => 'Cargando…';
+
+  @override
+  String get download => 'Descargar';
+
+  @override
+  String downloadSuccess(String filename) {
+    return '¡Documento con marca de agua descargado ($filename)! 🛡️✨';
+  }
+
+  @override
+  String get protectionProof => 'Prueba de protección';
+
+  @override
+  String get tierExemplary => 'Ejemplar';
+
+  @override
+  String get tierDisciplined => 'Constante';
+
+  @override
+  String get tierOrderly => 'Ordenado';
+
+  @override
+  String get tierStarting => 'Inicio';
+
+  @override
+  String disciplineCount(int count, String tier) {
+    return '$count archivos con marca • $tier';
+  }
+
+  @override
+  String get disciplineDesc =>
+      'Cada exportación segura refuerza tu disciplina de protección.';
+
+  @override
+  String get shareDiscipline => 'Compartir progreso';
+
+  @override
+  String disciplineShareText(int count, String tier) {
+    return '$count archivos con marca • $tier #IDMark';
+  }
+
+  @override
+  String get allTemplates => 'Todas';
+
+  @override
+  String get myPresets => 'Mis plantillas';
+
+  @override
+  String get catBanking => 'Banca';
+
+  @override
+  String get catFinance => 'Finanzas y préstamos';
+
+  @override
+  String get catCareer => 'Empleo y RR. HH.';
+
+  @override
+  String get catRental => 'Alquiler y viajes';
+
+  @override
+  String get catTelecom => 'Telecomunicaciones';
+
+  @override
+  String get catMultifinance => 'Multifinanciación';
+
+  @override
+  String get catInvestment => 'Inversión';
+
+  @override
+  String get catPublicService => 'Servicios públicos';
+
+  @override
+  String get catInternational => 'Internacional';
+
+  @override
+  String get appearanceAndLanguage => 'Apariencia e idioma';
+
+  @override
+  String get themeMode => 'Modo de tema';
+
+  @override
+  String get identity => 'Identidad';
+
+  @override
+  String get patternDiagonalBand => 'Banda diagonal';
+
+  @override
+  String get patternDiagonalBandDesc =>
+      'Una línea diagonal gruesa sobre el centro del documento (recomendado por Kominfo)';
+
+  @override
+  String get patternRepeatedGrid => 'Cuadrícula repetida';
+
+  @override
+  String get patternRepeatedGridDesc =>
+      'Texto repetido por toda la foto para máxima protección';
+
+  @override
+  String get patternBottomBar => 'Barra inferior';
+
+  @override
+  String get patternBottomBarDesc =>
+      'Una barra de texto sólida en la parte inferior';
+
+  @override
+  String get patternCornerStamp => 'Sello en esquina';
+
+  @override
+  String get patternCornerStampDesc =>
+      'Sello de verificación en la esquina inferior derecha';
+
+  @override
+  String get patternSecuritySeal => 'Sello circular';
+
+  @override
+  String get patternSecuritySealDesc =>
+      'Sello circular doble con borde de verificación';
+
+  @override
+  String get patternCrossStamp => 'Cruz doble (X-Band)';
+
+  @override
+  String get patternCrossStampDesc =>
+      'Dos diagonales cruzadas protegen todo el documento';
+
+  @override
+  String get patternQrBadge => 'Insignia QR de verificación';
+
+  @override
+  String get patternQrBadgeDesc =>
+      'Insignia QR que acredita el propósito y la fecha';
+
+  @override
+  String get colorWhite => 'Blanco puro';
+
+  @override
+  String get colorDark => 'Negro intenso';
+
+  @override
+  String get colorRed => 'Rojo oficial';
+
+  @override
+  String get colorBlue => 'Azul verificación';
+
+  @override
+  String get colorEmerald => 'Verde seguro';
+
+  @override
+  String get colorAmber => 'Amarillo alerta';
+
+  @override
+  String get colorPurple => 'Púrpura sello';
+
+  @override
+  String get formatPng => 'PNG (resolución completa)';
+
+  @override
+  String get formatPngDesc =>
+      'Formato sin pérdida que conserva la nitidez original';
+
+  @override
+  String get formatJpeg => 'JPEG (tamaño reducido)';
+
+  @override
+  String get formatJpegDesc =>
+      'Formato comprimido que ahorra datos para subir rápido';
+
+  @override
+  String get formatPdf => 'Documento PDF (listo para imprimir)';
+
+  @override
+  String get formatPdfDesc => 'Formato oficial usado por oficinas y bancos';
+
+  @override
+  String get redactBlackout => 'Censura negra';
+
+  @override
+  String get redactBlackoutDesc =>
+      'Un recuadro negro permanente sobre los datos';
+
+  @override
+  String get redactMosaic => 'Censura con mosaico';
+
+  @override
+  String get redactMosaicDesc => 'Pixelado que difumina el texto sensible';
+
+  @override
+  String get redactBlur => 'Censura difuminada';
+
+  @override
+  String get redactBlurDesc => 'Difuminado que nivela los detalles personales';
+
+  @override
+  String get targetNik => 'Número de identidad';
+
+  @override
+  String get targetSignature => 'Firma';
+
+  @override
+  String get targetAddress => 'Dirección completa';
+
+  @override
+  String get targetBirthPlace => 'Lugar y fecha de nacimiento';
+
+  @override
+  String get targetPhoto => 'Foto del rostro';
+
+  @override
+  String get shareProofTitle => 'Prueba de protección del documento';
+
+  @override
+  String get shareProofSubtitle =>
+      'Certificado de integridad de marca y censura según Kominfo';
+
+  @override
+  String get shareFormatFeed => 'Publicación (4:5)';
+
+  @override
+  String get shareFormatStory => 'Historia (9:16)';
+
+  @override
+  String get shareCopyText => 'Copiar texto';
+
+  @override
+  String get shareProcessing => 'Procesando…';
+
+  @override
+  String get shareDownloadProofPng => 'Descargar prueba PNG';
+
+  @override
+  String get shareShareProof => 'Compartir prueba';
+
+  @override
+  String get shareCardBrand => 'IDMARK • ID SEGURO';
+
+  @override
+  String get shareCardOnDevice => '100% EN EL DISPOSITIVO';
+
+  @override
+  String get shareCardTitle => 'PRUEBA DE MARCA DE AGUA DEL DOCUMENTO';
+
+  @override
+  String get shareCardPurposeLabel => 'PARA EL PROPÓSITO ESPECÍFICO:';
+
+  @override
+  String get shareCardPrivacyScore => 'PUNTUACIÓN DE PRIVACIDAD';
+
+  @override
+  String get shareCardRedactions => 'CENSURAS';
+
+  @override
+  String shareCardAreaCount(int count) {
+    return '$count zonas';
+  }
+
+  @override
+  String get shareCardFormat => 'FORMATO';
+
+  @override
+  String shareCardDate(String date) {
+    return 'Fecha: $date';
+  }
+
+  @override
+  String get shareCardFooter =>
+      'idmark.faishal.id • Estándar Kominfo para marcas de agua';
+
+  @override
+  String get shareCardIntegrityHash => 'HASH DE INTEGRIDAD (SHA-256):';
+
+  @override
+  String get shareProofHeading =>
+      '🛡️ PRUEBA DE PROTECCIÓN DEL DOCUMENTO — IDMARK';
+
+  @override
+  String shareProofPurposeLine(String purpose) {
+    return '📌 Propósito específico: \"$purpose\"';
+  }
+
+  @override
+  String shareProofDateLine(String date) {
+    return '📅 Fecha del sello: $date';
+  }
+
+  @override
+  String shareProofScoreLine(int score) {
+    return '🔒 Puntuación de privacidad: $score/100';
+  }
+
+  @override
+  String shareProofRedactionLine(int count) {
+    return '✂️ Censuras permanentes: $count zonas cubiertas';
+  }
+
+  @override
+  String shareProofHashLine(String hash) {
+    return '🔑 Hash SHA-256: $hash';
+  }
+
+  @override
+  String get shareProofOnDeviceLine =>
+      '✅ Procesado 100% en el dispositivo, sin servidor (según Kominfo RI)';
+
+  @override
+  String get shareProofCtaLine =>
+      'Protege tu identidad con IDMark: https://idmark.faishal.id';
+
+  @override
+  String get shareProofDownloaded =>
+      '¡Certificado de protección descargado! 🛡️✨';
+
+  @override
+  String shareProofFailed(String error) {
+    return 'No se pudo compartir la prueba: $error';
+  }
+
+  @override
+  String get shareProofCopied =>
+      '¡Prueba de protección copiada al portapapeles! 📋✨';
+
+  @override
+  String get themeCyberShield => 'Escudo ciber';
+
+  @override
+  String get themeEmeraldSafe => 'Esmeralda segura';
+
+  @override
+  String get themeObsidianVault => 'Bóveda obsidiana';
+
+  @override
+  String get themeAmberProof => 'Prueba ámbar';
+
+  @override
+  String get quickSensorShort => 'Censura rápida:';
+
+  @override
+  String redactedTag(String label) {
+    return '[CENSURADO: $label]';
+  }
+
+  @override
+  String get defaultWatermarkText => 'SOLO PARA VERIFICACIÓN DE IDENTIDAD';
+
+  @override
+  String get pdfHeader => 'IDMARK — DOCUMENTO DE IDENTIDAD CON MARCA';
+
+  @override
+  String get pdfComplianceNote =>
+      'Conforme a los principios de protección de datos (Ley n.º 27/2022)';
+
+  @override
+  String get pdfOnDevice => '100% En el dispositivo';
+
+  @override
+  String get pdfPurposeLabel => 'Propósito de uso: ';
+
+  @override
+  String pdfDateLabel(String date) {
+    return 'Fecha de la transacción: $date';
+  }
+
+  @override
+  String pdfPrintedAt(String date) {
+    return 'Impreso el: $date';
+  }
+
+  @override
+  String get pdfChecksum => 'Suma de verificación SHA-256: ';
+
+  @override
+  String get catEcommerce => 'Comercio electrónico';
+
+  @override
+  String get presetBank => 'Apertura de cuenta bancaria';
+
+  @override
+  String get presetBankUpdate => 'Actualización de datos del cliente';
+
+  @override
+  String get presetFintech => 'Fintech / préstamos con licencia OJK';
+
+  @override
+  String get presetPaylater => 'Activación de pago aplazado / tarjeta';
+
+  @override
+  String get presetJob => 'Solicitud de empleo';
+
+  @override
+  String get presetHrOnboarding => 'Incorporación de nuevo empleado';
+
+  @override
+  String get presetRental => 'Alquiler de coche o moto';
+
+  @override
+  String get presetHotel => 'Registro en hotel, villa o residencia';
+
+  @override
+  String get presetTelco => 'Registro de SIM prepago';
+
+  @override
+  String get presetSimReplace => 'Reposición de SIM perdida o dañada';
+
+  @override
+  String get presetKredit => 'Solicitud de leasing o multifinanciación';
+
+  @override
+  String get presetKpr => 'Solicitud de hipoteca o inmueble';
+
+  @override
+  String get presetInvestment => 'Cuenta de valores en IDX';
+
+  @override
+  String get presetCrypto => 'Verificación de cuenta cripto Bappebti';
+
+  @override
+  String get presetEcommerce => 'Verificación de vendedor en marketplace';
+
+  @override
+  String get presetBpjs => 'Reclamación de saldo BPJS';
+
+  @override
+  String get presetGovKelurahan => 'Registro civil / oficina local';
+
+  @override
+  String get presetGlobalKyc => 'Verificación KYC internacional';
+
+  @override
+  String get defaultInternalSubtext => 'SOLO PARA DOCUMENTOS INTERNOS';
+
+  @override
+  String get pdfLegalNotice =>
+      'AVISO LEGAL: Esta copia del documento de identidad solo es válida y está permitida para el propósito indicado arriba. Cualquier otro uso constituye un delito de uso indebido de datos personales.';
+
+  @override
+  String get validationRedactionLabelRequired =>
+      'La etiqueta de la censura no puede estar vacía';
+
+  @override
+  String get validationRedactionXRange =>
+      'La posición X de la censura debe estar entre 0.0 y 1.0';
+
+  @override
+  String get validationRedactionYRange =>
+      'La posición Y de la censura debe estar entre 0.0 y 1.0';
+
+  @override
+  String get validationRedactionWidthRange =>
+      'El ancho de la censura debe estar entre 0.0 y 1.0';
+
+  @override
+  String get validationRedactionHeightRange =>
+      'La altura de la censura debe estar entre 0.0 y 1.0';
+
+  @override
+  String get validationAuditIdRequired =>
+      'El ID del registro de auditoría no puede estar vacío';
+
+  @override
+  String get validationAuditPurposeRequired =>
+      'El propósito del registro de auditoría no puede estar vacío';
+
+  @override
+  String get validationAuditHashRequired =>
+      'El hash SHA-256 no puede estar vacío';
+
+  @override
+  String get validationAuditScoreRange =>
+      'La puntuación de privacidad debe estar entre 0 y 100';
 }

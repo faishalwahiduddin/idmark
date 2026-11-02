@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "idmark-pengingat-sistem-mingguan",
-    "en": "idmark-system-reminders",
-    "ar": "idmark-6",
-    "jv": "pandhuan-idmark-idmark-6",
-    "su": "pituduh-idmark-idmark-6",
-    "zh": "idmark-idmark-实用指南-6",
-    "ja": "idmarkidmark-ガイド-6"
+    "id": "watermark-ktp-dan-aplikasi-lain-di-ponsel-anda",
+    "en": "id-watermark-and-the-other-apps-on-your-phone",
+    "ar": "alama-maiya-ala-alhwya-wttbyqat-hatfk-alakhra",
+    "jv": "watermark-ktp-lan-aplikasi-liya-ing-hp",
+    "su": "watermark-ktp-jeung-aplikasi-sejen-dina-hp",
+    "zh": "shen-fen-zheng-shui-yin-yu-shou-ji-shang-de-qi-ta-ying-yong",
+    "ja": "mibun-shou-no-uootaamaaku-to-sumaho-no-hokano-apuri"
   },
   "titles": {
-    "id": "IDMark + Pengingat Sistem",
-    "en": "IDMark + System Reminders — Offline First",
-    "ar": "IDMark — دليل IDMark",
-    "jv": "Pandhuan: IDMark + Pengingat Sistem",
-    "su": "Pituduh: IDMark + Pengingat Sistem",
-    "zh": "IDMark · IDMark 实用指南",
-    "ja": "IDMark｜IDMark ガイド"
+    "id": "watermark KTP dan aplikasi lain di ponsel Anda",
+    "en": "ID watermark and the other apps on your phone",
+    "ar": "علامة مائية على الهوية وتطبيقات هاتفك الأخرى",
+    "jv": "watermark KTP lan aplikasi liya ing HP",
+    "su": "watermark KTP jeung aplikasi séjén dina HP",
+    "zh": "身份证水印与手机上的其他应用",
+    "ja": "身分証のウォーターマークとスマホの他のアプリ"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Di ponsel Anda ada banyak aplikasi lain. Lihat cara menghubungkan watermark KTP dengan pengingat mingguan dan menjaga catatan tetap di satu tempat.",
+    "en": "ID watermark next to the other apps on your phone: how to link the routine to a weekly reminder and keep your records in one place.",
+    "ar": "بجانب تطبيقات هاتفك الأخرى: كيف تربط روتين علامة KTP المائية بتذكير أسبوعي وتبقي سجلاتك في مكان واحد.",
+    "ja": "スマホの他のアプリと一緒に使う watermark KTP。ルーティンを毎週のリマインダーに結びつけ、記録を一か所にまとめる方法を紹介します。",
+    "zh": "与手机上的其他应用一起用：身份证水印如何与每周提醒关联，并把记录集中保存在一处。",
+    "jv": "Ing antarane aplikasi liya ing HP sampéyan, watermark KTP bisa disambungaké karo pengingat mingguan lan cathetan dijaga ing siji panggonan.",
+    "su": "Di antara aplikasi séjén dina HP anjeun, watermark KTP bisa dihubungkeun jeung pangingat mingguan sarta catetanana dijaga dina hiji tempat."
+  }
 }

@@ -18,8 +18,8 @@
   "localeIndonesian": "Bahasa Indonesia",
   "localeEnglish": "English",
   "localeArabic": "العربية",
-  "localeJavanese": "Basa Jawa",
-  "localeSundanese": "Basa Sunda",
+  "localeJavanese": "Javanese",
+  "localeSundanese": "Sundanese",
   "localeChinese": "中文",
   "localeJapanese": "日本語",
   "localeSpanish": "Español",
@@ -195,8 +195,8 @@
   "localDeviceStorage": "Local Device Storage",
   "resetDefaultsDesc": "Reset templates and text settings to factory defaults",
   "appLabel": "Application",
-  "officialKominfoGuide": "Panduan Resmi Kominfo & UU PDP",
-  "privacyAndSettings": "Privasi & Pengaturan",
+  "officialKominfoGuide": "Official Kominfo & PDP Law Guide",
+  "privacyAndSettings": "Privacy & Settings",
   "@historySubtitle": {
     "placeholders": {
       "count": {
@@ -377,5 +377,267 @@
   "privacyGradeDescMax": "Maximum Protection • Meets data privacy standards",
   "privacyGradeDescVeryGood": "Strong Protection • Document is safe to share",
   "privacyGradeDescFair": "Moderate Protection • Consider adding date and redacting ID",
-  "privacyGradeDescWeak": "Basic Protection • Add a specific purpose and date"
+  "privacyGradeDescWeak": "Basic Protection • Add a specific purpose and date",
+  "appTitle": "IDMark",
+  "appTagline": "Stamp a text watermark onto ID cards, licences and important documents.",
+  "appSubtitle": "Secure ID Card & Privacy Shield",
+  "onbSkip": "Skip",
+  "onbNext": "Next",
+  "onbGetStarted": "Get Started",
+  "onbPrivacyHeadline": "Privacy & Offline Guaranteed",
+  "onbPrivacyDetail": "All data stays safely on your device, with no trackers.",
+  "onbSlide1Title": "Identity stamp",
+  "onbSlide1Sub": "Purpose & date on the document",
+  "onbSlide1Badge": "100% Offline & Private",
+  "onbSlide2Title": "Presets",
+  "onbSlide2Sub": "Ready-to-use templates",
+  "onbSlide2Badge": "Light & Responsive",
+  "onbSlide3Title": "History",
+  "onbSlide3Sub": "Saved stamp results",
+  "onbSlide3Badge": "No Ads & No Account",
+  "onbSlide4Title": "On-device",
+  "onbSlide4Sub": "No upload to the cloud",
+  "onbSlide4Badge": "Data Stays on Your Device",
+  "loadingLabel": "Loading…",
+  "download": "Download",
+  "downloadSuccess": "Watermarked document downloaded ({filename})! 🛡️✨",
+  "@downloadSuccess": {
+    "placeholders": {
+      "filename": {
+        "type": "String"
+      }
+    }
+  },
+  "protectionProof": "Protection Proof",
+  "tierExemplary": "Exemplary",
+  "tierDisciplined": "Disciplined",
+  "tierOrderly": "Orderly",
+  "tierStarting": "Starting",
+  "disciplineCount": "{count} watermarked files • {tier}",
+  "@disciplineCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "tier": {
+        "type": "String"
+      }
+    }
+  },
+  "disciplineDesc": "Every safe export builds your document-protection discipline.",
+  "shareDiscipline": "Share discipline",
+  "disciplineShareText": "{count} watermarked files • {tier} #IDMark",
+  "@disciplineShareText": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "tier": {
+        "type": "String"
+      }
+    }
+  },
+  "allTemplates": "All",
+  "myPresets": "My Presets",
+  "catBanking": "Banking",
+  "catFinance": "Finance & Lending",
+  "catCareer": "Career & HR",
+  "catRental": "Rental & Travel",
+  "catTelecom": "Telecom",
+  "catMultifinance": "Multifinance",
+  "catInvestment": "Investment",
+  "catPublicService": "Public Service",
+  "catInternational": "International",
+  "appearanceAndLanguage": "Appearance & Language",
+  "themeMode": "Theme Mode",
+  "identity": "Identity",
+  "patternDiagonalBand": "Diagonal Band",
+  "patternDiagonalBandDesc": "One thick diagonal line across the centre of the document (Kominfo recommended)",
+  "patternRepeatedGrid": "Repeated Grid",
+  "patternRepeatedGridDesc": "Repeating text across the whole photo for maximum protection",
+  "patternBottomBar": "Bottom Bar",
+  "patternBottomBarDesc": "A solid text bar along the bottom of the document",
+  "patternCornerStamp": "Corner Stamp",
+  "patternCornerStampDesc": "A verification stamp in the bottom-right corner",
+  "patternSecuritySeal": "Circular Seal",
+  "patternSecuritySealDesc": "Double circular seal with a verification border",
+  "patternCrossStamp": "Double Cross (X-Band)",
+  "patternCrossStampDesc": "Two crossing diagonals protect the whole document",
+  "patternQrBadge": "QR Verification Badge",
+  "patternQrBadgeDesc": "A QR badge proving the purpose and date are genuine",
+  "colorWhite": "Pure White",
+  "colorDark": "Deep Black",
+  "colorRed": "Official Red",
+  "colorBlue": "Verification Blue",
+  "colorEmerald": "Safe Green",
+  "colorAmber": "Warning Yellow",
+  "colorPurple": "Seal Purple",
+  "formatPng": "PNG (Full Resolution)",
+  "formatPngDesc": "Lossless format that keeps the original sharpness",
+  "formatJpeg": "JPEG (Smaller Size)",
+  "formatJpegDesc": "Compressed format that saves data for quick portal uploads",
+  "formatPdf": "PDF Document (Print Ready)",
+  "formatPdfDesc": "Official document format used by offices and banks",
+  "redactBlackout": "Blackout Redaction",
+  "redactBlackoutDesc": "A permanent solid black box over the data",
+  "redactMosaic": "Mosaic Redaction",
+  "redactMosaicDesc": "Pixelation that blurs sensitive text",
+  "redactBlur": "Blur Redaction",
+  "redactBlurDesc": "A blur that levels out personal data details",
+  "targetNik": "ID Number",
+  "targetSignature": "Signature",
+  "targetAddress": "Full Address",
+  "targetBirthPlace": "Place / Date of Birth",
+  "targetPhoto": "Face Photo",
+  "shareProofTitle": "Document Protection Proof",
+  "shareProofSubtitle": "Watermark & redaction integrity certificate per Kominfo",
+  "shareFormatFeed": "Feed (4:5)",
+  "shareFormatStory": "Story (9:16)",
+  "shareCopyText": "Copy Text",
+  "shareProcessing": "Processing...",
+  "shareDownloadProofPng": "Download Proof PNG",
+  "shareShareProof": "Share Proof",
+  "shareCardBrand": "IDMARK • SECURE ID",
+  "shareCardOnDevice": "100% ON-DEVICE",
+  "shareCardTitle": "DOCUMENT WATERMARK PROOF",
+  "shareCardPurposeLabel": "FOR THE SPECIFIC PURPOSE:",
+  "shareCardPrivacyScore": "PRIVACY SCORE",
+  "shareCardRedactions": "REDACTIONS",
+  "shareCardAreaCount": "{count} Areas",
+  "@shareCardAreaCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "shareCardFormat": "FORMAT",
+  "shareCardDate": "Date: {date}",
+  "@shareCardDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "shareCardFooter": "idmark.faishal.id • Kominfo RI ID watermark standard",
+  "shareCardIntegrityHash": "INTEGRITY HASH (SHA-256):",
+  "shareProofHeading": "🛡️ DOCUMENT PROTECTION PROOF — IDMARK",
+  "shareProofPurposeLine": "📌 Specific purpose: \"{purpose}\"",
+  "@shareProofPurposeLine": {
+    "placeholders": {
+      "purpose": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofDateLine": "📅 Stamp date: {date}",
+  "@shareProofDateLine": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofScoreLine": "🔒 Privacy score: {score}/100",
+  "@shareProofScoreLine": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "shareProofRedactionLine": "✂️ Permanent redactions: {count} areas covered",
+  "@shareProofRedactionLine": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "shareProofHashLine": "🔑 SHA-256: {hash}",
+  "@shareProofHashLine": {
+    "placeholders": {
+      "hash": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofOnDeviceLine": "✅ Processed 100% on-device, no server (per Kominfo RI guidance)",
+  "shareProofCtaLine": "Protect your identity with IDMark: https://idmark.faishal.id",
+  "shareProofDownloaded": "Document protection certificate downloaded! 🛡️✨",
+  "shareProofFailed": "Failed to share proof: {error}",
+  "@shareProofFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofCopied": "Protection proof copied to clipboard! 📋✨",
+  "themeCyberShield": "Cyber Shield",
+  "themeEmeraldSafe": "Emerald Safe",
+  "themeObsidianVault": "Obsidian Vault",
+  "themeAmberProof": "Amber Proof",
+  "quickSensorShort": "Quick redaction:",
+  "redactedTag": "[REDACTED: {label}]",
+  "@redactedTag": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "defaultWatermarkText": "FOR IDENTITY VERIFICATION ONLY",
+  "pdfHeader": "IDMARK — WATERMARKED IDENTITY DOCUMENT",
+  "pdfComplianceNote": "In line with Personal Data Protection principles (Law No. 27/2022)",
+  "pdfOnDevice": "100% On-Device",
+  "pdfPurposeLabel": "Purpose of use: ",
+  "pdfDateLabel": "Transaction date: {date}",
+  "@pdfDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "pdfPrintedAt": "Printed at: {date}",
+  "@pdfPrintedAt": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "pdfChecksum": "SHA-256 checksum: ",
+  "catEcommerce": "E-Commerce",
+  "presetBank": "Bank Account Opening",
+  "presetBankUpdate": "Bank Customer Data Update",
+  "presetFintech": "OJK-Licensed Fintech / Lending",
+  "presetPaylater": "Paylater / Credit Card Activation",
+  "presetJob": "Job Application",
+  "presetHrOnboarding": "New Employee Onboarding",
+  "presetRental": "Car / Motorbike Rental",
+  "presetHotel": "Hotel / Villa / Boarding Check-In",
+  "presetTelco": "Prepaid SIM Registration",
+  "presetSimReplace": "Lost / Damaged SIM Replacement",
+  "presetKredit": "Leasing / Multifinance Application",
+  "presetKpr": "Mortgage / Property Application",
+  "presetInvestment": "IDX Stock Securities Account",
+  "presetCrypto": "Bappebti Crypto Account Verification",
+  "presetEcommerce": "Marketplace Merchant Verification",
+  "presetBpjs": "BPJS JHT / Balance Claim",
+  "presetGovKelurahan": "Civil Registry / Village Office",
+  "presetGlobalKyc": "International KYC Verification",
+  "defaultInternalSubtext": "FOR INTERNAL DOCUMENTS ONLY",
+  "pdfLegalNotice": "LEGAL NOTICE: This copy of the identity document is valid and permitted only for the purpose stated above. Any other use constitutes a criminal offence of personal-data misuse.",
+  "validationRedactionLabelRequired": "Redaction label cannot be empty",
+  "validationRedactionXRange": "Redaction X position must be between 0.0 and 1.0",
+  "validationRedactionYRange": "Redaction Y position must be between 0.0 and 1.0",
+  "validationRedactionWidthRange": "Redaction width must be between 0.0 and 1.0",
+  "validationRedactionHeightRange": "Redaction height must be between 0.0 and 1.0",
+  "validationAuditIdRequired": "Audit log ID cannot be empty",
+  "validationAuditPurposeRequired": "Audit log purpose cannot be empty",
+  "validationAuditHashRequired": "SHA-256 hash cannot be empty",
+  "validationAuditScoreRange": "Privacy score must be between 0 and 100"
 }

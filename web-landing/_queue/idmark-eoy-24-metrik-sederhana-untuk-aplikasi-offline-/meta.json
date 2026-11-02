@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "metrik-sederhana-untuk-aplikasi-offline-2026",
-    "en": "simple-metrics-for-aplikasi-offline",
-    "ar": "aplikasi-offline-3",
-    "jv": "pandhuan-aplikasi-offline-idmark-3",
-    "su": "pituduh-aplikasi-offline-idmark-3",
-    "zh": "idmark-aplikasi-offline-实用指南-3",
-    "ja": "idmarkaplikasi-offline-ガイド-3"
+    "id": "cara-meninjau-mode-offline-tiap-minggu",
+    "en": "how-to-review-aplikasi-offline-every-week",
+    "ar": "ktaba-almalwmat-almhma-bshkl-yqra",
+    "jv": "kepriye-ninjau-mode-offline-saben-minggu",
+    "su": "kumaha-ninjau-mode-offline-unggal-minggu",
+    "zh": "ba-zhong-yao-xin-xi-xie-de-rang-ren-du-de-xia-qu",
+    "ja": "yome-ru-taisetsu-na-jouhou-no-kakikata"
   },
   "titles": {
-    "id": "Metrik Sederhana untuk aplikasi offline",
-    "en": "Simple Metrics for aplikasi offline",
-    "ar": "aplikasi offline — دليل IDMark",
-    "jv": "Pandhuan: Metrik Sederhana untuk aplikasi offline",
-    "su": "Pituduh: Metrik Sederhana untuk aplikasi offline",
-    "zh": "IDMark · aplikasi offline 实用指南",
-    "ja": "IDMark｜aplikasi offline ガイド"
+    "id": "Cara meninjau mode offline tiap minggu",
+    "en": "How to review aplikasi offline every week",
+    "ar": "كتابة المعلومات المهمة بشكل يُقرأ",
+    "jv": "Kepriyé ninjau mode offline saben minggu",
+    "su": "Kumaha ninjau mode offline unggal minggu",
+    "zh": "把重要信息写得让人读得下去",
+    "ja": "読める大切な情報の書き方"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Cara meninjau kebiasaan aplikasi offline setiap minggu: beberapa pengecekan sederhana, sinyal yang penting, dan langkah setelah jeda.",
+    "en": "How to review your aplikasi offline habit every week: a few simple checks, the signals that matter, and what to do after a gap.",
+    "ar": "كيف تراجع عادة استخدام aplikasi offline كل أسبوع: فحوصات بسيطة، وإشارات مهمة، وما الذي تفعله بعد انقطاع.",
+    "ja": "aplikasi offline の習慣を毎週振り返る方法。簡単なチェック項目、重要なサイン、中断した後に取るべき行動を整理して紹介します。",
+    "zh": "每周回顾 aplikasi offline 使用习惯：几项简单检查、关键信号，以及中断后的应对。",
+    "jv": "Cara ninjau kebiasaan aplikasi offline saben minggu: sawetara pemeriksaan gampang, sinyal sing penting, lan langkah sawisé jeda.",
+    "su": "Kumaha ninjau kabiasaan aplikasi offline unggal minggu: sababaraha pamariksaan gampang, sinyal anu penting, jeung naon anu kudu dilakukeun sanggeus jeda."
+  }
 }

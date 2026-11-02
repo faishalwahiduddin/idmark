@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "idmark-manual-vs-aplikasi-offline",
-    "en": "idmark-manual-notes-vs-offline-app",
-    "ar": "idmark",
-    "jv": "pandhuan-idmark-idmark",
-    "su": "pituduh-idmark-idmark",
-    "zh": "idmark-idmark-实用指南",
-    "ja": "idmarkidmark-ガイド"
+    "id": "watermark-ktp-catatan-longgar-vs-aplikasi-offline",
+    "en": "id-watermark-loose-notes-vs-an-offline-app",
+    "ar": "alama-maiya-ala-alhwya-mlahzat-mtfrqa-am-ttbyq-bla-atsal",
+    "jv": "watermark-ktp-cathetan-longgar-utawa-aplikasi-offline",
+    "su": "watermark-ktp-catetan-longgar-atawa-aplikasi-offline",
+    "zh": "shen-fen-zheng-shui-yin-ling-san-bi-ji-yu-li-xian-ying-yong-de-cha-bie",
+    "ja": "mibun-shou-no-uootaamaaku-memo-to-ofurainapuri-no-chigai"
   },
   "titles": {
-    "id": "IDMark Manual vs Aplikasi",
-    "en": "IDMark: Manual Notes vs Offline App",
-    "ar": "IDMark — دليل IDMark",
-    "jv": "Pandhuan: IDMark Manual vs Aplikasi",
-    "su": "Pituduh: IDMark Manual vs Aplikasi",
-    "zh": "IDMark · IDMark 实用指南",
-    "ja": "IDMark｜IDMark ガイド"
+    "id": "watermark KTP: catatan longgar vs aplikasi offline",
+    "en": "ID watermark: loose notes vs an offline app",
+    "ar": "علامة مائية على الهوية: ملاحظات متفرقة أم تطبيق بلا اتصال",
+    "jv": "watermark KTP: cathetan longgar utawa aplikasi offline",
+    "su": "watermark KTP: catetan longgar atawa aplikasi offline",
+    "zh": "身份证水印：零散笔记与离线应用的差别",
+    "ja": "身分証のウォーターマーク：メモとオフラインアプリの違い"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Catatan longgar sulit menopang watermark KTP. Lihat mengapa aplikasi offline khusus menyimpan teks, tanggal, dan tinjauan mingguan di satu tempat.",
+    "en": "Why loose notes break down for ID watermark work, and how a dedicated offline app keeps the text, the dates and the weekly check in one place.",
+    "ar": "علامة مائية على الهوية: ملاحظات متفرقة أم تطبيق بلا اتصال؟ مقارنة توضح لماذا تنهار الملاحظات المتفرقة، وأين تبقى البيانات على جهازك.",
+    "ja": "身分証のウォーターマークを、ばらばらのメモで管理する場合と専用のオフラインアプリで管理する場合を比べます。記録が散らばりやすい理由も解説。",
+    "zh": "身份证水印：零散笔记与离线应用对比，说明记录为何容易失效，以及专用应用如何集中管理。",
+    "jv": "Cathetan longgar angel nyangga watermark KTP. Delengen kenapa aplikasi offline khusus njaga teks, tanggal, lan tinjauan mingguan ing siji panggonan.",
+    "su": "Catetan kendor hésé nahan watermark KTP. Tingali naha aplikasi offline khusus nyimpen téks, tanggal, jeung tinjauan mingguan dina hiji tempat."
+  }
 }

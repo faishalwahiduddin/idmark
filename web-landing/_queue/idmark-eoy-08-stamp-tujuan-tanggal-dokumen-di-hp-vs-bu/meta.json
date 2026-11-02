@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "stamp-tujuan-tanggal-dokumen-di-hp-vs-buku-catatan-praktis",
-    "en": "stamp-tujuan-tanggal-dokumen-on-phone-vs-paper-log-practical",
-    "ar": "stamp-tujuan-tanggal-dokumen",
-    "jv": "pandhuan-stamp-tujuan-tanggal-dokumen-idmark",
-    "su": "pituduh-stamp-tujuan-tanggal-dokumen-idmark",
-    "zh": "idmark-stamp-tujuan-tanggal-dokumen-实用指南",
-    "ja": "idmarkstamp-tujuan-tanggal-dokumen-ガイド"
+    "id": "stamp-tujuan-tanggal-dokumen-catatan-longgar-vs-aplikasi-offline",
+    "en": "stamp-tujuan-tanggal-dokumen-loose-notes-vs-an-offline-app",
+    "ar": "almalwmat-almhma-mlahzat-mtfrqa-am-ttbyq-bla-atsal",
+    "jv": "stamp-tujuan-tanggal-dokumen-cathetan-longgar-utawa-aplikasi-offline",
+    "su": "stamp-tujuan-tanggal-dokumen-catetan-longgar-atawa-aplikasi-offline",
+    "zh": "zhong-yao-xin-xi-ling-san-bi-ji-yu-li-xian-ying-yong-de-cha-bie",
+    "ja": "taisetsu-na-jouhou-memo-to-ofurainapuri-no-chigai"
   },
   "titles": {
-    "id": "stamp tujuan tanggal dokumen: catatan longgar vs aplikasi",
-    "en": "stamp tujuan tanggal dokumen on Phone vs Paper Log (Practical)",
-    "ar": "stamp tujuan tanggal dokumen — دليل IDMark",
-    "jv": "Pandhuan: stamp tujuan tanggal dokumen: catatan longgar vs aplikasi",
-    "su": "Pituduh: stamp tujuan tanggal dokumen: catatan longgar vs aplikasi",
-    "zh": "IDMark · stamp tujuan tanggal dokumen 实用指南",
-    "ja": "IDMark｜stamp tujuan tanggal dokumen ガイド"
+    "id": "stamp tujuan tanggal dokumen: catatan longgar vs aplikasi offline",
+    "en": "stamp tujuan tanggal dokumen: loose notes vs an offline app",
+    "ar": "المعلومات المهمة: ملاحظات متفرقة أم تطبيق بلا اتصال",
+    "jv": "stamp tujuan tanggal dokumen: cathetan longgar utawa aplikasi offline",
+    "su": "stamp tujuan tanggal dokumen: catetan longgar atawa aplikasi offline",
+    "zh": "重要信息：零散笔记与离线应用的差别",
+    "ja": "大切な情報：メモとオフラインアプリの違い"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Catatan longgar dibanding aplikasi offline untuk stamp tujuan tanggal dokumen: mengapa catatan berserakan gagal, dan di mana data stamp disimpan di ponsel.",
+    "en": "Loose notes versus an offline app for stamp tujuan tanggal dokumen: why scattered records fail, and where your stamp data stays on the phone.",
+    "ar": "ملاحظات متفرقة أم تطبيق offline لـ stamp tujuan tanggal dokumen؟ لماذا تفشل السجلات المبعثرة، وأين تبقى بيانات الختم على الهاتف.",
+    "ja": "メモ派か、オフラインアプリ派か。stamp tujuan tanggal dokumen を比べました。記録が散らかって続かなくなる理由と、スタンプのデータを端末に残す方法です。",
+    "zh": "stamp tujuan tanggal dokumen：零散笔记与离线应用对比，说明记录分散为何失败，以及盖章数据存放位置。",
+    "jv": "Cathetan longgar dibandhingaké karo aplikasi offline kanggo stamp tujuan tanggal dokumen: kenapa cathetan kasebar gagal, lan ing ngendi data stamp ana ing HP.",
+    "su": "Catetan kendor dibandingkeun jeung aplikasi offline pikeun stamp tujuan tanggal dokumen: naha catetan tikasebar gagal, jeung dimana data stamp disimpen dina HP."
+  }
 }

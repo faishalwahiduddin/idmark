@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "lindungi-fotokopi-ktp-saat-travel-tanpa-internet-praktis",
-    "en": "lindungi-fotokopi-ktp-while-traveling-offline-practical",
-    "ar": "lindungi-fotokopi-ktp-8",
-    "jv": "pandhuan-lindungi-fotokopi-ktp-idmark-8",
-    "su": "pituduh-lindungi-fotokopi-ktp-idmark-8",
-    "zh": "idmark-lindungi-fotokopi-ktp-实用指南-8",
-    "ja": "idmarklindungi-fotokopi-ktp-ガイド-8"
+    "id": "lindungi-fotokopi-ktp-full-offline-apa-yang-tetap-jalan",
+    "en": "lindungi-fotokopi-ktp-fully-offline-what-still-works",
+    "ar": "almalwmat-almhma-bla-atsal-tmama-ma-ybqa-yaml-aljz-3",
+    "jv": "lindungi-fotokopi-ktp-full-offline-apa-sing-tetep-mlaku",
+    "su": "lindungi-fotokopi-ktp-full-offline-naon-anu-tetep-jalan",
+    "zh": "zhong-yao-xin-xi-wan-quan-li-xian-na-xie-gong-neng-hai-neng-yong-di-3",
+    "ja": "taisetsu-na-jouhou-kanzen-ofurain-nani-ga-ugoku-ka-dai-3-kai"
   },
   "titles": {
-    "id": "lindungi fotokopi KTP full offline: uji & checklist",
-    "en": "lindungi fotokopi KTP While Traveling Offline (Practical)",
-    "ar": "lindungi fotokopi KTP — دليل IDMark",
-    "jv": "Pandhuan: lindungi fotokopi KTP full offline: uji & checklist",
-    "su": "Pituduh: lindungi fotokopi KTP full offline: uji & checklist",
-    "zh": "IDMark · lindungi fotokopi KTP 实用指南",
-    "ja": "IDMark｜lindungi fotokopi KTP ガイド"
+    "id": "lindungi fotokopi KTP full offline: apa yang tetap jalan",
+    "en": "lindungi fotokopi KTP fully offline: what still works",
+    "ar": "المعلومات المهمة بلا اتصال تماماً: ما يبقى يعمل · الجزء 3",
+    "jv": "lindungi fotokopi KTP full offline: apa sing tetep mlaku",
+    "su": "lindungi fotokopi KTP full offline: naon anu tetep jalan",
+    "zh": "重要信息完全离线：哪些功能还能用 · 第3篇",
+    "ja": "大切な情報完全オフライン：何が動くか · 第3回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Lindungi fotokopi KTP sepenuhnya offline: apa yang tetap berjalan saat bepergian, apa yang tersimpan di perangkat, dan cara tinjauan mingguan tanpa sinyal.",
+    "en": "Lindungi fotokopi KTP fully offline: what still works while you travel, what stays on your device and how to run the weekly check with no signal.",
+    "ar": "lindungi fotokopi KTP بلا اتصال بالكامل: ما الذي يعمل أثناء السفر، وما الذي يُحفظ على الجهاز، وكيف تنفذ المراجعة الأسبوعية دون إشارة.",
+    "ja": "完全オフラインの lindungi fotokopi KTP。旅行中も動く機能、端末に残るもの、電波なしで毎週の確認を行う方法を紹介します。",
+    "zh": "lindungi fotokopi KTP 完全离线：旅途中仍能运行的部分、设备上保存的内容，以及无信号检查。",
+    "jv": "Lindungi fotokopi KTP full offline: apa sing tetep mlaku nalika lelungan, apa sing disimpen ing piranti, lan cara tinjauan mingguan tanpa sinyal.",
+    "su": "Lindungi fotokopi KTP full offline: naon anu tetep jalan waktu ngumbara, naon anu disimpen di alat, jeung kumaha tinjauan mingguan tanpa sinyal."
+  }
 }

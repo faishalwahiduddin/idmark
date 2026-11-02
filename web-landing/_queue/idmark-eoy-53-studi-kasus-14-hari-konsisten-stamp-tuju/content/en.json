@@ -1,0 +1,85 @@
+{
+  "title": "Case study: stamp tujuan tanggal dokumen for 14 days",
+  "description": "A 14-day case study of stamp tujuan tanggal dokumen: how the routine was set up, reviewed and adjusted day by day, with the weekly check.",
+  "badge": "safety · offline",
+  "answer": "When it matters, stamp tujuan tanggal dokumen lives in three places, and the first one you open is already stale. IDMark keeps stamp tujuan tanggal dokumen on-device, so it stays readable with no data plan and no account.",
+  "toc": [
+    "The weekly check",
+    "Stored on your device",
+    "After a gap"
+  ],
+  "sections": [
+    {
+      "h2": "The weekly check",
+      "p": "Once a week, look at the part that breaks most often and shrink the target instead of adding willpower.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "Stored on your device",
+      "p": "IDMark keeps stamp tujuan tanggal dokumen on-device, so it stays readable with no data plan and no account.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "After a gap",
+      "p": "If you miss several days, do not wipe history. Open the last entry, fill in one day, then close.",
+      "h3": null,
+      "p3": null
+    }
+  ],
+  "table": {
+    "caption": "A working frame for stamp tujuan tanggal dokumen",
+    "headers": [
+      "Step",
+      "Minimum",
+      "Done when"
+    ],
+    "rows": [
+      [
+        "Emergency card",
+        "contacts + location",
+        "opens offline"
+      ],
+      [
+        "Bookmark",
+        "last position",
+        "resumable tomorrow"
+      ],
+      [
+        "Weekly review",
+        "one adjustment",
+        "applied Monday"
+      ]
+    ]
+  },
+  "list": [
+    "Pick one fixed time, not “whenever there is room”.",
+    "Open IDMark when that time arrives, not later tonight.",
+    "Note one blocker, not a long excuse.",
+    "Back up before you switch phones."
+  ],
+  "faqs": [
+    [
+      "Can I open stamp tujuan tanggal dokumen offline?",
+      "Yes. IDMark keeps everything on-device, so no data plan is needed."
+    ],
+    [
+      "Do I need an account first?",
+      "No. Start without login; export a backup from time to time."
+    ],
+    [
+      "Where do I start?",
+      "With the shortest piece. Add scope only after two steady weeks."
+    ],
+    [
+      "What if I miss a few days?",
+      "Do not wipe history. Resume from the last entry and note one blocker."
+    ]
+  ],
+  "cta": [
+    "Start stamp tujuan tanggal dokumen today",
+    "Open IDMark"
+  ],
+  "slug": "case-study-14-consistent-days-of-stamp-tujuan-tanggal-dokumen"
+}

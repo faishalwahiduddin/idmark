@@ -2,6 +2,7 @@ import 'dart:typed_data';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:timezone/timezone.dart' as tz;
+import '../../l10n/app_localizations.dart';
 import '../models/watermark_config.dart';
 import '../utils/app_timezone.dart';
 
@@ -15,9 +16,12 @@ class PdfExportService {
     required WatermarkConfig config,
     required String sha256Checksum,
     tz.Location? zone,
+    AppLocalizations? l10n,
   }) async {
     final pdf = pw.Document(
-      title: 'Dokumen Identitas Ter-Watermark - ${config.purpose}',
+      title: l10n == null
+          ? 'Dokumen Identitas Ter-Watermark - ${config.purpose}'
+          : l10n.shareSubject(config.purpose),
       author: 'IDMark (idmark.faishal.id)',
       subject: config.purpose,
     );
@@ -53,7 +57,8 @@ class PdfExportService {
                       crossAxisAlignment: pw.CrossAxisAlignment.start,
                       children: [
                         pw.Text(
-                          'IDMARK — DOKUMEN IDENTITAS TER-WATERMARK',
+                          l10n?.pdfHeader ??
+                              'IDMARK — DOKUMEN IDENTITAS TER-WATERMARK',
                           style: pw.TextStyle(
                             fontSize: 14,
                             fontWeight: pw.FontWeight.bold,
@@ -62,7 +67,8 @@ class PdfExportService {
                         ),
                         pw.SizedBox(height: 4),
                         pw.Text(
-                          'Sesuai Prinsip Pelindungan Data Pribadi (UU No. 27/2022)',
+                          l10n?.pdfComplianceNote ??
+                              'Sesuai Prinsip Pelindungan Data Pribadi (UU No. 27/2022)',
                           style: const pw.TextStyle(fontSize: 10, color: PdfColors.grey700),
                         ),
                       ],
@@ -75,7 +81,7 @@ class PdfExportService {
                         border: pw.Border.all(color: PdfColors.blue300),
                       ),
                       child: pw.Text(
-                        '100% On-Device',
+                        l10n?.pdfOnDevice ?? '100% On-Device',
                         style: pw.TextStyle(
                           fontSize: 9,
                           fontWeight: pw.FontWeight.bold,
@@ -102,7 +108,7 @@ class PdfExportService {
                     pw.Row(
                       children: [
                         pw.Text(
-                          'Tujuan Penggunaan: ',
+                          l10n?.pdfPurposeLabel ?? 'Tujuan Penggunaan: ',
                           style: pw.TextStyle(fontSize: 10, fontWeight: pw.FontWeight.bold),
                         ),
                         pw.Expanded(
@@ -122,11 +128,13 @@ class PdfExportService {
                       mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                       children: [
                         pw.Text(
-                          'Tanggal Transaksi: ${config.dateLabelIn(loc)}',
+                          l10n?.pdfDateLabel(config.dateLabelIn(loc)) ??
+                              'Tanggal Transaksi: ${config.dateLabelIn(loc)}',
                           style: const pw.TextStyle(fontSize: 9, color: PdfColors.grey800),
                         ),
                         pw.Text(
-                          'Waktu Cetak: $formattedDate',
+                          l10n?.pdfPrintedAt(formattedDate) ??
+                              'Waktu Cetak: $formattedDate',
                           style: const pw.TextStyle(fontSize: 9, color: PdfColors.grey700),
                         ),
                       ],
@@ -165,7 +173,7 @@ class PdfExportService {
                     pw.Row(
                       children: [
                         pw.Text(
-                          'SHA-256 Checksum: ',
+                          l10n?.pdfChecksum ?? 'SHA-256 Checksum: ',
                           style: pw.TextStyle(fontSize: 8, fontWeight: pw.FontWeight.bold),
                         ),
                         pw.Expanded(
@@ -183,7 +191,8 @@ class PdfExportService {
                     ),
                     pw.SizedBox(height: 4),
                     pw.Text(
-                      'PEMBERITAHUAN HUKUM: Salinan dokumen identitas ini hanya sah dan diizinkan untuk tujuan yang tertera di atas. Penggunaan di luar peruntukan tersebut merupakan tindak pidana penyalahgunaan data pribadi.',
+                      l10n?.pdfLegalNotice ??
+                          'PEMBERITAHUAN HUKUM: Salinan dokumen identitas ini hanya sah dan diizinkan untuk tujuan yang tertera di atas. Penggunaan di luar peruntukan tersebut merupakan tindak pidana penyalahgunaan data pribadi.',
                       style: const pw.TextStyle(fontSize: 7.5, color: PdfColors.grey700, height: 1.3),
                     ),
                   ],

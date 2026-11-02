@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "6-tanda-catatan-watermark-ktp-anda-sudah-sehat",
-    "en": "6-signs-your-watermark-ktp-log-is-healthy",
-    "ar": "watermark-ktp-9",
-    "jv": "pandhuan-watermark-ktp-idmark-9",
-    "su": "pituduh-watermark-ktp-idmark-9",
-    "zh": "idmark-watermark-ktp-实用指南-9",
-    "ja": "idmarkwatermark-ktp-ガイド-9"
+    "id": "watermark-ktp-daftar-pilihan-yang-masuk-akal",
+    "en": "id-watermark-a-shortlist-that-makes-sense",
+    "ar": "alama-maiya-ala-alhwya-khyarat-qlyla-mntqya",
+    "jv": "watermark-ktp-pilihan-sing-cukup-masuk-akal",
+    "su": "watermark-ktp-pilihan-anu-asup-akal",
+    "zh": "shen-fen-zheng-shui-yin-zhi-de-kao-lv-de-ji-zhong-xuan-ze",
+    "ja": "mibun-shou-no-uootaamaaku-nattoku-dekiru-sentakushi"
   },
   "titles": {
-    "id": "6 Tanda Catatan watermark KTP Anda Sudah Sehat",
-    "en": "6 Signs Your watermark KTP Log Is Healthy",
-    "ar": "watermark KTP — دليل IDMark",
-    "jv": "Pandhuan: 6 Tanda Catatan watermark KTP Anda Sudah Sehat",
-    "su": "Pituduh: 6 Tanda Catatan watermark KTP Anda Sudah Sehat",
-    "zh": "IDMark · watermark KTP 实用指南",
-    "ja": "IDMark｜watermark KTP ガイド"
+    "id": "watermark KTP: daftar pilihan yang masuk akal",
+    "en": "ID watermark: a shortlist that makes sense",
+    "ar": "علامة مائية على الهوية: خيارات قليلة منطقية",
+    "jv": "watermark KTP: pilihan sing cukup masuk akal",
+    "su": "watermark KTP: pilihan anu asup akal",
+    "zh": "身份证水印：值得考虑的几种选择",
+    "ja": "身分証のウォーターマーク：納得できる選択肢"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Daftar pilihan yang masuk akal untuk watermark KTP, dari rutinitas paling kecil sampai tinjauan mingguan, supaya Anda bisa menilai mana yang cocok.",
+    "en": "A shortlist of sensible ID watermark options, from a tiny routine to a weekly check, so you can judge which one fits your records.",
+    "ar": "قائمة خيارات معقولة لعلامة KTP المائية، من روتين صغير حتى مراجعة أسبوعية، لتقيّم أيها يناسب سجلاتك.",
+    "ja": "身分証ウォーターマークの現実的な選択肢リスト。小さなルーティンから毎週の確認まで、自分の記録に合うものを判断する材料を紹介します。",
+    "zh": "合理选项清单：身份证水印从小型流程到每周检查，帮你判断哪一种最贴合你自己的记录。",
+    "jv": "Dhaftar pilihan sing masuk akal kanggo watermark KTP, saka rutinitas paling cilik nganti tinjauan mingguan, supaya sampéyan bisa mbandhingaké sing cocok.",
+    "su": "Daptar pilihan anu masuk akal pikeun watermark KTP, ti rutinitas pangleutikna nepi ka tinjauan mingguan, supaya anjeun bisa nilai mana anu cocog."
+  }
 }

@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "kualitas-data-watermark-e-ktp-vs-kuantitas-offline",
-    "en": "watermark-e-ktp-data-quality-vs-quantity",
-    "ar": "watermark-e-ktp-6",
-    "jv": "pandhuan-watermark-e-ktp-idmark-6",
-    "su": "pituduh-watermark-e-ktp-idmark-6",
-    "zh": "idmark-watermark-e-ktp-实用指南-6",
-    "ja": "idmarkwatermark-e-ktp-ガイド-6"
+    "id": "watermark-e-ktp-yang-datanya-bisa-dipercaya",
+    "en": "watermark-e-ktp-whose-records-you-can-trust",
+    "ar": "almalwmat-almhma-la-ythql-fthh",
+    "jv": "watermark-e-ktp-sing-dhatae-bisa-dipercaya",
+    "su": "watermark-e-ktp-anu-datana-bisa-dipercaya",
+    "zh": "da-kai-bu-fei-jin-de-zhong-yao-xin-xi",
+    "ja": "hiraku-noga-okkuu-ninaranai-taisetsu-na-jouhou"
   },
   "titles": {
-    "id": "Kualitas Data watermark e-KTP vs Kuantitas",
-    "en": "watermark e-KTP Data Quality vs Quantity",
-    "ar": "watermark e-KTP — دليل IDMark",
-    "jv": "Pandhuan: Kualitas Data watermark e-KTP vs Kuantitas",
-    "su": "Pituduh: Kualitas Data watermark e-KTP vs Kuantitas",
-    "zh": "IDMark · watermark e-KTP 实用指南",
-    "ja": "IDMark｜watermark e-KTP ガイド"
+    "id": "watermark e-KTP yang datanya bisa dipercaya",
+    "en": "watermark e-KTP whose records you can trust",
+    "ar": "المعلومات المهمة لا يثقل فتحه",
+    "jv": "watermark e-KTP sing dhataé bisa dipercaya",
+    "su": "watermark e-KTP anu datana bisa dipercaya",
+    "zh": "打开不费劲的重要信息",
+    "ja": "開くのが億劫にならない大切な情報"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Watermark e-KTP dengan catatan yang bisa dipercaya: mengapa satu log rapi lebih baik daripada banyak salinan berserakan, dan cara menjaga data tetap konsisten.",
+    "en": "Watermark e-KTP whose records you can trust: why one clean log beats many scattered copies, and how to keep the data consistent over weeks.",
+    "ar": "watermark e-KTP بسجلات يمكن الوثوق بها: لماذا يتفوق سجل واحد نظيف على نسخ كثيرة متفرقة، وكيف تحافظ على اتساق البيانات.",
+    "ja": "信頼できる記録を残す watermark e-KTP。散らばった多数のコピーより、一つの整った記録が優れている理由と、データを一貫させる方法を解説します。",
+    "zh": "可信记录的 watermark e-KTP：为什么一份干净日志胜过多份分散副本，以及如何保持数据一致。",
+    "jv": "Watermark e-KTP kanthi cathetan sing bisa dipercaya: kenapa siji log sing resik luwih apik tinimbang akeh salinan kasebar, lan cara njaga data tetep konsisten.",
+    "su": "Watermark e-KTP kalayan catetan anu bisa dipercaya: naha hiji log anu beresih leuwih hadé ti loba salinan tikasebar, jeung kumaha ngajaga data tetep konsisten."
+  }
 }

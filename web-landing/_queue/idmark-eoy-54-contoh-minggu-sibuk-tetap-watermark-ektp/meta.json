@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "contoh-minggu-sibuk-tetap-watermark-ektp-aman-offline-2026",
-    "en": "busy-week-example-still-doing-watermark-ektp-aman-offline",
-    "ar": "watermark-ektp-aman-offline-6",
-    "jv": "pandhuan-watermark-ektp-aman-offline-idmark-6",
-    "su": "pituduh-watermark-ektp-aman-offline-idmark-6",
-    "zh": "idmark-watermark-ektp-aman-offline-实用指南-6",
-    "ja": "idmarkwatermark-ektp-aman-offline-ガイド-6"
+    "id": "studi-kasus-mode-offline-selama-14-hari",
+    "en": "case-study-watermark-ektp-aman-offline-for-14-days",
+    "ar": "hala-amlya-almalwmat-almhma-larbaa-ashr-ywma-aljz-2",
+    "jv": "studi-kasus-mode-offline-14-dina",
+    "su": "studi-kasus-mode-offline-14-poe",
+    "zh": "an-li-14-tian-de-zhong-yao-xin-xi-di-2-pian",
+    "ja": "jirei-14-nichikan-no-taisetsu-na-jouhou-dai-2-kai"
   },
   "titles": {
-    "id": "Contoh Minggu Sibuk tetap watermark ektp aman offline",
-    "en": "Busy-Week Example Still Doing watermark ektp aman offline",
-    "ar": "watermark ektp aman offline — دليل IDMark",
-    "jv": "Pandhuan: Contoh Minggu Sibuk tetap watermark ektp aman offline",
-    "su": "Pituduh: Contoh Minggu Sibuk tetap watermark ektp aman offline",
-    "zh": "IDMark · watermark ektp aman offline 实用指南",
-    "ja": "IDMark｜watermark ektp aman offline ガイド"
+    "id": "Studi kasus: mode offline selama 14 hari",
+    "en": "Case study: watermark ektp aman offline for 14 days",
+    "ar": "حالة عملية: المعلومات المهمة لأربعة عشر يوماً · الجزء 2",
+    "jv": "Studi kasus: mode offline 14 dina",
+    "su": "Studi kasus: mode offline 14 poé",
+    "zh": "案例：14 天的重要信息 · 第2篇",
+    "ja": "事例：14日間の大切な情報 · 第2回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Studi kasus 14 hari watermark ektp aman offline: pengaturannya, tinjauan mingguannya, dan titik ketika rutinitas perlu disesuaikan.",
+    "en": "A 14-day case study of watermark ektp aman offline: the setup, the weekly check and the points where the routine needed adjusting.",
+    "ar": "دراسة حالة لمدة 14 يوماً لـ watermark ektp aman offline: الإعداد، والمراجعة الأسبوعية، والنقاط التي احتاج فيها الروتين إلى تعديل.",
+    "ja": "watermark ektp aman offline の14日間のケーススタディ。設定、毎週の確認、ルーティンを調整する必要があった場面を整理しました。",
+    "zh": "watermark ektp aman offline 14 天案例：设置过程、每周检查，以及流程需要调整的节点。",
+    "jv": "Studi kasus 14 dina watermark ektp aman offline: setelané, tinjauan mingguané, lan titik nalika rutinitas kudu disetel.",
+    "su": "Studi kasus 14 poé watermark ektp aman offline: setelanana, tinjauan mingguanana, jeung titik-titik nalika rutinitas kudu disaluyukeun."
+  }
 }

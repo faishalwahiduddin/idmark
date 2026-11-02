@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "gabungkan-aplikasi-offline-dengan-kebiasaan-lain-harian",
-    "en": "stack-aplikasi-offline-with-other-habits",
-    "ar": "aplikasi-offline-6",
-    "jv": "pandhuan-aplikasi-offline-idmark-6",
-    "su": "pituduh-aplikasi-offline-idmark-6",
-    "zh": "idmark-aplikasi-offline-实用指南-6",
-    "ja": "idmarkaplikasi-offline-ガイド-6"
+    "id": "mode-offline-dan-aplikasi-lain-di-ponsel-anda",
+    "en": "aplikasi-offline-and-the-other-apps-on-your-phone",
+    "ar": "almalwmat-almhma-dlyl-ybqa-mfyda",
+    "jv": "mode-offline-lan-aplikasi-liya-ing-hp",
+    "su": "mode-offline-jeung-aplikasi-sejen-dina-hp",
+    "zh": "zhong-yao-xin-xi-chang-qi-you-xiao-de-zhi-nan",
+    "ja": "taisetsu-na-jouhou-nagaku-tsukae-ru-gaido"
   },
   "titles": {
-    "id": "Gabungkan aplikasi offline dengan Kebiasaan Lain",
-    "en": "Stack aplikasi offline with Other Habits",
-    "ar": "aplikasi offline — دليل IDMark",
-    "jv": "Pandhuan: Gabungkan aplikasi offline dengan Kebiasaan Lain",
-    "su": "Pituduh: Gabungkan aplikasi offline dengan Kebiasaan Lain",
-    "zh": "IDMark · aplikasi offline 实用指南",
-    "ja": "IDMark｜aplikasi offline ガイド"
+    "id": "mode offline dan aplikasi lain di ponsel Anda",
+    "en": "aplikasi offline and the other apps on your phone",
+    "ar": "المعلومات المهمة: دليل يبقى مفيداً",
+    "jv": "mode offline lan aplikasi liya ing HP",
+    "su": "mode offline jeung aplikasi séjén dina HP",
+    "zh": "重要信息：长期有效的指南",
+    "ja": "大切な情報：長く使えるガイド"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Aplikasi offline bersama aplikasi lain di ponsel Anda: cara menyelipkan rutinitas ke kebiasaan yang sudah ada dan menjaga data tetap di tempat yang Anda duga.",
+    "en": "Aplikasi offline alongside the other apps on your phone: how to fit the routine into existing habits and keep the data where you expect it.",
+    "ar": "تطبيق offline إلى جانب التطبيقات الأخرى على هاتفك: كيف تدمج الروتين في عاداتك القائمة وتحافظ على بياناتك في المكان المتوقع.",
+    "ja": "スマホの他のアプリと一緒に使う aplikasi offline。既存の習慣にルーティンを組み込み、データを想定どおりの場所に保つ方法を解説します。",
+    "zh": "aplikasi offline 与手机上的其他应用：如何把流程融入现有习惯，并把数据放在预期的位置。",
+    "jv": "Aplikasi offline bebarengan karo aplikasi liya ing HP sampéyan: cara nyelipaké rutinitas ing kebiasan sing wis ana lan njaga data ing panggonan sing dikira.",
+    "su": "Aplikasi offline jeung aplikasi séjén dina HP anjeun: kumaha nyelapkeun rutinitas kana kabiasaan nu geus aya, jeung ngajaga data di tempat anu disangka."
+  }
 }

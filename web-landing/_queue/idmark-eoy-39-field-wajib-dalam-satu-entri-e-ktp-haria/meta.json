@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "field-wajib-dalam-satu-entri-e-ktp-harian",
-    "en": "required-fields-in-one-e-ktp-entry",
-    "ar": "e-ktp-5",
-    "jv": "pandhuan-e-ktp-idmark-5",
-    "su": "pituduh-e-ktp-idmark-5",
-    "zh": "idmark-e-ktp-实用指南-5",
-    "ja": "idmarke-ktp-ガイド-5"
+    "id": "e-ktp-secara-mendalam-tanpa-muter-muter",
+    "en": "e-ktp-explained-without-the-runaround",
+    "ar": "almalwmat-almhma-bshrh-mbashr-bla-lf-aljz-2",
+    "jv": "e-ktp-kanthi-jero-tanpa-mubeng-mubeng",
+    "su": "e-ktp-diwincik-tanpa-muter-muter",
+    "zh": "zhong-yao-xin-xi-shen-ru-jiang-qing-chu-di-2-pian",
+    "ja": "taisetsu-na-jouhou-wo-toomawari-sezuni-shin-hori-dai-2-kai"
   },
   "titles": {
-    "id": "Field Wajib dalam Satu Entri e-KTP",
-    "en": "Required Fields in One e-KTP Entry",
-    "ar": "e-KTP — دليل IDMark",
-    "jv": "Pandhuan: Field Wajib dalam Satu Entri e-KTP",
-    "su": "Pituduh: Field Wajib dalam Satu Entri e-KTP",
-    "zh": "IDMark · e-KTP 实用指南",
-    "ja": "IDMark｜e-KTP ガイド"
+    "id": "e-KTP secara mendalam tanpa muter-muter",
+    "en": "e-KTP, explained without the runaround",
+    "ar": "المعلومات المهمة بشرح مباشر بلا لفّ · الجزء 2",
+    "jv": "e-KTP kanthi jero tanpa mubeng-mubeng",
+    "su": "e-KTP diwincik tanpa muter-muter",
+    "zh": "重要信息深入讲清楚 · 第2篇",
+    "ja": "大切な情報を遠回りせずに深掘り · 第2回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "e-KTP dibahas mendalam tanpa berputar-putar: bagian yang paling penting, teks watermark dan tanggal, serta apa yang tetap tersimpan di perangkat.",
+    "en": "e-KTP explained in depth without the runaround: the parts that matter, the watermark text and date, and what stays stored on your device.",
+    "ar": "e-KTP بالتفصيل دون دوران: الأجزاء المهمة، ونص العلامة المائية والتاريخ، وما الذي يبقى مخزناً على جهازك.",
+    "ja": "回りくどくなく、e-KTP を詳しく解説。大切なポイント、ウォーターマークの文字と日付、端末に残るデータについて順に説明します。",
+    "zh": "深入讲解 e-KTP，不绕弯子：关键部分、水印文字与日期，以及哪些数据留在设备上。",
+    "jv": "e-KTP diwincik jero tanpa muter-muter: bagéan sing paling penting, teks lan tanggal watermark, lan apa sing tetep disimpen ing piranti.",
+    "su": "e-KTP dibahas jero tanpa ngurilingan: bagian anu paling penting, téks jeung tanggal watermark, jeung naon anu tetep disimpen di alat."
+  }
 }

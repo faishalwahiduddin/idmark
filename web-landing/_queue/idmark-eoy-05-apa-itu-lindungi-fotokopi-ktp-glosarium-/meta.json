@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "apa-itu-lindungi-fotokopi-ktp-glosarium-singkat-offline",
-    "en": "what-is-lindungi-fotokopi-ktp-a-short-glossary",
-    "ar": "lindungi-fotokopi-ktp",
-    "jv": "pandhuan-lindungi-fotokopi-ktp-idmark",
-    "su": "pituduh-lindungi-fotokopi-ktp-idmark",
-    "zh": "idmark-lindungi-fotokopi-ktp-实用指南",
-    "ja": "idmarklindungi-fotokopi-ktp-ガイド"
+    "id": "apa-itu-lindungi-fotokopi-ktp-penjelasan-singkat",
+    "en": "what-is-lindungi-fotokopi-ktp-a-short-explanation",
+    "ar": "ma-mana-almalwmat-almhma-shrh-mwjz",
+    "jv": "apa-iku-lindungi-fotokopi-ktp-katrangan-cekak",
+    "su": "naon-eta-lindungi-fotokopi-ktp-katerangan-pondok",
+    "zh": "zhong-yao-xin-xi-shi-shen-me-jian-ming-jie-shi",
+    "ja": "taisetsu-na-jouhou-toha-mijikai-setsumei"
   },
   "titles": {
-    "id": "Apa Itu lindungi fotokopi KTP? Glosarium Singkat",
-    "en": "What Is lindungi fotokopi KTP? A Short Glossary",
-    "ar": "lindungi fotokopi KTP — دليل IDMark",
-    "jv": "Pandhuan: Apa Itu lindungi fotokopi KTP? Glosarium Singkat",
-    "su": "Pituduh: Apa Itu lindungi fotokopi KTP? Glosarium Singkat",
-    "zh": "IDMark · lindungi fotokopi KTP 实用指南",
-    "ja": "IDMark｜lindungi fotokopi KTP ガイド"
+    "id": "Apa itu lindungi fotokopi KTP? Penjelasan singkat",
+    "en": "What is lindungi fotokopi KTP? A short explanation",
+    "ar": "ما معنى المعلومات المهمة؟ شرح موجز",
+    "jv": "Apa iku lindungi fotokopi KTP? Katrangan cekak",
+    "su": "Naon éta lindungi fotokopi KTP? Katerangan pondok",
+    "zh": "重要信息是什么？简明解释",
+    "ja": "大切な情報とは？短い説明"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Arti lindungi fotokopi KTP dalam praktik, cara kerja watermark pada salinan KTP, dan alasan mencatat di perangkat sendiri itu penting.",
+    "en": "What lindungi fotokopi KTP means in practice, how a watermark on a KTP copy works, and why keeping the record on your own device matters.",
+    "ar": "معنى lindungi fotokopi KTP عملياً، وطريقة عمل العلامة المائية على نسخة بطاقة الهوية، ولماذا يبقى تسجيل السجل على جهازك أمراً مهماً.",
+    "ja": "lindungi fotokopi KTP の意味を実際の運用に沿って説明します。KTP のコピーにウォーターマークを入れる仕組みと、記録を手元の端末に残す理由。",
+    "zh": "lindungi fotokopi KTP 的含义与做法：复印件上水印如何生效，以及记录为何应留在自己设备上。",
+    "jv": "Tegesé lindungi fotokopi KTP ing praktik, cara watermark ing salinan KTP tumindak, lan alasané nyathet ing piranti dhéwé iku penting.",
+    "su": "Hartina lindungi fotokopi KTP dina prakték, kumaha watermark dina salinan KTP bisa dianggo, jeung alesan naha nyatet di alat sorangan penting."
+  }
 }

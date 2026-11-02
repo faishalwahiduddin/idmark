@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "aplikasi-offline-adalah-apa-penjelasan-cara-mulai-harian",
-    "en": "what-is-aplikasi-offline-explanation-how-to-start",
-    "ar": "aplikasi-offline-8",
-    "jv": "pandhuan-aplikasi-offline-idmark-8",
-    "su": "pituduh-aplikasi-offline-idmark-8",
-    "zh": "idmark-aplikasi-offline-实用指南-8",
-    "ja": "idmarkaplikasi-offline-ガイド-8"
+    "id": "mode-offline-untuk-pemula-mulai-dari-mana",
+    "en": "aplikasi-offline-for-beginners-where-to-start",
+    "ar": "almalwmat-almhma-llmbtdiyn-mn-ayn-tbda-aljz-2",
+    "jv": "mode-offline-kanggo-pamula-wiwit-saka-ngendi",
+    "su": "mode-offline-pikeun-pamula-mimitian-ti-mana",
+    "zh": "zhong-yao-xin-xi-ru-men-cong-na-li-kai-shi-di-2-pian",
+    "ja": "taisetsu-na-jouhou-nyuumon-dokokara-hajime-ruka-dai-2-kai"
   },
   "titles": {
-    "id": "Aplikasi offline Adalah Apa? Penjelasan + Cara Mulai",
-    "en": "What Is aplikasi offline? Explanation + How to Start",
-    "ar": "aplikasi offline — دليل IDMark",
-    "jv": "Pandhuan: Aplikasi offline Adalah Apa? Penjelasan + Cara Mulai",
-    "su": "Pituduh: Aplikasi offline Adalah Apa? Penjelasan + Cara Mulai",
-    "zh": "IDMark · aplikasi offline 实用指南",
-    "ja": "IDMark｜aplikasi offline ガイド"
+    "id": "mode offline untuk pemula: mulai dari mana",
+    "en": "aplikasi offline for beginners: where to start",
+    "ar": "المعلومات المهمة للمبتدئين: من أين تبدأ · الجزء 2",
+    "jv": "mode offline kanggo pamula: wiwit saka ngendi",
+    "su": "mode offline pikeun pamula: mimitian ti mana",
+    "zh": "重要信息入门：从哪里开始 · 第2篇",
+    "ja": "大切な情報入門：どこから始めるか · 第2回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Aplikasi offline untuk pemula: mulai dari mana, langkah pertama paling kecil, apa yang disimpan aplikasi di perangkat, dan cara menyiapkan tinjauan mingguan.",
+    "en": "Aplikasi offline for beginners: where to start, the smallest first step, what the app keeps on your device and how to set up a weekly check.",
+    "ar": "تطبيق offline للمبتدئين: من أين تبدأ، وأصغر خطوة أولى، وما الذي يحفظه التطبيق على جهازك، وكيف تضع مراجعة أسبوعية بسيطة.",
+    "ja": "初心者のための aplikasi offline 入門。どこから始めるか、最初の小さな一歩、アプリが端末に保存する内容、簡単な週次確認の作り方を説明します。",
+    "zh": "离线应用新手指南：从哪里开始，第一步多小，应用在设备上保存什么，以及简单的每周检查。",
+    "jv": "Aplikasi offline kanggo pemula: wiwit saka ngendi, langkah pisanan paling cilik, apa sing disimpen ing piranti, lan cara nyiapaké tinjauan mingguan.",
+    "su": "Aplikasi offline pikeun pamula: mimitian ti mana, lankah kahiji anu pangleutikna, naon anu disimpen aplikasi di alat, jeung kumaha nyiapkeun tinjauan mingguan."
+  }
 }

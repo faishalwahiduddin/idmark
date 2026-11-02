@@ -15,14 +15,14 @@
   "selectTheme": "اختر السمة",
   "language": "اللغة",
   "selectLanguage": "اختر اللغة",
-  "localeIndonesian": "Bahasa Indonesia",
-  "localeEnglish": "English",
+  "localeIndonesian": "الإندونيسية",
+  "localeEnglish": "الإنجليزية",
   "localeArabic": "العربية",
-  "localeJavanese": "Basa Jawa",
-  "localeSundanese": "Basa Sunda",
-  "localeChinese": "中文",
-  "localeJapanese": "日本語",
-  "localeSpanish": "Español",
+  "localeJavanese": "الجاوية",
+  "localeSundanese": "السوندية",
+  "localeChinese": "الصينية",
+  "localeJapanese": "اليابانية",
+  "localeSpanish": "الإسبانية",
   "about": "حول",
   "cancel": "إلغاء",
   "save": "حفظ",
@@ -195,8 +195,8 @@
   "localDeviceStorage": "التخزين المحلي للجهاز",
   "resetDefaultsDesc": "استعادة القوالب وإعدادات النص إلى الإعدادات الافتراضية الأصلية",
   "appLabel": "التطبيق",
-  "officialKominfoGuide": "Panduan Resmi Kominfo & UU PDP",
-  "privacyAndSettings": "Privasi & Pengaturan",
+  "officialKominfoGuide": "الدليل الرسمي لكومينفو وقانون حماية البيانات",
+  "privacyAndSettings": "الخصوصية والإعدادات",
   "@historySubtitle": {
     "placeholders": {
       "count": {
@@ -371,5 +371,267 @@
   "privacyGradeDescMax": "حماية قصوى • يفي بمعايير حماية البيانات",
   "privacyGradeDescVeryGood": "حماية قوية جداً • المستند آمن للمشاركة",
   "privacyGradeDescFair": "حماية مقبولة • يُنصح بإضافة التاريخ وحجب رقم الهوية",
-  "privacyGradeDescWeak": "حماية ضعيفة • أضف الغرض والتاريخ"
+  "privacyGradeDescWeak": "حماية ضعيفة • أضف الغرض والتاريخ",
+  "appTitle": "IDMark",
+  "appTagline": "اطبع علامة مائية نصية على صور الهوية ورخص القيادة والمستندات المهمة.",
+  "appSubtitle": "حماية الهوية والخصوصية",
+  "onbSkip": "تخطٍّ",
+  "onbNext": "التالي",
+  "onbGetStarted": "ابدأ الآن",
+  "onbPrivacyHeadline": "الخصوصية والعمل دون اتصال مضمونان",
+  "onbPrivacyDetail": "تبقى جميع البيانات بأمان على جهازك دون أي متتبعات.",
+  "onbSlide1Title": "ختم الهوية",
+  "onbSlide1Sub": "الغرض والتاريخ على المستند",
+  "onbSlide1Badge": "متوافق دون اتصال 100%",
+  "onbSlide2Title": "قوالب جاهزة",
+  "onbSlide2Sub": "قوالب جاهزة للاستخدام",
+  "onbSlide2Badge": "خفيف وسريع",
+  "onbSlide3Title": "السجل",
+  "onbSlide3Sub": "نتائج الختم محفوظة",
+  "onbSlide3Badge": "بلا إعلانات وبلا حساب",
+  "onbSlide4Title": "على الجهاز",
+  "onbSlide4Sub": "دون رفع إلى السحابة",
+  "onbSlide4Badge": "البيانات محفوظة على جهازك",
+  "loadingLabel": "جارٍ التحميل…",
+  "download": "تنزيل",
+  "downloadSuccess": "تم تنزيل المستند ذي العلامة المائية ({filename})! 🛡️✨",
+  "@downloadSuccess": {
+    "placeholders": {
+      "filename": {
+        "type": "String"
+      }
+    }
+  },
+  "protectionProof": "إثبات الحماية",
+  "tierExemplary": "قدوة",
+  "tierDisciplined": "منتظم",
+  "tierOrderly": "منظّم",
+  "tierStarting": "بداية",
+  "disciplineCount": "{count} ملفًا بعلامة مائية • {tier}",
+  "@disciplineCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "tier": {
+        "type": "String"
+      }
+    }
+  },
+  "disciplineDesc": "كل تصدير آمن يزيد من انضباطك في حماية المستندات.",
+  "shareDiscipline": "شارك الإنجاز",
+  "disciplineShareText": "{count} ملفًا بعلامة مائية • {tier} #IDMark",
+  "@disciplineShareText": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "tier": {
+        "type": "String"
+      }
+    }
+  },
+  "allTemplates": "الكل",
+  "myPresets": "قوالبي",
+  "catBanking": "المصارف",
+  "catFinance": "التمويل والإقراض",
+  "catCareer": "الوظائف والموارد البشرية",
+  "catRental": "التأجير والسفر",
+  "catTelecom": "الاتصالات",
+  "catMultifinance": "التمويل متعدد الأغراض",
+  "catInvestment": "الاستثمار",
+  "catPublicService": "الخدمات العامة",
+  "catInternational": "دولي",
+  "appearanceAndLanguage": "المظهر واللغة",
+  "themeMode": "وضع المظهر",
+  "identity": "الهوية",
+  "patternDiagonalBand": "شريط مائل",
+  "patternDiagonalBandDesc": "خط مائل عريض واحد يعبر وسط المستند (موصى به من كومينفو)",
+  "patternRepeatedGrid": "شبكة متكررة",
+  "patternRepeatedGridDesc": "نص متكرر على كامل الصورة لأقصى حماية",
+  "patternBottomBar": "شريط سفلي",
+  "patternBottomBarDesc": "شريط نصي متصل أسفل المستند",
+  "patternCornerStamp": "ختم زاوية",
+  "patternCornerStampDesc": "ختم تحقق في الزاوية اليمنى السفلى",
+  "patternSecuritySeal": "ختم دائري رسمي",
+  "patternSecuritySealDesc": "ختم دائري مزدوج بإطار تحقق",
+  "patternCrossStamp": "تقاطع مزدوج (X-Band)",
+  "patternCrossStampDesc": "خطان مائلان متقاطعان يحميان كامل محتوى المستند",
+  "patternQrBadge": "شارة تحقق QR",
+  "patternQrBadgeDesc": "شارة QR تثبت صحة الغرض والتاريخ",
+  "colorWhite": "أبيض نقي",
+  "colorDark": "أسود داكن",
+  "colorRed": "أحمر رسمي",
+  "colorBlue": "أزرق التحقق",
+  "colorEmerald": "أخضر آمن",
+  "colorAmber": "أصفر تحذيري",
+  "colorPurple": "بنفسجي الختم",
+  "formatPng": "PNG (دقة كاملة)",
+  "formatPngDesc": "صيغة بلا فقدان تحافظ على الحدّة الأصلية",
+  "formatJpeg": "JPEG (حجم أصغر)",
+  "formatJpegDesc": "صيغة مضغوطة توفر البيانات لرفع سريع",
+  "formatPdf": "مستند PDF (جاهز للطباعة)",
+  "formatPdfDesc": "صيغة المستندات الرسمية المعتمدة في المكاتب والبنوك",
+  "redactBlackout": "حجب أسود",
+  "redactBlackoutDesc": "مربع أسود داكن دائم يغطي البيانات",
+  "redactMosaic": "حجب بالبكسلة",
+  "redactMosaicDesc": "تأثير البكسلة يطمس النص الحساس",
+  "redactBlur": "حجب بضبابية",
+  "redactBlurDesc": "تأثير ضبابي يذيب تفاصيل البيانات الشخصية",
+  "targetNik": "رقم الهوية",
+  "targetSignature": "التوقيع",
+  "targetAddress": "العنوان الكامل",
+  "targetBirthPlace": "مكان وتاريخ الميلاد",
+  "targetPhoto": "صورة الوجه",
+  "shareProofTitle": "إثبات حماية المستند",
+  "shareProofSubtitle": "شهادة سلامة العلامة المائية والحجب وفق كومينفو",
+  "shareFormatFeed": "منشور (4:5)",
+  "shareFormatStory": "قصة (9:16)",
+  "shareCopyText": "نسخ النص",
+  "shareProcessing": "جارٍ المعالجة...",
+  "shareDownloadProofPng": "تنزيل إثبات PNG",
+  "shareShareProof": "شارك الإثبات",
+  "shareCardBrand": "IDMARK • هوية آمنة",
+  "shareCardOnDevice": "100% على الجهاز",
+  "shareCardTitle": "إثبات العلامة المائية للمستند",
+  "shareCardPurposeLabel": "للغرض المحدد:",
+  "shareCardPrivacyScore": "درجة الخصوصية",
+  "shareCardRedactions": "الحجب",
+  "shareCardAreaCount": "{count} منطقة",
+  "@shareCardAreaCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "shareCardFormat": "الصيغة",
+  "shareCardDate": "التاريخ: {date}",
+  "@shareCardDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "shareCardFooter": "idmark.faishal.id • معيار العلامة المائية لكومينفو",
+  "shareCardIntegrityHash": "بصمة السلامة (SHA-256):",
+  "shareProofHeading": "🛡️ إثبات حماية المستند — IDMARK",
+  "shareProofPurposeLine": "📌 الغرض المحدد: \"{purpose}\"",
+  "@shareProofPurposeLine": {
+    "placeholders": {
+      "purpose": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofDateLine": "📅 تاريخ الختم: {date}",
+  "@shareProofDateLine": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofScoreLine": "🔒 درجة الخصوصية: {score}/100",
+  "@shareProofScoreLine": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "shareProofRedactionLine": "✂️ حجب دائم: {count} منطقة مغطاة",
+  "@shareProofRedactionLine": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "shareProofHashLine": "🔑 بصمة SHA-256: {hash}",
+  "@shareProofHashLine": {
+    "placeholders": {
+      "hash": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofOnDeviceLine": "✅ تمت المعالجة 100% على الجهاز دون خادم (وفق إرشادات كومينفو)",
+  "shareProofCtaLine": "احمِ هويتك مع IDMark: https://idmark.faishal.id",
+  "shareProofDownloaded": "تم تنزيل شهادة حماية المستند! 🛡️✨",
+  "shareProofFailed": "تعذّرت مشاركة الإثبات: {error}",
+  "@shareProofFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofCopied": "تم نسخ إثبات الحماية إلى الحافظة! 📋✨",
+  "themeCyberShield": "الدرع السيبراني",
+  "themeEmeraldSafe": "الزمرد الآمن",
+  "themeObsidianVault": "خزنة الأوبسيديان",
+  "themeAmberProof": "إثبات العنبر",
+  "quickSensorShort": "حجب سريع:",
+  "redactedTag": "[محجوب: {label}]",
+  "@redactedTag": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "defaultWatermarkText": "للتحقق من الهوية فقط",
+  "pdfHeader": "IDMARK — مستند هوية بعلامة مائية",
+  "pdfComplianceNote": "وفق مبادئ حماية البيانات الشخصية (القانون رقم 27/2022)",
+  "pdfOnDevice": "100% على الجهاز",
+  "pdfPurposeLabel": "الغرض من الاستخدام: ",
+  "pdfDateLabel": "تاريخ المعاملة: {date}",
+  "@pdfDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "pdfPrintedAt": "وقت الطباعة: {date}",
+  "@pdfPrintedAt": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "pdfChecksum": "بصمة SHA-256: ",
+  "catEcommerce": "التجارة الإلكترونية",
+  "presetBank": "فتح حساب مصرفي",
+  "presetBankUpdate": "تحديث بيانات عميل البنك",
+  "presetFintech": "تمويل تقني مرخّص من OJK",
+  "presetPaylater": "تفعيل الدفع الآجل / بطاقة الائتمان",
+  "presetJob": "طلب وظيفة",
+  "presetHrOnboarding": "تسجيل موظف جديد",
+  "presetRental": "تأجير سيارة أو دراجة نارية",
+  "presetHotel": "تسجيل الوصول إلى فندق أو فيلا",
+  "presetTelco": "تسجيل شريحة SIM مسبقة الدفع",
+  "presetSimReplace": "استبدال شريحة SIM المفقودة أو التالفة",
+  "presetKredit": "طلب تمويل تأجيري",
+  "presetKpr": "طلب رهن عقاري",
+  "presetInvestment": "حساب أوراق مالية في بورصة IDX",
+  "presetCrypto": "التحقق من حساب العملات المشفرة (بابيبتي)",
+  "presetEcommerce": "التحقق من تاجر السوق الإلكتروني",
+  "presetBpjs": "مطالبة بمستحقات BPJS",
+  "presetGovKelurahan": "إدارة السجلات المدنية",
+  "presetGlobalKyc": "التحقق الدولي من الهوية (KYC)",
+  "defaultInternalSubtext": "للمستندات الداخلية فقط",
+  "pdfLegalNotice": "إشعار قانوني: هذه النسخة من مستند الهوية صالحة ومسموح بها فقط للغرض المذكور أعلاه. وأي استخدام آخر يُعدّ جريمة إساءة استخدام بيانات شخصية.",
+  "validationRedactionLabelRequired": "لا يمكن أن يكون وصف الحجب فارغًا",
+  "validationRedactionXRange": "يجب أن يكون موضع X للحجب بين 0.0 و1.0",
+  "validationRedactionYRange": "يجب أن يكون موضع Y للحجب بين 0.0 و1.0",
+  "validationRedactionWidthRange": "يجب أن يكون عرض الحجب بين 0.0 و1.0",
+  "validationRedactionHeightRange": "يجب أن يكون ارتفاع الحجب بين 0.0 و1.0",
+  "validationAuditIdRequired": "لا يمكن أن يكون معرّف سجل التدقيق فارغًا",
+  "validationAuditPurposeRequired": "لا يمكن أن يكون غرض سجل التدقيق فارغًا",
+  "validationAuditHashRequired": "لا يمكن أن تكون بصمة SHA-256 فارغة",
+  "validationAuditScoreRange": "يجب أن تكون درجة الخصوصية بين 0 و100"
 }

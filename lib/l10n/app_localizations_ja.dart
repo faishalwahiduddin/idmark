@@ -57,28 +57,28 @@ class AppLocalizationsJa extends AppLocalizations {
   String get selectLanguage => '言語を選択';
 
   @override
-  String get localeIndonesian => 'Bahasa Indonesia';
+  String get localeIndonesian => 'インドネシア語';
 
   @override
-  String get localeEnglish => 'English';
+  String get localeEnglish => '英語';
 
   @override
-  String get localeArabic => 'العربية';
+  String get localeArabic => 'アラビア語';
 
   @override
-  String get localeJavanese => 'Basa Jawa';
+  String get localeJavanese => 'ジャワ語';
 
   @override
-  String get localeSundanese => 'Basa Sunda';
+  String get localeSundanese => 'スンダ語';
 
   @override
-  String get localeChinese => '中文';
+  String get localeChinese => '中国語';
 
   @override
   String get localeJapanese => '日本語';
 
   @override
-  String get localeSpanish => 'Español';
+  String get localeSpanish => 'スペイン語';
 
   @override
   String get about => '約';
@@ -642,10 +642,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get appLabel => 'アプリ';
 
   @override
-  String get officialKominfoGuide => 'Panduan Resmi Kominfo & UU PDP';
+  String get officialKominfoGuide => 'Kominfo・個人データ保護法 公式ガイド';
 
   @override
-  String get privacyAndSettings => 'Privasi & Pengaturan';
+  String get privacyAndSettings => 'プライバシーと設定';
 
   @override
   String get appLanguage => 'アプリの言語';
@@ -721,4 +721,507 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get privacyGradeDescWeak => '弱い保護 • 目的と日付を追加してください';
+
+  @override
+  String get appTitle => 'IDMark';
+
+  @override
+  String get appTagline => '身分証・運転免許証・重要書類の写真にテキスト透かしを入れます。';
+
+  @override
+  String get appSubtitle => '身分証とプライバシーの保護';
+
+  @override
+  String get onbSkip => 'スキップ';
+
+  @override
+  String get onbNext => '次へ';
+
+  @override
+  String get onbGetStarted => 'はじめる';
+
+  @override
+  String get onbPrivacyHeadline => 'プライバシーとオフラインを保証';
+
+  @override
+  String get onbPrivacyDetail => 'すべてのデータはトラッカーなしで端末内に安全に保存されます。';
+
+  @override
+  String get onbSlide1Title => '身分証スタンプ';
+
+  @override
+  String get onbSlide1Sub => '書類に用途と日付を';
+
+  @override
+  String get onbSlide1Badge => '100% オフライン＆プライベート';
+
+  @override
+  String get onbSlide2Title => 'プリセット';
+
+  @override
+  String get onbSlide2Sub => 'すぐに使えるテンプレート';
+
+  @override
+  String get onbSlide2Badge => '軽量でスムーズ';
+
+  @override
+  String get onbSlide3Title => '履歴';
+
+  @override
+  String get onbSlide3Sub => 'スタンプ結果を保存';
+
+  @override
+  String get onbSlide3Badge => '広告なし・アカウント不要';
+
+  @override
+  String get onbSlide4Title => '端末内処理';
+
+  @override
+  String get onbSlide4Sub => 'クラウドへのアップロードなし';
+
+  @override
+  String get onbSlide4Badge => 'データは端末内に保存';
+
+  @override
+  String get loadingLabel => '読み込み中…';
+
+  @override
+  String get download => 'ダウンロード';
+
+  @override
+  String downloadSuccess(String filename) {
+    return '透かし入り書類をダウンロードしました（$filename）！🛡️✨';
+  }
+
+  @override
+  String get protectionProof => '保護の証明';
+
+  @override
+  String get tierExemplary => '模範';
+
+  @override
+  String get tierDisciplined => '規律';
+
+  @override
+  String get tierOrderly => '整然';
+
+  @override
+  String get tierStarting => 'はじめ';
+
+  @override
+  String disciplineCount(int count, String tier) {
+    return '透かし入り $count 件 • $tier';
+  }
+
+  @override
+  String get disciplineDesc => '安全な書き出しのたびに書類保護の習慣が身につきます。';
+
+  @override
+  String get shareDiscipline => '記録を共有';
+
+  @override
+  String disciplineShareText(int count, String tier) {
+    return '透かし入り $count 件 • $tier #IDMark';
+  }
+
+  @override
+  String get allTemplates => 'すべて';
+
+  @override
+  String get myPresets => 'マイプリセット';
+
+  @override
+  String get catBanking => '銀行';
+
+  @override
+  String get catFinance => '金融・貸付';
+
+  @override
+  String get catCareer => '採用・人事';
+
+  @override
+  String get catRental => 'レンタル・旅行';
+
+  @override
+  String get catTelecom => '通信';
+
+  @override
+  String get catMultifinance => 'マルチファイナンス';
+
+  @override
+  String get catInvestment => '投資';
+
+  @override
+  String get catPublicService => '公共サービス';
+
+  @override
+  String get catInternational => '国際';
+
+  @override
+  String get appearanceAndLanguage => '表示と言語';
+
+  @override
+  String get themeMode => 'テーマモード';
+
+  @override
+  String get identity => '身元';
+
+  @override
+  String get patternDiagonalBand => '斜めバンド';
+
+  @override
+  String get patternDiagonalBandDesc => '書類中央を横切る太い斜線（Kominfo 推奨）';
+
+  @override
+  String get patternRepeatedGrid => '繰り返しグリッド';
+
+  @override
+  String get patternRepeatedGridDesc => '写真全体に文字を繰り返し、最大限に保護';
+
+  @override
+  String get patternBottomBar => '下部バー';
+
+  @override
+  String get patternBottomBarDesc => '書類下部の帯状テキスト';
+
+  @override
+  String get patternCornerStamp => 'コーナースタンプ';
+
+  @override
+  String get patternCornerStampDesc => '右下の検証スタンプ';
+
+  @override
+  String get patternSecuritySeal => '円形シール';
+
+  @override
+  String get patternSecuritySealDesc => '検証枠付きの二重円形シール';
+
+  @override
+  String get patternCrossStamp => 'ダブルクロス（Xバンド）';
+
+  @override
+  String get patternCrossStampDesc => '2本の斜線が書類全体を保護';
+
+  @override
+  String get patternQrBadge => 'QR検証バッジ';
+
+  @override
+  String get patternQrBadgeDesc => '用途と日付の真正性を示すQRバッジ';
+
+  @override
+  String get colorWhite => 'ピュアホワイト';
+
+  @override
+  String get colorDark => 'ディープブラック';
+
+  @override
+  String get colorRed => 'オフィシャルレッド';
+
+  @override
+  String get colorBlue => 'ベリフィケーションブルー';
+
+  @override
+  String get colorEmerald => 'セーフグリーン';
+
+  @override
+  String get colorAmber => 'ワーニングイエロー';
+
+  @override
+  String get colorPurple => 'シールパープル';
+
+  @override
+  String get formatPng => 'PNG（フル解像度）';
+
+  @override
+  String get formatPngDesc => '元の鮮明さを保つロスレス形式';
+
+  @override
+  String get formatJpeg => 'JPEG（軽量）';
+
+  @override
+  String get formatJpegDesc => 'データを節約して素早くアップロードできる圧縮形式';
+
+  @override
+  String get formatPdf => 'PDF書類（印刷対応）';
+
+  @override
+  String get formatPdfDesc => '官公庁や銀行で使われる正式書類形式';
+
+  @override
+  String get redactBlackout => '黒塗り（ブラックアウト）';
+
+  @override
+  String get redactBlackoutDesc => 'データを覆う永続的な黒塗り';
+
+  @override
+  String get redactMosaic => 'モザイク処理';
+
+  @override
+  String get redactMosaicDesc => 'ピクセル化で機密テキストをぼかす';
+
+  @override
+  String get redactBlur => 'ぼかし処理';
+
+  @override
+  String get redactBlurDesc => 'ぼかしで個人情報の細部をならす';
+
+  @override
+  String get targetNik => 'ID番号';
+
+  @override
+  String get targetSignature => '署名';
+
+  @override
+  String get targetAddress => '住所';
+
+  @override
+  String get targetBirthPlace => '出生地・生年月日';
+
+  @override
+  String get targetPhoto => '顔写真';
+
+  @override
+  String get shareProofTitle => '書類保護の証明';
+
+  @override
+  String get shareProofSubtitle => 'Kominfo準拠の透かし・マスク完全性証明書';
+
+  @override
+  String get shareFormatFeed => 'フィード (4:5)';
+
+  @override
+  String get shareFormatStory => 'ストーリー (9:16)';
+
+  @override
+  String get shareCopyText => 'テキストをコピー';
+
+  @override
+  String get shareProcessing => '処理中…';
+
+  @override
+  String get shareDownloadProofPng => '証明PNGをダウンロード';
+
+  @override
+  String get shareShareProof => '証明を共有';
+
+  @override
+  String get shareCardBrand => 'IDMARK • セキュアID';
+
+  @override
+  String get shareCardOnDevice => '100% 端末内';
+
+  @override
+  String get shareCardTitle => '書類透かし保護の証明';
+
+  @override
+  String get shareCardPurposeLabel => '特定用途：';
+
+  @override
+  String get shareCardPrivacyScore => 'プライバシースコア';
+
+  @override
+  String get shareCardRedactions => 'マスク';
+
+  @override
+  String shareCardAreaCount(int count) {
+    return '$count 箇所';
+  }
+
+  @override
+  String get shareCardFormat => '形式';
+
+  @override
+  String shareCardDate(String date) {
+    return '日付：$date';
+  }
+
+  @override
+  String get shareCardFooter => 'idmark.faishal.id • Kominfo ID透かし基準';
+
+  @override
+  String get shareCardIntegrityHash => '整合性ハッシュ（SHA-256）：';
+
+  @override
+  String get shareProofHeading => '🛡️ 書類保護の証明 — IDMARK';
+
+  @override
+  String shareProofPurposeLine(String purpose) {
+    return '📌 特定用途：\"$purpose\"';
+  }
+
+  @override
+  String shareProofDateLine(String date) {
+    return '📅 スタンプ日付：$date';
+  }
+
+  @override
+  String shareProofScoreLine(int score) {
+    return '🔒 プライバシースコア：$score/100';
+  }
+
+  @override
+  String shareProofRedactionLine(int count) {
+    return '✂️ 永続マスク：$count 箇所';
+  }
+
+  @override
+  String shareProofHashLine(String hash) {
+    return '🔑 SHA-256 ハッシュ：$hash';
+  }
+
+  @override
+  String get shareProofOnDeviceLine => '✅ 100% 端末内で処理、サーバー不使用（Kominfo RI 指針準拠）';
+
+  @override
+  String get shareProofCtaLine => 'IDMark で身元を守りましょう：https://idmark.faishal.id';
+
+  @override
+  String get shareProofDownloaded => '書類保護証明書をダウンロードしました！🛡️✨';
+
+  @override
+  String shareProofFailed(String error) {
+    return '証明の共有に失敗しました：$error';
+  }
+
+  @override
+  String get shareProofCopied => '保護の証明をクリップボードにコピーしました！📋✨';
+
+  @override
+  String get themeCyberShield => 'サイバーシールド';
+
+  @override
+  String get themeEmeraldSafe => 'エメラルドセーフ';
+
+  @override
+  String get themeObsidianVault => 'オブシディアン金庫';
+
+  @override
+  String get themeAmberProof => 'アンバー証明';
+
+  @override
+  String get quickSensorShort => 'クイックマスク：';
+
+  @override
+  String redactedTag(String label) {
+    return '[マスク済み：$label]';
+  }
+
+  @override
+  String get defaultWatermarkText => '本人確認のみに使用';
+
+  @override
+  String get pdfHeader => 'IDMARK — 透かし入り身分証書類';
+
+  @override
+  String get pdfComplianceNote => '個人データ保護原則に準拠（法律第27/2022号）';
+
+  @override
+  String get pdfOnDevice => '100% 端末内';
+
+  @override
+  String get pdfPurposeLabel => '使用目的：';
+
+  @override
+  String pdfDateLabel(String date) {
+    return '取引日：$date';
+  }
+
+  @override
+  String pdfPrintedAt(String date) {
+    return '印刷日時：$date';
+  }
+
+  @override
+  String get pdfChecksum => 'SHA-256 チェックサム：';
+
+  @override
+  String get catEcommerce => 'EC';
+
+  @override
+  String get presetBank => '銀行口座開設';
+
+  @override
+  String get presetBankUpdate => '銀行顧客情報の更新';
+
+  @override
+  String get presetFintech => 'OJK認可のフィンテック／融資';
+
+  @override
+  String get presetPaylater => '後払い・クレジットカード有効化';
+
+  @override
+  String get presetJob => '求人応募';
+
+  @override
+  String get presetHrOnboarding => '新入社員の受け入れ';
+
+  @override
+  String get presetRental => '車・バイクのレンタル';
+
+  @override
+  String get presetHotel => 'ホテル・ヴィラ・下宿のチェックイン';
+
+  @override
+  String get presetTelco => 'プリペイドSIM登録';
+
+  @override
+  String get presetSimReplace => 'SIMカードの再発行（紛失・破損）';
+
+  @override
+  String get presetKredit => 'リース・マルチファイナンス申込';
+
+  @override
+  String get presetKpr => '住宅ローン・不動産申込';
+
+  @override
+  String get presetInvestment => 'IDX株式証券口座';
+
+  @override
+  String get presetCrypto => 'Bappebti暗号資産口座の認証';
+
+  @override
+  String get presetEcommerce => 'マーケットプレイス出品者認証';
+
+  @override
+  String get presetBpjs => 'BPJS 年金・残高請求';
+
+  @override
+  String get presetGovKelurahan => '住民登録・役所手続き';
+
+  @override
+  String get presetGlobalKyc => '国際KYC認証';
+
+  @override
+  String get defaultInternalSubtext => '社内書類専用';
+
+  @override
+  String get pdfLegalNotice =>
+      '法的通知：この身分証の複製は上記の用途に限り有効かつ許可されます。それ以外の用途は個人データの不正利用として刑事罰の対象となります。';
+
+  @override
+  String get validationRedactionLabelRequired => 'マスクのラベルは必須です';
+
+  @override
+  String get validationRedactionXRange => 'マスクのX位置は0.0〜1.0の範囲で指定してください';
+
+  @override
+  String get validationRedactionYRange => 'マスクのY位置は0.0〜1.0の範囲で指定してください';
+
+  @override
+  String get validationRedactionWidthRange => 'マスクの幅は0.0〜1.0の範囲で指定してください';
+
+  @override
+  String get validationRedactionHeightRange => 'マスクの高さは0.0〜1.0の範囲で指定してください';
+
+  @override
+  String get validationAuditIdRequired => '監査ログIDは必須です';
+
+  @override
+  String get validationAuditPurposeRequired => '監査ログの用途は必須です';
+
+  @override
+  String get validationAuditHashRequired => 'SHA-256ハッシュは必須です';
+
+  @override
+  String get validationAuditScoreRange => 'プライバシースコアは0〜100の範囲で指定してください';
 }

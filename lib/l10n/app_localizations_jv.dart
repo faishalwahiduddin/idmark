@@ -15,10 +15,10 @@ class AppLocalizationsJv extends AppLocalizations {
   String get appDescription => 'Watermark KTP Aman';
 
   @override
-  String get tabWatermark => 'Watermark';
+  String get tabWatermark => 'Tandha Banyu';
 
   @override
-  String get tabPreset => 'Preset';
+  String get tabPreset => 'Cithakan';
 
   @override
   String get tabHistory => 'Riwayat';
@@ -27,10 +27,10 @@ class AppLocalizationsJv extends AppLocalizations {
   String get tabGuide => 'Panduan';
 
   @override
-  String get tabSettings => 'Pengaturan';
+  String get tabSettings => 'Pangaturan';
 
   @override
-  String get settings => 'Pengaturan';
+  String get settings => 'Pangaturan';
 
   @override
   String get appearance => 'Tampilan';
@@ -57,13 +57,13 @@ class AppLocalizationsJv extends AppLocalizations {
   String get selectLanguage => 'Pilih Basa';
 
   @override
-  String get localeIndonesian => 'Bahasa Indonesia';
+  String get localeIndonesian => 'Basa Indonésia';
 
   @override
-  String get localeEnglish => 'English';
+  String get localeEnglish => 'Basa Inggris';
 
   @override
-  String get localeArabic => 'العربية';
+  String get localeArabic => 'Basa Arab';
 
   @override
   String get localeJavanese => 'Basa Jawa';
@@ -72,13 +72,13 @@ class AppLocalizationsJv extends AppLocalizations {
   String get localeSundanese => 'Basa Sunda';
 
   @override
-  String get localeChinese => '中文';
+  String get localeChinese => 'Basa Cina';
 
   @override
-  String get localeJapanese => '日本語';
+  String get localeJapanese => 'Basa Jepang';
 
   @override
-  String get localeSpanish => 'Español';
+  String get localeSpanish => 'Basa Spanyol';
 
   @override
   String get about => 'Babagan';
@@ -96,7 +96,7 @@ class AppLocalizationsJv extends AppLocalizations {
   String get edit => 'Ubah';
 
   @override
-  String get reset => 'Reset';
+  String get reset => 'Balèni';
 
   @override
   String get kominfoGuide => 'Panduan Kominfo';
@@ -124,7 +124,7 @@ class AppLocalizationsJv extends AppLocalizations {
   String get appVersion => 'Versi';
 
   @override
-  String get appDomain => 'Domain';
+  String get appDomain => 'Domén';
 
   @override
   String get appCompliance => 'Standar Kepatuhan';
@@ -187,7 +187,7 @@ class AppLocalizationsJv extends AppLocalizations {
   String get verifyIdentity => 'VERIFIKASI IDENTITAS';
 
   @override
-  String get idmarkVerified => 'IDMARK VERIFIED';
+  String get idmarkVerified => 'IDMARK KAVERIFIKASI';
 
   @override
   String get privacySettings => 'Privasi';
@@ -233,7 +233,7 @@ class AppLocalizationsJv extends AppLocalizations {
   String get share => 'Bagekake';
 
   @override
-  String get resetWatermarkTooltip => 'Reset Watermark';
+  String get resetWatermarkTooltip => 'Balèni Watermark';
 
   @override
   String get configResetKominfo =>
@@ -645,7 +645,7 @@ class AppLocalizationsJv extends AppLocalizations {
       'IDMark mlaku 100% ing browser utawa piranti lokal sampeyan. Foto KTP ora tau dikirim, disimpen, utawa diproses ing server eksternal endi wae.';
 
   @override
-  String get dataSecuritySanitation => 'Sanitasi & Keamanan Data';
+  String get dataSecuritySanitation => 'Reresik & Keamanan Data';
 
   @override
   String get autoExifSubtitle =>
@@ -665,10 +665,10 @@ class AppLocalizationsJv extends AppLocalizations {
   String get appLabel => 'Aplikasi';
 
   @override
-  String get officialKominfoGuide => 'Panduan Resmi Kominfo & UU PDP';
+  String get officialKominfoGuide => 'Pandhuan Resmi Kominfo & UU PDP';
 
   @override
-  String get privacyAndSettings => 'Privasi & Pengaturan';
+  String get privacyAndSettings => 'Privasi & Pangaturan';
 
   @override
   String get appLanguage => 'Basa Aplikasi';
@@ -758,4 +758,531 @@ class AppLocalizationsJv extends AppLocalizations {
   @override
   String get privacyGradeDescWeak =>
       'Proteksi Lemah • Tambahna tujuan spesifik lan tanggal';
+
+  @override
+  String get appTitle => 'IDMark';
+
+  @override
+  String get appTagline =>
+      'Cap watermark teks ing foto KTP, SIM lan dokumen penting.';
+
+  @override
+  String get appSubtitle => 'Pelindung Identitas & Privasi';
+
+  @override
+  String get onbSkip => 'Liwati';
+
+  @override
+  String get onbNext => 'Terus';
+
+  @override
+  String get onbGetStarted => 'Wiwiti Saiki';
+
+  @override
+  String get onbPrivacyHeadline => 'Privasi & Offline Kajaga';
+
+  @override
+  String get onbPrivacyDetail =>
+      'Kabeh data kasimpen aman ing piranti panjenengan tanpa pelacak.';
+
+  @override
+  String get onbSlide1Title => 'Cap identitas';
+
+  @override
+  String get onbSlide1Sub => 'Tujuan & tanggal ing dokumen';
+
+  @override
+  String get onbSlide1Badge => '100% Offline & Pribadi';
+
+  @override
+  String get onbSlide2Title => 'Cithakan';
+
+  @override
+  String get onbSlide2Sub => 'Cithakan siap pakai';
+
+  @override
+  String get onbSlide2Badge => 'Ènthèng & Responsif';
+
+  @override
+  String get onbSlide3Title => 'Riwayat';
+
+  @override
+  String get onbSlide3Sub => 'Asil cap kasimpen';
+
+  @override
+  String get onbSlide3Badge => 'Tanpa Iklan & Tanpa Akun';
+
+  @override
+  String get onbSlide4Title => 'Ing piranti';
+
+  @override
+  String get onbSlide4Sub => 'Tanpa ngunggah menyang cloud';
+
+  @override
+  String get onbSlide4Badge => 'Data Kasimpen ing Piranti';
+
+  @override
+  String get loadingLabel => 'Ngamot…';
+
+  @override
+  String get download => 'Undhuh';
+
+  @override
+  String downloadSuccess(String filename) {
+    return 'Dokumen ter-watermark kasil diundhuh ($filename)! 🛡️✨';
+  }
+
+  @override
+  String get protectionProof => 'Bukti Proteksi';
+
+  @override
+  String get tierExemplary => 'Tuladha';
+
+  @override
+  String get tierDisciplined => 'Disiplin';
+
+  @override
+  String get tierOrderly => 'Tertib';
+
+  @override
+  String get tierStarting => 'Wiwit';
+
+  @override
+  String disciplineCount(int count, String tier) {
+    return '$count file watermark • $tier';
+  }
+
+  @override
+  String get disciplineDesc =>
+      'Saben ekspor aman nambah disiplin proteksi dokumen.';
+
+  @override
+  String get shareDiscipline => 'Bagikake disiplin';
+
+  @override
+  String disciplineShareText(int count, String tier) {
+    return '$count file watermark • $tier #IDMark';
+  }
+
+  @override
+  String get allTemplates => 'Kabeh';
+
+  @override
+  String get myPresets => 'Cithakan Aku';
+
+  @override
+  String get catBanking => 'Perbankan';
+
+  @override
+  String get catFinance => 'Finansial & Pinjol';
+
+  @override
+  String get catCareer => 'Karir & SDM';
+
+  @override
+  String get catRental => 'Rental & Wisata';
+
+  @override
+  String get catTelecom => 'Telekomunikasi';
+
+  @override
+  String get catMultifinance => 'Multikeuangan';
+
+  @override
+  String get catInvestment => 'Investasi';
+
+  @override
+  String get catPublicService => 'Layanan Umum';
+
+  @override
+  String get catInternational => 'Internasional';
+
+  @override
+  String get appearanceAndLanguage => 'Tampilan & Basa';
+
+  @override
+  String get themeMode => 'Mode Tema';
+
+  @override
+  String get identity => 'Identitas';
+
+  @override
+  String get patternDiagonalBand => 'Pita Melintang';
+
+  @override
+  String get patternDiagonalBandDesc =>
+      'Siji garis diagonal kandel nyabrang ing tengah dokumen (Rekomendasi Kominfo)';
+
+  @override
+  String get patternRepeatedGrid => 'Pola Bola-bali (Grid)';
+
+  @override
+  String get patternRepeatedGridDesc =>
+      'Pola teks bola-bali ing sakuperenge foto kanggo proteksi maksimal';
+
+  @override
+  String get patternBottomBar => 'Pita Ngisor';
+
+  @override
+  String get patternBottomBarDesc => 'Pita teks solid ing sisih ngisor dokumen';
+
+  @override
+  String get patternCornerStamp => 'Cap Pojok';
+
+  @override
+  String get patternCornerStampDesc => 'Cap verifikasi ing pojok tengen ngisor';
+
+  @override
+  String get patternSecuritySeal => 'Segel Resmi Bunder';
+
+  @override
+  String get patternSecuritySealDesc =>
+      'Stempel segel bunder pindho kanthi border verifikasi';
+
+  @override
+  String get patternCrossStamp => 'Silang Pindho (X-Band)';
+
+  @override
+  String get patternCrossStampDesc =>
+      'Loro garis diagonal nyilang nglindhungi kabeh isi dokumen';
+
+  @override
+  String get patternQrBadge => 'Lencana QR Verifikasi';
+
+  @override
+  String get patternQrBadgeDesc =>
+      'Lencana verifikasi mawa QR code keabsahan tujuan lan tanggal';
+
+  @override
+  String get colorWhite => 'Putih Resik';
+
+  @override
+  String get colorDark => 'Ireng Pekat';
+
+  @override
+  String get colorRed => 'Abang Resmi';
+
+  @override
+  String get colorBlue => 'Biru Verifikasi';
+
+  @override
+  String get colorEmerald => 'Ijo Aman';
+
+  @override
+  String get colorAmber => 'Kuning Pènget';
+
+  @override
+  String get colorPurple => 'Ungu Segel';
+
+  @override
+  String get formatPng => 'PNG (Résolusi Penuh)';
+
+  @override
+  String get formatPngDesc =>
+      'Format lossless kualitas asli tanpa mudhun ketajaman';
+
+  @override
+  String get formatJpeg => 'JPEG (Ukuran Ènthèng)';
+
+  @override
+  String get formatJpegDesc =>
+      'Format kakompresi ngirit kuota kanggo upload portal cepet';
+
+  @override
+  String get formatPdf => 'Dokumen PDF (Siap Cetak)';
+
+  @override
+  String get formatPdfDesc =>
+      'Format berkas dokumen resmi standar kantor & bank';
+
+  @override
+  String get redactBlackout => 'Sensor Ireng (Blackout)';
+
+  @override
+  String get redactBlackoutDesc => 'Kothak ireng pekat permanen nutupi data';
+
+  @override
+  String get redactMosaic => 'Sensor Mosaik (Pixelate)';
+
+  @override
+  String get redactMosaicDesc => 'Efek pikselasi ngaburake teks sensitif';
+
+  @override
+  String get redactBlur => 'Sensor Burem (Blur)';
+
+  @override
+  String get redactBlurDesc => 'Efek burem nggabungake rincian data pribadi';
+
+  @override
+  String get targetNik => 'Nomer NIK / ID';
+
+  @override
+  String get targetSignature => 'Tandha Tangan';
+
+  @override
+  String get targetAddress => 'Alamat Jangkep';
+
+  @override
+  String get targetBirthPlace => 'Papan / Tgl Lair';
+
+  @override
+  String get targetPhoto => 'Foto Rai';
+
+  @override
+  String get shareProofTitle => 'Bukti Proteksi Dokumen';
+
+  @override
+  String get shareProofSubtitle =>
+      'Sertifikat integritas watermark & sensor miturut Kominfo';
+
+  @override
+  String get shareFormatFeed => 'Unggahan (4:5)';
+
+  @override
+  String get shareFormatStory => 'Crita (9:16)';
+
+  @override
+  String get shareCopyText => 'Salin Teks';
+
+  @override
+  String get shareProcessing => 'Ngolah...';
+
+  @override
+  String get shareDownloadProofPng => 'Undhuh Bukti PNG';
+
+  @override
+  String get shareShareProof => 'Bagikake Bukti';
+
+  @override
+  String get shareCardBrand => 'IDMARK • ID AMAN';
+
+  @override
+  String get shareCardOnDevice => '100% ING PIRANTI';
+
+  @override
+  String get shareCardTitle => 'BUKTI PROTEKSI WATERMARK DOKUMEN';
+
+  @override
+  String get shareCardPurposeLabel => 'KANGO KEPERLUAN KHUSUS:';
+
+  @override
+  String get shareCardPrivacyScore => 'SKOR PRIVASI';
+
+  @override
+  String get shareCardRedactions => 'SENSOR';
+
+  @override
+  String shareCardAreaCount(int count) {
+    return '$count Area';
+  }
+
+  @override
+  String get shareCardFormat => 'JINIS';
+
+  @override
+  String shareCardDate(String date) {
+    return 'Tanggal: $date';
+  }
+
+  @override
+  String get shareCardFooter =>
+      'idmark.faishal.id • Standar Watermark KTP Kominfo RI';
+
+  @override
+  String get shareCardIntegrityHash => 'HASH INTEGRITAS (SHA-256):';
+
+  @override
+  String get shareProofHeading => '🛡️ BUKTI PROTEKSI DOKUMEN — IDMARK';
+
+  @override
+  String shareProofPurposeLine(String purpose) {
+    return '📌 Keperluan Khusus: \"$purpose\"';
+  }
+
+  @override
+  String shareProofDateLine(String date) {
+    return '📅 Tanggal Cap: $date';
+  }
+
+  @override
+  String shareProofScoreLine(int score) {
+    return '🔒 Skor Privasi: $score/100';
+  }
+
+  @override
+  String shareProofRedactionLine(int count) {
+    return '✂️ Sensor Permanen: $count Area Katutup';
+  }
+
+  @override
+  String shareProofHashLine(String hash) {
+    return '🔑 Hash SHA-256: $hash';
+  }
+
+  @override
+  String get shareProofOnDeviceLine =>
+      '✅ Diproses 100% on-device tanpa server (Sesuai Panduan Kominfo RI)';
+
+  @override
+  String get shareProofCtaLine =>
+      'Nglindhungi identitas panjenengan nganggo IDMark: https://idmark.faishal.id';
+
+  @override
+  String get shareProofDownloaded =>
+      'Sertifikat proteksi dokumen kasil diundhuh! 🛡️✨';
+
+  @override
+  String shareProofFailed(String error) {
+    return 'Gagal mbagekake bukti: $error';
+  }
+
+  @override
+  String get shareProofCopied =>
+      'Bukti proteksi disalin menyang clipboard! 📋✨';
+
+  @override
+  String get themeCyberShield => 'Tameng Siber';
+
+  @override
+  String get themeEmeraldSafe => 'Zamrud Aman';
+
+  @override
+  String get themeObsidianVault => 'Brankas Obsidian';
+
+  @override
+  String get themeAmberProof => 'Bukti Ambar';
+
+  @override
+  String get quickSensorShort => 'Sensor Cepet:';
+
+  @override
+  String redactedTag(String label) {
+    return '[DISENSOR: $label]';
+  }
+
+  @override
+  String get defaultWatermarkText => 'MUNG KANGGO VERIFIKASI IDENTITAS';
+
+  @override
+  String get pdfHeader => 'IDMARK — DOKUMEN IDENTITAS TER-WATERMARK';
+
+  @override
+  String get pdfComplianceNote =>
+      'Sesuai Prinsip Pelindhung Data Pribadi (UU No. 27/2022)';
+
+  @override
+  String get pdfOnDevice => '100% Ing Piranti';
+
+  @override
+  String get pdfPurposeLabel => 'Tujuan Panganggone: ';
+
+  @override
+  String pdfDateLabel(String date) {
+    return 'Tanggal Transaksi: $date';
+  }
+
+  @override
+  String pdfPrintedAt(String date) {
+    return 'Wektu Cetak: $date';
+  }
+
+  @override
+  String get pdfChecksum => 'Checksum SHA-256: ';
+
+  @override
+  String get catEcommerce => 'Dagang Elektronik';
+
+  @override
+  String get presetBank => 'Bukaan Rekening Bank';
+
+  @override
+  String get presetBankUpdate => 'Anyari Data Nasabah Bank';
+
+  @override
+  String get presetFintech => 'Pinjol / Fintech Resmi OJK';
+
+  @override
+  String get presetPaylater => 'Aktivasi Paylater / Kartu Kredit';
+
+  @override
+  String get presetJob => 'Lamaran Pagawéan';
+
+  @override
+  String get presetHrOnboarding => 'Onboarding Karyawan Anyar';
+
+  @override
+  String get presetRental => 'Sewa Mobil / Motor / Rental';
+
+  @override
+  String get presetHotel => 'Check-In Hotel / Villa / Kost';
+
+  @override
+  String get presetTelco => 'Registrasi Kartu SIM Prabayar';
+
+  @override
+  String get presetSimReplace => 'Ganti Kartu SIM Ilang / Rusak';
+
+  @override
+  String get presetKredit => 'Pengajuan Leasing / Multifinance';
+
+  @override
+  String get presetKpr => 'Pengajuan KPR / Properti';
+
+  @override
+  String get presetInvestment => 'Akun Sekuritas Saham IDX';
+
+  @override
+  String get presetCrypto => 'Verifikasi Akun Kripto Bappebti';
+
+  @override
+  String get presetEcommerce => 'Verifikasi Merchant Marketplace';
+
+  @override
+  String get presetBpjs => 'Klaim JHT / Saldo BPJS';
+
+  @override
+  String get presetGovKelurahan => 'Administrasi Kependudukan / Kelurahan';
+
+  @override
+  String get presetGlobalKyc => 'Verifikasi KYC Internasional';
+
+  @override
+  String get defaultInternalSubtext => 'MUNG KANGGO DOKUMEN INTERNAL';
+
+  @override
+  String get pdfLegalNotice =>
+      'KABAR HUKUM: Salinan dokumen identitas iki mung sah lan diidinake kanggo tujuan sing katulis ing ndhuwur. Panganggone njaba peruntukan kasebut kalebu tindak pidana nyalahi data pribadi.';
+
+  @override
+  String get validationRedactionLabelRequired => 'Label sensor ora kena kosong';
+
+  @override
+  String get validationRedactionXRange =>
+      'Posisi X sensor kudu ana ing rentang 0.0 - 1.0';
+
+  @override
+  String get validationRedactionYRange =>
+      'Posisi Y sensor kudu ana ing rentang 0.0 - 1.0';
+
+  @override
+  String get validationRedactionWidthRange =>
+      'Amba sensor kudu ana ing rentang >0.0 - 1.0';
+
+  @override
+  String get validationRedactionHeightRange =>
+      'Dhuwur sensor kudu ana ing rentang >0.0 - 1.0';
+
+  @override
+  String get validationAuditIdRequired => 'ID audit log ora kena kosong';
+
+  @override
+  String get validationAuditPurposeRequired =>
+      'Tujuan audit log ora kena kosong';
+
+  @override
+  String get validationAuditHashRequired => 'Hash SHA-256 ora kena kosong';
+
+  @override
+  String get validationAuditScoreRange =>
+      'Skor privasi kudu ana ing antarane 0 lan 100';
 }

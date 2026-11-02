@@ -1,0 +1,85 @@
+{
+  "title": "Ekspor data lindungi fotokopi KTP: apa yang ikut tersimpan",
+  "description": "Ekspor data lindungi fotokopi KTP: apa saja yang ikut dalam berkas, apa yang tetap di perangkat, dan cara memeriksa salinan setelah jeda.",
+  "badge": "keamanan · offline",
+  "answer": "Saat dibutuhkan, lindungi fotokopi KTP tersebar di tiga tempat—dan yang pertama dibuka justru yang usang. IDMark menyimpan lindungi fotokopi KTP di perangkat, jadi datanya tetap terbuka tanpa kuota dan tanpa akun.",
+  "toc": [
+    "Tinjauan mingguan",
+    "Tersimpan di perangkat",
+    "Setelah bolong"
+  ],
+  "sections": [
+    {
+      "h2": "Tinjauan mingguan",
+      "p": "Sekali seminggu, lihat bagian mana yang paling sering bolong, lalu kecilkan target—bukan menambah semangat.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "Tersimpan di perangkat",
+      "p": "IDMark menyimpan lindungi fotokopi KTP di perangkat, jadi datanya tetap terbuka tanpa kuota dan tanpa akun.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "Setelah bolong",
+      "p": "Kalau bolong beberapa hari, jangan hapus riwayat. Lanjut dari bagian terakhir yang sudah dibaca—satu sesi pendek, lalu tutup.",
+      "h3": null,
+      "p3": null
+    }
+  ],
+  "table": {
+    "caption": "Kerangka lindungi fotokopi KTP",
+    "headers": [
+      "Langkah",
+      "Isi minimal",
+      "Selesai bila"
+    ],
+    "rows": [
+      [
+        "Kartu darurat",
+        "kontak + lokasi",
+        "bisa dibuka offline"
+      ],
+      [
+        "Penanda",
+        "posisi terakhir",
+        "bisa dilanjut besok"
+      ],
+      [
+        "Evaluasi minggu",
+        "satu penyesuaian",
+        "diterapkan Senin"
+      ]
+    ]
+  },
+  "list": [
+    "Tetapkan satu waktu tetap, bukan “kapan sempat”.",
+    "Buka IDMark saat waktu itu tiba, bukan nanti malam.",
+    "Catat satu hambatan, bukan alasan panjang.",
+    "Cadangkan data sebelum ganti ponsel."
+  ],
+  "faqs": [
+    [
+      "Apakah lindungi fotokopi KTP bisa dibuka offline?",
+      "Ya. IDMark menyimpan semuanya di perangkat, jadi tidak butuh kuota."
+    ],
+    [
+      "Perlu akun dulu?",
+      "Tidak. Mulai tanpa login; cadangkan data secara berkala."
+    ],
+    [
+      "Mulai dari mana?",
+      "Dari bagian terpendek. Tambah cakupan hanya setelah dua minggu stabil."
+    ],
+    [
+      "Kalau bolong beberapa hari?",
+      "Jangan hapus riwayat. Lanjut dari bagian terakhir dan catat satu hambatan."
+    ]
+  ],
+  "cta": [
+    "Mulai lindungi fotokopi KTP hari ini",
+    "Buka IDMark"
+  ],
+  "slug": "backup-ekspor-catatan-lindungi-fotokopi-ktp-offline"
+}

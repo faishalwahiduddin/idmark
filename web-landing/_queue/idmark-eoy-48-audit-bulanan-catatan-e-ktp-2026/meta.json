@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "audit-bulanan-catatan-e-ktp-2026",
-    "en": "monthly-audit-of-e-ktp-logs",
-    "ar": "e-ktp-6",
-    "jv": "pandhuan-e-ktp-idmark-6",
-    "su": "pituduh-e-ktp-idmark-6",
-    "zh": "idmark-e-ktp-实用指南-6",
-    "ja": "idmarke-ktp-ガイド-6"
+    "id": "e-ktp-yang-datanya-bisa-dipercaya",
+    "en": "e-ktp-whose-records-you-can-trust",
+    "ar": "almalwmat-almhma-bsjlat-mwthwqa-aljz-3",
+    "jv": "e-ktp-sing-dhatae-bisa-dipercaya",
+    "su": "e-ktp-anu-datana-bisa-dipercaya",
+    "zh": "ji-lu-ke-xin-de-zhong-yao-xin-xi-di-3-pian",
+    "ja": "kiroku-wo-shinrai-dekiru-taisetsu-na-jouhou-dai-3-kai"
   },
   "titles": {
-    "id": "Audit Bulanan Catatan e-KTP",
-    "en": "Monthly Audit of e-KTP Logs",
-    "ar": "e-KTP — دليل IDMark",
-    "jv": "Pandhuan: Audit Bulanan Catatan e-KTP",
-    "su": "Pituduh: Audit Bulanan Catatan e-KTP",
-    "zh": "IDMark · e-KTP 实用指南",
-    "ja": "IDMark｜e-KTP ガイド"
+    "id": "e-KTP yang datanya bisa dipercaya",
+    "en": "e-KTP whose records you can trust",
+    "ar": "المعلومات المهمة بسجلات موثوقة · الجزء 3",
+    "jv": "e-KTP sing dhataé bisa dipercaya",
+    "su": "e-KTP anu datana bisa dipercaya",
+    "zh": "记录可信的重要信息 · 第3篇",
+    "ja": "記録を信頼できる大切な情報 · 第3回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "e-KTP dengan catatan yang bisa dipercaya: pendekatan audit bulanan, hal yang dicek di tiap entri, dan cara menutup celah sebelum menumpuk.",
+    "en": "e-KTP whose records you can trust: a monthly audit approach, what to check on each entry and how to fix gaps before they pile up.",
+    "ar": "e-KTP بسجلات يمكن الوثوق بها: نهج تدقيق شهري، وما الذي تتحقق منه في كل إدخال، وكيف تسد الفجوات قبل أن تتراكم.",
+    "ja": "信頼できる記録を残す e-KTP。毎月の監査の進め方、各エントリで確認すべき点、ギャップがたまる前に修正する方法を紹介します。",
+    "zh": "可信记录的 e-KTP：每月审计的方法、每条记录要检查的要点，以及在缺口累积前及时补上。",
+    "jv": "e-KTP kanthi cathetan sing bisa dipercaya: pendekatan audit saben sasi, apa sing dicek ing saben entri, lan cara nutup celah sadurungé numpuk.",
+    "su": "e-KTP kalayan catetan anu bisa dipercaya: pendekatan audit bulanan, naon anu dipariksa dina unggal éntri, jeung kumaha nutupan celah sateuacan numpuk."
+  }
 }

@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "contoh-log-idmark-7-hari-mingguan",
-    "en": "sample-7-day-idmark-log",
-    "ar": "idmark-2",
-    "jv": "pandhuan-idmark-idmark-2",
-    "su": "pituduh-idmark-idmark-2",
-    "zh": "idmark-idmark-实用指南-2",
-    "ja": "idmarkidmark-ガイド-2"
+    "id": "template-watermark-ktp-siap-pakai",
+    "en": "a-ready-to-use-id-watermark-template",
+    "ar": "qalb-alama-maiya-ala-alhwya-jahz-llastkhdam",
+    "jv": "templat-watermark-ktp-siap-dipigunakake",
+    "su": "citakan-watermark-ktp-siap-dipake",
+    "zh": "shen-fen-zheng-shui-yin-mu-ban-ke-zhi-jie-tao-yong",
+    "ja": "sugu-tsukae-ru-mibun-shou-no-uootaamaakutenpureeto"
   },
   "titles": {
-    "id": "Contoh Log IDMark 7 Hari",
-    "en": "Sample 7-Day IDMark Log — Offline First",
-    "ar": "IDMark — دليل IDMark",
-    "jv": "Pandhuan: Contoh Log IDMark 7 Hari",
-    "su": "Pituduh: Contoh Log IDMark 7 Hari",
-    "zh": "IDMark · IDMark 实用指南",
-    "ja": "IDMark｜IDMark ガイド"
+    "id": "Template watermark KTP siap pakai",
+    "en": "A ready-to-use ID watermark template",
+    "ar": "قالب علامة مائية على الهوية جاهز للاستخدام",
+    "jv": "Templat watermark KTP siap dipigunakaké",
+    "su": "Citakan watermark KTP siap dipaké",
+    "zh": "身份证水印模板（可直接套用）",
+    "ja": "すぐ使える身分証のウォーターマークテンプレート"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Templat watermark KTP siap pakai: contoh catatan untuk rutinitas paling kecil, waktu menjalankannya, dan tinjauan mingguan untuk mengeceknya.",
+    "en": "A ready-to-use watermark KTP template: a sample log for the smallest routine, when to run it, and the weekly check to review it.",
+    "ar": "قالب علامة مائية لبطاقة KTP جاهز للاستخدام: مثال لسجل النسخة الأصغر، ووقت التشغيل، والمراجعة الأسبوعية للتحقق منه.",
+    "ja": "すぐ使える身分証ウォーターマークのテンプレート。最小ルーティンの記録例、実行タイミング、週次で見直すための確認項目をまとめました。",
+    "zh": "可直接使用的身份证水印模板：最小流程的示例记录、运行时间，以及每周回顾的检查项。",
+    "jv": "Templat watermark KTP siap pakai: conto log kanggo rutinitas paling cilik, wektu nglakokaké, lan tinjauan mingguan kanggo mriksa.",
+    "su": "Témplat watermark KTP siap pakai: conto catetan pikeun rutinitas pangleutikna, waktu ngajalankeunana, jeung tinjauan mingguan pikeun ngecékna."
+  }
 }

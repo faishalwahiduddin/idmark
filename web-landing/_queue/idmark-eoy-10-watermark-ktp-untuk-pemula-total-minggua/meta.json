@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "watermark-ktp-untuk-pemula-total-mingguan",
-    "en": "watermark-ktp-for-absolute-beginners",
-    "ar": "watermark-ktp-2",
-    "jv": "pandhuan-watermark-ktp-idmark-2",
-    "su": "pituduh-watermark-ktp-idmark-2",
-    "zh": "idmark-watermark-ktp-实用指南-2",
-    "ja": "idmarkwatermark-ktp-ガイド-2"
+    "id": "watermark-ktp-untuk-orang-yang-waktunya-sempit",
+    "en": "id-watermark-for-people-with-no-spare-time",
+    "ar": "alama-maiya-ala-alhwya-lmn-la-ymlk-wqta",
+    "jv": "watermark-ktp-kanggo-sing-wektune-sempit",
+    "su": "watermark-ktp-pikeun-anu-waktosna-heureut",
+    "zh": "shi-jian-hen-shao-de-ren-zen-me-zuo-shen-fen-zheng-shui-yin",
+    "ja": "jikan-ganai-nin-notameno-mibun-shou-no-uootaamaaku"
   },
   "titles": {
     "id": "watermark KTP untuk orang yang waktunya sempit",
-    "en": "watermark KTP for Absolute Beginners — Offline First",
-    "ar": "watermark KTP — دليل IDMark",
-    "jv": "Pandhuan: watermark KTP untuk orang yang waktunya sempit",
-    "su": "Pituduh: watermark KTP untuk orang yang waktunya sempit",
-    "zh": "IDMark · watermark KTP 实用指南",
-    "ja": "IDMark｜watermark KTP ガイド"
+    "en": "ID watermark for people with no spare time",
+    "ar": "علامة مائية على الهوية لمن لا يملك وقتاً",
+    "jv": "watermark KTP kanggo sing wektuné sempit",
+    "su": "watermark KTP pikeun anu waktosna heureut",
+    "zh": "时间很少的人怎么做身份证水印",
+    "ja": "時間がない人のための身分証のウォーターマーク"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Rutinitas minimal untuk watermark KTP bagi orang yang hampir tak punya waktu luang: beberapa momen yang pas, dan cara kembali setelah hari terlewat.",
+    "en": "For people with almost no spare time, ID watermark can run as a minimal routine: a few moments that work and an easy way back after missed days.",
+    "ar": "علامة مائية على بطاقة KTP لمن لا يملك وقتاً تقريباً: روتين أدنى، ولحظات قليلة مناسبة، وطريقة سهلة للعودة بعد أيام فائتة.",
+    "ja": "ほとんど時間がない人のための身分証ウォーターマーク入門。最小限の習慣、取り組みやすい瞬間、数日空いた後に戻る手順をまとめました。",
+    "zh": "时间很少的人如何做身份证水印：最简单的习惯、几个合适的时间点，以及漏几天后如何回到正轨。",
+    "jv": "Watermark KTP kanggo wong sing meh ora duwé wektu longgar: rutinitas minimal, sawetara wektu sing pas, lan cara bali maneh sawisé dina kelewat.",
+    "su": "Watermark KTP pikeun jalma anu ampir henteu boga waktu luang: rutinitas minimal, sababaraha momen anu pas, jeung cara balik deui sanggeus poé kaliwat."
+  }
 }

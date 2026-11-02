@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "studi-kasus-14-hari-konsisten-stamp-tujuan-tanggal-dokumen-offline",
-    "en": "case-study-14-consistent-days-of-stamp-tujuan-tanggal-dokumen",
-    "ar": "stamp-tujuan-tanggal-dokumen-6",
-    "jv": "pandhuan-stamp-tujuan-tanggal-dokumen-idmark-6",
-    "su": "pituduh-stamp-tujuan-tanggal-dokumen-idmark-6",
-    "zh": "idmark-stamp-tujuan-tanggal-dokumen-实用指南-6",
-    "ja": "idmarkstamp-tujuan-tanggal-dokumen-ガイド-6"
+    "id": "studi-kasus-stamp-tujuan-tanggal-dokumen-selama-14-hari",
+    "en": "case-study-stamp-tujuan-tanggal-dokumen-for-14-days",
+    "ar": "hala-amlya-almalwmat-almhma-larbaa-ashr-ywma",
+    "jv": "studi-kasus-stamp-tujuan-tanggal-dokumen-14-dina",
+    "su": "studi-kasus-stamp-tujuan-tanggal-dokumen-14-poe",
+    "zh": "an-li-14-tian-de-zhong-yao-xin-xi",
+    "ja": "jirei-14-nichikan-no-taisetsu-na-jouhou"
   },
   "titles": {
-    "id": "Studi Kasus: 14 Hari Konsisten stamp tujuan tanggal dokumen",
-    "en": "Case Study: 14 Consistent Days of stamp tujuan tanggal dokumen",
-    "ar": "stamp tujuan tanggal dokumen — دليل IDMark",
-    "jv": "Pandhuan: Studi Kasus: 14 Hari Konsisten stamp tujuan tanggal dokumen",
-    "su": "Pituduh: Studi Kasus: 14 Hari Konsisten stamp tujuan tanggal dokumen",
-    "zh": "IDMark · stamp tujuan tanggal dokumen 实用指南",
-    "ja": "IDMark｜stamp tujuan tanggal dokumen ガイド"
+    "id": "Studi kasus: stamp tujuan tanggal dokumen selama 14 hari",
+    "en": "Case study: stamp tujuan tanggal dokumen for 14 days",
+    "ar": "حالة عملية: المعلومات المهمة لأربعة عشر يوماً",
+    "jv": "Studi kasus: stamp tujuan tanggal dokumen 14 dina",
+    "su": "Studi kasus: stamp tujuan tanggal dokumen 14 poé",
+    "zh": "案例：14 天的重要信息",
+    "ja": "事例：14日間の大切な情報"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Studi kasus 14 hari stamp tujuan tanggal dokumen: cara rutinitas disiapkan, ditinjau, dan disesuaikan hari demi hari, termasuk tinjauan mingguannya.",
+    "en": "A 14-day case study of stamp tujuan tanggal dokumen: how the routine was set up, reviewed and adjusted day by day, with the weekly check.",
+    "ar": "دراسة حالة لمدة 14 يوماً لـ stamp tujuan tanggal dokumen: كيف أُعدّ الروتين وراجعته وعدّلته يوماً بعد يوم، مع المراجعة الأسبوعية.",
+    "ja": "14日間のケーススタディ：stamp tujuan tanggal dokumen。ルーティンをどう設定し、毎日どう見直し、毎週どう確認したかを紹介します。",
+    "zh": "stamp tujuan tanggal dokumen 14 天案例：流程如何设置、逐日回顾与调整，以及每周检查。",
+    "jv": "Studi kasus 14 dina stamp tujuan tanggal dokumen: carané rutinitas disiapaké, ditinjau, lan disetel dina demi dina, kalebu tinjauan mingguané.",
+    "su": "Studi kasus 14 poé stamp tujuan tanggal dokumen: kumaha rutinitas disetel, ditinjau, jeung disaluyukeun poé ka poé, kaasup tinjauan mingguanana."
+  }
 }

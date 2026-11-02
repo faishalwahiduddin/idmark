@@ -391,7 +391,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
           children: WatermarkPattern.values.map((p) {
             final isSelected = widget.config.pattern == p;
             return ChoiceChip(
-              label: Text(p.label),
+              label: Text(p.labelOf(l10n)),
               selected: isSelected,
               onSelected: (_) => widget.onPatternChanged(p),
               selectedColor: AppColors.primary.withValues(alpha: 0.25),
@@ -424,7 +424,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
             final isSelected = widget.config.colorOption == c;
             return ChoiceChip(
               avatar: CircleAvatar(backgroundColor: c.color, radius: 6),
-              label: Text(c.label),
+              label: Text(c.labelOf(l10n)),
               selected: isSelected,
               onSelected: (_) => widget.onColorChanged(c),
               selectedColor: c.color.withValues(alpha: 0.25),
@@ -728,7 +728,10 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                 isDense: true,
                 style: const TextStyle(fontSize: 12, color: Colors.white),
                 items: RedactionType.values.map((type) {
-                  return DropdownMenuItem(value: type, child: Text(type.label));
+                  return DropdownMenuItem(
+                    value: type,
+                    child: Text(type.labelOf(l10n)),
+                  );
                 }).toList(),
                 onChanged: (val) {
                   if (val != null) {
@@ -1043,7 +1046,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            format.label,
+                            format.labelOf(l10n),
                             style: TextStyle(
                               fontSize: 13,
                               fontWeight: FontWeight.w700,
@@ -1054,7 +1057,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                           ),
                           const SizedBox(height: 3),
                           Text(
-                            format.description,
+                            format.descriptionOf(l10n),
                             style: const TextStyle(
                               fontSize: 11,
                               color: Color(0xFF94A3B8),

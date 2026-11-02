@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "cara-review-progres-lindungi-fotokopi-ktp-tiap-minggu-offline",
-    "en": "how-to-review-lindungi-fotokopi-ktp-progress-weekly",
-    "ar": "lindungi-fotokopi-ktp-3",
-    "jv": "pandhuan-lindungi-fotokopi-ktp-idmark-3",
-    "su": "pituduh-lindungi-fotokopi-ktp-idmark-3",
-    "zh": "idmark-lindungi-fotokopi-ktp-实用指南-3",
-    "ja": "idmarklindungi-fotokopi-ktp-ガイド-3"
+    "id": "cara-meninjau-lindungi-fotokopi-ktp-tiap-minggu",
+    "en": "how-to-review-lindungi-fotokopi-ktp-every-week",
+    "ar": "kyf-traja-almalwmat-almhma-asbwaya",
+    "jv": "kepriye-ninjau-lindungi-fotokopi-ktp-saben-minggu",
+    "su": "kumaha-ninjau-lindungi-fotokopi-ktp-unggal-minggu",
+    "zh": "mei-zhou-ru-he-fu-pan-zhong-yao-xin-xi",
+    "ja": "maishuu-taisetsu-na-jouhou-wo-minaosu-houhou"
   },
   "titles": {
-    "id": "Cara Review Progres lindungi fotokopi KTP Tiap Minggu",
-    "en": "How to Review lindungi fotokopi KTP Progress Weekly",
-    "ar": "lindungi fotokopi KTP — دليل IDMark",
-    "jv": "Pandhuan: Cara Review Progres lindungi fotokopi KTP Tiap Minggu",
-    "su": "Pituduh: Cara Review Progres lindungi fotokopi KTP Tiap Minggu",
-    "zh": "IDMark · lindungi fotokopi KTP 实用指南",
-    "ja": "IDMark｜lindungi fotokopi KTP ガイド"
+    "id": "Cara meninjau lindungi fotokopi KTP tiap minggu",
+    "en": "How to review lindungi fotokopi KTP every week",
+    "ar": "كيف تراجع المعلومات المهمة أسبوعياً",
+    "jv": "Kepriyé ninjau lindungi fotokopi KTP saben minggu",
+    "su": "Kumaha ninjau lindungi fotokopi KTP unggal minggu",
+    "zh": "每周如何复盘重要信息",
+    "ja": "毎週大切な情報を見直す方法"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Cara meninjau progres lindungi fotokopi KTP tiap minggu: apa yang perlu dilihat, cara menemukan celah, dan cara mulai lagi setelah jeda.",
+    "en": "How to review your lindungi fotokopi KTP progress each week: what to look at, how to spot gaps and how to restart after a break.",
+    "ar": "كيف تراجع تقدّم lindungi fotokopi KTP كل أسبوع: ما الذي تنظر إليه، وكيف تكتشف الفجوات، وكيف تعود بعد انقطاع.",
+    "ja": "毎週 lindungi fotokopi KTP の進み具合を見直す方法。見るべき点、抜けを見つける方法、休んだ後に再開する手順をまとめました。",
+    "zh": "每周回顾 lindungi fotokopi KTP 进展：看什么、如何发现缺口，以及休息后怎样重启。",
+    "jv": "Cara ninjau progres lindungi fotokopi KTP saben minggu: apa sing kudu didelok, cara nemokaké celah, lan cara miwiti maneh sawisé jeda.",
+    "su": "Kumaha ninjau kamajuan lindungi fotokopi KTP unggal minggu: naon anu kudu ditingali, kumaha manggihan celah, jeung kumaha mimitian deui sanggeus jeda."
+  }
 }

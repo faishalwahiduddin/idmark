@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "berapa-lama-ideal-untuk-watermark-ektp-aman-offline-harian",
-    "en": "how-long-should-watermark-ektp-aman-offline-take",
-    "ar": "watermark-ektp-aman-offline-5",
-    "jv": "pandhuan-watermark-ektp-aman-offline-idmark-5",
-    "su": "pituduh-watermark-ektp-aman-offline-idmark-5",
-    "zh": "idmark-watermark-ektp-aman-offline-实用指南-5",
-    "ja": "idmarkwatermark-ektp-aman-offline-ガイド-5"
+    "id": "mode-offline-saat-waktu-cuma-sedikit",
+    "en": "watermark-ektp-aman-offline-when-you-barely-have-time",
+    "ar": "khta-thlathyn-ywma-lalmalwmat-almhma",
+    "jv": "mode-offline-nalika-wektune-mung-sithik",
+    "su": "mode-offline-nalika-waktu-ukur-saeutik",
+    "zh": "zhong-yao-xin-xi-de-30-tian-ji-hua",
+    "ja": "taisetsu-na-jouhou-no-30-nichi-puran"
   },
   "titles": {
-    "id": "Berapa Lama Ideal untuk watermark ektp aman offline?",
-    "en": "How Long Should watermark ektp aman offline Take?",
-    "ar": "watermark ektp aman offline — دليل IDMark",
-    "jv": "Pandhuan: Berapa Lama Ideal untuk watermark ektp aman offline?",
-    "su": "Pituduh: Berapa Lama Ideal untuk watermark ektp aman offline?",
-    "zh": "IDMark · watermark ektp aman offline 实用指南",
-    "ja": "IDMark｜watermark ektp aman offline ガイド"
+    "id": "mode offline saat waktu cuma sedikit",
+    "en": "watermark ektp aman offline when you barely have time",
+    "ar": "خطة ثلاثين يوماً لـالمعلومات المهمة",
+    "jv": "mode offline nalika wektuné mung sithik",
+    "su": "mode offline nalika waktu ukur saeutik",
+    "zh": "重要信息的30天计划",
+    "ja": "大切な情報の30日プラン"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Watermark ektp aman offline saat waktu sedang sempit: versi paling kecil, momen yang pas, dan cara menjalankan tinjauan mingguan dalam hitungan menit.",
+    "en": "Watermark ektp aman offline when you barely have time: the smallest version, the moments that work and how to run the weekly check in minutes.",
+    "ar": "watermark ektp aman offline عندما يكون الوقت ضيقاً: النسخة الأصغر، واللحظات المناسبة، وكيف تنفّذ المراجعة الأسبوعية في دقائق.",
+    "ja": "時間がほとんどないときの watermark ektp aman offline。最小バージョン、効果的なタイミング、数分で終わる毎週の確認の進め方を紹介します。",
+    "zh": "时间紧张时的 watermark ektp aman offline：最小版本、合适时机，以及几分钟完成的每周检查。",
+    "jv": "Watermark ektp aman offline nalika wektu mung sithik: versi paling cilik, momen sing pas, lan cara nglakokaké tinjauan mingguan sajrone sawetara menit.",
+    "su": "Watermark ektp aman offline lamun waktuna kakara sempit: versi pangleutikna, momen anu pas, jeung kumaha ngajalankeun tinjauan mingguan dina sababaraha menit."
+  }
 }

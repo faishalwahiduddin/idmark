@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "watermark-ektp-aman-offline-untuk-orang-sibuk-harian",
-    "en": "watermark-ektp-aman-offline-for-busy-people",
-    "ar": "watermark-ektp-aman-offline",
-    "jv": "pandhuan-watermark-ektp-aman-offline-idmark",
-    "su": "pituduh-watermark-ektp-aman-offline-idmark",
-    "zh": "idmark-watermark-ektp-aman-offline-实用指南",
-    "ja": "idmarkwatermark-ektp-aman-offline-ガイド"
+    "id": "mode-offline-untuk-orang-yang-waktunya-sempit",
+    "en": "watermark-ektp-aman-offline-for-people-with-no-spare-time",
+    "ar": "almalwmat-almhma-lmn-la-ymlk-wqta",
+    "jv": "mode-offline-kanggo-sing-wektune-sempit",
+    "su": "mode-offline-pikeun-anu-waktosna-heureut",
+    "zh": "shi-jian-hen-shao-de-ren-zen-me-zuo-zhong-yao-xin-xi",
+    "ja": "jikan-ganai-nin-notameno-taisetsu-na-jouhou"
   },
   "titles": {
-    "id": "watermark ektp aman offline untuk orang yang waktunya sempit",
-    "en": "watermark ektp aman offline for Busy People",
-    "ar": "watermark ektp aman offline — دليل IDMark",
-    "jv": "Pandhuan: watermark ektp aman offline untuk orang yang waktunya sempit",
-    "su": "Pituduh: watermark ektp aman offline untuk orang yang waktunya sempit",
-    "zh": "IDMark · watermark ektp aman offline 实用指南",
-    "ja": "IDMark｜watermark ektp aman offline ガイド"
+    "id": "mode offline untuk orang yang waktunya sempit",
+    "en": "watermark ektp aman offline for people with no spare time",
+    "ar": "المعلومات المهمة لمن لا يملك وقتاً",
+    "jv": "mode offline kanggo sing wektuné sempit",
+    "su": "mode offline pikeun anu waktosna heureut",
+    "zh": "时间很少的人怎么做重要信息",
+    "ja": "時間がない人のための大切な情報"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Mode offline untuk orang yang waktunya sempit: versi paling kecil dari rutinitas watermark, kapan menjalankannya, dan cara melanjutkan lagi setelah jeda.",
+    "en": "Offline mode for people short on time: the smallest version of the watermark routine, when to run it, and how to pick it up after a gap.",
+    "ar": "وضع offline لمن يملك وقتاً ضيقاً: النسخة الأصغر من روتين العلامة المائية، ومتى تشغّله، وكيف تعود إليه بعد انقطاع.",
+    "ja": "時間に余裕がない人向けのオフラインモード。ウォーターマークの最小バージョン、実行するタイミング、途切れた後に再開する方法を紹介します。",
+    "zh": "给时间很少的人：离线模式下水印流程的最小版本、适合的时机，以及中断后如何重新开始。",
+    "jv": "Mode offline kanggo wong sing wektuné sempit: versi paling cilik saka rutinitas watermark, kapan dilakokaké, lan cara nerusaké maneh sawisé jeda.",
+    "su": "Mode offline pikeun jalma anu waktuna sempit: versi pangleutikna tina rutinitas watermark, iraha dijalankeunana, jeung kumaha neruskeun deui sanggeus jeda."
+  }
 }

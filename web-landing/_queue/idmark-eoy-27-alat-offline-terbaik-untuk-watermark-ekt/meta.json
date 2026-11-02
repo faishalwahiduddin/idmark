@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "alat-offline-terbaik-untuk-watermark-ektp-aman-offline-harian",
-    "en": "best-offline-tools-for-watermark-ektp-aman-offline",
-    "ar": "watermark-ektp-aman-offline-3",
-    "jv": "pandhuan-watermark-ektp-aman-offline-idmark-3",
-    "su": "pituduh-watermark-ektp-aman-offline-idmark-3",
-    "zh": "idmark-watermark-ektp-aman-offline-实用指南-3",
-    "ja": "idmarkwatermark-ektp-aman-offline-ガイド-3"
+    "id": "mode-offline-alat-mana-yang-benar-benar-dipakai",
+    "en": "watermark-ektp-aman-offline-which-tool-you-will-actually-use",
+    "ar": "almalwmat-almhma-ay-adaa-ststkhdmha-fala",
+    "jv": "mode-offline-piranti-endi-sing-tenan-dipigunakake",
+    "su": "mode-offline-alat-mana-anu-beneran-dipake",
+    "zh": "zhong-yao-xin-xi-na-ge-gong-ju-zhen-de-hui-yong",
+    "ja": "taisetsu-na-jouhou-jissaini-tsukau-dougu-hadoreka"
   },
   "titles": {
-    "id": "Alat Offline Terbaik untuk watermark ektp aman offline",
-    "en": "Best Offline Tools for watermark ektp aman offline",
-    "ar": "watermark ektp aman offline — دليل IDMark",
-    "jv": "Pandhuan: Alat Offline Terbaik untuk watermark ektp aman offline",
-    "su": "Pituduh: Alat Offline Terbaik untuk watermark ektp aman offline",
-    "zh": "IDMark · watermark ektp aman offline 实用指南",
-    "ja": "IDMark｜watermark ektp aman offline ガイド"
+    "id": "mode offline: alat mana yang benar-benar dipakai",
+    "en": "watermark ektp aman offline: which tool you will actually use",
+    "ar": "المعلومات المهمة: أي أداة ستستخدمها فعلاً",
+    "jv": "mode offline: piranti endi sing tenan dipigunakaké",
+    "su": "mode offline: alat mana anu beneran dipaké",
+    "zh": "重要信息：哪个工具真的会用",
+    "ja": "大切な情報：実際に使う道具はどれか"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Alat offline mana yang benar-benar akan Anda pakai untuk watermark ektp aman offline, dinilai dari usaha pengaturan, gesekan harian, dan tinjauan mingguan.",
+    "en": "Which offline tool you will actually keep using for watermark ektp aman offline, judged by setup effort, daily friction and the weekly check.",
+    "ar": "أي أداة بلا اتصال ستستخدمها فعلاً لـ watermark ektp aman offline؟ مقارنة بحسب جهد الإعداد والاحتكاك اليومي والمراجعة الأسبوعية.",
+    "ja": "どのオフラインツールを実際に使い続けられるか。watermark ektp aman offline の場合で、設定の手間、毎日の負担、毎週の確認のしやすさで比較します。",
+    "zh": "watermark ektp aman offline 用哪款离线工具最能坚持：按设置成本、日常摩擦和每周检查比较。",
+    "jv": "Piranti offline sing bakal bener-bener sampéyan pakai kanggo watermark ektp aman offline: usaha setelan, gesekan saben dina, lan tinjauan mingguan.",
+    "su": "Alat offline mana anu bakal bener-bener diteruskeun dipakéna pikeun watermark ektp aman offline, dinilai ku usaha setelan, gesekan, jeung tinjauan mingguan."
+  }
 }

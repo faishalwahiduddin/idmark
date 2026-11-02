@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/ui/app_scroll.dart';
+import '../../core/ui/tap_target.dart';
 import '../../core/models/audit_log_entry.dart';
 import '../../core/providers/app_providers.dart';
 import '../../core/providers/timezone_provider.dart';
@@ -305,7 +306,10 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
                         ),
                       ),
                     ),
-                    InkWell(
+                    // §A11Y: 14dp glyph needs an explicit 44dp hit area.
+                    TapTarget(
+                      minSize: 44,
+                      semanticLabel: l10n.sha256Copied,
                       onTap: () {
                         Clipboard.setData(ClipboardData(text: entry.sha256Hash));
                         ScaffoldMessenger.of(context).showSnackBar(
@@ -315,10 +319,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
                           ),
                         );
                       },
-                      child: const Padding(
-                        padding: EdgeInsets.all(4),
-                        child: Icon(Icons.copy, size: 14, color: AppColors.primaryLight),
-                      ),
+                      child: const Icon(Icons.copy, size: 14, color: AppColors.primaryLight),
                     ),
                   ],
                 ),

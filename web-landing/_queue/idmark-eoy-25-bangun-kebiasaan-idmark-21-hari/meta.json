@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "bangun-kebiasaan-idmark-21-hari",
-    "en": "build-a-21-day-idmark-habit",
-    "ar": "idmark-3",
-    "jv": "pandhuan-idmark-idmark-3",
-    "su": "pituduh-idmark-idmark-3",
-    "zh": "idmark-idmark-实用指南-3",
-    "ja": "idmarkidmark-ガイド-3"
+    "id": "membangun-kebiasaan-watermark-ktp-tanpa-burnout",
+    "en": "build-a-id-watermark-habit-without-burnout",
+    "ar": "bna-aada-alama-maiya-ala-alhwya-dwn-inhak",
+    "jv": "mbangun-kebiasan-watermark-ktp-tanpa-kesel",
+    "su": "ngawangun-kabiasaan-watermark-ktp-tanpa-kacape",
+    "zh": "jian-li-shen-fen-zheng-shui-yin-xi-guan-you-bu-zhi-yu-pi-bei",
+    "ja": "tsukare-zuni-mibun-shou-no-uootaamaaku-wo-shuukan-nisuru"
   },
   "titles": {
-    "id": "Bangun Kebiasaan IDMark 21 Hari",
-    "en": "Build a 21-Day IDMark Habit",
-    "ar": "IDMark — دليل IDMark",
-    "jv": "Pandhuan: Bangun Kebiasaan IDMark 21 Hari",
-    "su": "Pituduh: Bangun Kebiasaan IDMark 21 Hari",
-    "zh": "IDMark · IDMark 实用指南",
-    "ja": "IDMark｜IDMark ガイド"
+    "id": "Membangun kebiasaan watermark KTP tanpa burnout",
+    "en": "Build a ID watermark habit without burnout",
+    "ar": "بناء عادة علامة مائية على الهوية دون إنهاك",
+    "jv": "Mbangun kebiasan watermark KTP tanpa kesel",
+    "su": "Ngawangun kabiasaan watermark KTP tanpa kacapé",
+    "zh": "建立身份证水印习惯又不至于疲惫",
+    "ja": "疲れずに身分証のウォーターマークを習慣にする"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Cara membangun kebiasaan watermark KTP tanpa burnout: mulai dari versi paling kecil, jaga rutinitas tetap ringan, dan siapkan rencana untuk minggu yang lambat.",
+    "en": "How to build a watermark KTP habit without burnout: start with the smallest version, keep the routine light and plan for slow weeks.",
+    "ar": "كيف تبني عادة watermark KTP دون إرهاق: ابدأ بالنسخة الأصغر، واجعل الروتين خفيفاً، وخطط للأسابيع البطيئة.",
+    "ja": "燃え尽きずに watermark KTP の習慣を作る方法。最小バージョンから始め、負担の少ない流れを保ち、ペースが落ちる週にも備えます。",
+    "zh": "不倦怠地养成 watermark KTP 习惯：从最小版本开始，保持轻量，并为慢节奏的一周做准备。",
+    "jv": "Cara mbangun kebiasaan watermark KTP tanpa burnout: wiwit saka versi paling cilik, rutinitas tetep ringan, lan nyiapaké rencana kanggo minggu sing alon.",
+    "su": "Kumaha ngawangun kabiasaan watermark KTP tanpa burnout: mimitian ti versi pangleutikna, jaga rutinitas tetep ringan, jeung rencanakeun minggu anu lambat."
+  }
 }

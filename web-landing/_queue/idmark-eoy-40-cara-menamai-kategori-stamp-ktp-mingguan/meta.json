@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "cara-menamai-kategori-stamp-ktp-mingguan",
-    "en": "how-to-name-stamp-ktp-categories",
-    "ar": "stamp-ktp-5",
-    "jv": "pandhuan-stamp-ktp-idmark-5",
-    "su": "pituduh-stamp-ktp-idmark-5",
-    "zh": "idmark-stamp-ktp-实用指南-5",
-    "ja": "idmarkstamp-ktp-ガイド-5"
+    "id": "stamp-ktp-secara-mendalam-tanpa-muter-muter",
+    "en": "stamp-ktp-explained-without-the-runaround",
+    "ar": "almalwmat-almhma-bshrh-mbashr-bla-lf-aljz-3",
+    "jv": "stamp-ktp-kanthi-jero-tanpa-mubeng-mubeng",
+    "su": "stamp-ktp-diwincik-tanpa-muter-muter",
+    "zh": "zhong-yao-xin-xi-shen-ru-jiang-qing-chu-di-3-pian",
+    "ja": "taisetsu-na-jouhou-wo-toomawari-sezuni-shin-hori-dai-3-kai"
   },
   "titles": {
-    "id": "Cara Menamai Kategori stamp KTP",
-    "en": "How to Name stamp KTP Categories — Offline First",
-    "ar": "stamp KTP — دليل IDMark",
-    "jv": "Pandhuan: Cara Menamai Kategori stamp KTP",
-    "su": "Pituduh: Cara Menamai Kategori stamp KTP",
-    "zh": "IDMark · stamp KTP 实用指南",
-    "ja": "IDMark｜stamp KTP ガイド"
+    "id": "stamp KTP secara mendalam tanpa muter-muter",
+    "en": "stamp KTP, explained without the runaround",
+    "ar": "المعلومات المهمة بشرح مباشر بلا لفّ · الجزء 3",
+    "jv": "stamp KTP kanthi jero tanpa mubeng-mubeng",
+    "su": "stamp KTP diwincik tanpa muter-muter",
+    "zh": "重要信息深入讲清楚 · 第3篇",
+    "ja": "大切な情報を遠回りせずに深掘り · 第3回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Stamp KTP dibahas mendalam tanpa berputar-putar: cara memberi nama kategori mingguan, apa yang tersimpan di perangkat, dan di mana rutinitas biasanya patah.",
+    "en": "Stamp KTP explained in depth without the runaround: how to name your weekly categories, what stays on your device and where routines break.",
+    "ar": "stamp KTP بالتفصيل دون دوران: كيف تسمّي فئاتك الأسبوعية، وما الذي يبقى على جهازك، وأين تتوقف الروتينات عادة.",
+    "ja": "遠回りせずに stamp KTP を詳しく解説。毎週のカテゴリの付け方、端末に残るもの、ルーティンが途切れやすい場所を紹介します。",
+    "zh": "深入讲解 stamp KTP，不绕弯子：如何命名每周分类、哪些留在设备上，以及流程常在哪断。",
+    "jv": "Stamp KTP diwincik jero tanpa muter-muter: cara menehi jeneng kategori mingguan, apa sing disimpen ing piranti, lan ing ngendi rutinitas biasané macet.",
+    "su": "Stamp KTP dibahas jero tanpa ngurilingan: kumaha ngaran kategori mingguan, naon anu disimpen di alat, jeung dimana rutinitas biasana eureun."
+  }
 }

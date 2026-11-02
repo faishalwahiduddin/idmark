@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../core/constants/app_colors.dart';
+import '../../core/theme/app_theme.dart';
 import '../../core/ui/app_scroll.dart';
 import '../../core/ui/press_scale.dart';
 import '../../core/ui/stagger_fade_in.dart';
@@ -179,7 +180,7 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                     onTap: () => setState(() => _selectedCategory = cat),
                     child: IgnorePointer(
                       child: FilterChip(
-                        label: Text(cat),
+                        label: Text(presetCategoryLabel(cat, l10n)),
                         selected: isSelected,
                         selectedColor: AppColors.primary.withValues(
                           alpha: 0.25,
@@ -261,8 +262,14 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
       child: Card(
+        // Cards are authored dark in both themes, so the selected state
+        // tints the dark surface instead of washing a light-blue overlay
+        // under white text (unreadable in light mode).
         color: isCurrent
-            ? AppColors.primary.withValues(alpha: 0.15)
+            ? Color.alphaBlend(
+                AppColors.primary.withValues(alpha: 0.22),
+                AppColors.bgCard,
+              )
             : AppColors.bgCard,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(18),
@@ -301,7 +308,7 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                           children: [
                             Flexible(
                               child: Text(
-                                preset.title,
+                                presetTitleLabel(preset.id, preset.title, l10n),
                                 style: const TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w700,
@@ -335,7 +342,7 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                           ],
                         ),
                         Text(
-                          preset.category,
+                          presetCategoryLabel(preset.category, l10n),
                           style: const TextStyle(
                             fontSize: 12,
                             color: Color(0xFF94A3B8),
@@ -352,7 +359,8 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                         color: AppColors.danger,
                       ),
                       tooltip: l10n.deleteCustomPresetTooltip,
-                      visualDensity: VisualDensity.compact,
+                      // §A11Y: compact 40dp -> 44dp minimum hit area.
+                      constraints: const BoxConstraints(minWidth: 44, minHeight: 44),
                       onPressed: () => _confirmDeletePreset(context, preset),
                     ),
                   if (isCurrent)
@@ -403,7 +411,7 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    l10n.patternInfo(preset.defaultPattern.label),
+                    l10n.patternInfo(preset.defaultPattern.labelOf(l10n)),
                     style: const TextStyle(
                       fontSize: 11,
                       color: Color(0xFF94A3B8),
@@ -419,7 +427,11 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                         context.go('/');
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
-                            content: Text(l10n.presetApplied(preset.title)),
+                            content: Text(
+                              l10n.presetApplied(
+                                presetTitleLabel(preset.id, preset.title, l10n),
+                              ),
+                            ),
                             duration: const Duration(seconds: 2),
                           ),
                         );
@@ -450,10 +462,10 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
   void _showCreatePresetDialog(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final titleCtrl = TextEditingController();
-    final catCtrl = TextEditingController(text: 'Kustom');
+    final catCtrl = TextEditingController(text: l10n.customBadge);
     final purposeCtrl = TextEditingController();
     final subtextCtrl = TextEditingController(
-      text: 'HANYA UNTUK DOKUMEN INTERNAL',
+      text: l10n.defaultInternalSubtext,
     );
     WatermarkPattern selectedPattern = WatermarkPattern.diagonalBand;
     WatermarkColorOption selectedColor = WatermarkColorOption.red;
@@ -464,168 +476,178 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
     showDialog(
       context: context,
       builder: (ctx) => StatefulBuilder(
-        builder: (ctx, setDialogState) => AlertDialog(
-          backgroundColor: AppColors.bgSurface,
-          title: Row(
-            children: [
-              const Icon(
-                Icons.add_box_outlined,
-                color: AppColors.primaryLight,
-                size: 22,
-              ),
-              const SizedBox(width: 8),
-              Text(
-                l10n.createNewCustomPreset,
-                style: const TextStyle(color: Colors.white, fontSize: 17),
-              ),
-            ],
-          ),
-          content: SingleChildScrollView(
-            physics: AppScroll.physics,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
+        // Dark-authored dialog: pin the dark theme so the inputs aren't
+        // white-on-dark when the app is in light mode.
+        builder: (ctx, setDialogState) => Theme(
+          data: AppTheme.darkTheme,
+          child: AlertDialog(
+            backgroundColor: AppColors.bgSurface,
+            title: Row(
               children: [
+                const Icon(
+                  Icons.add_box_outlined,
+                  color: AppColors.primaryLight,
+                  size: 22,
+                ),
+                const SizedBox(width: 8),
                 Text(
-                  l10n.presetName,
-                  style: const TextStyle(
-                    fontSize: 12,
-                    color: Color(0xFF94A3B8),
-                  ),
-                ),
-                const SizedBox(height: 4),
-                TextField(
-                  controller: titleCtrl,
-                  decoration: InputDecoration(
-                    hintText: l10n.presetNameHint,
-                    errorText: titleErr,
-                  ),
-                ),
-                const SizedBox(height: 12),
-
-                Text(
-                  l10n.category,
-                  style: const TextStyle(
-                    fontSize: 12,
-                    color: Color(0xFF94A3B8),
-                  ),
-                ),
-                const SizedBox(height: 4),
-                TextField(
-                  controller: catCtrl,
-                  decoration: InputDecoration(hintText: l10n.categoryHint),
-                ),
-                const SizedBox(height: 12),
-
-                Text(
-                  l10n.purposeTemplateText,
-                  style: const TextStyle(
-                    fontSize: 12,
-                    color: Color(0xFF94A3B8),
-                  ),
-                ),
-                const SizedBox(height: 4),
-                TextField(
-                  controller: purposeCtrl,
-                  decoration: InputDecoration(
-                    hintText: l10n.purposeTemplateHint,
-                    errorText: purposeErr,
-                  ),
-                ),
-                const SizedBox(height: 12),
-
-                Text(
-                  l10n.additionalSubtext,
-                  style: const TextStyle(
-                    fontSize: 12,
-                    color: Color(0xFF94A3B8),
-                  ),
-                ),
-                const SizedBox(height: 4),
-                TextField(
-                  controller: subtextCtrl,
-                  decoration: InputDecoration(
-                    hintText: l10n.subtextTemplateHint,
-                  ),
-                ),
-                const SizedBox(height: 12),
-
-                Text(
-                  l10n.stampPattern,
-                  style: const TextStyle(
-                    fontSize: 12,
-                    color: Color(0xFF94A3B8),
-                  ),
-                ),
-                const SizedBox(height: 4),
-                DropdownButton<WatermarkPattern>(
-                  value: selectedPattern,
-                  dropdownColor: AppColors.bgCard,
-                  isExpanded: true,
-                  style: const TextStyle(fontSize: 13, color: Colors.white),
-                  items: WatermarkPattern.values.map((p) {
-                    return DropdownMenuItem(value: p, child: Text(p.label));
-                  }).toList(),
-                  onChanged: (val) {
-                    if (val != null) {
-                      setDialogState(() => selectedPattern = val);
-                    }
-                  },
+                  l10n.createNewCustomPreset,
+                  style: const TextStyle(color: Colors.white, fontSize: 17),
                 ),
               ],
             ),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(ctx),
-              child: Text(
-                l10n.cancel,
-                style: const TextStyle(color: Color(0xFF94A3B8)),
+            content: SingleChildScrollView(
+              physics: AppScroll.physics,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    l10n.presetName,
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: Color(0xFF94A3B8),
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  TextField(
+                    controller: titleCtrl,
+                    decoration: InputDecoration(
+                      hintText: l10n.presetNameHint,
+                      errorText: titleErr,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+
+                  Text(
+                    l10n.category,
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: Color(0xFF94A3B8),
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  TextField(
+                    controller: catCtrl,
+                    decoration: InputDecoration(hintText: l10n.categoryHint),
+                  ),
+                  const SizedBox(height: 12),
+
+                  Text(
+                    l10n.purposeTemplateText,
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: Color(0xFF94A3B8),
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  TextField(
+                    controller: purposeCtrl,
+                    decoration: InputDecoration(
+                      hintText: l10n.purposeTemplateHint,
+                      errorText: purposeErr,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+
+                  Text(
+                    l10n.additionalSubtext,
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: Color(0xFF94A3B8),
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  TextField(
+                    controller: subtextCtrl,
+                    decoration: InputDecoration(
+                      hintText: l10n.subtextTemplateHint,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+
+                  Text(
+                    l10n.stampPattern,
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: Color(0xFF94A3B8),
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  DropdownButton<WatermarkPattern>(
+                    value: selectedPattern,
+                    dropdownColor: AppColors.bgCard,
+                    isExpanded: true,
+                    style: const TextStyle(fontSize: 13, color: Colors.white),
+                    items: WatermarkPattern.values.map((p) {
+                      return DropdownMenuItem(
+                        value: p,
+                        child: Text(p.labelOf(l10n)),
+                      );
+                    }).toList(),
+                    onChanged: (val) {
+                      if (val != null) {
+                        setDialogState(() => selectedPattern = val);
+                      }
+                    },
+                  ),
+                ],
               ),
             ),
-            ElevatedButton(
-              onPressed: () {
-                final tErr = mapValidationError(
-                  AppValidators.validatePresetTitle(titleCtrl.text),
-                  l10n,
-                );
-                final pErr = mapValidationError(
-                  AppValidators.validatePurpose(purposeCtrl.text),
-                  l10n,
-                );
-
-                setDialogState(() {
-                  titleErr = tErr;
-                  purposeErr = pErr;
-                });
-
-                if (tErr == null && pErr == null) {
-                  final newPreset = WatermarkPreset(
-                    id: 'custom_${AppTimeZone.nowUtc().millisecondsSinceEpoch}',
-                    title: titleCtrl.text.trim(),
-                    category: catCtrl.text.trim().isEmpty
-                        ? 'Kustom'
-                        : catCtrl.text.trim(),
-                    samplePurpose: purposeCtrl.text.trim().toUpperCase(),
-                    subtext: subtextCtrl.text.trim(),
-                    icon: Icons.bookmark_border,
-                    defaultPattern: selectedPattern,
-                    defaultColor: selectedColor,
-                    isCustom: true,
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(ctx),
+                child: Text(
+                  l10n.cancel,
+                  style: const TextStyle(color: Color(0xFF94A3B8)),
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  final tErr = mapValidationError(
+                    AppValidators.validatePresetTitle(titleCtrl.text),
+                    l10n,
+                  );
+                  final pErr = mapValidationError(
+                    AppValidators.validatePurpose(purposeCtrl.text),
+                    l10n,
                   );
 
-                  ref.read(customPresetsProvider.notifier).addPreset(newPreset);
-                  Navigator.pop(ctx);
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(l10n.customPresetSaved(newPreset.title)),
-                    ),
-                  );
-                }
-              },
-              child: Text(l10n.savePreset),
-            ),
-          ],
+                  setDialogState(() {
+                    titleErr = tErr;
+                    purposeErr = pErr;
+                  });
+
+                  if (tErr == null && pErr == null) {
+                    final newPreset = WatermarkPreset(
+                      id: 'custom_${AppTimeZone.nowUtc().millisecondsSinceEpoch}',
+                      title: titleCtrl.text.trim(),
+                      category: catCtrl.text.trim().isEmpty
+                          ? l10n.customBadge
+                          : catCtrl.text.trim(),
+                      samplePurpose: purposeCtrl.text.trim().toUpperCase(),
+                      subtext: subtextCtrl.text.trim(),
+                      icon: Icons.bookmark_border,
+                      defaultPattern: selectedPattern,
+                      defaultColor: selectedColor,
+                      isCustom: true,
+                    );
+
+                    ref
+                        .read(customPresetsProvider.notifier)
+                        .addPreset(newPreset);
+                    Navigator.pop(ctx);
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(l10n.customPresetSaved(newPreset.title)),
+                      ),
+                    );
+                  }
+                },
+                child: Text(l10n.savePreset),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -642,7 +664,9 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
           style: const TextStyle(color: Colors.white),
         ),
         content: Text(
-          l10n.deletePresetConfirmBody(preset.title),
+          l10n.deletePresetConfirmBody(
+            presetTitleLabel(preset.id, preset.title, l10n),
+          ),
           style: const TextStyle(color: Color(0xFF94A3B8)),
         ),
         actions: [

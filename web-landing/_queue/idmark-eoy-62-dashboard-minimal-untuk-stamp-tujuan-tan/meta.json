@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "dashboard-minimal-untuk-stamp-tujuan-tanggal-dokumen-praktis",
-    "en": "minimal-dashboard-for-stamp-tujuan-tanggal-dokumen-practical",
-    "ar": "stamp-tujuan-tanggal-dokumen-7",
-    "jv": "pandhuan-stamp-tujuan-tanggal-dokumen-idmark-7",
-    "su": "pituduh-stamp-tujuan-tanggal-dokumen-idmark-7",
-    "zh": "idmark-stamp-tujuan-tanggal-dokumen-实用指南-7",
-    "ja": "idmarkstamp-tujuan-tanggal-dokumen-ガイド-7"
+    "id": "cara-mengukur-stamp-tujuan-tanggal-dokumen-tanpa-angka-palsu",
+    "en": "measuring-stamp-tujuan-tanggal-dokumen-without-fake-numbers",
+    "ar": "qyas-almalwmat-almhma-dwn-arqam-whmya-aljz-2",
+    "jv": "ngukur-stamp-tujuan-tanggal-dokumen-tanpa-angka-goroh",
+    "su": "ngukur-stamp-tujuan-tanggal-dokumen-tanpa-angka-bohong",
+    "zh": "ru-he-heng-liang-zhong-yao-xin-xi-er-bu-kao-gu-ji-di-2-pian",
+    "ja": "suisoku-ni-tayora-zu-taisetsu-na-jouhou-wo-hakaru-dai-2-kai"
   },
   "titles": {
-    "id": "Dashboard Minimal untuk stamp tujuan tanggal dokumen",
-    "en": "Minimal Dashboard for stamp tujuan tanggal dokumen (Practical)",
-    "ar": "stamp tujuan tanggal dokumen — دليل IDMark",
-    "jv": "Pandhuan: Dashboard Minimal untuk stamp tujuan tanggal dokumen",
-    "su": "Pituduh: Dashboard Minimal untuk stamp tujuan tanggal dokumen",
-    "zh": "IDMark · stamp tujuan tanggal dokumen 实用指南",
-    "ja": "IDMark｜stamp tujuan tanggal dokumen ガイド"
+    "id": "Cara mengukur stamp tujuan tanggal dokumen tanpa angka palsu",
+    "en": "Measuring stamp tujuan tanggal dokumen without fake numbers",
+    "ar": "قياس المعلومات المهمة دون أرقام وهمية · الجزء 2",
+    "jv": "Ngukur stamp tujuan tanggal dokumen tanpa angka goroh",
+    "su": "Ngukur stamp tujuan tanggal dokumen tanpa angka bohong",
+    "zh": "如何衡量重要信息而不靠估计 · 第2篇",
+    "ja": "推測に頼らず大切な情報を測る · 第2回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Mengukur stamp tujuan tanggal dokumen tanpa angka palsu: tampilan mingguan yang minimal, sinyal jujur, dan cara membaca periode yang lambat.",
+    "en": "Measuring stamp tujuan tanggal dokumen without fake numbers: a minimal weekly view, honest signals and how to read a slow stretch.",
+    "ar": "قياس stamp tujuan tanggal dokumen دون أرقام وهمية: عرض أسبوعي بسيط، وإشارات صادقة، وكيف تقرأ فترة البطء.",
+    "ja": "水増しされた数字に頼らず stamp tujuan tanggal dokumen を測る方法。最小限の週次表示、正直なサイン、停滞期間の読み解き方を解説します。",
+    "zh": "不靠虚假数字衡量 stamp tujuan tanggal dokumen：简洁的每周视图、真实信号，以及放缓阶段怎么看。",
+    "jv": "Ngukur stamp tujuan tanggal dokumen tanpa angka palsu: tampilan mingguan sing minimal, sinyal jujur, lan cara maca wektu sing alon.",
+    "su": "Ngukur stamp tujuan tanggal dokumen tanpa angka palsu: tampilan mingguan anu minimal, sinyal jujur, jeung kumaha maca période anu lambat."
+  }
 }

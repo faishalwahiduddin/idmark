@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "10-field-watermark-ektp-aman-offline-yang-worth-disimpan-2026",
-    "en": "10-watermark-ektp-aman-offline-fields-worth-keeping",
-    "ar": "watermark-ektp-aman-offline-8",
-    "jv": "pandhuan-watermark-ektp-aman-offline-idmark-8",
-    "su": "pituduh-watermark-ektp-aman-offline-idmark-8",
-    "zh": "idmark-watermark-ektp-aman-offline-实用指南-8",
-    "ja": "idmarkwatermark-ektp-aman-offline-ガイド-8"
+    "id": "mode-offline-daftar-pilihan-yang-masuk-akal",
+    "en": "watermark-ektp-aman-offline-a-shortlist-that-makes-sense",
+    "ar": "almalwmat-almhma-khyarat-qlyla-mntqya-aljz-3",
+    "jv": "mode-offline-pilihan-sing-cukup-masuk-akal",
+    "su": "mode-offline-pilihan-anu-asup-akal",
+    "zh": "zhong-yao-xin-xi-zhi-de-kao-lv-de-ji-zhong-xuan-ze-di-3-pian",
+    "ja": "taisetsu-na-jouhou-nattoku-dekiru-sentakushi-dai-3-kai"
   },
   "titles": {
-    "id": "10 Field watermark ektp aman offline yang Worth Disimpan",
-    "en": "10 watermark ektp aman offline Fields Worth Keeping",
-    "ar": "watermark ektp aman offline — دليل IDMark",
-    "jv": "Pandhuan: 10 Field watermark ektp aman offline yang Worth Disimpan",
-    "su": "Pituduh: 10 Field watermark ektp aman offline yang Worth Disimpan",
-    "zh": "IDMark · watermark ektp aman offline 实用指南",
-    "ja": "IDMark｜watermark ektp aman offline ガイド"
+    "id": "mode offline: daftar pilihan yang masuk akal",
+    "en": "watermark ektp aman offline: a shortlist that makes sense",
+    "ar": "المعلومات المهمة: خيارات قليلة منطقية · الجزء 3",
+    "jv": "mode offline: pilihan sing cukup masuk akal",
+    "su": "mode offline: pilihan anu asup akal",
+    "zh": "重要信息：值得考虑的几种选择 · 第3篇",
+    "ja": "大切な情報：納得できる選択肢 · 第3回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Watermark ektp aman offline: daftar pilihan yang masuk akal untuk rutinitas, dari versi paling kecil sampai tinjauan mingguan yang bisa terus Anda jalankan.",
+    "en": "Watermark ektp aman offline: a shortlist of sensible points for the routine, from the smallest version to a weekly check you can keep.",
+    "ar": "watermark ektp aman offline: قائمة نقاط معقولة للروتين، من النسخة الأصغر حتى مراجعة أسبوعية تستطيع الاستمرار فيها.",
+    "ja": "watermark ektp aman offline の選択肢リスト。ルーティンに使える妥当な候補を、最小バージョンから続けられる毎週の確認まで並べます。",
+    "zh": "适合该流程的 watermark ektp aman offline 选项：从最小版本到能坚持的每周检查。",
+    "jv": "Watermark ektp aman offline: dhaftar pilihan sing masuk akal kanggo rutinitas, saka versi paling cilik nganti tinjauan mingguan sing bisa terus dilakokaké.",
+    "su": "Watermark ektp aman offline: daptar pilihan anu masuk akal pikeun rutinitas, ti versi pangleutikna nepi ka tinjauan mingguan anu bisa terus dijalankeun."
+  }
 }

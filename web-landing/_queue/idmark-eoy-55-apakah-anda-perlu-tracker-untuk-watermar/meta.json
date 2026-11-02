@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "apakah-anda-perlu-tracker-untuk-watermark-ktp",
-    "en": "do-you-need-a-tracker-for-watermark-ktp",
-    "ar": "watermark-ktp-7",
-    "jv": "pandhuan-watermark-ktp-idmark-7",
-    "su": "pituduh-watermark-ktp-idmark-7",
-    "zh": "idmark-watermark-ktp-实用指南-7",
-    "ja": "idmarkwatermark-ktp-ガイド-7"
+    "id": "watermark-ktp-memutuskan-tanpa-overthinking",
+    "en": "id-watermark-deciding-without-overthinking",
+    "ar": "alama-maiya-ala-alhwya-qrar-bla-tfkyr-zaid",
+    "jv": "watermark-ktp-mutusake-tanpa-mikir-kebangeten",
+    "su": "watermark-ktp-mutuskeun-tanpa-mikir-kaleuleuwihi",
+    "zh": "shen-fen-zheng-shui-yin-bu-bi-jiu-jie-de-xuan-ze-fang-fa",
+    "ja": "mibun-shou-no-uootaamaaku-kangae-sugizuni-kime-ru"
   },
   "titles": {
-    "id": "Apakah Anda Perlu Tracker untuk watermark KTP?",
-    "en": "Do You Need a Tracker for watermark KTP?",
-    "ar": "watermark KTP — دليل IDMark",
-    "jv": "Pandhuan: Apakah Anda Perlu Tracker untuk watermark KTP?",
-    "su": "Pituduh: Apakah Anda Perlu Tracker untuk watermark KTP?",
-    "zh": "IDMark · watermark KTP 实用指南",
-    "ja": "IDMark｜watermark KTP ガイド"
+    "id": "watermark KTP: memutuskan tanpa overthinking",
+    "en": "ID watermark: deciding without overthinking",
+    "ar": "علامة مائية على الهوية: قرار بلا تفكير زائد",
+    "jv": "watermark KTP: mutusaké tanpa mikir kebangeten",
+    "su": "watermark KTP: mutuskeun tanpa mikir kaleuleuwihi",
+    "zh": "身份证水印：不必纠结的选择方法",
+    "ja": "身分証のウォーターマーク：考えすぎずに決める"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Memutuskan tanpa berpikir berlebihan: apakah Anda perlu pelacak untuk watermark KTP, apa yang dicari, dan cara sederhana memilih langkah berikutnya.",
+    "en": "ID watermark: deciding without overthinking, whether you need a tracker at all, what to look for and a simple way to pick the next step.",
+    "ar": "قرار بلا تفكير زائد بشأن علامة KTP المائية: هل تحتاج إلى متتبع أصلاً، وما الذي تبحث عنه، وطريقة بسيطة لاختيار الخطوة التالية.",
+    "ja": "身分証ウォーターマークを考えすぎずに決める方法。トラッカーが本当に必要か、何を基準に選ぶか、次の一歩を簡単に決める方法を紹介します。",
+    "zh": "不纠结的决策：身份证水印是否真的需要追踪工具，该看什么，以及选择下一步的简单办法。",
+    "jv": "Mutusaké tanpa mikir kebangeten: apa watermark KTP perlu pelacak, apa sing digoleki, lan cara gampang milih langkah sabanjuré.",
+    "su": "Mutuskeun tanpa mikir kaleuleuwihan: naha watermark KTP perlu pelacak atawa henteu, naon anu dipilarian, jeung kumaha gampang milih lankah salajengna."
+  }
 }

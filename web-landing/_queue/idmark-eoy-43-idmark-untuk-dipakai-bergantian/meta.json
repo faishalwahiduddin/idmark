@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "idmark-untuk-dipakai-bergantian",
-    "en": "sharing-a-device-for-idmark",
-    "ar": "idmark-5",
-    "jv": "pandhuan-idmark-idmark-5",
-    "su": "pituduh-idmark-idmark-5",
-    "zh": "idmark-idmark-实用指南-5",
-    "ja": "idmarkidmark-ガイド-5"
+    "id": "watermark-ktp-untuk-satu-rumah",
+    "en": "id-watermark-for-the-whole-household",
+    "ar": "alama-maiya-ala-alhwya-lkl-afrad-almnzl",
+    "jv": "watermark-ktp-kanggo-sakulawarga",
+    "su": "watermark-ktp-pikeun-sakulawarga",
+    "zh": "quan-jia-yi-qi-yong-de-shen-fen-zheng-shui-yin",
+    "ja": "kazoku-minnade-tsukau-mibun-shou-no-uootaamaaku"
   },
   "titles": {
-    "id": "IDMark untuk Dipakai Bergantian",
-    "en": "Sharing a Device for IDMark",
-    "ar": "IDMark — دليل IDMark",
-    "jv": "Pandhuan: IDMark untuk Dipakai Bergantian",
-    "su": "Pituduh: IDMark untuk Dipakai Bergantian",
-    "zh": "IDMark · IDMark 实用指南",
-    "ja": "IDMark｜IDMark ガイド"
+    "id": "watermark KTP untuk satu rumah",
+    "en": "ID watermark for the whole household",
+    "ar": "علامة مائية على الهوية لكل أفراد المنزل",
+    "jv": "watermark KTP kanggo sakulawarga",
+    "su": "watermark KTP pikeun sakulawarga",
+    "zh": "全家一起用的身份证水印",
+    "ja": "家族みんなで使う身分証のウォーターマーク"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Untuk satu rumah, rutinitas watermark KTP bisa dibagi antaranggota keluarga: menjaga catatan tiap perangkat dan menjalankan tinjauan mingguan bersama.",
+    "en": "ID watermark for the whole household: how to share one routine across family members, keep each device's records and run a weekly check together.",
+    "ar": "لكل أفراد المنزل: روتين واحد لعلامة KTP المائية يُشارَك بين أفراد الأسرة، مع سجلات لكل جهاز ومراجعة أسبوعية معاً.",
+    "ja": "家族みんなで使う身分証ウォーターマーク。1つの習慣を家族で共有する方法、端末ごとの記録管理、毎週の確認を一緒に行うコツを紹介します。",
+    "zh": "全家共用的身份证水印：在家庭成员之间分享同一套流程，保留各设备记录，并一起做每周检查。",
+    "jv": "Rutinitas watermark KTP kanggo sakulawarga bisa dienggo bareng: njaga cathetan saben piranti lan nindakaké tinjauan mingguan bebarengan.",
+    "su": "Pikeun sakulawarga, rutinitas watermark KTP bisa dibagi: ngajaga catetan unggal alat jeung ngajalankeun tinjauan mingguan bareng."
+  }
 }

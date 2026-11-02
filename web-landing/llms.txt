@@ -1,6 +1,6 @@
 # IDMark
 
-> Beri cap watermark teks pada foto KTP, SIM & dokumen penting.
+> IDMark menambahkan watermark tujuan dan tanggal ke foto e-KTP, paspor, dan SIM sebelum dibagikan. 100% offline di perangkat, tanpa unggah dokumen ke mana pun.
 
 IDMark is a free app in the faishal.id fleet. Offline-first product; this marketing site may use optional consent-gated analytics.
 
@@ -12,9 +12,10 @@ IDMark is a free app in the faishal.id fleet. Offline-first product; this market
 - Terms: https://idmark.faishal.id/id/terms.html
 - Pricing: https://idmark.faishal.id/pricing.md
 - Publisher: https://faishal.id
+- Google Play: https://play.google.com/store/apps/details?id=id.faishal.idmark
 
 ## Blog posts
 
-- https://idmark.faishal.id/id/blog/lindungi-fotokopi-ktp/
-- https://idmark.faishal.id/id/blog/stamp-tujuan-tanggal-dokumen/
-- https://idmark.faishal.id/id/blog/watermark-ektp-aman-offline/
+- https://idmark.faishal.id/id/blog/lindungi-fotokopi-ktp-kebiasaan-aman-sebelum-berbagi/
+- https://idmark.faishal.id/id/blog/stamp-tujuan-dan-tanggal-batas-aman-berbagi-dokumen/
+- https://idmark.faishal.id/id/blog/watermark-e-ktp-aman-stamp-tujuan-dan-tanggal-offline/

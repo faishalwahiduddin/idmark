@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "optimasi-catatan-e-ktp-bulanan-2026",
-    "en": "optimize-monthly-e-ktp-logs",
-    "ar": "e-ktp-4",
-    "jv": "pandhuan-e-ktp-idmark-4",
-    "su": "pituduh-e-ktp-idmark-4",
-    "zh": "idmark-e-ktp-实用指南-4",
-    "ja": "idmarke-ktp-ガイド-4"
+    "id": "e-ktp-tingkat-lanjut-setelah-rutin-stabil",
+    "en": "advanced-e-ktp-once-the-routine-holds",
+    "ar": "almalwmat-almhma-bshrh-mbashr-bla-lf",
+    "jv": "e-ktp-lanjutan-sawise-rutinitas-mantep",
+    "su": "e-ktp-lanjutan-sanggeus-rutinitas-mantep",
+    "zh": "zhong-yao-xin-xi-shen-ru-jiang-qing-chu",
+    "ja": "taisetsu-na-jouhou-wo-toomawari-sezuni-shin-hori"
   },
   "titles": {
-    "id": "Optimasi Catatan e-KTP Bulanan",
-    "en": "Optimize Monthly e-KTP Logs",
-    "ar": "e-KTP — دليل IDMark",
-    "jv": "Pandhuan: Optimasi Catatan e-KTP Bulanan",
-    "su": "Pituduh: Optimasi Catatan e-KTP Bulanan",
-    "zh": "IDMark · e-KTP 实用指南",
-    "ja": "IDMark｜e-KTP ガイド"
+    "id": "e-KTP tingkat lanjut setelah rutin stabil",
+    "en": "Advanced e-KTP once the routine holds",
+    "ar": "المعلومات المهمة بشرح مباشر بلا لفّ",
+    "jv": "e-KTP lanjutan sawisé rutinitas mantep",
+    "su": "e-KTP lanjutan sanggeus rutinitas mantep",
+    "zh": "重要信息深入讲清楚",
+    "ja": "大切な情報を遠回りせずに深掘り"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Langkah lanjutan e-KTP setelah rutinitas stabil: apa yang ditambah berikutnya, apa yang tetap sederhana, dan cara menyetel tinjauan mingguan.",
+    "en": "Advanced e-KTP steps for once the routine is stable: what to add next, what to keep simple and how to tune the weekly check.",
+    "ar": "خطوات متقدمة لـ e-KTP بعد استقرار الروتين: ما الذي تضيفه لاحقاً، وما الذي تبقيه بسيطاً، وكيف تضبط المراجعة الأسبوعية.",
+    "ja": "上級編の e-KTP ステップ。ルーティンが安定したら次に何を加えるか、どこを簡単に保つか、毎週の確認をどう調整するかを説明します。",
+    "zh": "e-KTP 进阶步骤：流程稳定后接下来加什么、哪些保持简单，以及如何调整每周回顾。",
+    "jv": "Langkah lanjutan e-KTP sawisé rutinitas stabil: apa sing ditambahaké sakbanjuré, apa sing tetep prasaja, lan cara nyetel tinjauan mingguan.",
+    "su": "Lankah lanjutan e-KTP sanggeus rutinitas stabil: naon anu ditambahkeun salajengna, naon anu tetep basajan, jeung kumaha nyetél tinjauan mingguan."
+  }
 }

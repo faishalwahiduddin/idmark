@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "tutorial-idmark-dari-nol-tanpa-ribet-mingguan",
-    "en": "idmark-tutorial-from-zero-no-fluff",
-    "ar": "idmark-8",
-    "jv": "pandhuan-idmark-idmark-8",
-    "su": "pituduh-idmark-idmark-8",
-    "zh": "idmark-idmark-实用指南-8",
-    "ja": "idmarkidmark-ガイド-8"
+    "id": "watermark-ktp-untuk-pemula-mulai-dari-mana",
+    "en": "id-watermark-for-beginners-where-to-start",
+    "ar": "alama-maiya-ala-alhwya-llmbtdiyn-mn-ayn-tbda",
+    "jv": "watermark-ktp-kanggo-pamula-wiwit-saka-ngendi",
+    "su": "watermark-ktp-pikeun-pamula-mimitian-ti-mana",
+    "zh": "shen-fen-zheng-shui-yin-ru-men-cong-na-li-kai-shi",
+    "ja": "mibun-shou-no-uootaamaaku-nyuumon-dokokara-hajime-ruka"
   },
   "titles": {
-    "id": "Tutorial IDMark dari Nol (Tanpa Ribet)",
-    "en": "IDMark Tutorial from Zero (No Fluff) — Offline First",
-    "ar": "IDMark — دليل IDMark",
-    "jv": "Pandhuan: Tutorial IDMark dari Nol (Tanpa Ribet)",
-    "su": "Pituduh: Tutorial IDMark dari Nol (Tanpa Ribet)",
-    "zh": "IDMark · IDMark 实用指南",
-    "ja": "IDMark｜IDMark ガイド"
+    "id": "watermark KTP untuk pemula: mulai dari mana",
+    "en": "ID watermark for beginners: where to start",
+    "ar": "علامة مائية على الهوية للمبتدئين: من أين تبدأ",
+    "jv": "watermark KTP kanggo pamula: wiwit saka ngendi",
+    "su": "watermark KTP pikeun pamula: mimitian ti mana",
+    "zh": "身份证水印入门：从哪里开始",
+    "ja": "身分証のウォーターマーク入門：どこから始めるか"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Pemula yang ingin memulai watermark KTP: langkah pertama yang paling kecil, apa yang tetap di perangkat, dan cara menyiapkan tinjauan mingguan yang sederhana.",
+    "en": "ID watermark for beginners: where to start, which first step to take, what stays on your device and how to set up a simple weekly check.",
+    "ar": "للمبتدئين في علامة KTP المائية: من أين تبدأ، وما الخطوة الأولى، وما الذي يبقى على جهازك، وكيف تضع مراجعة أسبوعية بسيطة.",
+    "ja": "初心者のための身分証ウォーターマーク入門。どこから始めるか、最初に取る一歩、端末に残るもの、シンプルな週次確認の組み方を紹介します。",
+    "zh": "身份证水印新手指南：从哪里开始，第一步做什么，哪些留在设备上，以及简单的每周检查。",
+    "jv": "Pemula sing arep miwiti watermark KTP: langkah pisanan sing paling cilik, apa sing tetep ana ing piranti, lan cara nyiapaké tinjauan prasaja.",
+    "su": "Pamula anu rék mimitian watermark KTP: lankah kahiji anu pangleutikna, naon anu tetep di alat, jeung kumaha nyiapkeun tinjauan mingguan anu basajan."
+  }
 }

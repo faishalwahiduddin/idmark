@@ -162,7 +162,7 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
                   const Icon(Icons.remove_red_eye_outlined, size: 14, color: AppColors.primaryLight),
                   const SizedBox(width: 8),
                   Text(
-                    l10n?.quickSensorLabel ?? 'Sensor Cepat:',
+                    l10n?.quickSensorShort ?? 'Sensor Cepat:',
                     style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: Color(0xFF94A3B8)),
                   ),
                   const SizedBox(width: 8),
@@ -172,13 +172,25 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
                       physics: AppScroll.physics,
                       child: Row(
                         children: [
-                          _buildQuickSensorChip('NIK', RedactionPresetTarget.nik),
+                          _buildQuickSensorChip(
+                            l10n?.targetNik ?? 'NIK',
+                            RedactionPresetTarget.nik,
+                          ),
                           const SizedBox(width: 6),
-                          _buildQuickSensorChip('Tanda Tangan', RedactionPresetTarget.signature),
+                          _buildQuickSensorChip(
+                            l10n?.targetSignature ?? 'Tanda Tangan',
+                            RedactionPresetTarget.signature,
+                          ),
                           const SizedBox(width: 6),
-                          _buildQuickSensorChip('Alamat', RedactionPresetTarget.address),
+                          _buildQuickSensorChip(
+                            l10n?.targetAddress ?? 'Alamat',
+                            RedactionPresetTarget.address,
+                          ),
                           const SizedBox(width: 6),
-                          _buildQuickSensorChip('Tgl Lahir', RedactionPresetTarget.birthPlace),
+                          _buildQuickSensorChip(
+                            l10n?.targetBirthPlace ?? 'Tgl Lahir',
+                            RedactionPresetTarget.birthPlace,
+                          ),
                         ],
                       ),
                     ),
@@ -214,14 +226,16 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
                   label: Text(l10n?.changePhoto ?? 'Ganti Foto', style: const TextStyle(fontSize: 12)),
                   style: TextButton.styleFrom(
                     foregroundColor: AppColors.primaryLight,
+                    minimumSize: const Size(0, 44),
                     visualDensity: VisualDensity.compact,
                   ),
                 ),
+                // §A11Y: default IconButton is 48dp; compact dropped it to 40.
                 IconButton(
                   onPressed: widget.onClear,
                   icon: const Icon(Icons.delete_outline, size: 18, color: AppColors.danger),
                   tooltip: l10n?.deleteImage ?? 'Hapus Gambar',
-                  visualDensity: VisualDensity.compact,
+                  constraints: const BoxConstraints(minWidth: 44, minHeight: 44),
                 ),
               ],
             ),

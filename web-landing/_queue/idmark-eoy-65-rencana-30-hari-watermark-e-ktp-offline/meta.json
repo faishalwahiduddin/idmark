@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "rencana-30-hari-watermark-e-ktp-offline",
-    "en": "30-day-watermark-e-ktp-plan",
-    "ar": "watermark-e-ktp-8",
-    "jv": "pandhuan-watermark-e-ktp-idmark-8",
-    "su": "pituduh-watermark-e-ktp-idmark-8",
-    "zh": "idmark-watermark-e-ktp-实用指南-8",
-    "ja": "idmarkwatermark-e-ktp-ガイド-8"
+    "id": "rencana-30-hari-untuk-watermark-e-ktp",
+    "en": "a-30-day-plan-for-watermark-e-ktp",
+    "ar": "khta-thlathyn-ywma-lalmalwmat-almhma-aljz-2",
+    "jv": "rencana-30-dina-kanggo-watermark-e-ktp",
+    "su": "rencana-30-poe-pikeun-watermark-e-ktp",
+    "zh": "zhong-yao-xin-xi-de-30-tian-ji-hua-di-2-pian",
+    "ja": "taisetsu-na-jouhou-no-30-nichi-puran-dai-2-kai"
   },
   "titles": {
-    "id": "Rencana 30 Hari watermark e-KTP",
-    "en": "30-Day watermark e-KTP Plan",
-    "ar": "watermark e-KTP — دليل IDMark",
-    "jv": "Pandhuan: Rencana 30 Hari watermark e-KTP",
-    "su": "Pituduh: Rencana 30 Hari watermark e-KTP",
-    "zh": "IDMark · watermark e-KTP 实用指南",
-    "ja": "IDMark｜watermark e-KTP ガイド"
+    "id": "Rencana 30 hari untuk watermark e-KTP",
+    "en": "A 30-day plan for watermark e-KTP",
+    "ar": "خطة ثلاثين يوماً لـالمعلومات المهمة · الجزء 2",
+    "jv": "Rencana 30 dina kanggo watermark e-KTP",
+    "su": "Rencana 30 poé pikeun watermark e-KTP",
+    "zh": "重要信息的30天计划 · 第2篇",
+    "ja": "大切な情報の30日プラン · 第2回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Rencana 30 hari untuk watermark e-KTP: versi paling kecil di minggu pertama, waktu menjalankannya sepanjang bulan, dan tinjauan mingguan di akhir tiap minggu.",
+    "en": "A 30-day plan for watermark e-KTP: the smallest version in week one, when to run it through the month and a weekly check to close each week.",
+    "ar": "خطة 30 يوماً لـ watermark e-KTP: النسخة الأصغر في الأسبوع الأول، ووقت التشغيل طوال الشهر، ومراجعة أسبوعية تغلق كل أسبوع.",
+    "ja": "watermark e-KTP の30日プラン。1週目は最小バージョン、月を通して実行するタイミング、毎週の締めに行う確認をまとめました。",
+    "zh": "watermark e-KTP 的 30 天计划：第一周用最小版本，整月固定时间运行，每周结束时检查。",
+    "jv": "Rencana 30 dina kanggo watermark e-KTP: versi paling cilik ing minggu pisanan, wektu nglakokaké sajrone sasi, lan tinjauan mingguan ing pungkasan saben minggu.",
+    "su": "Rencana 30 poé pikeun watermark e-KTP: versi pangleutikna dina minggu kahiji, waktu ngajalankeunana sabulan, jeung tinjauan mingguan unggal minggu."
+  }
 }

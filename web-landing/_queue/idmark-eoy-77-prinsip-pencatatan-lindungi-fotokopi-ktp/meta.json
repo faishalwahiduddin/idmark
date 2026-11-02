@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "prinsip-pencatatan-lindungi-fotokopi-ktp-jangka-panjang-offline",
-    "en": "long-term-lindungi-fotokopi-ktp-logging-principles",
-    "ar": "lindungi-fotokopi-ktp-9",
-    "jv": "pandhuan-lindungi-fotokopi-ktp-idmark-9",
-    "su": "pituduh-lindungi-fotokopi-ktp-idmark-9",
-    "zh": "idmark-lindungi-fotokopi-ktp-实用指南-9",
-    "ja": "idmarklindungi-fotokopi-ktp-ガイド-9"
+    "id": "lindungi-fotokopi-ktp-panduan-yang-tetap-relevan",
+    "en": "lindungi-fotokopi-ktp-a-guide-that-stays-useful",
+    "ar": "almalwmat-almhma-dlyl-ybqa-mfyda-aljz-3",
+    "jv": "lindungi-fotokopi-ktp-pandhuan-sing-tetep-migunani",
+    "su": "lindungi-fotokopi-ktp-pituduh-anu-tetep-mangpaat",
+    "zh": "zhong-yao-xin-xi-chang-qi-you-xiao-de-zhi-nan-di-3-pian",
+    "ja": "taisetsu-na-jouhou-nagaku-tsukae-ru-gaido-dai-3-kai"
   },
   "titles": {
-    "id": "Prinsip Pencatatan lindungi fotokopi KTP Jangka Panjang",
-    "en": "Long-Term lindungi fotokopi KTP Logging Principles",
-    "ar": "lindungi fotokopi KTP — دليل IDMark",
-    "jv": "Pandhuan: Prinsip Pencatatan lindungi fotokopi KTP Jangka Panjang",
-    "su": "Pituduh: Prinsip Pencatatan lindungi fotokopi KTP Jangka Panjang",
-    "zh": "IDMark · lindungi fotokopi KTP 实用指南",
-    "ja": "IDMark｜lindungi fotokopi KTP ガイド"
+    "id": "lindungi fotokopi KTP: panduan yang tetap relevan",
+    "en": "lindungi fotokopi KTP: a guide that stays useful",
+    "ar": "المعلومات المهمة: دليل يبقى مفيداً · الجزء 3",
+    "jv": "lindungi fotokopi KTP: pandhuan sing tetep migunani",
+    "su": "lindungi fotokopi KTP: pituduh anu tetep mangpaat",
+    "zh": "重要信息：长期有效的指南 · 第3篇",
+    "ja": "大切な情報：長く使えるガイド · 第3回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Lindungi fotokopi KTP: panduan yang tetap berguna dari waktu ke waktu, mencakup prinsip catatan yang jelas, versi paling kecil, dan penyimpanan di perangkat.",
+    "en": "Lindungi fotokopi KTP: a guide that stays useful over time, covering the principles of a clear record, the smallest version and device storage.",
+    "ar": "lindungi fotokopi KTP: دليل يبقى مفيداً مع الوقت، يغطي مبادئ السجل الواضح، والنسخة الأصغر، وتخزين البيانات على الجهاز.",
+    "ja": "長く役立つ lindungi fotokopi KTP のガイド。明確な記録の原則、最小バージョン、端末での保存方法を扱います。",
+    "zh": "lindungi fotokopi KTP：长期有用的指南，涵盖清晰记录的原则、最小版本与设备存储。",
+    "jv": "Lindungi fotokopi KTP: pandhuan sing tetep migunani saka wektu ke wektu, kalebu prinsip cathetan sing cetha, versi paling cilik, lan panyimpenan ing piranti.",
+    "su": "Lindungi fotokopi KTP: pituduh anu tetep mangpaat ti waktu ka waktu, kaasup prinsip catetan anu jelas, versi pangleutikna, jeung panyimpanan di alat."
+  }
 }

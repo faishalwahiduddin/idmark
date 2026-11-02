@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "setup-watermark-e-ktp-offline-tanpa-kuota-praktis",
-    "en": "set-up-offline-watermark-e-ktp-without-data-practical",
-    "ar": "watermark-e-ktp-3",
-    "jv": "pandhuan-watermark-e-ktp-idmark-3",
-    "su": "pituduh-watermark-e-ktp-idmark-3",
-    "zh": "idmark-watermark-e-ktp-实用指南-3",
-    "ja": "idmarkwatermark-e-ktp-ガイド-3"
+    "id": "watermark-e-ktp-untuk-pengguna-di-indonesia",
+    "en": "watermark-e-ktp-for-readers-in-indonesia",
+    "ar": "almalwmat-almhma-khyarat-qlyla-mntqya",
+    "jv": "watermark-e-ktp-kanggo-pangguna-ing-indonesia",
+    "su": "watermark-e-ktp-pikeun-pamake-di-indonesia",
+    "zh": "zhong-yao-xin-xi-zhi-de-kao-lv-de-ji-zhong-xuan-ze",
+    "ja": "taisetsu-na-jouhou-nattoku-dekiru-sentakushi"
   },
   "titles": {
-    "id": "Setup watermark e-KTP Offline tanpa Kuota",
-    "en": "Set Up Offline watermark e-KTP Without Data (Practical)",
-    "ar": "watermark e-KTP — دليل IDMark",
-    "jv": "Pandhuan: Setup watermark e-KTP Offline tanpa Kuota",
-    "su": "Pituduh: Setup watermark e-KTP Offline tanpa Kuota",
-    "zh": "IDMark · watermark e-KTP 实用指南",
-    "ja": "IDMark｜watermark e-KTP ガイド"
+    "id": "watermark e-KTP untuk pengguna di Indonesia",
+    "en": "watermark e-KTP for readers in Indonesia",
+    "ar": "المعلومات المهمة: خيارات قليلة منطقية",
+    "jv": "watermark e-KTP kanggo pangguna ing Indonesia",
+    "su": "watermark e-KTP pikeun pamaké di Indonésia",
+    "zh": "重要信息：值得考虑的几种选择",
+    "ja": "大切な情報：納得できる選択肢"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Atur watermark e-KTP untuk pemakaian harian di Indonesia dengan rutinitas offline: mulai dari versi paling kecil, kapan menjalankannya, dan tinjauan mingguan.",
+    "en": "Set up watermark e-KTP for daily use in Indonesia with an offline routine: the smallest version to begin with, when to run it and a weekly review.",
+    "ar": "أعدّ علامة مائية لـ e-KTP للاستخدام اليومي في إندونيسيا بروتين بلا اتصال: ابدأ بالنسخة الأصغر، ثم حدد وقت التشغيل ومراجعة أسبوعية.",
+    "ja": "インドネシアで e-KTP のウォーターマークを毎日使うための設定ガイドです。オフラインの習慣を、最小バージョンから始め、週次で見直す流れで説明します。",
+    "zh": "在印尼日常使用 e-KTP 水印：离线流程从最小版本起步，确定运行时间，并每周回顾。",
+    "jv": "Atur watermark e-KTP kanggo panggunaan saben dina ing Indonesia kanthi rutinitas offline: wiwit versi paling cilik, kapan dilakokaké, lan tinjauan mingguan.",
+    "su": "Setel watermark e-KTP pikeun pamakean di Indonesia kalayan rutinitas offline: mimitian ti versi pangleutikna, iraha ngajalankeunana, jeung tinjauan mingguan."
+  }
 }

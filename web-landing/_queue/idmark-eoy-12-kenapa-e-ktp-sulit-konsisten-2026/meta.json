@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "kenapa-e-ktp-sulit-konsisten-2026",
+    "id": "kenapa-e-ktp-sulit-konsisten",
     "en": "why-e-ktp-habits-break",
-    "ar": "e-ktp-2",
-    "jv": "pandhuan-e-ktp-idmark-2",
-    "su": "pituduh-e-ktp-idmark-2",
-    "zh": "idmark-e-ktp-实用指南-2",
-    "ja": "idmarke-ktp-ガイド-2"
+    "ar": "almalwmat-almhma-bsjlat-mwthwqa",
+    "jv": "kenapa-e-ktp-angel-konsisten",
+    "su": "naha-e-ktp-hese-konsisten",
+    "zh": "ji-lu-ke-xin-de-zhong-yao-xin-xi",
+    "ja": "kiroku-wo-shinrai-dekiru-taisetsu-na-jouhou"
   },
   "titles": {
-    "id": "Kenapa e-KTP Sulit Konsisten",
-    "en": "Why e-KTP Habits Break",
-    "ar": "e-KTP — دليل IDMark",
-    "jv": "Pandhuan: Kenapa e-KTP Sulit Konsisten",
-    "su": "Pituduh: Kenapa e-KTP Sulit Konsisten",
-    "zh": "IDMark · e-KTP 实用指南",
-    "ja": "IDMark｜e-KTP ガイド"
+    "id": "Kenapa e-KTP sulit konsisten?",
+    "en": "Why e-KTP habits break",
+    "ar": "المعلومات المهمة بسجلات موثوقة",
+    "jv": "Kenapa e-KTP angel konsisten?",
+    "su": "Naha e-KTP hésé konsisten?",
+    "zh": "记录可信的重要信息",
+    "ja": "記録を信頼できる大切な情報"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Kenapa kebiasaan e-KTP sulit konsisten: alasan umum rutinitas gagal, dan cara sederhana untuk kembali on track setelah beberapa hari terlewat.",
+    "en": "Why e-KTP habits break: the common reasons a routine fails, and a simple way to get back on track after a few missed days.",
+    "ar": "لماذا يصعب الحفاظ على عادات e-KTP: أسباب شائعة لفشل الروتين، وطريقة بسيطة للعودة إلى المسار بعد أيام فائتة قليلة.",
+    "ja": "続かない e-KTP の習慣の理由を整理します。ルーティンが崩れる一般的な原因と、数日抜けた後に元の流れへ戻る簡単な方法を紹介。",
+    "zh": "为什么 e-KTP 习惯难以坚持：流程失败的常见原因，以及漏掉几天后回到正轨的简单办法。",
+    "jv": "Kenapa kebiasaan e-KTP angel konsisten: alesan umum rutinitas gagal, lan cara gampang kanggo bali on track sawisé sawetara dina kelewat.",
+    "su": "Naha kabiasaan e-KTP hésé konsisten: alesan umum rutinitas gagal, jeung cara gampang pikeun balik on track sanggeus sababaraha poé kaliwat."
+  }
 }

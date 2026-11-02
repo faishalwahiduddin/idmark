@@ -1,8 +1,8 @@
 {
   "appName": "IDMark",
   "appDescription": "Watermark KTP Aman",
-  "tabWatermark": "Watermark",
-  "tabPreset": "Preset",
+  "tabWatermark": "Tanda Cai",
+  "tabPreset": "Cithakan",
   "tabHistory": "Riwayat",
   "tabGuide": "Panduan",
   "tabSettings": "Setélan",
@@ -15,20 +15,20 @@
   "selectTheme": "Pilih Téma",
   "language": "Basa",
   "selectLanguage": "Pilih Basa",
-  "localeIndonesian": "Bahasa Indonesia",
-  "localeEnglish": "English",
-  "localeArabic": "العربية",
+  "localeIndonesian": "Basa Indonésia",
+  "localeEnglish": "Basa Inggris",
+  "localeArabic": "Basa Arab",
   "localeJavanese": "Basa Jawa",
   "localeSundanese": "Basa Sunda",
-  "localeChinese": "中文",
-  "localeJapanese": "日本語",
-  "localeSpanish": "Español",
+  "localeChinese": "Basa Cina",
+  "localeJapanese": "Basa Jepang",
+  "localeSpanish": "Basa Spanyol",
   "about": "Ngeunaan",
   "cancel": "Batal",
   "save": "Simpen",
-  "delete": "Hapus",
+  "delete": "Pupus",
   "edit": "Édit",
-  "reset": "Reset",
+  "reset": "Balikkeun",
   "kominfoGuide": "Panduan Kominfo",
   "history": "Riwayat Log",
   "presets": "Preset Pamaké",
@@ -37,7 +37,7 @@
   "resetWarningBody": "Setélan watermark bakal di-reset kana bawaan.",
   "aboutApp": "Ngeunaan Aplikasi",
   "appVersion": "Vérsi",
-  "appDomain": "Domain",
+  "appDomain": "Doméin",
   "appCompliance": "Standar Patuh",
   "appProvider": "Panyadia",
   "clearHistory": "Beresihkeun",
@@ -57,7 +57,7 @@
   "verifiedOfficial": "★ DIVÉRIFIKASI RESMI ★",
   "dateLabel": "TGL",
   "verifyIdentity": "VÉRIFIKASI IDENTITAS",
-  "idmarkVerified": "IDMARK VERIFIED",
+  "idmarkVerified": "IDMARK KAPARIKSA",
   "privacySettings": "Privasi",
   "autoStripExif": "Hapus EXIF",
   "autoStripExifDesc": "Hapus data lokasi GPS",
@@ -71,7 +71,7 @@
   "hashCopied": "Hash integritas disalin kana papan klip!",
   "close": "Tutup",
   "share": "Bagikeun",
-  "resetWatermarkTooltip": "Reset Watermark",
+  "resetWatermarkTooltip": "Balikkeun Watermark",
   "configResetKominfo": "Konfigurasi dibalikeun deui kana standar saran Kominfo.",
   "bannerUuPdp": "Standar UU PDP: Pasang watermark tujuan khusus, kaping, sareng sénsor data sénsitip sateuacan ngabagikeun poto KTP.",
   "sensorBoxAdded": "Kotak sénsor \"{label}\" ditambahkeun.",
@@ -128,7 +128,7 @@
   "activeWatermarkWithCount": "Watermark Aktip ({count} sénsor)",
   "activeWatermarkPreview": "Sawangan Watermark Aktip",
   "changePhoto": "Ganti Poto",
-  "deleteImage": "Hapus Gambar",
+  "deleteImage": "Pupus Gambar",
   "uploadIdPhoto": "Unggah Poto KTP / Idéntitas",
   "uploadIdPhotoDesc": "Pilih poto KTP, SIM, atanapi Paspor kanggo nambihan cap tujuan, kaping, sareng sénsor data penting.",
   "onDeviceBadge": "100% Dina Alat • Gambar moal kantos dikirim ka sérvér",
@@ -195,8 +195,8 @@
   "localDeviceStorage": "Panyimpenan Lokal Alat",
   "resetDefaultsDesc": "Mbalikeun deui citakan sareng setélan téks ka standar pabrik",
   "appLabel": "Aplikasi",
-  "officialKominfoGuide": "Panduan Resmi Kominfo & UU PDP",
-  "privacyAndSettings": "Privasi & Pengaturan",
+  "officialKominfoGuide": "Pituduh Resmi Kominfo & UU PDP",
+  "privacyAndSettings": "Privasi & Setelan",
   "@historySubtitle": {
     "placeholders": {
       "count": {
@@ -371,5 +371,267 @@
   "privacyGradeDescMax": "Panangtayungan Maksimal • Nyumponan standar panangtayungan data",
   "privacyGradeDescVeryGood": "Panangtayungan Sae Pisan • Dokumén aman dibagikeun",
   "privacyGradeDescFair": "Panangtayungan Cukup • Disarankeun nambihan tanggal sareng sensor NIK",
-  "privacyGradeDescWeak": "Panangtayungan Lemah • Tambihkeun tujuan spésifik sareng tanggal"
+  "privacyGradeDescWeak": "Panangtayungan Lemah • Tambihkeun tujuan spésifik sareng tanggal",
+  "appTitle": "IDMark",
+  "appTagline": "Cap watermark téks dina poto KTP, SIM jeung dokumén penting.",
+  "appSubtitle": "Pangjaga Identitas & Privasi",
+  "onbSkip": "Lese",
+  "onbNext": "Teruskeun",
+  "onbGetStarted": "Mimiti Ayeuna",
+  "onbPrivacyHeadline": "Privasi & Offline Kacangking",
+  "onbPrivacyDetail": "Sakabéh data disimpen aman dina alat anjeun tanpa palacak.",
+  "onbSlide1Title": "Cap identitas",
+  "onbSlide1Sub": "Tujuan & tanggal dina dokumén",
+  "onbSlide1Badge": "100% Offline & Pribadi",
+  "onbSlide2Title": "Cithakan",
+  "onbSlide2Sub": "Cithakan siap pakai",
+  "onbSlide2Badge": "Ringan & Responsif",
+  "onbSlide3Title": "Riwayat",
+  "onbSlide3Sub": "Hasil cap disimpen",
+  "onbSlide3Badge": "Tanpa Iklan & Tanpa Akun",
+  "onbSlide4Title": "Dina alat",
+  "onbSlide4Sub": "Tanpa unggah ka cloud",
+  "onbSlide4Badge": "Data Disimpen dina Alat",
+  "loadingLabel": "Ngamuat…",
+  "download": "Undeur",
+  "downloadSuccess": "Dokumén ter-watermark hasil diundeur ({filename})! 🛡️✨",
+  "@downloadSuccess": {
+    "placeholders": {
+      "filename": {
+        "type": "String"
+      }
+    }
+  },
+  "protectionProof": "Bukti Proteksi",
+  "tierExemplary": "Conto",
+  "tierDisciplined": "Disiplin",
+  "tierOrderly": "Tertib",
+  "tierStarting": "Mimiti",
+  "disciplineCount": "{count} berkas watermark • {tier}",
+  "@disciplineCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "tier": {
+        "type": "String"
+      }
+    }
+  },
+  "disciplineDesc": "Unggal ékspor aman nambahan disiplin protéksi dokumén.",
+  "shareDiscipline": "Bagikeun disiplin",
+  "disciplineShareText": "{count} berkas watermark • {tier} #IDMark",
+  "@disciplineShareText": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "tier": {
+        "type": "String"
+      }
+    }
+  },
+  "allTemplates": "Sadayana",
+  "myPresets": "Cithakan Kuring",
+  "catBanking": "Perbankan",
+  "catFinance": "Finansial & Pinjol",
+  "catCareer": "Karir & SDM",
+  "catRental": "Séwa & Wisata",
+  "catTelecom": "Télékomunikasi",
+  "catMultifinance": "Multikeuangan",
+  "catInvestment": "Investasi",
+  "catPublicService": "Palayanan Umum",
+  "catInternational": "Internasional",
+  "appearanceAndLanguage": "Pintonan & Basa",
+  "themeMode": "Mode Téma",
+  "identity": "Identitas",
+  "patternDiagonalBand": "Pita Melintang",
+  "patternDiagonalBandDesc": "Hiji garis diagonal kandel ngaliwatan tengah dokumén (Rekomendasi Kominfo)",
+  "patternRepeatedGrid": "Pola Malikan (Grid)",
+  "patternRepeatedGridDesc": "Pola téks malikan dina sakabéh poto pikeun protéksi maksimal",
+  "patternBottomBar": "Pita Handap",
+  "patternBottomBarDesc": "Pita téks padet di bagian handap dokumén",
+  "patternCornerStamp": "Cap Juruk",
+  "patternCornerStampDesc": "Cap vérifikasi di juru katuhu handap",
+  "patternSecuritySeal": "Segel Resmi Bunder",
+  "patternSecuritySealDesc": "Stempel segel bunder ganda kalawan wates vérifikasi",
+  "patternCrossStamp": "Silang Ganda (X-Band)",
+  "patternCrossStampDesc": "Dua garis diagonal silang ngajaga sakabéh eusi dokumén",
+  "patternQrBadge": "Lencana QR Vérifikasi",
+  "patternQrBadgeDesc": "Lencana vérifikasi mawa QR code kaabsahan tujuan jeung tanggal",
+  "colorWhite": "Bodas Beresih",
+  "colorDark": "Hideung Pekat",
+  "colorRed": "Beureum Resmi",
+  "colorBlue": "Biru Vérifikasi",
+  "colorEmerald": "Héjo Aman",
+  "colorAmber": "Konéng Pépéling",
+  "colorPurple": "Ungu Segel",
+  "formatPng": "PNG (Résolusi Pinuh)",
+  "formatPngDesc": "Format lossless kualitas asli tanpa ngurangan katejaman",
+  "formatJpeg": "JPEG (Ukuran Ringan)",
+  "formatJpegDesc": "Format kakomprési hémat kuota pikeun unggah portal gancang",
+  "formatPdf": "Dokumén PDF (Siap Citak)",
+  "formatPdfDesc": "Format berkas dokumén resmi standar kantor & bank",
+  "redactBlackout": "Sensor Hideung (Blackout)",
+  "redactBlackoutDesc": "Kotak hideung padet permanén nutupan data",
+  "redactMosaic": "Sensor Mosaik (Pixelate)",
+  "redactMosaicDesc": "Éfék pikselasi ngaburkeun téks sénsitip",
+  "redactBlur": "Sensor Burem (Blur)",
+  "redactBlurDesc": "Éfék burem ngaratakeun rincian data pribadi",
+  "targetNik": "Nomer NIK / ID",
+  "targetSignature": "Tanda Tangan",
+  "targetAddress": "Alamat Lengkep",
+  "targetBirthPlace": "Tempat / Tgl Lahir",
+  "targetPhoto": "Poto Beungeut",
+  "shareProofTitle": "Bukti Protéksi Dokumén",
+  "shareProofSubtitle": "Sertipikat integritas watermark & sensor luyu jeung Kominfo",
+  "shareFormatFeed": "Unggahan (4:5)",
+  "shareFormatStory": "Carita (9:16)",
+  "shareCopyText": "Salin Téks",
+  "shareProcessing": "Ngolah...",
+  "shareDownloadProofPng": "Undeur Bukti PNG",
+  "shareShareProof": "Bagikeun Bukti",
+  "shareCardBrand": "IDMARK • ID AMAN",
+  "shareCardOnDevice": "100% DINA ALAT",
+  "shareCardTitle": "BUKTI PROTÉKSI WATERMARK DOKUMÉN",
+  "shareCardPurposeLabel": "PIKEUN KAPERLUAN KHUSUS:",
+  "shareCardPrivacyScore": "SKOR PRIVASI",
+  "shareCardRedactions": "SENSOR",
+  "shareCardAreaCount": "{count} Wewengkon",
+  "@shareCardAreaCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "shareCardFormat": "JINIS",
+  "shareCardDate": "Tanggal: {date}",
+  "@shareCardDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "shareCardFooter": "idmark.faishal.id • Standar Watermark KTP Kominfo RI",
+  "shareCardIntegrityHash": "HASH INTEGRITAS (SHA-256):",
+  "shareProofHeading": "🛡️ BUKTI PROTÉKSI DOKUMÉN — IDMARK",
+  "shareProofPurposeLine": "📌 Kaperluan Khusus: \"{purpose}\"",
+  "@shareProofPurposeLine": {
+    "placeholders": {
+      "purpose": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofDateLine": "📅 Tanggal Cap: {date}",
+  "@shareProofDateLine": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofScoreLine": "🔒 Skor Privasi: {score}/100",
+  "@shareProofScoreLine": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "shareProofRedactionLine": "✂️ Sensor Permanén: {count} Wewengkon Katutup",
+  "@shareProofRedactionLine": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "shareProofHashLine": "🔑 Hash SHA-256: {hash}",
+  "@shareProofHashLine": {
+    "placeholders": {
+      "hash": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofOnDeviceLine": "✅ Diprosés 100% on-device tanpa server (Luyu jeung Panduan Kominfo RI)",
+  "shareProofCtaLine": "Ngajaga identitas anjeun ku IDMark: https://idmark.faishal.id",
+  "shareProofDownloaded": "Sertipikat protéksi dokumén hasil diundeur! 🛡️✨",
+  "shareProofFailed": "Gagal ngabagikeun bukti: {error}",
+  "@shareProofFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofCopied": "Bukti protéksi disalin ka clipboard! 📋✨",
+  "themeCyberShield": "Taméng Siber",
+  "themeEmeraldSafe": "Zamrud Aman",
+  "themeObsidianVault": "Brankas Obsidian",
+  "themeAmberProof": "Bukti Ambar",
+  "quickSensorShort": "Sensor Gancang:",
+  "redactedTag": "[DISENSOR: {label}]",
+  "@redactedTag": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "defaultWatermarkText": "UKUR KEUR VÉRIFIKASI IDENTITAS",
+  "pdfHeader": "IDMARK — DOKUMÉN IDENTITAS TER-WATERMARK",
+  "pdfComplianceNote": "Luyu jeung Prinsip Perlindungan Data Pribadi (UU No. 27/2022)",
+  "pdfOnDevice": "100% Dina Alat",
+  "pdfPurposeLabel": "Tujuan Pamakéan: ",
+  "pdfDateLabel": "Tanggal Transaksi: {date}",
+  "@pdfDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "pdfPrintedAt": "Waktu Citak: {date}",
+  "@pdfPrintedAt": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "pdfChecksum": "Checksum SHA-256: ",
+  "catEcommerce": "Dagang Éléktronik",
+  "presetBank": "Buka Rekening Bank",
+  "presetBankUpdate": "Ngamutahirkeun Data Nasabah Bank",
+  "presetFintech": "Pinjol / Fintech Resmi OJK",
+  "presetPaylater": "Aktivasina Paylater / Kartu Kiridit",
+  "presetJob": "Lamaran Pagawéan",
+  "presetHrOnboarding": "Onboarding Karyawan Anyar",
+  "presetRental": "Séwa Mobil / Motor / Rental",
+  "presetHotel": "Check-In Hotel / Villa / Kost",
+  "presetTelco": "Registrasi Kartu SIM Prabayar",
+  "presetSimReplace": "Ganti Kartu SIM Leungit / Ruksak",
+  "presetKredit": "Pangajuan Leasing / Multifinance",
+  "presetKpr": "Pangajuan KPR / Properti",
+  "presetInvestment": "Akun Sekuritas Saham IDX",
+  "presetCrypto": "Vérifikasi Akun Kripto Bappebti",
+  "presetEcommerce": "Vérifikasi Merchant Marketplace",
+  "presetBpjs": "Klaim JHT / Saldo BPJS",
+  "presetGovKelurahan": "Administrasi Kependudukan / Kalurahan",
+  "presetGlobalKyc": "Vérifikasi KYC Internasional",
+  "defaultInternalSubtext": "UKUR KEUR DOKUMÉN INTERNAL",
+  "pdfLegalNotice": "BEWARA HUKUM: Salinan dokumén identitas ieu ngan sah jeung diidinan pikeun tujuan nu katulis di luhur. Pamakéan di luar éta mangrupa tindak pidana nyalahgunakeun data pribadi.",
+  "validationRedactionLabelRequired": "Label sensor teu meunang kosong",
+  "validationRedactionXRange": "Posisi X sensor kudu aya dina rentang 0.0 - 1.0",
+  "validationRedactionYRange": "Posisi Y sensor kudu aya dina rentang 0.0 - 1.0",
+  "validationRedactionWidthRange": "Rubak sensor kudu aya dina rentang >0.0 - 1.0",
+  "validationRedactionHeightRange": "Jangkung sensor kudu aya dina rentang >0.0 - 1.0",
+  "validationAuditIdRequired": "ID audit log teu meunang kosong",
+  "validationAuditPurposeRequired": "Tujuan audit log teu meunang kosong",
+  "validationAuditHashRequired": "Hash SHA-256 teu meunang kosong",
+  "validationAuditScoreRange": "Skor privasi kudu aya antara 0 jeung 100"
 }

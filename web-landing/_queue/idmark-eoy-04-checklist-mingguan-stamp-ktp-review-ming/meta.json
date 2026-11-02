@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "checklist-mingguan-stamp-ktp-review-mingguan",
-    "en": "weekly-stamp-ktp-checklist-review",
-    "ar": "stamp-ktp",
-    "jv": "pandhuan-stamp-ktp-idmark",
-    "su": "pituduh-stamp-ktp-idmark",
-    "zh": "idmark-stamp-ktp-实用指南",
-    "ja": "idmarkstamp-ktp-ガイド"
+    "id": "checklist-stamp-ktp-untuk-satu-layar",
+    "en": "a-one-screen-stamp-ktp-checklist",
+    "ar": "almalwmat-almhma-lqra-indwnysya",
+    "jv": "dhaftar-priksa-stamp-ktp-mung-siji-layar",
+    "su": "daptar-pariksa-stamp-ktp-dina-hiji-layar",
+    "zh": "gei-yin-du-ni-xi-ya-du-zhe-de-zhong-yao-xin-xi",
+    "ja": "indoneshia-no-dokusha-notameno-taisetsu-na-jouhou"
   },
   "titles": {
-    "id": "Checklist Mingguan stamp KTP + Review",
-    "en": "Weekly stamp KTP Checklist + Review — Offline First",
-    "ar": "stamp KTP — دليل IDMark",
-    "jv": "Pandhuan: Checklist Mingguan stamp KTP + Review",
-    "su": "Pituduh: Checklist Mingguan stamp KTP + Review",
-    "zh": "IDMark · stamp KTP 实用指南",
-    "ja": "IDMark｜stamp KTP ガイド"
+    "id": "Checklist stamp KTP untuk satu layar",
+    "en": "A one-screen stamp KTP checklist",
+    "ar": "المعلومات المهمة لقرّاء إندونيسيا",
+    "jv": "Dhaftar priksa stamp KTP mung siji layar",
+    "su": "Daptar pariksa stamp KTP dina hiji layar",
+    "zh": "给印度尼西亚读者的重要信息",
+    "ja": "インドネシアの読者のための大切な情報"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Daftar periksa stamp KTP satu layar: apa yang disiapkan sebelum memberi stamp, kapan rutinitas dijalankan tiap minggu, dan cara cepat melihat hari terlewat.",
+    "en": "A one-screen stamp KTP checklist: what to set before you stamp, when to run the routine each week, and how to spot a missed day early.",
+    "ar": "قائمة مراجعة لـ stamp KTP في شاشة واحدة: ما تجهزه قبل الختم، ومتى تشغل الروتين كل أسبوع، وكيف ترصد اليوم الفائت مبكراً.",
+    "ja": "1画面で済む stamp KTP のチェックリストです。スタンプを押す前の準備、毎週の実行タイミング、抜けた日にすぐ気づく方法をまとめました。",
+    "zh": "一屏 stamp KTP 清单：盖章前准备什么、每周何时运行，以及如何尽早发现漏做的日子。",
+    "jv": "Dhaftar priksa stamp KTP mung siji layar: apa sing disiapaké sadurungé ngé-stamp, kapan rutinitas dilakokaké saben minggu, lan cara cepet ndeleng dina kelewat.",
+    "su": "Daptar pariksa stamp KTP sahiji layar: naon anu disiapkeun sateuacan dibéré stamp, iraha rutinitas dijalankeun, jeung cara gancang ningali poé kaliwat."
+  }
 }

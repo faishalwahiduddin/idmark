@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "stamp-tujuan-tanggal-dokumen-saat-jadwal-padat-akhir-tahun-offline",
-    "en": "stamp-tujuan-tanggal-dokumen-during-busy-year-end-weeks",
-    "ar": "stamp-tujuan-tanggal-dokumen-4",
-    "jv": "pandhuan-stamp-tujuan-tanggal-dokumen-idmark-4",
-    "su": "pituduh-stamp-tujuan-tanggal-dokumen-idmark-4",
-    "zh": "idmark-stamp-tujuan-tanggal-dokumen-实用指南-4",
-    "ja": "idmarkstamp-tujuan-tanggal-dokumen-ガイド-4"
+    "id": "stamp-tujuan-tanggal-dokumen-di-musim-paling-ramai",
+    "en": "stamp-tujuan-tanggal-dokumen-in-the-busiest-season",
+    "ar": "almalwmat-almhma-fy-akthr-almwasm-anshghala",
+    "jv": "stamp-tujuan-tanggal-dokumen-ing-mangsa-paling-rame",
+    "su": "stamp-tujuan-tanggal-dokumen-dina-usum-pangsibukna",
+    "zh": "zui-mang-de-ji-jie-li-de-zhong-yao-xin-xi",
+    "ja": "ichiban-isogashii-jiki-no-taisetsu-na-jouhou"
   },
   "titles": {
-    "id": "stamp tujuan tanggal dokumen: panduan praktis di IDMark",
-    "en": "stamp tujuan tanggal dokumen During Busy Year-End Weeks",
-    "ar": "stamp tujuan tanggal dokumen — دليل IDMark",
-    "jv": "Pandhuan: stamp tujuan tanggal dokumen: panduan praktis di IDMark",
-    "su": "Pituduh: stamp tujuan tanggal dokumen: panduan praktis di IDMark",
-    "zh": "IDMark · stamp tujuan tanggal dokumen 实用指南",
-    "ja": "IDMark｜stamp tujuan tanggal dokumen ガイド"
+    "id": "stamp tujuan tanggal dokumen di musim paling ramai",
+    "en": "stamp tujuan tanggal dokumen in the busiest season",
+    "ar": "المعلومات المهمة في أكثر المواسم انشغالاً",
+    "jv": "stamp tujuan tanggal dokumen ing mangsa paling rame",
+    "su": "stamp tujuan tanggal dokumen dina usum pangsibukna",
+    "zh": "最忙的季节里的重要信息",
+    "ja": "いちばん忙しい時期の大切な情報"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Stamp tujuan tanggal dokumen di musim paling ramai: tetap jalankan versi paling kecil, rencanakan kapan menjalankannya, dan susun ulang tinjauan mingguan.",
+    "en": "Stamp tujuan tanggal dokumen in the busiest season: keep the smallest version running, plan when to run it and rebuild the weekly check.",
+    "ar": "stamp tujuan tanggal dokumen في موسم الذروة: حافظ على تشغيل النسخة الأصغر، وخطط لوقت التشغيل، وأعد بناء المراجعة الأسبوعية.",
+    "ja": "いちばん忙しい時期の stamp tujuan tanggal dokumen。最小バージョンを動かし続け、実行タイミングを決め、毎週の確認を組み直す方法です。",
+    "zh": "最忙季节的 stamp tujuan tanggal dokumen：保持最小版本运行，规划运行时间，重建每周回顾。",
+    "jv": "Stamp tujuan tanggal dokumen ing mangsa paling rame: tetep nglakokaké versi paling cilik, rencanakaké kapan dilakokaké, lan susun maneh tinjauan mingguan.",
+    "su": "Stamp tujuan tanggal dokumen dina usum paling rame: tetep ngajalankeun versi pangleutikna, rencanakeun iraha dijalankeun, jeung susun deui tinjauan mingguan."
+  }
 }

@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "catatan-watermark-ektp-aman-offline-yang-mudah-dicari-nanti-harian",
-    "en": "watermark-ektp-aman-offline-notes-that-stay-searchable",
-    "ar": "watermark-ektp-aman-offline-7",
-    "jv": "pandhuan-watermark-ektp-aman-offline-idmark-7",
-    "su": "pituduh-watermark-ektp-aman-offline-idmark-7",
-    "zh": "idmark-watermark-ektp-aman-offline-实用指南-7",
-    "ja": "idmarkwatermark-ektp-aman-offline-ガイド-7"
+    "id": "menyusun-mode-offline-yang-enak-dibaca",
+    "en": "writing-watermark-ektp-aman-offline-notes-people-can-read",
+    "ar": "ktaba-almalwmat-almhma-bshkl-yqra-aljz-2",
+    "jv": "nulis-mode-offline-sing-kepenak-diwaca",
+    "su": "nulis-mode-offline-anu-genah-dibaca",
+    "zh": "ba-zhong-yao-xin-xi-xie-de-rang-ren-du-de-xia-qu-di-2-pian",
+    "ja": "yome-ru-taisetsu-na-jouhou-no-kakikata-dai-2-kai"
   },
   "titles": {
-    "id": "Catatan watermark ektp aman offline yang Mudah Dicari Nanti",
-    "en": "watermark ektp aman offline Notes That Stay Searchable",
-    "ar": "watermark ektp aman offline — دليل IDMark",
-    "jv": "Pandhuan: Catatan watermark ektp aman offline yang Mudah Dicari Nanti",
-    "su": "Pituduh: Catatan watermark ektp aman offline yang Mudah Dicari Nanti",
-    "zh": "IDMark · watermark ektp aman offline 实用指南",
-    "ja": "IDMark｜watermark ektp aman offline ガイド"
+    "id": "Menyusun mode offline yang enak dibaca",
+    "en": "Writing watermark ektp aman offline notes people can read",
+    "ar": "كتابة المعلومات المهمة بشكل يُقرأ · الجزء 2",
+    "jv": "Nulis mode offline sing kepénak diwaca",
+    "su": "Nulis mode offline anu genah dibaca",
+    "zh": "把重要信息写得让人读得下去 · 第2篇",
+    "ja": "読める大切な情報の書き方 · 第2回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Menulis catatan mode offline yang enak dibaca: kalimat yang jelas untuk rutinitas, istilah yang konsisten, dan tinjauan mingguan yang mudah diikuti.",
+    "en": "Writing offline mode notes people can read: clear wording for the routine, consistent terms and a weekly check that is easy to follow.",
+    "ar": "كتابة ملاحظات وضع offline يسهل قراءتها: صياغة واضحة للروتين، ومصطلحات ثابتة، ومراجعة أسبوعية سهلة المتابعة.",
+    "ja": "読みやすい offline モードのメモを書く方法。ルーティンを表す明確な言葉、一貫した用語、続けやすい週次確認の組み立てを紹介します。",
+    "zh": "撰写读者易懂的离线模式笔记：流程的清晰表述、统一的术语，以及便于遵循的每周检查方式。",
+    "jv": "Nulis cathetan mode offline sing enak diwaca: tembung sing cetha kanggo rutinitas, istilah sing konsisten, lan tinjauan mingguan sing gampang diikuti.",
+    "su": "Nulis catetan mode offline anu gampang dibaca: kecap anu jelas pikeun rutinitas, istilah anu konsisten, jeung tinjauan mingguan anu gampang dituturkeun."
+  }
 }

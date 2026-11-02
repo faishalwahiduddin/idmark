@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "komunikasi-soal-progres-stamp-tujuan-tanggal-dokumen-praktis",
-    "en": "talking-about-stamp-tujuan-tanggal-dokumen-progress-practical",
-    "ar": "stamp-tujuan-tanggal-dokumen-5",
-    "jv": "pandhuan-stamp-tujuan-tanggal-dokumen-idmark-5",
-    "su": "pituduh-stamp-tujuan-tanggal-dokumen-idmark-5",
-    "zh": "idmark-stamp-tujuan-tanggal-dokumen-实用指南-5",
-    "ja": "idmarkstamp-tujuan-tanggal-dokumen-ガイド-5"
+    "id": "stamp-tujuan-tanggal-dokumen-untuk-satu-rumah",
+    "en": "stamp-tujuan-tanggal-dokumen-for-the-whole-household",
+    "ar": "almalwmat-almhma-lkl-afrad-almnzl",
+    "jv": "stamp-tujuan-tanggal-dokumen-kanggo-sakulawarga",
+    "su": "stamp-tujuan-tanggal-dokumen-pikeun-sakulawarga",
+    "zh": "quan-jia-yi-qi-yong-de-zhong-yao-xin-xi",
+    "ja": "kazoku-minnade-tsukau-taisetsu-na-jouhou"
   },
   "titles": {
-    "id": "Komunikasi soal Progres stamp tujuan tanggal dokumen",
-    "en": "Talking About stamp tujuan tanggal dokumen Progress (Practical)",
-    "ar": "stamp tujuan tanggal dokumen — دليل IDMark",
-    "jv": "Pandhuan: Komunikasi soal Progres stamp tujuan tanggal dokumen",
-    "su": "Pituduh: Komunikasi soal Progres stamp tujuan tanggal dokumen",
-    "zh": "IDMark · stamp tujuan tanggal dokumen 实用指南",
-    "ja": "IDMark｜stamp tujuan tanggal dokumen ガイド"
+    "id": "stamp tujuan tanggal dokumen untuk satu rumah",
+    "en": "stamp tujuan tanggal dokumen for the whole household",
+    "ar": "المعلومات المهمة لكل أفراد المنزل",
+    "jv": "stamp tujuan tanggal dokumen kanggo sakulawarga",
+    "su": "stamp tujuan tanggal dokumen pikeun sakulawarga",
+    "zh": "全家一起用的重要信息",
+    "ja": "家族みんなで使う大切な情報"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Stamp tujuan tanggal dokumen untuk satu rumah: tinjauan mingguan bersama, cara sederhana memberi tahu keluarga apa yang selesai, dan data di tiap perangkat.",
+    "en": "Stamp tujuan tanggal dokumen for the whole household: a shared weekly check, a simple way to tell family what is done and what stays on each device.",
+    "ar": "stamp tujuan tanggal dokumen لكل أفراد المنزل: مراجعة أسبوعية مشتركة، وطريقة بسيطة لإبلاغ الأسرة بما اكتمل، وبيانات كل جهاز.",
+    "ja": "家族みんなで使う stamp tujuan tanggal dokumen。毎週の確認を共有し、完了したことを家族に伝える簡単な方法と、各端末のデータを整理します。",
+    "zh": "全家共用的 stamp tujuan tanggal dokumen：共享每周检查，简单告知家人完成了什么。",
+    "jv": "Stamp tujuan tanggal dokumen kanggo sakulawarga: tinjauan mingguan bebarengan, cara gampang ngandhani kulawarga apa sing rampung, lan data ing saben piranti.",
+    "su": "Stamp tujuan tanggal dokumen pikeun sakulawarga: tinjauan mingguan bareng, cara gampang ngabéjaan kulawarga naon anu geus réngsé, jeung data unggal alat."
+  }
 }

@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "checklist-e-ktp-harian-yang-bisa-ditiru-harian",
-    "en": "daily-e-ktp-checklist-you-can-copy",
-    "ar": "e-ktp",
-    "jv": "pandhuan-e-ktp-idmark",
-    "su": "pituduh-e-ktp-idmark",
-    "zh": "idmark-e-ktp-实用指南",
-    "ja": "idmarke-ktp-ガイド"
+    "id": "checklist-e-ktp-untuk-satu-layar",
+    "en": "a-one-screen-e-ktp-checklist",
+    "ar": "qaima-almalwmat-almhma-fy-shasha-wahda",
+    "jv": "dhaftar-priksa-e-ktp-mung-siji-layar",
+    "su": "daptar-pariksa-e-ktp-dina-hiji-layar",
+    "zh": "yi-ye-zhi-de-zhong-yao-xin-xi-qing-dan",
+    "ja": "1-gamen-de-owa-ru-taisetsu-na-jouhou-chekkurisuto"
   },
   "titles": {
-    "id": "Checklist e-KTP Harian yang Bisa Ditiru",
-    "en": "Daily e-KTP Checklist You Can Copy",
-    "ar": "e-KTP — دليل IDMark",
-    "jv": "Pandhuan: Checklist e-KTP Harian yang Bisa Ditiru",
-    "su": "Pituduh: Checklist e-KTP Harian yang Bisa Ditiru",
-    "zh": "IDMark · e-KTP 实用指南",
-    "ja": "IDMark｜e-KTP ガイド"
+    "id": "Checklist e-KTP untuk satu layar",
+    "en": "A one-screen e-KTP checklist",
+    "ar": "قائمة المعلومات المهمة في شاشة واحدة",
+    "jv": "Dhaftar priksa e-KTP mung siji layar",
+    "su": "Daptar pariksa e-KTP dina hiji layar",
+    "zh": "一页纸的重要信息清单",
+    "ja": "1画面で終わる大切な情報チェックリスト"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Daftar periksa e-KTP satu layar sebelum membagikan salinan: teks watermark, tanggal yang perlu ditambahkan, dan tinjauan mingguan untuk menutup rutinitas.",
+    "en": "A one-screen e-KTP checklist for before you share a copy: the watermark text, the date to add, and the weekly check to finish with.",
+    "ar": "قائمة مراجعة لبطاقة e-KTP في شاشة واحدة قبل مشاركة أي نسخة: نص العلامة المائية، والتاريخ، والمراجعة الأسبوعية لإنهاء الروتين.",
+    "ja": "1画面で確認できる e-KTP のチェックリスト。コピーを共有する前に、ウォーターマークの文字と日付、週次の確認を順に見ていきます。",
+    "zh": "一屏 e-KTP 清单：分享副本前核对水印文字和日期，并用每周回顾完成整个流程的收尾。",
+    "jv": "Dhaftar priksa e-KTP mung siji layar sadurungé nuduhaké salinan: teks watermark, tanggal sing kudu ditambahaké, lan tinjauan mingguan kanggo nutup rutinitas.",
+    "su": "Daptar pariksa e-KTP sahiji layar sateuacan ngabagikeun salinan: téks watermark, tanggal, jeung tinjauan mingguan pikeun ngarengsekeun rutinitas."
+  }
 }

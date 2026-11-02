@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "rencana-watermark-ektp-aman-offline-menjelang-2027-2026",
-    "en": "watermark-ektp-aman-offline-plan-heading-into-2027",
-    "ar": "watermark-ektp-aman-offline-4",
-    "jv": "pandhuan-watermark-ektp-aman-offline-idmark-4",
-    "su": "pituduh-watermark-ektp-aman-offline-idmark-4",
-    "zh": "idmark-watermark-ektp-aman-offline-实用指南-4",
-    "ja": "idmarkwatermark-ektp-aman-offline-ガイド-4"
+    "id": "mode-offline-di-musim-paling-ramai",
+    "en": "watermark-ektp-aman-offline-in-the-busiest-season",
+    "ar": "almalwmat-almhma-fy-akthr-almwasm-anshghala-aljz-2",
+    "jv": "mode-offline-ing-mangsa-paling-rame",
+    "su": "mode-offline-dina-usum-pangsibukna",
+    "zh": "zui-mang-de-ji-jie-li-de-zhong-yao-xin-xi-di-2-pian",
+    "ja": "ichiban-isogashii-jiki-no-taisetsu-na-jouhou-dai-2-kai"
   },
   "titles": {
-    "id": "Rencana watermark ektp aman offline Menjelang 2027",
-    "en": "watermark ektp aman offline Plan Heading into 2027",
-    "ar": "watermark ektp aman offline — دليل IDMark",
-    "jv": "Pandhuan: Rencana watermark ektp aman offline Menjelang 2027",
-    "su": "Pituduh: Rencana watermark ektp aman offline Menjelang 2027",
-    "zh": "IDMark · watermark ektp aman offline 实用指南",
-    "ja": "IDMark｜watermark ektp aman offline ガイド"
+    "id": "mode offline di musim paling ramai",
+    "en": "watermark ektp aman offline in the busiest season",
+    "ar": "المعلومات المهمة في أكثر المواسم انشغالاً · الجزء 2",
+    "jv": "mode offline ing mangsa paling rame",
+    "su": "mode offline dina usum pangsibukna",
+    "zh": "最忙的季节里的重要信息 · 第2篇",
+    "ja": "いちばん忙しい時期の大切な情報 · 第2回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Watermark ektp aman offline di musim paling ramai: cara menjaga rutinitas ringan tetap berjalan, waktu yang membantu, dan tinjauan mingguannya.",
+    "en": "Watermark ektp aman offline during the busiest season: how to keep a light routine going, the timing that helps and the weekly check.",
+    "ar": "watermark ektp aman offline في موسم الذروة: كيف تحافظ على روتين خفيف، والتوقيت الذي يساعد، والمراجعة الأسبوعية.",
+    "ja": "いちばん忙しい時期の watermark ektp aman offline。軽いルーティンを続けるコツ、効果的なタイミング、毎週の確認方法を紹介します。",
+    "zh": "最忙季节的 watermark ektp aman offline：如何保持轻量流程、有效的时间安排和每周检查。",
+    "jv": "Watermark ektp aman offline ing mangsa paling rame: cara njaga rutinitas ringan tetep mlaku, wektu sing mbantu, lan tinjauan mingguané.",
+    "su": "Watermark ektp aman offline dina usum paling rame: kumaha ngajaga rutinitas ringan tetep jalan, waktu anu mantuan, jeung tinjauan mingguanna."
+  }
 }

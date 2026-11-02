@@ -88,9 +88,9 @@ class SettingsScreen extends ConsumerWidget {
           ),
           const SizedBox(height: 20),
 
-          // Tampilan & Bahasa
+          // Appearance & Language
           Text(
-            'Tampilan & Bahasa',
+            l10n.appearanceAndLanguage,
             style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w700,
@@ -111,7 +111,7 @@ class SettingsScreen extends ConsumerWidget {
                       const SizedBox(width: 10),
                       Expanded(
                         child: Text(
-                          'Mode Tema',
+                          l10n.themeMode,
                           style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: AppColors.title(context)),
                         ),
                       ),
@@ -215,7 +215,7 @@ class SettingsScreen extends ConsumerWidget {
                   leading: const Icon(Icons.file_present_outlined, color: AppColors.primaryLight),
                   title: Text(l10n.defaultExportFormat, style: TextStyle(fontSize: 14, color: AppColors.title(context))),
                   subtitle: Text(
-                    config.exportFormat.label,
+                    config.exportFormat.labelOf(l10n),
                     style: TextStyle(fontSize: 12, color: AppColors.muted(context)),
                   ),
                   trailing: DropdownButton<ExportFormat>(
@@ -271,7 +271,7 @@ class SettingsScreen extends ConsumerWidget {
                               );
                             }
                           },
-                    child: Text(l10n.clearHistory, style: const TextStyle(color: AppColors.danger, fontSize: 12)),
+                    child: Text(l10n.clearHistory, style: TextStyle(color: AppColors.dangerOnTint(context), fontSize: 12)),
                   ),
                 ),
                 const Divider(height: 1),
@@ -302,7 +302,8 @@ class SettingsScreen extends ConsumerWidget {
                           ),
                           ElevatedButton(
                             onPressed: () => Navigator.pop(ctx, true),
-                            style: ElevatedButton.styleFrom(backgroundColor: AppColors.danger),
+                            // Red 600 keeps white label >= 4.5:1 (Red 500 is 3.8:1).
+                            style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFFDC2626)),
                             child: Text(l10n.reset),
                           ),
                         ],
@@ -364,7 +365,7 @@ class SettingsScreen extends ConsumerWidget {
                   const Divider(height: 24),
                   _buildAboutRow(context, l10n.appDomain, 'idmark.faishal.id'),
                   const Divider(height: 24),
-                  _buildAboutRow(context, 'Identitas', 'id.faishal.idmark'),
+                  _buildAboutRow(context, l10n.identity, 'id.faishal.idmark'),
                   const Divider(height: 24),
                   _buildAboutRow(context, l10n.appCompliance, 'UU No. 27/2022 (PDP) & Kominfo'),
                   const Divider(height: 24),
@@ -384,10 +385,12 @@ class SettingsScreen extends ConsumerWidget {
                         ),
                         child: Text(
                           l10n.licenseUsageBadgeText,
-                          style: const TextStyle(
+                          // Emerald 500 on the 15% tint is ~2:1 in light mode;
+                          // use the theme-aware emerald that keeps 4.5:1.
+                          style: TextStyle(
                             fontSize: 11,
                             fontWeight: FontWeight.bold,
-                            color: AppColors.accent,
+                            color: AppColors.accentOnTint(context),
                           ),
                         ),
                       ),

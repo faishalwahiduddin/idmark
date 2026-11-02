@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "troubleshooting-stamp-ktp-yang-macet",
-    "en": "troubleshooting-stuck-stamp-ktp-habits",
-    "ar": "stamp-ktp-4",
-    "jv": "pandhuan-stamp-ktp-idmark-4",
-    "su": "pituduh-stamp-ktp-idmark-4",
-    "zh": "idmark-stamp-ktp-实用指南-4",
-    "ja": "idmarkstamp-ktp-ガイド-4"
+    "id": "stamp-ktp-macet-perbaiki-friksi-dulu",
+    "en": "stamp-ktp-stuck-fix-the-friction-first",
+    "ar": "almalwmat-almhma-mtwqf-qll-alahtkak-awla",
+    "jv": "stamp-ktp-macet-ngurangi-alangan-dhisik",
+    "su": "stamp-ktp-macet-kurangan-halangan-heula",
+    "zh": "zhong-yao-xin-xi-ka-zhu-le-xian-jian-shao-mo-ca",
+    "ja": "taisetsu-na-jouhou-ga-toma-ttara-mazu-masatsu-wo-hera-su"
   },
   "titles": {
-    "id": "Troubleshooting stamp KTP yang Macet",
-    "en": "Troubleshooting Stuck stamp KTP Habits",
-    "ar": "stamp KTP — دليل IDMark",
-    "jv": "Pandhuan: Troubleshooting stamp KTP yang Macet",
-    "su": "Pituduh: Troubleshooting stamp KTP yang Macet",
-    "zh": "IDMark · stamp KTP 实用指南",
-    "ja": "IDMark｜stamp KTP ガイド"
+    "id": "stamp KTP macet? Perbaiki friksi dulu",
+    "en": "stamp KTP stuck? Fix the friction first",
+    "ar": "المعلومات المهمة متوقف؟ قلّل الاحتكاك أولاً",
+    "jv": "stamp KTP macet? Ngurangi alangan dhisik",
+    "su": "stamp KTP macét? Kurangan halangan heula",
+    "zh": "重要信息卡住了？先减少摩擦",
+    "ja": "大切な情報が止まったら、まず摩擦を減らす"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Stamp KTP macet? Perbaiki hambatannya dulu: penghalang umum dalam rutinitas, perbaikan terkecil untuk tiap penghalang, dan cara mulai bergerak lagi.",
+    "en": "Stamp KTP stuck? Find the friction first: the common blockers in the routine, the smallest fix for each and how to get moving again.",
+    "ar": "stamp KTP متوقف؟ عالج الاحتكاك أولاً: العوائق الشائعة في الروتين، وأبسط حل لكل منها، وكيف تعود للتحرك من جديد.",
+    "ja": "止まっていますか？ stamp KTP は、まず摩擦を減らしましょう。ルーティンでよくある詰まりどころ、それぞれの最小の対処法、再び動き出す方法を解説します。",
+    "zh": "stamp KTP 卡住了？先找摩擦点：流程中的常见阻碍、每项的最小修复，以及如何重新启动。",
+    "jv": "Stamp KTP macet? Bereskan alangan dhisik: alangan umum ing rutinitas, pambenahan paling cilik kanggo saben alangan, lan cara obah maneh.",
+    "su": "Stamp KTP macet? Benerkeun halangan heula: halangan umum dina rutinitas, perbaikan pangleutikna pikeun unggal halangan, jeung kumaha mimiti gerak deui."
+  }
 }

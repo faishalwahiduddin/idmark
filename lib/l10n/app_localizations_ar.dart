@@ -57,28 +57,28 @@ class AppLocalizationsAr extends AppLocalizations {
   String get selectLanguage => 'اختر اللغة';
 
   @override
-  String get localeIndonesian => 'Bahasa Indonesia';
+  String get localeIndonesian => 'الإندونيسية';
 
   @override
-  String get localeEnglish => 'English';
+  String get localeEnglish => 'الإنجليزية';
 
   @override
   String get localeArabic => 'العربية';
 
   @override
-  String get localeJavanese => 'Basa Jawa';
+  String get localeJavanese => 'الجاوية';
 
   @override
-  String get localeSundanese => 'Basa Sunda';
+  String get localeSundanese => 'السوندية';
 
   @override
-  String get localeChinese => '中文';
+  String get localeChinese => 'الصينية';
 
   @override
-  String get localeJapanese => '日本語';
+  String get localeJapanese => 'اليابانية';
 
   @override
-  String get localeSpanish => 'Español';
+  String get localeSpanish => 'الإسبانية';
 
   @override
   String get about => 'حول';
@@ -662,10 +662,11 @@ class AppLocalizationsAr extends AppLocalizations {
   String get appLabel => 'التطبيق';
 
   @override
-  String get officialKominfoGuide => 'Panduan Resmi Kominfo & UU PDP';
+  String get officialKominfoGuide =>
+      'الدليل الرسمي لكومينفو وقانون حماية البيانات';
 
   @override
-  String get privacyAndSettings => 'Privasi & Pengaturan';
+  String get privacyAndSettings => 'الخصوصية والإعدادات';
 
   @override
   String get appLanguage => 'لغة التطبيق';
@@ -753,4 +754,527 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get privacyGradeDescWeak => 'حماية ضعيفة • أضف الغرض والتاريخ';
+
+  @override
+  String get appTitle => 'IDMark';
+
+  @override
+  String get appTagline =>
+      'اطبع علامة مائية نصية على صور الهوية ورخص القيادة والمستندات المهمة.';
+
+  @override
+  String get appSubtitle => 'حماية الهوية والخصوصية';
+
+  @override
+  String get onbSkip => 'تخطٍّ';
+
+  @override
+  String get onbNext => 'التالي';
+
+  @override
+  String get onbGetStarted => 'ابدأ الآن';
+
+  @override
+  String get onbPrivacyHeadline => 'الخصوصية والعمل دون اتصال مضمونان';
+
+  @override
+  String get onbPrivacyDetail =>
+      'تبقى جميع البيانات بأمان على جهازك دون أي متتبعات.';
+
+  @override
+  String get onbSlide1Title => 'ختم الهوية';
+
+  @override
+  String get onbSlide1Sub => 'الغرض والتاريخ على المستند';
+
+  @override
+  String get onbSlide1Badge => 'متوافق دون اتصال 100%';
+
+  @override
+  String get onbSlide2Title => 'قوالب جاهزة';
+
+  @override
+  String get onbSlide2Sub => 'قوالب جاهزة للاستخدام';
+
+  @override
+  String get onbSlide2Badge => 'خفيف وسريع';
+
+  @override
+  String get onbSlide3Title => 'السجل';
+
+  @override
+  String get onbSlide3Sub => 'نتائج الختم محفوظة';
+
+  @override
+  String get onbSlide3Badge => 'بلا إعلانات وبلا حساب';
+
+  @override
+  String get onbSlide4Title => 'على الجهاز';
+
+  @override
+  String get onbSlide4Sub => 'دون رفع إلى السحابة';
+
+  @override
+  String get onbSlide4Badge => 'البيانات محفوظة على جهازك';
+
+  @override
+  String get loadingLabel => 'جارٍ التحميل…';
+
+  @override
+  String get download => 'تنزيل';
+
+  @override
+  String downloadSuccess(String filename) {
+    return 'تم تنزيل المستند ذي العلامة المائية ($filename)! 🛡️✨';
+  }
+
+  @override
+  String get protectionProof => 'إثبات الحماية';
+
+  @override
+  String get tierExemplary => 'قدوة';
+
+  @override
+  String get tierDisciplined => 'منتظم';
+
+  @override
+  String get tierOrderly => 'منظّم';
+
+  @override
+  String get tierStarting => 'بداية';
+
+  @override
+  String disciplineCount(int count, String tier) {
+    return '$count ملفًا بعلامة مائية • $tier';
+  }
+
+  @override
+  String get disciplineDesc =>
+      'كل تصدير آمن يزيد من انضباطك في حماية المستندات.';
+
+  @override
+  String get shareDiscipline => 'شارك الإنجاز';
+
+  @override
+  String disciplineShareText(int count, String tier) {
+    return '$count ملفًا بعلامة مائية • $tier #IDMark';
+  }
+
+  @override
+  String get allTemplates => 'الكل';
+
+  @override
+  String get myPresets => 'قوالبي';
+
+  @override
+  String get catBanking => 'المصارف';
+
+  @override
+  String get catFinance => 'التمويل والإقراض';
+
+  @override
+  String get catCareer => 'الوظائف والموارد البشرية';
+
+  @override
+  String get catRental => 'التأجير والسفر';
+
+  @override
+  String get catTelecom => 'الاتصالات';
+
+  @override
+  String get catMultifinance => 'التمويل متعدد الأغراض';
+
+  @override
+  String get catInvestment => 'الاستثمار';
+
+  @override
+  String get catPublicService => 'الخدمات العامة';
+
+  @override
+  String get catInternational => 'دولي';
+
+  @override
+  String get appearanceAndLanguage => 'المظهر واللغة';
+
+  @override
+  String get themeMode => 'وضع المظهر';
+
+  @override
+  String get identity => 'الهوية';
+
+  @override
+  String get patternDiagonalBand => 'شريط مائل';
+
+  @override
+  String get patternDiagonalBandDesc =>
+      'خط مائل عريض واحد يعبر وسط المستند (موصى به من كومينفو)';
+
+  @override
+  String get patternRepeatedGrid => 'شبكة متكررة';
+
+  @override
+  String get patternRepeatedGridDesc => 'نص متكرر على كامل الصورة لأقصى حماية';
+
+  @override
+  String get patternBottomBar => 'شريط سفلي';
+
+  @override
+  String get patternBottomBarDesc => 'شريط نصي متصل أسفل المستند';
+
+  @override
+  String get patternCornerStamp => 'ختم زاوية';
+
+  @override
+  String get patternCornerStampDesc => 'ختم تحقق في الزاوية اليمنى السفلى';
+
+  @override
+  String get patternSecuritySeal => 'ختم دائري رسمي';
+
+  @override
+  String get patternSecuritySealDesc => 'ختم دائري مزدوج بإطار تحقق';
+
+  @override
+  String get patternCrossStamp => 'تقاطع مزدوج (X-Band)';
+
+  @override
+  String get patternCrossStampDesc =>
+      'خطان مائلان متقاطعان يحميان كامل محتوى المستند';
+
+  @override
+  String get patternQrBadge => 'شارة تحقق QR';
+
+  @override
+  String get patternQrBadgeDesc => 'شارة QR تثبت صحة الغرض والتاريخ';
+
+  @override
+  String get colorWhite => 'أبيض نقي';
+
+  @override
+  String get colorDark => 'أسود داكن';
+
+  @override
+  String get colorRed => 'أحمر رسمي';
+
+  @override
+  String get colorBlue => 'أزرق التحقق';
+
+  @override
+  String get colorEmerald => 'أخضر آمن';
+
+  @override
+  String get colorAmber => 'أصفر تحذيري';
+
+  @override
+  String get colorPurple => 'بنفسجي الختم';
+
+  @override
+  String get formatPng => 'PNG (دقة كاملة)';
+
+  @override
+  String get formatPngDesc => 'صيغة بلا فقدان تحافظ على الحدّة الأصلية';
+
+  @override
+  String get formatJpeg => 'JPEG (حجم أصغر)';
+
+  @override
+  String get formatJpegDesc => 'صيغة مضغوطة توفر البيانات لرفع سريع';
+
+  @override
+  String get formatPdf => 'مستند PDF (جاهز للطباعة)';
+
+  @override
+  String get formatPdfDesc =>
+      'صيغة المستندات الرسمية المعتمدة في المكاتب والبنوك';
+
+  @override
+  String get redactBlackout => 'حجب أسود';
+
+  @override
+  String get redactBlackoutDesc => 'مربع أسود داكن دائم يغطي البيانات';
+
+  @override
+  String get redactMosaic => 'حجب بالبكسلة';
+
+  @override
+  String get redactMosaicDesc => 'تأثير البكسلة يطمس النص الحساس';
+
+  @override
+  String get redactBlur => 'حجب بضبابية';
+
+  @override
+  String get redactBlurDesc => 'تأثير ضبابي يذيب تفاصيل البيانات الشخصية';
+
+  @override
+  String get targetNik => 'رقم الهوية';
+
+  @override
+  String get targetSignature => 'التوقيع';
+
+  @override
+  String get targetAddress => 'العنوان الكامل';
+
+  @override
+  String get targetBirthPlace => 'مكان وتاريخ الميلاد';
+
+  @override
+  String get targetPhoto => 'صورة الوجه';
+
+  @override
+  String get shareProofTitle => 'إثبات حماية المستند';
+
+  @override
+  String get shareProofSubtitle =>
+      'شهادة سلامة العلامة المائية والحجب وفق كومينفو';
+
+  @override
+  String get shareFormatFeed => 'منشور (4:5)';
+
+  @override
+  String get shareFormatStory => 'قصة (9:16)';
+
+  @override
+  String get shareCopyText => 'نسخ النص';
+
+  @override
+  String get shareProcessing => 'جارٍ المعالجة...';
+
+  @override
+  String get shareDownloadProofPng => 'تنزيل إثبات PNG';
+
+  @override
+  String get shareShareProof => 'شارك الإثبات';
+
+  @override
+  String get shareCardBrand => 'IDMARK • هوية آمنة';
+
+  @override
+  String get shareCardOnDevice => '100% على الجهاز';
+
+  @override
+  String get shareCardTitle => 'إثبات العلامة المائية للمستند';
+
+  @override
+  String get shareCardPurposeLabel => 'للغرض المحدد:';
+
+  @override
+  String get shareCardPrivacyScore => 'درجة الخصوصية';
+
+  @override
+  String get shareCardRedactions => 'الحجب';
+
+  @override
+  String shareCardAreaCount(int count) {
+    return '$count منطقة';
+  }
+
+  @override
+  String get shareCardFormat => 'الصيغة';
+
+  @override
+  String shareCardDate(String date) {
+    return 'التاريخ: $date';
+  }
+
+  @override
+  String get shareCardFooter =>
+      'idmark.faishal.id • معيار العلامة المائية لكومينفو';
+
+  @override
+  String get shareCardIntegrityHash => 'بصمة السلامة (SHA-256):';
+
+  @override
+  String get shareProofHeading => '🛡️ إثبات حماية المستند — IDMARK';
+
+  @override
+  String shareProofPurposeLine(String purpose) {
+    return '📌 الغرض المحدد: \"$purpose\"';
+  }
+
+  @override
+  String shareProofDateLine(String date) {
+    return '📅 تاريخ الختم: $date';
+  }
+
+  @override
+  String shareProofScoreLine(int score) {
+    return '🔒 درجة الخصوصية: $score/100';
+  }
+
+  @override
+  String shareProofRedactionLine(int count) {
+    return '✂️ حجب دائم: $count منطقة مغطاة';
+  }
+
+  @override
+  String shareProofHashLine(String hash) {
+    return '🔑 بصمة SHA-256: $hash';
+  }
+
+  @override
+  String get shareProofOnDeviceLine =>
+      '✅ تمت المعالجة 100% على الجهاز دون خادم (وفق إرشادات كومينفو)';
+
+  @override
+  String get shareProofCtaLine =>
+      'احمِ هويتك مع IDMark: https://idmark.faishal.id';
+
+  @override
+  String get shareProofDownloaded => 'تم تنزيل شهادة حماية المستند! 🛡️✨';
+
+  @override
+  String shareProofFailed(String error) {
+    return 'تعذّرت مشاركة الإثبات: $error';
+  }
+
+  @override
+  String get shareProofCopied => 'تم نسخ إثبات الحماية إلى الحافظة! 📋✨';
+
+  @override
+  String get themeCyberShield => 'الدرع السيبراني';
+
+  @override
+  String get themeEmeraldSafe => 'الزمرد الآمن';
+
+  @override
+  String get themeObsidianVault => 'خزنة الأوبسيديان';
+
+  @override
+  String get themeAmberProof => 'إثبات العنبر';
+
+  @override
+  String get quickSensorShort => 'حجب سريع:';
+
+  @override
+  String redactedTag(String label) {
+    return '[محجوب: $label]';
+  }
+
+  @override
+  String get defaultWatermarkText => 'للتحقق من الهوية فقط';
+
+  @override
+  String get pdfHeader => 'IDMARK — مستند هوية بعلامة مائية';
+
+  @override
+  String get pdfComplianceNote =>
+      'وفق مبادئ حماية البيانات الشخصية (القانون رقم 27/2022)';
+
+  @override
+  String get pdfOnDevice => '100% على الجهاز';
+
+  @override
+  String get pdfPurposeLabel => 'الغرض من الاستخدام: ';
+
+  @override
+  String pdfDateLabel(String date) {
+    return 'تاريخ المعاملة: $date';
+  }
+
+  @override
+  String pdfPrintedAt(String date) {
+    return 'وقت الطباعة: $date';
+  }
+
+  @override
+  String get pdfChecksum => 'بصمة SHA-256: ';
+
+  @override
+  String get catEcommerce => 'التجارة الإلكترونية';
+
+  @override
+  String get presetBank => 'فتح حساب مصرفي';
+
+  @override
+  String get presetBankUpdate => 'تحديث بيانات عميل البنك';
+
+  @override
+  String get presetFintech => 'تمويل تقني مرخّص من OJK';
+
+  @override
+  String get presetPaylater => 'تفعيل الدفع الآجل / بطاقة الائتمان';
+
+  @override
+  String get presetJob => 'طلب وظيفة';
+
+  @override
+  String get presetHrOnboarding => 'تسجيل موظف جديد';
+
+  @override
+  String get presetRental => 'تأجير سيارة أو دراجة نارية';
+
+  @override
+  String get presetHotel => 'تسجيل الوصول إلى فندق أو فيلا';
+
+  @override
+  String get presetTelco => 'تسجيل شريحة SIM مسبقة الدفع';
+
+  @override
+  String get presetSimReplace => 'استبدال شريحة SIM المفقودة أو التالفة';
+
+  @override
+  String get presetKredit => 'طلب تمويل تأجيري';
+
+  @override
+  String get presetKpr => 'طلب رهن عقاري';
+
+  @override
+  String get presetInvestment => 'حساب أوراق مالية في بورصة IDX';
+
+  @override
+  String get presetCrypto => 'التحقق من حساب العملات المشفرة (بابيبتي)';
+
+  @override
+  String get presetEcommerce => 'التحقق من تاجر السوق الإلكتروني';
+
+  @override
+  String get presetBpjs => 'مطالبة بمستحقات BPJS';
+
+  @override
+  String get presetGovKelurahan => 'إدارة السجلات المدنية';
+
+  @override
+  String get presetGlobalKyc => 'التحقق الدولي من الهوية (KYC)';
+
+  @override
+  String get defaultInternalSubtext => 'للمستندات الداخلية فقط';
+
+  @override
+  String get pdfLegalNotice =>
+      'إشعار قانوني: هذه النسخة من مستند الهوية صالحة ومسموح بها فقط للغرض المذكور أعلاه. وأي استخدام آخر يُعدّ جريمة إساءة استخدام بيانات شخصية.';
+
+  @override
+  String get validationRedactionLabelRequired =>
+      'لا يمكن أن يكون وصف الحجب فارغًا';
+
+  @override
+  String get validationRedactionXRange =>
+      'يجب أن يكون موضع X للحجب بين 0.0 و1.0';
+
+  @override
+  String get validationRedactionYRange =>
+      'يجب أن يكون موضع Y للحجب بين 0.0 و1.0';
+
+  @override
+  String get validationRedactionWidthRange =>
+      'يجب أن يكون عرض الحجب بين 0.0 و1.0';
+
+  @override
+  String get validationRedactionHeightRange =>
+      'يجب أن يكون ارتفاع الحجب بين 0.0 و1.0';
+
+  @override
+  String get validationAuditIdRequired =>
+      'لا يمكن أن يكون معرّف سجل التدقيق فارغًا';
+
+  @override
+  String get validationAuditPurposeRequired =>
+      'لا يمكن أن يكون غرض سجل التدقيق فارغًا';
+
+  @override
+  String get validationAuditHashRequired =>
+      'لا يمكن أن تكون بصمة SHA-256 فارغة';
+
+  @override
+  String get validationAuditScoreRange =>
+      'يجب أن تكون درجة الخصوصية بين 0 و100';
 }

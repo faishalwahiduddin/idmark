@@ -1,0 +1,85 @@
+{
+  "title": "stamp tujuan tanggal dokumen: catatan longgar vs aplikasi offline",
+  "description": "Catatan longgar dibanding aplikasi offline untuk stamp tujuan tanggal dokumen: mengapa catatan berserakan gagal, dan di mana data stamp disimpan di ponsel.",
+  "badge": "keamanan · offline",
+  "answer": "Saat dibutuhkan, stamp tujuan tanggal dokumen tersebar di tiga tempat—dan yang pertama dibuka justru yang usang. IDMark menyimpan stamp tujuan tanggal dokumen di perangkat, jadi datanya tetap terbuka tanpa kuota dan tanpa akun.",
+  "toc": [
+    "Kenapa mudah putus",
+    "Tersimpan di perangkat",
+    "Tinjauan mingguan"
+  ],
+  "sections": [
+    {
+      "h2": "Kenapa mudah putus",
+      "p": "Saat dibutuhkan, stamp tujuan tanggal dokumen tersebar di tiga tempat—dan yang pertama dibuka justru yang usang.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "Tersimpan di perangkat",
+      "p": "IDMark menyimpan stamp tujuan tanggal dokumen di perangkat, jadi datanya tetap terbuka tanpa kuota dan tanpa akun.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "Tinjauan mingguan",
+      "p": "Sekali seminggu, lihat bagian mana yang paling sering bolong, lalu kecilkan target—bukan menambah semangat.",
+      "h3": null,
+      "p3": null
+    }
+  ],
+  "table": {
+    "caption": "Kerangka stamp tujuan tanggal dokumen",
+    "headers": [
+      "Langkah",
+      "Isi minimal",
+      "Selesai bila"
+    ],
+    "rows": [
+      [
+        "Kartu darurat",
+        "kontak + lokasi",
+        "bisa dibuka offline"
+      ],
+      [
+        "Penanda",
+        "posisi terakhir",
+        "bisa dilanjut besok"
+      ],
+      [
+        "Evaluasi minggu",
+        "satu penyesuaian",
+        "diterapkan Senin"
+      ]
+    ]
+  },
+  "list": [
+    "Tetapkan satu waktu tetap, bukan “kapan sempat”.",
+    "Buka IDMark saat waktu itu tiba, bukan nanti malam.",
+    "Catat satu hambatan, bukan alasan panjang.",
+    "Cadangkan data sebelum ganti ponsel."
+  ],
+  "faqs": [
+    [
+      "Apakah stamp tujuan tanggal dokumen bisa dibuka offline?",
+      "Ya. IDMark menyimpan semuanya di perangkat, jadi tidak butuh kuota."
+    ],
+    [
+      "Perlu akun dulu?",
+      "Tidak. Mulai tanpa login; cadangkan data secara berkala."
+    ],
+    [
+      "Mulai dari mana?",
+      "Dari bagian terpendek. Tambah cakupan hanya setelah dua minggu stabil."
+    ],
+    [
+      "Kalau bolong beberapa hari?",
+      "Jangan hapus riwayat. Lanjut dari bagian terakhir dan catat satu hambatan."
+    ]
+  ],
+  "cta": [
+    "Mulai stamp tujuan tanggal dokumen hari ini",
+    "Buka IDMark"
+  ],
+  "slug": "stamp-tujuan-tanggal-dokumen-di-hp-vs-buku-catatan-praktis"
+}

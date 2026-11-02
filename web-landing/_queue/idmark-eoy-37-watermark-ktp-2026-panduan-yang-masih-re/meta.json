@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "watermark-ktp-2026-panduan-yang-masih-relevan",
-    "en": "watermark-ktp-2026-still-relevant-guide",
-    "ar": "watermark-ktp-5",
-    "jv": "pandhuan-watermark-ktp-idmark-5",
-    "su": "pituduh-watermark-ktp-idmark-5",
-    "zh": "idmark-watermark-ktp-实用指南-5",
-    "ja": "idmarkwatermark-ktp-ガイド-5"
+    "id": "watermark-ktp-di-2026-apa-yang-berubah",
+    "en": "id-watermark-in-2026-what-changed",
+    "ar": "alama-maiya-ala-alhwya-fy-2026-ma-aldhy-tghyr",
+    "jv": "watermark-ktp-ing-2026-apa-sing-owah",
+    "su": "watermark-ktp-taun-2026-naon-anu-robah",
+    "zh": "2026-nian-de-shen-fen-zheng-shui-yin-you-shen-me-bian-hua",
+    "ja": "2026-nen-no-mibun-shou-no-uootaamaaku-nani-ga-kawa-ttaka"
   },
   "titles": {
-    "id": "Watermark KTP 2026: Panduan yang Masih Relevan",
-    "en": "watermark KTP 2026: Still-Relevant Guide",
-    "ar": "watermark KTP — دليل IDMark",
-    "jv": "Pandhuan: Watermark KTP 2026: Panduan yang Masih Relevan",
-    "su": "Pituduh: Watermark KTP 2026: Panduan yang Masih Relevan",
-    "zh": "IDMark · watermark KTP 实用指南",
-    "ja": "IDMark｜watermark KTP ガイド"
+    "id": "watermark KTP di 2026: apa yang berubah",
+    "en": "ID watermark in 2026: what changed",
+    "ar": "علامة مائية على الهوية في 2026: ما الذي تغيّر",
+    "jv": "watermark KTP ing 2026: apa sing owah",
+    "su": "watermark KTP taun 2026: naon anu robah",
+    "zh": "2026 年的身份证水印：有什么变化",
+    "ja": "2026年の身分証のウォーターマーク：何が変わったか"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Watermark KTP di 2026: bagian rutinitas yang layak diperbarui, bagian yang masih berlaku dari panduan sebelumnya, dan cara menjaga tinjauan tetap relevan.",
+    "en": "A 2026 look at ID watermark: what is worth updating in your routine, what still holds from earlier guides and how to keep checks current.",
+    "ar": "علامة مائية على بطاقة KTP في 2026: ما الذي يستحق التحديث في روتينك، وما الذي ما زال صالحاً من الأدلة السابقة.",
+    "ja": "2026年の身分証ウォーターマーク。ルーティンのうち更新すべき点、以前のガイドからそのまま使える点、確認を最新に保つ方法を整理します。",
+    "zh": "2026 年身份证水印：流程中哪些值得更新，哪些仍适用于早前指南，以及如何保持检查最新。",
+    "jv": "Watermark KTP ing 2026: bagéan rutinitas sing layak dianyari, bagéan sing isih cocok saka pandhuan sadurungé, lan cara njaga tinjauan tetep relevan.",
+    "su": "Watermark KTP dina 2026: bagian rutinitas anu pantes diropéa, bagian anu masih cocog tina pituduh saméméhna, jeung kumaha ngajaga tinjauan tetep relevan."
+  }
 }

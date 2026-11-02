@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "tetap-jalan-meski-bolong-stamp-ktp",
-    "en": "keep-going-after-missing-stamp-ktp",
-    "ar": "stamp-ktp-6",
-    "jv": "pandhuan-stamp-ktp-idmark-6",
-    "su": "pituduh-stamp-ktp-idmark-6",
-    "zh": "idmark-stamp-ktp-实用指南-6",
-    "ja": "idmarkstamp-ktp-ガイド-6"
+    "id": "menjaga-stamp-ktp-saat-semangat-turun",
+    "en": "keeping-stamp-ktp-going-when-motivation-drops",
+    "ar": "alahtfaz-balmalwmat-almhma-hyn-tdaf-alhmasa-aljz-2",
+    "jv": "njaga-stamp-ktp-nalika-semangat-mudhun",
+    "su": "ngajaga-stamp-ktp-nalika-sumanget-turun",
+    "zh": "re-qing-xia-jiang-shi-ru-he-shou-zhu-zhong-yao-xin-xi-di-2-pian",
+    "ja": "yaru-kiga-saga-tta-nichi-no-taisetsu-na-jouhou-dai-2-kai"
   },
   "titles": {
-    "id": "Tetap Jalan meski Bolong stamp KTP",
-    "en": "Keep Going After Missing stamp KTP",
-    "ar": "stamp KTP — دليل IDMark",
-    "jv": "Pandhuan: Tetap Jalan meski Bolong stamp KTP",
-    "su": "Pituduh: Tetap Jalan meski Bolong stamp KTP",
-    "zh": "IDMark · stamp KTP 实用指南",
-    "ja": "IDMark｜stamp KTP ガイド"
+    "id": "Menjaga stamp KTP saat semangat turun",
+    "en": "Keeping stamp KTP going when motivation drops",
+    "ar": "الاحتفاظ بـالمعلومات المهمة حين تضعف الحماسة · الجزء 2",
+    "jv": "Njaga stamp KTP nalika semangat mudhun",
+    "su": "Ngajaga stamp KTP nalika sumanget turun",
+    "zh": "热情下降时如何守住重要信息 · 第2篇",
+    "ja": "やる気が下がった日の大切な情報 · 第2回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Menjaga stamp KTP tetap jalan saat semangat turun: mengapa rutinitas macet, versi paling kecil sebagai cadangan, dan cara memulai lagi setelah jeda.",
+    "en": "Keeping stamp KTP going when motivation drops: why routines stall, the smallest version to fall back on and how to restart after a gap.",
+    "ar": "الحفاظ على استمرار stamp KTP عند تراجع الحماس: لماذا تتوقف الروتينات، والنسخة الأصغر للعودة إليها، وكيف تبدأ من جديد بعد انقطاع.",
+    "ja": "やる気が下がっても stamp KTP を続けるために。習慣が止まる理由、戻るための最小バージョン、途切れた後の再開の仕方を解説します。",
+    "zh": "动力下降时坚持 stamp KTP：流程为何停滞，可退回的最小版本，以及中断后如何重新开始。",
+    "jv": "Njaga stamp KTP tetep mlaku nalika semangat ngedhor: kenapa rutinitas mandheg, versi paling cilik kanggo cadangan, lan cara miwiti maneh sawisé jeda.",
+    "su": "Ngajaga stamp KTP tetep jalan lamun sumangét turun: naha rutinitas eureun, versi pangleutikna keur cadangan, jeung kumaha mimitian deui sanggeus jeda."
+  }
 }

@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "bahasa-yang-konsisten-saat-mencatat-watermark-ktp-mingguan",
-    "en": "consistent-language-when-logging-watermark-ktp",
-    "ar": "watermark-ktp-8",
-    "jv": "pandhuan-watermark-ktp-idmark-8",
-    "su": "pituduh-watermark-ktp-idmark-8",
-    "zh": "idmark-watermark-ktp-实用指南-8",
-    "ja": "idmarkwatermark-ktp-ガイド-8"
+    "id": "menyusun-watermark-ktp-yang-enak-dibaca",
+    "en": "writing-id-watermark-notes-people-can-read",
+    "ar": "ktaba-alama-maiya-ala-alhwya-bshkl-yqra",
+    "jv": "nulis-watermark-ktp-sing-kepenak-diwaca",
+    "su": "nulis-watermark-ktp-anu-genah-dibaca",
+    "zh": "ba-shen-fen-zheng-shui-yin-xie-de-rang-ren-du-de-xia-qu",
+    "ja": "yome-ru-mibun-shou-no-uootaamaaku-no-kakikata"
   },
   "titles": {
-    "id": "Bahasa yang Konsisten saat Mencatat watermark KTP",
-    "en": "Consistent Language When Logging watermark KTP — Offline First",
-    "ar": "watermark KTP — دليل IDMark",
-    "jv": "Pandhuan: Bahasa yang Konsisten saat Mencatat watermark KTP",
-    "su": "Pituduh: Bahasa yang Konsisten saat Mencatat watermark KTP",
-    "zh": "IDMark · watermark KTP 实用指南",
-    "ja": "IDMark｜watermark KTP ガイド"
+    "id": "Menyusun watermark KTP yang enak dibaca",
+    "en": "Writing ID watermark notes people can read",
+    "ar": "كتابة علامة مائية على الهوية بشكل يُقرأ",
+    "jv": "Nulis watermark KTP sing kepénak diwaca",
+    "su": "Nulis watermark KTP anu genah dibaca",
+    "zh": "把身份证水印写得让人读得下去",
+    "ja": "読める身分証のウォーターマークの書き方"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Menulis catatan watermark KTP yang enak dibaca: bahasa yang konsisten di tiap entri, kalimat sederhana, dan struktur ringkas untuk tinjauan mingguan.",
+    "en": "Writing ID watermark notes people can read: consistent language across entries, plain phrasing and a simple structure for the weekly check.",
+    "ar": "كتابة ملاحظات علامة مائية على بطاقة KTP بأسلوب مقروء: لغة متسقة عبر الإدخالات، وعبارات بسيطة، وبنية مختصرة للمراجعة الأسبوعية.",
+    "ja": "読みやすい身分証ウォーターマークのメモの書き方。各エントリで言葉をそろえ、平易な表現を使い、週次確認を簡単な構成にするコツを紹介します。",
+    "zh": "撰写读者易懂的身份证水印笔记：各条记录用语一致、表达朴素，以及便于回顾的简单结构。",
+    "jv": "Nulis cathetan watermark KTP sing enak diwaca: basa sing konsisten ing saben entri, ukara sing prasaja, lan struktur ringkes kanggo tinjauan mingguan.",
+    "su": "Nulis catetan watermark KTP anu gampang dibaca: basa anu konsisten dina unggal éntri, kalimah anu basajan, jeung struktur ringkes pikeun tinjauan mingguan."
+  }
 }

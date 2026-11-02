@@ -15,14 +15,14 @@
   "selectTheme": "テーマを選択",
   "language": "言語",
   "selectLanguage": "言語を選択",
-  "localeIndonesian": "Bahasa Indonesia",
-  "localeEnglish": "English",
-  "localeArabic": "العربية",
-  "localeJavanese": "Basa Jawa",
-  "localeSundanese": "Basa Sunda",
-  "localeChinese": "中文",
+  "localeIndonesian": "インドネシア語",
+  "localeEnglish": "英語",
+  "localeArabic": "アラビア語",
+  "localeJavanese": "ジャワ語",
+  "localeSundanese": "スンダ語",
+  "localeChinese": "中国語",
   "localeJapanese": "日本語",
-  "localeSpanish": "Español",
+  "localeSpanish": "スペイン語",
   "about": "約",
   "cancel": "キャンセル",
   "save": "保存",
@@ -195,8 +195,8 @@
   "localDeviceStorage": "端末ローカルストレージ",
   "resetDefaultsDesc": "テンプレートとテキスト設定を初期値に戻す",
   "appLabel": "アプリ",
-  "officialKominfoGuide": "Panduan Resmi Kominfo & UU PDP",
-  "privacyAndSettings": "Privasi & Pengaturan",
+  "officialKominfoGuide": "Kominfo・個人データ保護法 公式ガイド",
+  "privacyAndSettings": "プライバシーと設定",
   "@historySubtitle": {
     "placeholders": {
       "count": {
@@ -371,5 +371,267 @@
   "privacyGradeDescMax": "最大保護 • データ保護基準に準拠",
   "privacyGradeDescVeryGood": "強固な保護 • 共有しても安全です",
   "privacyGradeDescFair": "適度な保護 • 日付の追加と個人情報のマスキングを推奨",
-  "privacyGradeDescWeak": "弱い保護 • 目的と日付を追加してください"
+  "privacyGradeDescWeak": "弱い保護 • 目的と日付を追加してください",
+  "appTitle": "IDMark",
+  "appTagline": "身分証・運転免許証・重要書類の写真にテキスト透かしを入れます。",
+  "appSubtitle": "身分証とプライバシーの保護",
+  "onbSkip": "スキップ",
+  "onbNext": "次へ",
+  "onbGetStarted": "はじめる",
+  "onbPrivacyHeadline": "プライバシーとオフラインを保証",
+  "onbPrivacyDetail": "すべてのデータはトラッカーなしで端末内に安全に保存されます。",
+  "onbSlide1Title": "身分証スタンプ",
+  "onbSlide1Sub": "書類に用途と日付を",
+  "onbSlide1Badge": "100% オフライン＆プライベート",
+  "onbSlide2Title": "プリセット",
+  "onbSlide2Sub": "すぐに使えるテンプレート",
+  "onbSlide2Badge": "軽量でスムーズ",
+  "onbSlide3Title": "履歴",
+  "onbSlide3Sub": "スタンプ結果を保存",
+  "onbSlide3Badge": "広告なし・アカウント不要",
+  "onbSlide4Title": "端末内処理",
+  "onbSlide4Sub": "クラウドへのアップロードなし",
+  "onbSlide4Badge": "データは端末内に保存",
+  "loadingLabel": "読み込み中…",
+  "download": "ダウンロード",
+  "downloadSuccess": "透かし入り書類をダウンロードしました（{filename}）！🛡️✨",
+  "@downloadSuccess": {
+    "placeholders": {
+      "filename": {
+        "type": "String"
+      }
+    }
+  },
+  "protectionProof": "保護の証明",
+  "tierExemplary": "模範",
+  "tierDisciplined": "規律",
+  "tierOrderly": "整然",
+  "tierStarting": "はじめ",
+  "disciplineCount": "透かし入り {count} 件 • {tier}",
+  "@disciplineCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "tier": {
+        "type": "String"
+      }
+    }
+  },
+  "disciplineDesc": "安全な書き出しのたびに書類保護の習慣が身につきます。",
+  "shareDiscipline": "記録を共有",
+  "disciplineShareText": "透かし入り {count} 件 • {tier} #IDMark",
+  "@disciplineShareText": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "tier": {
+        "type": "String"
+      }
+    }
+  },
+  "allTemplates": "すべて",
+  "myPresets": "マイプリセット",
+  "catBanking": "銀行",
+  "catFinance": "金融・貸付",
+  "catCareer": "採用・人事",
+  "catRental": "レンタル・旅行",
+  "catTelecom": "通信",
+  "catMultifinance": "マルチファイナンス",
+  "catInvestment": "投資",
+  "catPublicService": "公共サービス",
+  "catInternational": "国際",
+  "appearanceAndLanguage": "表示と言語",
+  "themeMode": "テーマモード",
+  "identity": "身元",
+  "patternDiagonalBand": "斜めバンド",
+  "patternDiagonalBandDesc": "書類中央を横切る太い斜線（Kominfo 推奨）",
+  "patternRepeatedGrid": "繰り返しグリッド",
+  "patternRepeatedGridDesc": "写真全体に文字を繰り返し、最大限に保護",
+  "patternBottomBar": "下部バー",
+  "patternBottomBarDesc": "書類下部の帯状テキスト",
+  "patternCornerStamp": "コーナースタンプ",
+  "patternCornerStampDesc": "右下の検証スタンプ",
+  "patternSecuritySeal": "円形シール",
+  "patternSecuritySealDesc": "検証枠付きの二重円形シール",
+  "patternCrossStamp": "ダブルクロス（Xバンド）",
+  "patternCrossStampDesc": "2本の斜線が書類全体を保護",
+  "patternQrBadge": "QR検証バッジ",
+  "patternQrBadgeDesc": "用途と日付の真正性を示すQRバッジ",
+  "colorWhite": "ピュアホワイト",
+  "colorDark": "ディープブラック",
+  "colorRed": "オフィシャルレッド",
+  "colorBlue": "ベリフィケーションブルー",
+  "colorEmerald": "セーフグリーン",
+  "colorAmber": "ワーニングイエロー",
+  "colorPurple": "シールパープル",
+  "formatPng": "PNG（フル解像度）",
+  "formatPngDesc": "元の鮮明さを保つロスレス形式",
+  "formatJpeg": "JPEG（軽量）",
+  "formatJpegDesc": "データを節約して素早くアップロードできる圧縮形式",
+  "formatPdf": "PDF書類（印刷対応）",
+  "formatPdfDesc": "官公庁や銀行で使われる正式書類形式",
+  "redactBlackout": "黒塗り（ブラックアウト）",
+  "redactBlackoutDesc": "データを覆う永続的な黒塗り",
+  "redactMosaic": "モザイク処理",
+  "redactMosaicDesc": "ピクセル化で機密テキストをぼかす",
+  "redactBlur": "ぼかし処理",
+  "redactBlurDesc": "ぼかしで個人情報の細部をならす",
+  "targetNik": "ID番号",
+  "targetSignature": "署名",
+  "targetAddress": "住所",
+  "targetBirthPlace": "出生地・生年月日",
+  "targetPhoto": "顔写真",
+  "shareProofTitle": "書類保護の証明",
+  "shareProofSubtitle": "Kominfo準拠の透かし・マスク完全性証明書",
+  "shareFormatFeed": "フィード (4:5)",
+  "shareFormatStory": "ストーリー (9:16)",
+  "shareCopyText": "テキストをコピー",
+  "shareProcessing": "処理中…",
+  "shareDownloadProofPng": "証明PNGをダウンロード",
+  "shareShareProof": "証明を共有",
+  "shareCardBrand": "IDMARK • セキュアID",
+  "shareCardOnDevice": "100% 端末内",
+  "shareCardTitle": "書類透かし保護の証明",
+  "shareCardPurposeLabel": "特定用途：",
+  "shareCardPrivacyScore": "プライバシースコア",
+  "shareCardRedactions": "マスク",
+  "shareCardAreaCount": "{count} 箇所",
+  "@shareCardAreaCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "shareCardFormat": "形式",
+  "shareCardDate": "日付：{date}",
+  "@shareCardDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "shareCardFooter": "idmark.faishal.id • Kominfo ID透かし基準",
+  "shareCardIntegrityHash": "整合性ハッシュ（SHA-256）：",
+  "shareProofHeading": "🛡️ 書類保護の証明 — IDMARK",
+  "shareProofPurposeLine": "📌 特定用途：\"{purpose}\"",
+  "@shareProofPurposeLine": {
+    "placeholders": {
+      "purpose": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofDateLine": "📅 スタンプ日付：{date}",
+  "@shareProofDateLine": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofScoreLine": "🔒 プライバシースコア：{score}/100",
+  "@shareProofScoreLine": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "shareProofRedactionLine": "✂️ 永続マスク：{count} 箇所",
+  "@shareProofRedactionLine": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "shareProofHashLine": "🔑 SHA-256 ハッシュ：{hash}",
+  "@shareProofHashLine": {
+    "placeholders": {
+      "hash": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofOnDeviceLine": "✅ 100% 端末内で処理、サーバー不使用（Kominfo RI 指針準拠）",
+  "shareProofCtaLine": "IDMark で身元を守りましょう：https://idmark.faishal.id",
+  "shareProofDownloaded": "書類保護証明書をダウンロードしました！🛡️✨",
+  "shareProofFailed": "証明の共有に失敗しました：{error}",
+  "@shareProofFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofCopied": "保護の証明をクリップボードにコピーしました！📋✨",
+  "themeCyberShield": "サイバーシールド",
+  "themeEmeraldSafe": "エメラルドセーフ",
+  "themeObsidianVault": "オブシディアン金庫",
+  "themeAmberProof": "アンバー証明",
+  "quickSensorShort": "クイックマスク：",
+  "redactedTag": "[マスク済み：{label}]",
+  "@redactedTag": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "defaultWatermarkText": "本人確認のみに使用",
+  "pdfHeader": "IDMARK — 透かし入り身分証書類",
+  "pdfComplianceNote": "個人データ保護原則に準拠（法律第27/2022号）",
+  "pdfOnDevice": "100% 端末内",
+  "pdfPurposeLabel": "使用目的：",
+  "pdfDateLabel": "取引日：{date}",
+  "@pdfDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "pdfPrintedAt": "印刷日時：{date}",
+  "@pdfPrintedAt": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "pdfChecksum": "SHA-256 チェックサム：",
+  "catEcommerce": "EC",
+  "presetBank": "銀行口座開設",
+  "presetBankUpdate": "銀行顧客情報の更新",
+  "presetFintech": "OJK認可のフィンテック／融資",
+  "presetPaylater": "後払い・クレジットカード有効化",
+  "presetJob": "求人応募",
+  "presetHrOnboarding": "新入社員の受け入れ",
+  "presetRental": "車・バイクのレンタル",
+  "presetHotel": "ホテル・ヴィラ・下宿のチェックイン",
+  "presetTelco": "プリペイドSIM登録",
+  "presetSimReplace": "SIMカードの再発行（紛失・破損）",
+  "presetKredit": "リース・マルチファイナンス申込",
+  "presetKpr": "住宅ローン・不動産申込",
+  "presetInvestment": "IDX株式証券口座",
+  "presetCrypto": "Bappebti暗号資産口座の認証",
+  "presetEcommerce": "マーケットプレイス出品者認証",
+  "presetBpjs": "BPJS 年金・残高請求",
+  "presetGovKelurahan": "住民登録・役所手続き",
+  "presetGlobalKyc": "国際KYC認証",
+  "defaultInternalSubtext": "社内書類専用",
+  "pdfLegalNotice": "法的通知：この身分証の複製は上記の用途に限り有効かつ許可されます。それ以外の用途は個人データの不正利用として刑事罰の対象となります。",
+  "validationRedactionLabelRequired": "マスクのラベルは必須です",
+  "validationRedactionXRange": "マスクのX位置は0.0〜1.0の範囲で指定してください",
+  "validationRedactionYRange": "マスクのY位置は0.0〜1.0の範囲で指定してください",
+  "validationRedactionWidthRange": "マスクの幅は0.0〜1.0の範囲で指定してください",
+  "validationRedactionHeightRange": "マスクの高さは0.0〜1.0の範囲で指定してください",
+  "validationAuditIdRequired": "監査ログIDは必須です",
+  "validationAuditPurposeRequired": "監査ログの用途は必須です",
+  "validationAuditHashRequired": "SHA-256ハッシュは必須です",
+  "validationAuditScoreRange": "プライバシースコアは0〜100の範囲で指定してください"
 }

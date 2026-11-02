@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "kpi-pribadi-untuk-idmark",
-    "en": "personal-kpis-for-idmark",
-    "ar": "idmark-7",
-    "jv": "pandhuan-idmark-idmark-7",
-    "su": "pituduh-idmark-idmark-7",
-    "zh": "idmark-idmark-实用指南-7",
-    "ja": "idmarkidmark-ガイド-7"
+    "id": "cara-mengukur-watermark-ktp-tanpa-angka-palsu",
+    "en": "measuring-id-watermark-without-fake-numbers",
+    "ar": "qyas-alama-maiya-ala-alhwya-dwn-arqam-whmya",
+    "jv": "ngukur-watermark-ktp-tanpa-angka-goroh",
+    "su": "ngukur-watermark-ktp-tanpa-angka-bohong",
+    "zh": "ru-he-heng-liang-shen-fen-zheng-shui-yin-er-bu-kao-gu-ji",
+    "ja": "suisoku-ni-tayora-zu-mibun-shou-no-uootaamaaku-wo-hakaru"
   },
   "titles": {
-    "id": "KPI Pribadi untuk IDMark",
-    "en": "Personal KPIs for IDMark",
-    "ar": "IDMark — دليل IDMark",
-    "jv": "Pandhuan: KPI Pribadi untuk IDMark",
-    "su": "Pituduh: KPI Pribadi untuk IDMark",
-    "zh": "IDMark · IDMark 实用指南",
-    "ja": "IDMark｜IDMark ガイド"
+    "id": "Cara mengukur watermark KTP tanpa angka palsu",
+    "en": "Measuring ID watermark without fake numbers",
+    "ar": "قياس علامة مائية على الهوية دون أرقام وهمية",
+    "jv": "Ngukur watermark KTP tanpa angka goroh",
+    "su": "Ngukur watermark KTP tanpa angka bohong",
+    "zh": "如何衡量身份证水印而不靠估计",
+    "ja": "推測に頼らず身分証のウォーターマークを測る"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Mengukur watermark KTP tanpa angka palsu: sinyal jujur yang perlu dicatat tiap minggu, hal yang sebaiknya diabaikan, dan cara membaca minggu yang sepi.",
+    "en": "Measuring ID watermark without fake numbers: which honest signals to track each week, what to ignore and how to read a quiet week.",
+    "ar": "قياس علامة مائية على بطاقة KTP دون أرقام وهمية: إشارات صادقة تسجلها كل أسبوع، وما يُستحسن تجاهله، وكيف تقرأ أسبوعاً هادئاً.",
+    "ja": "水増しされた数字に頼らず身分証ウォーターマークを測る方法。毎週記録すべき正直なサイン、無視してよいもの、停滞した週の読み方を紹介します。",
+    "zh": "不靠虚假数字衡量身份证水印：每周应记录的真实信号、可忽略的指标，以及如何读懂平静的一周。",
+    "jv": "Ngukur watermark KTP tanpa angka palsu: sinyal jujur sing kudu dicathet saben minggu, apa sing mending diabaikan, lan cara maca minggu sing sepi.",
+    "su": "Ngukur watermark KTP tanpa angka palsu: sinyal jujur anu kudu dicatet unggal minggu, naon anu hadé dihiraukeun, jeung kumaha maca minggu anu sepi."
+  }
 }

@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "percepat-input-lindungi-fotokopi-ktp-di-idmark-offline",
-    "en": "speed-up-lindungi-fotokopi-ktp-input-in-idmark",
-    "ar": "lindungi-fotokopi-ktp-7",
-    "jv": "pandhuan-lindungi-fotokopi-ktp-idmark-7",
-    "su": "pituduh-lindungi-fotokopi-ktp-idmark-7",
-    "zh": "idmark-lindungi-fotokopi-ktp-实用指南-7",
-    "ja": "idmarklindungi-fotokopi-ktp-ガイド-7"
+    "id": "lindungi-fotokopi-ktp-yang-tidak-bikin-malas-membuka-app",
+    "en": "lindungi-fotokopi-ktp-that-does-not-feel-like-a-chore-to-open",
+    "ar": "almalwmat-almhma-la-ythql-fthh-aljz-2",
+    "jv": "lindungi-fotokopi-ktp-sing-ora-males-dibukak",
+    "su": "lindungi-fotokopi-ktp-anu-teu-hoream-dibuka",
+    "zh": "da-kai-bu-fei-jin-de-zhong-yao-xin-xi-di-2-pian",
+    "ja": "hiraku-noga-okkuu-ninaranai-taisetsu-na-jouhou-dai-2-kai"
   },
   "titles": {
-    "id": "Percepat Input lindungi fotokopi KTP di IDMark",
-    "en": "Speed Up lindungi fotokopi KTP Input in IDMark",
-    "ar": "lindungi fotokopi KTP — دليل IDMark",
-    "jv": "Pandhuan: Percepat Input lindungi fotokopi KTP di IDMark",
-    "su": "Pituduh: Percepat Input lindungi fotokopi KTP di IDMark",
-    "zh": "IDMark · lindungi fotokopi KTP 实用指南",
-    "ja": "IDMark｜lindungi fotokopi KTP ガイド"
+    "id": "lindungi fotokopi KTP yang tidak bikin malas membuka app",
+    "en": "lindungi fotokopi KTP that does not feel like a chore to open",
+    "ar": "المعلومات المهمة لا يثقل فتحه · الجزء 2",
+    "jv": "lindungi fotokopi KTP sing ora males dibukak",
+    "su": "lindungi fotokopi KTP anu teu hoream dibuka",
+    "zh": "打开不费劲的重要信息 · 第2篇",
+    "ja": "開くのが億劫にならない大切な情報 · 第2回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Lindungi fotokopi KTP yang tidak terasa merepotkan saat dibuka: alur masuk yang lebih cepat, rutinitas singkat, dan tips untuk langkah pertama yang cepat.",
+    "en": "A lindungi fotokopi KTP routine that does not feel like a chore to open: a quicker entry flow, a short routine and tips for a fast first step.",
+    "ar": "lindungi fotokopi KTP لا يبدو عبئاً عند فتحه: مسار إدخال أسرع، وروتين قصير، ونصائح لخطوة أولى سريعة.",
+    "ja": "開くのが面倒にならない lindungi fotokopi KTP。より速い入力の流れ、短いルーティン、素早く最初の一歩を踏み出すためのヒントを紹介します。",
+    "zh": "打开不觉得麻烦的 lindungi fotokopi KTP：更快的进入流程、简短日常操作，以及快速起步的建议。",
+    "jv": "Lindungi fotokopi KTP sing ora kerasa ngrepotaké nalika dibukak: alur mlebu sing luwih cepet, rutinitas cekak, lan tips kanggo langkah pertama sing cepet.",
+    "su": "Lindungi fotokopi KTP anu teu karasa ribet lamun dibuka: alur asup anu leuwih gancang, rutinitas pondok, jeung tip pikeun lankah kahiji anu gancang."
+  }
 }

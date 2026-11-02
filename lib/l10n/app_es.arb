@@ -15,14 +15,14 @@
   "selectTheme": "Seleccionar tema",
   "language": "Idioma",
   "selectLanguage": "Seleccionar idioma",
-  "localeIndonesian": "Bahasa Indonesia",
-  "localeEnglish": "English",
-  "localeArabic": "العربية",
-  "localeJavanese": "Basa Jawa",
-  "localeSundanese": "Basa Sunda",
-  "localeChinese": "中文",
-  "localeJapanese": "日本語",
-  "localeSpanish": "Español",
+  "localeIndonesian": "Indonesio",
+  "localeEnglish": "Inglés",
+  "localeArabic": "Árabe",
+  "localeJavanese": "Javanés",
+  "localeSundanese": "Sundanés",
+  "localeChinese": "Chino",
+  "localeJapanese": "Japonés",
+  "localeSpanish": "Castellano",
   "about": "Acerca de",
   "cancel": "Cancelar",
   "save": "Guardar",
@@ -195,8 +195,8 @@
   "localDeviceStorage": "Almacenamiento local del dispositivo",
   "resetDefaultsDesc": "Restablecer plantillas y ajustes de texto a los valores de fábrica",
   "appLabel": "Aplicación",
-  "officialKominfoGuide": "Panduan Resmi Kominfo & UU PDP",
-  "privacyAndSettings": "Privasi & Pengaturan",
+  "officialKominfoGuide": "Guía oficial de Kominfo y la ley de protección de datos",
+  "privacyAndSettings": "Privacidad y ajustes",
   "@historySubtitle": {
     "placeholders": {
       "count": {
@@ -371,5 +371,267 @@
   "privacyGradeDescMax": "Protección máxima • Cumple con los estándares de privacidad de datos",
   "privacyGradeDescVeryGood": "Protección muy buena • El documento es seguro para compartir",
   "privacyGradeDescFair": "Protección moderada • Se recomienda agregar fecha y censurar la identificación",
-  "privacyGradeDescWeak": "Protección débil • Agregue propósito específico y fecha"
+  "privacyGradeDescWeak": "Protección débil • Agregue propósito específico y fecha",
+  "appTitle": "IDMark",
+  "appTagline": "Estampa una marca de agua de texto en fotos de identidad, licencias y documentos importantes.",
+  "appSubtitle": "Protección de identidad y privacidad",
+  "onbSkip": "Omitir",
+  "onbNext": "Siguiente",
+  "onbGetStarted": "Empezar ahora",
+  "onbPrivacyHeadline": "Privacidad y modo offline garantizados",
+  "onbPrivacyDetail": "Todos los datos permanecen seguros en tu dispositivo, sin rastreadores.",
+  "onbSlide1Title": "Sello de identidad",
+  "onbSlide1Sub": "Propósito y fecha en el documento",
+  "onbSlide1Badge": "100% offline y privado",
+  "onbSlide2Title": "Plantillas",
+  "onbSlide2Sub": "Plantillas listas para usar",
+  "onbSlide2Badge": "Ligero y ágil",
+  "onbSlide3Title": "Historial",
+  "onbSlide3Sub": "Resultados guardados",
+  "onbSlide3Badge": "Sin anuncios ni cuenta",
+  "onbSlide4Title": "En el dispositivo",
+  "onbSlide4Sub": "Sin subir a la nube",
+  "onbSlide4Badge": "Datos guardados en el dispositivo",
+  "loadingLabel": "Cargando…",
+  "download": "Descargar",
+  "downloadSuccess": "¡Documento con marca de agua descargado ({filename})! 🛡️✨",
+  "@downloadSuccess": {
+    "placeholders": {
+      "filename": {
+        "type": "String"
+      }
+    }
+  },
+  "protectionProof": "Prueba de protección",
+  "tierExemplary": "Ejemplar",
+  "tierDisciplined": "Constante",
+  "tierOrderly": "Ordenado",
+  "tierStarting": "Inicio",
+  "disciplineCount": "{count} archivos con marca • {tier}",
+  "@disciplineCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "tier": {
+        "type": "String"
+      }
+    }
+  },
+  "disciplineDesc": "Cada exportación segura refuerza tu disciplina de protección.",
+  "shareDiscipline": "Compartir progreso",
+  "disciplineShareText": "{count} archivos con marca • {tier} #IDMark",
+  "@disciplineShareText": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "tier": {
+        "type": "String"
+      }
+    }
+  },
+  "allTemplates": "Todas",
+  "myPresets": "Mis plantillas",
+  "catBanking": "Banca",
+  "catFinance": "Finanzas y préstamos",
+  "catCareer": "Empleo y RR. HH.",
+  "catRental": "Alquiler y viajes",
+  "catTelecom": "Telecomunicaciones",
+  "catMultifinance": "Multifinanciación",
+  "catInvestment": "Inversión",
+  "catPublicService": "Servicios públicos",
+  "catInternational": "Internacional",
+  "appearanceAndLanguage": "Apariencia e idioma",
+  "themeMode": "Modo de tema",
+  "identity": "Identidad",
+  "patternDiagonalBand": "Banda diagonal",
+  "patternDiagonalBandDesc": "Una línea diagonal gruesa sobre el centro del documento (recomendado por Kominfo)",
+  "patternRepeatedGrid": "Cuadrícula repetida",
+  "patternRepeatedGridDesc": "Texto repetido por toda la foto para máxima protección",
+  "patternBottomBar": "Barra inferior",
+  "patternBottomBarDesc": "Una barra de texto sólida en la parte inferior",
+  "patternCornerStamp": "Sello en esquina",
+  "patternCornerStampDesc": "Sello de verificación en la esquina inferior derecha",
+  "patternSecuritySeal": "Sello circular",
+  "patternSecuritySealDesc": "Sello circular doble con borde de verificación",
+  "patternCrossStamp": "Cruz doble (X-Band)",
+  "patternCrossStampDesc": "Dos diagonales cruzadas protegen todo el documento",
+  "patternQrBadge": "Insignia QR de verificación",
+  "patternQrBadgeDesc": "Insignia QR que acredita el propósito y la fecha",
+  "colorWhite": "Blanco puro",
+  "colorDark": "Negro intenso",
+  "colorRed": "Rojo oficial",
+  "colorBlue": "Azul verificación",
+  "colorEmerald": "Verde seguro",
+  "colorAmber": "Amarillo alerta",
+  "colorPurple": "Púrpura sello",
+  "formatPng": "PNG (resolución completa)",
+  "formatPngDesc": "Formato sin pérdida que conserva la nitidez original",
+  "formatJpeg": "JPEG (tamaño reducido)",
+  "formatJpegDesc": "Formato comprimido que ahorra datos para subir rápido",
+  "formatPdf": "Documento PDF (listo para imprimir)",
+  "formatPdfDesc": "Formato oficial usado por oficinas y bancos",
+  "redactBlackout": "Censura negra",
+  "redactBlackoutDesc": "Un recuadro negro permanente sobre los datos",
+  "redactMosaic": "Censura con mosaico",
+  "redactMosaicDesc": "Pixelado que difumina el texto sensible",
+  "redactBlur": "Censura difuminada",
+  "redactBlurDesc": "Difuminado que nivela los detalles personales",
+  "targetNik": "Número de identidad",
+  "targetSignature": "Firma",
+  "targetAddress": "Dirección completa",
+  "targetBirthPlace": "Lugar y fecha de nacimiento",
+  "targetPhoto": "Foto del rostro",
+  "shareProofTitle": "Prueba de protección del documento",
+  "shareProofSubtitle": "Certificado de integridad de marca y censura según Kominfo",
+  "shareFormatFeed": "Publicación (4:5)",
+  "shareFormatStory": "Historia (9:16)",
+  "shareCopyText": "Copiar texto",
+  "shareProcessing": "Procesando…",
+  "shareDownloadProofPng": "Descargar prueba PNG",
+  "shareShareProof": "Compartir prueba",
+  "shareCardBrand": "IDMARK • ID SEGURO",
+  "shareCardOnDevice": "100% EN EL DISPOSITIVO",
+  "shareCardTitle": "PRUEBA DE MARCA DE AGUA DEL DOCUMENTO",
+  "shareCardPurposeLabel": "PARA EL PROPÓSITO ESPECÍFICO:",
+  "shareCardPrivacyScore": "PUNTUACIÓN DE PRIVACIDAD",
+  "shareCardRedactions": "CENSURAS",
+  "shareCardAreaCount": "{count} zonas",
+  "@shareCardAreaCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "shareCardFormat": "FORMATO",
+  "shareCardDate": "Fecha: {date}",
+  "@shareCardDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "shareCardFooter": "idmark.faishal.id • Estándar Kominfo para marcas de agua",
+  "shareCardIntegrityHash": "HASH DE INTEGRIDAD (SHA-256):",
+  "shareProofHeading": "🛡️ PRUEBA DE PROTECCIÓN DEL DOCUMENTO — IDMARK",
+  "shareProofPurposeLine": "📌 Propósito específico: \"{purpose}\"",
+  "@shareProofPurposeLine": {
+    "placeholders": {
+      "purpose": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofDateLine": "📅 Fecha del sello: {date}",
+  "@shareProofDateLine": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofScoreLine": "🔒 Puntuación de privacidad: {score}/100",
+  "@shareProofScoreLine": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "shareProofRedactionLine": "✂️ Censuras permanentes: {count} zonas cubiertas",
+  "@shareProofRedactionLine": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "shareProofHashLine": "🔑 Hash SHA-256: {hash}",
+  "@shareProofHashLine": {
+    "placeholders": {
+      "hash": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofOnDeviceLine": "✅ Procesado 100% en el dispositivo, sin servidor (según Kominfo RI)",
+  "shareProofCtaLine": "Protege tu identidad con IDMark: https://idmark.faishal.id",
+  "shareProofDownloaded": "¡Certificado de protección descargado! 🛡️✨",
+  "shareProofFailed": "No se pudo compartir la prueba: {error}",
+  "@shareProofFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofCopied": "¡Prueba de protección copiada al portapapeles! 📋✨",
+  "themeCyberShield": "Escudo ciber",
+  "themeEmeraldSafe": "Esmeralda segura",
+  "themeObsidianVault": "Bóveda obsidiana",
+  "themeAmberProof": "Prueba ámbar",
+  "quickSensorShort": "Censura rápida:",
+  "redactedTag": "[CENSURADO: {label}]",
+  "@redactedTag": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "defaultWatermarkText": "SOLO PARA VERIFICACIÓN DE IDENTIDAD",
+  "pdfHeader": "IDMARK — DOCUMENTO DE IDENTIDAD CON MARCA",
+  "pdfComplianceNote": "Conforme a los principios de protección de datos (Ley n.º 27/2022)",
+  "pdfOnDevice": "100% En el dispositivo",
+  "pdfPurposeLabel": "Propósito de uso: ",
+  "pdfDateLabel": "Fecha de la transacción: {date}",
+  "@pdfDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "pdfPrintedAt": "Impreso el: {date}",
+  "@pdfPrintedAt": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "pdfChecksum": "Suma de verificación SHA-256: ",
+  "catEcommerce": "Comercio electrónico",
+  "presetBank": "Apertura de cuenta bancaria",
+  "presetBankUpdate": "Actualización de datos del cliente",
+  "presetFintech": "Fintech / préstamos con licencia OJK",
+  "presetPaylater": "Activación de pago aplazado / tarjeta",
+  "presetJob": "Solicitud de empleo",
+  "presetHrOnboarding": "Incorporación de nuevo empleado",
+  "presetRental": "Alquiler de coche o moto",
+  "presetHotel": "Registro en hotel, villa o residencia",
+  "presetTelco": "Registro de SIM prepago",
+  "presetSimReplace": "Reposición de SIM perdida o dañada",
+  "presetKredit": "Solicitud de leasing o multifinanciación",
+  "presetKpr": "Solicitud de hipoteca o inmueble",
+  "presetInvestment": "Cuenta de valores en IDX",
+  "presetCrypto": "Verificación de cuenta cripto Bappebti",
+  "presetEcommerce": "Verificación de vendedor en marketplace",
+  "presetBpjs": "Reclamación de saldo BPJS",
+  "presetGovKelurahan": "Registro civil / oficina local",
+  "presetGlobalKyc": "Verificación KYC internacional",
+  "defaultInternalSubtext": "SOLO PARA DOCUMENTOS INTERNOS",
+  "pdfLegalNotice": "AVISO LEGAL: Esta copia del documento de identidad solo es válida y está permitida para el propósito indicado arriba. Cualquier otro uso constituye un delito de uso indebido de datos personales.",
+  "validationRedactionLabelRequired": "La etiqueta de la censura no puede estar vacía",
+  "validationRedactionXRange": "La posición X de la censura debe estar entre 0.0 y 1.0",
+  "validationRedactionYRange": "La posición Y de la censura debe estar entre 0.0 y 1.0",
+  "validationRedactionWidthRange": "El ancho de la censura debe estar entre 0.0 y 1.0",
+  "validationRedactionHeightRange": "La altura de la censura debe estar entre 0.0 y 1.0",
+  "validationAuditIdRequired": "El ID del registro de auditoría no puede estar vacío",
+  "validationAuditPurposeRequired": "El propósito del registro de auditoría no puede estar vacío",
+  "validationAuditHashRequired": "El hash SHA-256 no puede estar vacío",
+  "validationAuditScoreRange": "La puntuación de privacidad debe estar entre 0 y 100"
 }

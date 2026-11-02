@@ -15,14 +15,14 @@
   "selectTheme": "选择主题",
   "language": "语言",
   "selectLanguage": "选择语言",
-  "localeIndonesian": "Bahasa Indonesia",
-  "localeEnglish": "English",
-  "localeArabic": "العربية",
-  "localeJavanese": "Basa Jawa",
-  "localeSundanese": "Basa Sunda",
+  "localeIndonesian": "印度尼西亚语",
+  "localeEnglish": "英语",
+  "localeArabic": "阿拉伯语",
+  "localeJavanese": "爪哇语",
+  "localeSundanese": "巽他语",
   "localeChinese": "中文",
-  "localeJapanese": "日本語",
-  "localeSpanish": "Español",
+  "localeJapanese": "日语",
+  "localeSpanish": "西班牙语",
   "about": "关于",
   "cancel": "取消",
   "save": "保存",
@@ -195,8 +195,8 @@
   "localDeviceStorage": "本地设备存储",
   "resetDefaultsDesc": "将模板和文本设置恢复为出厂默认设置",
   "appLabel": "应用",
-  "officialKominfoGuide": "Panduan Resmi Kominfo & UU PDP",
-  "privacyAndSettings": "Privasi & Pengaturan",
+  "officialKominfoGuide": "Kominfo 与个人数据保护法官方指南",
+  "privacyAndSettings": "隐私与设置",
   "@historySubtitle": {
     "placeholders": {
       "count": {
@@ -371,5 +371,267 @@
   "privacyGradeDescMax": "最高防护 • 符合数据安全与合规标准",
   "privacyGradeDescVeryGood": "防护良好 • 文件可安全共享",
   "privacyGradeDescFair": "防护适中 • 建议添加日期并遮盖证件号码",
-  "privacyGradeDescWeak": "防护较弱 • 请添加特定用途和日期"
+  "privacyGradeDescWeak": "防护较弱 • 请添加特定用途和日期",
+  "appTitle": "IDMark",
+  "appTagline": "在身份证、驾照和重要文件照片上添加文字水印。",
+  "appSubtitle": "身份与隐私防护",
+  "onbSkip": "跳过",
+  "onbNext": "下一步",
+  "onbGetStarted": "立即开始",
+  "onbPrivacyHeadline": "隐私与离线双重保障",
+  "onbPrivacyDetail": "所有数据都安全保存在您的设备上，没有任何跟踪器。",
+  "onbSlide1Title": "身份印章",
+  "onbSlide1Sub": "文件上的用途与日期",
+  "onbSlide1Badge": "100% 离线且私密",
+  "onbSlide2Title": "预设模板",
+  "onbSlide2Sub": "可直接使用的模板",
+  "onbSlide2Badge": "轻量且流畅",
+  "onbSlide3Title": "历史记录",
+  "onbSlide3Sub": "印章结果已保存",
+  "onbSlide3Badge": "无广告、免账号",
+  "onbSlide4Title": "本地处理",
+  "onbSlide4Sub": "不上传至云端",
+  "onbSlide4Badge": "数据保存在设备上",
+  "loadingLabel": "加载中…",
+  "download": "下载",
+  "downloadSuccess": "已下载带水印的文件（{filename}）！🛡️✨",
+  "@downloadSuccess": {
+    "placeholders": {
+      "filename": {
+        "type": "String"
+      }
+    }
+  },
+  "protectionProof": "保护凭证",
+  "tierExemplary": "典范",
+  "tierDisciplined": "自律",
+  "tierOrderly": "有序",
+  "tierStarting": "起步",
+  "disciplineCount": "{count} 个带水印文件 • {tier}",
+  "@disciplineCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "tier": {
+        "type": "String"
+      }
+    }
+  },
+  "disciplineDesc": "每次安全导出都会提升你的文档保护习惯。",
+  "shareDiscipline": "分享记录",
+  "disciplineShareText": "{count} 个带水印文件 • {tier} #IDMark",
+  "@disciplineShareText": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "tier": {
+        "type": "String"
+      }
+    }
+  },
+  "allTemplates": "全部",
+  "myPresets": "我的预设",
+  "catBanking": "银行",
+  "catFinance": "金融与借贷",
+  "catCareer": "求职与人力资源",
+  "catRental": "租车与旅行",
+  "catTelecom": "电信",
+  "catMultifinance": "多元金融",
+  "catInvestment": "投资",
+  "catPublicService": "公共服务",
+  "catInternational": "国际",
+  "appearanceAndLanguage": "外观与语言",
+  "themeMode": "主题模式",
+  "identity": "身份",
+  "patternDiagonalBand": "斜向条带",
+  "patternDiagonalBandDesc": "一条粗斜线横跨文件中央（Kominfo 推荐）",
+  "patternRepeatedGrid": "重复网格",
+  "patternRepeatedGridDesc": "整张照片铺满重复文字，实现最大防护",
+  "patternBottomBar": "底部条带",
+  "patternBottomBarDesc": "文件底部一条实心文字条",
+  "patternCornerStamp": "角落印章",
+  "patternCornerStampDesc": "右下角的验证印章",
+  "patternSecuritySeal": "圆形官方印章",
+  "patternSecuritySealDesc": "带验证边框的双层圆形印章",
+  "patternCrossStamp": "双交叉条带",
+  "patternCrossStampDesc": "两条交叉斜线保护整份文件",
+  "patternQrBadge": "二维码验证徽章",
+  "patternQrBadgeDesc": "二维码徽章，验证用途与日期的真实性",
+  "colorWhite": "纯白",
+  "colorDark": "深黑",
+  "colorRed": "官方红",
+  "colorBlue": "验证蓝",
+  "colorEmerald": "安全绿",
+  "colorAmber": "警示黄",
+  "colorPurple": "印章紫",
+  "formatPng": "PNG（全分辨率）",
+  "formatPngDesc": "无损格式，保留原始清晰度",
+  "formatJpeg": "JPEG（体积更小）",
+  "formatJpegDesc": "压缩格式，节省流量，便于快速上传",
+  "formatPdf": "PDF 文档（可直接打印）",
+  "formatPdfDesc": "办公室与银行通用的正式文件格式",
+  "redactBlackout": "黑色遮挡",
+  "redactBlackoutDesc": "永久覆盖数据的纯黑方块",
+  "redactMosaic": "马赛克遮挡",
+  "redactMosaicDesc": "像素化效果模糊敏感文字",
+  "redactBlur": "模糊遮挡",
+  "redactBlurDesc": "模糊效果抹平个人数据细节",
+  "targetNik": "身份证号",
+  "targetSignature": "签名",
+  "targetAddress": "完整地址",
+  "targetBirthPlace": "出生地／日期",
+  "targetPhoto": "人脸照片",
+  "shareProofTitle": "文件保护凭证",
+  "shareProofSubtitle": "符合 Kominfo 的水印与遮挡完整性证书",
+  "shareFormatFeed": "动态 (4:5)",
+  "shareFormatStory": "快拍 (9:16)",
+  "shareCopyText": "复制文本",
+  "shareProcessing": "处理中…",
+  "shareDownloadProofPng": "下载凭证 PNG",
+  "shareShareProof": "分享凭证",
+  "shareCardBrand": "IDMARK • 安全身份",
+  "shareCardOnDevice": "100% 本地处理",
+  "shareCardTitle": "文件水印保护凭证",
+  "shareCardPurposeLabel": "专门用途：",
+  "shareCardPrivacyScore": "隐私评分",
+  "shareCardRedactions": "遮挡",
+  "shareCardAreaCount": "{count} 处",
+  "@shareCardAreaCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "shareCardFormat": "格式",
+  "shareCardDate": "日期：{date}",
+  "@shareCardDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "shareCardFooter": "idmark.faishal.id • Kominfo 印尼身份证水印标准",
+  "shareCardIntegrityHash": "完整性哈希（SHA-256）：",
+  "shareProofHeading": "🛡️ 文件保护凭证 — IDMARK",
+  "shareProofPurposeLine": "📌 专门用途：\"{purpose}\"",
+  "@shareProofPurposeLine": {
+    "placeholders": {
+      "purpose": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofDateLine": "📅 盖章日期：{date}",
+  "@shareProofDateLine": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofScoreLine": "🔒 隐私评分：{score}/100",
+  "@shareProofScoreLine": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "shareProofRedactionLine": "✂️ 永久遮挡：{count} 处已覆盖",
+  "@shareProofRedactionLine": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "shareProofHashLine": "🔑 SHA-256 哈希：{hash}",
+  "@shareProofHashLine": {
+    "placeholders": {
+      "hash": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofOnDeviceLine": "✅ 100% 本地处理，无服务器（符合 Kominfo RI 指南）",
+  "shareProofCtaLine": "用 IDMark 保护你的身份：https://idmark.faishal.id",
+  "shareProofDownloaded": "文件保护证书已下载！🛡️✨",
+  "shareProofFailed": "分享凭证失败：{error}",
+  "@shareProofFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofCopied": "保护凭证已复制到剪贴板！📋✨",
+  "themeCyberShield": "赛博护盾",
+  "themeEmeraldSafe": "翡翠安全",
+  "themeObsidianVault": "黑曜石保险库",
+  "themeAmberProof": "琥珀凭证",
+  "quickSensorShort": "快速遮挡：",
+  "redactedTag": "[已遮挡：{label}]",
+  "@redactedTag": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "defaultWatermarkText": "仅用于身份验证",
+  "pdfHeader": "IDMARK — 带水印的身份文件",
+  "pdfComplianceNote": "符合个人数据保护原则（第 27/2022 号法律）",
+  "pdfOnDevice": "100% 本地处理",
+  "pdfPurposeLabel": "使用用途：",
+  "pdfDateLabel": "交易日期：{date}",
+  "@pdfDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "pdfPrintedAt": "打印时间：{date}",
+  "@pdfPrintedAt": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "pdfChecksum": "SHA-256 校验和：",
+  "catEcommerce": "电子商务",
+  "presetBank": "开立银行账户",
+  "presetBankUpdate": "银行客户资料更新",
+  "presetFintech": "OJK 持牌金融科技／借贷",
+  "presetPaylater": "先享后付／信用卡开通",
+  "presetJob": "求职申请",
+  "presetHrOnboarding": "新员工入职",
+  "presetRental": "汽车／摩托车租赁",
+  "presetHotel": "酒店／别墅／公寓入住",
+  "presetTelco": "预付费 SIM 卡注册",
+  "presetSimReplace": "SIM 卡丢失／损坏补办",
+  "presetKredit": "租赁／多元金融申请",
+  "presetKpr": "房贷／房产申请",
+  "presetInvestment": "IDX 股票证券账户",
+  "presetCrypto": "Bappebti 加密账户验证",
+  "presetEcommerce": "电商平台商家验证",
+  "presetBpjs": "BPJS 公积金／余额提取",
+  "presetGovKelurahan": "户籍／街道办事处事务",
+  "presetGlobalKyc": "国际 KYC 验证",
+  "defaultInternalSubtext": "仅供内部文件使用",
+  "pdfLegalNotice": "法律声明：本身份证件副本仅在上述用途范围内有效且获准使用。任何超出该用途的使用均构成滥用个人数据的刑事犯罪。",
+  "validationRedactionLabelRequired": "遮挡标签不能为空",
+  "validationRedactionXRange": "遮挡 X 位置必须在 0.0 到 1.0 之间",
+  "validationRedactionYRange": "遮挡 Y 位置必须在 0.0 到 1.0 之间",
+  "validationRedactionWidthRange": "遮挡宽度必须在 0.0 到 1.0 之间",
+  "validationRedactionHeightRange": "遮挡高度必须在 0.0 到 1.0 之间",
+  "validationAuditIdRequired": "审计日志 ID 不能为空",
+  "validationAuditPurposeRequired": "审计日志用途不能为空",
+  "validationAuditHashRequired": "SHA-256 哈希不能为空",
+  "validationAuditScoreRange": "隐私评分必须在 0 到 100 之间"
 }

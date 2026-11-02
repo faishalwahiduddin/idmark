@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Blog — IDMark</title>
+    <link>https://idmark.faishal.id/es/blog/</link>
+    <description>El blog de IDMark: guías sobre marcas de agua para e-KTP, sellos de propósito y fecha, y hábitos seguros para compartir copias del KTP, 100 % sin conexión, en el dispositivo y privado.</description>
+    <language>es</language>
+    <lastBuildDate>Sun, 04 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Marca de agua segura para el KTP: propósito y fecha sin conexión</title>
+      <link>https://idmark.faishal.id/es/blog/marca-de-agua-segura-para-el-ktp-proposito-y-fecha-sin-conexion/</link>
+      <guid isPermaLink="true">https://idmark.faishal.id/es/blog/marca-de-agua-segura-para-el-ktp-proposito-y-fecha-sin-conexion/</guid>
+      <description>Añade una marca de agua con propósito y fecha a las fotos del e-KTP antes de compartirlas. Sella documentos de identidad 100 % sin conexión en tu dispositivo, sin subirlos a ningún lado.</description>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Sello de propósito y fecha: límites seguros al compartir</title>
+      <link>https://idmark.faishal.id/es/blog/sello-de-proposito-y-fecha-limites-seguros-al-compartir/</link>
+      <guid isPermaLink="true">https://idmark.faishal.id/es/blog/sello-de-proposito-y-fecha-limites-seguros-al-compartir/</guid>
+      <description>Escribe el propósito y la fecha en cada foto de documento que compartas. El sello de IDMark marca los límites de uso para que las copias del KTP resistan el mal uso.</description>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Proteger copias del KTP: hábitos seguros antes de compartir</title>
+      <link>https://idmark.faishal.id/es/blog/proteger-copias-del-ktp-habitos-seguros-antes-de-compartir/</link>
+      <guid isPermaLink="true">https://idmark.faishal.id/es/blog/proteger-copias-del-ktp-habitos-seguros-antes-de-compartir/</guid>
+      <description>Crea hábitos seguros antes de compartir copias del KTP: sella el propósito, verifica a quién la envías y guarda un archivo. IDMark te ayuda con marcas de agua sin conexión.</description>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

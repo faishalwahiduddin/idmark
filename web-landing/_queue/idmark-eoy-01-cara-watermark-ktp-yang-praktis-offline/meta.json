@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "cara-watermark-ktp-yang-praktis-offline",
-    "en": "how-to-watermark-ktp-offline",
-    "ar": "watermark-ktp",
-    "jv": "pandhuan-watermark-ktp-idmark",
-    "su": "pituduh-watermark-ktp-idmark",
-    "zh": "idmark-watermark-ktp-实用指南",
-    "ja": "idmarkwatermark-ktp-ガイド"
+    "id": "cara-memulai-watermark-ktp-tanpa-ribet",
+    "en": "how-to-start-id-watermark-without-friction",
+    "ar": "kyf-tbda-alama-maiya-ala-alhwya-dwn-taqyd",
+    "jv": "kepriye-miwiti-watermark-ktp-tanpa-ruwet",
+    "su": "kumaha-ngamimitian-watermark-ktp-tanpa-ribet",
+    "zh": "ru-he-kai-shi-shen-fen-zheng-shui-yin-bu-bi-fu-za",
+    "ja": "mibun-shou-no-uootaamaaku-wo-muri-naku-hajime-ru-houhou"
   },
   "titles": {
-    "id": "Cara watermark KTP yang Praktis (Offline)",
-    "en": "How to watermark KTP Offline — Practical Steps",
-    "ar": "watermark KTP — دليل IDMark",
-    "jv": "Pandhuan: Cara watermark KTP yang Praktis (Offline)",
-    "su": "Pituduh: Cara watermark KTP yang Praktis (Offline)",
-    "zh": "IDMark · watermark KTP 实用指南",
-    "ja": "IDMark｜watermark KTP ガイド"
+    "id": "Cara memulai watermark KTP tanpa ribet",
+    "en": "How to start ID watermark without friction",
+    "ar": "كيف تبدأ علامة مائية على الهوية دون تعقيد",
+    "jv": "Kepriyé miwiti watermark KTP tanpa ruwet",
+    "su": "Kumaha ngamimitian watermark KTP tanpa ribet",
+    "zh": "如何开始身份证水印（不必复杂）",
+    "ja": "身分証のウォーターマークを無理なく始める方法"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Mulai watermark KTP dengan rutinitas terkecil yang tetap jalan: satu catatan, jam tetap untuk menjalankannya, dan tinjauan singkat tiap minggu.",
+    "en": "Start watermarking your KTP with the smallest routine that works: one entry, a fixed time to run it, and a short weekly check.",
+    "ar": "ابدأ علامة مائية لبطاقة KTP بأبسط روتين يعمل: مدخل واحد، ووقت ثابت للتشغيل، ومراجعة أسبوعية قصيرة.",
+    "ja": "KTP のウォーターマークを、いちばん小さな習慣から始める方法。1件の記録、決まった実行時間、週ごとの短い確認だけで続けられます。",
+    "zh": "用最小的习惯开始 KTP 水印：每次一条记录，固定运行时间，每周花几分钟简短回顾。",
+    "jv": "Wiwiti watermark KTP nganggo rutinitas paling cilik sing tetep bisa mlaku: siji entri, wektu tetep kanggo nglakokaké, lan priksa cekak saben minggu.",
+    "su": "Mimitian watermark KTP ku rutinitas anu pangleutikna tapi tetep jalan: hiji eusi, waktu anu tetep pikeun ngajalankeunana, jeung pariksa singkat unggal minggu."
+  }
 }

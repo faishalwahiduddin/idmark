@@ -1441,6 +1441,954 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Proteksi Lemah • Tambahkan tujuan spesifik dan tanggal'**
   String get privacyGradeDescWeak;
+
+  /// No description provided for @appTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'IDMark'**
+  String get appTitle;
+
+  /// No description provided for @appTagline.
+  ///
+  /// In id, this message translates to:
+  /// **'Beri cap watermark teks pada foto KTP, SIM & dokumen penting.'**
+  String get appTagline;
+
+  /// No description provided for @appSubtitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Secure ID Card & Privacy Shield'**
+  String get appSubtitle;
+
+  /// No description provided for @onbSkip.
+  ///
+  /// In id, this message translates to:
+  /// **'Lewati'**
+  String get onbSkip;
+
+  /// No description provided for @onbNext.
+  ///
+  /// In id, this message translates to:
+  /// **'Lanjut'**
+  String get onbNext;
+
+  /// No description provided for @onbGetStarted.
+  ///
+  /// In id, this message translates to:
+  /// **'Mulai Sekarang'**
+  String get onbGetStarted;
+
+  /// No description provided for @onbPrivacyHeadline.
+  ///
+  /// In id, this message translates to:
+  /// **'Privasi & Offline Terjamin'**
+  String get onbPrivacyHeadline;
+
+  /// No description provided for @onbPrivacyDetail.
+  ///
+  /// In id, this message translates to:
+  /// **'Semua data tersimpan aman di perangkat Anda tanpa pelacak.'**
+  String get onbPrivacyDetail;
+
+  /// No description provided for @onbSlide1Title.
+  ///
+  /// In id, this message translates to:
+  /// **'Stempel identitas'**
+  String get onbSlide1Title;
+
+  /// No description provided for @onbSlide1Sub.
+  ///
+  /// In id, this message translates to:
+  /// **'Tujuan & tanggal di dokumen'**
+  String get onbSlide1Sub;
+
+  /// No description provided for @onbSlide1Badge.
+  ///
+  /// In id, this message translates to:
+  /// **'100% Offline & Privat'**
+  String get onbSlide1Badge;
+
+  /// No description provided for @onbSlide2Title.
+  ///
+  /// In id, this message translates to:
+  /// **'Preset'**
+  String get onbSlide2Title;
+
+  /// No description provided for @onbSlide2Sub.
+  ///
+  /// In id, this message translates to:
+  /// **'Template siap pakai'**
+  String get onbSlide2Sub;
+
+  /// No description provided for @onbSlide2Badge.
+  ///
+  /// In id, this message translates to:
+  /// **'Ringan & Responsif'**
+  String get onbSlide2Badge;
+
+  /// No description provided for @onbSlide3Title.
+  ///
+  /// In id, this message translates to:
+  /// **'Riwayat'**
+  String get onbSlide3Title;
+
+  /// No description provided for @onbSlide3Sub.
+  ///
+  /// In id, this message translates to:
+  /// **'Hasil stempel tersimpan'**
+  String get onbSlide3Sub;
+
+  /// No description provided for @onbSlide3Badge.
+  ///
+  /// In id, this message translates to:
+  /// **'Tanpa Iklan & Tanpa Akun'**
+  String get onbSlide3Badge;
+
+  /// No description provided for @onbSlide4Title.
+  ///
+  /// In id, this message translates to:
+  /// **'On-device'**
+  String get onbSlide4Title;
+
+  /// No description provided for @onbSlide4Sub.
+  ///
+  /// In id, this message translates to:
+  /// **'Tanpa unggah ke cloud'**
+  String get onbSlide4Sub;
+
+  /// No description provided for @onbSlide4Badge.
+  ///
+  /// In id, this message translates to:
+  /// **'Data Tersimpan di Perangkat'**
+  String get onbSlide4Badge;
+
+  /// No description provided for @loadingLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Memuat…'**
+  String get loadingLabel;
+
+  /// No description provided for @download.
+  ///
+  /// In id, this message translates to:
+  /// **'Unduh'**
+  String get download;
+
+  /// No description provided for @downloadSuccess.
+  ///
+  /// In id, this message translates to:
+  /// **'Dokumen ter-watermark berhasil diunduh ({filename})! 🛡️✨'**
+  String downloadSuccess(String filename);
+
+  /// No description provided for @protectionProof.
+  ///
+  /// In id, this message translates to:
+  /// **'Bukti Proteksi'**
+  String get protectionProof;
+
+  /// No description provided for @tierExemplary.
+  ///
+  /// In id, this message translates to:
+  /// **'Teladan'**
+  String get tierExemplary;
+
+  /// No description provided for @tierDisciplined.
+  ///
+  /// In id, this message translates to:
+  /// **'Disiplin'**
+  String get tierDisciplined;
+
+  /// No description provided for @tierOrderly.
+  ///
+  /// In id, this message translates to:
+  /// **'Tertib'**
+  String get tierOrderly;
+
+  /// No description provided for @tierStarting.
+  ///
+  /// In id, this message translates to:
+  /// **'Mulai'**
+  String get tierStarting;
+
+  /// No description provided for @disciplineCount.
+  ///
+  /// In id, this message translates to:
+  /// **'{count} file watermark • {tier}'**
+  String disciplineCount(int count, String tier);
+
+  /// No description provided for @disciplineDesc.
+  ///
+  /// In id, this message translates to:
+  /// **'Setiap ekspor aman menambah disiplin proteksi dokumen.'**
+  String get disciplineDesc;
+
+  /// No description provided for @shareDiscipline.
+  ///
+  /// In id, this message translates to:
+  /// **'Bagikan disiplin'**
+  String get shareDiscipline;
+
+  /// No description provided for @disciplineShareText.
+  ///
+  /// In id, this message translates to:
+  /// **'{count} file watermark • {tier} #IDMark'**
+  String disciplineShareText(int count, String tier);
+
+  /// No description provided for @allTemplates.
+  ///
+  /// In id, this message translates to:
+  /// **'Semua'**
+  String get allTemplates;
+
+  /// No description provided for @myPresets.
+  ///
+  /// In id, this message translates to:
+  /// **'Preset Saya'**
+  String get myPresets;
+
+  /// No description provided for @catBanking.
+  ///
+  /// In id, this message translates to:
+  /// **'Perbankan'**
+  String get catBanking;
+
+  /// No description provided for @catFinance.
+  ///
+  /// In id, this message translates to:
+  /// **'Finansial & Pinjol'**
+  String get catFinance;
+
+  /// No description provided for @catCareer.
+  ///
+  /// In id, this message translates to:
+  /// **'Karir & HR'**
+  String get catCareer;
+
+  /// No description provided for @catRental.
+  ///
+  /// In id, this message translates to:
+  /// **'Rental & Wisata'**
+  String get catRental;
+
+  /// No description provided for @catTelecom.
+  ///
+  /// In id, this message translates to:
+  /// **'Telekomunikasi'**
+  String get catTelecom;
+
+  /// No description provided for @catMultifinance.
+  ///
+  /// In id, this message translates to:
+  /// **'Multifinance'**
+  String get catMultifinance;
+
+  /// No description provided for @catInvestment.
+  ///
+  /// In id, this message translates to:
+  /// **'Investasi'**
+  String get catInvestment;
+
+  /// No description provided for @catPublicService.
+  ///
+  /// In id, this message translates to:
+  /// **'Layanan Publik'**
+  String get catPublicService;
+
+  /// No description provided for @catInternational.
+  ///
+  /// In id, this message translates to:
+  /// **'Internasional'**
+  String get catInternational;
+
+  /// No description provided for @appearanceAndLanguage.
+  ///
+  /// In id, this message translates to:
+  /// **'Tampilan & Bahasa'**
+  String get appearanceAndLanguage;
+
+  /// No description provided for @themeMode.
+  ///
+  /// In id, this message translates to:
+  /// **'Mode Tema'**
+  String get themeMode;
+
+  /// No description provided for @identity.
+  ///
+  /// In id, this message translates to:
+  /// **'Identitas'**
+  String get identity;
+
+  /// No description provided for @patternDiagonalBand.
+  ///
+  /// In id, this message translates to:
+  /// **'Pita Melintang'**
+  String get patternDiagonalBand;
+
+  /// No description provided for @patternDiagonalBandDesc.
+  ///
+  /// In id, this message translates to:
+  /// **'Satu garis diagonal tebal melintang di tengah dokumen (Rekomendasi Kominfo)'**
+  String get patternDiagonalBandDesc;
+
+  /// No description provided for @patternRepeatedGrid.
+  ///
+  /// In id, this message translates to:
+  /// **'Pola Berulang (Grid)'**
+  String get patternRepeatedGrid;
+
+  /// No description provided for @patternRepeatedGridDesc.
+  ///
+  /// In id, this message translates to:
+  /// **'Pola teks berulang di seluruh permukaan foto untuk proteksi maksimal'**
+  String get patternRepeatedGridDesc;
+
+  /// No description provided for @patternBottomBar.
+  ///
+  /// In id, this message translates to:
+  /// **'Pita Bawah'**
+  String get patternBottomBar;
+
+  /// No description provided for @patternBottomBarDesc.
+  ///
+  /// In id, this message translates to:
+  /// **'Pita teks solid di bagian bawah dokumen'**
+  String get patternBottomBarDesc;
+
+  /// No description provided for @patternCornerStamp.
+  ///
+  /// In id, this message translates to:
+  /// **'Cap Sudut'**
+  String get patternCornerStamp;
+
+  /// No description provided for @patternCornerStampDesc.
+  ///
+  /// In id, this message translates to:
+  /// **'Cap verifikasi di sudut kanan bawah'**
+  String get patternCornerStampDesc;
+
+  /// No description provided for @patternSecuritySeal.
+  ///
+  /// In id, this message translates to:
+  /// **'Segel Resmi Melingkar'**
+  String get patternSecuritySeal;
+
+  /// No description provided for @patternSecuritySealDesc.
+  ///
+  /// In id, this message translates to:
+  /// **'Stempel segel melingkar ganda dengan border verifikasi'**
+  String get patternSecuritySealDesc;
+
+  /// No description provided for @patternCrossStamp.
+  ///
+  /// In id, this message translates to:
+  /// **'Silang Ganda (X-Band)'**
+  String get patternCrossStamp;
+
+  /// No description provided for @patternCrossStampDesc.
+  ///
+  /// In id, this message translates to:
+  /// **'Dua garis diagonal menyilang melindungi seluruh isi dokumen'**
+  String get patternCrossStampDesc;
+
+  /// No description provided for @patternQrBadge.
+  ///
+  /// In id, this message translates to:
+  /// **'Lencana QR Verifikasi'**
+  String get patternQrBadge;
+
+  /// No description provided for @patternQrBadgeDesc.
+  ///
+  /// In id, this message translates to:
+  /// **'Lencana verifikasi ber-QR code keabsahan tujuan dan tanggal'**
+  String get patternQrBadgeDesc;
+
+  /// No description provided for @colorWhite.
+  ///
+  /// In id, this message translates to:
+  /// **'Putih Bersih'**
+  String get colorWhite;
+
+  /// No description provided for @colorDark.
+  ///
+  /// In id, this message translates to:
+  /// **'Hitam Pekat'**
+  String get colorDark;
+
+  /// No description provided for @colorRed.
+  ///
+  /// In id, this message translates to:
+  /// **'Merah Resmi'**
+  String get colorRed;
+
+  /// No description provided for @colorBlue.
+  ///
+  /// In id, this message translates to:
+  /// **'Biru Verifikasi'**
+  String get colorBlue;
+
+  /// No description provided for @colorEmerald.
+  ///
+  /// In id, this message translates to:
+  /// **'Hijau Aman'**
+  String get colorEmerald;
+
+  /// No description provided for @colorAmber.
+  ///
+  /// In id, this message translates to:
+  /// **'Kuning Peringatan'**
+  String get colorAmber;
+
+  /// No description provided for @colorPurple.
+  ///
+  /// In id, this message translates to:
+  /// **'Ungu Segel'**
+  String get colorPurple;
+
+  /// No description provided for @formatPng.
+  ///
+  /// In id, this message translates to:
+  /// **'PNG (Resolusi Penuh)'**
+  String get formatPng;
+
+  /// No description provided for @formatPngDesc.
+  ///
+  /// In id, this message translates to:
+  /// **'Format lossless kualitas asli tanpa penurunan ketajaman'**
+  String get formatPngDesc;
+
+  /// No description provided for @formatJpeg.
+  ///
+  /// In id, this message translates to:
+  /// **'JPEG (Ukuran Ringan)'**
+  String get formatJpeg;
+
+  /// No description provided for @formatJpegDesc.
+  ///
+  /// In id, this message translates to:
+  /// **'Format terkompresi hemat kuota untuk upload portal cepat'**
+  String get formatJpegDesc;
+
+  /// No description provided for @formatPdf.
+  ///
+  /// In id, this message translates to:
+  /// **'Dokumen PDF (Siap Cetak)'**
+  String get formatPdf;
+
+  /// No description provided for @formatPdfDesc.
+  ///
+  /// In id, this message translates to:
+  /// **'Format berkas dokumen resmi standar kantor & perbankan'**
+  String get formatPdfDesc;
+
+  /// No description provided for @redactBlackout.
+  ///
+  /// In id, this message translates to:
+  /// **'Sensor Hitam (Blackout)'**
+  String get redactBlackout;
+
+  /// No description provided for @redactBlackoutDesc.
+  ///
+  /// In id, this message translates to:
+  /// **'Kotak hitam pekat permanen menutup data'**
+  String get redactBlackoutDesc;
+
+  /// No description provided for @redactMosaic.
+  ///
+  /// In id, this message translates to:
+  /// **'Sensor Mosaik (Pixelate)'**
+  String get redactMosaic;
+
+  /// No description provided for @redactMosaicDesc.
+  ///
+  /// In id, this message translates to:
+  /// **'Efek pikselasi mengaburkan teks sensitif'**
+  String get redactMosaicDesc;
+
+  /// No description provided for @redactBlur.
+  ///
+  /// In id, this message translates to:
+  /// **'Sensor Buram (Blur)'**
+  String get redactBlur;
+
+  /// No description provided for @redactBlurDesc.
+  ///
+  /// In id, this message translates to:
+  /// **'Efek buram meratakan detail data pribadi'**
+  String get redactBlurDesc;
+
+  /// No description provided for @targetNik.
+  ///
+  /// In id, this message translates to:
+  /// **'Nomor NIK / ID'**
+  String get targetNik;
+
+  /// No description provided for @targetSignature.
+  ///
+  /// In id, this message translates to:
+  /// **'Tanda Tangan'**
+  String get targetSignature;
+
+  /// No description provided for @targetAddress.
+  ///
+  /// In id, this message translates to:
+  /// **'Alamat Lengkap'**
+  String get targetAddress;
+
+  /// No description provided for @targetBirthPlace.
+  ///
+  /// In id, this message translates to:
+  /// **'Tempat / Tgl Lahir'**
+  String get targetBirthPlace;
+
+  /// No description provided for @targetPhoto.
+  ///
+  /// In id, this message translates to:
+  /// **'Foto Wajah'**
+  String get targetPhoto;
+
+  /// No description provided for @shareProofTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Bukti Proteksi Dokumen'**
+  String get shareProofTitle;
+
+  /// No description provided for @shareProofSubtitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Sertifikat integritas watermark & sensor sesuai Kominfo'**
+  String get shareProofSubtitle;
+
+  /// No description provided for @shareFormatFeed.
+  ///
+  /// In id, this message translates to:
+  /// **'Unggahan (4:5)'**
+  String get shareFormatFeed;
+
+  /// No description provided for @shareFormatStory.
+  ///
+  /// In id, this message translates to:
+  /// **'Story (9:16)'**
+  String get shareFormatStory;
+
+  /// No description provided for @shareCopyText.
+  ///
+  /// In id, this message translates to:
+  /// **'Salin Teks'**
+  String get shareCopyText;
+
+  /// No description provided for @shareProcessing.
+  ///
+  /// In id, this message translates to:
+  /// **'Memproses...'**
+  String get shareProcessing;
+
+  /// No description provided for @shareDownloadProofPng.
+  ///
+  /// In id, this message translates to:
+  /// **'Unduh Bukti PNG'**
+  String get shareDownloadProofPng;
+
+  /// No description provided for @shareShareProof.
+  ///
+  /// In id, this message translates to:
+  /// **'Bagikan Bukti'**
+  String get shareShareProof;
+
+  /// No description provided for @shareCardBrand.
+  ///
+  /// In id, this message translates to:
+  /// **'IDMARK • SECURE ID'**
+  String get shareCardBrand;
+
+  /// No description provided for @shareCardOnDevice.
+  ///
+  /// In id, this message translates to:
+  /// **'100% ON-DEVICE'**
+  String get shareCardOnDevice;
+
+  /// No description provided for @shareCardTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'BUKTI PROTEKSI WATERMARK DOKUMEN'**
+  String get shareCardTitle;
+
+  /// No description provided for @shareCardPurposeLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'UNTUK KEPERLUAN KHUSUS:'**
+  String get shareCardPurposeLabel;
+
+  /// No description provided for @shareCardPrivacyScore.
+  ///
+  /// In id, this message translates to:
+  /// **'SKOR PRIVASI'**
+  String get shareCardPrivacyScore;
+
+  /// No description provided for @shareCardRedactions.
+  ///
+  /// In id, this message translates to:
+  /// **'SENSOR'**
+  String get shareCardRedactions;
+
+  /// No description provided for @shareCardAreaCount.
+  ///
+  /// In id, this message translates to:
+  /// **'{count} Area'**
+  String shareCardAreaCount(int count);
+
+  /// No description provided for @shareCardFormat.
+  ///
+  /// In id, this message translates to:
+  /// **'FORMAT'**
+  String get shareCardFormat;
+
+  /// No description provided for @shareCardDate.
+  ///
+  /// In id, this message translates to:
+  /// **'Tanggal: {date}'**
+  String shareCardDate(String date);
+
+  /// No description provided for @shareCardFooter.
+  ///
+  /// In id, this message translates to:
+  /// **'idmark.faishal.id • Standar Watermark KTP Kominfo RI'**
+  String get shareCardFooter;
+
+  /// No description provided for @shareCardIntegrityHash.
+  ///
+  /// In id, this message translates to:
+  /// **'INTEGRITY HASH (SHA-256):'**
+  String get shareCardIntegrityHash;
+
+  /// No description provided for @shareProofHeading.
+  ///
+  /// In id, this message translates to:
+  /// **'🛡️ BUKTI PROTEKSI DOKUMEN — IDMARK'**
+  String get shareProofHeading;
+
+  /// No description provided for @shareProofPurposeLine.
+  ///
+  /// In id, this message translates to:
+  /// **'📌 Keperluan Khusus: \"{purpose}\"'**
+  String shareProofPurposeLine(String purpose);
+
+  /// No description provided for @shareProofDateLine.
+  ///
+  /// In id, this message translates to:
+  /// **'📅 Tanggal Stempel: {date}'**
+  String shareProofDateLine(String date);
+
+  /// No description provided for @shareProofScoreLine.
+  ///
+  /// In id, this message translates to:
+  /// **'🔒 Skor Privasi: {score}/100'**
+  String shareProofScoreLine(int score);
+
+  /// No description provided for @shareProofRedactionLine.
+  ///
+  /// In id, this message translates to:
+  /// **'✂️ Sensor Permanen: {count} Area Tertutup'**
+  String shareProofRedactionLine(int count);
+
+  /// No description provided for @shareProofHashLine.
+  ///
+  /// In id, this message translates to:
+  /// **'🔑 SHA-256: {hash}'**
+  String shareProofHashLine(String hash);
+
+  /// No description provided for @shareProofOnDeviceLine.
+  ///
+  /// In id, this message translates to:
+  /// **'✅ Diproses 100% on-device tanpa server (Sesuai Panduan Kominfo RI)'**
+  String get shareProofOnDeviceLine;
+
+  /// No description provided for @shareProofCtaLine.
+  ///
+  /// In id, this message translates to:
+  /// **'Lindungi identitas Anda dengan IDMark: https://idmark.faishal.id'**
+  String get shareProofCtaLine;
+
+  /// No description provided for @shareProofDownloaded.
+  ///
+  /// In id, this message translates to:
+  /// **'Sertifikat proteksi dokumen berhasil diunduh! 🛡️✨'**
+  String get shareProofDownloaded;
+
+  /// No description provided for @shareProofFailed.
+  ///
+  /// In id, this message translates to:
+  /// **'Gagal membagikan bukti: {error}'**
+  String shareProofFailed(String error);
+
+  /// No description provided for @shareProofCopied.
+  ///
+  /// In id, this message translates to:
+  /// **'Bukti proteksi disalin ke clipboard! 📋✨'**
+  String get shareProofCopied;
+
+  /// No description provided for @themeCyberShield.
+  ///
+  /// In id, this message translates to:
+  /// **'Perisai Siber'**
+  String get themeCyberShield;
+
+  /// No description provided for @themeEmeraldSafe.
+  ///
+  /// In id, this message translates to:
+  /// **'Zamrud Aman'**
+  String get themeEmeraldSafe;
+
+  /// No description provided for @themeObsidianVault.
+  ///
+  /// In id, this message translates to:
+  /// **'Brankas Obsidian'**
+  String get themeObsidianVault;
+
+  /// No description provided for @themeAmberProof.
+  ///
+  /// In id, this message translates to:
+  /// **'Bukti Ambar'**
+  String get themeAmberProof;
+
+  /// No description provided for @quickSensorShort.
+  ///
+  /// In id, this message translates to:
+  /// **'Sensor Cepat:'**
+  String get quickSensorShort;
+
+  /// No description provided for @redactedTag.
+  ///
+  /// In id, this message translates to:
+  /// **'[DISENSOR: {label}]'**
+  String redactedTag(String label);
+
+  /// No description provided for @defaultWatermarkText.
+  ///
+  /// In id, this message translates to:
+  /// **'HANYA UNTUK VERIFIKASI IDENTITAS'**
+  String get defaultWatermarkText;
+
+  /// No description provided for @pdfHeader.
+  ///
+  /// In id, this message translates to:
+  /// **'IDMARK — DOKUMEN IDENTITAS TER-WATERMARK'**
+  String get pdfHeader;
+
+  /// No description provided for @pdfComplianceNote.
+  ///
+  /// In id, this message translates to:
+  /// **'Sesuai Prinsip Pelindungan Data Pribadi (UU No. 27/2022)'**
+  String get pdfComplianceNote;
+
+  /// No description provided for @pdfOnDevice.
+  ///
+  /// In id, this message translates to:
+  /// **'100% On-Device'**
+  String get pdfOnDevice;
+
+  /// No description provided for @pdfPurposeLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Tujuan Penggunaan: '**
+  String get pdfPurposeLabel;
+
+  /// No description provided for @pdfDateLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Tanggal Transaksi: {date}'**
+  String pdfDateLabel(String date);
+
+  /// No description provided for @pdfPrintedAt.
+  ///
+  /// In id, this message translates to:
+  /// **'Waktu Cetak: {date}'**
+  String pdfPrintedAt(String date);
+
+  /// No description provided for @pdfChecksum.
+  ///
+  /// In id, this message translates to:
+  /// **'SHA-256 Checksum: '**
+  String get pdfChecksum;
+
+  /// No description provided for @catEcommerce.
+  ///
+  /// In id, this message translates to:
+  /// **'E-Commerce'**
+  String get catEcommerce;
+
+  /// No description provided for @presetBank.
+  ///
+  /// In id, this message translates to:
+  /// **'Pembukaan Rekening Bank'**
+  String get presetBank;
+
+  /// No description provided for @presetBankUpdate.
+  ///
+  /// In id, this message translates to:
+  /// **'Pengkinian Data Nasabah Bank'**
+  String get presetBankUpdate;
+
+  /// No description provided for @presetFintech.
+  ///
+  /// In id, this message translates to:
+  /// **'Pinjol / Fintech Resmi OJK'**
+  String get presetFintech;
+
+  /// No description provided for @presetPaylater.
+  ///
+  /// In id, this message translates to:
+  /// **'Aktivasi Paylater / Kartu Kredit'**
+  String get presetPaylater;
+
+  /// No description provided for @presetJob.
+  ///
+  /// In id, this message translates to:
+  /// **'Lamaran Pekerjaan'**
+  String get presetJob;
+
+  /// No description provided for @presetHrOnboarding.
+  ///
+  /// In id, this message translates to:
+  /// **'Onboarding Karyawan Baru'**
+  String get presetHrOnboarding;
+
+  /// No description provided for @presetRental.
+  ///
+  /// In id, this message translates to:
+  /// **'Sewa Mobil / Motor / Rental'**
+  String get presetRental;
+
+  /// No description provided for @presetHotel.
+  ///
+  /// In id, this message translates to:
+  /// **'Check-In Hotel / Villa / Kost'**
+  String get presetHotel;
+
+  /// No description provided for @presetTelco.
+  ///
+  /// In id, this message translates to:
+  /// **'Registrasi Kartu SIM Prabayar'**
+  String get presetTelco;
+
+  /// No description provided for @presetSimReplace.
+  ///
+  /// In id, this message translates to:
+  /// **'Ganti Kartu SIM Hilang / Rusak'**
+  String get presetSimReplace;
+
+  /// No description provided for @presetKredit.
+  ///
+  /// In id, this message translates to:
+  /// **'Pengajuan Leasing / Multifinance'**
+  String get presetKredit;
+
+  /// No description provided for @presetKpr.
+  ///
+  /// In id, this message translates to:
+  /// **'Pengajuan KPR / Properti'**
+  String get presetKpr;
+
+  /// No description provided for @presetInvestment.
+  ///
+  /// In id, this message translates to:
+  /// **'Akun Sekuritas Saham IDX'**
+  String get presetInvestment;
+
+  /// No description provided for @presetCrypto.
+  ///
+  /// In id, this message translates to:
+  /// **'Verifikasi Akun Kripto Bappebti'**
+  String get presetCrypto;
+
+  /// No description provided for @presetEcommerce.
+  ///
+  /// In id, this message translates to:
+  /// **'Verifikasi Merchant Marketplace'**
+  String get presetEcommerce;
+
+  /// No description provided for @presetBpjs.
+  ///
+  /// In id, this message translates to:
+  /// **'Klaim JHT / Saldo BPJS'**
+  String get presetBpjs;
+
+  /// No description provided for @presetGovKelurahan.
+  ///
+  /// In id, this message translates to:
+  /// **'Administrasi Kependudukan / Kelurahan'**
+  String get presetGovKelurahan;
+
+  /// No description provided for @presetGlobalKyc.
+  ///
+  /// In id, this message translates to:
+  /// **'International KYC Verification'**
+  String get presetGlobalKyc;
+
+  /// No description provided for @defaultInternalSubtext.
+  ///
+  /// In id, this message translates to:
+  /// **'HANYA UNTUK DOKUMEN INTERNAL'**
+  String get defaultInternalSubtext;
+
+  /// No description provided for @pdfLegalNotice.
+  ///
+  /// In id, this message translates to:
+  /// **'PEMBERITAHUAN HUKUM: Salinan dokumen identitas ini hanya sah dan diizinkan untuk tujuan yang tertera di atas. Penggunaan di luar peruntukan tersebut merupakan tindak pidana penyalahgunaan data pribadi.'**
+  String get pdfLegalNotice;
+
+  /// No description provided for @validationRedactionLabelRequired.
+  ///
+  /// In id, this message translates to:
+  /// **'Label sensor tidak boleh kosong'**
+  String get validationRedactionLabelRequired;
+
+  /// No description provided for @validationRedactionXRange.
+  ///
+  /// In id, this message translates to:
+  /// **'Posisi X sensor harus berada dalam rentang 0.0 - 1.0'**
+  String get validationRedactionXRange;
+
+  /// No description provided for @validationRedactionYRange.
+  ///
+  /// In id, this message translates to:
+  /// **'Posisi Y sensor harus berada dalam rentang 0.0 - 1.0'**
+  String get validationRedactionYRange;
+
+  /// No description provided for @validationRedactionWidthRange.
+  ///
+  /// In id, this message translates to:
+  /// **'Lebar sensor harus berada dalam rentang >0.0 - 1.0'**
+  String get validationRedactionWidthRange;
+
+  /// No description provided for @validationRedactionHeightRange.
+  ///
+  /// In id, this message translates to:
+  /// **'Tinggi sensor harus berada dalam rentang >0.0 - 1.0'**
+  String get validationRedactionHeightRange;
+
+  /// No description provided for @validationAuditIdRequired.
+  ///
+  /// In id, this message translates to:
+  /// **'ID audit log tidak boleh kosong'**
+  String get validationAuditIdRequired;
+
+  /// No description provided for @validationAuditPurposeRequired.
+  ///
+  /// In id, this message translates to:
+  /// **'Tujuan audit log tidak boleh kosong'**
+  String get validationAuditPurposeRequired;
+
+  /// No description provided for @validationAuditHashRequired.
+  ///
+  /// In id, this message translates to:
+  /// **'Hash SHA-256 tidak boleh kosong'**
+  String get validationAuditHashRequired;
+
+  /// No description provided for @validationAuditScoreRange.
+  ///
+  /// In id, this message translates to:
+  /// **'Skor privasi harus berada antara 0 dan 100'**
+  String get validationAuditScoreRange;
 }
 
 class _AppLocalizationsDelegate

@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "data-lindungi-fotokopi-ktp-hilang-cek-ini-dulu-praktis",
-    "en": "lindungi-fotokopi-ktp-data-missing-check-these-first-practical",
-    "ar": "lindungi-fotokopi-ktp-4",
-    "jv": "pandhuan-lindungi-fotokopi-ktp-idmark-4",
-    "su": "pituduh-lindungi-fotokopi-ktp-idmark-4",
-    "zh": "idmark-lindungi-fotokopi-ktp-实用指南-4",
-    "ja": "idmarklindungi-fotokopi-ktp-ガイド-4"
+    "id": "lindungi-fotokopi-ktp-macet-perbaiki-friksi-dulu",
+    "en": "lindungi-fotokopi-ktp-stuck-fix-the-friction-first",
+    "ar": "alahtfaz-balmalwmat-almhma-hyn-tdaf-alhmasa",
+    "jv": "lindungi-fotokopi-ktp-macet-ngurangi-alangan-dhisik",
+    "su": "lindungi-fotokopi-ktp-macet-kurangan-halangan-heula",
+    "zh": "re-qing-xia-jiang-shi-ru-he-shou-zhu-zhong-yao-xin-xi",
+    "ja": "yaru-kiga-saga-tta-nichi-no-taisetsu-na-jouhou"
   },
   "titles": {
-    "id": "Data lindungi fotokopi KTP Hilang? Cek Ini Dulu",
-    "en": "lindungi fotokopi KTP Data Missing? Check These First (Practical)",
-    "ar": "lindungi fotokopi KTP — دليل IDMark",
-    "jv": "Pandhuan: Data lindungi fotokopi KTP Hilang? Cek Ini Dulu",
-    "su": "Pituduh: Data lindungi fotokopi KTP Hilang? Cek Ini Dulu",
-    "zh": "IDMark · lindungi fotokopi KTP 实用指南",
-    "ja": "IDMark｜lindungi fotokopi KTP ガイド"
+    "id": "lindungi fotokopi KTP macet? Perbaiki friksi dulu",
+    "en": "lindungi fotokopi KTP stuck? Fix the friction first",
+    "ar": "الاحتفاظ بـالمعلومات المهمة حين تضعف الحماسة",
+    "jv": "lindungi fotokopi KTP macet? Ngurangi alangan dhisik",
+    "su": "lindungi fotokopi KTP macét? Kurangan halangan heula",
+    "zh": "热情下降时如何守住重要信息",
+    "ja": "やる気が下がった日の大切な情報"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Lindungi fotokopi KTP macet? Mulai dari hambatannya: penghalang yang sering muncul, perbaikan terkecil untuk tiap satu, dan cara memulai ulang hari ini.",
+    "en": "Lindungi fotokopi KTP stuck? Start with the friction: the usual blockers, the smallest fix for each one and a way to restart today.",
+    "ar": "lindungi fotokopi KTP متوقف؟ ابدأ من الاحتكاك: العوائق المعتادة، وأصغر إصلاح لكل واحدة، وطريقة لإعادة الروتين اليوم.",
+    "ja": "止まってしまった lindungi fotokopi KTP は、まず摩擦から見直す。よくある障害、それぞれの最小限の対処、今日から再開する方法を紹介。",
+    "zh": "lindungi fotokopi KTP 卡住了？先从摩擦入手：常见阻碍、各自的最小解决办法，以及今天如何重启。",
+    "jv": "Lindungi fotokopi KTP macet? Wiwit saka alangané: alangan sing kerep muncul, pambenahan paling cilik kanggo saben siji, lan cara miwiti maneh dina iki.",
+    "su": "Lindungi fotokopi KTP macet? Mimitian ti halanganana: halangan anu sering muncul, perbaikan pangleutikna unggal hiji, jeung kumaha ngamimitian deui ayeuna."
+  }
 }

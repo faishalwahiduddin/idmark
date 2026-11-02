@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "stamp-ktp-tanpa-akun-plus-dan-minus-mingguan",
-    "en": "stamp-ktp-without-an-account-pros-cons",
-    "ar": "stamp-ktp-3",
-    "jv": "pandhuan-stamp-ktp-idmark-3",
-    "su": "pituduh-stamp-ktp-idmark-3",
-    "zh": "idmark-stamp-ktp-实用指南-3",
-    "ja": "idmarkstamp-ktp-ガイド-3"
+    "id": "privasi-stamp-ktp-apa-yang-tersimpan-di-perangkat",
+    "en": "where-your-stamp-ktp-data-actually-lives",
+    "ar": "almalwmat-almhma-bla-atsal-tmama-ma-ybqa-yaml",
+    "jv": "data-stamp-ktp-kasimpen-ing-ngendi",
+    "su": "data-stamp-ktp-disimpen-di-mana",
+    "zh": "zhong-yao-xin-xi-wan-quan-li-xian-na-xie-gong-neng-hai-neng-yong",
+    "ja": "taisetsu-na-jouhou-kanzen-ofurain-nani-ga-ugoku-ka"
   },
   "titles": {
-    "id": "Privasi data saat mencatat stamp KTP",
-    "en": "stamp KTP Without an Account: Pros &amp; Cons — Offline First",
-    "ar": "stamp KTP — دليل IDMark",
-    "jv": "Pandhuan: Privasi data saat mencatat stamp KTP",
-    "su": "Pituduh: Privasi data saat mencatat stamp KTP",
-    "zh": "IDMark · stamp KTP 实用指南",
-    "ja": "IDMark｜stamp KTP ガイド"
+    "id": "Privasi stamp KTP: apa yang tersimpan di perangkat",
+    "en": "Where your stamp KTP data actually lives",
+    "ar": "المعلومات المهمة بلا اتصال تماماً: ما يبقى يعمل",
+    "jv": "Data stamp KTP kasimpen ing ngendi",
+    "su": "Data stamp KTP disimpen di mana",
+    "zh": "重要信息完全离线：哪些功能还能用",
+    "ja": "大切な情報完全オフライン：何が動くか"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Data stamp KTP Anda sebenarnya disimpan di mana: catatan tetap di perangkat, dan tinjauan mingguan membantu Anda melihat isinya lalu merapikannya.",
+    "en": "Where your stamp KTP data actually lives: the records stay on your device, and a weekly check helps you see what is stored and tidy it up.",
+    "ar": "أين تُحفظ بيانات stamp KTP فعلياً: تبقى السجلات على جهازك، وتساعدك المراجعة الأسبوعية على رؤية ما هو مخزّن وترتيبه.",
+    "ja": "保存場所を解説。stamp KTP の記録は端末内に残り、週次の確認で中身を見直して整理する方法を紹介します。",
+    "zh": "stamp KTP 数据存放位置：记录留在设备上，每周回顾帮你看清存了什么并整理。",
+    "jv": "Data stamp KTP sampéyan nyatané disimpen ing ngendi: cathetan tetep ana ing piranti, lan tinjauan mingguan mbantu sampéyan ndeleng isiné lan ngrapiaké.",
+    "su": "Data stamp KTP anjeun sabenerna disimpen dimana: catetan tetep di alat, jeung tinjauan mingguan mantuan ningali eusina sarta ngaberesan."
+  }
 }

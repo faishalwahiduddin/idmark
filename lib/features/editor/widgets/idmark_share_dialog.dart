@@ -11,7 +11,9 @@ import '../../../core/constants/app_colors.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/ui/app_scroll.dart';
 import '../../../core/models/watermark_config.dart';
+import '../../../core/utils/l10n_helpers.dart';
 import '../../../core/utils/web_download_helper.dart';
+import '../../../l10n/app_localizations.dart';
 
 class IdmarkShareTheme {
   final String name;
@@ -126,25 +128,50 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
     ),
   ];
 
-  String _buildShareText() {
+  /// Display name for a share theme in the active language.
+  String _themeName(IdmarkShareTheme theme, AppLocalizations? l10n) {
+    if (l10n == null) return theme.name;
+    return switch (theme.name) {
+      'Cyber Shield' => l10n.themeCyberShield,
+      'Emerald Safe' => l10n.themeEmeraldSafe,
+      'Obsidian Vault' => l10n.themeObsidianVault,
+      _ => l10n.themeAmberProof,
+    };
+  }
+
+  String _buildShareText(AppLocalizations? l10n) {
     final c = widget.config;
     final buffer = StringBuffer();
-    buffer.writeln('🛡️ BUKTI PROTEKSI DOKUMEN — IDMARK');
-    buffer.writeln('📌 Keperluan Khusus: "${c.purpose.toUpperCase()}"');
-    buffer.writeln('📅 Tanggal Stempel: ${widget.dateLabel}');
-    buffer.writeln('🔒 Skor Privasi: ${c.privacyScore}/100');
-    buffer.writeln('✂️ Sensor Permanen: ${c.redactions.length} Area Tertutup');
-    buffer.writeln('🔑 SHA-256: ${widget.sha256Hash}');
-    buffer.writeln(
-      '✅ Diproses 100% on-device tanpa server (Sesuai Panduan Kominfo RI)',
-    );
-    buffer.writeln(
-      '\nLindungi identitas Anda dengan IDMark: https://idmark.faishal.id',
-    );
+    if (l10n == null) {
+      buffer.writeln('🛡️ BUKTI PROTEKSI DOKUMEN — IDMARK');
+      buffer.writeln('📌 Keperluan Khusus: "${c.purpose.toUpperCase()}"');
+      buffer.writeln('📅 Tanggal Stempel: ${widget.dateLabel}');
+      buffer.writeln('🔒 Skor Privasi: ${c.privacyScore}/100');
+      buffer.writeln(
+        '✂️ Sensor Permanen: ${c.redactions.length} Area Tertutup',
+      );
+      buffer.writeln('🔑 SHA-256: ${widget.sha256Hash}');
+      buffer.writeln(
+        '✅ Diproses 100% on-device tanpa server (Sesuai Panduan Kominfo RI)',
+      );
+      buffer.writeln(
+        '\nLindungi identitas Anda dengan IDMark: https://idmark.faishal.id',
+      );
+      return buffer.toString();
+    }
+    buffer.writeln(l10n.shareProofHeading);
+    buffer.writeln(l10n.shareProofPurposeLine(c.purpose.toUpperCase()));
+    buffer.writeln(l10n.shareProofDateLine(widget.dateLabel));
+    buffer.writeln(l10n.shareProofScoreLine(c.privacyScore));
+    buffer.writeln(l10n.shareProofRedactionLine(c.redactions.length));
+    buffer.writeln(l10n.shareProofHashLine(widget.sha256Hash));
+    buffer.writeln(l10n.shareProofOnDeviceLine);
+    buffer.writeln('\n${l10n.shareProofCtaLine}');
     return buffer.toString();
   }
 
   Future<void> _shareImage() async {
+    final l10n = AppLocalizations.of(context);
     setState(() => _isGenerating = true);
     try {
       final boundary =
@@ -165,9 +192,10 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
         downloadFileWeb(bytes, filename);
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
+            SnackBar(
               content: Text(
-                'Sertifikat proteksi dokumen berhasil diunduh! 🛡️✨',
+                l10n?.shareProofDownloaded ??
+                    'Sertifikat proteksi dokumen berhasil diunduh! 🛡️✨',
               ),
               behavior: SnackBarBehavior.floating,
             ),
@@ -177,13 +205,16 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
         // ignore: deprecated_member_use
         await Share.shareXFiles([
           XFile.fromData(bytes, mimeType: 'image/png', name: filename),
-        ], text: _buildShareText());
+        ], text: _buildShareText(l10n));
       }
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Gagal membagikan bukti: $e'),
+            content: Text(
+              l10n?.shareProofFailed(e.toString()) ??
+                  'Gagal membagikan bukti: $e',
+            ),
             behavior: SnackBarBehavior.floating,
           ),
         );
@@ -194,10 +225,13 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
   }
 
   void _copyText() {
-    Clipboard.setData(ClipboardData(text: _buildShareText()));
+    final l10n = AppLocalizations.of(context);
+    Clipboard.setData(ClipboardData(text: _buildShareText(l10n)));
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Bukti proteksi disalin ke clipboard! 📋✨'),
+      SnackBar(
+        content: Text(
+          l10n?.shareProofCopied ?? 'Bukti proteksi disalin ke clipboard! 📋✨',
+        ),
         behavior: SnackBarBehavior.floating,
       ),
     );
@@ -205,6 +239,7 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final theme = _themes[_selectedThemeIndex];
     final screenHeight = MediaQuery.of(context).size.height;
     final maxPreviewHeight = screenHeight * 0.48;
@@ -212,233 +247,247 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
     // Brand-dark sheet in either app theme: pin the dark theme for its chips and buttons.
     return Theme(
       data: AppTheme.darkTheme,
-      child: Container(
-        decoration: const BoxDecoration(
-          color: AppColors.bgSurface,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
-        ),
-        padding: const EdgeInsets.fromLTRB(20, 16, 20, 24),
-        child: SafeArea(
-          top: false,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              const SpringSheetHandle(),
-              const SizedBox(height: 8),
+      // showSpringSheet renders through showCupertinoModalPopup, which provides
+      // no Material ancestor. ChoiceChip requires one, so the sheet supplies
+      // its own Material (same as the settings language/timezone sheets).
+      child: Material(
+        color: AppColors.bgSurface,
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
+        clipBehavior: Clip.antiAlias,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(20, 16, 20, 24),
+          child: SafeArea(
+            top: false,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const SpringSheetHandle(),
+                const SizedBox(height: 8),
 
-              // Header title
-              Row(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                      color: AppColors.primaryLight.withValues(alpha: 0.2),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: const Icon(
-                      Icons.verified_user,
-                      color: AppColors.primaryLight,
-                      size: 20,
-                    ),
-                  ),
-                  const SizedBox(width: 12),
-                  const Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Bukti Proteksi Dokumen',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                        Text(
-                          'Sertifikat integritas watermark & sensor sesuai Kominfo',
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Color(0xFF94A3B8),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  IconButton(
-                    icon: const Icon(
-                      Icons.close,
-                      size: 20,
-                      color: Colors.white70,
-                    ),
-                    onPressed: () => Navigator.of(context).pop(),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 16),
-
-              // Format & Theme Selectors
-              Row(
-                children: [
-                  Expanded(
-                    child: SegmentedButton<bool>(
-                      segments: const [
-                        ButtonSegment(
-                          value: false,
-                          label: Text(
-                            'Feed (4:5)',
-                            style: TextStyle(fontSize: 12),
-                          ),
-                          icon: Icon(Icons.crop_portrait, size: 16),
-                        ),
-                        ButtonSegment(
-                          value: true,
-                          label: Text(
-                            'Story (9:16)',
-                            style: TextStyle(fontSize: 12),
-                          ),
-                          icon: Icon(Icons.stay_current_portrait, size: 16),
-                        ),
-                      ],
-                      selected: {_isStoryFormat},
-                      onSelectionChanged: (set) {
-                        setState(() => _isStoryFormat = set.first);
-                      },
-                      style: ButtonStyle(
-                        visualDensity: VisualDensity.compact,
-                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                // Header title
+                Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        color: AppColors.primaryLight.withValues(alpha: 0.2),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: const Icon(
+                        Icons.verified_user,
+                        color: AppColors.primaryLight,
+                        size: 20,
                       ),
                     ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 10),
-
-              // Theme selector chips
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                physics: AppScroll.physics,
-                child: Row(
-                  children: List.generate(_themes.length, (index) {
-                    final t = _themes[index];
-                    final isSelected = _selectedThemeIndex == index;
-                    return Padding(
-                      padding: const EdgeInsets.only(right: 8),
-                      child: ChoiceChip(
-                        selected: isSelected,
-                        label: Text(
-                          t.name,
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: isSelected
-                                ? FontWeight.bold
-                                : FontWeight.normal,
-                          ),
-                        ),
-                        avatar: CircleAvatar(
-                          radius: 7,
-                          backgroundColor: t.cardBg,
-                        ),
-                        onSelected: (_) {
-                          setState(() => _selectedThemeIndex = index);
-                        },
-                      ),
-                    );
-                  }),
-                ),
-              ),
-              const SizedBox(height: 14),
-
-              // Card Preview Area
-              ConstrainedBox(
-                constraints: BoxConstraints(maxHeight: maxPreviewHeight),
-                child: Center(
-                  child: AspectRatio(
-                    aspectRatio: _isStoryFormat ? (9 / 16) : (4 / 5),
-                    child: FittedBox(
-                      fit: BoxFit.contain,
-                      child: RepaintBoundary(
-                        key: _repaintBoundaryKey,
-                        child: _buildShareCard(theme),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 16),
-
-              // Actions
-              Row(
-                children: [
-                  Expanded(
-                    child: OutlinedButton.icon(
-                      onPressed: _copyText,
-                      icon: const Icon(
-                        Icons.copy,
-                        size: 18,
-                        color: Colors.white,
-                      ),
-                      label: const Text(
-                        'Salin Teks',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      style: OutlinedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(vertical: 14),
-                        side: const BorderSide(color: Color(0xFF334155)),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(14),
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    flex: 2,
-                    child: ElevatedButton.icon(
-                      onPressed: _isGenerating ? null : _shareImage,
-                      icon: _isGenerating
-                          ? const SizedBox(
-                              width: 18,
-                              height: 18,
-                              child: CircularProgressIndicator(
-                                strokeWidth: 2,
-                                color: Colors.white,
-                              ),
-                            )
-                          : Icon(
-                              kIsWeb ? Icons.download : Icons.share,
-                              size: 18,
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            l10n?.shareProofTitle ?? 'Bukti Proteksi Dokumen',
+                            style: const TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
                             ),
-                      label: Text(
-                        _isGenerating
-                            ? 'Memproses...'
-                            : (kIsWeb ? 'Unduh Bukti PNG' : 'Bagikan Bukti'),
+                          ),
+                          Text(
+                            l10n?.shareProofSubtitle ??
+                                'Sertifikat integritas watermark & sensor sesuai Kominfo',
+                            style: const TextStyle(
+                              fontSize: 12,
+                              color: Color(0xFF94A3B8),
+                            ),
+                          ),
+                        ],
                       ),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: theme.accentColor,
-                        // Pale accents (sky 400) need a dark label to reach 4.5.
-                        foregroundColor:
-                            theme.accentColor.computeLuminance() > 0.18
-                            ? const Color(0xFF0F172A)
-                            : Colors.white,
-                        padding: const EdgeInsets.symmetric(vertical: 14),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(14),
+                    ),
+                    IconButton(
+                      icon: const Icon(
+                        Icons.close,
+                        size: 20,
+                        color: Colors.white70,
+                      ),
+                      onPressed: () => Navigator.of(context).pop(),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 16),
+
+                // Format & Theme Selectors
+                Row(
+                  children: [
+                    Expanded(
+                      child: SegmentedButton<bool>(
+                        segments: [
+                          ButtonSegment(
+                            value: false,
+                            label: Text(
+                              l10n?.shareFormatFeed ?? 'Feed (4:5)',
+                              style: const TextStyle(fontSize: 12),
+                            ),
+                            icon: const Icon(Icons.crop_portrait, size: 16),
+                          ),
+                          ButtonSegment(
+                            value: true,
+                            label: Text(
+                              l10n?.shareFormatStory ?? 'Story (9:16)',
+                              style: const TextStyle(fontSize: 12),
+                            ),
+                            icon: const Icon(
+                              Icons.stay_current_portrait,
+                              size: 16,
+                            ),
+                          ),
+                        ],
+                        selected: {_isStoryFormat},
+                        onSelectionChanged: (set) {
+                          setState(() => _isStoryFormat = set.first);
+                        },
+                        style: const ButtonStyle(
+                          visualDensity: VisualDensity.compact,
+                          // Padded keeps the 48dp hit target; shrinkWrap cut it
+                          // to the 34dp visual height.
+                          tapTargetSize: MaterialTapTargetSize.padded,
                         ),
-                        elevation: 0,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 10),
+
+                // Theme selector chips
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  physics: AppScroll.physics,
+                  child: Row(
+                    children: List.generate(_themes.length, (index) {
+                      final t = _themes[index];
+                      final isSelected = _selectedThemeIndex == index;
+                      return Padding(
+                        padding: const EdgeInsets.only(right: 8),
+                        child: ChoiceChip(
+                          selected: isSelected,
+                          label: Text(
+                            _themeName(t, l10n),
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: isSelected
+                                  ? FontWeight.bold
+                                  : FontWeight.normal,
+                            ),
+                          ),
+                          avatar: CircleAvatar(
+                            radius: 7,
+                            backgroundColor: t.cardBg,
+                          ),
+                          onSelected: (_) {
+                            setState(() => _selectedThemeIndex = index);
+                          },
+                        ),
+                      );
+                    }),
+                  ),
+                ),
+                const SizedBox(height: 14),
+
+                // Card Preview Area
+                ConstrainedBox(
+                  constraints: BoxConstraints(maxHeight: maxPreviewHeight),
+                  child: Center(
+                    child: AspectRatio(
+                      aspectRatio: _isStoryFormat ? (9 / 16) : (4 / 5),
+                      child: FittedBox(
+                        fit: BoxFit.contain,
+                        child: RepaintBoundary(
+                          key: _repaintBoundaryKey,
+                          child: _buildShareCard(theme, l10n),
+                        ),
                       ),
                     ),
                   ),
-                ],
-              ),
-            ],
+                ),
+                const SizedBox(height: 16),
+
+                // Actions
+                Row(
+                  children: [
+                    Expanded(
+                      child: OutlinedButton.icon(
+                        onPressed: _copyText,
+                        icon: const Icon(
+                          Icons.copy,
+                          size: 18,
+                          color: Colors.white,
+                        ),
+                        label: Text(
+                          l10n?.shareCopyText ?? 'Salin Teks',
+                          style: const TextStyle(color: Colors.white),
+                        ),
+                        style: OutlinedButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                          side: const BorderSide(color: Color(0xFF334155)),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(14),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      flex: 2,
+                      child: ElevatedButton.icon(
+                        onPressed: _isGenerating ? null : _shareImage,
+                        icon: _isGenerating
+                            ? const SizedBox(
+                                width: 18,
+                                height: 18,
+                                child: CircularProgressIndicator(
+                                  strokeWidth: 2,
+                                  color: Colors.white,
+                                ),
+                              )
+                            : Icon(
+                                kIsWeb ? Icons.download : Icons.share,
+                                size: 18,
+                              ),
+                        label: Text(
+                          _isGenerating
+                              ? (l10n?.shareProcessing ?? 'Memproses...')
+                              : (kIsWeb
+                                    ? (l10n?.shareDownloadProofPng ??
+                                          'Unduh Bukti PNG')
+                                    : (l10n?.shareShareProof ??
+                                          'Bagikan Bukti')),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: theme.accentColor,
+                          // Pale accents (sky 400) need a dark label to reach 4.5.
+                          foregroundColor:
+                              theme.accentColor.computeLuminance() > 0.18
+                              ? const Color(0xFF0F172A)
+                              : Colors.white,
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(14),
+                          ),
+                          elevation: 0,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 
-  Widget _buildShareCard(IdmarkShareTheme theme) {
+  Widget _buildShareCard(IdmarkShareTheme theme, AppLocalizations? l10n) {
     final c = widget.config;
     final cardWidth = _isStoryFormat ? 360.0 : 380.0;
     final cardHeight = _isStoryFormat ? 640.0 : 475.0;
@@ -479,14 +528,23 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Icon(
-                      Icons.shield_outlined,
-                      size: 14,
-                      color: Colors.white,
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(3),
+                      child: Image.asset(
+                        'assets/icon/icon.png',
+                        width: 14,
+                        height: 14,
+                        fit: BoxFit.contain,
+                        errorBuilder: (context, error, stackTrace) => const Icon(
+                          Icons.shield_outlined,
+                          size: 14,
+                          color: Colors.white,
+                        ),
+                      ),
                     ),
                     const SizedBox(width: 6),
                     Text(
-                      'IDMARK • SECURE ID',
+                      l10n?.shareCardBrand ?? 'IDMARK • SECURE ID',
                       style: TextStyle(
                         fontSize: 10,
                         fontWeight: FontWeight.w800,
@@ -507,7 +565,7 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Text(
-                  '100% ON-DEVICE',
+                  l10n?.shareCardOnDevice ?? '100% ON-DEVICE',
                   style: TextStyle(
                     fontSize: 9.5,
                     fontWeight: FontWeight.w800,
@@ -544,7 +602,8 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'BUKTI PROTEKSI WATERMARK DOKUMEN',
+                      l10n?.shareCardTitle ??
+                          'BUKTI PROTEKSI WATERMARK DOKUMEN',
                       style: TextStyle(
                         fontSize: 9,
                         fontWeight: FontWeight.w700,
@@ -559,7 +618,7 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
 
                 // Purpose
                 Text(
-                  'UNTUK KEPERLUAN KHUSUS:',
+                  l10n?.shareCardPurposeLabel ?? 'UNTUK KEPERLUAN KHUSUS:',
                   style: TextStyle(
                     fontSize: 9,
                     fontWeight: FontWeight.w800,
@@ -594,7 +653,7 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
                       Column(
                         children: [
                           Text(
-                            'SKOR PRIVASI',
+                            l10n?.shareCardPrivacyScore ?? 'SKOR PRIVASI',
                             style: TextStyle(
                               fontSize: 8.5,
                               fontWeight: FontWeight.bold,
@@ -620,7 +679,7 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
                       Column(
                         children: [
                           Text(
-                            'SENSOR',
+                            l10n?.shareCardRedactions ?? 'SENSOR',
                             style: TextStyle(
                               fontSize: 8.5,
                               fontWeight: FontWeight.bold,
@@ -629,7 +688,8 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
                           ),
                           const SizedBox(height: 2),
                           Text(
-                            '${c.redactions.length} Area',
+                            l10n?.shareCardAreaCount(c.redactions.length) ??
+                                '${c.redactions.length} Area',
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.w900,
@@ -646,7 +706,7 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
                       Column(
                         children: [
                           Text(
-                            'FORMAT',
+                            l10n?.shareCardFormat ?? 'FORMAT',
                             style: TextStyle(
                               fontSize: 8.5,
                               fontWeight: FontWeight.bold,
@@ -674,14 +734,16 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Tanggal: ${widget.dateLabel}',
+                      l10n?.shareCardDate(widget.dateLabel) ??
+                          'Tanggal: ${widget.dateLabel}',
                       style: TextStyle(
                         fontSize: 11,
                         color: theme.textSecondary,
                       ),
                     ),
                     Text(
-                      'Pola: ${c.pattern.label}',
+                      l10n?.patternInfo(c.pattern.labelOf(l10n)) ??
+                          'Pola: ${c.pattern.label}',
                       style: TextStyle(
                         fontSize: 11,
                         fontWeight: FontWeight.bold,
@@ -699,7 +761,7 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
 
                 // SHA-256 integrity hash
                 Text(
-                  'INTEGRITY HASH (SHA-256):',
+                  l10n?.shareCardIntegrityHash ?? 'INTEGRITY HASH (SHA-256):',
                   style: TextStyle(
                     fontSize: 8.5,
                     fontWeight: FontWeight.bold,
@@ -737,7 +799,8 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
                 ),
                 const SizedBox(width: 5),
                 Text(
-                  'idmark.faishal.id • Standar Watermark KTP Kominfo RI',
+                  l10n?.shareCardFooter ??
+                      'idmark.faishal.id • Standar Watermark KTP Kominfo RI',
                   style: TextStyle(
                     fontSize: 10,
                     fontWeight: FontWeight.w600,

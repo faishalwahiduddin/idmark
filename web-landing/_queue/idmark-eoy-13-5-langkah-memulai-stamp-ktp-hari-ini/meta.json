@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "5-langkah-memulai-stamp-ktp-hari-ini",
-    "en": "5-steps-to-start-stamp-ktp-today",
-    "ar": "stamp-ktp-2",
-    "jv": "pandhuan-stamp-ktp-idmark-2",
-    "su": "pituduh-stamp-ktp-idmark-2",
-    "zh": "idmark-stamp-ktp-实用指南-2",
-    "ja": "idmarkstamp-ktp-ガイド-2"
+    "id": "stamp-ktp-lima-langkah-pertama",
+    "en": "stamp-ktp-the-first-five-steps",
+    "ar": "almalwmat-almhma-alkhtwat-alkhms-alawla",
+    "jv": "stamp-ktp-limang-langkah-kapisan",
+    "su": "stamp-ktp-lima-lengkah-munggaran",
+    "zh": "zhong-yao-xin-xi-de-tou-wu-ge-bu-zhou",
+    "ja": "taisetsu-na-jouhou-no-saisho-no-5-suteppu"
   },
   "titles": {
-    "id": "5 Langkah Memulai stamp KTP Hari Ini",
-    "en": "5 Steps to Start stamp KTP Today",
-    "ar": "stamp KTP — دليل IDMark",
-    "jv": "Pandhuan: 5 Langkah Memulai stamp KTP Hari Ini",
-    "su": "Pituduh: 5 Langkah Memulai stamp KTP Hari Ini",
-    "zh": "IDMark · stamp KTP 实用指南",
-    "ja": "IDMark｜stamp KTP ガイド"
+    "id": "stamp KTP: lima langkah pertama",
+    "en": "stamp KTP: the first five steps",
+    "ar": "المعلومات المهمة: الخطوات الخمس الأولى",
+    "jv": "stamp KTP: limang langkah kapisan",
+    "su": "stamp KTP: lima léngkah munggaran",
+    "zh": "重要信息的头五个步骤",
+    "ja": "大切な情報の最初の5ステップ"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Lima langkah pertama untuk mulai stamp KTP hari ini: pengaturan paling kecil, waktu menjalankannya, dan tinjauan mingguan yang menjaga rutinitas tetap jujur.",
+    "en": "Five first steps to start stamp KTP today: the smallest setup, when to run it, and the weekly check that keeps the routine honest.",
+    "ar": "خمس خطوات أولى لبدء stamp KTP اليوم: الإعداد الأصغر، ووقت التشغيل، والمراجعة الأسبوعية التي تبقي الروتين صادقاً.",
+    "ja": "今日から stamp KTP を始めるための最初の5ステップ。最小の設定、実行するタイミング、習慣を正直に保つ週次の確認を順番に説明します。",
+    "zh": "今天就开始 stamp KTP：前五步的最小设置、运行时间，以及让流程保持诚实的每周回顾。",
+    "jv": "Limang langkah pertama kanggo miwiti stamp KTP dina iki: setelan paling cilik, wektu nglakokaké, lan tinjauan mingguan sing njaga rutinitas tetep jujur.",
+    "su": "Lima lankah mimiti pikeun mimitian stamp KTP poé ieu: setelan pangleutikna, waktu ngajalankeunana, jeung tinjauan mingguan anu ngajaga rutinitas tetep jujur."
+  }
 }

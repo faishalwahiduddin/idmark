@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "idmark-di-chat-group-vs-tracker-khusus-mingguan",
-    "en": "idmark-in-chat-groups-vs-dedicated-tracker",
-    "ar": "idmark-4",
-    "jv": "pandhuan-idmark-idmark-4",
-    "su": "pituduh-idmark-idmark-4",
-    "zh": "idmark-idmark-实用指南-4",
-    "ja": "idmarkidmark-ガイド-4"
+    "id": "watermark-ktp-chat-keluarga-vs-catatan-rapi",
+    "en": "id-watermark-family-chat-vs-a-tidy-log",
+    "ar": "alama-maiya-ala-alhwya-mhadtha-alaaila-am-sjl-mrtb",
+    "jv": "watermark-ktp-grup-kulawarga-utawa-cathetan-rapi",
+    "su": "watermark-ktp-grup-kulawarga-atawa-catetan-rapih",
+    "zh": "shen-fen-zheng-shui-yin-jia-ting-qun-liao-yu-zheng-qi-ji-lu",
+    "ja": "mibun-shou-no-uootaamaaku-kazoku-chatto-to-totonotsu-ta-kiroku"
   },
   "titles": {
-    "id": "IDMark di Chat Group vs Tracker Khusus",
-    "en": "IDMark in Chat Groups vs Dedicated Tracker — Offline First",
-    "ar": "IDMark — دليل IDMark",
-    "jv": "Pandhuan: IDMark di Chat Group vs Tracker Khusus",
-    "su": "Pituduh: IDMark di Chat Group vs Tracker Khusus",
-    "zh": "IDMark · IDMark 实用指南",
-    "ja": "IDMark｜IDMark ガイド"
+    "id": "watermark KTP: chat keluarga vs catatan rapi",
+    "en": "ID watermark: family chat vs a tidy log",
+    "ar": "علامة مائية على الهوية: محادثة العائلة أم سجل مرتّب",
+    "jv": "watermark KTP: grup kulawarga utawa cathetan rapi",
+    "su": "watermark KTP: grup kulawarga atawa catetan rapih",
+    "zh": "身份证水印：家庭群聊与整齐记录",
+    "ja": "身分証のウォーターマーク：家族チャットと整った記録"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Grup keluarga dibanding catatan yang rapi untuk watermark KTP: mengapa pesan mudah hilang, dan bagaimana satu catatan di perangkat menjaga tinjauan tetap jelas.",
+    "en": "Family chat versus a tidy log for ID watermark: why chat threads get lost, and how one record on your device keeps the weekly check clear.",
+    "ar": "علامة مائية على بطاقة KTP: محادثة العائلة أم سجل مرتب؟ لماذا تضيع الرسائل، وكيف يحافظ سجل واحد على جهازك على وضوح المراجعة.",
+    "ja": "身分証ウォーターマークを家族チャットで管理するか、整った記録で管理するか。チャットのやり取りが埋もれる理由と、端末の一つの記録が確認を明確にする理由。",
+    "zh": "家庭群聊还是整洁记录：身份证水印说明聊天消息为何容易丢，单一设备记录如何让回顾清晰。",
+    "jv": "Grup kulawarga vs cathetan sing rapi kanggo watermark KTP: kenapa pesen gampang ilang, lan carané siji cathetan ing piranti njaga tinjauan jelas.",
+    "su": "Grup kulawarga vs catetan rapih pikeun watermark KTP: naha pesen gampang leungit, jeung kumaha hiji catetan di alat ngajaga tinjauan tetep jelas."
+  }
 }

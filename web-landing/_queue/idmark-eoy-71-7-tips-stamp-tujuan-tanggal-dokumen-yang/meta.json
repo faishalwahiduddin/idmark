@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "7-tips-stamp-tujuan-tanggal-dokumen-yang-paling-berdampak-offline",
-    "en": "7-high-impact-stamp-tujuan-tanggal-dokumen-tips",
-    "ar": "stamp-tujuan-tanggal-dokumen-8",
-    "jv": "pandhuan-stamp-tujuan-tanggal-dokumen-idmark-8",
-    "su": "pituduh-stamp-tujuan-tanggal-dokumen-idmark-8",
-    "zh": "idmark-stamp-tujuan-tanggal-dokumen-实用指南-8",
-    "ja": "idmarkstamp-tujuan-tanggal-dokumen-ガイド-8"
+    "id": "stamp-tujuan-tanggal-dokumen-daftar-pilihan-yang-masuk-akal",
+    "en": "stamp-tujuan-tanggal-dokumen-a-shortlist-that-makes-sense",
+    "ar": "almalwmat-almhma-khyarat-qlyla-mntqya-aljz-2",
+    "jv": "stamp-tujuan-tanggal-dokumen-pilihan-sing-cukup-masuk-akal",
+    "su": "stamp-tujuan-tanggal-dokumen-pilihan-anu-asup-akal",
+    "zh": "zhong-yao-xin-xi-zhi-de-kao-lv-de-ji-zhong-xuan-ze-di-2-pian",
+    "ja": "taisetsu-na-jouhou-nattoku-dekiru-sentakushi-dai-2-kai"
   },
   "titles": {
-    "id": "7 Tips stamp tujuan tanggal dokumen yang Paling Berdampak",
-    "en": "7 High-Impact stamp tujuan tanggal dokumen Tips",
-    "ar": "stamp tujuan tanggal dokumen — دليل IDMark",
-    "jv": "Pandhuan: 7 Tips stamp tujuan tanggal dokumen yang Paling Berdampak",
-    "su": "Pituduh: 7 Tips stamp tujuan tanggal dokumen yang Paling Berdampak",
-    "zh": "IDMark · stamp tujuan tanggal dokumen 实用指南",
-    "ja": "IDMark｜stamp tujuan tanggal dokumen ガイド"
+    "id": "stamp tujuan tanggal dokumen: daftar pilihan yang masuk akal",
+    "en": "stamp tujuan tanggal dokumen: a shortlist that makes sense",
+    "ar": "المعلومات المهمة: خيارات قليلة منطقية · الجزء 2",
+    "jv": "stamp tujuan tanggal dokumen: pilihan sing cukup masuk akal",
+    "su": "stamp tujuan tanggal dokumen: pilihan anu asup akal",
+    "zh": "重要信息：值得考虑的几种选择 · 第2篇",
+    "ja": "大切な情報：納得できる選択肢 · 第2回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Stamp tujuan tanggal dokumen: daftar pilihan yang masuk akal, dari versi paling kecil sampai tinjauan mingguan, supaya Anda bisa memilih yang cocok.",
+    "en": "Stamp tujuan tanggal dokumen: a shortlist of sensible options, from the smallest version to a weekly check, so you can pick what fits.",
+    "ar": "stamp tujuan tanggal dokumen: قائمة خيارات معقولة، من النسخة الأصغر حتى المراجعة الأسبوعية، لتختار ما يناسبك.",
+    "ja": "選択肢リスト：stamp tujuan tanggal dokumen。最小バージョンから毎週の確認まで、自分に合うものを選べるように整理しました。",
+    "zh": "合理选项清单：stamp tujuan tanggal dokumen，从最小版本到每周检查，帮你挑选合适方案。",
+    "jv": "Stamp tujuan tanggal dokumen: dhaftar pilihan sing masuk akal, saka versi paling cilik nganti tinjauan mingguan, supaya sampéyan bisa milih sing pas.",
+    "su": "Stamp tujuan tanggal dokumen: daptar pilihan anu masuk akal, ti versi pangleutikna nepi ka tinjauan mingguan, supaya anjeun bisa milih anu cocog."
+  }
 }

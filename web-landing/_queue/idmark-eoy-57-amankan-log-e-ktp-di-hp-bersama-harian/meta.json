@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "amankan-log-e-ktp-di-hp-bersama-harian",
-    "en": "secure-e-ktp-logs-on-a-shared-phone",
-    "ar": "e-ktp-7",
-    "jv": "pandhuan-e-ktp-idmark-7",
-    "su": "pituduh-e-ktp-idmark-7",
-    "zh": "idmark-e-ktp-实用指南-7",
-    "ja": "idmarke-ktp-ガイド-7"
+    "id": "keamanan-data-e-ktp-di-ponsel",
+    "en": "keeping-e-ktp-data-safe-on-your-phone",
+    "ar": "hmaya-byanat-almalwmat-almhma-ala-alhatf",
+    "jv": "keamanan-data-e-ktp-ing-hp",
+    "su": "kaamanan-data-e-ktp-dina-hp",
+    "zh": "shou-ji-shang-de-zhong-yao-xin-xi-shu-ju-an-quan",
+    "ja": "sumaho-no-taisetsu-na-jouhou-deeta-wo-mamoru"
   },
   "titles": {
-    "id": "Amankan Log e-KTP di HP Bersama",
-    "en": "Secure e-KTP Logs on a Shared Phone",
-    "ar": "e-KTP — دليل IDMark",
-    "jv": "Pandhuan: Amankan Log e-KTP di HP Bersama",
-    "su": "Pituduh: Amankan Log e-KTP di HP Bersama",
-    "zh": "IDMark · e-KTP 实用指南",
-    "ja": "IDMark｜e-KTP ガイド"
+    "id": "Keamanan data e-KTP di ponsel",
+    "en": "Keeping e-KTP data safe on your phone",
+    "ar": "حماية بيانات المعلومات المهمة على الهاتف",
+    "jv": "Keamanan data e-KTP ing HP",
+    "su": "Kaamanan data e-KTP dina HP",
+    "zh": "手机上的重要信息数据安全",
+    "ja": "スマホの大切な情報データを守る"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Menjaga data e-KTP tetap aman di ponsel: apa yang disimpan aplikasi di perangkat, cara melindungi ponsel itu sendiri, dan apa yang ditinjau tiap minggu.",
+    "en": "Keeping e-KTP data safe on your phone: what the app stores on the device, how to protect the phone itself and what to review each week.",
+    "ar": "حماية بيانات e-KTP على الهاتف: ما الذي يخزنه التطبيق على الجهاز، وكيف تحمي الهاتف نفسه، وما الذي تراجعه كل أسبوع.",
+    "ja": "スマホで e-KTP のデータを安全に保つ方法。アプリが端末に保存する内容、スマホ自体を守る方法、毎週確認すべき点を解説します。",
+    "zh": "保护手机上的 e-KTP 数据：应用在设备上存什么，如何保护手机本身，以及每周查看哪些内容。",
+    "jv": "Njaga data e-KTP aman ing HP: apa sing disimpen aplikasi ing piranti, carané nglindhungi HP-né dhéwé, lan apa sing ditinjau saben minggu.",
+    "su": "Ngajaga data e-KTP aman di HP: naon anu disimpen ku aplikasi di alat, kumaha ngajaga HP-na sorangan, jeung naon anu ditinjau unggal minggu."
+  }
 }

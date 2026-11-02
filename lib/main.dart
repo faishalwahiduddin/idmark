@@ -73,7 +73,8 @@ class _IdMarkAppState extends ConsumerState<IdMarkApp>
 
     return MaterialApp.router(
       builder: (context, child) => AppTextScale(child: child!),
-      title: 'IDMark — Secure ID & Document Watermark',
+      onGenerateTitle: (context) =>
+          AppLocalizations.of(context)?.appName ?? 'IDMark',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,

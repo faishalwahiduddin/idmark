@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "jangan-screenshot-sembarangan-log-stamp-ktp-mingguan",
-    "en": "don-t-casually-screenshot-stamp-ktp-logs",
-    "ar": "stamp-ktp-7",
-    "jv": "pandhuan-stamp-ktp-idmark-7",
-    "su": "pituduh-stamp-ktp-idmark-7",
-    "zh": "idmark-stamp-ktp-实用指南-7",
-    "ja": "idmarkstamp-ktp-ガイド-7"
+    "id": "keamanan-data-stamp-ktp-di-ponsel",
+    "en": "keeping-stamp-ktp-data-safe-on-your-phone",
+    "ar": "hmaya-byanat-almalwmat-almhma-ala-alhatf-aljz-2",
+    "jv": "keamanan-data-stamp-ktp-ing-hp",
+    "su": "kaamanan-data-stamp-ktp-dina-hp",
+    "zh": "shou-ji-shang-de-zhong-yao-xin-xi-shu-ju-an-quan-di-2-pian",
+    "ja": "sumaho-no-taisetsu-na-jouhou-deeta-wo-mamoru-dai-2-kai"
   },
   "titles": {
-    "id": "Jangan Screenshot Sembarangan Log stamp KTP",
-    "en": "Don&#x27;t Casually Screenshot stamp KTP Logs — Offline First",
-    "ar": "stamp KTP — دليل IDMark",
-    "jv": "Pandhuan: Jangan Screenshot Sembarangan Log stamp KTP",
-    "su": "Pituduh: Jangan Screenshot Sembarangan Log stamp KTP",
-    "zh": "IDMark · stamp KTP 实用指南",
-    "ja": "IDMark｜stamp KTP ガイド"
+    "id": "Keamanan data stamp KTP di ponsel",
+    "en": "Keeping stamp KTP data safe on your phone",
+    "ar": "حماية بيانات المعلومات المهمة على الهاتف · الجزء 2",
+    "jv": "Keamanan data stamp KTP ing HP",
+    "su": "Kaamanan data stamp KTP dina HP",
+    "zh": "手机上的重要信息数据安全 · 第2篇",
+    "ja": "スマホの大切な情報データを守る · 第2回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Menjaga data stamp KTP aman di ponsel: mengapa tangkapan layar sembarangan bisa membocorkan detail, apa yang disimpan di perangkat, dan tinjau mingguan.",
+    "en": "Keeping stamp KTP data safe on your phone: why careless screenshots can leak details, what to keep on the device and a weekly review habit.",
+    "ar": "حماية بيانات stamp KTP على الهاتف: لماذا تكشف لقطات الشاشة العشوائية التفاصيل، وما الذي تحفظه على الجهاز، وعادة المراجعة الأسبوعية.",
+    "ja": "スマホで stamp KTP のデータを安全に保つ方法。不用意なスクリーンショットで情報が漏れる理由、端末に残すもの、毎週の見直し習慣を紹介します。",
+    "zh": "保护手机上的 stamp KTP 数据：随意截图为何会泄露细节，设备上保留什么，以及每周回顾习惯。",
+    "jv": "Njaga data stamp KTP aman ing HP: kenapa screenshot sembarangan bisa mbukak rincian, apa sing disimpen ing piranti, lan kebiasan ninjau mingguan.",
+    "su": "Ngajaga data stamp KTP aman di HP: naha screenshot sembarangan bisa ngabocorkeun rincian, naon anu disimpen di alat, jeung kabiasaan ninjau mingguan."
+  }
 }

@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "alur-kerja-lindungi-fotokopi-ktp-dari-a-sampai-z-praktis",
-    "en": "lindungi-fotokopi-ktp-workflow-a-to-z-practical",
-    "ar": "lindungi-fotokopi-ktp-2",
-    "jv": "pandhuan-lindungi-fotokopi-ktp-idmark-2",
-    "su": "pituduh-lindungi-fotokopi-ktp-idmark-2",
-    "zh": "idmark-lindungi-fotokopi-ktp-实用指南-2",
-    "ja": "idmarklindungi-fotokopi-ktp-ガイド-2"
+    "id": "lindungi-fotokopi-ktp-lima-langkah-pertama",
+    "en": "lindungi-fotokopi-ktp-the-first-five-steps",
+    "ar": "almalwmat-almhma-hyn-la-ybqa-wqt",
+    "jv": "lindungi-fotokopi-ktp-limang-langkah-kapisan",
+    "su": "lindungi-fotokopi-ktp-lima-lengkah-munggaran",
+    "zh": "shi-jian-hen-shao-shi-zen-me-zuo-zhong-yao-xin-xi",
+    "ja": "jikan-gahotondonai-nichi-no-taisetsu-na-jouhou"
   },
   "titles": {
-    "id": "Alur Kerja lindungi fotokopi KTP dari A sampai Z",
-    "en": "lindungi fotokopi KTP Workflow A to Z (Practical)",
-    "ar": "lindungi fotokopi KTP — دليل IDMark",
-    "jv": "Pandhuan: Alur Kerja lindungi fotokopi KTP dari A sampai Z",
-    "su": "Pituduh: Alur Kerja lindungi fotokopi KTP dari A sampai Z",
-    "zh": "IDMark · lindungi fotokopi KTP 实用指南",
-    "ja": "IDMark｜lindungi fotokopi KTP ガイド"
+    "id": "lindungi fotokopi KTP: lima langkah pertama",
+    "en": "lindungi fotokopi KTP: the first five steps",
+    "ar": "المعلومات المهمة حين لا يبقى وقت",
+    "jv": "lindungi fotokopi KTP: limang langkah kapisan",
+    "su": "lindungi fotokopi KTP: lima léngkah munggaran",
+    "zh": "时间很少时怎么做重要信息",
+    "ja": "時間がほとんどない日の大切な情報"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Lima langkah pertama untuk lindungi fotokopi KTP, dari pengaturan paling kecil sampai menjalankannya di jam tetap dan meninjau progres tiap minggu.",
+    "en": "The first five steps for lindungi fotokopi KTP, from the smallest setup to running it at a set time and reviewing progress each week.",
+    "ar": "خمس خطوات أولى لـ lindungi fotokopi KTP، من أصغر إعداد حتى التشغيل في وقت ثابت ومراجعة التقدم كل أسبوع.",
+    "ja": "lindungi fotokopi KTP の最初の5ステップです。最小限の設定から、決まった時間での実行、毎週の進み具合の確認まで順を追って解説します。",
+    "zh": "lindungi fotokopi KTP 的前五步：从最小设置开始，固定时间运行，并每周检查进展。",
+    "jv": "Limang langkah pertama kanggo lindungi fotokopi KTP, saka setelan paling cilik nganti nglakokaké ing jam tetep lan ninjau progres saben minggu.",
+    "su": "Lima lankah mimiti pikeun lindungi fotokopi KTP, ti setelan pangleutikna nepi ka ngajalankeunana dina jam tetep jeung ningali kamajuan unggal minggu."
+  }
 }

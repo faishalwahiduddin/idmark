@@ -2,6 +2,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../../l10n/app_localizations.dart';
+import '../constants/app_colors.dart';
 import 'fleet_app_config.dart';
 
 /// Emil Kowalski style micro-settle splash screen.
@@ -124,6 +126,7 @@ class _FleetSplashScreenState extends State<FleetSplashScreen>
   @override
   Widget build(BuildContext context) {
     final config = FleetAppConfig.current;
+    final l10n = AppLocalizations.of(context);
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final primaryColor = config.primaryColor;
 
@@ -207,6 +210,18 @@ class _FleetSplashScreenState extends State<FleetSplashScreen>
                           child: Image.asset(
                             'assets/icon/icon.png',
                             fit: BoxFit.contain,
+                            // First frames decode asynchronously; show the
+                            // brand mark instead of an empty tile flash.
+                            frameBuilder: (context, child, frame, wasSync) {
+                              if (wasSync || frame != null) return child;
+                              return Icon(
+                                config.fallbackIcon,
+                                size: 48,
+                                // Dark tile needs the pale accent; the brand
+                                // navy would vanish (#0F172A on #1E222A).
+                                color: isDark ? AppColors.primaryLight : primaryColor,
+                              );
+                            },
                             errorBuilder: (context, error, stackTrace) {
                               return Icon(
                                 config.fallbackIcon,
@@ -230,7 +245,7 @@ class _FleetSplashScreenState extends State<FleetSplashScreen>
                       child: Column(
                         children: [
                           Text(
-                            config.appName,
+                            l10n?.appTitle ?? 'IDMark',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 24,
@@ -241,7 +256,8 @@ class _FleetSplashScreenState extends State<FleetSplashScreen>
                           ),
                           const SizedBox(height: 8),
                           Text(
-                            config.tagline,
+                            l10n?.appTagline ??
+                                'Beri cap watermark teks pada foto KTP, SIM & dokumen penting.',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 14,

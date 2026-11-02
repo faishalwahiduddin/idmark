@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "aplikasi-offline-aplikasi-vs-catatan-di-browser-harian",
-    "en": "aplikasi-offline-app-vs-browser-notes",
-    "ar": "aplikasi-offline-4",
-    "jv": "pandhuan-aplikasi-offline-idmark-4",
-    "su": "pituduh-aplikasi-offline-idmark-4",
-    "zh": "idmark-aplikasi-offline-实用指南-4",
-    "ja": "idmarkaplikasi-offline-ガイド-4"
+    "id": "mode-offline-aplikasi-vs-versi-web",
+    "en": "aplikasi-offline-the-app-vs-the-web-version",
+    "ar": "almalwmat-almhma-alttbyq-mqabl-nskha-alwyb",
+    "jv": "mode-offline-aplikasi-utawa-versi-web",
+    "su": "mode-offline-aplikasi-atawa-versi-web",
+    "zh": "zhong-yao-xin-xi-ying-yong-ban-yu-wang-ye-ban",
+    "ja": "taisetsu-na-jouhou-apuri-han-to-uebu-han"
   },
   "titles": {
-    "id": "aplikasi offline: panduan praktis di IDMark",
-    "en": "aplikasi offline: App vs Browser Notes",
-    "ar": "aplikasi offline — دليل IDMark",
-    "jv": "Pandhuan: aplikasi offline: panduan praktis di IDMark",
-    "su": "Pituduh: aplikasi offline: panduan praktis di IDMark",
-    "zh": "IDMark · aplikasi offline 实用指南",
-    "ja": "IDMark｜aplikasi offline ガイド"
+    "id": "mode offline: aplikasi vs versi web",
+    "en": "aplikasi offline: the app vs the web version",
+    "ar": "المعلومات المهمة: التطبيق مقابل نسخة الويب",
+    "jv": "mode offline: aplikasi utawa versi web",
+    "su": "mode offline: aplikasi atawa vérsi web",
+    "zh": "重要信息：应用版与网页版",
+    "ja": "大切な情報：アプリ版とウェブ版"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Aplikasi offline versus versi web: perbedaannya untuk pemakaian harian, apa yang tetap di perangkat, dan mana yang cocok untuk tinjauan mingguan.",
+    "en": "Offline app versus web version: how the two differ for daily use, what stays on your device and which one fits a weekly review.",
+    "ar": "تطبيق offline مقابل النسخة الويب: كيف يختلف الاثنان في الاستخدام اليومي، وما الذي يبقى على جهازك، وأيهما يناسب المراجعة الأسبوعية.",
+    "ja": "オフラインアプリとウェブ版の比較。日々の使い方の違い、端末に残るもの、毎週の見直しに向いているのはどちらかを整理します。",
+    "zh": "离线应用与网页版对比：日常使用的差异、哪些数据留在设备上，以及哪个更适合每周回顾。",
+    "jv": "Aplikasi offline vs versi web: bédané kanggo panggunaan saben dina, apa sing tetep ana ing piranti, lan endi sing cocok kanggo tinjauan mingguan.",
+    "su": "Aplikasi offline vs versi web: bédana pikeun pamakean sapopoé, naon anu tetep di alat, jeung mana anu cocok pikeun tinjauan mingguan."
+  }
 }

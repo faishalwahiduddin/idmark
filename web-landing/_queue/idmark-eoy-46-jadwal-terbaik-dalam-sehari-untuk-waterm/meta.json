@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "jadwal-terbaik-dalam-sehari-untuk-watermark-ktp-mingguan",
-    "en": "best-time-of-day-for-watermark-ktp",
-    "ar": "watermark-ktp-6",
-    "jv": "pandhuan-watermark-ktp-idmark-6",
-    "su": "pituduh-watermark-ktp-idmark-6",
-    "zh": "idmark-watermark-ktp-实用指南-6",
-    "ja": "idmarkwatermark-ktp-ガイド-6"
+    "id": "watermark-ktp-saat-waktu-cuma-sedikit",
+    "en": "id-watermark-when-you-barely-have-time",
+    "ar": "alama-maiya-ala-alhwya-hyn-la-ybqa-wqt",
+    "jv": "watermark-ktp-nalika-wektune-mung-sithik",
+    "su": "watermark-ktp-nalika-waktu-ukur-saeutik",
+    "zh": "shi-jian-hen-shao-shi-zen-me-zuo-shen-fen-zheng-shui-yin",
+    "ja": "jikan-gahotondonai-nichi-no-mibun-shou-no-uootaamaaku"
   },
   "titles": {
-    "id": "Jadwal Terbaik dalam Sehari untuk watermark KTP",
-    "en": "Best Time of Day for watermark KTP — Offline First",
-    "ar": "watermark KTP — دليل IDMark",
-    "jv": "Pandhuan: Jadwal Terbaik dalam Sehari untuk watermark KTP",
-    "su": "Pituduh: Jadwal Terbaik dalam Sehari untuk watermark KTP",
-    "zh": "IDMark · watermark KTP 实用指南",
-    "ja": "IDMark｜watermark KTP ガイド"
+    "id": "watermark KTP saat waktu cuma sedikit",
+    "en": "ID watermark when you barely have time",
+    "ar": "علامة مائية على الهوية حين لا يبقى وقت",
+    "jv": "watermark KTP nalika wektuné mung sithik",
+    "su": "watermark KTP nalika waktu ukur saeutik",
+    "zh": "时间很少时怎么做身份证水印",
+    "ja": "時間がほとんどない日の身分証のウォーターマーク"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Saat waktu benar-benar sempit, rutinitas watermark KTP cukup singkat: versi paling kecil, waktu dalam sehari yang cocok, dan tinjauan mingguan yang cepat.",
+    "en": "When you barely have time, the watermark habit can run on a short routine: the smallest version and a weekly check you can finish fast.",
+    "ar": "عندما لا يبقى وقت تقريباً: أوقات مناسبة في اليوم لروتين قصير على علامة KTP المائية، والنسخة الأصغر، ومراجعة أسبوعية سريعة.",
+    "ja": "時間がほとんどない日の身分証ウォーターマーク。短い習慣に適した時間帯、最小バージョン、すぐ終わる毎週の確認をまとめました。",
+    "zh": "时间几乎不够时的身份证水印：一天中适合短流程的时段、最小版本，以及快速完成的每周检查。",
+    "jv": "Watermark KTP nalika wektuné mung sithik: wektu ing sadina sing cocok kanggo rutinitas cekak, versi paling cilik, lan tinjauan mingguan sing cepet rampung.",
+    "su": "Lamun waktuna kakara sempit, watermark KTP cukup pondok: waktu dina sapoé anu cocog, versi pangleutikna, jeung tinjauan mingguan anu gancang réngsé."
+  }
 }

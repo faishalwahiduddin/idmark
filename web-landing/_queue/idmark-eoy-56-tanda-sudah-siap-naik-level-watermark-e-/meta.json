@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "tanda-sudah-siap-naik-level-watermark-e-ktp-praktis",
-    "en": "signs-you-re-ready-to-level-up-watermark-e-ktp-practical",
-    "ar": "watermark-e-ktp-7",
-    "jv": "pandhuan-watermark-e-ktp-idmark-7",
-    "su": "pituduh-watermark-e-ktp-idmark-7",
-    "zh": "idmark-watermark-e-ktp-实用指南-7",
-    "ja": "idmarkwatermark-e-ktp-ガイド-7"
+    "id": "watermark-e-ktp-memutuskan-tanpa-overthinking",
+    "en": "watermark-e-ktp-deciding-without-overthinking",
+    "ar": "almalwmat-almhma-qrar-bla-tfkyr-zaid",
+    "jv": "watermark-e-ktp-mutusake-tanpa-mikir-kebangeten",
+    "su": "watermark-e-ktp-mutuskeun-tanpa-mikir-kaleuleuwihi",
+    "zh": "zhong-yao-xin-xi-bu-bi-jiu-jie-de-xuan-ze-fang-fa",
+    "ja": "taisetsu-na-jouhou-kangae-sugizuni-kime-ru"
   },
   "titles": {
-    "id": "Tanda Sudah Siap Naik Level watermark e-KTP",
-    "en": "Signs You&#x27;re Ready to Level Up watermark e-KTP (Practical)",
-    "ar": "watermark e-KTP — دليل IDMark",
-    "jv": "Pandhuan: Tanda Sudah Siap Naik Level watermark e-KTP",
-    "su": "Pituduh: Tanda Sudah Siap Naik Level watermark e-KTP",
-    "zh": "IDMark · watermark e-KTP 实用指南",
-    "ja": "IDMark｜watermark e-KTP ガイド"
+    "id": "watermark e-KTP: memutuskan tanpa overthinking",
+    "en": "watermark e-KTP: deciding without overthinking",
+    "ar": "المعلومات المهمة: قرار بلا تفكير زائد",
+    "jv": "watermark e-KTP: mutusaké tanpa mikir kebangeten",
+    "su": "watermark e-KTP: mutuskeun tanpa mikir kaleuleuwihi",
+    "zh": "重要信息：不必纠结的选择方法",
+    "ja": "大切な情報：考えすぎずに決める"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Watermark e-KTP: cara memutuskan tanpa berlarut-larut, tanda bahwa rutinitas siap naik level, dan hal yang bisa dilewati untuk sementara.",
+    "en": "Watermark e-KTP: how to decide without overthinking, which signs show a routine is ready for more and what to skip for now.",
+    "ar": "watermark e-KTP: كيف تقرر دون إطالة التفكير، وما العلامات التي تدل على أن الروتين جاهز لمزيد، وما الذي تؤجله الآن.",
+    "ja": "watermark e-KTP を考えすぎずに決めるために。ルーティンがさらなる段階に進める目安と、今は見送ってよいものを整理しました。",
+    "zh": "watermark e-KTP：如何不过度纠结地决定，流程可升级的迹象，以及现阶段可以跳过什么。",
+    "jv": "Watermark e-KTP: carané mutusaké tanpa mbingungaké awake dhéwé, tandha yen rutinitas wis siap naik level, lan apa sing bisa dilewati sementara.",
+    "su": "Watermark e-KTP: kumaha mutuskeun tanpa ngalieuk-lieuk, tanda-tanda rutinitas siap naék tingkat, jeung naon anu bisa dipaleungitkeun samentara."
+  }
 }

@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "kenapa-idmark-cocok-untuk-watermark-ktp-mingguan",
-    "en": "why-idmark-fits-watermark-ktp",
-    "ar": "watermark-ktp-4",
-    "jv": "pandhuan-watermark-ktp-idmark-4",
-    "su": "pituduh-watermark-ktp-idmark-4",
-    "zh": "idmark-watermark-ktp-实用指南-4",
-    "ja": "idmarkwatermark-ktp-ガイド-4"
+    "id": "watermark-ktp-alat-mana-yang-benar-benar-dipakai",
+    "en": "id-watermark-which-tool-you-will-actually-use",
+    "ar": "alama-maiya-ala-alhwya-ay-adaa-ststkhdmha-fala",
+    "jv": "watermark-ktp-piranti-endi-sing-tenan-dipigunakake",
+    "su": "watermark-ktp-alat-mana-anu-beneran-dipake",
+    "zh": "shen-fen-zheng-shui-yin-na-ge-gong-ju-zhen-de-hui-yong",
+    "ja": "mibun-shou-no-uootaamaaku-jissaini-tsukau-dougu-hadoreka"
   },
   "titles": {
-    "id": "Kenapa IDMark Cocok untuk watermark KTP",
-    "en": "Why IDMark Fits watermark KTP — Offline First",
-    "ar": "watermark KTP — دليل IDMark",
-    "jv": "Pandhuan: Kenapa IDMark Cocok untuk watermark KTP",
-    "su": "Pituduh: Kenapa IDMark Cocok untuk watermark KTP",
-    "zh": "IDMark · watermark KTP 实用指南",
-    "ja": "IDMark｜watermark KTP ガイド"
+    "id": "watermark KTP: alat mana yang benar-benar dipakai",
+    "en": "ID watermark: which tool you will actually use",
+    "ar": "علامة مائية على الهوية: أي أداة ستستخدمها فعلاً",
+    "jv": "watermark KTP: piranti endi sing tenan dipigunakaké",
+    "su": "watermark KTP: alat mana anu beneran dipaké",
+    "zh": "身份证水印：哪个工具真的会用",
+    "ja": "身分証のウォーターマーク：実際に使う道具はどれか"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Alat watermark KTP dinilai dari yang akan terus dipakai: usaha pengaturan, gesekan harian, dan kecocokan aplikasi di perangkat dengan tinjauan mingguan.",
+    "en": "ID watermark tools compared by what you will actually keep using: setup effort, daily friction, and why an on-device app suits a weekly check.",
+    "ar": "أدوات watermark KTP مقارنةً بما ستستمر في استخدامه: جهد الإعداد، والاحتكاك اليومي، ولماذا يناسب تطبيقٌ على الجهاز المراجعة الأسبوعية.",
+    "ja": "身分証ウォーターマーク用のツールを、実際に使い続けられるかで比較。設定の手間、日々の負担、端末内のアプリが週次確認に向く理由を解説します。",
+    "zh": "工具对比：身份证水印哪款你会真正坚持用？涵盖设置成本、日常摩擦与每周回顾的适配性。",
+    "jv": "Piranti watermark KTP dinilai saka sing bakal terus dipakai: usaha setelan, gesekan saben dina, lan cocoké aplikasi ing piranti karo tinjauan mingguan.",
+    "su": "Alat watermark KTP dibandingkeun ku anu bakal terus dipaké: usaha setelan, gesekan sapopoé, jeung naha aplikasi di alat cocok pikeun tinjauan mingguan."
+  }
 }

@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "watermark-ektp-aman-offline-2",
-    "en": "watermark-ektp-aman-offline",
-    "ar": "watermark-ektp-aman-offline-2",
-    "jv": "pandhuan-watermark-ektp-aman-offline-idmark-2",
-    "su": "pituduh-watermark-ektp-aman-offline-idmark-2",
-    "zh": "idmark-watermark-ektp-aman-offline-实用指南-2",
-    "ja": "idmarkwatermark-ektp-aman-offline-ガイド-2"
+    "id": "faq-mode-offline-jawaban-yang-sering-dicari",
+    "en": "watermark-ektp-aman-offline-faq-the-questions-people-actually-ask",
+    "ar": "almalwmat-almhma-wttbyqat-hatfk-alakhra",
+    "jv": "pitakon-mode-offline-sing-kerep-ditakokake",
+    "su": "patarosan-mode-offline-anu-sering-ditaroskeun",
+    "zh": "zhong-yao-xin-xi-yu-shou-ji-shang-de-qi-ta-ying-yong",
+    "ja": "taisetsu-na-jouhou-to-sumaho-no-hokano-apuri"
   },
   "titles": {
-    "id": "FAQ watermark ektp aman offline: jawaban singkat yang dipakai",
-    "en": "watermark ektp aman offline — Practical Q&amp;A",
-    "ar": "watermark ektp aman offline — دليل IDMark",
-    "jv": "Pandhuan: FAQ watermark ektp aman offline: jawaban singkat yang dipaka",
-    "su": "Pituduh: FAQ watermark ektp aman offline: jawaban singkat yang dipakai",
-    "zh": "IDMark · watermark ektp aman offline 实用指南",
-    "ja": "IDMark｜watermark ektp aman offline ガイド"
+    "id": "FAQ mode offline: jawaban yang sering dicari",
+    "en": "watermark ektp aman offline FAQ: the questions people actually ask",
+    "ar": "المعلومات المهمة وتطبيقات هاتفك الأخرى",
+    "jv": "Pitakon mode offline sing kerep ditakokaké",
+    "su": "Patarosan mode offline anu sering ditaroskeun",
+    "zh": "重要信息与手机上的其他应用",
+    "ja": "大切な情報とスマホの他のアプリ"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Jawaban pertanyaan umum tentang watermark ektp aman offline, termasuk apa yang berjalan di perangkat dan cara mulai lagi setelah beberapa hari terlewat.",
+    "en": "Answers to common questions about watermark ektp aman offline, including what runs on your device and how to restart after missing a few days.",
+    "ar": "أجوبة عن الأسئلة الشائعة حول watermark ektp aman offline، بما في ذلك ما يعمل على الجهاز، وكيف تعود بعد غياب بضعة أيام.",
+    "ja": "よくある質問への回答：watermark ektp aman offline の端末内で動く機能や、数日空いたあとに再開する方法などを扱います。",
+    "zh": "watermark ektp aman offline 常见问题解答：哪些功能在设备上运行，以及漏几天后如何重启。",
+    "jv": "Wangsulan pitakon umum bab watermark ektp aman offline, kalebu apa sing mlaku ing piranti lan cara miwiti maneh sawisé sawetara dina kelewat.",
+    "su": "Jawaban patarosan umum ngeunaan watermark ektp aman offline, kaasup naon anu jalan di alat jeung kumaha mimitian deui sanggeus sababaraha poé kaliwat."
+  }
 }

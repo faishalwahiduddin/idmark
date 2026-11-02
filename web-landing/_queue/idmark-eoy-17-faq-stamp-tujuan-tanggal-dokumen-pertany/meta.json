@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "faq-stamp-tujuan-tanggal-dokumen-pertanyaan-yang-sering-muncul-offline",
-    "en": "stamp-tujuan-tanggal-dokumen-faq-frequent-questions",
-    "ar": "stamp-tujuan-tanggal-dokumen-2",
-    "jv": "pandhuan-stamp-tujuan-tanggal-dokumen-idmark-2",
-    "su": "pituduh-stamp-tujuan-tanggal-dokumen-idmark-2",
-    "zh": "idmark-stamp-tujuan-tanggal-dokumen-实用指南-2",
-    "ja": "idmarkstamp-tujuan-tanggal-dokumen-ガイド-2"
+    "id": "faq-stamp-tujuan-tanggal-dokumen-jawaban-yang-sering-dicari",
+    "en": "stamp-tujuan-tanggal-dokumen-faq-the-questions-people-actually-ask",
+    "ar": "asila-almalwmat-almhma-alshaiaa",
+    "jv": "pitakon-stamp-tujuan-tanggal-dokumen-sing-kerep-ditakokake",
+    "su": "patarosan-stamp-tujuan-tanggal-dokumen-anu-sering-ditaroskeun",
+    "zh": "zhong-yao-xin-xi-chang-jian-wen-ti-da-jia-zhen-zheng-hui-wen-de",
+    "ja": "taisetsu-na-jouhou-noyokuaru-shitsumon"
   },
   "titles": {
-    "id": "FAQ stamp tujuan tanggal dokumen: Pertanyaan yang Sering Muncul offlin",
-    "en": "stamp tujuan tanggal dokumen FAQ: Frequent Questions",
-    "ar": "stamp tujuan tanggal dokumen — دليل IDMark",
-    "jv": "Pandhuan: FAQ stamp tujuan tanggal dokumen: Pertanyaan yang Sering Mun",
-    "su": "Pituduh: FAQ stamp tujuan tanggal dokumen: Pertanyaan yang Sering Munc",
-    "zh": "IDMark · stamp tujuan tanggal dokumen 实用指南",
-    "ja": "IDMark｜stamp tujuan tanggal dokumen ガイド"
+    "id": "FAQ stamp tujuan tanggal dokumen: jawaban yang sering dicari",
+    "en": "stamp tujuan tanggal dokumen FAQ: the questions people actually ask",
+    "ar": "أسئلة المعلومات المهمة الشائعة",
+    "jv": "Pitakon stamp tujuan tanggal dokumen sing kerep ditakokaké",
+    "su": "Patarosan stamp tujuan tanggal dokumen anu sering ditaroskeun",
+    "zh": "重要信息常见问题：大家真正会问的",
+    "ja": "大切な情報のよくある質問"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Jawaban atas pertanyaan yang sering muncul tentang stamp tujuan tanggal dokumen: artinya, di mana datanya disimpan, dan cara terus jalan setelah jeda.",
+    "en": "Answers to the questions people ask about stamp tujuan tanggal dokumen: what it means, where the data is stored, and how to keep going after a gap.",
+    "ar": "أجوبة عن الأسئلة التي يطرحها الناس حول stamp tujuan tanggal dokumen: معناه، وأين تُحفظ بياناته، وكيف تستمر بعد انقطاع.",
+    "ja": "よくある質問：stamp tujuan tanggal dokumen の意味、データの保存場所、途切れた後も続ける方法を分かりやすく説明します。",
+    "zh": "常见问题：stamp tujuan tanggal dokumen 的含义、数据存放位置，以及中断后如何继续。",
+    "jv": "Wangsulan kanggo pitakon sing kerep ditakokaké bab stamp tujuan tanggal dokumen: tegesé, ing ngendi datané disimpen, lan cara terus mlaku sawisé jeda.",
+    "su": "Jawaban pikeun patarosan anu sering ditanyakeun ngeunaan stamp tujuan tanggal dokumen: hartina, dimana datana disimpen, jeung kumaha neruskeun sanggeus jeda."
+  }
 }

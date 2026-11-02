@@ -377,5 +377,267 @@
   "privacyGradeDescMax": "Proteksi Maksimal • Memenuhi rekomendasi Kominfo & UU PDP",
   "privacyGradeDescVeryGood": "Proteksi Sangat Baik • Dokumen aman dibagikan",
   "privacyGradeDescFair": "Proteksi Cukup • Disarankan menambah tanggal dan sensor NIK",
-  "privacyGradeDescWeak": "Proteksi Lemah • Tambahkan tujuan spesifik dan tanggal"
+  "privacyGradeDescWeak": "Proteksi Lemah • Tambahkan tujuan spesifik dan tanggal",
+  "appTitle": "IDMark",
+  "appTagline": "Beri cap watermark teks pada foto KTP, SIM & dokumen penting.",
+  "appSubtitle": "Secure ID Card & Privacy Shield",
+  "onbSkip": "Lewati",
+  "onbNext": "Lanjut",
+  "onbGetStarted": "Mulai Sekarang",
+  "onbPrivacyHeadline": "Privasi & Offline Terjamin",
+  "onbPrivacyDetail": "Semua data tersimpan aman di perangkat Anda tanpa pelacak.",
+  "onbSlide1Title": "Stempel identitas",
+  "onbSlide1Sub": "Tujuan & tanggal di dokumen",
+  "onbSlide1Badge": "100% Offline & Privat",
+  "onbSlide2Title": "Preset",
+  "onbSlide2Sub": "Template siap pakai",
+  "onbSlide2Badge": "Ringan & Responsif",
+  "onbSlide3Title": "Riwayat",
+  "onbSlide3Sub": "Hasil stempel tersimpan",
+  "onbSlide3Badge": "Tanpa Iklan & Tanpa Akun",
+  "onbSlide4Title": "On-device",
+  "onbSlide4Sub": "Tanpa unggah ke cloud",
+  "onbSlide4Badge": "Data Tersimpan di Perangkat",
+  "loadingLabel": "Memuat…",
+  "download": "Unduh",
+  "downloadSuccess": "Dokumen ter-watermark berhasil diunduh ({filename})! 🛡️✨",
+  "@downloadSuccess": {
+    "placeholders": {
+      "filename": {
+        "type": "String"
+      }
+    }
+  },
+  "protectionProof": "Bukti Proteksi",
+  "tierExemplary": "Teladan",
+  "tierDisciplined": "Disiplin",
+  "tierOrderly": "Tertib",
+  "tierStarting": "Mulai",
+  "disciplineCount": "{count} file watermark • {tier}",
+  "@disciplineCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "tier": {
+        "type": "String"
+      }
+    }
+  },
+  "disciplineDesc": "Setiap ekspor aman menambah disiplin proteksi dokumen.",
+  "shareDiscipline": "Bagikan disiplin",
+  "disciplineShareText": "{count} file watermark • {tier} #IDMark",
+  "@disciplineShareText": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "tier": {
+        "type": "String"
+      }
+    }
+  },
+  "allTemplates": "Semua",
+  "myPresets": "Preset Saya",
+  "catBanking": "Perbankan",
+  "catFinance": "Finansial & Pinjol",
+  "catCareer": "Karir & HR",
+  "catRental": "Rental & Wisata",
+  "catTelecom": "Telekomunikasi",
+  "catMultifinance": "Multifinance",
+  "catInvestment": "Investasi",
+  "catPublicService": "Layanan Publik",
+  "catInternational": "Internasional",
+  "appearanceAndLanguage": "Tampilan & Bahasa",
+  "themeMode": "Mode Tema",
+  "identity": "Identitas",
+  "patternDiagonalBand": "Pita Melintang",
+  "patternDiagonalBandDesc": "Satu garis diagonal tebal melintang di tengah dokumen (Rekomendasi Kominfo)",
+  "patternRepeatedGrid": "Pola Berulang (Grid)",
+  "patternRepeatedGridDesc": "Pola teks berulang di seluruh permukaan foto untuk proteksi maksimal",
+  "patternBottomBar": "Pita Bawah",
+  "patternBottomBarDesc": "Pita teks solid di bagian bawah dokumen",
+  "patternCornerStamp": "Cap Sudut",
+  "patternCornerStampDesc": "Cap verifikasi di sudut kanan bawah",
+  "patternSecuritySeal": "Segel Resmi Melingkar",
+  "patternSecuritySealDesc": "Stempel segel melingkar ganda dengan border verifikasi",
+  "patternCrossStamp": "Silang Ganda (X-Band)",
+  "patternCrossStampDesc": "Dua garis diagonal menyilang melindungi seluruh isi dokumen",
+  "patternQrBadge": "Lencana QR Verifikasi",
+  "patternQrBadgeDesc": "Lencana verifikasi ber-QR code keabsahan tujuan dan tanggal",
+  "colorWhite": "Putih Bersih",
+  "colorDark": "Hitam Pekat",
+  "colorRed": "Merah Resmi",
+  "colorBlue": "Biru Verifikasi",
+  "colorEmerald": "Hijau Aman",
+  "colorAmber": "Kuning Peringatan",
+  "colorPurple": "Ungu Segel",
+  "formatPng": "PNG (Resolusi Penuh)",
+  "formatPngDesc": "Format lossless kualitas asli tanpa penurunan ketajaman",
+  "formatJpeg": "JPEG (Ukuran Ringan)",
+  "formatJpegDesc": "Format terkompresi hemat kuota untuk upload portal cepat",
+  "formatPdf": "Dokumen PDF (Siap Cetak)",
+  "formatPdfDesc": "Format berkas dokumen resmi standar kantor & perbankan",
+  "redactBlackout": "Sensor Hitam (Blackout)",
+  "redactBlackoutDesc": "Kotak hitam pekat permanen menutup data",
+  "redactMosaic": "Sensor Mosaik (Pixelate)",
+  "redactMosaicDesc": "Efek pikselasi mengaburkan teks sensitif",
+  "redactBlur": "Sensor Buram (Blur)",
+  "redactBlurDesc": "Efek buram meratakan detail data pribadi",
+  "targetNik": "Nomor NIK / ID",
+  "targetSignature": "Tanda Tangan",
+  "targetAddress": "Alamat Lengkap",
+  "targetBirthPlace": "Tempat / Tgl Lahir",
+  "targetPhoto": "Foto Wajah",
+  "shareProofTitle": "Bukti Proteksi Dokumen",
+  "shareProofSubtitle": "Sertifikat integritas watermark & sensor sesuai Kominfo",
+  "shareFormatFeed": "Unggahan (4:5)",
+  "shareFormatStory": "Story (9:16)",
+  "shareCopyText": "Salin Teks",
+  "shareProcessing": "Memproses...",
+  "shareDownloadProofPng": "Unduh Bukti PNG",
+  "shareShareProof": "Bagikan Bukti",
+  "shareCardBrand": "IDMARK • SECURE ID",
+  "shareCardOnDevice": "100% ON-DEVICE",
+  "shareCardTitle": "BUKTI PROTEKSI WATERMARK DOKUMEN",
+  "shareCardPurposeLabel": "UNTUK KEPERLUAN KHUSUS:",
+  "shareCardPrivacyScore": "SKOR PRIVASI",
+  "shareCardRedactions": "SENSOR",
+  "shareCardAreaCount": "{count} Area",
+  "@shareCardAreaCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "shareCardFormat": "FORMAT",
+  "shareCardDate": "Tanggal: {date}",
+  "@shareCardDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "shareCardFooter": "idmark.faishal.id • Standar Watermark KTP Kominfo RI",
+  "shareCardIntegrityHash": "INTEGRITY HASH (SHA-256):",
+  "shareProofHeading": "🛡️ BUKTI PROTEKSI DOKUMEN — IDMARK",
+  "shareProofPurposeLine": "📌 Keperluan Khusus: \"{purpose}\"",
+  "@shareProofPurposeLine": {
+    "placeholders": {
+      "purpose": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofDateLine": "📅 Tanggal Stempel: {date}",
+  "@shareProofDateLine": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofScoreLine": "🔒 Skor Privasi: {score}/100",
+  "@shareProofScoreLine": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "shareProofRedactionLine": "✂️ Sensor Permanen: {count} Area Tertutup",
+  "@shareProofRedactionLine": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "shareProofHashLine": "🔑 SHA-256: {hash}",
+  "@shareProofHashLine": {
+    "placeholders": {
+      "hash": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofOnDeviceLine": "✅ Diproses 100% on-device tanpa server (Sesuai Panduan Kominfo RI)",
+  "shareProofCtaLine": "Lindungi identitas Anda dengan IDMark: https://idmark.faishal.id",
+  "shareProofDownloaded": "Sertifikat proteksi dokumen berhasil diunduh! 🛡️✨",
+  "shareProofFailed": "Gagal membagikan bukti: {error}",
+  "@shareProofFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "shareProofCopied": "Bukti proteksi disalin ke clipboard! 📋✨",
+  "themeCyberShield": "Perisai Siber",
+  "themeEmeraldSafe": "Zamrud Aman",
+  "themeObsidianVault": "Brankas Obsidian",
+  "themeAmberProof": "Bukti Ambar",
+  "quickSensorShort": "Sensor Cepat:",
+  "redactedTag": "[DISENSOR: {label}]",
+  "@redactedTag": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "defaultWatermarkText": "HANYA UNTUK VERIFIKASI IDENTITAS",
+  "pdfHeader": "IDMARK — DOKUMEN IDENTITAS TER-WATERMARK",
+  "pdfComplianceNote": "Sesuai Prinsip Pelindungan Data Pribadi (UU No. 27/2022)",
+  "pdfOnDevice": "100% On-Device",
+  "pdfPurposeLabel": "Tujuan Penggunaan: ",
+  "pdfDateLabel": "Tanggal Transaksi: {date}",
+  "@pdfDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "pdfPrintedAt": "Waktu Cetak: {date}",
+  "@pdfPrintedAt": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "pdfChecksum": "SHA-256 Checksum: ",
+  "catEcommerce": "E-Commerce",
+  "presetBank": "Pembukaan Rekening Bank",
+  "presetBankUpdate": "Pengkinian Data Nasabah Bank",
+  "presetFintech": "Pinjol / Fintech Resmi OJK",
+  "presetPaylater": "Aktivasi Paylater / Kartu Kredit",
+  "presetJob": "Lamaran Pekerjaan",
+  "presetHrOnboarding": "Onboarding Karyawan Baru",
+  "presetRental": "Sewa Mobil / Motor / Rental",
+  "presetHotel": "Check-In Hotel / Villa / Kost",
+  "presetTelco": "Registrasi Kartu SIM Prabayar",
+  "presetSimReplace": "Ganti Kartu SIM Hilang / Rusak",
+  "presetKredit": "Pengajuan Leasing / Multifinance",
+  "presetKpr": "Pengajuan KPR / Properti",
+  "presetInvestment": "Akun Sekuritas Saham IDX",
+  "presetCrypto": "Verifikasi Akun Kripto Bappebti",
+  "presetEcommerce": "Verifikasi Merchant Marketplace",
+  "presetBpjs": "Klaim JHT / Saldo BPJS",
+  "presetGovKelurahan": "Administrasi Kependudukan / Kelurahan",
+  "presetGlobalKyc": "International KYC Verification",
+  "defaultInternalSubtext": "HANYA UNTUK DOKUMEN INTERNAL",
+  "pdfLegalNotice": "PEMBERITAHUAN HUKUM: Salinan dokumen identitas ini hanya sah dan diizinkan untuk tujuan yang tertera di atas. Penggunaan di luar peruntukan tersebut merupakan tindak pidana penyalahgunaan data pribadi.",
+  "validationRedactionLabelRequired": "Label sensor tidak boleh kosong",
+  "validationRedactionXRange": "Posisi X sensor harus berada dalam rentang 0.0 - 1.0",
+  "validationRedactionYRange": "Posisi Y sensor harus berada dalam rentang 0.0 - 1.0",
+  "validationRedactionWidthRange": "Lebar sensor harus berada dalam rentang >0.0 - 1.0",
+  "validationRedactionHeightRange": "Tinggi sensor harus berada dalam rentang >0.0 - 1.0",
+  "validationAuditIdRequired": "ID audit log tidak boleh kosong",
+  "validationAuditPurposeRequired": "Tujuan audit log tidak boleh kosong",
+  "validationAuditHashRequired": "Hash SHA-256 tidak boleh kosong",
+  "validationAuditScoreRange": "Skor privasi harus berada antara 0 dan 100"
 }

@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "watermark-e-ktp-level-lanjut-pola-insight-offline",
-    "en": "advanced-watermark-e-ktp-patterns-insights",
-    "ar": "watermark-e-ktp-4",
-    "jv": "pandhuan-watermark-e-ktp-idmark-4",
-    "su": "pituduh-watermark-e-ktp-idmark-4",
-    "zh": "idmark-watermark-e-ktp-实用指南-4",
-    "ja": "idmarkwatermark-e-ktp-ガイド-4"
+    "id": "watermark-e-ktp-tingkat-lanjut-setelah-rutin-stabil",
+    "en": "advanced-watermark-e-ktp-once-the-routine-holds",
+    "ar": "almalwmat-almhma-almtqdm-bad-thbat-alrwtyn",
+    "jv": "watermark-e-ktp-lanjutan-sawise-rutinitas-mantep",
+    "su": "watermark-e-ktp-lanjutan-sanggeus-rutinitas-mantep",
+    "zh": "xi-guan-wen-ding-hou-de-zhong-yao-xin-xi-jin-jie",
+    "ja": "shuukan-ga-antei-shita-nochino-taisetsu-na-jouhououyou"
   },
   "titles": {
-    "id": "Watermark e-KTP Level Lanjut: Pola &amp; Insight",
-    "en": "Advanced watermark e-KTP: Patterns &amp; Insights",
-    "ar": "watermark e-KTP — دليل IDMark",
-    "jv": "Pandhuan: Watermark e-KTP Level Lanjut: Pola &amp; Insight",
-    "su": "Pituduh: Watermark e-KTP Level Lanjut: Pola &amp; Insight",
-    "zh": "IDMark · watermark e-KTP 实用指南",
-    "ja": "IDMark｜watermark e-KTP ガイド"
+    "id": "watermark e-KTP tingkat lanjut setelah rutin stabil",
+    "en": "Advanced watermark e-KTP once the routine holds",
+    "ar": "المعلومات المهمة المتقدم بعد ثبات الروتين",
+    "jv": "watermark e-KTP lanjutan sawisé rutinitas mantep",
+    "su": "watermark e-KTP lanjutan sanggeus rutinitas mantep",
+    "zh": "习惯稳定后的重要信息进阶",
+    "ja": "習慣が安定した後の大切な情報応用"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Watermark e-KTP tingkat lanjut setelah rutinitas stabil: cara menambah kedalaman pada kebiasaan yang sudah jalan tanpa membebani pekan Anda.",
+    "en": "Advanced watermark e-KTP once the routine holds steady: how to add depth to a habit that works without overloading your week.",
+    "ar": "watermark e-KTP للمستوى المتقدم بعد ثبات الروتين: كيف تضيف عمقاً إلى عادة مستقرة دون أن تثقل أسبوعك.",
+    "ja": "ルーティンが安定した後の watermark e-KTP 上級編。うまく回っている習慣に深みを加えつつ、一週間の負担を増やさない方法を紹介します。",
+    "zh": "流程稳定后的 watermark e-KTP 进阶：如何为稳定习惯增加深度，而不加重一周负担。",
+    "jv": "Watermark e-KTP tingkat lanjut sawisé rutinitas stabil: cara nambahi jero kebiasaan sing wis mlaku tanpa mbebani minggu sampéyan.",
+    "su": "Watermark e-KTP tingkat lanjut sanggeus rutinitas stabil: kumaha nambahan jerona kabiasaan anu geus jalan tanpa mabeungkeut minggu anjeun."
+  }
 }

@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "backup-ekspor-catatan-lindungi-fotokopi-ktp-offline",
-    "en": "backup-export-lindungi-fotokopi-ktp-notes",
-    "ar": "lindungi-fotokopi-ktp-5",
-    "jv": "pandhuan-lindungi-fotokopi-ktp-idmark-5",
-    "su": "pituduh-lindungi-fotokopi-ktp-idmark-5",
-    "zh": "idmark-lindungi-fotokopi-ktp-实用指南-5",
-    "ja": "idmarklindungi-fotokopi-ktp-ガイド-5"
+    "id": "ekspor-data-lindungi-fotokopi-ktp-apa-yang-ikut-tersimpan",
+    "en": "exporting-lindungi-fotokopi-ktp-what-comes-with-the-file",
+    "ar": "tsdyr-almalwmat-almhma-ma-aldhy-yhfz-fala",
+    "jv": "ekspor-data-lindungi-fotokopi-ktp-apa-sing-melu-kasimpen",
+    "su": "ekspor-data-lindungi-fotokopi-ktp-naon-anu-milu-kasimpen",
+    "zh": "dao-chu-zhong-yao-xin-xi-wen-jian-li-dou-you-shen-me",
+    "ja": "taisetsu-na-jouhou-no-kakidashi-nani-ga-hozon-sareruka"
   },
   "titles": {
-    "id": "Backup &amp; Ekspor Catatan lindungi fotokopi KTP",
-    "en": "Backup &amp; Export lindungi fotokopi KTP Notes",
-    "ar": "lindungi fotokopi KTP — دليل IDMark",
-    "jv": "Pandhuan: Backup &amp; Ekspor Catatan lindungi fotokopi KTP",
-    "su": "Pituduh: Backup &amp; Ekspor Catatan lindungi fotokopi KTP",
-    "zh": "IDMark · lindungi fotokopi KTP 实用指南",
-    "ja": "IDMark｜lindungi fotokopi KTP ガイド"
+    "id": "Ekspor data lindungi fotokopi KTP: apa yang ikut tersimpan",
+    "en": "Exporting lindungi fotokopi KTP: what comes with the file",
+    "ar": "تصدير المعلومات المهمة: ما الذي يُحفظ فعلاً",
+    "jv": "Ekspor data lindungi fotokopi KTP: apa sing melu kasimpen",
+    "su": "Ékspor data lindungi fotokopi KTP: naon anu milu kasimpen",
+    "zh": "导出重要信息：文件里都有什么",
+    "ja": "大切な情報の書き出し：何が保存されるか"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Ekspor data lindungi fotokopi KTP: apa saja yang ikut dalam berkas, apa yang tetap di perangkat, dan cara memeriksa salinan setelah jeda.",
+    "en": "Exporting lindungi fotokopi KTP data: what comes along with the file, what stays on the device and how to check the copy after a gap.",
+    "ar": "تصدير بيانات lindungi fotokopi KTP: ما الذي يرافق الملف، وما الذي يبقى على الجهاز، وكيف تتحقق من النسخة بعد انقطاع.",
+    "ja": "書き出し時に lindungi fotokopi KTP のデータに何が含まれるか。端末に残るもの、途切れた後のコピーの確認方法をまとめました。",
+    "zh": "导出 lindungi fotokopi KTP 数据：文件包含什么，哪些留在设备上，以及中断后如何核对。",
+    "jv": "Ekspor data lindungi fotokopi KTP: apa wae sing melu ing berkas, apa sing tetep ing piranti, lan cara mriksa salinan sawisé jeda.",
+    "su": "Ékspor data lindungi fotokopi KTP: naon wae anu kaasup dina berkas, naon anu tetep di alat, jeung kumaha meriksa salinan sanggeus jeda."
+  }
 }

@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "watermark-e-ktp-panduan-lengkap-untuk-pemula-praktis",
-    "en": "watermark-e-ktp-complete-beginner-guide-practical",
-    "ar": "watermark-e-ktp",
-    "jv": "pandhuan-watermark-e-ktp-idmark",
-    "su": "pituduh-watermark-e-ktp-idmark",
-    "zh": "idmark-watermark-e-ktp-实用指南",
-    "ja": "idmarkwatermark-e-ktp-ガイド"
+    "id": "cara-memulai-watermark-e-ktp-tanpa-ribet",
+    "en": "how-to-start-watermark-e-ktp-without-friction",
+    "ar": "kyf-tbda-almalwmat-almhma-dwn-taqyd",
+    "jv": "kepriye-miwiti-watermark-e-ktp-tanpa-ruwet",
+    "su": "kumaha-ngamimitian-watermark-e-ktp-tanpa-ribet",
+    "zh": "ru-he-kai-shi-zhong-yao-xin-xi-bu-bi-fu-za",
+    "ja": "taisetsu-na-jouhou-wo-muri-naku-hajime-ru-houhou"
   },
   "titles": {
-    "id": "Cara mencatat watermark e-KTP tanpa ribet",
-    "en": "watermark e-KTP: Complete Beginner Guide (Practical)",
-    "ar": "watermark e-KTP — دليل IDMark",
-    "jv": "Pandhuan: Cara mencatat watermark e-KTP tanpa ribet",
-    "su": "Pituduh: Cara mencatat watermark e-KTP tanpa ribet",
-    "zh": "IDMark · watermark e-KTP 实用指南",
-    "ja": "IDMark｜watermark e-KTP ガイド"
+    "id": "Cara memulai watermark e-KTP tanpa ribet",
+    "en": "How to start watermark e-KTP without friction",
+    "ar": "كيف تبدأ المعلومات المهمة دون تعقيد",
+    "jv": "Kepriyé miwiti watermark e-KTP tanpa ruwet",
+    "su": "Kumaha ngamimitian watermark e-KTP tanpa ribet",
+    "zh": "如何开始重要信息（不必复杂）",
+    "ja": "大切な情報を無理なく始める方法"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Langkah awal watermark e-KTP tanpa ribet: mulai dari versi paling kecil, pilih waktu tetap untuk menjalankannya, lalu tinjau sekali seminggu.",
+    "en": "Begin watermarking your e-KTP without the usual friction. Keep the first version tiny, pick a time to run it, and review it once a week.",
+    "ar": "خطوات بسيطة لبدء علامة مائية على e-KTP دون تعقيد: ابدأ بأصغر نسخة، واختر وقتاً ثابتاً للتشغيل، ثم راجع مرة كل أسبوع.",
+    "ja": "無理なく始めるための e-KTP ウォーターマーク手順です。最小のバージョンから試し、実行する時間を決めて、週に一度見直します。",
+    "zh": "e-KTP 水印入门：先从最小版本做起，定好运行时间，每周回顾一次，让流程稳定下来。",
+    "jv": "Wiwiti watermark e-KTP tanpa ruwet: miwiti saka versi paling cilik, milih wektu tetep kanggo nglakokaké, banjur ditinjau sepisan saben minggu.",
+    "su": "Langkah awal watermark e-KTP tanpa ribet: mimitian ti versi anu pangleutikna, pilih waktu anu tetep pikeun ngajalankeunana, lalu tinjau sakali unggal minggu."
+  }
 }

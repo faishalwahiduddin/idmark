@@ -1,0 +1,85 @@
+{
+  "title": "watermark e-KTP di 2026: apa yang berubah",
+  "description": "Watermark e-KTP di 2026: apa yang perlu diperbarui dalam rutinitas, apa yang masih berlaku, dan cara menjaga tinjauan mingguan tetap mutakhir.",
+  "badge": "keamanan · offline",
+  "answer": "Saat dibutuhkan, watermark e-KTP tersebar di tiga tempat—dan yang pertama dibuka justru yang usang. IDMark menyimpan watermark e-KTP di perangkat, jadi datanya tetap terbuka tanpa kuota dan tanpa akun.",
+  "toc": [
+    "Arti praktis watermark e-KTP",
+    "Versi paling kecil",
+    "Tersimpan di perangkat"
+  ],
+  "sections": [
+    {
+      "h2": "Arti praktis watermark e-KTP",
+      "p": "Dalam praktik, watermark e-KTP berarti ada bukti bertanggal yang bisa dibuka ulang—bukan niat yang cuma diingat.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "Versi paling kecil",
+      "p": "Simpan satu kartu berisi kontak, lokasi, dan nomor penting yang bisa dibuka tanpa sinyal.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "Tersimpan di perangkat",
+      "p": "IDMark menyimpan watermark e-KTP di perangkat, jadi datanya tetap terbuka tanpa kuota dan tanpa akun.",
+      "h3": null,
+      "p3": null
+    }
+  ],
+  "table": {
+    "caption": "Kerangka watermark e-KTP",
+    "headers": [
+      "Langkah",
+      "Isi minimal",
+      "Selesai bila"
+    ],
+    "rows": [
+      [
+        "Kartu darurat",
+        "kontak + lokasi",
+        "bisa dibuka offline"
+      ],
+      [
+        "Penanda",
+        "posisi terakhir",
+        "bisa dilanjut besok"
+      ],
+      [
+        "Evaluasi minggu",
+        "satu penyesuaian",
+        "diterapkan Senin"
+      ]
+    ]
+  },
+  "list": [
+    "Tetapkan satu waktu tetap, bukan “kapan sempat”.",
+    "Buka IDMark saat waktu itu tiba, bukan nanti malam.",
+    "Catat satu hambatan, bukan alasan panjang.",
+    "Cadangkan data sebelum ganti ponsel."
+  ],
+  "faqs": [
+    [
+      "Apakah watermark e-KTP bisa dibuka offline?",
+      "Ya. IDMark menyimpan semuanya di perangkat, jadi tidak butuh kuota."
+    ],
+    [
+      "Perlu akun dulu?",
+      "Tidak. Mulai tanpa login; cadangkan data secara berkala."
+    ],
+    [
+      "Mulai dari mana?",
+      "Dari bagian terpendek. Tambah cakupan hanya setelah dua minggu stabil."
+    ],
+    [
+      "Kalau bolong beberapa hari?",
+      "Jangan hapus riwayat. Lanjut dari bagian terakhir dan catat satu hambatan."
+    ]
+  ],
+  "cta": [
+    "Mulai watermark e-KTP hari ini",
+    "Buka IDMark"
+  ],
+  "slug": "update-terbaru-soal-watermark-e-ktp-praktis"
+}

@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "pindah-perangkat-tanpa-hilang-aplikasi-offline-2026",
-    "en": "move-devices-without-losing-aplikasi-offline",
-    "ar": "aplikasi-offline-5",
-    "jv": "pandhuan-aplikasi-offline-idmark-5",
-    "su": "pituduh-aplikasi-offline-idmark-5",
-    "zh": "idmark-aplikasi-offline-实用指南-5",
-    "ja": "idmarkaplikasi-offline-ガイド-5"
+    "id": "ekspor-data-mode-offline-apa-yang-ikut-tersimpan",
+    "en": "exporting-aplikasi-offline-what-comes-with-the-file",
+    "ar": "qyas-almalwmat-almhma-dwn-arqam-whmya",
+    "jv": "ekspor-data-mode-offline-apa-sing-melu-kasimpen",
+    "su": "ekspor-data-mode-offline-naon-anu-milu-kasimpen",
+    "zh": "ru-he-heng-liang-zhong-yao-xin-xi-er-bu-kao-gu-ji",
+    "ja": "suisoku-ni-tayora-zu-taisetsu-na-jouhou-wo-hakaru"
   },
   "titles": {
-    "id": "Pindah Perangkat tanpa Hilang aplikasi offline",
-    "en": "Move Devices Without Losing aplikasi offline",
-    "ar": "aplikasi offline — دليل IDMark",
-    "jv": "Pandhuan: Pindah Perangkat tanpa Hilang aplikasi offline",
-    "su": "Pituduh: Pindah Perangkat tanpa Hilang aplikasi offline",
-    "zh": "IDMark · aplikasi offline 实用指南",
-    "ja": "IDMark｜aplikasi offline ガイド"
+    "id": "Ekspor data mode offline: apa yang ikut tersimpan",
+    "en": "Exporting aplikasi offline: what comes with the file",
+    "ar": "قياس المعلومات المهمة دون أرقام وهمية",
+    "jv": "Ekspor data mode offline: apa sing melu kasimpen",
+    "su": "Ékspor data mode offline: naon anu milu kasimpen",
+    "zh": "如何衡量重要信息而不靠估计",
+    "ja": "推測に頼らず大切な情報を測る"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Ekspor data aplikasi offline: apa yang ikut tersimpan saat Anda memindahkan berkas, apa yang tetap di perangkat, dan cara mengecek salinannya setelah jeda.",
+    "en": "Exporting aplikasi offline data: what comes with the file when you move it, what stays on your device and how to check the copy after a gap.",
+    "ar": "تصدير بيانات تطبيق offline: ما الذي يُحفظ مع الملف عند نقله، وما الذي يبقى على جهازك، وكيف تتحقق من النسخة بعد انقطاع.",
+    "ja": "aplikasi offline のデータを書き出すとき、ファイルに含まれる内容。端末に残るデータ、移行後のコピーを確認する方法を解説します。",
+    "zh": "导出 aplikasi offline 数据：迁移文件时一并保存的内容，设备上保留什么，以及如何检查副本。",
+    "jv": "Ekspor data aplikasi offline: apa sing melu kesimpen nalika sampéyan mindhah berkas, apa sing tetep ing piranti, lan cara mriksa salinané sawisé jeda.",
+    "su": "Ékspor data aplikasi offline: naon anu ikut disimpen waktu mindahkeun berkas, naon anu tetep di alat, jeung kumaha meriksa salinanana sanggeus jeda."
+  }
 }

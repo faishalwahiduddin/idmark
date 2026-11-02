@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "update-terbaru-soal-watermark-e-ktp-praktis",
-    "en": "latest-practical-update-on-watermark-e-ktp-practical",
-    "ar": "watermark-e-ktp-5",
-    "jv": "pandhuan-watermark-e-ktp-idmark-5",
-    "su": "pituduh-watermark-e-ktp-idmark-5",
-    "zh": "idmark-watermark-e-ktp-实用指南-5",
-    "ja": "idmarkwatermark-e-ktp-ガイド-5"
+    "id": "watermark-e-ktp-di-2026-apa-yang-berubah",
+    "en": "watermark-e-ktp-in-2026-what-changed",
+    "ar": "almalwmat-almhma-llmbtdiyn-mn-ayn-tbda",
+    "jv": "watermark-e-ktp-ing-2026-apa-sing-owah",
+    "su": "watermark-e-ktp-taun-2026-naon-anu-robah",
+    "zh": "zhong-yao-xin-xi-ru-men-cong-na-li-kai-shi",
+    "ja": "taisetsu-na-jouhou-nyuumon-dokokara-hajime-ruka"
   },
   "titles": {
-    "id": "Update Terbaru Soal watermark e-KTP",
-    "en": "Latest Practical Update on watermark e-KTP (Practical)",
-    "ar": "watermark e-KTP — دليل IDMark",
-    "jv": "Pandhuan: Update Terbaru Soal watermark e-KTP",
-    "su": "Pituduh: Update Terbaru Soal watermark e-KTP",
-    "zh": "IDMark · watermark e-KTP 实用指南",
-    "ja": "IDMark｜watermark e-KTP ガイド"
+    "id": "watermark e-KTP di 2026: apa yang berubah",
+    "en": "watermark e-KTP in 2026: what changed",
+    "ar": "المعلومات المهمة للمبتدئين: من أين تبدأ",
+    "jv": "watermark e-KTP ing 2026: apa sing owah",
+    "su": "watermark e-KTP taun 2026: naon anu robah",
+    "zh": "重要信息入门：从哪里开始",
+    "ja": "大切な情報入門：どこから始めるか"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Watermark e-KTP di 2026: apa yang perlu diperbarui dalam rutinitas, apa yang masih berlaku, dan cara menjaga tinjauan mingguan tetap mutakhir.",
+    "en": "Watermark e-KTP in 2026: what is worth updating in your routine, what still holds from earlier guides and how to keep the weekly check current.",
+    "ar": "علامة مائية لـ e-KTP في 2026: ما الذي يحتاج تحديثاً في روتينك، وما الذي ما زال مناسباً، وكيف تبقي المراجعة الأسبوعية حديثة.",
+    "ja": "2026年の watermark e-KTP。習慣の中で見直すべき部分、今も有効な部分、毎週の確認を最新に保つための考え方を解説します。",
+    "zh": "2026 年 watermark e-KTP：哪些值得更新，哪些仍然适用，以及如何让每周检查与时俱进。",
+    "jv": "Watermark e-KTP ing 2026: apa sing perlu dianyari ing rutinitas, apa sing isih cocok, lan cara njaga tinjauan mingguan tetep anyar.",
+    "su": "Watermark e-KTP dina 2026: naon anu kudu diropéa dina rutinitas, naon anu masih cocog, jeung kumaha ngajaga tinjauan mingguan tetep anyar."
+  }
 }

@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "template-catatan-aplikasi-offline-siap-pakai-harian",
-    "en": "ready-to-use-aplikasi-offline-log-template",
-    "ar": "aplikasi-offline-2",
-    "jv": "pandhuan-aplikasi-offline-idmark-2",
-    "su": "pituduh-aplikasi-offline-idmark-2",
-    "zh": "idmark-aplikasi-offline-实用指南-2",
-    "ja": "idmarkaplikasi-offline-ガイド-2"
+    "id": "template-mode-offline-siap-pakai",
+    "en": "a-ready-to-use-aplikasi-offline-template",
+    "ar": "qalb-almalwmat-almhma-jahz-llastkhdam",
+    "jv": "templat-mode-offline-siap-dipigunakake",
+    "su": "citakan-mode-offline-siap-dipake",
+    "zh": "zhong-yao-xin-xi-mu-ban-ke-zhi-jie-tao-yong",
+    "ja": "sugu-tsukae-ru-taisetsu-na-jouhou-tenpureeto"
   },
   "titles": {
-    "id": "Template Catatan aplikasi offline Siap Pakai",
-    "en": "Ready-to-Use aplikasi offline Log Template",
-    "ar": "aplikasi offline — دليل IDMark",
-    "jv": "Pandhuan: Template Catatan aplikasi offline Siap Pakai",
-    "su": "Pituduh: Template Catatan aplikasi offline Siap Pakai",
-    "zh": "IDMark · aplikasi offline 实用指南",
-    "ja": "IDMark｜aplikasi offline ガイド"
+    "id": "Template mode offline siap pakai",
+    "en": "A ready-to-use aplikasi offline template",
+    "ar": "قالب المعلومات المهمة جاهز للاستخدام",
+    "jv": "Templat mode offline siap dipigunakaké",
+    "su": "Citakan mode offline siap dipaké",
+    "zh": "重要信息模板（可直接套用）",
+    "ja": "すぐ使える大切な情報テンプレート"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Templat aplikasi offline siap pakai berisi rutinitas awal, jadwal menjalankan, dan tinjauan mingguan yang bisa Anda salin dan sesuaikan.",
+    "en": "A ready-to-use offline app template with a starter routine, a run schedule and a weekly check you can copy and adjust for your records.",
+    "ar": "قالب جاهز لتطبيق offline يتضمن روتيناً أولياً وجدول تشغيل ومراجعة أسبوعية يمكنك نسخها وتعديلها لسجلاتك.",
+    "ja": "すぐ使えるオフラインアプリのテンプレート。最初の習慣、実行スケジュール、週次の確認が入っており、自分の記録に合わせて編集できます。",
+    "zh": "可直接使用的离线应用模板：包含入门流程、运行计划和每周回顾，你可以按自己的记录灵活调整。",
+    "jv": "Templat aplikasi offline siap pakai isiné rutinitas awal, jadwal nglakokaké, lan tinjauan mingguan sing bisa disalin lan disetel dhéwé.",
+    "su": "Témplat aplikasi offline siap pakai, eusina rutinitas awal, jadwal ngajalankeun, jeung tinjauan mingguan anu bisa disalin jeung disaluyukeun."
+  }
 }
