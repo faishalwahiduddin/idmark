@@ -1,18 +1,24 @@
-IDMark membantu mencegah penyalahgunaan dokumen identitas pribadi Anda secara digital. Bubuhkan cap watermark teks, tanggal, dan tujuan verifikasi langsung di atas foto KTP, SIM, paspor, atau kartu keluarga sebelum dikirimkan ke pihak lain.
+IDMark memberi watermark pada foto KTP, SIM, paspor, dan KK sebelum kamu mengirimnya. Tulis tujuannya, misalnya "Hanya untuk pembukaan rekening bank", lengkap dengan tanggal, langsung tercetak di gambar.
 
-Fitur Utama:
-✓ Pembuat watermark instan untuk KTP, SIM, NPWP, dan berkas penting
-✓ Kustomisasi teks watermark: tujuan penggunaan (contoh: "Verifikasi Pinjaman 14 Okt 2026")
-✓ Pengaturan ukuran font, transparansi, rotasi sudut, dan kerapatan pola
-✓ Pemrosesan gambar 100% lokal di dalam memori ponsel Anda
-✓ Foto dokumen tidak pernah diunggah ke internet atau server luar
-✓ Ekspor cepat langsung ke aplikasi pesan atau penyimpanan
-✓ Tanpa iklan, tanpa login, dan sepenuhnya gratis
+Foto KTP polos gampang dipakai ulang orang untuk daftar pinjol atau penipuan. Watermark KTP dengan tujuan dan tanggal yang jelas membuat salinannya sulit disalahgunakan.
 
-Kenapa IDMark?
-Mengirimkan foto KTP polos tanpa watermark membuka risiko pencurian identitas dan penipuan pinjaman online. IDMark membantu setiap dokumen yang Anda bagikan memiliki cap peruntukan yang jelas.
+Fitur IDMark:
+• Cap teks tujuan, tanggal, dan keterangan tambahan, langsung menyatu di piksel foto
+• 18 preset siap pakai: buka rekening, pinjol resmi OJK, paylater, lamaran kerja, sewa kendaraan, check-in hotel/kos, registrasi kartu SIM, KPR, akun saham, klaim BPJS, kelurahan, dan lainnya
+• Buat preset sendiri untuk keperluan yang sering kamu pakai
+• 7 pola cap: pita melintang, grid, pita bawah, cap sudut, segel, silang, dan lencana QR
+• Atur warna, transparansi, ukuran huruf, dan kemiringan
+• Sensor permanen untuk NIK, tanda tangan, alamat, tanggal lahir, atau area bebas: blok hitam, mosaik, atau blur
+• Ekspor PNG atau PDF di resolusi asli, lalu bagikan langsung ke WhatsApp atau aplikasi lain
+• Data EXIF bisa dibersihkan dari hasil ekspor
+• Riwayat 50 ekspor terakhir dengan sidik SHA-256, tersimpan di HP saja
+• Panduan aman berbagi data pribadi mengacu Kominfo dan UU PDP, plus nilai privasi A+ sampai D
 
-Jaminan Keamanan Mutlak:
-Foto sensitif Anda tidak pernah meninggalkan ponsel. IDMark berjalan secara luring tanpa koneksi server pihak ketiga.
+Kenapa IDMark, bukan situs watermark online?
+Situs watermark online meminta kamu mengunggah foto KTP ke server mereka. IDMark memproses semuanya di HP kamu, tanpa satu permintaan jaringan pun selama memberi watermark. Tanpa akun, tanpa iklan, dan tanpa tulisan promosi aplikasi di hasilnya.
 
-Bagian dari armada aplikasi utilitas privasi faishal.id.
+Catatan: IDMark membantu mencegah penyalahgunaan salinan dokumen. Aplikasi ini tidak memeriksa keaslian KTP.
+
+Lindungi foto KTP-mu sebelum kamu kirim lagi.
+
+Bagian dari keluarga aplikasi faishal.id.

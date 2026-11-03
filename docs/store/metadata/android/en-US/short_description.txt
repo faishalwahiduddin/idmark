@@ -1,1 +1,1 @@
-Add watermark text & dates to ID cards and documents on-device.
+Stamp the purpose and date on ID photos before you send them. Stop reuse.

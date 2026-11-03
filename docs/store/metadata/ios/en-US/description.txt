@@ -1,18 +1,25 @@
-IDMark helps discourage digital fraud and unauthorized reuse of your personal identity documents. Stamp custom watermark text, dates, and verification purposes directly across photos of national IDs, driver licenses, and passports before sharing them.
+IDMark puts a watermark on photos of your ID card, passport or driver's license before you send them. Type the purpose, like "For bank account opening only", add the date, and it's stamped right into the image.
 
-Core Features:
-✓ Instant watermarking for ID cards, passports, and official documents
-✓ Customizable text presets (e.g., "For KYC Verification Only Oct 2026")
-✓ Adjustable font size, opacity, rotation angle, and repetition grid
-✓ 100% on-device image processing inside your phone memory
-✓ Photos are never uploaded to any cloud server or third party
-✓ Quick share export to messaging apps and local files
-✓ Zero advertisements, no account creation, completely free
+A clean ID photo is easy to reuse for loan fraud or fake sign-ups. A clear purpose and date on every copy makes it far harder to misuse.
 
-Why IDMark?
-Sharing unprotected ID photos exposes you to identity theft and fraudulent registrations. IDMark helps every copy you send carry a visible declaration of its single intended purpose.
+What IDMark does:
+• Stamps purpose text, date and an optional note into the pixels of the image
+• 18 built-in presets, most for Indonesian situations (bank account, licensed lending, rentals, SIM card registration, hotel check-in, job applications) plus an international KYC preset
+• Save your own presets for the requests you get often
+• 7 stamp patterns: diagonal band, grid, bottom band, corner stamp, seal, cross and QR-style badge
+• Pick color, opacity, font size and tilt
+• Permanent redaction for ID numbers, signatures, addresses, birth dates or any area: black box, mosaic or blur
+• Export full-resolution PNG or PDF and share it straight to your chat app
+• Option to strip EXIF data from exports
+• Local history of your last 50 exports with SHA-256 fingerprints
+• Safe-sharing guide based on Indonesian data-protection rules, with a privacy grade from A+ to D
+• App available in 8 languages
 
-Absolute Privacy:
-Your sensitive documents never leave your phone. All pixel manipulations run entirely offline on-device.
+Why IDMark instead of an online watermark site?
+Online tools make you upload your ID to their server. IDMark does all the work on your phone and makes zero network requests while stamping. No account, no ads, and no promo watermark on your result.
 
-Part of the faishal.id privacy-first utility family.
+Note: IDMark helps prevent misuse of document copies. It does not check whether an ID is genuine.
+
+Protect the next ID photo you send.
+
+Part of the faishal.id app family.

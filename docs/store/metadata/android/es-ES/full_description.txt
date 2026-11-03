@@ -1,3 +1,25 @@
-IDMark stamps purpose and date onto ID cards & documents — 100% on-device, nothing uploaded.
+IDMark pone una marca de agua en la foto de tu DNI, pasaporte o carné de conducir antes de enviarla. Escribe el motivo, por ejemplo «Solo para abrir cuenta bancaria», añade la fecha y queda grabado en la imagen.
 
-Parte de la familia de apps faishal.id. Enfoque offline, sin anuncios.
+Una foto del DNI sin marcas se puede reutilizar para pedir préstamos o abrir cuentas a tu nombre. Con el motivo y la fecha a la vista, esa copia sirve para mucho menos.
+
+Qué hace IDMark:
+• Graba el texto del motivo, la fecha y una nota opcional en los píxeles de la imagen
+• 18 plantillas incluidas, la mayoría pensadas para trámites en Indonesia, más una de verificación KYC internacional
+• Guarda tus propias plantillas para lo que te piden a menudo
+• 7 estilos de sello: banda diagonal, cuadrícula, banda inferior, sello de esquina, sello redondo, aspa e insignia tipo QR
+• Elige color, opacidad, tamaño de letra e inclinación
+• Tapado permanente del número de documento, la firma, la dirección, la fecha de nacimiento o cualquier zona: bloque negro, pixelado o desenfoque
+• Exporta en PNG o PDF a resolución original y compártelo directamente por WhatsApp
+• Opción de borrar los datos EXIF del archivo exportado
+• Historial local de tus últimas 50 exportaciones con huella SHA-256
+• Guía para compartir datos con seguridad basada en la normativa indonesia, con nota de privacidad de A+ a D
+• App disponible en 8 idiomas, español incluido
+
+¿Por qué IDMark y no una web de marcas de agua?
+Esas webs te hacen subir tu DNI a su servidor. IDMark lo hace todo en tu móvil y no hace ninguna petición de red mientras pone el sello. Sin cuenta, sin anuncios y sin marcas promocionales en el resultado.
+
+Ojo: IDMark ayuda a evitar el mal uso de las copias. No comprueba si un documento es auténtico.
+
+Protege la próxima foto de tu DNI que envíes.
+
+Parte de la familia de apps faishal.id.

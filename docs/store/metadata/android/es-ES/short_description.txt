@@ -1,1 +1,1 @@
-Stamp purpose & date on IDs/passports. On-device.
+Añade motivo y fecha a la foto de tu DNI antes de enviarla y evita su mal uso.

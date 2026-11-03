@@ -1,1 +1,1 @@
-watermark,ktp,document,privacy
+stamp,redact,blur,censor,kyc,verification,identity,privacy,scam,fraud,copy,pdf,driver,card,photo
