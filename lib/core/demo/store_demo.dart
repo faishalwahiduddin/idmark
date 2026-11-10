@@ -14,6 +14,9 @@ import '../utils/l10n_helpers.dart';
 /// Without the flag nothing in this file runs.
 const bool kStoreDemo = bool.fromEnvironment('STORE_DEMO');
 
+/// Language forced for the seed + UI during store captures (`--dart-define=STORE_DEMO_LOCALE=en`).
+const String kStoreDemoLocale = String.fromEnvironment('STORE_DEMO_LOCALE');
+
 /// Eight watermark purposes per locale (no personal data, generic parties).
 const Map<String, List<String>> _purposes = {
   'en': [
@@ -114,7 +117,7 @@ Future<void> seedStoreDemo(LocalStorageService storage) async {
   await prefs.setBool('onboarding_completed', true);
 
   final saved = prefs.getString('locale');
-  final code = saved ?? ui.PlatformDispatcher.instance.locale.languageCode;
+  final code = (kStoreDemoLocale.isNotEmpty ? kStoreDemoLocale : saved) ?? ui.PlatformDispatcher.instance.locale.languageCode;
   final purposes = _purposes[code] ??
       (code == 'jv' || code == 'su' ? _purposes['id']! : _purposes['en']!);
   final l10n = lookupAppLocalizations(
