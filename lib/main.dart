@@ -7,6 +7,7 @@ import 'core/providers/timezone_provider.dart';
 import 'core/router/app_router.dart';
 import 'core/storage/local_storage_service.dart';
 import 'core/a11y/text_scale.dart';
+import 'core/demo/store_demo.dart';
 import 'core/theme/app_theme.dart';
 import 'core/utils/app_timezone.dart';
 import 'l10n/app_localizations.dart';
@@ -17,6 +18,7 @@ void main() async {
 
   // Initialize offline storage service
   final storageService = await LocalStorageService.init();
+  if (kStoreDemo) await seedStoreDemo(storageService);
 
   // Timezone database first: every displayed time below is projected through
   // it. Then the device zone, so the "Auto" mode already knows where the
