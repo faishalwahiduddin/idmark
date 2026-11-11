@@ -42,12 +42,12 @@ window.STORE_CONFIG = {
       },
       {
         "headline": "Setiap ekspor\ntercatat di HP-mu",
-        "subtext": "50 terakhir, dengan sidik SHA-256",
+        "subtext": "Log audit lokal dengan hash SHA-256",
         "layout": "zoom"
       },
       {
-        "headline": "Tidak ada yang\nkeluar dari HP-mu",
-        "subtext": "Diproses di HP, tanpa unggah",
+        "headline": "Kirim KTP-mu\ndengan aman",
+        "subtext": "Daftar periksa UU PDP sebelum kirim",
         "layout": "offset-left"
       }
     ],
@@ -64,12 +64,12 @@ window.STORE_CONFIG = {
       },
       {
         "headline": "Every export,\nlogged on your phone",
-        "subtext": "Last 50, with SHA-256 hashes",
+        "subtext": "Local audit log with SHA-256 hashes",
         "layout": "zoom"
       },
       {
-        "headline": "Nothing leaves\nyour phone",
-        "subtext": "Stamped on-device, no upload",
+        "headline": "Share your ID\nthe safe way",
+        "subtext": "PDP-law checklist before you send",
         "layout": "offset-left"
       }
     ],
@@ -86,12 +86,12 @@ window.STORE_CONFIG = {
       },
       {
         "headline": "كل تصدير\nمسجّل على هاتفك",
-        "subtext": "آخر 50 مع بصمة SHA-256",
+        "subtext": "سجل تدقيق محلي مع بصمات SHA-256",
         "layout": "zoom"
       },
       {
-        "headline": "لا شيء يغادر\nهاتفك",
-        "subtext": "المعالجة على الجهاز بلا رفع",
+        "headline": "شارك هويتك\nبأمان",
+        "subtext": "قائمة فحص قانون PDP قبل الإرسال",
         "layout": "offset-left"
       }
     ],
@@ -108,12 +108,12 @@ window.STORE_CONFIG = {
       },
       {
         "headline": "書き出しの履歴が\nスマホに残る",
-        "subtext": "直近50件、SHA-256つき",
+        "subtext": "SHA-256付きのローカル監査ログ",
         "layout": "zoom"
       },
       {
-        "headline": "写真は一枚も\nスマホの外へ出ない",
-        "subtext": "端末内で処理、アップロードなし",
+        "headline": "身分証を\n安全に共有",
+        "subtext": "送る前のPDP法チェックリスト",
         "layout": "offset-left"
       }
     ],
@@ -130,12 +130,12 @@ window.STORE_CONFIG = {
       },
       {
         "headline": "每次导出\n都记在手机里",
-        "subtext": "最近 50 条，含 SHA-256",
+        "subtext": "本地审计日志，含SHA-256哈希",
         "layout": "zoom"
       },
       {
-        "headline": "照片不会\n离开你的手机",
-        "subtext": "本机处理，不上传",
+        "headline": "安全地\n分享证件",
+        "subtext": "发送前的PDP法检查清单",
         "layout": "offset-left"
       }
     ],
@@ -152,12 +152,12 @@ window.STORE_CONFIG = {
       },
       {
         "headline": "Cada exportación,\nregistrada en tu móvil",
-        "subtext": "Las últimas 50, con SHA-256",
+        "subtext": "Registro local con hashes SHA-256",
         "layout": "zoom"
       },
       {
-        "headline": "Nada sale\nde tu móvil",
-        "subtext": "Se procesa en el dispositivo",
+        "headline": "Comparte tu ID\nde forma segura",
+        "subtext": "Lista de la ley PDP antes de enviar",
         "layout": "offset-left"
       }
     ]
