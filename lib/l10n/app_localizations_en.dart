@@ -860,7 +860,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get disciplineDesc =>
-      'Every safe export builds your document-protection discipline.';
+      'Every safe export builds your document safety habit.';
 
   @override
   String get shareDiscipline => 'Share discipline';
