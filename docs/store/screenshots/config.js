@@ -31,110 +31,134 @@ window.STORE_CONFIG = {
   "slides": {
     "id": [
       {
-        "headline": "Stempel identitas",
-        "subtext": "Tujuan & tanggal di dokumen"
+        "headline": "Foto KTP-mu,\naman sebelum dikirim",
+        "subtext": "Cap tujuan dan tanggal di gambar",
+        "layout": "hero"
       },
       {
-        "headline": "Preset",
-        "subtext": "Template siap pakai"
+        "headline": "Pilih tujuan,\ncap langsung siap",
+        "subtext": "18 preset: bank, pinjol, kos, dll",
+        "layout": "offset-right"
       },
       {
-        "headline": "Riwayat",
-        "subtext": "Hasil stempel tersimpan"
+        "headline": "Setiap ekspor\ntercatat di HP-mu",
+        "subtext": "50 terakhir, dengan sidik SHA-256",
+        "layout": "zoom"
       },
       {
-        "headline": "On-device",
-        "subtext": "Tanpa unggah ke cloud"
+        "headline": "Tidak ada yang\nkeluar dari HP-mu",
+        "subtext": "Diproses di HP, tanpa unggah",
+        "layout": "offset-left"
       }
     ],
     "en-US": [
       {
-        "headline": "ID stamp",
-        "subtext": "Purpose & date on documents"
+        "headline": "Your ID photo,\nsafe before you send it",
+        "subtext": "Stamp the purpose and date on it",
+        "layout": "hero"
       },
       {
-        "headline": "Presets",
-        "subtext": "Ready-made templates"
+        "headline": "Pick the reason,\nstamp is ready",
+        "subtext": "18 presets, from banks to rentals",
+        "layout": "offset-right"
       },
       {
-        "headline": "History",
-        "subtext": "Saved stamped results"
+        "headline": "Every export,\nlogged on your phone",
+        "subtext": "Last 50, with SHA-256 hashes",
+        "layout": "zoom"
       },
       {
-        "headline": "On-device",
-        "subtext": "Nothing uploaded"
+        "headline": "Nothing leaves\nyour phone",
+        "subtext": "Stamped on-device, no upload",
+        "layout": "offset-left"
       }
     ],
     "ar": [
       {
-        "headline": "ID stamp",
-        "subtext": "Purpose & date on documents"
+        "headline": "صورة هويتك\nآمنة قبل إرسالها",
+        "subtext": "ختم الغرض والتاريخ عليها",
+        "layout": "hero"
       },
       {
-        "headline": "Presets",
-        "subtext": "Ready-made templates"
+        "headline": "اختر الغرض\nويجهز الختم",
+        "subtext": "18 قالبًا جاهزًا",
+        "layout": "offset-right"
       },
       {
-        "headline": "History",
-        "subtext": "Saved stamped results"
+        "headline": "كل تصدير\nمسجّل على هاتفك",
+        "subtext": "آخر 50 مع بصمة SHA-256",
+        "layout": "zoom"
       },
       {
-        "headline": "On-device",
-        "subtext": "Nothing uploaded"
+        "headline": "لا شيء يغادر\nهاتفك",
+        "subtext": "المعالجة على الجهاز بلا رفع",
+        "layout": "offset-left"
       }
     ],
     "ja-JP": [
       {
-        "headline": "ID stamp",
-        "subtext": "Purpose & date on documents"
+        "headline": "身分証の写真を、\n送る前に守る",
+        "subtext": "目的と日付をスタンプ",
+        "layout": "hero"
       },
       {
-        "headline": "Presets",
-        "subtext": "Ready-made templates"
+        "headline": "用途を選ぶだけで\nスタンプ完成",
+        "subtext": "18種類のプリセット",
+        "layout": "offset-right"
       },
       {
-        "headline": "History",
-        "subtext": "Saved stamped results"
+        "headline": "書き出しの履歴が\nスマホに残る",
+        "subtext": "直近50件、SHA-256つき",
+        "layout": "zoom"
       },
       {
-        "headline": "On-device",
-        "subtext": "Nothing uploaded"
+        "headline": "写真は一枚も\nスマホの外へ出ない",
+        "subtext": "端末内で処理、アップロードなし",
+        "layout": "offset-left"
       }
     ],
     "zh-CN": [
       {
-        "headline": "ID stamp",
-        "subtext": "Purpose & date on documents"
+        "headline": "证件照片\n发送前先加保护",
+        "subtext": "盖上用途与日期",
+        "layout": "hero"
       },
       {
-        "headline": "Presets",
-        "subtext": "Ready-made templates"
+        "headline": "选个用途\n水印立刻就绪",
+        "subtext": "18 个现成预设",
+        "layout": "offset-right"
       },
       {
-        "headline": "History",
-        "subtext": "Saved stamped results"
+        "headline": "每次导出\n都记在手机里",
+        "subtext": "最近 50 条，含 SHA-256",
+        "layout": "zoom"
       },
       {
-        "headline": "On-device",
-        "subtext": "Nothing uploaded"
+        "headline": "照片不会\n离开你的手机",
+        "subtext": "本机处理，不上传",
+        "layout": "offset-left"
       }
     ],
     "es-ES": [
       {
-        "headline": "ID stamp",
-        "subtext": "Purpose & date on documents"
+        "headline": "Tu documento,\nprotegido al enviarlo",
+        "subtext": "Sella el motivo y la fecha",
+        "layout": "hero"
       },
       {
-        "headline": "Presets",
-        "subtext": "Ready-made templates"
+        "headline": "Elige el motivo\ny el sello está listo",
+        "subtext": "18 plantillas listas",
+        "layout": "offset-right"
       },
       {
-        "headline": "History",
-        "subtext": "Saved stamped results"
+        "headline": "Cada exportación,\nregistrada en tu móvil",
+        "subtext": "Las últimas 50, con SHA-256",
+        "layout": "zoom"
       },
       {
-        "headline": "On-device",
-        "subtext": "Nothing uploaded"
+        "headline": "Nada sale\nde tu móvil",
+        "subtext": "Se procesa en el dispositivo",
+        "layout": "offset-left"
       }
     ]
   },
