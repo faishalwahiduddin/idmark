@@ -348,12 +348,15 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
                 children: [
                   const Icon(Icons.shield_outlined, size: 14, color: AppColors.accent),
                   const SizedBox(width: 6),
-                  Text(
-                    l10n?.onDeviceBadge ?? '100% On-Device • Gambar tidak pernah dikirim ke server',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.accentText, // prompt card is brand-dark in both themes
+                  Flexible(
+                    child: Text(
+                      l10n?.onDeviceBadge ?? '100% On-Device • Gambar tidak pernah dikirim ke server',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.accentText, // prompt card is brand-dark in both themes
+                      ),
                     ),
                   ),
                 ],
