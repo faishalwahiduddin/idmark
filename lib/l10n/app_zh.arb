@@ -633,5 +633,10 @@
   "validationAuditIdRequired": "审计日志 ID 不能为空",
   "validationAuditPurposeRequired": "审计日志用途不能为空",
   "validationAuditHashRequired": "SHA-256 哈希不能为空",
-  "validationAuditScoreRange": "隐私评分必须在 0 到 100 之间"
+  "validationAuditScoreRange": "隐私评分必须在 0 到 100 之间",
+  "commercialContactTitle": "商业使用",
+  "commercialContactDesc": "需要商业许可、白标或定制？欢迎联系我们。",
+  "acquireAppTitle": "收购此应用",
+  "acquireAppDesc": "有兴趣收购此应用（含源代码和资源）吗？让我们聊聊。",
+  "contactEmailCopied": "邮箱地址已复制：contact@faishal.id"
 }

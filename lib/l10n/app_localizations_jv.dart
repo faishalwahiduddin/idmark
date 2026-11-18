@@ -1285,4 +1285,22 @@ class AppLocalizationsJv extends AppLocalizations {
   @override
   String get validationAuditScoreRange =>
       'Skor privasi kudu ana ing antarane 0 lan 100';
+
+  @override
+  String get commercialContactTitle => 'Panggunaan komersial';
+
+  @override
+  String get commercialContactDesc =>
+      'Butuh lisensi komersial, white-label, utawa kustomisasi? Hubungi kula.';
+
+  @override
+  String get acquireAppTitle => 'Akuisisi aplikasi iki';
+
+  @override
+  String get acquireAppDesc =>
+      'Kepengin ngakuisisi aplikasi iki sakliyane source code lan asete? Ayo rembugan.';
+
+  @override
+  String get contactEmailCopied =>
+      'Alamat email wis disalin: contact@faishal.id';
 }

@@ -1277,4 +1277,22 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get validationAuditScoreRange =>
       'يجب أن تكون درجة الخصوصية بين 0 و100';
+
+  @override
+  String get commercialContactTitle => 'الاستخدام التجاري';
+
+  @override
+  String get commercialContactDesc =>
+      'هل تحتاج إلى ترخيص تجاري أو علامة بيضاء أو تخصيص؟ تواصل معنا.';
+
+  @override
+  String get acquireAppTitle => 'اقتناء هذا التطبيق';
+
+  @override
+  String get acquireAppDesc =>
+      'هل ترغب في اقتناء هذا التطبيق بما في ذلك الشيفرة المصدرية والأصول؟ لنتحدث.';
+
+  @override
+  String get contactEmailCopied =>
+      'تم نسخ عنوان البريد الإلكتروني: contact@faishal.id';
 }

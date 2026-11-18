@@ -639,5 +639,25 @@
   "validationAuditIdRequired": "Audit log ID cannot be empty",
   "validationAuditPurposeRequired": "Audit log purpose cannot be empty",
   "validationAuditHashRequired": "SHA-256 hash cannot be empty",
-  "validationAuditScoreRange": "Privacy score must be between 0 and 100"
+  "validationAuditScoreRange": "Privacy score must be between 0 and 100",
+  "commercialContactTitle": "Commercial use",
+  "@commercialContactTitle": {
+    "description": "Title of the commercial use contact card in Settings"
+  },
+  "commercialContactDesc": "Need a commercial license, white-label, or customization? Get in touch.",
+  "@commercialContactDesc": {
+    "description": "Description of the commercial use contact card"
+  },
+  "acquireAppTitle": "Acquire this app",
+  "@acquireAppTitle": {
+    "description": "Title of the app acquisition contact card in Settings"
+  },
+  "acquireAppDesc": "Interested in acquiring this app, including source code and assets? Let's talk.",
+  "@acquireAppDesc": {
+    "description": "Description of the app acquisition contact card"
+  },
+  "contactEmailCopied": "Email address copied: contact@faishal.id",
+  "@contactEmailCopied": {
+    "description": "Snackbar shown when the contact email is copied because no mail app could be opened"
+  }
 }

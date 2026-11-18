@@ -1290,4 +1290,21 @@ class AppLocalizationsId extends AppLocalizations {
   @override
   String get validationAuditScoreRange =>
       'Skor privasi harus berada antara 0 dan 100';
+
+  @override
+  String get commercialContactTitle => 'Penggunaan komersial';
+
+  @override
+  String get commercialContactDesc =>
+      'Butuh lisensi komersial, white-label, atau kustomisasi? Hubungi kami.';
+
+  @override
+  String get acquireAppTitle => 'Akuisisi aplikasi ini';
+
+  @override
+  String get acquireAppDesc =>
+      'Tertarik mengakuisisi aplikasi ini beserta source code dan asetnya? Mari bicara.';
+
+  @override
+  String get contactEmailCopied => 'Alamat email disalin: contact@faishal.id';
 }

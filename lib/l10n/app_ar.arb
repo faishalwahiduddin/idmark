@@ -633,5 +633,10 @@
   "validationAuditIdRequired": "لا يمكن أن يكون معرّف سجل التدقيق فارغًا",
   "validationAuditPurposeRequired": "لا يمكن أن يكون غرض سجل التدقيق فارغًا",
   "validationAuditHashRequired": "لا يمكن أن تكون بصمة SHA-256 فارغة",
-  "validationAuditScoreRange": "يجب أن تكون درجة الخصوصية بين 0 و100"
+  "validationAuditScoreRange": "يجب أن تكون درجة الخصوصية بين 0 و100",
+  "commercialContactTitle": "الاستخدام التجاري",
+  "commercialContactDesc": "هل تحتاج إلى ترخيص تجاري أو علامة بيضاء أو تخصيص؟ تواصل معنا.",
+  "acquireAppTitle": "اقتناء هذا التطبيق",
+  "acquireAppDesc": "هل ترغب في اقتناء هذا التطبيق بما في ذلك الشيفرة المصدرية والأصول؟ لنتحدث.",
+  "contactEmailCopied": "تم نسخ عنوان البريد الإلكتروني: contact@faishal.id"
 }

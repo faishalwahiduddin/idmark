@@ -633,5 +633,10 @@
   "validationAuditIdRequired": "監査ログIDは必須です",
   "validationAuditPurposeRequired": "監査ログの用途は必須です",
   "validationAuditHashRequired": "SHA-256ハッシュは必須です",
-  "validationAuditScoreRange": "プライバシースコアは0〜100の範囲で指定してください"
+  "validationAuditScoreRange": "プライバシースコアは0〜100の範囲で指定してください",
+  "commercialContactTitle": "商用利用",
+  "commercialContactDesc": "商用ライセンス、ホワイトレーベル、カスタマイズが必要ですか？お問い合わせください。",
+  "acquireAppTitle": "このアプリの買収",
+  "acquireAppDesc": "ソースコードやアセットを含め、このアプリの買収にご関心がありますか？お気軽にご相談ください。",
+  "contactEmailCopied": "メールアドレスをコピーしました: contact@faishal.id"
 }

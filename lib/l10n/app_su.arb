@@ -633,5 +633,10 @@
   "validationAuditIdRequired": "ID audit log teu meunang kosong",
   "validationAuditPurposeRequired": "Tujuan audit log teu meunang kosong",
   "validationAuditHashRequired": "Hash SHA-256 teu meunang kosong",
-  "validationAuditScoreRange": "Skor privasi kudu aya antara 0 jeung 100"
+  "validationAuditScoreRange": "Skor privasi kudu aya antara 0 jeung 100",
+  "commercialContactTitle": "Pamakéan komérsial",
+  "commercialContactDesc": "Peryogi lisénsi komérsial, white-label, atawa kustomisasi? Hubungi kami.",
+  "acquireAppTitle": "Akuisisi aplikasi ieu",
+  "acquireAppDesc": "Resep ngaakuisisi aplikasi ieu sarta source code jeung asetna? Hayu urang obrolkeun.",
+  "contactEmailCopied": "Alamat surélék disalin: contact@faishal.id"
 }

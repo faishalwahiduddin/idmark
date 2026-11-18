@@ -1220,4 +1220,19 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get validationAuditScoreRange => '隐私评分必须在 0 到 100 之间';
+
+  @override
+  String get commercialContactTitle => '商业使用';
+
+  @override
+  String get commercialContactDesc => '需要商业许可、白标或定制？欢迎联系我们。';
+
+  @override
+  String get acquireAppTitle => '收购此应用';
+
+  @override
+  String get acquireAppDesc => '有兴趣收购此应用（含源代码和资源）吗？让我们聊聊。';
+
+  @override
+  String get contactEmailCopied => '邮箱地址已复制：contact@faishal.id';
 }

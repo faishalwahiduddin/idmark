@@ -1293,4 +1293,21 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get validationAuditScoreRange =>
       'Privacy score must be between 0 and 100';
+
+  @override
+  String get commercialContactTitle => 'Commercial use';
+
+  @override
+  String get commercialContactDesc =>
+      'Need a commercial license, white-label, or customization? Get in touch.';
+
+  @override
+  String get acquireAppTitle => 'Acquire this app';
+
+  @override
+  String get acquireAppDesc =>
+      'Interested in acquiring this app, including source code and assets? Let\'s talk.';
+
+  @override
+  String get contactEmailCopied => 'Email address copied: contact@faishal.id';
 }

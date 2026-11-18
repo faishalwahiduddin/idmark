@@ -633,5 +633,10 @@
   "validationAuditIdRequired": "El ID del registro de auditoría no puede estar vacío",
   "validationAuditPurposeRequired": "El propósito del registro de auditoría no puede estar vacío",
   "validationAuditHashRequired": "El hash SHA-256 no puede estar vacío",
-  "validationAuditScoreRange": "La puntuación de privacidad debe estar entre 0 y 100"
+  "validationAuditScoreRange": "La puntuación de privacidad debe estar entre 0 y 100",
+  "commercialContactTitle": "Uso comercial",
+  "commercialContactDesc": "¿Necesitas una licencia comercial, marca blanca o personalización? Ponte en contacto.",
+  "acquireAppTitle": "Adquirir esta app",
+  "acquireAppDesc": "¿Te interesa adquirir esta app, incluido el código fuente y los recursos? Hablemos.",
+  "contactEmailCopied": "Dirección de correo copiada: contact@faishal.id"
 }

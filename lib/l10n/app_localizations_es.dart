@@ -1309,4 +1309,22 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get validationAuditScoreRange =>
       'La puntuación de privacidad debe estar entre 0 y 100';
+
+  @override
+  String get commercialContactTitle => 'Uso comercial';
+
+  @override
+  String get commercialContactDesc =>
+      '¿Necesitas una licencia comercial, marca blanca o personalización? Ponte en contacto.';
+
+  @override
+  String get acquireAppTitle => 'Adquirir esta app';
+
+  @override
+  String get acquireAppDesc =>
+      '¿Te interesa adquirir esta app, incluido el código fuente y los recursos? Hablemos.';
+
+  @override
+  String get contactEmailCopied =>
+      'Dirección de correo copiada: contact@faishal.id';
 }
