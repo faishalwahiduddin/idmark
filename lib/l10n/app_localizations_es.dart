@@ -762,6 +762,10 @@ class AppLocalizationsEs extends AppLocalizations {
       'La categoría no puede superar los 30 caracteres';
 
   @override
+  String get customPresetSaveFailed =>
+      'No se pudo guardar el preset. Inténtalo de nuevo.';
+
+  @override
   String get privacyGradeDescMax =>
       'Protección máxima • Cumple con los estándares de privacidad de datos';
 

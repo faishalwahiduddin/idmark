@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -343,7 +345,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
             icon: const Icon(Icons.restart_alt, size: 20),
             tooltip: l10n?.resetWatermarkTooltip ?? 'Reset Watermark',
             onPressed: () {
-              notifier.resetToDefault();
+              unawaited(notifier.resetToDefault());
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: Text(l10n?.configResetKominfo ?? 'Konfigurasi dikembalikan ke standar rekomendasi Kominfo.'),
@@ -397,7 +399,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
                     ref.read(selectedImageBytesProvider.notifier).setImage(null);
                   },
                   onAddQuickRedaction: (target) {
-                    notifier.addRedaction(RedactionBox.fromPreset(target));
+                    unawaited(notifier.addRedaction(RedactionBox.fromPreset(target)));
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text(

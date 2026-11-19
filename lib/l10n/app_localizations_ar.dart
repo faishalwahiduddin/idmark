@@ -742,6 +742,10 @@ class AppLocalizationsAr extends AppLocalizations {
       'لا يمكن أن يتجاوز التصنيف 30 حرفاً';
 
   @override
+  String get customPresetSaveFailed =>
+      'تعذر حفظ القالب. يرجى المحاولة مرة أخرى.';
+
+  @override
   String get privacyGradeDescMax => 'حماية قصوى • يفي بمعايير حماية البيانات';
 
   @override

@@ -711,6 +711,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get validationPresetCategoryMaxLength => 'カテゴリーは30文字以内で入力してください';
 
   @override
+  String get customPresetSaveFailed => 'プリセットを保存できませんでした。もう一度お試しください。';
+
+  @override
   String get privacyGradeDescMax => '最大保護 • データ保護基準に準拠';
 
   @override

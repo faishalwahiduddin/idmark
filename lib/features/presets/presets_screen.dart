@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -421,9 +423,11 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                     scale: 0.97,
                     child: ElevatedButton.icon(
                       onPressed: () {
-                        ref
-                            .read(watermarkConfigProvider.notifier)
-                            .applyPreset(preset);
+                        unawaited(
+                          ref
+                              .read(watermarkConfigProvider.notifier)
+                              .applyPreset(preset),
+                        );
                         context.go('/');
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
@@ -472,6 +476,7 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
 
     String? titleErr;
     String? purposeErr;
+    String? catErr;
 
     showDialog(
       context: context,
@@ -529,7 +534,12 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                   const SizedBox(height: 4),
                   TextField(
                     controller: catCtrl,
-                    decoration: InputDecoration(hintText: l10n.categoryHint),
+                    maxLength: 30,
+                    decoration: InputDecoration(
+                      hintText: l10n.categoryHint,
+                      errorText: catErr,
+                      counterText: '',
+                    ),
                   ),
                   const SizedBox(height: 12),
 
@@ -603,7 +613,7 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                 ),
               ),
               ElevatedButton(
-                onPressed: () {
+                onPressed: () async {
                   final tErr = mapValidationError(
                     AppValidators.validatePresetTitle(titleCtrl.text),
                     l10n,
@@ -612,37 +622,58 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                     AppValidators.validatePurpose(purposeCtrl.text),
                     l10n,
                   );
+                  // The stored category is either what the user typed or the
+                  // "Kustom" badge fallback, so validate the effective value
+                  // against the same 30-char cap the storage layer enforces.
+                  final category = catCtrl.text.trim().isEmpty
+                      ? l10n.customBadge
+                      : catCtrl.text.trim();
+                  final cErr = mapValidationError(
+                    AppValidators.validatePresetCategory(category),
+                    l10n,
+                  );
 
                   setDialogState(() {
                     titleErr = tErr;
                     purposeErr = pErr;
+                    catErr = cErr;
                   });
 
-                  if (tErr == null && pErr == null) {
-                    final newPreset = WatermarkPreset(
-                      id: 'custom_${AppTimeZone.nowUtc().millisecondsSinceEpoch}',
-                      title: titleCtrl.text.trim(),
-                      category: catCtrl.text.trim().isEmpty
-                          ? l10n.customBadge
-                          : catCtrl.text.trim(),
-                      samplePurpose: purposeCtrl.text.trim().toUpperCase(),
-                      subtext: subtextCtrl.text.trim(),
-                      icon: Icons.bookmark_border,
-                      defaultPattern: selectedPattern,
-                      defaultColor: selectedColor,
-                      isCustom: true,
-                    );
+                  if (tErr != null || pErr != null || cErr != null) return;
 
-                    ref
+                  final newPreset = WatermarkPreset(
+                    id: 'custom_${AppTimeZone.nowUtc().millisecondsSinceEpoch}',
+                    title: titleCtrl.text.trim(),
+                    category: category,
+                    samplePurpose: purposeCtrl.text.trim().toUpperCase(),
+                    subtext: subtextCtrl.text.trim(),
+                    icon: Icons.bookmark_border,
+                    defaultPattern: selectedPattern,
+                    defaultColor: selectedColor,
+                    isCustom: true,
+                  );
+
+                  // The storage layer re-validates and throws; never claim
+                  // success for a write that failed.
+                  try {
+                    await ref
                         .read(customPresetsProvider.notifier)
                         .addPreset(newPreset);
-                    Navigator.pop(ctx);
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text(l10n.customPresetSaved(newPreset.title)),
-                      ),
+                  } catch (_) {
+                    if (!ctx.mounted) return;
+                    ScaffoldMessenger.of(ctx).showSnackBar(
+                      SnackBar(content: Text(l10n.customPresetSaveFailed)),
                     );
+                    return;
                   }
+
+                  if (!ctx.mounted) return;
+                  Navigator.pop(ctx);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(l10n.customPresetSaved(newPreset.title)),
+                    ),
+                  );
                 },
                 child: Text(l10n.savePreset),
               ),

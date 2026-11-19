@@ -368,6 +368,8 @@
   "validationPresetTitleMaxLength": "Jeneng preset maksimal 50 karakter",
   "validationPresetCategoryRequired": "Kategori preset ora kena kothong",
   "validationPresetCategoryMaxLength": "Kategori maksimal 30 karakter",
+
+  "customPresetSaveFailed": "Preset gagal disimpen. Coba maneh.",
   "privacyGradeDescMax": "Proteksi Maksimal • Trep karo rekomendasi UU PDP",
   "privacyGradeDescVeryGood": "Proteksi Apik Banget • Dokumen aman dienggo bareng",
   "privacyGradeDescFair": "Proteksi Cukup • Disaranake nambah tanggal lan sensor NIK",

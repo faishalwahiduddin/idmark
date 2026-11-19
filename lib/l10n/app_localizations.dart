@@ -1418,6 +1418,12 @@ abstract class AppLocalizations {
   /// **'Kategori maksimal 30 karakter'**
   String get validationPresetCategoryMaxLength;
 
+  /// No description provided for @customPresetSaveFailed.
+  ///
+  /// In id, this message translates to:
+  /// **'Preset gagal disimpan. Coba lagi.'**
+  String get customPresetSaveFailed;
+
   /// No description provided for @privacyGradeDescMax.
   ///
   /// In id, this message translates to:

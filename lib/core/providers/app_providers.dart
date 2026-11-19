@@ -87,112 +87,112 @@ class WatermarkConfigNotifier extends Notifier<WatermarkConfig> {
     return storage.loadConfig();
   }
 
-  void updatePurpose(String purpose) {
+  Future<void> updatePurpose(String purpose) async {
     state = state.copyWith(purpose: purpose);
-    _persist();
+    await _persist();
   }
 
-  void updateDate(DateTime date) {
+  Future<void> updateDate(DateTime date) async {
     state = state.copyWith(transactionDate: date);
-    _persist();
+    await _persist();
   }
 
-  void updateSubtext(String subtext) {
+  Future<void> updateSubtext(String subtext) async {
     state = state.copyWith(customSubtext: subtext);
-    _persist();
+    await _persist();
   }
 
-  void updatePattern(WatermarkPattern pattern) {
+  Future<void> updatePattern(WatermarkPattern pattern) async {
     state = state.copyWith(pattern: pattern);
-    _persist();
+    await _persist();
   }
 
-  void updateColorOption(WatermarkColorOption colorOption) {
+  Future<void> updateColorOption(WatermarkColorOption colorOption) async {
     state = state.copyWith(colorOption: colorOption);
-    _persist();
+    await _persist();
   }
 
-  void updateOpacity(double opacity) {
+  Future<void> updateOpacity(double opacity) async {
     state = state.copyWith(opacity: opacity);
-    _persist();
+    await _persist();
   }
 
-  void updateFontSize(double fontSize) {
+  Future<void> updateFontSize(double fontSize) async {
     state = state.copyWith(fontSize: fontSize);
-    _persist();
+    await _persist();
   }
 
-  void updateRotation(double angle) {
+  Future<void> updateRotation(double angle) async {
     state = state.copyWith(rotationAngle: angle);
-    _persist();
+    await _persist();
   }
 
-  void updateIncludeDate(bool include) {
+  Future<void> updateIncludeDate(bool include) async {
     state = state.copyWith(includeDate: include);
-    _persist();
+    await _persist();
   }
 
-  void updateUppercase(bool uppercase) {
+  Future<void> updateUppercase(bool uppercase) async {
     state = state.copyWith(isUppercase: uppercase);
-    _persist();
+    await _persist();
   }
 
-  void addRedaction(RedactionBox box) {
+  Future<void> addRedaction(RedactionBox box) async {
     final updatedList = List<RedactionBox>.from(state.redactions)..add(box);
     state = state.copyWith(redactions: updatedList);
-    _persist();
+    await _persist();
   }
 
-  void removeRedaction(String id) {
+  Future<void> removeRedaction(String id) async {
     final updatedList = state.redactions.where((b) => b.id != id).toList();
     state = state.copyWith(redactions: updatedList);
-    _persist();
+    await _persist();
   }
 
-  void clearRedactions() {
+  Future<void> clearRedactions() async {
     state = state.copyWith(redactions: []);
-    _persist();
+    await _persist();
   }
 
-  void updateRedaction(RedactionBox updatedBox) {
+  Future<void> updateRedaction(RedactionBox updatedBox) async {
     final updatedList = state.redactions.map((b) => b.id == updatedBox.id ? updatedBox : b).toList();
     state = state.copyWith(redactions: updatedList);
-    _persist();
+    await _persist();
   }
 
-  void updateExportFormat(ExportFormat format) {
+  Future<void> updateExportFormat(ExportFormat format) async {
     state = state.copyWith(exportFormat: format);
-    _persist();
+    await _persist();
   }
 
-  void updateJpegQuality(int quality) {
+  Future<void> updateJpegQuality(int quality) async {
     state = state.copyWith(jpegQuality: quality);
-    _persist();
+    await _persist();
   }
 
-  void updateStripMetadata(bool strip) {
+  Future<void> updateStripMetadata(bool strip) async {
     state = state.copyWith(stripMetadata: strip);
-    _persist();
+    await _persist();
   }
 
-  void applyPreset(WatermarkPreset preset) {
+  Future<void> applyPreset(WatermarkPreset preset) async {
     state = state.copyWith(
       purpose: preset.samplePurpose,
       customSubtext: preset.subtext,
       pattern: preset.defaultPattern,
       colorOption: preset.defaultColor,
     );
-    _persist();
+    await _persist();
   }
 
-  void resetToDefault() {
+  Future<void> resetToDefault() async {
     state = WatermarkConfig.defaultConfig();
-    _persist();
+    await _persist();
   }
 
-  void _persist() {
+  Future<void> _persist() {
     final storage = ref.read(localStorageServiceProvider);
-    storage.saveConfig(state);
+    return storage.saveConfig(state);
   }
 }
 

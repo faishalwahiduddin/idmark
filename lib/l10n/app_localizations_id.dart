@@ -749,6 +749,9 @@ class AppLocalizationsId extends AppLocalizations {
       'Kategori maksimal 30 karakter';
 
   @override
+  String get customPresetSaveFailed => 'Preset gagal disimpan. Coba lagi.';
+
+  @override
   String get privacyGradeDescMax =>
       'Proteksi Maksimal • Memenuhi rekomendasi Kominfo & UU PDP';
 

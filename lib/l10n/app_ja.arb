@@ -368,6 +368,8 @@
   "validationPresetTitleMaxLength": "プリセット名は50文字以内で入力してください",
   "validationPresetCategoryRequired": "プリセットのカテゴリーを入力してください",
   "validationPresetCategoryMaxLength": "カテゴリーは30文字以内で入力してください",
+
+  "customPresetSaveFailed": "プリセットを保存できませんでした。もう一度お試しください。",
   "privacyGradeDescMax": "最大保護 • データ保護基準に準拠",
   "privacyGradeDescVeryGood": "強固な保護 • 共有しても安全です",
   "privacyGradeDescFair": "適度な保護 • 日付の追加と個人情報のマスキングを推奨",

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -209,7 +211,7 @@ class SettingsScreen extends ConsumerWidget {
                   activeThumbColor: AppColors.accent,
                   onChanged: (val) async {
                     await storage.setAutoStripExif(val);
-                    ref.read(watermarkConfigProvider.notifier).updateStripMetadata(val);
+                    await ref.read(watermarkConfigProvider.notifier).updateStripMetadata(val);
                   },
                 ),
                 const Divider(height: 1),
@@ -232,7 +234,7 @@ class SettingsScreen extends ConsumerWidget {
                     }).toList(),
                     onChanged: (val) {
                       if (val != null) {
-                        ref.read(watermarkConfigProvider.notifier).updateExportFormat(val);
+                        unawaited(ref.read(watermarkConfigProvider.notifier).updateExportFormat(val));
                       }
                     },
                   ),
@@ -314,7 +316,7 @@ class SettingsScreen extends ConsumerWidget {
 
                     if (confirm == true) {
                       await storage.clearConfig();
-                      ref.read(watermarkConfigProvider.notifier).resetToDefault();
+                      await ref.read(watermarkConfigProvider.notifier).resetToDefault();
                       if (context.mounted) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(content: Text(l10n.preferencesReset)),

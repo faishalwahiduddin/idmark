@@ -368,6 +368,8 @@
   "validationPresetTitleMaxLength": "预设名称不能超过 50 个字符",
   "validationPresetCategoryRequired": "预设分类不能为空",
   "validationPresetCategoryMaxLength": "分类不能超过 30 个字符",
+
+  "customPresetSaveFailed": "无法保存预设，请重试。",
   "privacyGradeDescMax": "最高防护 • 符合数据安全与合规标准",
   "privacyGradeDescVeryGood": "防护良好 • 文件可安全共享",
   "privacyGradeDescFair": "防护适中 • 建议添加日期并遮盖证件号码",

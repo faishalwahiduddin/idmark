@@ -368,6 +368,8 @@
   "validationPresetTitleMaxLength": "لا يمكن أن يتجاوز اسم القالب 50 حرفاً",
   "validationPresetCategoryRequired": "تصنيف القالب مطلوب ولا يمكن تركه فارغاً",
   "validationPresetCategoryMaxLength": "لا يمكن أن يتجاوز التصنيف 30 حرفاً",
+
+  "customPresetSaveFailed": "تعذر حفظ القالب. يرجى المحاولة مرة أخرى.",
   "privacyGradeDescMax": "حماية قصوى • يفي بمعايير حماية البيانات",
   "privacyGradeDescVeryGood": "حماية قوية جداً • المستند آمن للمشاركة",
   "privacyGradeDescFair": "حماية مقبولة • يُنصح بإضافة التاريخ وحجب رقم الهوية",

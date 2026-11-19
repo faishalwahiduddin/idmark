@@ -707,6 +707,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get validationPresetCategoryMaxLength => '分类不能超过 30 个字符';
 
   @override
+  String get customPresetSaveFailed => '无法保存预设，请重试。';
+
+  @override
   String get privacyGradeDescMax => '最高防护 • 符合数据安全与合规标准';
 
   @override

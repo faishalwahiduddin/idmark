@@ -374,6 +374,8 @@
   "validationPresetTitleMaxLength": "Preset name cannot exceed 50 characters",
   "validationPresetCategoryRequired": "Preset category cannot be empty",
   "validationPresetCategoryMaxLength": "Category cannot exceed 30 characters",
+
+  "customPresetSaveFailed": "Failed to save the preset. Please try again.",
   "privacyGradeDescMax": "Maximum Protection • Meets data privacy standards",
   "privacyGradeDescVeryGood": "Strong Protection • Document is safe to share",
   "privacyGradeDescFair": "Moderate Protection • Consider adding date and redacting ID",

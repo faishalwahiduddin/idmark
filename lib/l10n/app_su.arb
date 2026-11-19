@@ -368,6 +368,8 @@
   "validationPresetTitleMaxLength": "Nami preset maksimal 50 karakter",
   "validationPresetCategoryRequired": "Kategori preset teu kenging kosong",
   "validationPresetCategoryMaxLength": "Kategori maksimal 30 karakter",
+
+  "customPresetSaveFailed": "Preset gagal disimpen. Cobian deui.",
   "privacyGradeDescMax": "Panangtayungan Maksimal • Nyumponan standar panangtayungan data",
   "privacyGradeDescVeryGood": "Panangtayungan Sae Pisan • Dokumén aman dibagikeun",
   "privacyGradeDescFair": "Panangtayungan Cukup • Disarankeun nambihan tanggal sareng sensor NIK",

@@ -745,6 +745,9 @@ class AppLocalizationsSu extends AppLocalizations {
       'Kategori maksimal 30 karakter';
 
   @override
+  String get customPresetSaveFailed => 'Preset gagal disimpen. Cobian deui.';
+
+  @override
   String get privacyGradeDescMax =>
       'Panangtayungan Maksimal • Nyumponan standar panangtayungan data';
 

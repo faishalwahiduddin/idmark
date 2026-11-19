@@ -368,6 +368,8 @@
   "validationPresetTitleMaxLength": "El nombre del preset no puede superar los 50 caracteres",
   "validationPresetCategoryRequired": "La categoría del preset no puede estar vacía",
   "validationPresetCategoryMaxLength": "La categoría no puede superar los 30 caracteres",
+
+  "customPresetSaveFailed": "No se pudo guardar el preset. Inténtalo de nuevo.",
   "privacyGradeDescMax": "Protección máxima • Cumple con los estándares de privacidad de datos",
   "privacyGradeDescVeryGood": "Protección muy buena • El documento es seguro para compartir",
   "privacyGradeDescFair": "Protección moderada • Se recomienda agregar fecha y censurar la identificación",
