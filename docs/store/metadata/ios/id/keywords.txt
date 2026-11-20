@@ -1,1 +1,1 @@
-tanda air,pdp,stempel,verifikasi,sensor,NIK,pinjol,penipuan,privasi,dokumen,identitas,kyc,rekening
+watermark ktp aman,cegah pinjol,watermark foto npwp,keamanan dokumen ktp,sensor pii

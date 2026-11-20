@@ -1,1 +1,1 @@
-Cap tujuan dan tanggal di foto KTP sebelum dikirim. Cegah dipakai pinjol ilegal.
+Beri watermark pengaman pada foto KTP, SIM, NPWP. Cegah pinjol, 100% offline.
