@@ -6,6 +6,7 @@ import '../../../core/theme/app_numeric.dart';
 import '../../../core/ui/app_scroll.dart';
 import '../../../core/utils/l10n_helpers.dart';
 import '../../../l10n/app_localizations.dart';
+import '../../../core/ui/app_icon.dart';
 
 /// "Redact" tab of the control panel. Boxes are moved and resized by
 /// dragging them on the pinned preview; the sliders here are the accessible
@@ -67,7 +68,7 @@ class RedactionTab extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 24),
             child: Column(
               children: [
-                const Icon(Icons.visibility_outlined, size: 36, color: AppColors.slate500),
+                const AppIcon('redact_box', size: 36, color: AppColors.slate500),
                 const SizedBox(height: 10),
                 Text(
                   l10n?.noRedactionsYet ?? 'Belum ada area yang disensor.',
@@ -143,7 +144,7 @@ class _RedactionCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              const Icon(Icons.crop, size: 16, color: AppColors.primaryLight),
+              const AppIcon('redact_box', size: 16, color: AppColors.primaryLight),
               const SizedBox(width: 8),
               Expanded(
                 child: Text(

@@ -13,6 +13,7 @@ import '../../../../core/utils/validators.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../../core/theme/app_numeric.dart';
 import 'redaction_tab.dart';
+import '../../../core/ui/app_icon.dart';
 
 class WatermarkControlPanel extends StatefulWidget {
   final WatermarkConfig config;
@@ -229,26 +230,23 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                   unselectedLabelColor: AppColors.slate400,
                   tabs: [
                     Tab(
-                      icon: const Icon(Icons.shield_outlined, size: 18),
+                      icon: const AppIcon('stamp_seal', size: 18),
                       text: l10n?.tabWatermark ?? 'Watermark',
                     ),
                     Tab(
                       icon: Badge(
                         isLabelVisible: widget.config.redactions.isNotEmpty,
                         label: Text('${widget.config.redactions.length}'),
-                        child: const Icon(
-                          Icons.visibility_off_outlined,
-                          size: 18,
-                        ),
+                        child: const AppIcon('redact_box', size: 18),
                       ),
                       text: l10n?.tabRedactShort ?? 'Sensor',
                     ),
                     Tab(
-                      icon: const Icon(Icons.verified_outlined, size: 18),
+                      icon: const AppIcon('shield_check', size: 18),
                       text: l10n?.tabPrivacyShort ?? 'Privasi',
                     ),
                     Tab(
-                      icon: const Icon(Icons.file_download_outlined, size: 18),
+                      icon: const AppIcon('export_file', size: 18),
                       text: l10n?.tabFormatShort ?? 'Format',
                     ),
                   ],
@@ -739,6 +737,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
             type: MaterialType.transparency,
             child: SwitchListTile(
               contentPadding: EdgeInsets.zero,
+              secondary: const AppIcon('exif_strip', color: AppColors.primaryLight),
               title: Text(
                 l10n?.autoSanitizeExifTitle ?? 'Sanitasi Metadata EXIF Otomatis',
                 style: const TextStyle(fontSize: 13, color: Colors.white),

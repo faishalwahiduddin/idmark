@@ -10,6 +10,7 @@ import '../../core/providers/timezone_provider.dart';
 import '../../core/utils/app_timezone.dart';
 import '../../l10n/app_localizations.dart';
 import '../../core/theme/app_numeric.dart';
+import '../../core/ui/app_icon.dart';
 
 class HistoryScreen extends ConsumerStatefulWidget {
   const HistoryScreen({super.key});
@@ -62,7 +63,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
                     color: AppColors.accent.withValues(alpha: 0.2),
                     shape: BoxShape.circle,
                   ),
-                  child: const Icon(Icons.verified_outlined, color: AppColors.accent, size: 24),
+                  child: const AppIcon('shield_check', color: AppColors.accent, size: 24),
                 ),
                 const SizedBox(width: 14),
                 Expanded(
@@ -140,7 +141,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
                 color: AppColors.primary.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
-              child: const Icon(Icons.history_edu_outlined, size: 48, color: AppColors.primaryLight),
+              child: const AppIcon('id_card', size: 48, color: AppColors.primaryLight),
             ),
             const SizedBox(height: 20),
             Text(
@@ -308,6 +309,8 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
                         ),
                         child: Row(
                           children: [
+                            const AppIcon('hash_fingerprint', size: 14, color: AppColors.slate400),
+                            const SizedBox(width: 6),
                             const Text(
                               'SHA-256: ',
                               style: TextStyle(fontSize: 10, color: AppColors.slate400, fontWeight: FontWeight.bold),

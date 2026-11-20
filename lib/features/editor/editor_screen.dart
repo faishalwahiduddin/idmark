@@ -26,6 +26,7 @@ import 'widgets/idmark_share_dialog.dart';
 import 'widgets/watermark_canvas_preview.dart';
 import 'widgets/watermark_control_panel.dart';
 import '../../core/theme/app_numeric.dart';
+import '../../core/ui/app_icon.dart';
 
 class EditorScreen extends ConsumerStatefulWidget {
   const EditorScreen({super.key});
@@ -284,7 +285,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
                   children: [
                     Row(
                       children: [
-                        const Icon(Icons.file_download_done, color: AppColors.primaryLight, size: 18),
+                        const AppIcon('export_file', color: AppColors.primaryLight, size: 18),
                         const SizedBox(width: 8),
                         Expanded(
                           child: Text(
@@ -314,6 +315,8 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
                     const Divider(color: AppColors.border, height: 16),
                     Row(
                       children: [
+                        const AppIcon('hash_fingerprint', size: 14, color: AppColors.slate400),
+                        const SizedBox(width: 6),
                         const Text(
                           'SHA-256: ',
                           style: TextStyle(fontSize: 10, color: AppColors.slate400, fontWeight: FontWeight.bold),
@@ -368,7 +371,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
                     fileSizeBytes: file.bytes.lengthInBytes,
                   );
                 },
-                icon: const Icon(Icons.verified_user_outlined, size: 18),
+                icon: const AppIcon('shield_check', size: 18),
                 label: Text(l10n?.protectionProof ?? 'Bukti Proteksi'),
                 style: OutlinedButton.styleFrom(minimumSize: const Size.fromHeight(48)),
               ),
@@ -527,7 +530,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
       ),
       child: Row(
         children: [
-          const Icon(Icons.security, size: 18, color: AppColors.primaryLight),
+          const AppIcon('id_card', size: 18, color: AppColors.primaryLight),
           const SizedBox(width: 12),
           Expanded(
             child: Text(

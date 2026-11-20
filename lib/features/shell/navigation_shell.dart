@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../core/constants/app_colors.dart';
+import '../../core/ui/app_icon.dart';
 import '../../core/ui/glass_bar.dart';
 import '../../l10n/app_localizations.dart';
 
@@ -42,23 +43,23 @@ class NavigationShell extends StatelessWidget {
           onDestinationSelected: _onTap,
           destinations: [
             NavigationDestination(
-              icon: const Icon(Icons.document_scanner_outlined),
-              selectedIcon: const Icon(Icons.document_scanner, color: AppColors.primaryLight),
+              icon: const AppIcon('nav_watermark'),
+              selectedIcon: const AppIcon('nav_watermark_active', color: AppColors.primaryLight),
               label: l10n?.tabWatermark ?? 'Watermark',
             ),
             NavigationDestination(
-              icon: const Icon(Icons.collections_bookmark_outlined),
-              selectedIcon: const Icon(Icons.collections_bookmark, color: AppColors.primaryLight),
+              icon: const AppIcon('nav_preset'),
+              selectedIcon: const AppIcon('nav_preset_active', color: AppColors.primaryLight),
               label: l10n?.tabPreset ?? 'Preset',
             ),
             NavigationDestination(
-              icon: const Icon(Icons.history_outlined),
-              selectedIcon: const Icon(Icons.history, color: AppColors.primaryLight),
+              icon: const AppIcon('nav_history'),
+              selectedIcon: const AppIcon('nav_history_active', color: AppColors.primaryLight),
               label: l10n?.tabHistory ?? 'Riwayat',
             ),
             NavigationDestination(
-              icon: const Icon(Icons.shield_outlined),
-              selectedIcon: const Icon(Icons.shield, color: AppColors.primaryLight),
+              icon: const AppIcon('nav_guide'),
+              selectedIcon: const AppIcon('nav_guide_active', color: AppColors.primaryLight),
               label: l10n?.tabGuide ?? 'Panduan',
             ),
             NavigationDestination(

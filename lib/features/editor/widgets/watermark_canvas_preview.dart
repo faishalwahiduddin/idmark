@@ -12,6 +12,7 @@ import '../../../../core/utils/app_timezone.dart';
 import '../../../../core/utils/l10n_helpers.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../../core/theme/app_numeric.dart';
+import '../../../core/ui/app_icon.dart';
 
 /// Parts of [WatermarkCanvasPreview]: the image stage, the toolbar below it
 /// (quick redaction + change/delete photo), or both.
@@ -548,11 +549,7 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
                 shape: BoxShape.circle,
                 border: Border.all(color: AppColors.primary.withValues(alpha: 0.3), width: 2),
               ),
-              child: const Icon(
-                Icons.document_scanner_outlined,
-                size: 36,
-                color: AppColors.primaryLight,
-              ),
+              child: const AppIcon('scan_id', size: 36, color: AppColors.primaryLight),
             ),
             const SizedBox(height: 20),
             Text(
