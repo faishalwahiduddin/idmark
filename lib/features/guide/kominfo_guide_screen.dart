@@ -68,6 +68,14 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
                     height: 1.5,
                   ),
                 ),
+                const SizedBox(height: 8),
+                Text(
+                  l10n.notLegalAdvice,
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: AppColors.sky100,
+                        fontStyle: FontStyle.italic,
+                      ),
+                ),
               ],
             ),
           ),

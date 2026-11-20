@@ -7,9 +7,15 @@ import '../../../../core/ui/app_scroll.dart';
 import '../../../../core/ui/press_scale.dart';
 import '../../../../core/models/redaction_item.dart';
 import '../../../../core/models/watermark_config.dart';
+import '../../../../core/services/watermark_renderer_service.dart';
 import '../../../../core/utils/app_timezone.dart';
+import '../../../../core/utils/l10n_helpers.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../../core/theme/app_numeric.dart';
+
+/// Parts of [WatermarkCanvasPreview]: the image stage, the toolbar below it
+/// (quick redaction + change/delete photo), or both.
+enum PreviewSection { all, stage, toolbar }
 
 class WatermarkCanvasPreview extends StatefulWidget {
   final Uint8List? imageBytes;
@@ -20,6 +26,15 @@ class WatermarkCanvasPreview extends StatefulWidget {
   final VoidCallback onClear;
   final Function(RedactionPresetTarget)? onAddQuickRedaction;
 
+  /// Enables drag-to-move / drag-corner-to-resize of redaction boxes.
+  final ValueChanged<RedactionBox>? onUpdateRedaction;
+
+  /// Which part to build; the editor pins the stage and scrolls the toolbar.
+  final PreviewSection section;
+
+  /// Upper bound of the image stage height.
+  final double maxPreviewHeight;
+
   const WatermarkCanvasPreview({
     super.key,
     required this.imageBytes,
@@ -29,6 +44,9 @@ class WatermarkCanvasPreview extends StatefulWidget {
     required this.onPickCamera,
     required this.onClear,
     this.onAddQuickRedaction,
+    this.onUpdateRedaction,
+    this.section = PreviewSection.all,
+    this.maxPreviewHeight = 420,
   });
 
   @override
@@ -40,10 +58,44 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
   final TransformationController _zoom = TransformationController();
   bool _zoomed = false;
 
+  /// Width / height of the loaded image, once known.
+  double? _aspect;
+  ImageStream? _stream;
+  ImageStreamListener? _listener;
+
+  /// Redaction box being dragged (not yet committed to the config).
+  RedactionBox? _liveBox;
+
   @override
   void initState() {
     super.initState();
     _zoom.addListener(_onZoomChanged);
+    _resolveAspect();
+  }
+
+  void _resolveAspect() {
+    _detachStream();
+    final bytes = widget.imageBytes;
+    if (bytes == null) {
+      _aspect = null;
+      return;
+    }
+    final stream = MemoryImage(bytes).resolve(ImageConfiguration.empty);
+    final listener = ImageStreamListener((info, _) {
+      final w = info.image.width, h = info.image.height;
+      if (!mounted || w == 0 || h == 0) return;
+      setState(() => _aspect = w / h);
+    }, onError: (_, _) {});
+    stream.addListener(listener);
+    _stream = stream;
+    _listener = listener;
+  }
+
+  void _detachStream() {
+    final l = _listener;
+    if (l != null) _stream?.removeListener(l);
+    _stream = null;
+    _listener = null;
   }
 
   void _onZoomChanged() {
@@ -56,11 +108,15 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
     super.didUpdateWidget(oldWidget);
     if (!identical(oldWidget.imageBytes, widget.imageBytes)) {
       _zoom.value = Matrix4.identity();
+      _aspect = null;
+      _liveBox = null;
+      _resolveAspect();
     }
   }
 
   @override
   void dispose() {
+    _detachStream();
     _zoom.removeListener(_onZoomChanged);
     _zoom.dispose();
     super.dispose();
@@ -68,131 +124,275 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context);
     if (widget.imageBytes == null) {
-      return _buildUploadPrompt(context);
+      return widget.section == PreviewSection.toolbar
+          ? const SizedBox.shrink()
+          : _buildUploadPrompt(context);
     }
-
+    final children = <Widget>[
+      if (widget.section != PreviewSection.toolbar) _buildStage(context),
+      if (widget.section != PreviewSection.stage) ..._buildToolbar(context),
+    ];
     return Card(
       clipBehavior: Clip.antiAlias,
+      margin: widget.section == PreviewSection.all ? null : EdgeInsets.zero,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: children,
+      ),
+    );
+  }
+
+  /// Config as painted right now: the box being dragged uses its live
+  /// position until the drag ends and is committed.
+  WatermarkConfig get _paintedConfig {
+    final live = _liveBox;
+    if (live == null) return widget.config;
+    return widget.config.copyWith(
+      redactions: [
+        for (final b in widget.config.redactions) b.id == live.id ? live : b,
+      ],
+    );
+  }
+
+  Widget _buildImageLayer() {
+    final image = Image.memory(
+      widget.imageBytes!,
+      fit: _aspect == null ? BoxFit.contain : BoxFit.fill,
+      width: double.infinity,
+      gaplessPlayback: true,
+    );
+    final overlay = _isComparingOriginal
+        ? const SizedBox.shrink()
+        : CustomPaint(
+            painter: _WatermarkOverlayPainter(
+              config: _paintedConfig,
+              zone: widget.zone,
+            ),
+          );
+    if (_aspect == null) {
+      return Stack(
+        alignment: Alignment.center,
+        children: [image, Positioned.fill(child: overlay)],
+      );
+    }
+    // Known aspect: the painted area is exactly the image, so redaction
+    // coordinates on screen match the exported pixels.
+    return AspectRatio(
+      aspectRatio: _aspect!,
+      child: LayoutBuilder(
+        builder: (context, box) {
+          final size = Size(box.maxWidth, box.maxHeight);
+          return Stack(
+            fit: StackFit.expand,
+            children: [
+              image,
+              overlay,
+              if (!_isComparingOriginal && widget.onUpdateRedaction != null)
+                for (final r in _paintedConfig.redactions) ..._redactionHandles(r, size),
+            ],
+          );
+        },
+      ),
+    );
+  }
+
+  /// Drag target over a redaction box (move) plus a corner knob (resize).
+  List<Widget> _redactionHandles(RedactionBox box, Size size) {
+    final l10n = AppLocalizations.of(context);
+    final rect = Rect.fromLTWH(
+      box.left * size.width,
+      box.top * size.height,
+      box.width * size.width,
+      box.height * size.height,
+    );
+    final active = _liveBox?.id == box.id;
+    const knob = 44.0;
+    return [
+      Positioned.fromRect(
+        rect: rect,
+        child: Semantics(
+          label: l10n?.redactionBoxSemantics(localizedRedactionLabel(box.label, l10n)) ??
+              'Kotak sensor ${box.label}. Seret untuk memindahkan.',
+          child: GestureDetector(
+            key: ValueKey('redaction-drag-${box.id}'),
+            behavior: HitTestBehavior.opaque,
+            onPanStart: (_) => setState(() => _liveBox = box),
+            onPanUpdate: (d) => _moveLive(box, d.delta, size),
+            onPanEnd: (_) => _commitLive(),
+            onPanCancel: _commitLive,
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: active ? AppColors.primaryLight : AppColors.slate300,
+                  width: active ? 2 : 1,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+      Positioned(
+        left: rect.right - knob / 2,
+        top: rect.bottom - knob / 2,
+        width: knob,
+        height: knob,
+        child: Semantics(
+          label: l10n?.resizeRedaction ?? 'Ubah ukuran',
+          child: GestureDetector(
+            key: ValueKey('redaction-resize-${box.id}'),
+            behavior: HitTestBehavior.opaque,
+            onPanStart: (_) => setState(() => _liveBox = box),
+            onPanUpdate: (d) => _resizeLive(box, d.delta, size),
+            onPanEnd: (_) => _commitLive(),
+            onPanCancel: _commitLive,
+            child: Center(
+              child: Container(
+                width: 16,
+                height: 16,
+                decoration: BoxDecoration(
+                  color: AppColors.primaryLight,
+                  shape: BoxShape.circle,
+                  border: Border.all(color: AppColors.bgDark, width: 2),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    ];
+  }
+
+  void _moveLive(RedactionBox base, Offset delta, Size size) {
+    final cur = _liveBox ?? base;
+    setState(() {
+      _liveBox = cur.copyWith(
+        left: cur.left + delta.dx / size.width,
+        top: cur.top + delta.dy / size.height,
+      );
+    });
+  }
+
+  void _resizeLive(RedactionBox base, Offset delta, Size size) {
+    final cur = _liveBox ?? base;
+    setState(() {
+      _liveBox = cur.copyWith(
+        width: (cur.width + delta.dx / size.width).clamp(0.05, 1.0 - cur.left),
+        height: (cur.height + delta.dy / size.height).clamp(0.03, 1.0 - cur.top),
+      );
+    });
+  }
+
+  void _commitLive() {
+    final live = _liveBox;
+    if (live == null) return;
+    setState(() => _liveBox = null);
+    widget.onUpdateRedaction?.call(live);
+  }
+
+  Widget _buildStage(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    // Live preview with the watermark overlay painter.
+    return Container(
+      constraints: BoxConstraints(maxHeight: widget.maxPreviewHeight),
+      color: Colors.black,
+      child: Stack(
+        alignment: Alignment.center,
         children: [
-          // Live Preview Container with Watermark Overlay Painter
-          Container(
-            constraints: const BoxConstraints(maxHeight: 420),
-            color: Colors.black,
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                InteractiveViewer(
-                  transformationController: _zoom,
-                  minScale: 1,
-                  maxScale: 4,
-                  panEnabled: _zoomed,
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Image.memory(
-                        widget.imageBytes!,
-                        fit: BoxFit.contain,
-                        width: double.infinity,
-                      ),
-                      if (!_isComparingOriginal)
-                        Positioned.fill(
-                          child: CustomPaint(
-                            painter: _WatermarkOverlayPainter(
-                              config: widget.config,
-                              zone: widget.zone,
-                            ),
-                          ),
-                        ),
-                    ],
-                  ),
-                ),
+          InteractiveViewer(
+            transformationController: _zoom,
+            minScale: 1,
+            maxScale: 4,
+            panEnabled: _zoomed && _liveBox == null,
+            child: _buildImageLayer(),
+          ),
 
-                // Top Floating Privacy Meter Badge
-                Positioned(
-                  top: 12,
-                  right: 12,
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                    decoration: BoxDecoration(
-                      color: AppColors.bgSurface.withValues(alpha: 0.9),
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(
-                        color: widget.config.privacyScore >= 80 ? AppColors.accent : AppColors.warning,
-                        width: 1.5,
-                      ),
-                      boxShadow: const [
-                        BoxShadow(color: Colors.black38, blurRadius: 6, offset: Offset(0, 2)),
-                      ],
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          widget.config.privacyScore >= 80 ? Icons.security : Icons.shield_outlined,
-                          size: 14,
-                          color: widget.config.privacyScore >= 80 ? AppColors.accent : AppColors.warning,
-                        ),
-                        const SizedBox(width: 6),
-                        Text(
-                          l10n?.protectionGrade(widget.config.privacyGrade, widget.config.privacyScore) ??
-                              'Proteksi ${widget.config.privacyGrade} (${widget.config.privacyScore}%)',
-                          style: TextStyle(
-                            fontSize: 11,
-                            fontWeight: FontWeight.w800,
-                            color: widget.config.privacyScore >= 80 ? AppColors.accent : AppColors.warning,
-                            fontFeatures: AppNumeric.tabularFeatures,
-                          ),
-                        ),
-                      ],
+          // Top Floating Privacy Meter Badge
+          Positioned(
+            top: 12,
+            right: 12,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              decoration: BoxDecoration(
+                color: AppColors.bgSurface.withValues(alpha: 0.9),
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(
+                  color: widget.config.privacyScore >= 80 ? AppColors.accent : AppColors.warning,
+                  width: 1.5,
+                ),
+                boxShadow: const [
+                  BoxShadow(color: Colors.black38, blurRadius: 6, offset: Offset(0, 2)),
+                ],
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    widget.config.privacyScore >= 80 ? Icons.security : Icons.shield_outlined,
+                    size: 14,
+                    color: widget.config.privacyScore >= 80 ? AppColors.accent : AppColors.warning,
+                  ),
+                  const SizedBox(width: 6),
+                  Text(
+                    l10n?.protectionGrade(widget.config.privacyGrade, widget.config.privacyScore) ??
+                        'Proteksi ${widget.config.privacyGrade} (${widget.config.privacyScore}%)',
+                    style: TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.w800,
+                      color: widget.config.privacyScore >= 80 ? AppColors.accent : AppColors.warning,
+                      fontFeatures: AppNumeric.tabularFeatures,
                     ),
                   ),
-                ),
-
-                // Top Left Hold-To-Compare Button
-                Positioned(
-                  top: 12,
-                  left: 12,
-                  child: GestureDetector(
-                    onTapDown: (_) => setState(() => _isComparingOriginal = true),
-                    onTapUp: (_) => setState(() => _isComparingOriginal = false),
-                    onTapCancel: () => setState(() => _isComparingOriginal = false),
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                      decoration: BoxDecoration(
-                        color: _isComparingOriginal
-                            ? AppColors.primary
-                            : AppColors.bgSurface.withValues(alpha: 0.85),
-                        borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: AppColors.border),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Icon(
-                            _isComparingOriginal ? Icons.visibility : Icons.visibility_outlined,
-                            size: 13,
-                            color: Colors.white,
-                          ),
-                          const SizedBox(width: 5),
-                          Text(
-                            _isComparingOriginal
-                                ? (l10n?.viewingOriginal ?? 'Melihat Asli')
-                                : (l10n?.holdToCompare ?? 'Tahan: Bandingkan'),
-                            style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w600, color: Colors.white),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
 
+          // Top Left Hold-To-Compare Button
+          Positioned(
+            top: 12,
+            left: 12,
+            child: GestureDetector(
+              onTapDown: (_) => setState(() => _isComparingOriginal = true),
+              onTapUp: (_) => setState(() => _isComparingOriginal = false),
+              onTapCancel: () => setState(() => _isComparingOriginal = false),
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                decoration: BoxDecoration(
+                  color: _isComparingOriginal
+                      ? AppColors.primary
+                      : AppColors.bgSurface.withValues(alpha: 0.85),
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(color: AppColors.border),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      _isComparingOriginal ? Icons.visibility : Icons.visibility_outlined,
+                      size: 13,
+                      color: Colors.white,
+                    ),
+                    const SizedBox(width: 5),
+                    Text(
+                      _isComparingOriginal
+                          ? (l10n?.viewingOriginal ?? 'Melihat Asli')
+                          : (l10n?.holdToCompare ?? 'Tahan: Bandingkan'),
+                      style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w600, color: Colors.white),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  List<Widget> _buildToolbar(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    return [
           // Quick Redaction Bar (If callback provided)
           if (widget.onAddQuickRedaction != null)
             Container(
@@ -281,13 +481,12 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
               ],
             ),
           ),
-        ],
-      ),
-    );
+    ];
   }
 
+
   Widget _buildQuickSensorChip(String label, RedactionPresetTarget target) {
-    final isAlreadyAdded = widget.config.redactions.any((r) => r.label.contains(label));
+    final isAlreadyAdded = widget.config.redactions.any((r) => r.label == target.label);
     return PressScale(
       onTap: () => widget.onAddQuickRedaction?.call(target),
       child: Container(
@@ -530,419 +729,9 @@ class _WatermarkOverlayPainter extends CustomPainter {
       }
     }
 
-    // 2. Draw Watermark Pattern
-    final scale = math.max(width, height) / 450.0;
-    final fontSize = (config.fontSize * 0.55) * scale;
-    final text = config.renderedTextIn(_loc);
-    final color = config.colorOption.color.withValues(alpha: config.opacity);
-
-    switch (config.pattern) {
-      case WatermarkPattern.diagonalBand:
-        _drawDiagonal(canvas, width, height, text, color, fontSize);
-        break;
-      case WatermarkPattern.repeatedGrid:
-        _drawGrid(canvas, width, height, text, color, fontSize);
-        break;
-      case WatermarkPattern.bottomBar:
-        _drawBottomBar(canvas, width, height, text, color, fontSize);
-        break;
-      case WatermarkPattern.cornerStamp:
-        _drawCornerStamp(canvas, width, height, text, color, fontSize);
-        break;
-      case WatermarkPattern.securitySeal:
-        _drawSecuritySeal(canvas, width, height, color, fontSize);
-        break;
-      case WatermarkPattern.crossStamp:
-        _drawCrossStamp(canvas, width, height, text, color, fontSize);
-        break;
-      case WatermarkPattern.qrBadge:
-        _drawQrBadge(canvas, width, height, color, fontSize);
-        break;
-    }
-  }
-
-  void _drawDiagonal(
-    Canvas canvas,
-    double width,
-    double height,
-    String text,
-    Color color,
-    double fontSize,
-  ) {
-    canvas.save();
-    canvas.translate(width / 2, height / 2);
-    canvas.rotate((config.rotationAngle * math.pi) / 180.0);
-
-    final painter = TextPainter(
-      text: TextSpan(
-        text: text,
-        style: TextStyle(
-          color: color,
-          fontSize: fontSize,
-          fontWeight: FontWeight.w800,
-          letterSpacing: 1.5,
-        ),
-      ),
-      textDirection: TextDirection.ltr,
-    );
-    painter.layout();
-
-    final padX = fontSize * 1.2;
-    final padY = fontSize * 0.4;
-    final rect = Rect.fromCenter(
-      center: Offset.zero,
-      width: painter.width + (padX * 2),
-      height: painter.height + (padY * 2),
-    );
-
-    final bandPaint = Paint()
-      ..color = (config.colorOption == WatermarkColorOption.white ? Colors.black : Colors.white)
-          .withValues(alpha: (config.opacity * 0.4).clamp(0.05, 0.4))
-      ..style = PaintingStyle.fill;
-    canvas.drawRRect(RRect.fromRectAndRadius(rect, Radius.circular(fontSize * 0.25)), bandPaint);
-
-    final borderPaint = Paint()
-      ..color = color
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = math.max(1.0, fontSize * 0.08);
-    canvas.drawRRect(RRect.fromRectAndRadius(rect, Radius.circular(fontSize * 0.25)), borderPaint);
-
-    painter.paint(canvas, Offset(-painter.width / 2, -painter.height / 2));
-
-    if (config.customSubtext.trim().isNotEmpty) {
-      final subPainter = TextPainter(
-        text: TextSpan(
-          text: config.customSubtext.trim(),
-          style: TextStyle(
-            color: color,
-            fontSize: fontSize * 0.55,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        textDirection: TextDirection.ltr,
-      );
-      subPainter.layout();
-      subPainter.paint(canvas, Offset(-subPainter.width / 2, (painter.height / 2) + 2));
-    }
-
-    canvas.restore();
-  }
-
-  void _drawGrid(
-    Canvas canvas,
-    double width,
-    double height,
-    String text,
-    Color color,
-    double fontSize,
-  ) {
-    canvas.save();
-    final painter = TextPainter(
-      text: TextSpan(
-        text: text,
-        style: TextStyle(
-          color: color,
-          fontSize: fontSize * 0.65,
-          fontWeight: FontWeight.w700,
-        ),
-      ),
-      textDirection: TextDirection.ltr,
-    );
-    painter.layout();
-
-    canvas.translate(width / 2, height / 2);
-    canvas.rotate((config.rotationAngle * math.pi) / 180.0);
-    canvas.translate(-width / 2, -height / 2);
-
-    final stepX = painter.width + 40;
-    final stepY = painter.height + 30;
-    final diagonal = math.sqrt(width * width + height * height);
-
-    for (double y = -diagonal; y < diagonal * 2; y += stepY) {
-      for (double x = -diagonal; x < diagonal * 2; x += stepX) {
-        painter.paint(canvas, Offset(x, y));
-      }
-    }
-    canvas.restore();
-  }
-
-  void _drawBottomBar(
-    Canvas canvas,
-    double width,
-    double height,
-    String text,
-    Color color,
-    double fontSize,
-  ) {
-    final barHeight = fontSize * 2.8;
-    final barRect = Rect.fromLTWH(0, height - barHeight, width, barHeight);
-
-    final barPaint = Paint()
-      ..color = (config.colorOption == WatermarkColorOption.white ? Colors.black : Colors.white)
-          .withValues(alpha: 0.85);
-    canvas.drawRect(barRect, barPaint);
-
-    final painter = TextPainter(
-      text: TextSpan(
-        text: text,
-        style: TextStyle(
-          color: config.colorOption.color,
-          fontSize: fontSize * 0.8,
-          fontWeight: FontWeight.w800,
-        ),
-      ),
-      textDirection: TextDirection.ltr,
-    );
-    painter.layout(maxWidth: width - 20);
-    painter.paint(canvas, Offset((width - painter.width) / 2, height - (barHeight / 2) - (painter.height / 2)));
-  }
-
-  void _drawCornerStamp(
-    Canvas canvas,
-    double width,
-    double height,
-    String text,
-    Color color,
-    double fontSize,
-  ) {
-    final stampWidth = fontSize * 9;
-    final stampHeight = fontSize * 3.2;
-    const margin = 12.0;
-
-    final stampRect = Rect.fromLTWH(
-      width - stampWidth - margin,
-      height - stampHeight - margin,
-      stampWidth,
-      stampHeight,
-    );
-
-    final bgPaint = Paint()
-      ..color = Colors.white.withValues(alpha: 0.9)
-      ..style = PaintingStyle.fill;
-    canvas.drawRRect(RRect.fromRectAndRadius(stampRect, const Radius.circular(6)), bgPaint);
-
-    final borderPaint = Paint()
-      ..color = color
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 2.0;
-    canvas.drawRRect(RRect.fromRectAndRadius(stampRect, const Radius.circular(6)), borderPaint);
-
-    final painter = TextPainter(
-      text: TextSpan(
-        text: text,
-        style: TextStyle(
-          color: color,
-          fontSize: fontSize * 0.6,
-          fontWeight: FontWeight.w800,
-        ),
-      ),
-      textDirection: TextDirection.ltr,
-    );
-    painter.layout(maxWidth: stampWidth - 10);
-    painter.paint(
-      canvas,
-      Offset(
-        stampRect.left + (stampWidth - painter.width) / 2,
-        stampRect.top + (stampHeight - painter.height) / 2,
-      ),
-    );
-  }
-
-  void _drawSecuritySeal(
-    Canvas canvas,
-    double width,
-    double height,
-    Color color,
-    double fontSize,
-  ) {
-    canvas.save();
-    canvas.translate(width / 2, height / 2);
-
-    final radius = fontSize * 4.0;
-    final outerPaint = Paint()
-      ..color = color
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 2.5;
-    canvas.drawCircle(Offset.zero, radius, outerPaint);
-
-    final innerPaint = Paint()
-      ..color = color
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 1.0;
-    canvas.drawCircle(Offset.zero, radius * 0.85, innerPaint);
-
-    final bgPaint = Paint()
-      ..color = Colors.white.withValues(alpha: (config.opacity * 0.35).clamp(0.05, 0.35))
-      ..style = PaintingStyle.fill;
-    canvas.drawCircle(Offset.zero, radius, bgPaint);
-
-    final headerPainter = TextPainter(
-      text: TextSpan(
-        text: '★ RESMI DIVERIFIKASI ★',
-        style: TextStyle(color: color, fontSize: fontSize * 0.45, fontWeight: FontWeight.bold),
-      ),
-      textDirection: TextDirection.ltr,
-    );
-    headerPainter.layout();
-    headerPainter.paint(canvas, Offset(-headerPainter.width / 2, -radius * 0.55));
-
-    final textPainter = TextPainter(
-      text: TextSpan(
-        text: config.purpose.toUpperCase(),
-        style: TextStyle(color: color, fontSize: fontSize * 0.55, fontWeight: FontWeight.w900),
-      ),
-      textDirection: TextDirection.ltr,
-      textAlign: TextAlign.center,
-    );
-    textPainter.layout(maxWidth: radius * 1.5);
-    textPainter.paint(canvas, Offset(-textPainter.width / 2, -textPainter.height / 2));
-
-    if (config.includeDate) {
-      final datePainter = TextPainter(
-        text: TextSpan(
-          text: 'TGL: ${config.dateLabelIn(_loc)}',
-          style: TextStyle(color: color, fontSize: fontSize * 0.45, fontWeight: FontWeight.w700),
-        ),
-        textDirection: TextDirection.ltr,
-      );
-      datePainter.layout();
-      datePainter.paint(canvas, Offset(-datePainter.width / 2, radius * 0.45));
-    }
-
-    canvas.restore();
-  }
-
-  void _drawCrossStamp(
-    Canvas canvas,
-    double width,
-    double height,
-    String text,
-    Color color,
-    double fontSize,
-  ) {
-    // 1st diagonal band (-25 deg)
-    canvas.save();
-    canvas.translate(width / 2, height / 2);
-    canvas.rotate((-25.0 * math.pi) / 180.0);
-
-    final painter1 = TextPainter(
-      text: TextSpan(
-        text: text,
-        style: TextStyle(color: color, fontSize: fontSize * 0.8, fontWeight: FontWeight.w800),
-      ),
-      textDirection: TextDirection.ltr,
-    );
-    painter1.layout();
-
-    final rect1 = Rect.fromCenter(
-      center: Offset.zero,
-      width: painter1.width + 30,
-      height: painter1.height + 14,
-    );
-    final bg1 = Paint()
-      ..color = Colors.white.withValues(alpha: (config.opacity * 0.35).clamp(0.05, 0.35))
-      ..style = PaintingStyle.fill;
-    final stroke1 = Paint()
-      ..color = color
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 1.5;
-    canvas.drawRRect(RRect.fromRectAndRadius(rect1, const Radius.circular(4)), bg1);
-    canvas.drawRRect(RRect.fromRectAndRadius(rect1, const Radius.circular(4)), stroke1);
-    painter1.paint(canvas, Offset(-painter1.width / 2, -painter1.height / 2));
-    canvas.restore();
-
-    // 2nd diagonal band (+25 deg)
-    canvas.save();
-    canvas.translate(width / 2, height / 2);
-    canvas.rotate((25.0 * math.pi) / 180.0);
-
-    final subtext = config.customSubtext.trim().isNotEmpty
-        ? config.customSubtext.trim()
-        : 'VERIFIKASI IDENTITAS';
-    final painter2 = TextPainter(
-      text: TextSpan(
-        text: subtext.toUpperCase(),
-        style: TextStyle(color: color, fontSize: fontSize * 0.7, fontWeight: FontWeight.w800),
-      ),
-      textDirection: TextDirection.ltr,
-    );
-    painter2.layout();
-
-    final rect2 = Rect.fromCenter(
-      center: Offset.zero,
-      width: painter2.width + 30,
-      height: painter2.height + 14,
-    );
-    canvas.drawRRect(RRect.fromRectAndRadius(rect2, const Radius.circular(4)), bg1);
-    canvas.drawRRect(RRect.fromRectAndRadius(rect2, const Radius.circular(4)), stroke1);
-    painter2.paint(canvas, Offset(-painter2.width / 2, -painter2.height / 2));
-    canvas.restore();
-  }
-
-  void _drawQrBadge(
-    Canvas canvas,
-    double width,
-    double height,
-    Color color,
-    double fontSize,
-  ) {
-    final badgeWidth = fontSize * 9.5;
-    final badgeHeight = fontSize * 3.4;
-    const margin = 12.0;
-    final badgeRect = Rect.fromLTWH(
-      width - badgeWidth - margin,
-      height - badgeHeight - margin,
-      badgeWidth,
-      badgeHeight,
-    );
-
-    final bgPaint = Paint()
-      ..color = Colors.white.withValues(alpha: 0.95)
-      ..style = PaintingStyle.fill;
-    canvas.drawRRect(RRect.fromRectAndRadius(badgeRect, const Radius.circular(6)), bgPaint);
-
-    final borderPaint = Paint()
-      ..color = color
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 2.0;
-    canvas.drawRRect(RRect.fromRectAndRadius(badgeRect, const Radius.circular(6)), borderPaint);
-
-    // QR Box
-    final qrBoxSize = badgeHeight - 12;
-    final qrBoxRect = Rect.fromLTWH(badgeRect.left + 6, badgeRect.top + 6, qrBoxSize, qrBoxSize);
-    canvas.drawRect(qrBoxRect, Paint()..color = const Color(0xFF0F172A));
-
-    // Simulated QR dots
-    final step = qrBoxSize / 4;
-    final pWhite = Paint()..color = Colors.white;
-    for (int i = 0; i < 4; i++) {
-      for (int j = 0; j < 4; j++) {
-        if ((i + j) % 2 == 1) {
-          canvas.drawRect(Rect.fromLTWH(qrBoxRect.left + (i * step), qrBoxRect.top + (j * step), step * 0.8, step * 0.8), pWhite);
-        }
-      }
-    }
-
-    final rightX = qrBoxRect.right + 8;
-    final titlePainter = TextPainter(
-      text: const TextSpan(
-        text: 'IDMARK VERIFIED',
-        style: TextStyle(color: Color(0xFF0284C7), fontSize: 9, fontWeight: FontWeight.bold),
-      ),
-      textDirection: TextDirection.ltr,
-    );
-    titlePainter.layout();
-    titlePainter.paint(canvas, Offset(rightX, badgeRect.top + 6));
-
-    final purposePainter = TextPainter(
-      text: TextSpan(
-        text: config.purpose.toUpperCase(),
-        style: TextStyle(color: color, fontSize: fontSize * 0.45, fontWeight: FontWeight.w800),
-      ),
-      textDirection: TextDirection.ltr,
-    );
-    purposePainter.layout(maxWidth: badgeRect.right - rightX - 6);
-    purposePainter.paint(canvas, Offset(rightX, badgeRect.top + 18));
+    // 2. Watermark pattern: the exact export renderer, so the preview
+    // matches the burned-in result (incl. the fit-to-image logic).
+    WatermarkRendererService.paintPattern(canvas, size, config, _loc);
   }
 
   @override

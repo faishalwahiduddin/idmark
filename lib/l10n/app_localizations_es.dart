@@ -127,7 +127,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get appDomain => 'Dominio';
 
   @override
-  String get appCompliance => 'Estándar de cumplimiento';
+  String get appCompliance => 'Referencia';
 
   @override
   String get appProvider => 'Proveedor';
@@ -142,7 +142,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get preferencesReset => 'Preferencias restablecidas.';
 
   @override
-  String get guideRules => '4 Reglas de la marca de agua';
+  String get guideRules => '4 reglas básicas de la marca de agua';
 
   @override
   String get guideRule1Title => 'Escriba el nombre y el propósito';
@@ -244,7 +244,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get bannerUuPdp =>
-      'Estándar de la Ley PDP: Agregue una marca de agua con el propósito específico, la fecha y cense los datos confidenciales antes de compartir fotos de su identificación.';
+      'Antes de compartir una foto de identificación: añada un propósito concreto y la fecha, y cubra los datos que el destinatario no necesita.';
 
   @override
   String sensorBoxAdded(String label) {
@@ -365,12 +365,10 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get privacyComplianceIndex =>
-      'Índice de cumplimiento de privacidad documental';
+  String get privacyComplianceIndex => 'Lista de protección';
 
   @override
-  String get complianceChecklistTitle =>
-      'Lista de verificación de cumplimiento Ley PDP Nº 27/2022:';
+  String get complianceChecklistTitle => 'Antes de compartir:';
 
   @override
   String get checkPurposeTitle => 'Propósito de uso específico';
@@ -427,7 +425,13 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String activeWatermarkWithCount(int count) {
-    return 'Marca de agua activa ($count censuras)';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Marca de agua activa ($count censuras)',
+      one: 'Marca de agua activa (1 censura)',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -493,7 +497,13 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String sensitiveSensorsCount(int count) {
-    return '$count censuras sensibles';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count censuras',
+      one: '1 censura',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -653,7 +663,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get zeroServerDesc =>
-      'IDMark funciona 100% en su navegador o dispositivo local. Las fotos de identificación nunca se envían, guardan ni procesan en servidores externos.';
+      'IDMark funciona 100% en su dispositivo. Las fotos de identificación nunca se envían, guardan ni procesan en servidores externos.';
 
   @override
   String get dataSecuritySanitation => 'Saneamiento y seguridad de datos';
@@ -677,7 +687,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get officialKominfoGuide =>
-      'Guía oficial de Kominfo y la ley de protección de datos';
+      'Guía de seguridad para fotos de identificación';
 
   @override
   String get privacyAndSettings => 'Privacidad y ajustes';
@@ -767,7 +777,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get privacyGradeDescMax =>
-      'Protección máxima • Cumple con los estándares de privacidad de datos';
+      'Protección sólida • Todos los puntos cumplidos';
 
   @override
   String get privacyGradeDescVeryGood =>
@@ -1057,7 +1067,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get shareProofSubtitle =>
-      'Certificado de integridad de marca y censura según Kominfo';
+      'Resumen de la marca de agua y las censuras de esta copia';
 
   @override
   String get shareFormatFeed => 'Publicación (4:5)';
@@ -1097,7 +1107,13 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String shareCardAreaCount(int count) {
-    return '$count zonas';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count zonas',
+      one: '1 zona',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -1110,7 +1126,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get shareCardFooter =>
-      'idmark.faishal.id • Estándar Kominfo para marcas de agua';
+      'idmark.faishal.id • procesado en el dispositivo';
 
   @override
   String get shareCardIntegrityHash => 'HASH DE INTEGRIDAD (SHA-256):';
@@ -1136,7 +1152,13 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String shareProofRedactionLine(int count) {
-    return '✂️ Censuras permanentes: $count zonas cubiertas';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '✂️ Censuras permanentes: $count zonas cubiertas',
+      one: '✂️ Censuras permanentes: 1 zona cubierta',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -1146,7 +1168,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get shareProofOnDeviceLine =>
-      '✅ Procesado 100% en el dispositivo, sin servidor (según Kominfo RI)';
+      '✅ Procesado 100% en el dispositivo, sin servidor';
 
   @override
   String get shareProofCtaLine =>
@@ -1331,4 +1353,71 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get contactEmailCopied =>
       'Dirección de correo copiada: contact@faishal.id';
+
+  @override
+  String placeholderUnfilled(String placeholder) {
+    return 'Sustituya $placeholder por el nombre real antes de exportar.';
+  }
+
+  @override
+  String get savedToGallery => 'Guardado en Galería › Pictures/IDMark';
+
+  @override
+  String get savedToDownloads => 'Guardado en Archivos › Download/IDMark';
+
+  @override
+  String get saveViaShareHint =>
+      'Para guardar una copia, elija \"Guardar imagen\" o \"Guardar en Archivos\" en el menú de compartir.';
+
+  @override
+  String redactionWidth(int value) {
+    return 'Ancho ($value%)';
+  }
+
+  @override
+  String redactionHeight(int value) {
+    return 'Alto ($value%)';
+  }
+
+  @override
+  String get redactionDragHint =>
+      'Arrastre un recuadro en la foto para moverlo. Arrastre el punto de la esquina para cambiar su tamaño.';
+
+  @override
+  String get redactionWeakWarning =>
+      'El desenfoque y el mosaico a veces se pueden revertir en textos pequeños como un número de identificación. Use Blackout para el NIK.';
+
+  @override
+  String get historyEntryDeleted => 'Entrada eliminada';
+
+  @override
+  String get undo => 'Deshacer';
+
+  @override
+  String get deleteEntry => 'Eliminar entrada';
+
+  @override
+  String get notLegalAdvice =>
+      'Solo orientación de seguridad; no es asesoramiento legal ni una certificación oficial.';
+
+  @override
+  String get tabRedactShort => 'Censurar';
+
+  @override
+  String get tabPrivacyShort => 'Privacidad';
+
+  @override
+  String get tabFormatShort => 'Formato';
+
+  @override
+  String redactionBoxSemantics(String label) {
+    return 'Recuadro de censura $label. Arrastre para moverlo.';
+  }
+
+  @override
+  String get resizeRedaction => 'Cambiar tamaño del recuadro';
+
+  @override
+  String get exportFormatSessionNote =>
+      'Se aplica a esta exportación. El formato predeterminado se define en Ajustes.';
 }

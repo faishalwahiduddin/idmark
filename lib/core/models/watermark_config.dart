@@ -97,10 +97,28 @@ class WatermarkConfig {
     );
   }
 
-  /// Calculates privacy compliance score (0-100) based on UU PDP standards
+  /// Template placeholders such as `[NAMA BANK]` that presets insert and
+  /// the user must replace before the stamp is meaningful.
+  static final RegExp placeholderPattern = RegExp(r'\[[^\[\]]{1,40}\]');
+
+  /// Unfilled placeholders in the purpose and subtext, in order.
+  List<String> get unfilledPlaceholders => [
+        for (final m in placeholderPattern.allMatches(purpose)) m.group(0)!,
+        for (final m in placeholderPattern.allMatches(customSubtext)) m.group(0)!,
+      ];
+
+  bool get hasUnfilledPlaceholder => unfilledPlaceholders.isNotEmpty;
+
+  /// True when the purpose names a specific use (long enough and no
+  /// template placeholder left in it).
+  bool get hasSpecificPurpose =>
+      purpose.trim().length >= 5 && !placeholderPattern.hasMatch(purpose);
+
+  /// Protection checklist score (0-100). A stamp that still contains a
+  /// template placeholder never counts as a specific purpose.
   int get privacyScore {
     int score = 0;
-    if (purpose.trim().length >= 5) score += 30;
+    if (hasSpecificPurpose) score += 30;
     if (includeDate) score += 20;
     if (stripMetadata) score += 20;
     if (redactions.isNotEmpty) score += 15;

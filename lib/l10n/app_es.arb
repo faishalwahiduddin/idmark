@@ -38,12 +38,12 @@
   "aboutApp": "Acerca de la aplicación",
   "appVersion": "Versión",
   "appDomain": "Dominio",
-  "appCompliance": "Estándar de cumplimiento",
+  "appCompliance": "Referencia",
   "appProvider": "Proveedor",
   "clearHistory": "Borrar",
   "historyCleared": "Historial borrado.",
   "preferencesReset": "Preferencias restablecidas.",
-  "guideRules": "4 Reglas de la marca de agua",
+  "guideRules": "4 reglas básicas de la marca de agua",
   "guideRule1Title": "Escriba el nombre y el propósito",
   "guideRule1Desc": "No escriba solo \"VERIFICACIÓN\". Escriba completamente para evitar el uso indebido.",
   "guideRule2Title": "Incluya la fecha completa",
@@ -73,7 +73,7 @@
   "share": "Compartir",
   "resetWatermarkTooltip": "Restablecer marca de agua",
   "configResetKominfo": "Configuración restablecida a los estándares recomendados por Kominfo.",
-  "bannerUuPdp": "Estándar de la Ley PDP: Agregue una marca de agua con el propósito específico, la fecha y cense los datos confidenciales antes de compartir fotos de su identificación.",
+  "bannerUuPdp": "Antes de compartir una foto de identificación: añada un propósito concreto y la fecha, y cubra los datos que el destinatario no necesita.",
   "sensorBoxAdded": "Se agregó el cuadro de censura \"{label}\".",
   "processingOnDevice": "Procesando documento en el dispositivo...",
   "saveDocument": "Guardar documento ({format})",
@@ -108,8 +108,8 @@
   "sensorTypeLabel": "Tipo de censura:",
   "positionX": "Posición X ({percent}%)",
   "positionY": "Posición Y ({percent}%)",
-  "privacyComplianceIndex": "Índice de cumplimiento de privacidad documental",
-  "complianceChecklistTitle": "Lista de verificación de cumplimiento Ley PDP Nº 27/2022:",
+  "privacyComplianceIndex": "Lista de protección",
+  "complianceChecklistTitle": "Antes de compartir:",
   "checkPurposeTitle": "Propósito de uso específico",
   "checkPurposeDesc": "Limita el uso de la copia para que no se desvíe a otras transacciones",
   "checkDateTitle": "Fecha de transacción incluida",
@@ -125,7 +125,7 @@
   "protectionGrade": "Protección {grade} ({score}%)",
   "viewingOriginal": "Viendo original",
   "holdToCompare": "Mantener: Comparar",
-  "activeWatermarkWithCount": "Marca de agua activa ({count} censuras)",
+  "activeWatermarkWithCount": "{count, plural, =1{Marca de agua activa (1 censura)} other{Marca de agua activa ({count} censuras)}}",
   "activeWatermarkPreview": "Vista previa de marca de agua activa",
   "changePhoto": "Cambiar foto",
   "deleteImage": "Eliminar imagen",
@@ -143,7 +143,7 @@
   "noWatermarkedDocsDesc": "Los documentos a los que agregue marca de agua y exporte registrarán su auditoría aquí.",
   "noHistoryFound": "No se encontró ningún historial que coincida con la búsqueda.",
   "scoreLabel": "Puntuación {score}%",
-  "sensitiveSensorsCount": "{count} censuras sensibles",
+  "sensitiveSensorsCount": "{count, plural, =1{1 censura} other{{count} censuras}}",
   "exifSanitized": "EXIF saneado",
   "sha256Copied": "¡Hash SHA-256 copiado al portapapeles!",
   "clearHistoryConfirmTitle": "¿Borrar todo el historial?",
@@ -188,14 +188,14 @@
   "checkItem4": "Firma censurada si el verificador no solicita espécimen de firma",
   "checkItem5": "Metadatos EXIF y coordenadas GPS eliminados de la imagen",
   "zeroServerTitle": "Privacidad absoluta (sin subida al servidor)",
-  "zeroServerDesc": "IDMark funciona 100% en su navegador o dispositivo local. Las fotos de identificación nunca se envían, guardan ni procesan en servidores externos.",
+  "zeroServerDesc": "IDMark funciona 100% en su dispositivo. Las fotos de identificación nunca se envían, guardan ni procesan en servidores externos.",
   "dataSecuritySanitation": "Saneamiento y seguridad de datos",
   "autoExifSubtitle": "Elimina etiquetas de coordenadas GPS y modelo de cámara de las fotos exportadas",
   "defaultExportFormat": "Formato de exportación predeterminado",
   "localDeviceStorage": "Almacenamiento local del dispositivo",
   "resetDefaultsDesc": "Restablecer plantillas y ajustes de texto a los valores de fábrica",
   "appLabel": "Aplicación",
-  "officialKominfoGuide": "Guía oficial de Kominfo y la ley de protección de datos",
+  "officialKominfoGuide": "Guía de seguridad para fotos de identificación",
   "privacyAndSettings": "Privacidad y ajustes",
   "@historySubtitle": {
     "placeholders": {
@@ -368,9 +368,8 @@
   "validationPresetTitleMaxLength": "El nombre del preset no puede superar los 50 caracteres",
   "validationPresetCategoryRequired": "La categoría del preset no puede estar vacía",
   "validationPresetCategoryMaxLength": "La categoría no puede superar los 30 caracteres",
-
   "customPresetSaveFailed": "No se pudo guardar el preset. Inténtalo de nuevo.",
-  "privacyGradeDescMax": "Protección máxima • Cumple con los estándares de privacidad de datos",
+  "privacyGradeDescMax": "Protección sólida • Todos los puntos cumplidos",
   "privacyGradeDescVeryGood": "Protección muy buena • El documento es seguro para compartir",
   "privacyGradeDescFair": "Protección moderada • Se recomienda agregar fecha y censurar la identificación",
   "privacyGradeDescWeak": "Protección débil • Agregue propósito específico y fecha",
@@ -486,7 +485,7 @@
   "targetBirthPlace": "Lugar y fecha de nacimiento",
   "targetPhoto": "Foto del rostro",
   "shareProofTitle": "Prueba de protección del documento",
-  "shareProofSubtitle": "Certificado de integridad de marca y censura según Kominfo",
+  "shareProofSubtitle": "Resumen de la marca de agua y las censuras de esta copia",
   "shareFormatFeed": "Publicación (4:5)",
   "shareFormatStory": "Historia (9:16)",
   "shareCopyText": "Copiar texto",
@@ -499,7 +498,7 @@
   "shareCardPurposeLabel": "PARA EL PROPÓSITO ESPECÍFICO:",
   "shareCardPrivacyScore": "PUNTUACIÓN DE PRIVACIDAD",
   "shareCardRedactions": "CENSURAS",
-  "shareCardAreaCount": "{count} zonas",
+  "shareCardAreaCount": "{count, plural, =1{1 zona} other{{count} zonas}}",
   "@shareCardAreaCount": {
     "placeholders": {
       "count": {
@@ -516,7 +515,7 @@
       }
     }
   },
-  "shareCardFooter": "idmark.faishal.id • Estándar Kominfo para marcas de agua",
+  "shareCardFooter": "idmark.faishal.id • procesado en el dispositivo",
   "shareCardIntegrityHash": "HASH DE INTEGRIDAD (SHA-256):",
   "shareProofHeading": "🛡️ PRUEBA DE PROTECCIÓN DEL DOCUMENTO — IDMARK",
   "shareProofPurposeLine": "📌 Propósito específico: \"{purpose}\"",
@@ -543,7 +542,7 @@
       }
     }
   },
-  "shareProofRedactionLine": "✂️ Censuras permanentes: {count} zonas cubiertas",
+  "shareProofRedactionLine": "{count, plural, =1{✂️ Censuras permanentes: 1 zona cubierta} other{✂️ Censuras permanentes: {count} zonas cubiertas}}",
   "@shareProofRedactionLine": {
     "placeholders": {
       "count": {
@@ -559,7 +558,7 @@
       }
     }
   },
-  "shareProofOnDeviceLine": "✅ Procesado 100% en el dispositivo, sin servidor (según Kominfo RI)",
+  "shareProofOnDeviceLine": "✅ Procesado 100% en el dispositivo, sin servidor",
   "shareProofCtaLine": "Protege tu identidad con IDMark: https://idmark.faishal.id",
   "shareProofDownloaded": "¡Certificado de protección descargado! 🛡️✨",
   "shareProofFailed": "No se pudo compartir la prueba: {error}",
@@ -640,5 +639,23 @@
   "commercialContactDesc": "¿Necesitas una licencia comercial, marca blanca o personalización? Ponte en contacto.",
   "acquireAppTitle": "Adquirir esta app",
   "acquireAppDesc": "¿Te interesa adquirir esta app, incluido el código fuente y los recursos? Hablemos.",
-  "contactEmailCopied": "Dirección de correo copiada: contact@faishal.id"
+  "contactEmailCopied": "Dirección de correo copiada: contact@faishal.id",
+  "placeholderUnfilled": "Sustituya {placeholder} por el nombre real antes de exportar.",
+  "savedToGallery": "Guardado en Galería › Pictures/IDMark",
+  "savedToDownloads": "Guardado en Archivos › Download/IDMark",
+  "saveViaShareHint": "Para guardar una copia, elija \"Guardar imagen\" o \"Guardar en Archivos\" en el menú de compartir.",
+  "redactionWidth": "Ancho ({value}%)",
+  "redactionHeight": "Alto ({value}%)",
+  "redactionDragHint": "Arrastre un recuadro en la foto para moverlo. Arrastre el punto de la esquina para cambiar su tamaño.",
+  "redactionWeakWarning": "El desenfoque y el mosaico a veces se pueden revertir en textos pequeños como un número de identificación. Use Blackout para el NIK.",
+  "historyEntryDeleted": "Entrada eliminada",
+  "undo": "Deshacer",
+  "deleteEntry": "Eliminar entrada",
+  "notLegalAdvice": "Solo orientación de seguridad; no es asesoramiento legal ni una certificación oficial.",
+  "tabRedactShort": "Censurar",
+  "tabPrivacyShort": "Privacidad",
+  "tabFormatShort": "Formato",
+  "redactionBoxSemantics": "Recuadro de censura {label}. Arrastre para moverlo.",
+  "resizeRedaction": "Cambiar tamaño del recuadro",
+  "exportFormatSessionNote": "Se aplica a esta exportación. El formato predeterminado se define en Ajustes."
 }

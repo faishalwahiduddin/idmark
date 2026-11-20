@@ -127,7 +127,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get appDomain => 'النطاق';
 
   @override
-  String get appCompliance => 'معيار الامتثال';
+  String get appCompliance => 'المرجع';
 
   @override
   String get appProvider => 'المزود';
@@ -142,7 +142,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get preferencesReset => 'تمت إعادة تعيين التفضيلات.';
 
   @override
-  String get guideRules => '٤ قواعد رئيسية للعلامة المائية';
+  String get guideRules => '٤ قواعد أساسية للعلامة المائية';
 
   @override
   String get guideRule1Title => 'اكتب الاسم والغرض';
@@ -241,7 +241,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get bannerUuPdp =>
-      'معيار قانون حماية البيانات الشخصية: أضف علامة مائية للغرض المحدد وتاريخاً واحجب البيانات الحساسة قبل مشاركة صور بطاقة الهوية.';
+      'قبل مشاركة صورة الهوية: أضف غرضًا محددًا والتاريخ، واحجب البيانات التي لا يحتاجها المستلم.';
 
   @override
   String sensorBoxAdded(String label) {
@@ -361,11 +361,10 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get privacyComplianceIndex => 'مؤشر الامتثال لخصوصية المستندات';
+  String get privacyComplianceIndex => 'قائمة الحماية';
 
   @override
-  String get complianceChecklistTitle =>
-      'قائمة الامتثال لقانون حماية البيانات رقم 27/2022:';
+  String get complianceChecklistTitle => 'قبل المشاركة:';
 
   @override
   String get checkPurposeTitle => 'غرض استخدام محدد';
@@ -420,7 +419,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String activeWatermarkWithCount(int count) {
-    return 'العلامة المائية نشطة ($count حجب)';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'العلامة المائية نشطة ($count حجب)',
+      one: 'العلامة المائية نشطة (حجب واحد)',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -483,7 +488,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String sensitiveSensorsCount(int count) {
-    return '$count حجب حساس';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count حجب',
+      one: 'حجب واحد',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -639,7 +650,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get zeroServerDesc =>
-      'يعمل IDMark بنسبة 100٪ في متصفحك أو جهازك المحلي. لا يتم إرسال صور الهوية أو تخزينها أو معالجتها على أي خادم خارجي.';
+      'يعمل IDMark بنسبة 100٪ على جهازك. لا يتم إرسال صور الهوية أو تخزينها أو معالجتها على أي خادم خارجي.';
 
   @override
   String get dataSecuritySanitation => 'تنظيف البيانات والأمان';
@@ -662,8 +673,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get appLabel => 'التطبيق';
 
   @override
-  String get officialKominfoGuide =>
-      'الدليل الرسمي لكومينفو وقانون حماية البيانات';
+  String get officialKominfoGuide => 'دليل أمان صور الهوية';
 
   @override
   String get privacyAndSettings => 'الخصوصية والإعدادات';
@@ -746,7 +756,7 @@ class AppLocalizationsAr extends AppLocalizations {
       'تعذر حفظ القالب. يرجى المحاولة مرة أخرى.';
 
   @override
-  String get privacyGradeDescMax => 'حماية قصوى • يفي بمعايير حماية البيانات';
+  String get privacyGradeDescMax => 'حماية قوية • تم استيفاء جميع البنود';
 
   @override
   String get privacyGradeDescVeryGood =>
@@ -1027,8 +1037,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get shareProofTitle => 'إثبات حماية المستند';
 
   @override
-  String get shareProofSubtitle =>
-      'شهادة سلامة العلامة المائية والحجب وفق كومينفو';
+  String get shareProofSubtitle => 'ملخص العلامة المائية والحجب في هذه النسخة';
 
   @override
   String get shareFormatFeed => 'منشور (4:5)';
@@ -1068,7 +1077,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String shareCardAreaCount(int count) {
-    return '$count منطقة';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count منطقة',
+      one: 'منطقة واحدة',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -1080,8 +1095,7 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get shareCardFooter =>
-      'idmark.faishal.id • معيار العلامة المائية لكومينفو';
+  String get shareCardFooter => 'idmark.faishal.id • تمت المعالجة على الجهاز';
 
   @override
   String get shareCardIntegrityHash => 'بصمة السلامة (SHA-256):';
@@ -1106,7 +1120,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String shareProofRedactionLine(int count) {
-    return '✂️ حجب دائم: $count منطقة مغطاة';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '✂️ حجب دائم: $count منطقة مغطاة',
+      one: '✂️ حجب دائم: منطقة واحدة مغطاة',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -1116,7 +1136,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get shareProofOnDeviceLine =>
-      '✅ تمت المعالجة 100% على الجهاز دون خادم (وفق إرشادات كومينفو)';
+      '✅ تمت المعالجة 100% على الجهاز دون خادم';
 
   @override
   String get shareProofCtaLine =>
@@ -1299,4 +1319,71 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get contactEmailCopied =>
       'تم نسخ عنوان البريد الإلكتروني: contact@faishal.id';
+
+  @override
+  String placeholderUnfilled(String placeholder) {
+    return 'استبدل $placeholder بالاسم الحقيقي قبل التصدير.';
+  }
+
+  @override
+  String get savedToGallery => 'تم الحفظ في المعرض › Pictures/IDMark';
+
+  @override
+  String get savedToDownloads => 'تم الحفظ في الملفات › Download/IDMark';
+
+  @override
+  String get saveViaShareHint =>
+      'لحفظ نسخة، اختر \"حفظ الصورة\" أو \"حفظ في الملفات\" من قائمة المشاركة.';
+
+  @override
+  String redactionWidth(int value) {
+    return 'العرض ($value%)';
+  }
+
+  @override
+  String redactionHeight(int value) {
+    return 'الارتفاع ($value%)';
+  }
+
+  @override
+  String get redactionDragHint =>
+      'اسحب المربع على الصورة لتحريكه. اسحب نقطة الزاوية لتغيير حجمه.';
+
+  @override
+  String get redactionWeakWarning =>
+      'قد يمكن أحيانًا عكس التمويه والفسيفساء على النصوص الصغيرة مثل رقم الهوية. استخدم التعتيم الكامل للرقم الوطني.';
+
+  @override
+  String get historyEntryDeleted => 'تم حذف الإدخال';
+
+  @override
+  String get undo => 'تراجع';
+
+  @override
+  String get deleteEntry => 'حذف الإدخال';
+
+  @override
+  String get notLegalAdvice =>
+      'إرشادات أمان فقط، وليست استشارة قانونية ولا شهادة رسمية.';
+
+  @override
+  String get tabRedactShort => 'حجب';
+
+  @override
+  String get tabPrivacyShort => 'الخصوصية';
+
+  @override
+  String get tabFormatShort => 'الصيغة';
+
+  @override
+  String redactionBoxSemantics(String label) {
+    return 'مربع الحجب $label. اسحب للتحريك.';
+  }
+
+  @override
+  String get resizeRedaction => 'تغيير حجم مربع الحجب';
+
+  @override
+  String get exportFormatSessionNote =>
+      'ينطبق على هذا التصدير. تُضبط الصيغة الافتراضية من الإعدادات.';
 }

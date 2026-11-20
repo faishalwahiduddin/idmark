@@ -38,12 +38,12 @@
   "aboutApp": "حول التطبيق",
   "appVersion": "الإصدار",
   "appDomain": "النطاق",
-  "appCompliance": "معيار الامتثال",
+  "appCompliance": "المرجع",
   "appProvider": "المزود",
   "clearHistory": "مسح",
   "historyCleared": "تم مسح السجل.",
   "preferencesReset": "تمت إعادة تعيين التفضيلات.",
-  "guideRules": "٤ قواعد رئيسية للعلامة المائية",
+  "guideRules": "٤ قواعد أساسية للعلامة المائية",
   "guideRule1Title": "اكتب الاسم والغرض",
   "guideRule1Desc": "لا تكتب \"تحقق\" فقط. اكتب بالكامل لمنع إساءة الاستخدام.",
   "guideRule2Title": "تضمين التاريخ الكامل",
@@ -73,7 +73,7 @@
   "share": "مشاركة",
   "resetWatermarkTooltip": "إعادة ضبط العلامة المائية",
   "configResetKominfo": "تمت استعادة التهيئة إلى معايير كومينفو الموصى بها.",
-  "bannerUuPdp": "معيار قانون حماية البيانات الشخصية: أضف علامة مائية للغرض المحدد وتاريخاً واحجب البيانات الحساسة قبل مشاركة صور بطاقة الهوية.",
+  "bannerUuPdp": "قبل مشاركة صورة الهوية: أضف غرضًا محددًا والتاريخ، واحجب البيانات التي لا يحتاجها المستلم.",
   "sensorBoxAdded": "تمت إضافة صندوق الحجب \"{label}\".",
   "processingOnDevice": "جاري معالجة الوثيقة على الجهاز...",
   "saveDocument": "حفظ الوثيقة ({format})",
@@ -108,8 +108,8 @@
   "sensorTypeLabel": "نوع الحجب:",
   "positionX": "الموضع الأفقي ({percent}%)",
   "positionY": "الموضع الرأسي ({percent}%)",
-  "privacyComplianceIndex": "مؤشر الامتثال لخصوصية المستندات",
-  "complianceChecklistTitle": "قائمة الامتثال لقانون حماية البيانات رقم 27/2022:",
+  "privacyComplianceIndex": "قائمة الحماية",
+  "complianceChecklistTitle": "قبل المشاركة:",
   "checkPurposeTitle": "غرض استخدام محدد",
   "checkPurposeDesc": "يقيد الاستخدام حتى لا يمكن تحويل النسخة إلى معاملات أخرى",
   "checkDateTitle": "تضمين تاريخ المعاملة",
@@ -125,7 +125,7 @@
   "protectionGrade": "الحماية {grade} ({score}%)",
   "viewingOriginal": "عرض الأصل",
   "holdToCompare": "استمر بالضغط: مقارنة",
-  "activeWatermarkWithCount": "العلامة المائية نشطة ({count} حجب)",
+  "activeWatermarkWithCount": "{count, plural, =1{العلامة المائية نشطة (حجب واحد)} other{العلامة المائية نشطة ({count} حجب)}}",
   "activeWatermarkPreview": "معاينة العلامة المائية النشطة",
   "changePhoto": "تغيير الصورة",
   "deleteImage": "حذف الصورة",
@@ -143,7 +143,7 @@
   "noWatermarkedDocsDesc": "المستندات التي أضفت إليها علامة مائية وقم بتصديرها سيتم تسجيل عمليات تدقيقها هنا.",
   "noHistoryFound": "لم يتم العثور على سجل يطابق بحثك.",
   "scoreLabel": "الدرجة {score}%",
-  "sensitiveSensorsCount": "{count} حجب حساس",
+  "sensitiveSensorsCount": "{count, plural, =1{حجب واحد} other{{count} حجب}}",
   "exifSanitized": "تم تنظيف EXIF",
   "sha256Copied": "تم نسخ تجزئة SHA-256 إلى الحافظة!",
   "clearHistoryConfirmTitle": "مسح كل السجل؟",
@@ -188,14 +188,14 @@
   "checkItem4": "حجب التوقيع إذا لم يطلب موثق البيانات نموذج توقيع",
   "checkItem5": "تمت إزالة بيانات EXIF وإحداثيات GPS من الصورة",
   "zeroServerTitle": "خصوصية مطلقة (صفر رفع إلى الخادم)",
-  "zeroServerDesc": "يعمل IDMark بنسبة 100٪ في متصفحك أو جهازك المحلي. لا يتم إرسال صور الهوية أو تخزينها أو معالجتها على أي خادم خارجي.",
+  "zeroServerDesc": "يعمل IDMark بنسبة 100٪ على جهازك. لا يتم إرسال صور الهوية أو تخزينها أو معالجتها على أي خادم خارجي.",
   "dataSecuritySanitation": "تنظيف البيانات والأمان",
   "autoExifSubtitle": "إزالة علامات إحداثيات GPS ونوع الكاميرا من الصور المصدرة",
   "defaultExportFormat": "صيغة التصدير الافتراضية",
   "localDeviceStorage": "التخزين المحلي للجهاز",
   "resetDefaultsDesc": "استعادة القوالب وإعدادات النص إلى الإعدادات الافتراضية الأصلية",
   "appLabel": "التطبيق",
-  "officialKominfoGuide": "الدليل الرسمي لكومينفو وقانون حماية البيانات",
+  "officialKominfoGuide": "دليل أمان صور الهوية",
   "privacyAndSettings": "الخصوصية والإعدادات",
   "@historySubtitle": {
     "placeholders": {
@@ -368,9 +368,8 @@
   "validationPresetTitleMaxLength": "لا يمكن أن يتجاوز اسم القالب 50 حرفاً",
   "validationPresetCategoryRequired": "تصنيف القالب مطلوب ولا يمكن تركه فارغاً",
   "validationPresetCategoryMaxLength": "لا يمكن أن يتجاوز التصنيف 30 حرفاً",
-
   "customPresetSaveFailed": "تعذر حفظ القالب. يرجى المحاولة مرة أخرى.",
-  "privacyGradeDescMax": "حماية قصوى • يفي بمعايير حماية البيانات",
+  "privacyGradeDescMax": "حماية قوية • تم استيفاء جميع البنود",
   "privacyGradeDescVeryGood": "حماية قوية جداً • المستند آمن للمشاركة",
   "privacyGradeDescFair": "حماية مقبولة • يُنصح بإضافة التاريخ وحجب رقم الهوية",
   "privacyGradeDescWeak": "حماية ضعيفة • أضف الغرض والتاريخ",
@@ -486,7 +485,7 @@
   "targetBirthPlace": "مكان وتاريخ الميلاد",
   "targetPhoto": "صورة الوجه",
   "shareProofTitle": "إثبات حماية المستند",
-  "shareProofSubtitle": "شهادة سلامة العلامة المائية والحجب وفق كومينفو",
+  "shareProofSubtitle": "ملخص العلامة المائية والحجب في هذه النسخة",
   "shareFormatFeed": "منشور (4:5)",
   "shareFormatStory": "قصة (9:16)",
   "shareCopyText": "نسخ النص",
@@ -499,7 +498,7 @@
   "shareCardPurposeLabel": "للغرض المحدد:",
   "shareCardPrivacyScore": "درجة الخصوصية",
   "shareCardRedactions": "الحجب",
-  "shareCardAreaCount": "{count} منطقة",
+  "shareCardAreaCount": "{count, plural, =1{منطقة واحدة} other{{count} منطقة}}",
   "@shareCardAreaCount": {
     "placeholders": {
       "count": {
@@ -516,7 +515,7 @@
       }
     }
   },
-  "shareCardFooter": "idmark.faishal.id • معيار العلامة المائية لكومينفو",
+  "shareCardFooter": "idmark.faishal.id • تمت المعالجة على الجهاز",
   "shareCardIntegrityHash": "بصمة السلامة (SHA-256):",
   "shareProofHeading": "🛡️ إثبات حماية المستند — IDMARK",
   "shareProofPurposeLine": "📌 الغرض المحدد: \"{purpose}\"",
@@ -543,7 +542,7 @@
       }
     }
   },
-  "shareProofRedactionLine": "✂️ حجب دائم: {count} منطقة مغطاة",
+  "shareProofRedactionLine": "{count, plural, =1{✂️ حجب دائم: منطقة واحدة مغطاة} other{✂️ حجب دائم: {count} منطقة مغطاة}}",
   "@shareProofRedactionLine": {
     "placeholders": {
       "count": {
@@ -559,7 +558,7 @@
       }
     }
   },
-  "shareProofOnDeviceLine": "✅ تمت المعالجة 100% على الجهاز دون خادم (وفق إرشادات كومينفو)",
+  "shareProofOnDeviceLine": "✅ تمت المعالجة 100% على الجهاز دون خادم",
   "shareProofCtaLine": "احمِ هويتك مع IDMark: https://idmark.faishal.id",
   "shareProofDownloaded": "تم تنزيل شهادة حماية المستند! 🛡️✨",
   "shareProofFailed": "تعذّرت مشاركة الإثبات: {error}",
@@ -640,5 +639,23 @@
   "commercialContactDesc": "هل تحتاج إلى ترخيص تجاري أو علامة بيضاء أو تخصيص؟ تواصل معنا.",
   "acquireAppTitle": "اقتناء هذا التطبيق",
   "acquireAppDesc": "هل ترغب في اقتناء هذا التطبيق بما في ذلك الشيفرة المصدرية والأصول؟ لنتحدث.",
-  "contactEmailCopied": "تم نسخ عنوان البريد الإلكتروني: contact@faishal.id"
+  "contactEmailCopied": "تم نسخ عنوان البريد الإلكتروني: contact@faishal.id",
+  "placeholderUnfilled": "استبدل {placeholder} بالاسم الحقيقي قبل التصدير.",
+  "savedToGallery": "تم الحفظ في المعرض › Pictures/IDMark",
+  "savedToDownloads": "تم الحفظ في الملفات › Download/IDMark",
+  "saveViaShareHint": "لحفظ نسخة، اختر \"حفظ الصورة\" أو \"حفظ في الملفات\" من قائمة المشاركة.",
+  "redactionWidth": "العرض ({value}%)",
+  "redactionHeight": "الارتفاع ({value}%)",
+  "redactionDragHint": "اسحب المربع على الصورة لتحريكه. اسحب نقطة الزاوية لتغيير حجمه.",
+  "redactionWeakWarning": "قد يمكن أحيانًا عكس التمويه والفسيفساء على النصوص الصغيرة مثل رقم الهوية. استخدم التعتيم الكامل للرقم الوطني.",
+  "historyEntryDeleted": "تم حذف الإدخال",
+  "undo": "تراجع",
+  "deleteEntry": "حذف الإدخال",
+  "notLegalAdvice": "إرشادات أمان فقط، وليست استشارة قانونية ولا شهادة رسمية.",
+  "tabRedactShort": "حجب",
+  "tabPrivacyShort": "الخصوصية",
+  "tabFormatShort": "الصيغة",
+  "redactionBoxSemantics": "مربع الحجب {label}. اسحب للتحريك.",
+  "resizeRedaction": "تغيير حجم مربع الحجب",
+  "exportFormatSessionNote": "ينطبق على هذا التصدير. تُضبط الصيغة الافتراضية من الإعدادات."
 }

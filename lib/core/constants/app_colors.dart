@@ -56,9 +56,10 @@ class AppColors {
       _isDark(context) ? accentText : const Color(0xFF047857);
 
   /// Destructive label on a light surface: Red 500 is ~3.8:1 on white,
-  /// so light mode uses Red 700 (5.9:1) and dark keeps Red 500.
+  /// so light mode uses Red 700 (5.9:1); dark uses Red 300 (Red 500 is
+  /// only ~3.9:1 on the dark surfaces).
   static Color dangerOnTint(BuildContext context) =>
-      _isDark(context) ? danger : const Color(0xFFB91C1C);
+      _isDark(context) ? red300 : const Color(0xFFB91C1C);
 
   /// Solid dark banner surface: keeps pale brand text readable in
   /// EITHER theme (used for all info banners instead of alpha washes).

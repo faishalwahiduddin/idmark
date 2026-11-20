@@ -68,8 +68,10 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('VERIFIKASI PINJAMAN PT ABC'), findsOneWidget);
-    expect(find.textContaining('Skor 92%'), findsOneWidget);
-    expect(find.textContaining('1 Sensor Sensitif'), findsOneWidget);
+    // Healthy score: no pill (pills only for exceptions); meta is one line.
+    expect(find.textContaining('Skor 92%'), findsNothing);
+    expect(find.textContaining('PNG · 2.0 KB'), findsOneWidget);
+    expect(find.textContaining('1 sensor'), findsOneWidget);
   });
 
   testWidgets('PresetsScreen renders search bar, category chips, and presets catalog', (tester) async {
@@ -100,7 +102,7 @@ void main() {
 
     await tester.pumpAndSettle();
 
-    expect(find.text('Panduan Resmi Kominfo & UU PDP'), findsOneWidget);
+    expect(find.text('Panduan Keamanan Foto KTP'), findsOneWidget);
     expect(find.text('Checklist Aman Sebelum Kirim e-KTP'), findsOneWidget);
     expect(find.text('0 / 5 Selesai'), findsOneWidget);
 

@@ -38,12 +38,12 @@
   "aboutApp": "Ngeunaan Aplikasi",
   "appVersion": "Vérsi",
   "appDomain": "Doméin",
-  "appCompliance": "Standar Patuh",
+  "appCompliance": "Rujukan",
   "appProvider": "Panyadia",
   "clearHistory": "Beresihkeun",
   "historyCleared": "Riwayat tos diberesihkeun.",
   "preferencesReset": "Setélan tos di-reset.",
-  "guideRules": "4 Aturan Pokok Watermark",
+  "guideRules": "4 Aturan Dasar Watermark",
   "guideRule1Title": "Tulis Ngaran & Tujuan",
   "guideRule1Desc": "Ulah ukur nulis \"VÉRIFIKASI\". Tulis lengkep sangkan aman.",
   "guideRule2Title": "Lebetkeun Tanggal",
@@ -73,7 +73,7 @@
   "share": "Bagikeun",
   "resetWatermarkTooltip": "Balikkeun Watermark",
   "configResetKominfo": "Konfigurasi dibalikeun deui kana standar saran Kominfo.",
-  "bannerUuPdp": "Standar UU PDP: Pasang watermark tujuan khusus, kaping, sareng sénsor data sénsitip sateuacan ngabagikeun poto KTP.",
+  "bannerUuPdp": "Sateuacan ngabagikeun poto KTP: lebetkeun tujuan khusus sareng kaping, teras tutup data anu teu diperyogikeun ku panampi.",
   "sensorBoxAdded": "Kotak sénsor \"{label}\" ditambahkeun.",
   "processingOnDevice": "Ngolah Dokumen Dina Alat...",
   "saveDocument": "Simpen Dokumen ({format})",
@@ -108,8 +108,8 @@
   "sensorTypeLabel": "Jinis Sénsor:",
   "positionX": "Posisi X ({percent}%)",
   "positionY": "Posisi Y ({percent}%)",
-  "privacyComplianceIndex": "Indéks Kepatuhan Privasi Dokumen",
-  "complianceChecklistTitle": "Daptar Pariksa Kepatuhan UU PDP No. 27/2022:",
+  "privacyComplianceIndex": "Daptar Pariksa Panangtayungan",
+  "complianceChecklistTitle": "Sateuacan dibagikeun:",
   "checkPurposeTitle": "Tujuan Pamakéan Husus",
   "checkPurposeDesc": "Ngawatesan supados salinan henteu tiasa dialihkeun kana transaksi sanés",
   "checkDateTitle": "Kaping Transaksi Dipintonkeun",
@@ -125,7 +125,7 @@
   "protectionGrade": "Panangtayungan {grade} ({score}%)",
   "viewingOriginal": "Ningali Aslina",
   "holdToCompare": "Tahan: Bandingkeun",
-  "activeWatermarkWithCount": "Watermark Aktip ({count} sénsor)",
+  "activeWatermarkWithCount": "{count, plural, =1{Watermark Aktip (1 sénsor)} other{Watermark Aktip ({count} sénsor)}}",
   "activeWatermarkPreview": "Sawangan Watermark Aktip",
   "changePhoto": "Ganti Poto",
   "deleteImage": "Pupus Gambar",
@@ -143,7 +143,7 @@
   "noWatermarkedDocsDesc": "Dokumen anu parantos dipaparin watermark sareng diékspor bakal kacatet log auditna di dieu.",
   "noHistoryFound": "Henteu kapendak riwayat anu cocog sareng pamilarian.",
   "scoreLabel": "Skor {score}%",
-  "sensitiveSensorsCount": "{count} Sénsor Sénsitip",
+  "sensitiveSensorsCount": "{count, plural, =1{1 sénsor} other{{count} sénsor}}",
   "exifSanitized": "EXIF Diberesihan",
   "sha256Copied": "Hash SHA-256 disalin kana papan klip!",
   "clearHistoryConfirmTitle": "Hapus Sadaya Riwayat?",
@@ -188,14 +188,14 @@
   "checkItem4": "Tanda tangan disénsor upami verifikator henteu nyungkeun conto tanda tangan",
   "checkItem5": "Metadata EXIF sareng koordinat GPS parantos dihapus tina gambar",
   "zeroServerTitle": "Privasi Mutlak (Zero Server Upload)",
-  "zeroServerDesc": "IDMark jalan 100% dina panyungsi atanapi alat lokal anjeun. Poto KTP moal kantos dikirim, disimpen, atanapi diprosés dina sérvér éksternal mana waé.",
+  "zeroServerDesc": "IDMark jalan 100% dina alat anjeun. Poto KTP moal kantos dikirim, disimpen, atanapi diprosés dina sérvér éksternal mana waé.",
   "dataSecuritySanitation": "Sanitasi & Kaamanan Data",
   "autoExifSubtitle": "Mupus tag metadata koordinat GPS sareng modél kaméra tina poto hasil ékspor",
   "defaultExportFormat": "Format Ékspor Default",
   "localDeviceStorage": "Panyimpenan Lokal Alat",
   "resetDefaultsDesc": "Mbalikeun deui citakan sareng setélan téks ka standar pabrik",
   "appLabel": "Aplikasi",
-  "officialKominfoGuide": "Pituduh Resmi Kominfo & UU PDP",
+  "officialKominfoGuide": "Pituduh Kaamanan Poto KTP",
   "privacyAndSettings": "Privasi & Setelan",
   "@historySubtitle": {
     "placeholders": {
@@ -368,9 +368,8 @@
   "validationPresetTitleMaxLength": "Nami preset maksimal 50 karakter",
   "validationPresetCategoryRequired": "Kategori preset teu kenging kosong",
   "validationPresetCategoryMaxLength": "Kategori maksimal 30 karakter",
-
   "customPresetSaveFailed": "Preset gagal disimpen. Cobian deui.",
-  "privacyGradeDescMax": "Panangtayungan Maksimal • Nyumponan standar panangtayungan data",
+  "privacyGradeDescMax": "Panangtayungan kuat • Sadaya daptar pariksa kaeusi",
   "privacyGradeDescVeryGood": "Panangtayungan Sae Pisan • Dokumén aman dibagikeun",
   "privacyGradeDescFair": "Panangtayungan Cukup • Disarankeun nambihan tanggal sareng sensor NIK",
   "privacyGradeDescWeak": "Panangtayungan Lemah • Tambihkeun tujuan spésifik sareng tanggal",
@@ -486,7 +485,7 @@
   "targetBirthPlace": "Tempat / Tgl Lahir",
   "targetPhoto": "Poto Beungeut",
   "shareProofTitle": "Bukti Protéksi Dokumén",
-  "shareProofSubtitle": "Sertipikat integritas watermark & sensor luyu jeung Kominfo",
+  "shareProofSubtitle": "Kasimpulan watermark sareng sénsor dina salinan ieu",
   "shareFormatFeed": "Unggahan (4:5)",
   "shareFormatStory": "Carita (9:16)",
   "shareCopyText": "Salin Téks",
@@ -499,7 +498,7 @@
   "shareCardPurposeLabel": "PIKEUN KAPERLUAN KHUSUS:",
   "shareCardPrivacyScore": "SKOR PRIVASI",
   "shareCardRedactions": "SENSOR",
-  "shareCardAreaCount": "{count} Wewengkon",
+  "shareCardAreaCount": "{count, plural, =1{1 wewengkon} other{{count} wewengkon}}",
   "@shareCardAreaCount": {
     "placeholders": {
       "count": {
@@ -516,7 +515,7 @@
       }
     }
   },
-  "shareCardFooter": "idmark.faishal.id • Standar Watermark KTP Kominfo RI",
+  "shareCardFooter": "idmark.faishal.id • diprosés dina alat",
   "shareCardIntegrityHash": "HASH INTEGRITAS (SHA-256):",
   "shareProofHeading": "🛡️ BUKTI PROTÉKSI DOKUMÉN — IDMARK",
   "shareProofPurposeLine": "📌 Kaperluan Khusus: \"{purpose}\"",
@@ -543,7 +542,7 @@
       }
     }
   },
-  "shareProofRedactionLine": "✂️ Sensor Permanén: {count} Wewengkon Katutup",
+  "shareProofRedactionLine": "{count, plural, =1{✂️ Sénsor permanén: 1 wewengkon katutup} other{✂️ Sénsor permanén: {count} wewengkon katutup}}",
   "@shareProofRedactionLine": {
     "placeholders": {
       "count": {
@@ -559,7 +558,7 @@
       }
     }
   },
-  "shareProofOnDeviceLine": "✅ Diprosés 100% on-device tanpa server (Luyu jeung Panduan Kominfo RI)",
+  "shareProofOnDeviceLine": "✅ Diprosés 100% dina alat, tanpa server",
   "shareProofCtaLine": "Ngajaga identitas anjeun ku IDMark: https://idmark.faishal.id",
   "shareProofDownloaded": "Sertipikat protéksi dokumén hasil diundeur! 🛡️✨",
   "shareProofFailed": "Gagal ngabagikeun bukti: {error}",
@@ -640,5 +639,23 @@
   "commercialContactDesc": "Peryogi lisénsi komérsial, white-label, atawa kustomisasi? Hubungi kami.",
   "acquireAppTitle": "Akuisisi aplikasi ieu",
   "acquireAppDesc": "Resep ngaakuisisi aplikasi ieu sarta source code jeung asetna? Hayu urang obrolkeun.",
-  "contactEmailCopied": "Alamat surélék disalin: contact@faishal.id"
+  "contactEmailCopied": "Alamat surélék disalin: contact@faishal.id",
+  "placeholderUnfilled": "Ganti {placeholder} ku ngaran saleresna sateuacan ngékspor.",
+  "savedToGallery": "Disimpen di Galeri › Pictures/IDMark",
+  "savedToDownloads": "Disimpen di File › Download/IDMark",
+  "saveViaShareHint": "Pikeun nyimpen salinan, pilih \"Simpen gambar\" atanapi \"Simpen ka File\" dina lambaran bagikeun.",
+  "redactionWidth": "Rubak ({value}%)",
+  "redactionHeight": "Jangkung ({value}%)",
+  "redactionDragHint": "Sered kotak dina poto pikeun mindahkeunana. Sered titik juruna pikeun ngarobah ukuran.",
+  "redactionWeakWarning": "Buram sareng mosaik dina téks leutik sapertos NIK sakapeung tiasa dipulihkeun. Anggo Blackout kanggo NIK.",
+  "historyEntryDeleted": "Éntri dipupus",
+  "undo": "Bolaykeun",
+  "deleteEntry": "Pupus éntri",
+  "notLegalAdvice": "Ngan pituduh kaamanan, lain naséhat hukum sareng lain sértifikasi resmi.",
+  "tabRedactShort": "Sénsor",
+  "tabPrivacyShort": "Privasi",
+  "tabFormatShort": "Format",
+  "redactionBoxSemantics": "Kotak sénsor {label}. Sered pikeun mindahkeun.",
+  "resizeRedaction": "Robah ukuran kotak sénsor",
+  "exportFormatSessionNote": "Lumaku pikeun ékspor ieu. Format bawaan disetél dina Setélan."
 }

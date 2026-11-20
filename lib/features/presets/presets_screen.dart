@@ -412,13 +412,16 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    l10n.patternInfo(preset.defaultPattern.labelOf(l10n)),
-                    style: const TextStyle(
-                      fontSize: 11,
-                      color: Color(0xFF94A3B8),
+                  Expanded(
+                    child: Text(
+                      l10n.patternInfo(preset.defaultPattern.labelOf(l10n)),
+                      style: const TextStyle(
+                        fontSize: 11,
+                        color: Color(0xFF94A3B8),
+                      ),
                     ),
                   ),
+                  const SizedBox(width: 8),
                   PressScale(
                     scale: 0.97,
                     child: ElevatedButton.icon(
@@ -429,14 +432,22 @@ class _PresetsScreenState extends ConsumerState<PresetsScreen> {
                               .applyPreset(preset),
                         );
                         context.go('/');
+                        // Presets carry placeholders like [NAMA BANK]: say
+                        // what to fill in, the field highlights it too.
+                        final ph = WatermarkConfig.placeholderPattern
+                            .firstMatch(preset.samplePurpose)
+                            ?.group(0);
+                        final applied = l10n.presetApplied(
+                          presetTitleLabel(preset.id, preset.title, l10n),
+                        );
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             content: Text(
-                              l10n.presetApplied(
-                                presetTitleLabel(preset.id, preset.title, l10n),
-                              ),
+                              ph == null
+                                  ? applied
+                                  : '$applied ${l10n.placeholderUnfilled(ph)}',
                             ),
-                            duration: const Duration(seconds: 2),
+                            duration: Duration(seconds: ph == null ? 2 : 5),
                           ),
                         );
                       },

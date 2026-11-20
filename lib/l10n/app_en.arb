@@ -38,12 +38,12 @@
   "aboutApp": "About App",
   "appVersion": "Version",
   "appDomain": "Domain",
-  "appCompliance": "Compliance Standard",
+  "appCompliance": "Reference",
   "appProvider": "Provider",
   "clearHistory": "Clear",
   "historyCleared": "Audit log history cleared.",
   "preferencesReset": "Preferences successfully reset to Kominfo recommendations.",
-  "guideRules": "4 Main Rules of Kominfo Watermark",
+  "guideRules": "4 Watermark Rules of Thumb",
   "guideRule1Title": "Write Agency Name & Specific Purpose",
   "guideRule1Desc": "Don't just write \"VERIFICATION\". Write completely like \"PT BANK ABC LOAN VERIFICATION\". This prevents others from using the photo elsewhere.",
   "guideRule2Title": "Include Complete Transaction Date",
@@ -73,7 +73,7 @@
   "share": "Share",
   "resetWatermarkTooltip": "Reset Watermark",
   "configResetKominfo": "Configuration reset to Kominfo recommended standards.",
-  "bannerUuPdp": "PDP Law Standard: Add specific purpose watermark, date, and redact sensitive data before sharing ID card photos.",
+  "bannerUuPdp": "Before sharing an ID photo: add a specific purpose and the date, and cover data the recipient does not need.",
   "sensorBoxAdded": "Sensor box \"{label}\" added.",
   "processingOnDevice": "Processing Document On-Device...",
   "saveDocument": "Save Document ({format})",
@@ -108,8 +108,8 @@
   "sensorTypeLabel": "Redaction Type:",
   "positionX": "Position X ({percent}%)",
   "positionY": "Position Y ({percent}%)",
-  "privacyComplianceIndex": "Document Privacy Compliance Index",
-  "complianceChecklistTitle": "PDP Law No. 27/2022 Compliance Checklist:",
+  "privacyComplianceIndex": "Protection Checklist",
+  "complianceChecklistTitle": "Before you share:",
   "checkPurposeTitle": "Specific Purpose of Use",
   "checkPurposeDesc": "Limits copy usage so it cannot be diverted to other transactions",
   "checkDateTitle": "Transaction Date Included",
@@ -125,7 +125,7 @@
   "protectionGrade": "Protection {grade} ({score}%)",
   "viewingOriginal": "Viewing Original",
   "holdToCompare": "Hold: Compare",
-  "activeWatermarkWithCount": "Active Watermark ({count} redactions)",
+  "activeWatermarkWithCount": "{count, plural, =1{Active Watermark (1 redaction)} other{Active Watermark ({count} redactions)}}",
   "activeWatermarkPreview": "Active Watermark Preview",
   "changePhoto": "Change Photo",
   "deleteImage": "Delete Image",
@@ -143,7 +143,7 @@
   "noWatermarkedDocsDesc": "Documents that you have watermarked and exported will have their audit logs recorded here.",
   "noHistoryFound": "No history found matching your search.",
   "scoreLabel": "Score {score}%",
-  "sensitiveSensorsCount": "{count} Sensitive Redactions",
+  "sensitiveSensorsCount": "{count, plural, =1{1 redaction} other{{count} redactions}}",
   "exifSanitized": "EXIF Sanitized",
   "sha256Copied": "SHA-256 hash copied to clipboard!",
   "clearHistoryConfirmTitle": "Clear All History?",
@@ -188,14 +188,14 @@
   "checkItem4": "Signature redacted if verifier does not request a signature specimen",
   "checkItem5": "EXIF metadata and GPS coordinates removed from image",
   "zeroServerTitle": "Absolute Privacy (Zero Server Upload)",
-  "zeroServerDesc": "IDMark runs 100% in your browser or local device. ID card photos are never sent, stored, or processed on any external server.",
+  "zeroServerDesc": "IDMark runs 100% on your device. ID card photos are never sent, stored, or processed on any external server.",
   "dataSecuritySanitation": "Data Sanitation & Security",
   "autoExifSubtitle": "Removes GPS coordinate metadata tags and camera model from exported photos",
   "defaultExportFormat": "Default Export Format",
   "localDeviceStorage": "Local Device Storage",
   "resetDefaultsDesc": "Reset templates and text settings to factory defaults",
   "appLabel": "Application",
-  "officialKominfoGuide": "Official Kominfo & PDP Law Guide",
+  "officialKominfoGuide": "ID Photo Safety Guide",
   "privacyAndSettings": "Privacy & Settings",
   "@historySubtitle": {
     "placeholders": {
@@ -374,9 +374,8 @@
   "validationPresetTitleMaxLength": "Preset name cannot exceed 50 characters",
   "validationPresetCategoryRequired": "Preset category cannot be empty",
   "validationPresetCategoryMaxLength": "Category cannot exceed 30 characters",
-
   "customPresetSaveFailed": "Failed to save the preset. Please try again.",
-  "privacyGradeDescMax": "Maximum Protection • Meets data privacy standards",
+  "privacyGradeDescMax": "Strong protection • All checklist items done",
   "privacyGradeDescVeryGood": "Strong Protection • Document is safe to share",
   "privacyGradeDescFair": "Moderate Protection • Consider adding date and redacting ID",
   "privacyGradeDescWeak": "Basic Protection • Add a specific purpose and date",
@@ -492,7 +491,7 @@
   "targetBirthPlace": "Place / Date of Birth",
   "targetPhoto": "Face Photo",
   "shareProofTitle": "Document Protection Proof",
-  "shareProofSubtitle": "Watermark & redaction integrity certificate per Kominfo",
+  "shareProofSubtitle": "Summary of the watermark and redactions on this copy",
   "shareFormatFeed": "Feed (4:5)",
   "shareFormatStory": "Story (9:16)",
   "shareCopyText": "Copy Text",
@@ -505,7 +504,7 @@
   "shareCardPurposeLabel": "FOR THE SPECIFIC PURPOSE:",
   "shareCardPrivacyScore": "PRIVACY SCORE",
   "shareCardRedactions": "REDACTIONS",
-  "shareCardAreaCount": "{count} Areas",
+  "shareCardAreaCount": "{count, plural, =1{1 area} other{{count} areas}}",
   "@shareCardAreaCount": {
     "placeholders": {
       "count": {
@@ -522,7 +521,7 @@
       }
     }
   },
-  "shareCardFooter": "idmark.faishal.id • Kominfo RI ID watermark standard",
+  "shareCardFooter": "idmark.faishal.id • processed on-device",
   "shareCardIntegrityHash": "INTEGRITY HASH (SHA-256):",
   "shareProofHeading": "🛡️ DOCUMENT PROTECTION PROOF — IDMARK",
   "shareProofPurposeLine": "📌 Specific purpose: \"{purpose}\"",
@@ -549,7 +548,7 @@
       }
     }
   },
-  "shareProofRedactionLine": "✂️ Permanent redactions: {count} areas covered",
+  "shareProofRedactionLine": "{count, plural, =1{✂️ Permanent redactions: 1 area covered} other{✂️ Permanent redactions: {count} areas covered}}",
   "@shareProofRedactionLine": {
     "placeholders": {
       "count": {
@@ -565,7 +564,7 @@
       }
     }
   },
-  "shareProofOnDeviceLine": "✅ Processed 100% on-device, no server (per Kominfo RI guidance)",
+  "shareProofOnDeviceLine": "✅ Processed 100% on-device, no server",
   "shareProofCtaLine": "Protect your identity with IDMark: https://idmark.faishal.id",
   "shareProofDownloaded": "Document protection certificate downloaded! 🛡️✨",
   "shareProofFailed": "Failed to share proof: {error}",
@@ -661,5 +660,23 @@
   "contactEmailCopied": "Email address copied: contact@faishal.id",
   "@contactEmailCopied": {
     "description": "Snackbar shown when the contact email is copied because no mail app could be opened"
-  }
+  },
+  "placeholderUnfilled": "Replace {placeholder} with the real name before exporting.",
+  "savedToGallery": "Saved to Gallery › Pictures/IDMark",
+  "savedToDownloads": "Saved to Files › Download/IDMark",
+  "saveViaShareHint": "To keep a copy, choose \"Save image\" or \"Save to Files\" in the share sheet.",
+  "redactionWidth": "Width ({value}%)",
+  "redactionHeight": "Height ({value}%)",
+  "redactionDragHint": "Drag a box on the photo to move it. Drag its corner dot to resize.",
+  "redactionWeakWarning": "Blur and mosaic can sometimes be undone on small text such as an ID number. Use Blackout for the NIK.",
+  "historyEntryDeleted": "Entry removed",
+  "undo": "Undo",
+  "deleteEntry": "Delete entry",
+  "notLegalAdvice": "Safety guidance only, not legal advice and not an official certification.",
+  "tabRedactShort": "Redact",
+  "tabPrivacyShort": "Privacy",
+  "tabFormatShort": "Format",
+  "redactionBoxSemantics": "Redaction box {label}. Drag to move.",
+  "resizeRedaction": "Resize redaction box",
+  "exportFormatSessionNote": "Applies to this export. The default format is set in Settings."
 }

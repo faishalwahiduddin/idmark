@@ -9,7 +9,6 @@ import '../../core/providers/app_providers.dart';
 import '../../core/providers/timezone_provider.dart';
 import '../../core/utils/app_timezone.dart';
 import '../../l10n/app_localizations.dart';
-import 'widgets/discipline_badge.dart';
 import '../../core/theme/app_numeric.dart';
 
 class HistoryScreen extends ConsumerStatefulWidget {
@@ -47,9 +46,6 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
         physics: AppScroll.physics,
         padding: AppScroll.pagePadding(context),
         children: [
-          // Gamifikasi: N file watermark + tier disiplin.
-          const DisciplineBadge(),
-          const SizedBox(height: 12),
           // Security Overview Banner (solid surface: readable either theme)
           Container(
             padding: const EdgeInsets.all(16),
@@ -187,170 +183,192 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
     final dateFormat = '$day-$month-${z.year}, $hour:$minute';
     final sizeKb = (entry.fileSizeBytes / 1024).toStringAsFixed(1);
 
+    final meta = [
+      '${entry.exportFormat} · $sizeKb KB',
+      entry.pattern,
+      if (entry.redactionsCount > 0) l10n.sensitiveSensorsCount(entry.redactionsCount),
+      if (entry.metadataStripped) l10n.exifSanitized,
+    ].join(' · ');
+    final lowScore = entry.privacyScore < 80;
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
-      child: Card(
-        color: AppColors.bgCard,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(18),
-          side: BorderSide(color: AppColors.subtleBorder(context, alpha: 0.1)),
+      child: Dismissible(
+        key: ValueKey('audit-${entry.id}'),
+        direction: DismissDirection.endToStart,
+        background: Container(
+          alignment: Alignment.centerRight,
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          decoration: BoxDecoration(
+            color: AppColors.danger,
+            borderRadius: BorderRadius.circular(18),
+          ),
+          child: const Icon(Icons.delete_outline, color: Colors.white),
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Row 1: Timestamp & Score
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      const Icon(Icons.access_time, size: 14, color: Color(0xFF94A3B8)),
-                      const SizedBox(width: 6),
-                      Text(
+        onDismissed: (_) => _deleteEntry(entry),
+        child: Card(
+          margin: EdgeInsets.zero,
+          color: AppColors.bgCard,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(18),
+            side: BorderSide(color: AppColors.subtleBorder(context, alpha: 0.1)),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(16, 8, 4, 16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Row 1: timestamp, one exception pill (low score), menu.
+                Row(
+                  children: [
+                    const Icon(Icons.access_time, size: 14, color: AppColors.slate400),
+                    const SizedBox(width: 6),
+                    Expanded(
+                      child: Text(
                         dateFormat,
-                        style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8), fontFeatures: AppNumeric.tabularFeatures),
+                        style: const TextStyle(fontSize: 12, color: AppColors.slate400, fontFeatures: AppNumeric.tabularFeatures),
                       ),
-                    ],
-                  ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: entry.privacyScore >= 80
-                          ? AppColors.accent.withValues(alpha: 0.2)
-                          : AppColors.warning.withValues(alpha: 0.2),
-                      borderRadius: BorderRadius.circular(6),
                     ),
-                    child: Row(
-                      children: [
-                        Icon(
-                          entry.privacyScore >= 80 ? Icons.shield : Icons.warning_amber,
-                          size: 12,
-                          color: entry.privacyScore >= 80 ? AppColors.accent : AppColors.warning,
+                    if (lowScore)
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        decoration: BoxDecoration(
+                          color: AppColors.bgSurface,
+                          borderRadius: BorderRadius.circular(6),
+                          border: Border.all(color: AppColors.warning),
                         ),
-                        const SizedBox(width: 4),
-                        Text(
-                          l10n.scoreLabel(entry.privacyScore),
-                          style: TextStyle(
-                            fontSize: 11,
-                            fontWeight: FontWeight.w700,
-                            color: entry.privacyScore >= 80 ? AppColors.accentText : AppColors.warningText,
-                            fontFeatures: AppNumeric.tabularFeatures,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const Icon(Icons.warning_amber, size: 12, color: AppColors.warning),
+                            const SizedBox(width: 4),
+                            Text(
+                              l10n.scoreLabel(entry.privacyScore),
+                              style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w700,
+                                    fontFeatures: AppNumeric.tabularFeatures,
+                                  ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    PopupMenuButton<String>(
+                      tooltip: l10n.deleteEntry,
+                      icon: const Icon(Icons.more_vert, size: 20, color: AppColors.slate400),
+                      color: AppColors.bgSurface,
+                      onSelected: (_) => _deleteEntry(entry),
+                      itemBuilder: (_) => [
+                        PopupMenuItem(
+                          value: 'delete',
+                          child: Row(
+                            children: [
+                              const Icon(Icons.delete_outline, size: 18, color: AppColors.danger),
+                              const SizedBox(width: 10),
+                              Text(l10n.deleteEntry, style: const TextStyle(color: Colors.white)),
+                            ],
                           ),
                         ),
                       ],
                     ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 12),
-
-              // Row 2: Purpose
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                decoration: BoxDecoration(
-                  color: AppColors.bgSurface,
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: AppColors.border),
-                ),
-                child: Text(
-                  entry.purpose,
-                  style: const TextStyle(
-                    fontSize: 13,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white,
-                    fontFamily: 'monospace',
-                  ),
-                ),
-              ),
-              const SizedBox(height: 12),
-
-              // Row 3: Badges
-              Wrap(
-                spacing: 8,
-                runSpacing: 6,
-                children: [
-                  _buildTag(Icons.image_outlined, '${entry.exportFormat} ($sizeKb KB)'),
-                  _buildTag(Icons.grid_goldenratio, entry.pattern),
-                  if (entry.redactionsCount > 0)
-                    _buildTag(Icons.visibility_off_outlined, l10n.sensitiveSensorsCount(entry.redactionsCount),
-                        color: AppColors.primaryLight),
-                  if (entry.metadataStripped)
-                    _buildTag(Icons.cleaning_services_outlined, l10n.exifSanitized, color: AppColors.accent),
-                ],
-              ),
-              const SizedBox(height: 12),
-
-              // Row 4: SHA-256 Checksum
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                decoration: BoxDecoration(
-                  color: AppColors.bgDark,
-                  borderRadius: BorderRadius.circular(6),
-                ),
-                child: Row(
-                  children: [
-                    const Text(
-                      'SHA-256: ',
-                      style: TextStyle(fontSize: 10, color: Color(0xFF94A3B8), fontWeight: FontWeight.bold),
-                    ),
-                    Expanded(
-                      child: Text(
-                        entry.sha256Hash.length > 24
-                            ? '${entry.sha256Hash.substring(0, 16)}...${entry.sha256Hash.substring(entry.sha256Hash.length - 8)}'
-                            : entry.sha256Hash,
-                        style: const TextStyle(
-                          fontSize: 10,
-                          fontFamily: 'monospace',
-                          color: Color(0xFF94A3B8),
-                        ),
-                      ),
-                    ),
-                    // §A11Y: 14dp glyph needs an explicit 44dp hit area.
-                    TapTarget(
-                      minSize: 44,
-                      semanticLabel: l10n.sha256Copied,
-                      onTap: () {
-                        Clipboard.setData(ClipboardData(text: entry.sha256Hash));
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text(l10n.sha256Copied),
-                            duration: const Duration(seconds: 2),
-                          ),
-                        );
-                      },
-                      child: const Icon(Icons.copy, size: 14, color: AppColors.primaryLight),
-                    ),
                   ],
                 ),
-              ),
-            ],
+                const SizedBox(height: 4),
+                Padding(
+                  padding: const EdgeInsets.only(right: 12),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Row 2: purpose (the content), then one line of meta.
+                      Text(
+                        entry.purpose,
+                        style: const TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white,
+                          fontFamily: 'monospace',
+                        ),
+                      ),
+                      const SizedBox(height: 6),
+                      Text(
+                        meta,
+                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                              color: AppColors.slate400,
+                              fontFeatures: AppNumeric.tabularFeatures,
+                            ),
+                      ),
+                      const SizedBox(height: 10),
+
+                      // Row 3: SHA-256 checksum
+                      Container(
+                        padding: const EdgeInsets.only(left: 10),
+                        decoration: BoxDecoration(
+                          color: AppColors.bgDark,
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        child: Row(
+                          children: [
+                            const Text(
+                              'SHA-256: ',
+                              style: TextStyle(fontSize: 10, color: AppColors.slate400, fontWeight: FontWeight.bold),
+                            ),
+                            Expanded(
+                              child: Text(
+                                entry.sha256Hash.length > 24
+                                    ? '${entry.sha256Hash.substring(0, 16)}...${entry.sha256Hash.substring(entry.sha256Hash.length - 8)}'
+                                    : entry.sha256Hash,
+                                style: const TextStyle(
+                                  fontSize: 10,
+                                  fontFamily: 'monospace',
+                                  color: AppColors.slate400,
+                                ),
+                              ),
+                            ),
+                            // §A11Y: 14dp glyph needs an explicit 44dp hit area.
+                            TapTarget(
+                              minSize: 44,
+                              semanticLabel: l10n.sha256Copied,
+                              onTap: () {
+                                Clipboard.setData(ClipboardData(text: entry.sha256Hash));
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(l10n.sha256Copied),
+                                    duration: const Duration(seconds: 2),
+                                  ),
+                                );
+                              },
+                              child: const Icon(Icons.copy, size: 14, color: AppColors.primaryLight),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 
-  Widget _buildTag(IconData icon, String text, {Color color = const Color(0xFF94A3B8)}) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-      decoration: BoxDecoration(
-        color: AppColors.bgSurface,
-        borderRadius: BorderRadius.circular(6),
-        border: Border.all(color: AppColors.border),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(icon, size: 12, color: color),
-          const SizedBox(width: 5),
-          Text(
-            text,
-            style: TextStyle(fontSize: 11, color: color, fontWeight: FontWeight.w600, fontFeatures: AppNumeric.tabularFeatures),
-          ),
-        ],
+  /// Deletes one entry with an Undo snackbar (restores it in place).
+  Future<void> _deleteEntry(AuditLogEntry entry) async {
+    final l10n = AppLocalizations.of(context)!;
+    final messenger = ScaffoldMessenger.of(context);
+    final notifier = ref.read(auditLogsProvider.notifier);
+    final removed = await notifier.deleteEntry(entry.id);
+    if (removed == null) return;
+    messenger.hideCurrentSnackBar();
+    messenger.showSnackBar(
+      SnackBar(
+        content: Text(l10n.historyEntryDeleted),
+        duration: const Duration(seconds: 5),
+        action: SnackBarAction(
+          label: l10n.undo,
+          onPressed: () => notifier.restoreEntry(removed.$1, removed.$2),
+        ),
       ),
     );
   }

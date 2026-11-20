@@ -14,6 +14,7 @@ import '../../core/models/redaction_item.dart';
 import '../../core/models/watermark_config.dart';
 import '../../core/providers/app_providers.dart';
 import '../../core/providers/timezone_provider.dart';
+import '../../core/services/document_saver.dart';
 import '../../core/services/pdf_export_service.dart';
 import '../../core/services/watermark_renderer_service.dart';
 import '../../core/utils/app_timezone.dart';
@@ -40,6 +41,8 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
       final result = await picker.pickImage(source);
       if (result != null) {
         ref.read(selectedImageBytesProvider.notifier).setImage(result.bytes);
+        // A new photo is a new copy: stamp today's date, not a stale one.
+        await ref.read(watermarkConfigProvider.notifier).resetDateToToday();
       }
     } catch (e) {
       if (mounted) {
@@ -53,127 +56,200 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
     }
   }
 
-  Future<void> _exportWatermarkedImage({bool isShare = false}) async {
+  /// Renders the current config into the effective export format, records
+  /// the audit entry (with the real format) and returns the file.
+  Future<_ExportedFile?> _renderExport() async {
     final l10n = AppLocalizations.of(context);
+    final messenger = ScaffoldMessenger.of(context);
     final imageBytes = ref.read(selectedImageBytesProvider);
     if (imageBytes == null) {
-      ScaffoldMessenger.of(context).showSnackBar(
+      messenger.showSnackBar(
         SnackBar(
           content: Text(l10n?.selectImageFirst ?? 'Pilih atau ambil foto KTP terlebih dahulu.'),
           backgroundColor: AppColors.warning,
         ),
       );
-      return;
+      return null;
     }
 
     final config = ref.read(watermarkConfigProvider);
     final validationErrors = config.validate();
     if (validationErrors.isNotEmpty) {
       final firstErr = l10n != null ? mapValidationError(validationErrors.first, l10n) : validationErrors.first;
-      ScaffoldMessenger.of(context).showSnackBar(
+      messenger.showSnackBar(
         SnackBar(
           content: Text(l10n?.checkConfigError(firstErr ?? validationErrors.first) ?? 'Periksa konfigurasi: $firstErr'),
           backgroundColor: AppColors.danger,
         ),
       );
-      return;
+      return null;
     }
 
+    // A preset placeholder such as [NAMA BANK] must never be burned in.
+    final placeholders = config.unfilledPlaceholders;
+    if (placeholders.isNotEmpty) {
+      messenger.showSnackBar(
+        SnackBar(
+          content: Text(
+            l10n?.placeholderUnfilled(placeholders.first) ??
+                'Ganti ${placeholders.first} dengan nama sebenarnya sebelum mengekspor.',
+          ),
+          backgroundColor: AppColors.danger,
+        ),
+      );
+      return null;
+    }
+
+    final format = ref.read(effectiveExportFormatProvider);
     ref.read(isProcessingProvider.notifier).setProcessing(true);
     try {
       final decoded = await WatermarkRendererService.decodeImage(imageBytes);
       final loc = ref.read(timezoneLocationProvider);
-      final renderedBytes = await WatermarkRendererService.renderWatermark(
-        sourceImage: decoded,
-        config: config,
-        zone: loc,
-      );
-
-      final sha256Hash = WatermarkRendererService.computeSha256(renderedBytes);
-
-      Uint8List finalOutputBytes;
-      String filename;
-      String mimeType;
       final exportStamp = AppTimeZone.nowUtc().millisecondsSinceEpoch;
 
-      if (config.exportFormat == ExportFormat.pdf) {
-        finalOutputBytes = await PdfExportService.generatePdfDocument(
-          imageBytes: renderedBytes,
+      final Uint8List bytes;
+      final String sha256Hash;
+      if (format == ExportFormat.pdf) {
+        final png = await WatermarkRendererService.renderWatermark(
+          sourceImage: decoded,
+          config: config,
+          zone: loc,
+        );
+        sha256Hash = WatermarkRendererService.computeSha256(png);
+        bytes = await PdfExportService.generatePdfDocument(
+          imageBytes: png,
           config: config,
           sha256Checksum: sha256Hash,
           zone: loc,
           l10n: l10n,
         );
-        filename = 'idmark_$exportStamp.pdf';
-        mimeType = 'application/pdf';
       } else {
-        finalOutputBytes = renderedBytes;
-        filename = 'idmark_$exportStamp.png';
-        mimeType = 'image/png';
+        bytes = await WatermarkRendererService.renderWatermarkAs(
+          sourceImage: decoded,
+          config: config,
+          format: format,
+          zone: loc,
+        );
+        sha256Hash = WatermarkRendererService.computeSha256(bytes);
       }
+      final file = _ExportedFile(
+        bytes: bytes,
+        sha256: sha256Hash,
+        format: format,
+        filename: 'idmark_$exportStamp.${_extensionOf(format)}',
+        config: config,
+      );
 
       // Record to local-only audit log (storage contract §TZ: UTC instant).
-      final auditEntry = AuditLogEntry(
-        id: 'audit_$exportStamp',
-        timestamp: AppTimeZone.nowUtc(),
-        purpose: config.purpose,
-        pattern: l10n == null ? config.pattern.label : config.pattern.labelOf(l10n),
-        exportFormat: config.exportFormat == ExportFormat.pdf ? 'PDF' : 'PNG',
-        fileSizeBytes: finalOutputBytes.lengthInBytes,
-        sha256Hash: sha256Hash,
-        redactionsCount: config.redactions.length,
-        metadataStripped: config.stripMetadata,
-        privacyScore: config.privacyScore,
-      );
-      await ref.read(auditLogsProvider.notifier).recordExport(auditEntry);
-
-      if (!mounted) return;
-
-      if (isShare) {
-        if (kIsWeb) {
-          downloadFileWeb(finalOutputBytes, filename, mimeType: mimeType);
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(
-                l10n?.downloadSuccess(filename) ??
-                    'Dokumen ter-watermark berhasil diunduh ($filename)! 🛡️✨',
-              ),
-              backgroundColor: AppColors.accent,
+      await ref.read(auditLogsProvider.notifier).recordExport(
+            AuditLogEntry(
+              id: 'audit_$exportStamp',
+              timestamp: AppTimeZone.nowUtc(),
+              purpose: config.purpose,
+              pattern: l10n == null ? config.pattern.label : config.pattern.labelOf(l10n),
+              exportFormat: format.name.toUpperCase(),
+              fileSizeBytes: bytes.lengthInBytes,
+              sha256Hash: sha256Hash,
+              redactionsCount: config.redactions.length,
+              metadataStripped: config.stripMetadata,
+              privacyScore: config.privacyScore,
             ),
           );
-        } else {
-          final xFile = XFile.fromData(
-            finalOutputBytes,
-            name: filename,
-            mimeType: mimeType,
-          );
-          await SharePlus.instance.share(
-            ShareParams(
-              files: [xFile],
-              subject: l10n?.shareSubject(config.purpose) ?? 'Dokumen Identitas Ter-Watermark - ${config.purpose}',
-              text: l10n?.shareText(config.purpose) ?? 'Dokumen identitas ter-watermark aman via IDMark (${config.purpose}) • 100% on-device',
-            ),
-          );
-        }
-      } else {
-        _showExportSuccessDialog(finalOutputBytes, sha256Hash, config);
-      }
+      return file;
     } catch (e) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(l10n?.failedToExport(e.toString()) ?? 'Gagal mengekspor dokumen: $e'),
-            backgroundColor: AppColors.danger,
-          ),
-        );
-      }
+      messenger.showSnackBar(
+        SnackBar(
+          content: Text(l10n?.failedToExport(e.toString()) ?? 'Gagal mengekspor dokumen: $e'),
+          backgroundColor: AppColors.danger,
+        ),
+      );
+      return null;
     } finally {
       ref.read(isProcessingProvider.notifier).setProcessing(false);
     }
   }
 
-  void _showExportSuccessDialog(Uint8List bytes, String sha256Hash, WatermarkConfig config) {
+  static String _extensionOf(ExportFormat f) => switch (f) {
+        ExportFormat.png => 'png',
+        ExportFormat.jpeg => 'jpg',
+        ExportFormat.pdf => 'pdf',
+      };
+
+  static String _mimeOf(ExportFormat f) => switch (f) {
+        ExportFormat.png => 'image/png',
+        ExportFormat.jpeg => 'image/jpeg',
+        ExportFormat.pdf => 'application/pdf',
+      };
+
+  /// "Save Document": writes the file to shared storage where the platform
+  /// allows it (Android: Pictures/IDMark or Download/IDMark), downloads it
+  /// on the web, and otherwise opens the share sheet so the user can pick
+  /// "Save image" / "Save to Files". Never a silent no-op.
+  Future<void> _saveDocument() async {
     final l10n = AppLocalizations.of(context);
+    final file = await _renderExport();
+    if (file == null || !mounted) return;
+
+    String? savedLabel;
+    if (kIsWeb) {
+      downloadFileWeb(file.bytes, file.filename, mimeType: _mimeOf(file.format));
+      savedLabel = l10n?.downloadSuccess(file.filename) ?? 'Dokumen ter-watermark berhasil diunduh (${file.filename})!';
+    } else {
+      final saved = await ref.read(documentSaverProvider).save(
+            file.bytes,
+            file.filename,
+            isImage: file.format != ExportFormat.pdf,
+          );
+      if (!mounted) return;
+      if (saved != null) {
+        savedLabel = saved.location == SavedLocation.pictures
+            ? (l10n?.savedToGallery ?? 'Tersimpan di Galeri › Pictures/IDMark')
+            : (l10n?.savedToDownloads ?? 'Tersimpan di File › Download/IDMark');
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              l10n?.saveViaShareHint ??
+                  'Untuk menyimpan salinan, pilih "Simpan gambar" atau "Simpan ke File" di lembar berbagi.',
+            ),
+            duration: const Duration(seconds: 4),
+          ),
+        );
+        await _shareFile(file);
+        if (!mounted) return;
+      }
+    }
+    _showExportSuccessDialog(file, savedLabel);
+  }
+
+  /// "Share Directly": render once and open the share sheet.
+  Future<void> _shareDirect() async {
+    final file = await _renderExport();
+    if (file == null || !mounted) return;
+    await _shareFile(file);
+  }
+
+  Future<void> _shareFile(_ExportedFile file) async {
+    final l10n = AppLocalizations.of(context);
+    final purpose = file.config.purpose;
+    if (kIsWeb) {
+      downloadFileWeb(file.bytes, file.filename, mimeType: _mimeOf(file.format));
+      return;
+    }
+    await SharePlus.instance.share(
+      ShareParams(
+        files: [XFile.fromData(file.bytes, name: file.filename, mimeType: _mimeOf(file.format))],
+        subject: l10n?.shareSubject(purpose) ?? 'Dokumen Identitas Ter-Watermark - $purpose',
+        text: l10n?.shareText(purpose) ?? 'Dokumen identitas ter-watermark aman via IDMark ($purpose) • 100% on-device',
+      ),
+    );
+  }
+
+  void _showExportSuccessDialog(_ExportedFile file, String? savedLabel) {
+    final l10n = AppLocalizations.of(context);
+    final hash = file.sha256;
+    final config = file.config;
+    final loc = ref.read(timezoneLocationProvider);
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
@@ -182,114 +258,129 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
           children: [
             const Icon(Icons.check_circle_outline, color: AppColors.accent, size: 24),
             const SizedBox(width: 10),
-            Text(l10n?.watermarkDone ?? 'Watermark Selesai!', style: const TextStyle(color: Colors.white, fontSize: 18)),
+            Expanded(
+              child: Text(l10n?.watermarkDone ?? 'Watermark Selesai!', style: const TextStyle(color: Colors.white, fontSize: 18)),
+            ),
           ],
         ),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              l10n?.watermarkDoneDesc ?? 'Dokumen e-KTP Anda telah berhasil diproteksi dengan watermark resolusi penuh dan sensor permanen secara 100% on-device.',
-              style: const TextStyle(color: Color(0xFFCBD5E1), fontSize: 13, height: 1.4),
-            ),
-            const SizedBox(height: 16),
-            Container(
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: AppColors.bgCard,
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: AppColors.border),
+        content: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                l10n?.watermarkDoneDesc ?? 'Dokumen e-KTP Anda telah berhasil diproteksi dengan watermark resolusi penuh dan sensor permanen secara 100% on-device.',
+                style: const TextStyle(color: AppColors.slate300, fontSize: 13, height: 1.4),
               ),
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      const Icon(Icons.file_download_done, color: AppColors.primaryLight, size: 18),
-                      const SizedBox(width: 8),
-                      Expanded(
-                        child: Text(
-                          '${l10n?.exportFormatTab ?? 'Format Ekspor'}: '
-                          '${config.exportFormat.name.toUpperCase()} • '
-                          '${(bytes.lengthInBytes / 1024).toStringAsFixed(1)} KB',
-                          style: const TextStyle(fontSize: 12, color: Colors.white, fontWeight: FontWeight.bold, fontFeatures: AppNumeric.tabularFeatures),
+              const SizedBox(height: 16),
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: AppColors.bgCard,
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: AppColors.border),
+                ),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        const Icon(Icons.file_download_done, color: AppColors.primaryLight, size: 18),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Text(
+                            '${l10n?.exportFormatTab ?? 'Format Ekspor'}: '
+                            '${file.format.name.toUpperCase()} • '
+                            '${(file.bytes.lengthInBytes / 1024).toStringAsFixed(1)} KB',
+                            style: const TextStyle(fontSize: 12, color: Colors.white, fontWeight: FontWeight.bold, fontFeatures: AppNumeric.tabularFeatures),
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                  const Divider(color: AppColors.border, height: 16),
-                  Row(
-                    children: [
-                      const Text(
-                        'SHA-256: ',
-                        style: TextStyle(fontSize: 10, color: Color(0xFF64748B), fontWeight: FontWeight.bold),
-                      ),
-                      Expanded(
-                        child: Text(
-                          sha256Hash.length > 20
-                              ? '${sha256Hash.substring(0, 12)}...${sha256Hash.substring(sha256Hash.length - 8)}'
-                              : sha256Hash,
-                          style: const TextStyle(fontSize: 10, fontFamily: 'monospace', color: Color(0xFF94A3B8)),
-                        ),
-                      ),
-                      // §A11Y: 14dp glyph needs an explicit 44dp hit area.
-                      TapTarget(
-                        minSize: 44,
-                        semanticLabel: l10n?.hashCopied ?? 'Hash integritas disalin ke clipboard!',
-                        onTap: () {
-                          Clipboard.setData(ClipboardData(text: sha256Hash));
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text(l10n?.hashCopied ?? 'Hash integritas disalin ke clipboard!'),
-                              duration: const Duration(seconds: 1),
+                      ],
+                    ),
+                    if (savedLabel != null) ...[
+                      const SizedBox(height: 8),
+                      Row(
+                        children: [
+                          const Icon(Icons.folder_outlined, color: AppColors.primaryLight, size: 18),
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: Text(
+                              savedLabel,
+                              style: Theme.of(ctx).textTheme.bodySmall?.copyWith(color: AppColors.slate300),
                             ),
-                          );
-                        },
-                        child: const Icon(Icons.copy, size: 14, color: AppColors.primaryLight),
+                          ),
+                        ],
                       ),
                     ],
-                  ),
-                ],
+                    const Divider(color: AppColors.border, height: 16),
+                    Row(
+                      children: [
+                        const Text(
+                          'SHA-256: ',
+                          style: TextStyle(fontSize: 10, color: AppColors.slate400, fontWeight: FontWeight.bold),
+                        ),
+                        Expanded(
+                          child: Text(
+                            hash.length > 20 ? '${hash.substring(0, 12)}...${hash.substring(hash.length - 8)}' : hash,
+                            style: const TextStyle(fontSize: 10, fontFamily: 'monospace', color: AppColors.slate400),
+                          ),
+                        ),
+                        // §A11Y: 14dp glyph needs an explicit 44dp hit area.
+                        TapTarget(
+                          minSize: 44,
+                          semanticLabel: l10n?.hashCopied ?? 'Hash integritas disalin ke clipboard!',
+                          onTap: () {
+                            Clipboard.setData(ClipboardData(text: hash));
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(l10n?.hashCopied ?? 'Hash integritas disalin ke clipboard!'),
+                                duration: const Duration(seconds: 1),
+                              ),
+                            );
+                          },
+                          child: const Icon(Icons.copy, size: 14, color: AppColors.primaryLight),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+              const SizedBox(height: 20),
+              // Stacked full-width actions: primary first, in thumb reach.
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.pop(ctx);
+                  unawaited(_shareFile(file));
+                },
+                icon: Icon(kIsWeb ? Icons.download : Icons.share, size: 18),
+                label: Text(kIsWeb ? (l10n?.download ?? 'Unduh') : (l10n?.share ?? 'Bagikan')),
+                style: ElevatedButton.styleFrom(minimumSize: const Size.fromHeight(48)),
+              ),
+              const SizedBox(height: 8),
+              OutlinedButton.icon(
+                onPressed: () {
+                  Navigator.pop(ctx);
+                  IdmarkShareDialog.show(
+                    context: context,
+                    config: config,
+                    sha256Hash: hash,
+                    // The stamp date itself, as burned into the document.
+                    dateLabel: config.dateLabelIn(loc),
+                    fileSizeBytes: file.bytes.lengthInBytes,
+                  );
+                },
+                icon: const Icon(Icons.verified_user_outlined, size: 18),
+                label: Text(l10n?.protectionProof ?? 'Bukti Proteksi'),
+                style: OutlinedButton.styleFrom(minimumSize: const Size.fromHeight(48)),
+              ),
+              const SizedBox(height: 4),
+              TextButton(
+                onPressed: () => Navigator.pop(ctx),
+                style: TextButton.styleFrom(minimumSize: const Size.fromHeight(48)),
+                child: Text(l10n?.close ?? 'Tutup', style: const TextStyle(color: AppColors.slate400)),
+              ),
+            ],
+          ),
         ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx),
-            child: Text(l10n?.close ?? 'Tutup', style: const TextStyle(color: Color(0xFF94A3B8))),
-          ),
-          OutlinedButton.icon(
-            onPressed: () {
-              Navigator.pop(ctx);
-              final dateStr = AppTimeZone.formatCalendarDay(
-                AppTimeZone.nowUtc(),
-                locale: 'id',
-              );
-              IdmarkShareDialog.show(
-                context: context,
-                config: config,
-                sha256Hash: sha256Hash,
-                dateLabel: dateStr,
-                fileSizeBytes: bytes.lengthInBytes,
-              );
-            },
-            icon: const Icon(Icons.verified_user_outlined, size: 16),
-            label: Text(l10n?.protectionProof ?? 'Bukti Proteksi'),
-          ),
-          ElevatedButton.icon(
-            onPressed: () {
-              Navigator.pop(ctx);
-              _exportWatermarkedImage(isShare: true);
-            },
-            icon: Icon(kIsWeb ? Icons.download : Icons.share, size: 16),
-            label: Text(
-              kIsWeb
-                  ? (l10n?.download ?? 'Unduh')
-                  : (l10n?.share ?? 'Bagikan'),
-            ),
-          ),
-        ],
       ),
     );
   }
@@ -298,10 +389,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final selectedImage = ref.watch(selectedImageBytesProvider);
-    final config = ref.watch(watermarkConfigProvider);
     final notifier = ref.read(watermarkConfigProvider.notifier);
-    final isProcessing = ref.watch(isProcessingProvider);
-    final loc = ref.watch(timezoneLocationProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -326,18 +414,24 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
               ),
             ),
             const SizedBox(width: 10),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  l10n?.appTitle ?? 'IDMark',
-                  style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w700, letterSpacing: -0.4),
-                ),
-                Text(
-                  l10n?.appSubtitle ?? 'Secure ID Card & Privacy Shield',
-                  style: TextStyle(fontSize: 11, color: AppColors.muted(context), fontWeight: FontWeight.normal),
-                ),
-              ],
+            Flexible(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    l10n?.appTitle ?? 'IDMark',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w700, letterSpacing: -0.4),
+                  ),
+                  Text(
+                    l10n?.appSubtitle ?? 'Secure ID Card & Privacy Shield',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(fontSize: 11, color: AppColors.muted(context), fontWeight: FontWeight.normal),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
@@ -357,138 +451,217 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        physics: AppScroll.physics,
-        padding: AppScroll.pagePadding(context),
-        child: Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 820),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                // Top Kominfo & UU PDP Banner (solid surface: readable either theme)
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                  decoration: BoxDecoration(
-                    color: AppColors.bannerSurface,
-                    borderRadius: BorderRadius.circular(16),
-                    border: Border.all(color: AppColors.primary.withValues(alpha: 0.12)),
-                  ),
-                  child: Row(
+      body: LayoutBuilder(
+        builder: (context, box) {
+          if (selectedImage == null) {
+            return SingleChildScrollView(
+              physics: AppScroll.physics,
+              padding: AppScroll.pagePadding(context),
+              child: _constrained(Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  _buildBanner(context),
+                  const SizedBox(height: 16),
+                  _buildPreview(PreviewSection.all),
+                  const SizedBox(height: 20),
+                  _buildControlPanel(),
+                  const SizedBox(height: 8),
+                ],
+              )),
+            );
+          }
+          // Photo loaded: the preview stays pinned on top so every change
+          // (typing, colour, redaction drag) is visible while editing.
+          final keyboardOpen = MediaQuery.viewInsetsOf(context).bottom > 0;
+          final stageMax = (box.maxHeight * (keyboardOpen ? 0.3 : 0.4)).clamp(140.0, 420.0);
+          final pad = AppScroll.pagePadding(context);
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Padding(
+                padding: EdgeInsets.fromLTRB(pad.left, 8, pad.right, 8),
+                child: _constrained(_buildPreview(PreviewSection.stage, maxHeight: stageMax)),
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  physics: AppScroll.physics,
+                  padding: EdgeInsets.fromLTRB(pad.left, 0, pad.right, pad.bottom),
+                  child: _constrained(Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      const Icon(Icons.security, size: 18, color: AppColors.primaryLight),
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: Text(
-                          l10n?.bannerUuPdp ?? 'Standar UU PDP: Bubuhkan watermark tujuan spesifik, tanggal, dan sensor data sensitif sebelum membagikan foto e-KTP.',
-                          style: const TextStyle(fontSize: 12, color: Color(0xFFE2E8F0), height: 1.4),
-                        ),
-                      ),
+                      _buildPreview(PreviewSection.toolbar),
+                      const SizedBox(height: 12),
+                      _buildBanner(context),
+                      const SizedBox(height: 16),
+                      _buildControlPanel(),
+                      const SizedBox(height: 20),
+                      _buildExportActions(),
+                      const SizedBox(height: 8),
                     ],
-                  ),
+                  )),
                 ),
-                const SizedBox(height: 16),
+              ),
+            ],
+          );
+        },
+      ),
+    );
+  }
 
-                // Canvas Live Preview
-                WatermarkCanvasPreview(
-                  imageBytes: selectedImage,
-                  config: config,
-                  zone: loc,
-                  onPickGallery: () => _pickImage(ImageSource.gallery),
-                  onPickCamera: () => _pickImage(ImageSource.camera),
-                  onClear: () {
-                    ref.read(selectedImageBytesProvider.notifier).setImage(null);
-                  },
-                  onAddQuickRedaction: (target) {
-                    unawaited(notifier.addRedaction(RedactionBox.fromPreset(target)));
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text(
-                          l10n == null
-                              ? 'Kotak sensor "${target.label}" ditambahkan.'
-                              : l10n.sensorBoxAdded(target.labelOf(l10n)),
-                        ),
-                        duration: const Duration(seconds: 1),
-                      ),
-                    );
-                  },
-                ),
-                const SizedBox(height: 20),
+  Widget _constrained(Widget child) => Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 820),
+          child: child,
+        ),
+      );
 
-                // Control Configuration Panel
-                WatermarkControlPanel(
-                  config: config,
-                  zone: loc,
-                  onPurposeChanged: notifier.updatePurpose,
-                  onDateChanged: notifier.updateDate,
-                  onSubtextChanged: notifier.updateSubtext,
-                  onPatternChanged: notifier.updatePattern,
-                  onColorChanged: notifier.updateColorOption,
-                  onOpacityChanged: notifier.updateOpacity,
-                  onFontSizeChanged: notifier.updateFontSize,
-                  onRotationChanged: notifier.updateRotation,
-                  onIncludeDateChanged: notifier.updateIncludeDate,
-                  onAddRedaction: notifier.addRedaction,
-                  onRemoveRedaction: notifier.removeRedaction,
-                  onUpdateRedaction: notifier.updateRedaction,
-                  onStripMetadataChanged: notifier.updateStripMetadata,
-                  onExportFormatChanged: notifier.updateExportFormat,
-                  onJpegQualityChanged: notifier.updateJpegQuality,
-                ),
-                const SizedBox(height: 20),
-
-                // Export & Share Actions
-                if (selectedImage != null)
-                  Card(
-                    color: AppColors.bgSurface,
-                    child: Padding(
-                      padding: const EdgeInsets.all(16),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          PressScale(
-                            scale: 0.97,
-                            child: ElevatedButton.icon(
-                              onPressed: isProcessing ? null : () => _exportWatermarkedImage(isShare: false),
-                              icon: isProcessing
-                                  ? const SizedBox(
-                                      width: 18,
-                                      height: 18,
-                                      child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
-                                    )
-                                  : const Icon(Icons.download, size: 20),
-                              label: Text(
-                                isProcessing
-                                    ? (l10n?.processingOnDevice ?? 'Memproses Dokumen On-Device...')
-                                    : (l10n?.saveDocument(config.exportFormat.name.toUpperCase()) ?? 'Simpan Dokumen (${config.exportFormat.name.toUpperCase()})'),
-                              ),
-                              style: ElevatedButton.styleFrom(
-                                padding: const EdgeInsets.symmetric(vertical: 16),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(height: 10),
-                          PressScale(
-                            scale: 0.97,
-                            child: OutlinedButton.icon(
-                              onPressed: isProcessing ? null : () => _exportWatermarkedImage(isShare: true),
-                              icon: const Icon(Icons.share_outlined, size: 18),
-                              label: Text(l10n?.shareDirect ?? 'Bagikan Langsung'),
-                              style: OutlinedButton.styleFrom(
-                                padding: const EdgeInsets.symmetric(vertical: 14),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                const SizedBox(height: 8),
-              ],
+  Widget _buildBanner(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    // Solid surface: readable in either theme.
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      decoration: BoxDecoration(
+        color: AppColors.bannerSurface,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: AppColors.primary.withValues(alpha: 0.12)),
+      ),
+      child: Row(
+        children: [
+          const Icon(Icons.security, size: 18, color: AppColors.primaryLight),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Text(
+              l10n?.bannerUuPdp ??
+                  'Sebelum membagikan foto KTP: cantumkan tujuan spesifik dan tanggal, lalu tutup data yang tidak dibutuhkan penerima.',
+              style: const TextStyle(fontSize: 12, color: AppColors.slate300, height: 1.4),
             ),
           ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildPreview(PreviewSection section, {double maxHeight = 420}) {
+    final l10n = AppLocalizations.of(context);
+    final notifier = ref.read(watermarkConfigProvider.notifier);
+    return WatermarkCanvasPreview(
+      imageBytes: ref.watch(selectedImageBytesProvider),
+      config: ref.watch(watermarkConfigProvider),
+      zone: ref.watch(timezoneLocationProvider),
+      section: section,
+      maxPreviewHeight: maxHeight,
+      onPickGallery: () => _pickImage(ImageSource.gallery),
+      onPickCamera: () => _pickImage(ImageSource.camera),
+      onClear: () => ref.read(selectedImageBytesProvider.notifier).setImage(null),
+      onUpdateRedaction: notifier.updateRedaction,
+      onAddQuickRedaction: (target) {
+        unawaited(notifier.addRedaction(RedactionBox.fromPreset(target)));
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              l10n == null
+                  ? 'Kotak sensor "${target.label}" ditambahkan.'
+                  : l10n.sensorBoxAdded(target.labelOf(l10n)),
+            ),
+            duration: const Duration(seconds: 1),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildControlPanel() {
+    final notifier = ref.read(watermarkConfigProvider.notifier);
+    final config = ref.watch(watermarkConfigProvider);
+    final format = ref.watch(effectiveExportFormatProvider);
+    return WatermarkControlPanel(
+      // The panel shows the format of THIS export; the saved default
+      // (Settings) only changes from Settings.
+      config: format == config.exportFormat ? config : config.copyWith(exportFormat: format),
+      zone: ref.watch(timezoneLocationProvider),
+      onPurposeChanged: notifier.updatePurpose,
+      onDateChanged: notifier.updateDate,
+      onSubtextChanged: notifier.updateSubtext,
+      onPatternChanged: notifier.updatePattern,
+      onColorChanged: notifier.updateColorOption,
+      onOpacityChanged: notifier.updateOpacity,
+      onFontSizeChanged: notifier.updateFontSize,
+      onRotationChanged: notifier.updateRotation,
+      onIncludeDateChanged: notifier.updateIncludeDate,
+      onAddRedaction: notifier.addRedaction,
+      onRemoveRedaction: notifier.removeRedaction,
+      onUpdateRedaction: notifier.updateRedaction,
+      onStripMetadataChanged: notifier.updateStripMetadata,
+      onExportFormatChanged: (f) => ref.read(exportFormatOverrideProvider.notifier).set(f),
+      onJpegQualityChanged: notifier.updateJpegQuality,
+    );
+  }
+
+  Widget _buildExportActions() {
+    final l10n = AppLocalizations.of(context);
+    final isProcessing = ref.watch(isProcessingProvider);
+    final formatName = ref.watch(effectiveExportFormatProvider).name.toUpperCase();
+    // Theme card surface so the outlined button keeps its themed contrast.
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            PressScale(
+              scale: 0.97,
+              child: ElevatedButton.icon(
+                onPressed: isProcessing ? null : _saveDocument,
+                icon: isProcessing
+                    ? const SizedBox(
+                        width: 18,
+                        height: 18,
+                        child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
+                      )
+                    : const Icon(Icons.download, size: 20),
+                label: Text(
+                  isProcessing
+                      ? (l10n?.processingOnDevice ?? 'Memproses Dokumen On-Device...')
+                      : (l10n?.saveDocument(formatName) ?? 'Simpan Dokumen ($formatName)'),
+                ),
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+            PressScale(
+              scale: 0.97,
+              child: OutlinedButton.icon(
+                onPressed: isProcessing ? null : _shareDirect,
+                icon: const Icon(Icons.share_outlined, size: 18),
+                label: Text(l10n?.shareDirect ?? 'Bagikan Langsung'),
+                style: OutlinedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(vertical: 14),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
   }
+}
+
+/// One rendered export, kept so "Share" in the success dialog reuses the
+/// same bytes instead of rendering (and logging) a second time.
+class _ExportedFile {
+  final Uint8List bytes;
+  final String sha256;
+  final ExportFormat format;
+  final String filename;
+  final WatermarkConfig config;
+
+  const _ExportedFile({
+    required this.bytes,
+    required this.sha256,
+    required this.format,
+    required this.filename,
+    required this.config,
+  });
 }

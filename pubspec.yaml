@@ -2,7 +2,7 @@ name: idmark
 description: "IDMark — Secure ID Card & Document Watermark: Stamp custom purpose & date onto national IDs, e-KTP, passports, and driver's licenses 100% on-device."
 publish_to: 'none'
 
-version: 1.2.1+28
+version: 1.3.0+29
 environment:
   sdk: ^3.12.2
 
@@ -21,6 +21,8 @@ dependencies:
   share_plus: ^13.3.0
   web: ^1.1.1
   crypto: ^3.0.7
+  # Already resolved via `pdf`; declared because JPEG export encodes with it.
+  image: ^4.10.1
   pdf: ^3.13.1
   clock: ^1.1.1
   flutter_timezone: ^5.1.0

@@ -8,6 +8,7 @@ import '../models/watermark_preset.dart';
 import '../services/image_picker_service.dart';
 import '../services/watermark_renderer_service.dart';
 import '../storage/local_storage_service.dart';
+import '../utils/app_timezone.dart';
 
 /// Local Storage Service Provider
 final localStorageServiceProvider = Provider<LocalStorageService>((ref) {
@@ -66,6 +67,27 @@ class AuditLogsNotifier extends Notifier<List<AuditLogEntry>> {
   Future<void> recordExport(AuditLogEntry entry) async {
     final storage = ref.read(localStorageServiceProvider);
     await storage.addAuditLog(entry);
+    state = storage.loadAuditLogs();
+  }
+
+  /// Removes one entry; returns it (with its index) so the UI can undo.
+  Future<(AuditLogEntry, int)?> deleteEntry(String id) async {
+    final index = state.indexWhere((e) => e.id == id);
+    if (index < 0) return null;
+    final removed = state[index];
+    final storage = ref.read(localStorageServiceProvider);
+    final next = [...state]..removeAt(index);
+    await storage.saveAuditLogs(next);
+    state = storage.loadAuditLogs();
+    return (removed, index);
+  }
+
+  /// Puts back an entry removed by [deleteEntry] at its old position.
+  Future<void> restoreEntry(AuditLogEntry entry, int index) async {
+    if (state.any((e) => e.id == entry.id)) return;
+    final storage = ref.read(localStorageServiceProvider);
+    final next = [...state]..insert(index.clamp(0, state.length), entry);
+    await storage.saveAuditLogs(next);
     state = storage.loadAuditLogs();
   }
 
@@ -185,6 +207,13 @@ class WatermarkConfigNotifier extends Notifier<WatermarkConfig> {
     await _persist();
   }
 
+  /// Stamps today's date: called when a new photo is loaded so a stale
+  /// date from an earlier session never ends up on a new copy.
+  Future<void> resetDateToToday() async {
+    state = state.copyWith(transactionDate: AppTimeZone.nowUtc());
+    await _persist();
+  }
+
   Future<void> resetToDefault() async {
     state = WatermarkConfig.defaultConfig();
     await _persist();
@@ -198,6 +227,27 @@ class WatermarkConfigNotifier extends Notifier<WatermarkConfig> {
 
 final watermarkConfigProvider =
     NotifierProvider<WatermarkConfigNotifier, WatermarkConfig>(WatermarkConfigNotifier.new);
+
+/// Export format chosen in the editor for the current session. `null` means
+/// "use the default from Settings" ([WatermarkConfig.exportFormat]); picking
+/// a format in the editor never rewrites that default.
+class ExportFormatOverrideNotifier extends Notifier<ExportFormat?> {
+  @override
+  ExportFormat? build() => null;
+
+  void set(ExportFormat? format) => state = format;
+}
+
+final exportFormatOverrideProvider =
+    NotifierProvider<ExportFormatOverrideNotifier, ExportFormat?>(
+  ExportFormatOverrideNotifier.new,
+);
+
+/// Format the next export will use: editor override, else the default.
+final effectiveExportFormatProvider = Provider<ExportFormat>((ref) {
+  return ref.watch(exportFormatOverrideProvider) ??
+      ref.watch(watermarkConfigProvider).exportFormat;
+});
 
 /// Selected Image Bytes Notifier
 class SelectedImageBytesNotifier extends Notifier<Uint8List?> {

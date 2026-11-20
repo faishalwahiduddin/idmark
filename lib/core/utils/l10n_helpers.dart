@@ -212,3 +212,12 @@ String presetTitleLabel(String id, String fallback, AppLocalizations l10n) =>
       'global_kyc' => l10n.presetGlobalKyc,
       _ => fallback,
     };
+
+/// Display name for a stored redaction label. Preset boxes store their
+/// Indonesian preset label; show it in the UI language instead.
+String localizedRedactionLabel(String stored, AppLocalizations? l10n) {
+  for (final t in RedactionPresetTarget.values) {
+    if (t.label == stored) return t.labelOf(l10n);
+  }
+  return stored;
+}

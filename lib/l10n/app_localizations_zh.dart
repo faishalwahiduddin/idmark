@@ -126,7 +126,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get appDomain => '域';
 
   @override
-  String get appCompliance => '合规标准';
+  String get appCompliance => '参考依据';
 
   @override
   String get appProvider => '提供者';
@@ -141,7 +141,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get preferencesReset => '首选项已重置。';
 
   @override
-  String get guideRules => '水印四大规则';
+  String get guideRules => '水印四条基本规则';
 
   @override
   String get guideRule1Title => '写明名称和目的';
@@ -234,7 +234,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get configResetKominfo => '配置已重置为通信部推荐的标准。';
 
   @override
-  String get bannerUuPdp => '个人数据保护法标准：在共享身份证照片之前，请添加明确用途的水印、日期并遮蔽敏感数据。';
+  String get bannerUuPdp => '分享证件照片前：写明具体用途和日期，并遮住对方不需要的信息。';
 
   @override
   String sensorBoxAdded(String label) {
@@ -353,10 +353,10 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get privacyComplianceIndex => '文件隐私合规指数';
+  String get privacyComplianceIndex => '保护清单';
 
   @override
-  String get complianceChecklistTitle => '个人数据保护法第 27/2022 号合规清单：';
+  String get complianceChecklistTitle => '分享之前：';
 
   @override
   String get checkPurposeTitle => '明确使用用途';
@@ -467,7 +467,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String sensitiveSensorsCount(int count) {
-    return '$count 处敏感遮盖';
+    return '$count 处遮盖';
   }
 
   @override
@@ -617,7 +617,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get zeroServerDesc =>
-      'IDMark 100% 运行在您的浏览器或本地设备上。身份证照片绝不会被发送、存储或在任何外部服务器上处理。';
+      'IDMark 100% 在您的设备上运行。身份证照片绝不会被发送、存储或在任何外部服务器上处理。';
 
   @override
   String get dataSecuritySanitation => '数据清理与安全';
@@ -638,7 +638,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get appLabel => '应用';
 
   @override
-  String get officialKominfoGuide => 'Kominfo 与个人数据保护法官方指南';
+  String get officialKominfoGuide => '证件照片安全指南';
 
   @override
   String get privacyAndSettings => '隐私与设置';
@@ -710,7 +710,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get customPresetSaveFailed => '无法保存预设，请重试。';
 
   @override
-  String get privacyGradeDescMax => '最高防护 • 符合数据安全与合规标准';
+  String get privacyGradeDescMax => '保护充分 • 清单全部完成';
 
   @override
   String get privacyGradeDescVeryGood => '防护良好 • 文件可安全共享';
@@ -983,7 +983,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get shareProofTitle => '文件保护凭证';
 
   @override
-  String get shareProofSubtitle => '符合 Kominfo 的水印与遮挡完整性证书';
+  String get shareProofSubtitle => '此副本的水印与遮挡摘要';
 
   @override
   String get shareFormatFeed => '动态 (4:5)';
@@ -1035,7 +1035,7 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get shareCardFooter => 'idmark.faishal.id • Kominfo 印尼身份证水印标准';
+  String get shareCardFooter => 'idmark.faishal.id • 本地设备处理';
 
   @override
   String get shareCardIntegrityHash => '完整性哈希（SHA-256）：';
@@ -1069,7 +1069,7 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get shareProofOnDeviceLine => '✅ 100% 本地处理，无服务器（符合 Kominfo RI 指南）';
+  String get shareProofOnDeviceLine => '✅ 100% 本地处理，无服务器';
 
   @override
   String get shareProofCtaLine => '用 IDMark 保护你的身份：https://idmark.faishal.id';
@@ -1238,4 +1238,66 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get contactEmailCopied => '邮箱地址已复制：contact@faishal.id';
+
+  @override
+  String placeholderUnfilled(String placeholder) {
+    return '导出前请将 $placeholder 替换为真实名称。';
+  }
+
+  @override
+  String get savedToGallery => '已保存到图库 › Pictures/IDMark';
+
+  @override
+  String get savedToDownloads => '已保存到文件 › Download/IDMark';
+
+  @override
+  String get saveViaShareHint => '如需保留副本，请在分享面板中选择“存储图像”或“存储到文件”。';
+
+  @override
+  String redactionWidth(int value) {
+    return '宽度 ($value%)';
+  }
+
+  @override
+  String redactionHeight(int value) {
+    return '高度 ($value%)';
+  }
+
+  @override
+  String get redactionDragHint => '在照片上拖动方框即可移动，拖动角上的圆点可调整大小。';
+
+  @override
+  String get redactionWeakWarning => '对于身份证号等小字，模糊和马赛克有时可被还原。NIK 请使用涂黑。';
+
+  @override
+  String get historyEntryDeleted => '已删除记录';
+
+  @override
+  String get undo => '撤销';
+
+  @override
+  String get deleteEntry => '删除记录';
+
+  @override
+  String get notLegalAdvice => '仅为安全建议，并非法律意见或官方认证。';
+
+  @override
+  String get tabRedactShort => '遮盖';
+
+  @override
+  String get tabPrivacyShort => '隐私';
+
+  @override
+  String get tabFormatShort => '格式';
+
+  @override
+  String redactionBoxSemantics(String label) {
+    return '遮盖框 $label。拖动可移动。';
+  }
+
+  @override
+  String get resizeRedaction => '调整遮盖框大小';
+
+  @override
+  String get exportFormatSessionNote => '仅适用于本次导出。默认格式在设置中更改。';
 }

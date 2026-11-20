@@ -371,7 +371,7 @@ class SettingsScreen extends ConsumerWidget {
                   const Divider(height: 24),
                   _buildAboutRow(context, l10n.identity, 'id.faishal.idmark'),
                   const Divider(height: 24),
-                  _buildAboutRow(context, l10n.appCompliance, 'UU No. 27/2022 (PDP) & Kominfo'),
+                  _buildAboutRow(context, l10n.appCompliance, 'UU No. 27/2022 (PDP)'),
                   const Divider(height: 24),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

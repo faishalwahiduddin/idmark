@@ -38,12 +38,12 @@
   "aboutApp": "Tentang Aplikasi",
   "appVersion": "Versi",
   "appDomain": "Domain",
-  "appCompliance": "Standar Kepatuhan",
+  "appCompliance": "Rujukan",
   "appProvider": "Penyedia",
   "clearHistory": "Bersihkan",
   "historyCleared": "Riwayat audit log dibersihkan.",
   "preferencesReset": "Preferensi berhasil direset ke rekomendasi Kominfo.",
-  "guideRules": "4 Aturan Pokok Watermark Kominfo",
+  "guideRules": "4 Aturan Dasar Watermark",
   "guideRule1Title": "Tuliskan Nama Lembaga & Tujuan Spesifik",
   "guideRule1Desc": "Jangan hanya menulis \"VERIFIKASI\". Tuliskan lengkap seperti \"VERIFIKASI PINJAMAN PT BANK ABC\". Dengan begitu, pihak lain tidak dapat menggunakan foto tersebut di tempat lain.",
   "guideRule2Title": "Cantumkan Tanggal Transaksi Lengkap",
@@ -94,7 +94,7 @@
   "share": "Bagikan",
   "resetWatermarkTooltip": "Reset Watermark",
   "configResetKominfo": "Konfigurasi dikembalikan ke standar rekomendasi Kominfo.",
-  "bannerUuPdp": "Standar UU PDP: Bubuhkan watermark tujuan spesifik, tanggal, dan sensor data sensitif sebelum membagikan foto e-KTP.",
+  "bannerUuPdp": "Sebelum membagikan foto KTP: cantumkan tujuan spesifik dan tanggal, lalu tutup data yang tidak dibutuhkan penerima.",
   "sensorBoxAdded": "Kotak sensor \"{label}\" ditambahkan.",
   "@sensorBoxAdded": {
     "placeholders": {
@@ -178,8 +178,8 @@
       }
     }
   },
-  "privacyComplianceIndex": "Indeks Kepatuhan Privasi Dokumen",
-  "complianceChecklistTitle": "Checklist Kepatuhan UU PDP No. 27/2022:",
+  "privacyComplianceIndex": "Checklist Perlindungan",
+  "complianceChecklistTitle": "Sebelum dibagikan:",
   "checkPurposeTitle": "Tujuan Penggunaan Spesifik",
   "checkPurposeDesc": "Membatasi agar salinan tidak bisa dialihkan ke transaksi lain",
   "checkDateTitle": "Tanggal Transaksi Dicantumkan",
@@ -205,7 +205,7 @@
   },
   "viewingOriginal": "Melihat Asli",
   "holdToCompare": "Tahan: Bandingkan",
-  "activeWatermarkWithCount": "Watermark Aktif ({count} sensor)",
+  "activeWatermarkWithCount": "{count, plural, =1{Watermark Aktif (1 sensor)} other{Watermark Aktif ({count} sensor)}}",
   "@activeWatermarkWithCount": {
     "placeholders": {
       "count": {
@@ -244,7 +244,7 @@
       }
     }
   },
-  "sensitiveSensorsCount": "{count} Sensor Sensitif",
+  "sensitiveSensorsCount": "{count, plural, =1{1 sensor} other{{count} sensor}}",
   "@sensitiveSensorsCount": {
     "placeholders": {
       "count": {
@@ -338,14 +338,14 @@
   "checkItem4": "Tanda tangan disensor jika verifikator tidak meminta spesimen tanda tangan",
   "checkItem5": "Metadata EXIF dan koordinat GPS telah dihapus dari gambar",
   "zeroServerTitle": "Privasi Mutlak (Zero Server Upload)",
-  "zeroServerDesc": "IDMark berjalan 100% di peramban atau perangkat lokal Anda. Foto identitas e-KTP tidak pernah dikirim, disimpan, atau diproses di peladen (server) eksternal manapun.",
+  "zeroServerDesc": "IDMark berjalan 100% di perangkat Anda. Foto identitas e-KTP tidak pernah dikirim, disimpan, atau diproses di peladen (server) eksternal manapun.",
   "dataSecuritySanitation": "Sanitasi & Keamanan Data",
   "autoExifSubtitle": "Menghapus tag metadata koordinat GPS dan tipe kamera dari foto hasil ekspor",
   "defaultExportFormat": "Format Ekspor Default",
   "localDeviceStorage": "Penyimpanan Lokal Perangkat",
   "resetDefaultsDesc": "Mengembalikan template dan pengaturan teks ke bawaan pabrik",
   "appLabel": "Aplikasi",
-  "officialKominfoGuide": "Panduan Resmi Kominfo & UU PDP",
+  "officialKominfoGuide": "Panduan Keamanan Foto KTP",
   "privacyAndSettings": "Privasi & Pengaturan",
   "appLanguage": "Bahasa Aplikasi",
   "timezone": "Zona Waktu",
@@ -374,9 +374,8 @@
   "validationPresetTitleMaxLength": "Nama preset maksimal 50 karakter",
   "validationPresetCategoryRequired": "Kategori preset tidak boleh kosong",
   "validationPresetCategoryMaxLength": "Kategori maksimal 30 karakter",
-
   "customPresetSaveFailed": "Preset gagal disimpan. Coba lagi.",
-  "privacyGradeDescMax": "Proteksi Maksimal • Memenuhi rekomendasi Kominfo & UU PDP",
+  "privacyGradeDescMax": "Perlindungan kuat • Semua checklist terpenuhi",
   "privacyGradeDescVeryGood": "Proteksi Sangat Baik • Dokumen aman dibagikan",
   "privacyGradeDescFair": "Proteksi Cukup • Disarankan menambah tanggal dan sensor NIK",
   "privacyGradeDescWeak": "Proteksi Lemah • Tambahkan tujuan spesifik dan tanggal",
@@ -492,7 +491,7 @@
   "targetBirthPlace": "Tempat / Tgl Lahir",
   "targetPhoto": "Foto Wajah",
   "shareProofTitle": "Bukti Proteksi Dokumen",
-  "shareProofSubtitle": "Sertifikat integritas watermark & sensor sesuai Kominfo",
+  "shareProofSubtitle": "Ringkasan watermark dan sensor pada salinan ini",
   "shareFormatFeed": "Unggahan (4:5)",
   "shareFormatStory": "Story (9:16)",
   "shareCopyText": "Salin Teks",
@@ -505,7 +504,7 @@
   "shareCardPurposeLabel": "UNTUK KEPERLUAN KHUSUS:",
   "shareCardPrivacyScore": "SKOR PRIVASI",
   "shareCardRedactions": "SENSOR",
-  "shareCardAreaCount": "{count} Area",
+  "shareCardAreaCount": "{count, plural, =1{1 area} other{{count} area}}",
   "@shareCardAreaCount": {
     "placeholders": {
       "count": {
@@ -522,7 +521,7 @@
       }
     }
   },
-  "shareCardFooter": "idmark.faishal.id • Standar Watermark KTP Kominfo RI",
+  "shareCardFooter": "idmark.faishal.id • diproses di perangkat",
   "shareCardIntegrityHash": "INTEGRITY HASH (SHA-256):",
   "shareProofHeading": "🛡️ BUKTI PROTEKSI DOKUMEN — IDMARK",
   "shareProofPurposeLine": "📌 Keperluan Khusus: \"{purpose}\"",
@@ -549,7 +548,7 @@
       }
     }
   },
-  "shareProofRedactionLine": "✂️ Sensor Permanen: {count} Area Tertutup",
+  "shareProofRedactionLine": "{count, plural, =1{✂️ Sensor permanen: 1 area tertutup} other{✂️ Sensor permanen: {count} area tertutup}}",
   "@shareProofRedactionLine": {
     "placeholders": {
       "count": {
@@ -565,7 +564,7 @@
       }
     }
   },
-  "shareProofOnDeviceLine": "✅ Diproses 100% on-device tanpa server (Sesuai Panduan Kominfo RI)",
+  "shareProofOnDeviceLine": "✅ Diproses 100% di perangkat, tanpa server",
   "shareProofCtaLine": "Lindungi identitas Anda dengan IDMark: https://idmark.faishal.id",
   "shareProofDownloaded": "Sertifikat proteksi dokumen berhasil diunduh! 🛡️✨",
   "shareProofFailed": "Gagal membagikan bukti: {error}",
@@ -661,5 +660,51 @@
   "contactEmailCopied": "Alamat email disalin: contact@faishal.id",
   "@contactEmailCopied": {
     "description": "Snackbar shown when the contact email is copied because no mail app could be opened"
-  }
+  },
+  "placeholderUnfilled": "Ganti {placeholder} dengan nama sebenarnya sebelum mengekspor.",
+  "@placeholderUnfilled": {
+    "placeholders": {
+      "placeholder": {
+        "type": "String"
+      }
+    }
+  },
+  "savedToGallery": "Tersimpan di Galeri › Pictures/IDMark",
+  "savedToDownloads": "Tersimpan di File › Download/IDMark",
+  "saveViaShareHint": "Untuk menyimpan salinan, pilih \"Simpan gambar\" atau \"Simpan ke File\" di lembar berbagi.",
+  "redactionWidth": "Lebar ({value}%)",
+  "@redactionWidth": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "redactionHeight": "Tinggi ({value}%)",
+  "@redactionHeight": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "redactionDragHint": "Seret kotak di foto untuk memindahkannya. Seret titik sudutnya untuk mengubah ukuran.",
+  "redactionWeakWarning": "Buram dan mosaik pada teks kecil seperti NIK kadang bisa dipulihkan. Gunakan Blackout untuk NIK.",
+  "historyEntryDeleted": "Entri dihapus",
+  "undo": "Urungkan",
+  "deleteEntry": "Hapus entri",
+  "notLegalAdvice": "Panduan keamanan saja, bukan nasihat hukum dan bukan sertifikasi resmi.",
+  "tabRedactShort": "Sensor",
+  "tabPrivacyShort": "Privasi",
+  "tabFormatShort": "Format",
+  "redactionBoxSemantics": "Kotak sensor {label}. Seret untuk memindahkan.",
+  "@redactionBoxSemantics": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "resizeRedaction": "Ubah ukuran kotak sensor",
+  "exportFormatSessionNote": "Berlaku untuk ekspor ini. Format bawaan diatur di Pengaturan."
 }

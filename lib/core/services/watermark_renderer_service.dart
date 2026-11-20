@@ -2,11 +2,14 @@ import 'dart:math' as math;
 import 'dart:typed_data';
 import 'dart:ui' as ui;
 import 'package:crypto/crypto.dart';
+import 'package:flutter/foundation.dart' show compute;
+import 'package:image/image.dart' as img;
 import 'package:flutter/material.dart';
 import 'package:timezone/timezone.dart' as tz;
 import '../models/redaction_item.dart';
 import '../models/watermark_config.dart';
 import '../utils/app_timezone.dart';
+import 'stamp_layout.dart';
 
 class WatermarkRendererService {
   /// Decodes raw bytes to a [ui.Image]
@@ -43,34 +46,8 @@ class WatermarkRendererService {
     // 2. Render destructive redaction boxes (permanent on-canvas pixel covering)
     _renderRedactions(canvas, width, height, config.redactions);
 
-    // 3. Compute proportional scaling factor relative to standard 1080p
-    final scale = math.max(width, height) / 1080.0;
-    final baseFontSize = config.fontSize * scale;
-
-    // 4. Render selected watermark pattern
-    switch (config.pattern) {
-      case WatermarkPattern.diagonalBand:
-        _renderDiagonalBand(canvas, width, height, config, baseFontSize, loc);
-        break;
-      case WatermarkPattern.repeatedGrid:
-        _renderRepeatedGrid(canvas, width, height, config, baseFontSize, loc);
-        break;
-      case WatermarkPattern.bottomBar:
-        _renderBottomBar(canvas, width, height, config, baseFontSize, loc);
-        break;
-      case WatermarkPattern.cornerStamp:
-        _renderCornerStamp(canvas, width, height, config, baseFontSize, loc);
-        break;
-      case WatermarkPattern.securitySeal:
-        _renderSecuritySeal(canvas, width, height, config, baseFontSize, loc);
-        break;
-      case WatermarkPattern.crossStamp:
-        _renderCrossStamp(canvas, width, height, config, baseFontSize, loc);
-        break;
-      case WatermarkPattern.qrBadge:
-        _renderQrBadge(canvas, width, height, config, baseFontSize, loc);
-        break;
-    }
+    // 3–4. Watermark pattern (shared with the live preview).
+    paintPattern(canvas, Size(width, height), config, loc);
 
     // 5. Finalize canvas recording and export to PNG bytes
     final picture = recorder.endRecording();
@@ -81,6 +58,37 @@ class WatermarkRendererService {
       throw Exception('Gagal mengonversi gambar ter-watermark ke PNG');
     }
     return byteData.buffer.asUint8List();
+  }
+
+  /// Renders like [renderWatermark] but encodes the image in [format]
+  /// (PNG or JPEG). PDF callers wrap the PNG themselves.
+  static Future<Uint8List> renderWatermarkAs({
+    required ui.Image sourceImage,
+    required WatermarkConfig config,
+    required ExportFormat format,
+    tz.Location? zone,
+  }) async {
+    final png = await renderWatermark(
+      sourceImage: sourceImage,
+      config: config,
+      zone: zone,
+    );
+    if (format != ExportFormat.jpeg) return png;
+    return encodeJpeg(png, quality: config.jpegQuality);
+  }
+
+  /// Re-encodes PNG [pngBytes] as a baseline JPEG at [quality] (1–100).
+  /// The output carries no EXIF, like the PNG path.
+  static Future<Uint8List> encodeJpeg(Uint8List pngBytes, {required int quality}) {
+    return compute(_encodeJpegSync, (pngBytes, quality.clamp(1, 100)));
+  }
+
+  static Uint8List _encodeJpegSync((Uint8List, int) args) {
+    final decoded = img.decodePng(args.$1);
+    if (decoded == null) {
+      throw Exception('Gagal mengonversi gambar ter-watermark ke JPEG');
+    }
+    return img.encodeJpg(decoded, quality: args.$2);
   }
 
   /// Destructive rendering of redaction boxes onto the canvas
@@ -174,6 +182,80 @@ class WatermarkRendererService {
 
   // --- Watermark Pattern Implementations ---
 
+  /// Paints the selected watermark pattern onto [canvas] of [size].
+  ///
+  /// Used by both the export and the live preview, so what the user sees is
+  /// what gets burned in. Every pattern is fitted with [StampFit] so the
+  /// purpose and date always stay fully inside the image.
+  static void paintPattern(
+    Canvas canvas,
+    Size size,
+    WatermarkConfig config,
+    tz.Location zone,
+  ) {
+    if (size.isEmpty) return;
+    final width = size.width;
+    final height = size.height;
+    // Proportional scale relative to a 1080px reference image.
+    final fontSize = config.fontSize * math.max(width, height) / 1080.0;
+    switch (config.pattern) {
+      case WatermarkPattern.diagonalBand:
+        _renderDiagonalBand(canvas, width, height, config, fontSize, zone);
+      case WatermarkPattern.repeatedGrid:
+        _renderRepeatedGrid(canvas, width, height, config, fontSize, zone);
+      case WatermarkPattern.bottomBar:
+        _renderBottomBar(canvas, width, height, config, fontSize, zone);
+      case WatermarkPattern.cornerStamp:
+        _renderCornerStamp(canvas, width, height, config, fontSize, zone);
+      case WatermarkPattern.securitySeal:
+        _renderSecuritySeal(canvas, width, height, config, fontSize, zone);
+      case WatermarkPattern.crossStamp:
+        _renderCrossStamp(canvas, width, height, config, fontSize, zone);
+      case WatermarkPattern.qrBadge:
+        _renderQrBadge(canvas, width, height, config, fontSize, zone);
+    }
+  }
+
+  /// Purpose as stamped (uppercased when configured).
+  static String _purposeText(WatermarkConfig config) =>
+      config.isUppercase ? config.purpose.toUpperCase() : config.purpose;
+
+  /// `TGL: dd-MM-yyyy`, or null when the date is switched off.
+  static String? _dateText(WatermarkConfig config, tz.Location zone) =>
+      config.includeDate ? 'TGL: ${config.dateLabelIn(zone)}' : null;
+
+  static Paint _bandFill(WatermarkConfig config, {double factor = 0.35}) =>
+      Paint()
+        ..color = (config.colorOption == WatermarkColorOption.white
+                ? Colors.black
+                : Colors.white)
+            .withValues(alpha: (config.opacity * factor).clamp(0.05, 0.4))
+        ..style = PaintingStyle.fill;
+
+  static Paint _bandBorder(Color color, double fontSize) => Paint()
+    ..color = color
+    ..style = PaintingStyle.stroke
+    ..strokeWidth = math.max(1.0, fontSize * 0.08);
+
+  /// Lays out the diagonal band for [config] on a [size] image. Exposed so
+  /// tests can assert the rotated band stays inside the image.
+  static BandBlock layoutDiagonalBand(
+    WatermarkConfig config,
+    Size size,
+    tz.Location zone,
+  ) {
+    final fontSize = config.fontSize * math.max(size.width, size.height) / 1080.0;
+    return BandBlock.fit(
+      purpose: _purposeText(config),
+      dateText: _dateText(config, zone),
+      subtext: config.customSubtext,
+      color: config.colorOption.color.withValues(alpha: config.opacity),
+      fontSize: fontSize,
+      angleDeg: config.rotationAngle,
+      area: size,
+    );
+  }
+
   static void _renderDiagonalBand(
     Canvas canvas,
     double width,
@@ -182,73 +264,16 @@ class WatermarkRendererService {
     double fontSize,
     tz.Location zone,
   ) {
+    final color = config.colorOption.color.withValues(alpha: config.opacity);
+    final block = layoutDiagonalBand(config, Size(width, height), zone);
     canvas.save();
     canvas.translate(width / 2, height / 2);
     canvas.rotate((config.rotationAngle * math.pi) / 180.0);
-
-    final text = config.renderedTextIn(zone);
-    final color = config.colorOption.color.withValues(alpha: config.opacity);
-
-    final textPainter = TextPainter(
-      text: TextSpan(
-        text: text,
-        style: TextStyle(
-          color: color,
-          fontSize: fontSize,
-          fontWeight: FontWeight.w800,
-          letterSpacing: 2.0,
-        ),
-      ),
-      textDirection: TextDirection.ltr,
-    );
-    textPainter.layout();
-
-    final bandPaint = Paint()
-      ..color = (config.colorOption == WatermarkColorOption.white ? Colors.black : Colors.white)
-          .withValues(alpha: (config.opacity * 0.35).clamp(0.05, 0.4))
-      ..style = PaintingStyle.fill;
-
-    final padX = fontSize * 1.5;
-    final padY = fontSize * 0.6;
-    final rect = Rect.fromCenter(
-      center: Offset.zero,
-      width: textPainter.width + (padX * 2),
-      height: textPainter.height + (padY * 2),
-    );
-
-    canvas.drawRRect(RRect.fromRectAndRadius(rect, Radius.circular(fontSize * 0.3)), bandPaint);
-
-    final borderPaint = Paint()
-      ..color = color
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = math.max(1.5, fontSize * 0.08);
-    canvas.drawRRect(RRect.fromRectAndRadius(rect, Radius.circular(fontSize * 0.3)), borderPaint);
-
-    textPainter.paint(
+    block.paint(
       canvas,
-      Offset(-textPainter.width / 2, -textPainter.height / 2),
+      fill: _bandFill(config),
+      border: _bandBorder(color, block.fontSize),
     );
-
-    if (config.customSubtext.trim().isNotEmpty) {
-      final subPainter = TextPainter(
-        text: TextSpan(
-          text: config.customSubtext.trim(),
-          style: TextStyle(
-            color: color,
-            fontSize: fontSize * 0.5,
-            fontWeight: FontWeight.w600,
-            letterSpacing: 1.0,
-          ),
-        ),
-        textDirection: TextDirection.ltr,
-      );
-      subPainter.layout();
-      subPainter.paint(
-        canvas,
-        Offset(-subPainter.width / 2, (textPainter.height / 2) + (fontSize * 0.1)),
-      );
-    }
-
     canvas.restore();
   }
 
@@ -260,35 +285,52 @@ class WatermarkRendererService {
     double fontSize,
     tz.Location zone,
   ) {
-    canvas.save();
+    final color = config.colorOption.color
+        .withValues(alpha: (config.opacity * 0.75).clamp(0.1, 0.9));
     final text = config.renderedTextIn(zone);
-    final color = config.colorOption.color.withValues(alpha: (config.opacity * 0.75).clamp(0.1, 0.9));
 
-    final textPainter = TextPainter(
-      text: TextSpan(
-        text: text,
-        style: TextStyle(
-          color: color,
-          fontSize: fontSize * 0.7,
-          fontWeight: FontWeight.w700,
-          letterSpacing: 1.2,
-        ),
-      ),
-      textDirection: TextDirection.ltr,
-    );
-    textPainter.layout();
+    TextPainter layoutAt(double f) => TextPainter(
+          text: TextSpan(
+            text: text,
+            style: TextStyle(
+              color: color,
+              fontSize: f,
+              fontWeight: FontWeight.w700,
+              letterSpacing: f * 0.05,
+            ),
+          ),
+          textDirection: TextDirection.ltr,
+        )..layout();
 
-    final stepX = textPainter.width + (fontSize * 3);
-    final stepY = textPainter.height + (fontSize * 2.5);
+    // Fit one tile so at least the centre copy is complete.
+    var f = fontSize * 0.7;
+    var tp = layoutAt(f);
+    for (var i = 0; i < 6; i++) {
+      final s = StampFit.scaleToFit(tp.size, config.rotationAngle, Size(width, height));
+      if (s >= 1.0) break;
+      f *= s * 0.995;
+      tp = layoutAt(f);
+    }
 
+    final stepX = tp.width + (f * 4);
+    final stepY = tp.height + (f * 3.5);
+
+    canvas.save();
     canvas.translate(width / 2, height / 2);
     canvas.rotate((config.rotationAngle * math.pi) / 180.0);
-    canvas.translate(-width / 2, -height / 2);
 
+    // Tiles are anchored so one copy sits exactly on the centre; alternate
+    // rows are offset by half a step.
     final diagonal = math.sqrt(width * width + height * height);
-    for (double y = -diagonal; y < diagonal * 2; y += stepY) {
-      for (double x = -diagonal; x < diagonal * 2; x += stepX) {
-        textPainter.paint(canvas, Offset(x, y));
+    final rows = (diagonal / stepY).ceil() + 1;
+    final cols = (diagonal / stepX).ceil() + 1;
+    for (var r = -rows; r <= rows; r++) {
+      final rowShift = r.isOdd ? stepX / 2 : 0.0;
+      for (var c = -cols; c <= cols; c++) {
+        tp.paint(
+          canvas,
+          Offset(c * stepX + rowShift - tp.width / 2, r * stepY - tp.height / 2),
+        );
       }
     }
     canvas.restore();
@@ -302,30 +344,27 @@ class WatermarkRendererService {
     double fontSize,
     tz.Location zone,
   ) {
-    final barHeight = fontSize * 3.0;
-    final barRect = Rect.fromLTWH(0, height - barHeight, width, barHeight);
+    final color = config.colorOption.color;
+    final pad = fontSize;
+    final textPainter = layoutShrinkToHeight(
+      text: config.renderedTextIn(zone),
+      style: TextStyle(
+        color: color,
+        fontSize: fontSize * 0.85,
+        fontWeight: FontWeight.w800,
+        letterSpacing: fontSize * 0.05,
+      ),
+      maxWidth: width - pad * 2,
+      maxHeight: height * 0.4,
+    );
 
+    final barHeight = math.max(fontSize * 3.0, textPainter.height + pad);
+    final barRect = Rect.fromLTWH(0, height - barHeight, width, barHeight);
     final barPaint = Paint()
       ..color = (config.colorOption == WatermarkColorOption.white ? Colors.black : Colors.white)
           .withValues(alpha: 0.85);
     canvas.drawRect(barRect, barPaint);
 
-    final color = config.colorOption.color;
-    final text = config.renderedTextIn(zone);
-
-    final textPainter = TextPainter(
-      text: TextSpan(
-        text: text,
-        style: TextStyle(
-          color: color,
-          fontSize: fontSize * 0.85,
-          fontWeight: FontWeight.w800,
-          letterSpacing: 1.5,
-        ),
-      ),
-      textDirection: TextDirection.ltr,
-    );
-    textPainter.layout(maxWidth: width - (fontSize * 2));
     textPainter.paint(
       canvas,
       Offset((width - textPainter.width) / 2, height - (barHeight / 2) - (textPainter.height / 2)),
@@ -340,9 +379,25 @@ class WatermarkRendererService {
     double fontSize,
     tz.Location zone,
   ) {
-    final stampWidth = fontSize * 10;
-    final stampHeight = fontSize * 3.5;
-    final margin = fontSize * 1.0;
+    final margin = math.min(fontSize, math.min(width, height) * StampFit.margin * 2);
+    final stampWidth = math.min(fontSize * 10, width - margin * 2);
+    final inner = fontSize * 0.4;
+    final color = config.colorOption.color.withValues(alpha: config.opacity);
+
+    final textPainter = layoutShrinkToHeight(
+      text: config.renderedTextIn(zone),
+      style: TextStyle(
+        color: color,
+        fontSize: fontSize * 0.65,
+        fontWeight: FontWeight.w800,
+      ),
+      maxWidth: stampWidth - inner * 2,
+      maxHeight: height - margin * 2 - inner * 2,
+    );
+    final stampHeight = math.min(
+      height - margin * 2,
+      math.max(fontSize * 3.5, textPainter.height + inner * 2),
+    );
 
     final stampRect = Rect.fromLTWH(
       width - stampWidth - margin,
@@ -351,32 +406,18 @@ class WatermarkRendererService {
       stampHeight,
     );
 
-    final color = config.colorOption.color.withValues(alpha: config.opacity);
-
     final bgPaint = Paint()
       ..color = Colors.white.withValues(alpha: 0.9)
       ..style = PaintingStyle.fill;
-    canvas.drawRRect(RRect.fromRectAndRadius(stampRect, Radius.circular(fontSize * 0.4)), bgPaint);
+    final radius = Radius.circular(fontSize * 0.4);
+    canvas.drawRRect(RRect.fromRectAndRadius(stampRect, radius), bgPaint);
 
     final borderPaint = Paint()
       ..color = color
       ..style = PaintingStyle.stroke
       ..strokeWidth = fontSize * 0.1;
-    canvas.drawRRect(RRect.fromRectAndRadius(stampRect, Radius.circular(fontSize * 0.4)), borderPaint);
+    canvas.drawRRect(RRect.fromRectAndRadius(stampRect, radius), borderPaint);
 
-    final text = config.renderedTextIn(zone);
-    final textPainter = TextPainter(
-      text: TextSpan(
-        text: text,
-        style: TextStyle(
-          color: color,
-          fontSize: fontSize * 0.65,
-          fontWeight: FontWeight.w800,
-        ),
-      ),
-      textDirection: TextDirection.ltr,
-    );
-    textPainter.layout(maxWidth: stampWidth - (fontSize * 0.8));
     textPainter.paint(
       canvas,
       Offset(
@@ -391,87 +432,81 @@ class WatermarkRendererService {
     double width,
     double height,
     WatermarkConfig config,
-    double fontSize,
+    double baseFontSize,
     tz.Location zone,
   ) {
-    canvas.save();
-    canvas.translate(width / 2, height / 2);
-
+    // Shrink the whole seal when the image is smaller than the seal.
+    final fit = math.min(
+      1.0,
+      math.min(width, height) * (1 - 2 * StampFit.margin) / (baseFontSize * 9.0),
+    );
+    final fontSize = baseFontSize * fit;
     final sealRadius = fontSize * 4.5;
     final color = config.colorOption.color.withValues(alpha: config.opacity);
 
-    // Outer circle
-    final outerPaint = Paint()
-      ..color = color
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = fontSize * 0.12;
-    canvas.drawCircle(Offset.zero, sealRadius, outerPaint);
+    canvas.save();
+    canvas.translate(width / 2, height / 2);
 
-    // Inner dashed circle
-    final innerPaint = Paint()
-      ..color = color
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = fontSize * 0.06;
-    canvas.drawCircle(Offset.zero, sealRadius * 0.85, innerPaint);
-
-    // Background fill
-    final bgPaint = Paint()
-      ..color = (config.colorOption == WatermarkColorOption.white ? Colors.black : Colors.white)
-          .withValues(alpha: (config.opacity * 0.35).clamp(0.05, 0.4))
-      ..style = PaintingStyle.fill;
-    canvas.drawCircle(Offset.zero, sealRadius, bgPaint);
-
-    // Seal header text
-    final headerPainter = TextPainter(
-      text: TextSpan(
-        text: '★ RESMI DIVERIFIKASI ★',
-        style: TextStyle(
-          color: color,
-          fontSize: fontSize * 0.45,
-          fontWeight: FontWeight.w900,
-          letterSpacing: 1.5,
-        ),
-      ),
-      textDirection: TextDirection.ltr,
+    canvas.drawCircle(
+      Offset.zero,
+      sealRadius,
+      Paint()
+        ..color = color
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = fontSize * 0.12,
     );
-    headerPainter.layout();
-    headerPainter.paint(canvas, Offset(-headerPainter.width / 2, -sealRadius * 0.55));
-
-    // Center Purpose Text
-    final purposePainter = TextPainter(
-      text: TextSpan(
-        text: config.purpose.toUpperCase(),
-        style: TextStyle(
-          color: color,
-          fontSize: fontSize * 0.55,
-          fontWeight: FontWeight.w900,
-          letterSpacing: 1.0,
-        ),
-      ),
-      textDirection: TextDirection.ltr,
-      textAlign: TextAlign.center,
+    canvas.drawCircle(
+      Offset.zero,
+      sealRadius * 0.85,
+      Paint()
+        ..color = color
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = fontSize * 0.06,
     );
-    purposePainter.layout(maxWidth: sealRadius * 1.6);
+    canvas.drawCircle(Offset.zero, sealRadius, _bandFill(config));
+
+    final headerPainter = layoutShrinkToHeight(
+      text: '★ SALINAN TERBATAS ★',
+      style: TextStyle(
+        color: color,
+        fontSize: fontSize * 0.45,
+        fontWeight: FontWeight.w900,
+        letterSpacing: fontSize * 0.05,
+      ),
+      maxWidth: sealRadius * 1.3,
+      maxHeight: fontSize * 0.7,
+    );
+    headerPainter.paint(canvas, Offset(-headerPainter.width / 2, -sealRadius * 0.6));
+
+    final purposePainter = layoutShrinkToHeight(
+      text: config.purpose.toUpperCase(),
+      style: TextStyle(
+        color: color,
+        fontSize: fontSize * 0.55,
+        fontWeight: FontWeight.w900,
+        letterSpacing: fontSize * 0.03,
+      ),
+      maxWidth: sealRadius * 1.5,
+      maxHeight: sealRadius * 0.75,
+    );
     purposePainter.paint(
       canvas,
       Offset(-purposePainter.width / 2, -purposePainter.height / 2),
     );
 
-    // Bottom Date text
-    if (config.includeDate) {
-      final datePainter = TextPainter(
-        text: TextSpan(
-          text: 'TGL: ${config.dateLabelIn(zone)}',
-          style: TextStyle(
-            color: color,
-            fontSize: fontSize * 0.45,
-            fontWeight: FontWeight.w700,
-          ),
+    final dateText = _dateText(config, zone);
+    if (dateText != null) {
+      final datePainter = layoutShrinkToHeight(
+        text: dateText,
+        style: TextStyle(
+          color: color,
+          fontSize: fontSize * 0.45,
+          fontWeight: FontWeight.w700,
         ),
-        textDirection: TextDirection.ltr,
+        maxWidth: sealRadius * 1.3,
+        maxHeight: fontSize * 0.7,
       );
-      datePainter.layout();
-      datePainter.paint(canvas, Offset(-datePainter.width / 2, sealRadius * 0.45));
+      datePainter.paint(canvas, Offset(-datePainter.width / 2, sealRadius * 0.42));
     }
 
     canvas.restore();
@@ -485,78 +520,35 @@ class WatermarkRendererService {
     double fontSize,
     tz.Location zone,
   ) {
-    // Render first diagonal ribbon (-25 deg)
-    canvas.save();
-    canvas.translate(width / 2, height / 2);
-    canvas.rotate((-25.0 * math.pi) / 180.0);
-
-    final text = config.renderedTextIn(zone);
     final color = config.colorOption.color.withValues(alpha: config.opacity);
-
-    final textPainter = TextPainter(
-      text: TextSpan(
-        text: text,
-        style: TextStyle(
-          color: color,
-          fontSize: fontSize * 0.85,
-          fontWeight: FontWeight.w800,
-          letterSpacing: 1.5,
-        ),
-      ),
-      textDirection: TextDirection.ltr,
-    );
-    textPainter.layout();
-
-    final bandPaint = Paint()
-      ..color = (config.colorOption == WatermarkColorOption.white ? Colors.black : Colors.white)
-          .withValues(alpha: (config.opacity * 0.3).clamp(0.05, 0.35))
-      ..style = PaintingStyle.fill;
-    final borderPaint = Paint()
-      ..color = color
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = math.max(1.5, fontSize * 0.08);
-
-    final rect1 = Rect.fromCenter(
-      center: Offset.zero,
-      width: textPainter.width + (fontSize * 2),
-      height: textPainter.height + (fontSize * 0.8),
-    );
-    canvas.drawRRect(RRect.fromRectAndRadius(rect1, Radius.circular(fontSize * 0.2)), bandPaint);
-    canvas.drawRRect(RRect.fromRectAndRadius(rect1, Radius.circular(fontSize * 0.2)), borderPaint);
-    textPainter.paint(canvas, Offset(-textPainter.width / 2, -textPainter.height / 2));
-    canvas.restore();
-
-    // Render second crossing diagonal ribbon (+25 deg)
-    canvas.save();
-    canvas.translate(width / 2, height / 2);
-    canvas.rotate((25.0 * math.pi) / 180.0);
-
+    final area = Size(width, height);
     final subtext = config.customSubtext.trim().isNotEmpty
-        ? config.customSubtext.trim()
+        ? config.customSubtext.trim().toUpperCase()
         : 'HANYA UNTUK VERIFIKASI IDENTITAS';
-    final textPainter2 = TextPainter(
-      text: TextSpan(
-        text: subtext.toUpperCase(),
-        style: TextStyle(
-          color: color,
-          fontSize: fontSize * 0.7,
-          fontWeight: FontWeight.w800,
-          letterSpacing: 1.5,
-        ),
-      ),
-      textDirection: TextDirection.ltr,
-    );
-    textPainter2.layout();
 
-    final rect2 = Rect.fromCenter(
-      center: Offset.zero,
-      width: textPainter2.width + (fontSize * 2),
-      height: textPainter2.height + (fontSize * 0.8),
-    );
-    canvas.drawRRect(RRect.fromRectAndRadius(rect2, Radius.circular(fontSize * 0.2)), bandPaint);
-    canvas.drawRRect(RRect.fromRectAndRadius(rect2, Radius.circular(fontSize * 0.2)), borderPaint);
-    textPainter2.paint(canvas, Offset(-textPainter2.width / 2, -textPainter2.height / 2));
-    canvas.restore();
+    void band(double angle, String purpose, String? date, double f) {
+      final block = BandBlock.fit(
+        purpose: purpose,
+        dateText: date,
+        subtext: '',
+        color: color,
+        fontSize: f,
+        angleDeg: angle,
+        area: area,
+      );
+      canvas.save();
+      canvas.translate(width / 2, height / 2);
+      canvas.rotate((angle * math.pi) / 180.0);
+      block.paint(
+        canvas,
+        fill: _bandFill(config, factor: 0.3),
+        border: _bandBorder(color, block.fontSize),
+      );
+      canvas.restore();
+    }
+
+    band(-25.0, _purposeText(config), _dateText(config, zone), fontSize * 0.85);
+    band(25.0, subtext, null, fontSize * 0.7);
   }
 
   static void _renderQrBadge(
@@ -564,32 +556,39 @@ class WatermarkRendererService {
     double width,
     double height,
     WatermarkConfig config,
-    double fontSize,
+    double baseFontSize,
     tz.Location zone,
   ) {
+    // Shrink the badge when it would not fit the image width.
+    final fit = math.min(1.0, width * (1 - 2 * StampFit.margin) / (baseFontSize * 11.8));
+    final fontSize = baseFontSize * fit;
     final badgeWidth = fontSize * 11;
     final badgeHeight = fontSize * 3.8;
     final badgeRect = Rect.fromLTWH(
-      width - badgeWidth - (fontSize * 0.8),
-      height - badgeHeight - (fontSize * 0.8),
+      width - badgeWidth - (fontSize * 0.4),
+      height - badgeHeight - (fontSize * 0.4),
       badgeWidth,
       badgeHeight,
     );
 
     final color = config.colorOption.color.withValues(alpha: config.opacity);
+    final radius = Radius.circular(fontSize * 0.4);
 
-    final bgPaint = Paint()
-      ..color = Colors.white.withValues(alpha: 0.95)
-      ..style = PaintingStyle.fill;
-    canvas.drawRRect(RRect.fromRectAndRadius(badgeRect, Radius.circular(fontSize * 0.4)), bgPaint);
+    canvas.drawRRect(
+      RRect.fromRectAndRadius(badgeRect, radius),
+      Paint()
+        ..color = Colors.white.withValues(alpha: 0.95)
+        ..style = PaintingStyle.fill,
+    );
+    canvas.drawRRect(
+      RRect.fromRectAndRadius(badgeRect, radius),
+      Paint()
+        ..color = color
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = fontSize * 0.1,
+    );
 
-    final borderPaint = Paint()
-      ..color = color
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = fontSize * 0.1;
-    canvas.drawRRect(RRect.fromRectAndRadius(badgeRect, Radius.circular(fontSize * 0.4)), borderPaint);
-
-    // Draw Simulated High-Contrast QR Matrix Icon Box on the left
+    // Simulated high-contrast QR matrix on the left.
     final qrBoxSize = badgeHeight - (fontSize * 0.6);
     final qrBoxRect = Rect.fromLTWH(
       badgeRect.left + (fontSize * 0.3),
@@ -597,67 +596,75 @@ class WatermarkRendererService {
       qrBoxSize,
       qrBoxSize,
     );
-    final qrPaint = Paint()..color = const Color(0xFF0F172A);
-    canvas.drawRect(qrBoxRect, qrPaint);
-
-    // Draw QR pattern blocks
+    canvas.drawRect(qrBoxRect, Paint()..color = _qrInk);
     final pWhite = Paint()..color = Colors.white;
     final step = qrBoxSize / 5;
     for (int i = 0; i < 5; i++) {
       for (int j = 0; j < 5; j++) {
         if ((i + j) % 2 == 1 || (i == 0 && j == 0) || (i == 4 && j == 4)) {
-          canvas.drawRect(Rect.fromLTWH(qrBoxRect.left + (i * step), qrBoxRect.top + (j * step), step * 0.8, step * 0.8), pWhite);
+          canvas.drawRect(
+            Rect.fromLTWH(qrBoxRect.left + (i * step), qrBoxRect.top + (j * step), step * 0.8, step * 0.8),
+            pWhite,
+          );
         }
       }
     }
 
-    // Right text column
     final rightLeft = qrBoxRect.right + (fontSize * 0.4);
     final maxRightWidth = badgeRect.right - rightLeft - (fontSize * 0.3);
+    final top = badgeRect.top + (fontSize * 0.3);
 
-    final topPainter = TextPainter(
-      text: const TextSpan(
-        text: 'IDMARK VERIFIED',
-        style: TextStyle(
-          color: Color(0xFF0284C7),
-          fontSize: 10,
-          fontWeight: FontWeight.w900,
-          letterSpacing: 1.0,
-        ),
+    final topPainter = layoutShrinkToHeight(
+      text: 'IDMARK',
+      style: TextStyle(
+        color: _qrHeader,
+        fontSize: fontSize * 0.42,
+        fontWeight: FontWeight.w900,
+        letterSpacing: fontSize * 0.04,
       ),
-      textDirection: TextDirection.ltr,
+      maxWidth: maxRightWidth,
+      maxHeight: fontSize * 0.6,
+      align: TextAlign.left,
     );
-    topPainter.layout();
-    topPainter.paint(canvas, Offset(rightLeft, badgeRect.top + (fontSize * 0.3)));
+    topPainter.paint(canvas, Offset(rightLeft, top));
 
-    final purposePainter = TextPainter(
-      text: TextSpan(
-        text: config.purpose.toUpperCase(),
-        style: TextStyle(
-          color: color,
-          fontSize: fontSize * 0.48,
-          fontWeight: FontWeight.w800,
-        ),
+    final dateText = _dateText(config, zone);
+    final dateBlock = dateText == null ? 0.0 : fontSize * 0.6;
+    final purposeTop = top + topPainter.height + fontSize * 0.1;
+    final purposePainter = layoutShrinkToHeight(
+      text: config.purpose.toUpperCase(),
+      style: TextStyle(
+        color: color,
+        fontSize: fontSize * 0.48,
+        fontWeight: FontWeight.w800,
       ),
-      textDirection: TextDirection.ltr,
+      maxWidth: maxRightWidth,
+      maxHeight: badgeRect.bottom - fontSize * 0.25 - dateBlock - purposeTop,
+      align: TextAlign.left,
     );
-    purposePainter.layout(maxWidth: maxRightWidth);
-    purposePainter.paint(canvas, Offset(rightLeft, badgeRect.top + (fontSize * 0.9)));
+    purposePainter.paint(canvas, Offset(rightLeft, purposeTop));
 
-    if (config.includeDate) {
-      final datePainter = TextPainter(
-        text: TextSpan(
-          text: 'TGL: ${config.dateLabelIn(zone)}',
-          style: const TextStyle(
-            color: Color(0xFF64748B),
-            fontSize: 9,
-            fontWeight: FontWeight.w700,
-          ),
+    if (dateText != null) {
+      final datePainter = layoutShrinkToHeight(
+        text: dateText,
+        style: TextStyle(
+          color: _qrMeta,
+          fontSize: fontSize * 0.38,
+          fontWeight: FontWeight.w700,
         ),
-        textDirection: TextDirection.ltr,
+        maxWidth: maxRightWidth,
+        maxHeight: dateBlock,
+        align: TextAlign.left,
       );
-      datePainter.layout();
-      datePainter.paint(canvas, Offset(rightLeft, badgeRect.top + (fontSize * 2.5)));
+      datePainter.paint(
+        canvas,
+        Offset(rightLeft, badgeRect.bottom - fontSize * 0.25 - datePainter.height),
+      );
     }
   }
+
+  // Ink colours burned into the QR badge (always on its white card).
+  static const Color _qrInk = Color(0xFF0F172A);
+  static const Color _qrHeader = Color(0xFF0284C7);
+  static const Color _qrMeta = Color(0xFF64748B);
 }

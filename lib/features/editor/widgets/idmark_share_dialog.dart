@@ -148,11 +148,11 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
       buffer.writeln('📅 Tanggal Stempel: ${widget.dateLabel}');
       buffer.writeln('🔒 Skor Privasi: ${c.privacyScore}/100');
       buffer.writeln(
-        '✂️ Sensor Permanen: ${c.redactions.length} Area Tertutup',
+        '✂️ Sensor permanen: ${c.redactions.length} area tertutup',
       );
       buffer.writeln('🔑 SHA-256: ${widget.sha256Hash}');
       buffer.writeln(
-        '✅ Diproses 100% on-device tanpa server (Sesuai Panduan Kominfo RI)',
+        '✅ Diproses 100% di perangkat, tanpa server',
       );
       buffer.writeln(
         '\nLindungi identitas Anda dengan IDMark: https://idmark.faishal.id',
@@ -295,7 +295,7 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
                           ),
                           Text(
                             l10n?.shareProofSubtitle ??
-                                'Sertifikat integritas watermark & sensor sesuai Kominfo',
+                                'Ringkasan watermark dan sensor pada salinan ini',
                             style: const TextStyle(
                               fontSize: 12,
                               color: Color(0xFF94A3B8),
@@ -689,7 +689,7 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
                           const SizedBox(height: 2),
                           Text(
                             l10n?.shareCardAreaCount(c.redactions.length) ??
-                                '${c.redactions.length} Area',
+                                '${c.redactions.length} area',
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.w900,
@@ -800,7 +800,7 @@ class _IdmarkShareDialogState extends State<IdmarkShareDialog> {
                 const SizedBox(width: 5),
                 Text(
                   l10n?.shareCardFooter ??
-                      'idmark.faishal.id • Standar Watermark KTP Kominfo RI',
+                      'idmark.faishal.id • diproses di perangkat',
                   style: TextStyle(
                     fontSize: 10,
                     fontWeight: FontWeight.w600,

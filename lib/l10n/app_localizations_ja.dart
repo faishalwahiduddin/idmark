@@ -126,7 +126,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get appDomain => 'ドメイン';
 
   @override
-  String get appCompliance => 'コンプライアンス';
+  String get appCompliance => '参考';
 
   @override
   String get appProvider => 'プロバイダー';
@@ -141,7 +141,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get preferencesReset => '設定がリセットされました。';
 
   @override
-  String get guideRules => '透かしの4つのルール';
+  String get guideRules => '透かしの4つの基本ルール';
 
   @override
   String get guideRule1Title => '名前と目的を書く';
@@ -235,8 +235,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get configResetKominfo => '設定が通信省の推奨標準にリセットされました。';
 
   @override
-  String get bannerUuPdp =>
-      '個人情報保護法基準: 身分証明書の写真を共有する前に、具体的な目的の透かしと日付を追加し、機密データを墨消ししてください。';
+  String get bannerUuPdp => '身分証の写真を共有する前に、具体的な目的と日付を入れ、相手に不要な情報を隠しましょう。';
 
   @override
   String sensorBoxAdded(String label) {
@@ -355,10 +354,10 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get privacyComplianceIndex => 'ドキュメントプライバシー準拠指数';
+  String get privacyComplianceIndex => '保護チェックリスト';
 
   @override
-  String get complianceChecklistTitle => '個人データ保護法2022年第27号コンプライアンスチェックリスト:';
+  String get complianceChecklistTitle => '共有する前に:';
 
   @override
   String get checkPurposeTitle => '具体的な使用目的';
@@ -470,7 +469,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String sensitiveSensorsCount(int count) {
-    return '$count 箇所の重要墨消し';
+    return '$count 箇所の墨消し';
   }
 
   @override
@@ -621,7 +620,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get zeroServerDesc =>
-      'IDMarkは100%ブラウザまたはローカル端末内で動作します。身分証明書画像が外部サーバーに送信、保存、処理されることは一切ありません。';
+      'IDMarkは100%お使いの端末内で動作します。身分証明書画像が外部サーバーに送信、保存、処理されることは一切ありません。';
 
   @override
   String get dataSecuritySanitation => 'データクリーンアップとセキュリティ';
@@ -642,7 +641,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get appLabel => 'アプリ';
 
   @override
-  String get officialKominfoGuide => 'Kominfo・個人データ保護法 公式ガイド';
+  String get officialKominfoGuide => '身分証写真の安全ガイド';
 
   @override
   String get privacyAndSettings => 'プライバシーと設定';
@@ -714,7 +713,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get customPresetSaveFailed => 'プリセットを保存できませんでした。もう一度お試しください。';
 
   @override
-  String get privacyGradeDescMax => '最大保護 • データ保護基準に準拠';
+  String get privacyGradeDescMax => '強い保護 • すべての項目を満たしています';
 
   @override
   String get privacyGradeDescVeryGood => '強固な保護 • 共有しても安全です';
@@ -987,7 +986,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get shareProofTitle => '書類保護の証明';
 
   @override
-  String get shareProofSubtitle => 'Kominfo準拠の透かし・マスク完全性証明書';
+  String get shareProofSubtitle => 'このコピーの透かしとマスクの概要';
 
   @override
   String get shareFormatFeed => 'フィード (4:5)';
@@ -1039,7 +1038,7 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get shareCardFooter => 'idmark.faishal.id • Kominfo ID透かし基準';
+  String get shareCardFooter => 'idmark.faishal.id • 端末内で処理';
 
   @override
   String get shareCardIntegrityHash => '整合性ハッシュ（SHA-256）：';
@@ -1073,7 +1072,7 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get shareProofOnDeviceLine => '✅ 100% 端末内で処理、サーバー不使用（Kominfo RI 指針準拠）';
+  String get shareProofOnDeviceLine => '✅ 100% 端末内で処理、サーバー不使用';
 
   @override
   String get shareProofCtaLine => 'IDMark で身元を守りましょう：https://idmark.faishal.id';
@@ -1243,4 +1242,67 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get contactEmailCopied => 'メールアドレスをコピーしました: contact@faishal.id';
+
+  @override
+  String placeholderUnfilled(String placeholder) {
+    return '書き出す前に $placeholder を実際の名前に置き換えてください。';
+  }
+
+  @override
+  String get savedToGallery => 'ギャラリー › Pictures/IDMark に保存しました';
+
+  @override
+  String get savedToDownloads => 'ファイル › Download/IDMark に保存しました';
+
+  @override
+  String get saveViaShareHint => 'コピーを残すには、共有シートで「画像を保存」または「ファイルに保存」を選んでください。';
+
+  @override
+  String redactionWidth(int value) {
+    return '幅 ($value%)';
+  }
+
+  @override
+  String redactionHeight(int value) {
+    return '高さ ($value%)';
+  }
+
+  @override
+  String get redactionDragHint => '写真上のボックスをドラッグして移動します。角の点をドラッグするとサイズを変更できます。';
+
+  @override
+  String get redactionWeakWarning =>
+      'ぼかしやモザイクは、ID番号のような小さな文字では復元される場合があります。NIKには黒塗りを使ってください。';
+
+  @override
+  String get historyEntryDeleted => '記録を削除しました';
+
+  @override
+  String get undo => '元に戻す';
+
+  @override
+  String get deleteEntry => '記録を削除';
+
+  @override
+  String get notLegalAdvice => '安全のための目安であり、法的助言や公式な認証ではありません。';
+
+  @override
+  String get tabRedactShort => '墨消し';
+
+  @override
+  String get tabPrivacyShort => 'プライバシー';
+
+  @override
+  String get tabFormatShort => '形式';
+
+  @override
+  String redactionBoxSemantics(String label) {
+    return '墨消しボックス $label。ドラッグで移動。';
+  }
+
+  @override
+  String get resizeRedaction => '墨消しボックスのサイズ変更';
+
+  @override
+  String get exportFormatSessionNote => '今回の書き出しに適用されます。既定の形式は設定で変更できます。';
 }

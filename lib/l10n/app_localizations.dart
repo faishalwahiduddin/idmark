@@ -347,7 +347,7 @@ abstract class AppLocalizations {
   /// No description provided for @appCompliance.
   ///
   /// In id, this message translates to:
-  /// **'Standar Kepatuhan'**
+  /// **'Rujukan'**
   String get appCompliance;
 
   /// No description provided for @appProvider.
@@ -377,7 +377,7 @@ abstract class AppLocalizations {
   /// No description provided for @guideRules.
   ///
   /// In id, this message translates to:
-  /// **'4 Aturan Pokok Watermark Kominfo'**
+  /// **'4 Aturan Dasar Watermark'**
   String get guideRules;
 
   /// No description provided for @guideRule1Title.
@@ -551,7 +551,7 @@ abstract class AppLocalizations {
   /// No description provided for @bannerUuPdp.
   ///
   /// In id, this message translates to:
-  /// **'Standar UU PDP: Bubuhkan watermark tujuan spesifik, tanggal, dan sensor data sensitif sebelum membagikan foto e-KTP.'**
+  /// **'Sebelum membagikan foto KTP: cantumkan tujuan spesifik dan tanggal, lalu tutup data yang tidak dibutuhkan penerima.'**
   String get bannerUuPdp;
 
   /// No description provided for @sensorBoxAdded.
@@ -761,13 +761,13 @@ abstract class AppLocalizations {
   /// No description provided for @privacyComplianceIndex.
   ///
   /// In id, this message translates to:
-  /// **'Indeks Kepatuhan Privasi Dokumen'**
+  /// **'Checklist Perlindungan'**
   String get privacyComplianceIndex;
 
   /// No description provided for @complianceChecklistTitle.
   ///
   /// In id, this message translates to:
-  /// **'Checklist Kepatuhan UU PDP No. 27/2022:'**
+  /// **'Sebelum dibagikan:'**
   String get complianceChecklistTitle;
 
   /// No description provided for @checkPurposeTitle.
@@ -863,7 +863,7 @@ abstract class AppLocalizations {
   /// No description provided for @activeWatermarkWithCount.
   ///
   /// In id, this message translates to:
-  /// **'Watermark Aktif ({count} sensor)'**
+  /// **'{count, plural, =1{Watermark Aktif (1 sensor)} other{Watermark Aktif ({count} sensor)}}'**
   String activeWatermarkWithCount(int count);
 
   /// No description provided for @activeWatermarkPreview.
@@ -971,7 +971,7 @@ abstract class AppLocalizations {
   /// No description provided for @sensitiveSensorsCount.
   ///
   /// In id, this message translates to:
-  /// **'{count} Sensor Sensitif'**
+  /// **'{count, plural, =1{1 sensor} other{{count} sensor}}'**
   String sensitiveSensorsCount(int count);
 
   /// No description provided for @exifSanitized.
@@ -1241,7 +1241,7 @@ abstract class AppLocalizations {
   /// No description provided for @zeroServerDesc.
   ///
   /// In id, this message translates to:
-  /// **'IDMark berjalan 100% di peramban atau perangkat lokal Anda. Foto identitas e-KTP tidak pernah dikirim, disimpan, atau diproses di peladen (server) eksternal manapun.'**
+  /// **'IDMark berjalan 100% di perangkat Anda. Foto identitas e-KTP tidak pernah dikirim, disimpan, atau diproses di peladen (server) eksternal manapun.'**
   String get zeroServerDesc;
 
   /// No description provided for @dataSecuritySanitation.
@@ -1283,7 +1283,7 @@ abstract class AppLocalizations {
   /// No description provided for @officialKominfoGuide.
   ///
   /// In id, this message translates to:
-  /// **'Panduan Resmi Kominfo & UU PDP'**
+  /// **'Panduan Keamanan Foto KTP'**
   String get officialKominfoGuide;
 
   /// No description provided for @privacyAndSettings.
@@ -1427,7 +1427,7 @@ abstract class AppLocalizations {
   /// No description provided for @privacyGradeDescMax.
   ///
   /// In id, this message translates to:
-  /// **'Proteksi Maksimal • Memenuhi rekomendasi Kominfo & UU PDP'**
+  /// **'Perlindungan kuat • Semua checklist terpenuhi'**
   String get privacyGradeDescMax;
 
   /// No description provided for @privacyGradeDescVeryGood.
@@ -1961,7 +1961,7 @@ abstract class AppLocalizations {
   /// No description provided for @shareProofSubtitle.
   ///
   /// In id, this message translates to:
-  /// **'Sertifikat integritas watermark & sensor sesuai Kominfo'**
+  /// **'Ringkasan watermark dan sensor pada salinan ini'**
   String get shareProofSubtitle;
 
   /// No description provided for @shareFormatFeed.
@@ -2039,7 +2039,7 @@ abstract class AppLocalizations {
   /// No description provided for @shareCardAreaCount.
   ///
   /// In id, this message translates to:
-  /// **'{count} Area'**
+  /// **'{count, plural, =1{1 area} other{{count} area}}'**
   String shareCardAreaCount(int count);
 
   /// No description provided for @shareCardFormat.
@@ -2057,7 +2057,7 @@ abstract class AppLocalizations {
   /// No description provided for @shareCardFooter.
   ///
   /// In id, this message translates to:
-  /// **'idmark.faishal.id • Standar Watermark KTP Kominfo RI'**
+  /// **'idmark.faishal.id • diproses di perangkat'**
   String get shareCardFooter;
 
   /// No description provided for @shareCardIntegrityHash.
@@ -2093,7 +2093,7 @@ abstract class AppLocalizations {
   /// No description provided for @shareProofRedactionLine.
   ///
   /// In id, this message translates to:
-  /// **'✂️ Sensor Permanen: {count} Area Tertutup'**
+  /// **'{count, plural, =1{✂️ Sensor permanen: 1 area tertutup} other{✂️ Sensor permanen: {count} area tertutup}}'**
   String shareProofRedactionLine(int count);
 
   /// No description provided for @shareProofHashLine.
@@ -2105,7 +2105,7 @@ abstract class AppLocalizations {
   /// No description provided for @shareProofOnDeviceLine.
   ///
   /// In id, this message translates to:
-  /// **'✅ Diproses 100% on-device tanpa server (Sesuai Panduan Kominfo RI)'**
+  /// **'✅ Diproses 100% di perangkat, tanpa server'**
   String get shareProofOnDeviceLine;
 
   /// No description provided for @shareProofCtaLine.
@@ -2425,6 +2425,114 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Alamat email disalin: contact@faishal.id'**
   String get contactEmailCopied;
+
+  /// No description provided for @placeholderUnfilled.
+  ///
+  /// In id, this message translates to:
+  /// **'Ganti {placeholder} dengan nama sebenarnya sebelum mengekspor.'**
+  String placeholderUnfilled(String placeholder);
+
+  /// No description provided for @savedToGallery.
+  ///
+  /// In id, this message translates to:
+  /// **'Tersimpan di Galeri › Pictures/IDMark'**
+  String get savedToGallery;
+
+  /// No description provided for @savedToDownloads.
+  ///
+  /// In id, this message translates to:
+  /// **'Tersimpan di File › Download/IDMark'**
+  String get savedToDownloads;
+
+  /// No description provided for @saveViaShareHint.
+  ///
+  /// In id, this message translates to:
+  /// **'Untuk menyimpan salinan, pilih \"Simpan gambar\" atau \"Simpan ke File\" di lembar berbagi.'**
+  String get saveViaShareHint;
+
+  /// No description provided for @redactionWidth.
+  ///
+  /// In id, this message translates to:
+  /// **'Lebar ({value}%)'**
+  String redactionWidth(int value);
+
+  /// No description provided for @redactionHeight.
+  ///
+  /// In id, this message translates to:
+  /// **'Tinggi ({value}%)'**
+  String redactionHeight(int value);
+
+  /// No description provided for @redactionDragHint.
+  ///
+  /// In id, this message translates to:
+  /// **'Seret kotak di foto untuk memindahkannya. Seret titik sudutnya untuk mengubah ukuran.'**
+  String get redactionDragHint;
+
+  /// No description provided for @redactionWeakWarning.
+  ///
+  /// In id, this message translates to:
+  /// **'Buram dan mosaik pada teks kecil seperti NIK kadang bisa dipulihkan. Gunakan Blackout untuk NIK.'**
+  String get redactionWeakWarning;
+
+  /// No description provided for @historyEntryDeleted.
+  ///
+  /// In id, this message translates to:
+  /// **'Entri dihapus'**
+  String get historyEntryDeleted;
+
+  /// No description provided for @undo.
+  ///
+  /// In id, this message translates to:
+  /// **'Urungkan'**
+  String get undo;
+
+  /// No description provided for @deleteEntry.
+  ///
+  /// In id, this message translates to:
+  /// **'Hapus entri'**
+  String get deleteEntry;
+
+  /// No description provided for @notLegalAdvice.
+  ///
+  /// In id, this message translates to:
+  /// **'Panduan keamanan saja, bukan nasihat hukum dan bukan sertifikasi resmi.'**
+  String get notLegalAdvice;
+
+  /// No description provided for @tabRedactShort.
+  ///
+  /// In id, this message translates to:
+  /// **'Sensor'**
+  String get tabRedactShort;
+
+  /// No description provided for @tabPrivacyShort.
+  ///
+  /// In id, this message translates to:
+  /// **'Privasi'**
+  String get tabPrivacyShort;
+
+  /// No description provided for @tabFormatShort.
+  ///
+  /// In id, this message translates to:
+  /// **'Format'**
+  String get tabFormatShort;
+
+  /// No description provided for @redactionBoxSemantics.
+  ///
+  /// In id, this message translates to:
+  /// **'Kotak sensor {label}. Seret untuk memindahkan.'**
+  String redactionBoxSemantics(String label);
+
+  /// No description provided for @resizeRedaction.
+  ///
+  /// In id, this message translates to:
+  /// **'Ubah ukuran kotak sensor'**
+  String get resizeRedaction;
+
+  /// No description provided for @exportFormatSessionNote.
+  ///
+  /// In id, this message translates to:
+  /// **'Berlaku untuk ekspor ini. Format bawaan diatur di Pengaturan.'**
+  String get exportFormatSessionNote;
 }
 
 class _AppLocalizationsDelegate

@@ -127,7 +127,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appDomain => 'Domain';
 
   @override
-  String get appCompliance => 'Compliance Standard';
+  String get appCompliance => 'Reference';
 
   @override
   String get appProvider => 'Provider';
@@ -143,7 +143,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Preferences successfully reset to Kominfo recommendations.';
 
   @override
-  String get guideRules => '4 Main Rules of Kominfo Watermark';
+  String get guideRules => '4 Watermark Rules of Thumb';
 
   @override
   String get guideRule1Title => 'Write Agency Name & Specific Purpose';
@@ -247,7 +247,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get bannerUuPdp =>
-      'PDP Law Standard: Add specific purpose watermark, date, and redact sensitive data before sharing ID card photos.';
+      'Before sharing an ID photo: add a specific purpose and the date, and cover data the recipient does not need.';
 
   @override
   String sensorBoxAdded(String label) {
@@ -367,11 +367,10 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get privacyComplianceIndex => 'Document Privacy Compliance Index';
+  String get privacyComplianceIndex => 'Protection Checklist';
 
   @override
-  String get complianceChecklistTitle =>
-      'PDP Law No. 27/2022 Compliance Checklist:';
+  String get complianceChecklistTitle => 'Before you share:';
 
   @override
   String get checkPurposeTitle => 'Specific Purpose of Use';
@@ -427,7 +426,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String activeWatermarkWithCount(int count) {
-    return 'Active Watermark ($count redactions)';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Active Watermark ($count redactions)',
+      one: 'Active Watermark (1 redaction)',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -490,7 +495,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String sensitiveSensorsCount(int count) {
-    return '$count Sensitive Redactions';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count redactions',
+      one: '1 redaction',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -647,7 +658,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get zeroServerDesc =>
-      'IDMark runs 100% in your browser or local device. ID card photos are never sent, stored, or processed on any external server.';
+      'IDMark runs 100% on your device. ID card photos are never sent, stored, or processed on any external server.';
 
   @override
   String get dataSecuritySanitation => 'Data Sanitation & Security';
@@ -670,7 +681,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appLabel => 'Application';
 
   @override
-  String get officialKominfoGuide => 'Official Kominfo & PDP Law Guide';
+  String get officialKominfoGuide => 'ID Photo Safety Guide';
 
   @override
   String get privacyAndSettings => 'Privacy & Settings';
@@ -755,7 +766,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get privacyGradeDescMax =>
-      'Maximum Protection • Meets data privacy standards';
+      'Strong protection • All checklist items done';
 
   @override
   String get privacyGradeDescVeryGood =>
@@ -1045,7 +1056,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get shareProofSubtitle =>
-      'Watermark & redaction integrity certificate per Kominfo';
+      'Summary of the watermark and redactions on this copy';
 
   @override
   String get shareFormatFeed => 'Feed (4:5)';
@@ -1085,7 +1096,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String shareCardAreaCount(int count) {
-    return '$count Areas';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count areas',
+      one: '1 area',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -1097,8 +1114,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get shareCardFooter =>
-      'idmark.faishal.id • Kominfo RI ID watermark standard';
+  String get shareCardFooter => 'idmark.faishal.id • processed on-device';
 
   @override
   String get shareCardIntegrityHash => 'INTEGRITY HASH (SHA-256):';
@@ -1123,7 +1139,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String shareProofRedactionLine(int count) {
-    return '✂️ Permanent redactions: $count areas covered';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '✂️ Permanent redactions: $count areas covered',
+      one: '✂️ Permanent redactions: 1 area covered',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -1132,8 +1154,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get shareProofOnDeviceLine =>
-      '✅ Processed 100% on-device, no server (per Kominfo RI guidance)';
+  String get shareProofOnDeviceLine => '✅ Processed 100% on-device, no server';
 
   @override
   String get shareProofCtaLine =>
@@ -1314,4 +1335,71 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get contactEmailCopied => 'Email address copied: contact@faishal.id';
+
+  @override
+  String placeholderUnfilled(String placeholder) {
+    return 'Replace $placeholder with the real name before exporting.';
+  }
+
+  @override
+  String get savedToGallery => 'Saved to Gallery › Pictures/IDMark';
+
+  @override
+  String get savedToDownloads => 'Saved to Files › Download/IDMark';
+
+  @override
+  String get saveViaShareHint =>
+      'To keep a copy, choose \"Save image\" or \"Save to Files\" in the share sheet.';
+
+  @override
+  String redactionWidth(int value) {
+    return 'Width ($value%)';
+  }
+
+  @override
+  String redactionHeight(int value) {
+    return 'Height ($value%)';
+  }
+
+  @override
+  String get redactionDragHint =>
+      'Drag a box on the photo to move it. Drag its corner dot to resize.';
+
+  @override
+  String get redactionWeakWarning =>
+      'Blur and mosaic can sometimes be undone on small text such as an ID number. Use Blackout for the NIK.';
+
+  @override
+  String get historyEntryDeleted => 'Entry removed';
+
+  @override
+  String get undo => 'Undo';
+
+  @override
+  String get deleteEntry => 'Delete entry';
+
+  @override
+  String get notLegalAdvice =>
+      'Safety guidance only, not legal advice and not an official certification.';
+
+  @override
+  String get tabRedactShort => 'Redact';
+
+  @override
+  String get tabPrivacyShort => 'Privacy';
+
+  @override
+  String get tabFormatShort => 'Format';
+
+  @override
+  String redactionBoxSemantics(String label) {
+    return 'Redaction box $label. Drag to move.';
+  }
+
+  @override
+  String get resizeRedaction => 'Resize redaction box';
+
+  @override
+  String get exportFormatSessionNote =>
+      'Applies to this export. The default format is set in Settings.';
 }

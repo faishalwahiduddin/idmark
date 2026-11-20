@@ -127,7 +127,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get appDomain => 'Domain';
 
   @override
-  String get appCompliance => 'Standar Kepatuhan';
+  String get appCompliance => 'Rujukan';
 
   @override
   String get appProvider => 'Penyedia';
@@ -143,7 +143,7 @@ class AppLocalizationsId extends AppLocalizations {
       'Preferensi berhasil direset ke rekomendasi Kominfo.';
 
   @override
-  String get guideRules => '4 Aturan Pokok Watermark Kominfo';
+  String get guideRules => '4 Aturan Dasar Watermark';
 
   @override
   String get guideRule1Title => 'Tuliskan Nama Lembaga & Tujuan Spesifik';
@@ -246,7 +246,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get bannerUuPdp =>
-      'Standar UU PDP: Bubuhkan watermark tujuan spesifik, tanggal, dan sensor data sensitif sebelum membagikan foto e-KTP.';
+      'Sebelum membagikan foto KTP: cantumkan tujuan spesifik dan tanggal, lalu tutup data yang tidak dibutuhkan penerima.';
 
   @override
   String sensorBoxAdded(String label) {
@@ -366,11 +366,10 @@ class AppLocalizationsId extends AppLocalizations {
   }
 
   @override
-  String get privacyComplianceIndex => 'Indeks Kepatuhan Privasi Dokumen';
+  String get privacyComplianceIndex => 'Checklist Perlindungan';
 
   @override
-  String get complianceChecklistTitle =>
-      'Checklist Kepatuhan UU PDP No. 27/2022:';
+  String get complianceChecklistTitle => 'Sebelum dibagikan:';
 
   @override
   String get checkPurposeTitle => 'Tujuan Penggunaan Spesifik';
@@ -426,7 +425,13 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String activeWatermarkWithCount(int count) {
-    return 'Watermark Aktif ($count sensor)';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Watermark Aktif ($count sensor)',
+      one: 'Watermark Aktif (1 sensor)',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -490,7 +495,13 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String sensitiveSensorsCount(int count) {
-    return '$count Sensor Sensitif';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count sensor',
+      one: '1 sensor',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -648,7 +659,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get zeroServerDesc =>
-      'IDMark berjalan 100% di peramban atau perangkat lokal Anda. Foto identitas e-KTP tidak pernah dikirim, disimpan, atau diproses di peladen (server) eksternal manapun.';
+      'IDMark berjalan 100% di perangkat Anda. Foto identitas e-KTP tidak pernah dikirim, disimpan, atau diproses di peladen (server) eksternal manapun.';
 
   @override
   String get dataSecuritySanitation => 'Sanitasi & Keamanan Data';
@@ -671,7 +682,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get appLabel => 'Aplikasi';
 
   @override
-  String get officialKominfoGuide => 'Panduan Resmi Kominfo & UU PDP';
+  String get officialKominfoGuide => 'Panduan Keamanan Foto KTP';
 
   @override
   String get privacyAndSettings => 'Privasi & Pengaturan';
@@ -753,7 +764,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get privacyGradeDescMax =>
-      'Proteksi Maksimal • Memenuhi rekomendasi Kominfo & UU PDP';
+      'Perlindungan kuat • Semua checklist terpenuhi';
 
   @override
   String get privacyGradeDescVeryGood =>
@@ -1041,7 +1052,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get shareProofSubtitle =>
-      'Sertifikat integritas watermark & sensor sesuai Kominfo';
+      'Ringkasan watermark dan sensor pada salinan ini';
 
   @override
   String get shareFormatFeed => 'Unggahan (4:5)';
@@ -1081,7 +1092,13 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String shareCardAreaCount(int count) {
-    return '$count Area';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count area',
+      one: '1 area',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -1093,8 +1110,7 @@ class AppLocalizationsId extends AppLocalizations {
   }
 
   @override
-  String get shareCardFooter =>
-      'idmark.faishal.id • Standar Watermark KTP Kominfo RI';
+  String get shareCardFooter => 'idmark.faishal.id • diproses di perangkat';
 
   @override
   String get shareCardIntegrityHash => 'INTEGRITY HASH (SHA-256):';
@@ -1119,7 +1135,13 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String shareProofRedactionLine(int count) {
-    return '✂️ Sensor Permanen: $count Area Tertutup';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '✂️ Sensor permanen: $count area tertutup',
+      one: '✂️ Sensor permanen: 1 area tertutup',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -1129,7 +1151,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get shareProofOnDeviceLine =>
-      '✅ Diproses 100% on-device tanpa server (Sesuai Panduan Kominfo RI)';
+      '✅ Diproses 100% di perangkat, tanpa server';
 
   @override
   String get shareProofCtaLine =>
@@ -1310,4 +1332,71 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get contactEmailCopied => 'Alamat email disalin: contact@faishal.id';
+
+  @override
+  String placeholderUnfilled(String placeholder) {
+    return 'Ganti $placeholder dengan nama sebenarnya sebelum mengekspor.';
+  }
+
+  @override
+  String get savedToGallery => 'Tersimpan di Galeri › Pictures/IDMark';
+
+  @override
+  String get savedToDownloads => 'Tersimpan di File › Download/IDMark';
+
+  @override
+  String get saveViaShareHint =>
+      'Untuk menyimpan salinan, pilih \"Simpan gambar\" atau \"Simpan ke File\" di lembar berbagi.';
+
+  @override
+  String redactionWidth(int value) {
+    return 'Lebar ($value%)';
+  }
+
+  @override
+  String redactionHeight(int value) {
+    return 'Tinggi ($value%)';
+  }
+
+  @override
+  String get redactionDragHint =>
+      'Seret kotak di foto untuk memindahkannya. Seret titik sudutnya untuk mengubah ukuran.';
+
+  @override
+  String get redactionWeakWarning =>
+      'Buram dan mosaik pada teks kecil seperti NIK kadang bisa dipulihkan. Gunakan Blackout untuk NIK.';
+
+  @override
+  String get historyEntryDeleted => 'Entri dihapus';
+
+  @override
+  String get undo => 'Urungkan';
+
+  @override
+  String get deleteEntry => 'Hapus entri';
+
+  @override
+  String get notLegalAdvice =>
+      'Panduan keamanan saja, bukan nasihat hukum dan bukan sertifikasi resmi.';
+
+  @override
+  String get tabRedactShort => 'Sensor';
+
+  @override
+  String get tabPrivacyShort => 'Privasi';
+
+  @override
+  String get tabFormatShort => 'Format';
+
+  @override
+  String redactionBoxSemantics(String label) {
+    return 'Kotak sensor $label. Seret untuk memindahkan.';
+  }
+
+  @override
+  String get resizeRedaction => 'Ubah ukuran kotak sensor';
+
+  @override
+  String get exportFormatSessionNote =>
+      'Berlaku untuk ekspor ini. Format bawaan diatur di Pengaturan.';
 }
