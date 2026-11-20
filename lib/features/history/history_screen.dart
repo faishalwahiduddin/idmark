@@ -10,6 +10,7 @@ import '../../core/providers/timezone_provider.dart';
 import '../../core/utils/app_timezone.dart';
 import '../../l10n/app_localizations.dart';
 import 'widgets/discipline_badge.dart';
+import '../../core/theme/app_numeric.dart';
 
 class HistoryScreen extends ConsumerStatefulWidget {
   const HistoryScreen({super.key});
@@ -209,7 +210,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
                       const SizedBox(width: 6),
                       Text(
                         dateFormat,
-                        style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
+                        style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8), fontFeatures: AppNumeric.tabularFeatures),
                       ),
                     ],
                   ),
@@ -235,6 +236,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
                             fontSize: 11,
                             fontWeight: FontWeight.w700,
                             color: entry.privacyScore >= 80 ? AppColors.accentText : AppColors.warningText,
+                            fontFeatures: AppNumeric.tabularFeatures,
                           ),
                         ),
                       ],
@@ -346,7 +348,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
           const SizedBox(width: 5),
           Text(
             text,
-            style: TextStyle(fontSize: 11, color: color, fontWeight: FontWeight.w600),
+            style: TextStyle(fontSize: 11, color: color, fontWeight: FontWeight.w600, fontFeatures: AppNumeric.tabularFeatures),
           ),
         ],
       ),

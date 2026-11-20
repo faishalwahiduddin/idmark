@@ -9,6 +9,7 @@ import '../../../../core/models/redaction_item.dart';
 import '../../../../core/models/watermark_config.dart';
 import '../../../../core/utils/app_timezone.dart';
 import '../../../../l10n/app_localizations.dart';
+import '../../../core/theme/app_numeric.dart';
 
 class WatermarkCanvasPreview extends StatefulWidget {
   final Uint8List? imageBytes;
@@ -104,6 +105,7 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
                             fontSize: 11,
                             fontWeight: FontWeight.w800,
                             color: widget.config.privacyScore >= 80 ? AppColors.accent : AppColors.warning,
+                            fontFeatures: AppNumeric.tabularFeatures,
                           ),
                         ),
                       ],

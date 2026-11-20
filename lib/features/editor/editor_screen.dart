@@ -24,6 +24,7 @@ import '../../core/utils/web_download_helper.dart';
 import 'widgets/idmark_share_dialog.dart';
 import 'widgets/watermark_canvas_preview.dart';
 import 'widgets/watermark_control_panel.dart';
+import '../../core/theme/app_numeric.dart';
 
 class EditorScreen extends ConsumerStatefulWidget {
   const EditorScreen({super.key});
@@ -211,7 +212,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
                           '${l10n?.exportFormatTab ?? 'Format Ekspor'}: '
                           '${config.exportFormat.name.toUpperCase()} • '
                           '${(bytes.lengthInBytes / 1024).toStringAsFixed(1)} KB',
-                          style: const TextStyle(fontSize: 12, color: Colors.white, fontWeight: FontWeight.bold),
+                          style: const TextStyle(fontSize: 12, color: Colors.white, fontWeight: FontWeight.bold, fontFeatures: AppNumeric.tabularFeatures),
                         ),
                       ),
                     ],

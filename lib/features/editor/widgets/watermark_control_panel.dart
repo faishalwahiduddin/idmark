@@ -10,6 +10,7 @@ import '../../../../core/utils/app_timezone.dart';
 import '../../../../core/utils/l10n_helpers.dart';
 import '../../../../core/utils/validators.dart';
 import '../../../../l10n/app_localizations.dart';
+import '../../../core/theme/app_numeric.dart';
 
 class WatermarkControlPanel extends StatefulWidget {
   final WatermarkConfig config;
@@ -452,6 +453,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                 fontSize: 12,
                 fontWeight: FontWeight.bold,
                 color: AppColors.primaryLight,
+                fontFeatures: AppNumeric.tabularFeatures,
               ),
             ),
           ],
@@ -478,6 +480,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                 fontSize: 12,
                 fontWeight: FontWeight.bold,
                 color: AppColors.primaryLight,
+                fontFeatures: AppNumeric.tabularFeatures,
               ),
             ),
           ],
@@ -506,6 +509,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
                   color: AppColors.primaryLight,
+                  fontFeatures: AppNumeric.tabularFeatures,
                 ),
               ),
             ],
@@ -756,6 +760,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                       style: const TextStyle(
                         fontSize: 10,
                         color: Color(0xFF94A3B8),
+                        fontFeatures: AppNumeric.tabularFeatures,
                       ),
                     ),
                     Slider(
@@ -780,6 +785,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                       style: const TextStyle(
                         fontSize: 10,
                         color: Color(0xFF94A3B8),
+                        fontFeatures: AppNumeric.tabularFeatures,
                       ),
                     ),
                     Slider(
@@ -1096,6 +1102,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
                   color: AppColors.primaryLight,
+                  fontFeatures: AppNumeric.tabularFeatures,
                 ),
               ),
             ],
