@@ -70,6 +70,14 @@ class AppColors {
     return fg.withValues(alpha: alpha);
   }
 
+  // Neutral / tint tokens for text on the brand-dark panels.
+  static const Color slate300 = Color(0xFFCBD5E1);
+  static const Color slate400 = Color(0xFF94A3B8);
+  static const Color slate500 = Color(0xFF64748B);
+  static const Color sky100 = Color(0xFFE0F2FE);
+  static const Color sky300 = Color(0xFF7DD3FC);
+  static const Color red300 = Color(0xFFFCA5A5);
+
   // Watermark Color Palette Presets
   static const Color watermarkRed = Color(0xFFDC2626);
   static const Color watermarkBlue = Color(0xFF2563EB);

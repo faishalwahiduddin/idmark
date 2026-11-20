@@ -37,6 +37,34 @@ class WatermarkCanvasPreview extends StatefulWidget {
 
 class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
   bool _isComparingOriginal = false;
+  final TransformationController _zoom = TransformationController();
+  bool _zoomed = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _zoom.addListener(_onZoomChanged);
+  }
+
+  void _onZoomChanged() {
+    final z = _zoom.value.getMaxScaleOnAxis() > 1.001;
+    if (z != _zoomed) setState(() => _zoomed = z);
+  }
+
+  @override
+  void didUpdateWidget(covariant WatermarkCanvasPreview oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (!identical(oldWidget.imageBytes, widget.imageBytes)) {
+      _zoom.value = Matrix4.identity();
+    }
+  }
+
+  @override
+  void dispose() {
+    _zoom.removeListener(_onZoomChanged);
+    _zoom.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,20 +85,31 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
             child: Stack(
               alignment: Alignment.center,
               children: [
-                Image.memory(
-                  widget.imageBytes!,
-                  fit: BoxFit.contain,
-                  width: double.infinity,
-                ),
-                if (!_isComparingOriginal)
-                  Positioned.fill(
-                    child: CustomPaint(
-                      painter: _WatermarkOverlayPainter(
-                        config: widget.config,
-                        zone: widget.zone,
+                InteractiveViewer(
+                  transformationController: _zoom,
+                  minScale: 1,
+                  maxScale: 4,
+                  panEnabled: _zoomed,
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Image.memory(
+                        widget.imageBytes!,
+                        fit: BoxFit.contain,
+                        width: double.infinity,
                       ),
-                    ),
+                      if (!_isComparingOriginal)
+                        Positioned.fill(
+                          child: CustomPaint(
+                            painter: _WatermarkOverlayPainter(
+                              config: widget.config,
+                              zone: widget.zone,
+                            ),
+                          ),
+                        ),
+                    ],
                   ),
+                ),
 
                 // Top Floating Privacy Meter Badge
                 Positioned(
@@ -165,7 +204,7 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
                   const SizedBox(width: 8),
                   Text(
                     l10n?.quickSensorShort ?? 'Sensor Cepat:',
-                    style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: Color(0xFF94A3B8)),
+                    style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: AppColors.slate400),
                   ),
                   const SizedBox(width: 8),
                   Expanded(
@@ -333,7 +372,7 @@ class _WatermarkCanvasPreviewState extends State<WatermarkCanvasPreview> {
               textAlign: TextAlign.center,
               style: const TextStyle(
                 fontSize: 13,
-                color: Color(0xFF94A3B8),
+                color: AppColors.slate400,
                 height: 1.4,
               ),
             ),

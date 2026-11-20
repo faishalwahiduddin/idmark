@@ -64,7 +64,7 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
                   l10n.protectDigitalIdDesc,
                   style: const TextStyle(
                     fontSize: 12,
-                    color: Color(0xFFE0F2FE),
+                    color: AppColors.sky100,
                     height: 1.5,
                   ),
                 ),
@@ -190,7 +190,7 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
                       const SizedBox(height: 4),
                       Text(
                         l10n.warningRejectDesc,
-                        style: const TextStyle(fontSize: 11, color: Color(0xFFFCA5A5), height: 1.4),
+                        style: const TextStyle(fontSize: 11, color: AppColors.red300, height: 1.4),
                       ),
                     ],
                   ),
@@ -219,7 +219,7 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
             Icon(
               isChecked ? Icons.check_box : Icons.check_box_outline_blank,
               size: 20,
-              color: isChecked ? AppColors.accent : const Color(0xFF64748B),
+              color: isChecked ? AppColors.accent : AppColors.slate500,
             ),
             const SizedBox(width: 10),
             Expanded(
@@ -227,7 +227,7 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
                 text,
                 style: TextStyle(
                   fontSize: 12,
-                  color: isChecked ? Colors.white : const Color(0xFFCBD5E1),
+                  color: isChecked ? Colors.white : AppColors.slate300,
                   decoration: isChecked ? TextDecoration.lineThrough : null,
                 ),
               ),
@@ -272,7 +272,7 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
                   style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w800,
-                    color: Color(0xFF7DD3FC), // Sky 300: readable on the primary tint
+                    color: AppColors.sky300, // Sky 300: readable on the primary tint
                   ),
                 ),
               ),
@@ -295,7 +295,7 @@ class _KominfoGuideScreenState extends State<KominfoGuideScreen> {
                       description,
                       style: const TextStyle(
                         fontSize: 12,
-                        color: Color(0xFFCBD5E1),
+                        color: AppColors.slate300,
                         height: 1.4,
                       ),
                     ),

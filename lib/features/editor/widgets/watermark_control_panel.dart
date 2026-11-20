@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:timezone/timezone.dart' as tz;
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/theme/app_theme.dart';
@@ -60,6 +61,15 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
   late TextEditingController _purposeController;
   late TextEditingController _subtextController;
   String? _purposeError;
+  bool _expanded = true;
+
+  /// True when moving from [from] to [to] reaches 0 deg or +/-45 deg, or
+  /// crosses 0 deg. Never fires when the value did not change.
+  static bool _crossesRotationDetent(double from, double to) {
+    if (from == to) return false;
+    if ((from < 0 && to >= 0) || (from > 0 && to <= 0)) return true;
+    return to.abs() == 45.0;
+  }
 
   /// Effective display zone: explicit zone, else Jakarta fallback.
   tz.Location get _loc =>
@@ -135,27 +145,58 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
           length: 4,
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(16, 16, 16, 12),
-                child: Row(
-                  children: [
-                    const Icon(
-                      Icons.tune,
-                      size: 20,
-                      color: AppColors.primaryLight,
-                    ),
-                    const SizedBox(width: 8),
-                    Text(
-                      l10n?.watermarkConfigTitle ?? 'Konfigurasi Watermark',
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.white,
+              Semantics(
+                button: true,
+                expanded: _expanded,
+                label: l10n?.watermarkConfigTitle ?? 'Konfigurasi Watermark',
+                excludeSemantics: true,
+                child: InkWell(
+                  onTap: () => setState(() => _expanded = !_expanded),
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(minHeight: 56),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(16, 8, 8, 8),
+                      child: Row(
+                        children: [
+                          const Icon(
+                            Icons.tune,
+                            size: 20,
+                            color: AppColors.primaryLight,
+                          ),
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: Text(
+                              l10n?.watermarkConfigTitle ?? 'Konfigurasi Watermark',
+                              style: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 48,
+                            height: 48,
+                            child: Icon(
+                              _expanded
+                                  ? Icons.keyboard_arrow_up
+                                  : Icons.keyboard_arrow_down,
+                              color: AppColors.slate300,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                  ],
+                  ),
                 ),
               ),
+              AnimatedSize(
+                duration: const Duration(milliseconds: 220),
+                curve: Curves.easeOutCubic,
+                alignment: Alignment.topCenter,
+                child: _expanded
+                    ? Column(
+                        children: [
               // Top Tab Navigation (panel surface is always brand-dark)
               Container(
                 decoration: const BoxDecoration(
@@ -168,7 +209,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                   tabAlignment: TabAlignment.start,
                   indicatorColor: AppColors.primaryLight,
                   labelColor: AppColors.primaryLight,
-                  unselectedLabelColor: const Color(0xFF94A3B8),
+                  unselectedLabelColor: AppColors.slate400,
                   tabs: [
                     Tab(
                       icon: const Icon(Icons.shield_outlined, size: 18),
@@ -212,6 +253,10 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                   ),
                 ),
               ),
+                        ],
+                      )
+                    : const SizedBox(width: double.infinity),
+              ),
             ],
           ),
         ),
@@ -231,7 +276,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
           style: const TextStyle(
             fontSize: 13,
             fontWeight: FontWeight.w600,
-            color: Color(0xFFCBD5E1),
+            color: AppColors.slate300,
           ),
         ),
         const SizedBox(height: 6),
@@ -306,14 +351,16 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                         color: AppColors.primaryLight,
                       ),
                       const SizedBox(width: 10),
-                      Column(
+                      Flexible(child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             l10n?.transactionDate ?? 'Tanggal Transaksi',
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
                             style: const TextStyle(
                               fontSize: 10,
-                              color: Color(0xFF94A3B8),
+                              color: AppColors.slate400,
                             ),
                           ),
                           Text(
@@ -325,7 +372,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                             ),
                           ),
                         ],
-                      ),
+                      )),
                     ],
                   ),
                 ),
@@ -355,7 +402,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
           style: const TextStyle(
             fontSize: 12,
             fontWeight: FontWeight.w600,
-            color: Color(0xFF94A3B8),
+            color: AppColors.slate400,
           ),
         ),
         const SizedBox(height: 6),
@@ -382,7 +429,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
           style: const TextStyle(
             fontSize: 13,
             fontWeight: FontWeight.w600,
-            color: Color(0xFFCBD5E1),
+            color: AppColors.slate300,
           ),
         ),
         const SizedBox(height: 8),
@@ -401,7 +448,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                 fontWeight: isSelected ? FontWeight.w700 : FontWeight.normal,
                 color: isSelected
                     ? AppColors.primaryLight
-                    : const Color(0xFF94A3B8),
+                    : AppColors.slate400,
               ),
             );
           }).toList(),
@@ -414,7 +461,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
           style: const TextStyle(
             fontSize: 13,
             fontWeight: FontWeight.w600,
-            color: Color(0xFFCBD5E1),
+            color: AppColors.slate300,
           ),
         ),
         const SizedBox(height: 8),
@@ -432,7 +479,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
               labelStyle: TextStyle(
                 fontSize: 11,
                 fontWeight: isSelected ? FontWeight.w700 : FontWeight.normal,
-                color: isSelected ? Colors.white : const Color(0xFF94A3B8),
+                color: isSelected ? Colors.white : AppColors.slate400,
               ),
             );
           }).toList(),
@@ -445,7 +492,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
           children: [
             Text(
               l10n?.opacityLevel ?? 'Tingkat Opasitas (Transparansi)',
-              style: const TextStyle(fontSize: 12, color: Color(0xFFCBD5E1)),
+              style: const TextStyle(fontSize: 12, color: AppColors.slate300),
             ),
             Text(
               '${(widget.config.opacity * 100).toInt()}%',
@@ -464,7 +511,10 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
           max: 0.90,
           divisions: 15,
           activeColor: AppColors.primary,
-          onChanged: widget.onOpacityChanged,
+          onChanged: (v) {
+            if (v != widget.config.opacity) HapticFeedback.selectionClick();
+            widget.onOpacityChanged(v);
+          },
         ),
 
         Row(
@@ -472,7 +522,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
           children: [
             Text(
               l10n?.watermarkFontSize ?? 'Ukuran Teks Watermark',
-              style: const TextStyle(fontSize: 12, color: Color(0xFFCBD5E1)),
+              style: const TextStyle(fontSize: 12, color: AppColors.slate300),
             ),
             Text(
               '${widget.config.fontSize.toInt()} pt',
@@ -501,7 +551,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
             children: [
               Text(
                 l10n?.rotationAngle ?? 'Kemiringan Sudut',
-                style: const TextStyle(fontSize: 12, color: Color(0xFFCBD5E1)),
+                style: const TextStyle(fontSize: 12, color: AppColors.slate300),
               ),
               Text(
                 '${widget.config.rotationAngle.toInt()}°',
@@ -520,7 +570,12 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
             max: 45.0,
             divisions: 18,
             activeColor: AppColors.primary,
-            onChanged: widget.onRotationChanged,
+            onChanged: (v) {
+              if (_crossesRotationDetent(widget.config.rotationAngle, v)) {
+                HapticFeedback.selectionClick();
+              }
+              widget.onRotationChanged(v);
+            },
           ),
         ],
       ],
@@ -555,7 +610,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                       'Tutup bagian data vital seperti tanda tangan atau digit NIK yang tidak relevan dengan transaksi untuk meminimalkan risiko pencurian identitas.',
                   style: const TextStyle(
                     fontSize: 11,
-                    color: Color(0xFFCBD5E1),
+                    color: AppColors.slate300,
                     height: 1.4,
                   ),
                 ),
@@ -571,7 +626,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
           style: const TextStyle(
             fontSize: 12,
             fontWeight: FontWeight.w700,
-            color: Color(0xFF94A3B8),
+            color: AppColors.slate400,
           ),
         ),
         const SizedBox(height: 8),
@@ -655,7 +710,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                     l10n?.noRedactionsYet ?? 'Belum ada area yang disensor.',
                     style: const TextStyle(
                       fontSize: 12,
-                      color: Color(0xFF94A3B8),
+                      color: AppColors.slate400,
                     ),
                   ),
                 ],
@@ -723,7 +778,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
             children: [
               Text(
                 l10n?.sensorTypeLabel ?? 'Tipe Sensor: ',
-                style: const TextStyle(fontSize: 11, color: Color(0xFF94A3B8)),
+                style: const TextStyle(fontSize: 11, color: AppColors.slate400),
               ),
               const SizedBox(width: 8),
               DropdownButton<RedactionType>(
@@ -759,7 +814,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                           'Posisi X (${(box.left * 100).toInt()}%)',
                       style: const TextStyle(
                         fontSize: 10,
-                        color: Color(0xFF94A3B8),
+                        color: AppColors.slate400,
                         fontFeatures: AppNumeric.tabularFeatures,
                       ),
                     ),
@@ -784,7 +839,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                           'Posisi Y (${(box.top * 100).toInt()}%)',
                       style: const TextStyle(
                         fontSize: 10,
-                        color: Color(0xFF94A3B8),
+                        color: AppColors.slate400,
                         fontFeatures: AppNumeric.tabularFeatures,
                       ),
                     ),
@@ -848,7 +903,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                         widget.config.localizedPrivacyGradeDescription(l10n),
                         style: const TextStyle(
                           fontSize: 11,
-                          color: Color(0xFF94A3B8),
+                          color: AppColors.slate400,
                         ),
                       ),
                     ],
@@ -900,7 +955,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
           style: const TextStyle(
             fontSize: 12,
             fontWeight: FontWeight.w700,
-            color: Color(0xFFCBD5E1),
+            color: AppColors.slate300,
           ),
         ),
         const SizedBox(height: 10),
@@ -947,7 +1002,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
             subtitle: Text(
               l10n?.autoSanitizeExifDesc ??
                   'Menghapus tag metadata kamera, model HP, dan koordinat GPS secara otomatis saat ekspor',
-              style: const TextStyle(fontSize: 11, color: Color(0xFF94A3B8)),
+              style: const TextStyle(fontSize: 11, color: AppColors.slate400),
             ),
             value: widget.config.stripMetadata,
             activeThumbColor: AppColors.accent,
@@ -967,7 +1022,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
           Icon(
             isChecked ? Icons.check_circle : Icons.radio_button_unchecked,
             size: 16,
-            color: isChecked ? AppColors.accent : const Color(0xFF64748B),
+            color: isChecked ? AppColors.accent : AppColors.slate500,
           ),
           const SizedBox(width: 8),
           Expanded(
@@ -979,14 +1034,14 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w600,
-                    color: isChecked ? Colors.white : const Color(0xFF94A3B8),
+                    color: isChecked ? Colors.white : AppColors.slate400,
                   ),
                 ),
                 Text(
                   reason,
                   style: const TextStyle(
                     fontSize: 10,
-                    color: Color(0xFF64748B),
+                    color: AppColors.slate500,
                   ),
                 ),
               ],
@@ -1043,7 +1098,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                                 : Icons.picture_as_pdf_outlined),
                       color: isSelected
                           ? AppColors.primaryLight
-                          : const Color(0xFF94A3B8),
+                          : AppColors.slate400,
                       size: 24,
                     ),
                     const SizedBox(width: 12),
@@ -1058,7 +1113,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                               fontWeight: FontWeight.w700,
                               color: isSelected
                                   ? Colors.white
-                                  : const Color(0xFFCBD5E1),
+                                  : AppColors.slate300,
                             ),
                           ),
                           const SizedBox(height: 3),
@@ -1066,7 +1121,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                             format.descriptionOf(l10n),
                             style: const TextStyle(
                               fontSize: 11,
-                              color: Color(0xFF94A3B8),
+                              color: AppColors.slate400,
                             ),
                           ),
                         ],
@@ -1078,7 +1133,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
                           : Icons.radio_button_unchecked,
                       color: isSelected
                           ? AppColors.primaryLight
-                          : const Color(0xFF64748B),
+                          : AppColors.slate500,
                     ),
                   ],
                 ),
@@ -1094,7 +1149,7 @@ class _WatermarkControlPanelState extends State<WatermarkControlPanel> {
             children: [
               Text(
                 l10n?.jpegCompressionQuality ?? 'Kualitas Kompresi JPEG',
-                style: const TextStyle(fontSize: 12, color: Color(0xFFCBD5E1)),
+                style: const TextStyle(fontSize: 12, color: AppColors.slate300),
               ),
               Text(
                 '${widget.config.jpegQuality}%',
