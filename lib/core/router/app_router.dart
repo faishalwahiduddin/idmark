@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:idmark/core/services/quick_action_config.dart';
 import 'package:go_router/go_router.dart';
 import '../ui/fleet_splash_screen.dart';
 import '../ui/fleet_onboarding_screen.dart';
@@ -74,4 +75,4 @@ final appRouter = GoRouter(
       ],
     ),
   ],
-);
+).withQuickActions();

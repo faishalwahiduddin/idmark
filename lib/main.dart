@@ -5,6 +5,7 @@ import 'core/providers/locale_provider.dart';
 import 'core/providers/theme_provider.dart';
 import 'core/providers/timezone_provider.dart';
 import 'core/router/app_router.dart';
+import 'core/services/home_widget_service.dart';
 import 'core/storage/local_storage_service.dart';
 import 'core/a11y/text_scale.dart';
 import 'core/demo/store_demo.dart';
@@ -15,6 +16,7 @@ import 'l10n/fallback_framework_delegates.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await HomeWidgetService.init();
 
   // Initialize offline storage service
   final storageService = await LocalStorageService.init();
@@ -49,6 +51,17 @@ class _IdMarkAppState extends ConsumerState<IdMarkApp>
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      HomeWidgetService.bindDeepLinks(appRouter.go);
+      HomeWidgetService.update(
+        androidWidgetName: 'FleetHomeWidgetProvider',
+        data: const {
+          'widget_title': 'IDMark',
+          'widget_subtitle': 'Offline ID watermark & presets',
+          'widget_badge': 'STAMP',
+        },
+      );
+    });
   }
 
   @override

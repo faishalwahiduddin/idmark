@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:idmark/core/services/quick_action_config.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -452,6 +453,7 @@ class SettingsScreen extends ConsumerWidget {
                 child: ListView(
                   physics: AppScroll.physics,
                   children: [
+          const QuickActionNotifSwitchTile(),
                     ListTile(
                       key: const ValueKey('timezone_option_auto'),
                       title: Text(l10n.timezoneAuto),
